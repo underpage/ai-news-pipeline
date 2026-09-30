@@ -42,6 +42,24 @@ def test_report_marks_every_summary_status():
     assert "{{" not in report
 
 
+def test_news_list_excludes_articles_in_summary_section():
+    add_target(1, 9, KOREAN_SUMMARY)
+    failed = add_target(2, 8)
+    common.append_error("요약", "요약 오류", failed, "요약 실패: 503")
+    # 목록에만 오른 기사 (본문 없음)
+    for number, score in ((3, 7), (4, 6)):
+        common.append_record("필터링", [("TITLE", f"기사 {number}"), ("LINK", f"http://a/{number}"), ("SCORE", score)])
+
+    publish.main()
+    report = open(os.path.join(common.NEWS_DIR, "2026", "10", "2026-10-01.md"), encoding="utf-8").read()
+    news_list = report.split("## 더 읽어볼 기사")[1]
+    assert news_list.startswith(" (2건)")
+    # 요약 기사와 요약 실패 기사는 목록에 다시 나오지 않고, 순위는 전체 기준으로 이어진다
+    assert "http://a/1" not in news_list and "http://a/2" not in news_list
+    assert "3. [기사 3](http://a/3)" in news_list and "4. [기사 4](http://a/4)" in news_list
+    assert "★" not in report
+
+
 def test_tone_tag_only_on_its_own_line():
     _, _, summary_ko, tone = publish.parse_summary_blocks("**[국문 3줄 요약]**\n- 이 소식은 #긍정 평가.\n- 둘.\n- 셋.\n\n#부정")
     assert summary_ko[0] == "이 소식은 #긍정 평가." and tone == "#부정"

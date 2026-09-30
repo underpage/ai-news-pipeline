@@ -20,9 +20,8 @@
       .summary_status    ok / failed(요약 호출 실패) / unavailable(본문이 기사가 아니라 요약 불가)
                          / pending(요약을 시도하지 못함)
       .summary_source    gemini / manual(manual_summary.py로 채운 요약)
-    listed               목록으로 선정한 기사 전체 (중요도 순)
+    listed               목록으로 선정했지만 위에서 요약하지 않은 기사 (중요도 순)
       .rank, .title, .link, .topic, .source, .published, .score
-      .summarized        위에서 요약한 기사면 참
 #}
 # {{ date }}
 
@@ -87,10 +86,10 @@
 
 {% endfor %}
 {% if listed %}
-## 뉴스 목록 ({{ listed | length }}건)
+## 더 읽어볼 기사 ({{ listed | length }}건)
 
 {% for n in listed %}
-{{ n.rank }}. {% if n.summarized %}★ {% endif %}[{{ n.title }}]({{ n.link }}){% if n.topic or n.source or n.published %} - {{ [n.topic, n.source, n.published] | select | join(" · ") }}{% endif %}
+{{ n.rank }}. [{{ n.title }}]({{ n.link }}){% if n.topic or n.source or n.published %} - {{ [n.topic, n.source, n.published] | select | join(" · ") }}{% endif %}
 
 {% endfor %}
 {% endif %}

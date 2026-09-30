@@ -83,9 +83,12 @@ def render_report(report_date, news_list, listed_news):
             "summary_source": "manual" if item.get("model") == "manual" else "gemini",
         })
 
-    summarized_links = {item["link"] for item in news_list}
+    # "더 읽어볼 기사" 목록에는 위에서 다룬 요약 기사(요약 실패 포함)를 빼고 나머지만 싣는다. 순위는 전체 목록 기준
+    covered_links = {item["link"] for item in news_list}
     listed = []
     for rank, item in enumerate(listed_news, start=1):
+        if item["link"] in covered_links:
+            continue
         listed.append({
             "rank": rank,
             # 대괄호는 마크다운 링크 표기와 겹치므로 바꿔 쓴다
@@ -95,7 +98,6 @@ def render_report(report_date, news_list, listed_news):
             "source": item.get("source", ""),
             "published": item.get("published", ""),
             "score": item.get("score", ""),
-            "summarized": item["link"] in summarized_links,
         })
 
     env = jinja2.Environment(
