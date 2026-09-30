@@ -1,6 +1,7 @@
 # AGENT.md
 
-LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md](./README.md), 세부 구현은 코드 참고. 이 문서에는 코드만 읽어서는 알 수 없는 규칙, 이유, 연동 관계만 기록
+LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md](./README.md), 세부 구현은 코드 참고. 
+이 문서에는 코드만 읽어서는 알 수 없는 규칙, 이유, 연동 관계만 기록
 
 
 ## 작업 규칙
@@ -42,10 +43,11 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 | `[SUMMARY]` 블록의 소제목·`#논조` 표기 (`summarize.parse_summary`) | `publish.parse_summary_blocks` |
 | 템플릿에 넘기는 값 (`publish.render_report`) | `config/report.md.j2` 맨 위 주석. 정의되지 않은 이름은 오류 (`StrictUndefined`) |
 | 환경 변수 추가, 기본값 변경 | 코드 기본값과 워크플로우 `env:` 양쪽, 아래 표 |
+| 오류 줄 형식 (`[… 오류] 대상 - 사유`), 본문 수집 실패 사유 문구 | `common.read_errors`, `publish.collect_stats` |
 | 로그 태그, 파일명 | 워크플로우의 `^\[TITLE\] ` 개수 세기와 `${RUN_DATE}-수집.txt` 경로 |
 | 블록 태그 추가 | `common.BLOCK_TAGS` |
 | 단계 추가, 실행 순서, 실패 시 흐름 | 워크플로우의 Job과 `src/main.py` 양쪽 (같은 흐름을 따로 구현) |
-| 결과 폴더 이름 (`archive`, `archive-test`) | `common.DATA_DIR`, `.gitignore`, 워크플로우의 artifact 경로·수집 건수 확인·`git add`, README "폴더 구조" |
+| 결과 폴더 이름 (`archive`, `archive-test`) | `common.DATA_DIR`, `.gitignore`, 워크플로우의 artifact 경로·수집 건수 확인·`git add archive/`, README "폴더 구조" |
 | `config/feeds.yml`, `config/keywords.yml`의 항목 구조 | `collect.check_config` |
 | 주제 우선순위 | `config/keywords.yml`의 `topics` 순서, README "한눈에 보기" |
 
@@ -146,6 +148,8 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 ## 로그 형식
 
 - 파일: `archive/logs/YYYY/MM/YYYY-MM-DD-{수집|필터링|요약}.txt`
+- 통계: `archive/stats/YYYY.csv` (연도별 파일). Publish가 그날의 세 로그를 세어 하루 한 줄로 기록 (단계별 성공·실패 건수, 실패한 매체). 같은 날 재실행하면 그날 줄을 바꿔 씀. 수집 0건으로 Publish가 돌지 않은 날에는 줄이 없음
+- 현황 화면은 원본 로그가 아니라 연도별 통계 파일만 읽으면 되도록 유지. 모든 해의 열 구성은 같게 유지하고, 열을 추가할 때는 맨 뒤에 (`publish.STATS_COLUMNS`)
 - 레코드는 `---` 한 줄로 구분. 한 줄 태그는 `[TAG] 값`
 - 블록 태그 `[SUMMARY]`, `[BODY]`는 다음 줄부터 `---` 전까지. 블록 안의 `---` 줄은 `- - -`로 바꿔 기록
 - `read_records`는 `[LINK]`가 있는 레코드만 반환. 키는 태그의 소문자

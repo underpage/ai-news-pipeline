@@ -209,6 +209,5 @@ jobs:
         run: |
           git config --local user.email "yoojj.dev@gmail.com"
           git config --local user.name "yjj"
-          git add archive/logs/ || true
-          git add archive/news/ || true
+          git add archive/
           git diff --quiet && git diff --staged --quiet || (git commit -m "docs: AI 뉴스 리포트 자동 업데이트" && git pull --rebase && git push)

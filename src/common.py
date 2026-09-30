@@ -83,6 +83,29 @@ def append_error(log_type, tag, target, error_msg):
         f.write("---\n")
 
 
+def read_errors(log_type):
+    """오늘 로그의 오류 줄을 (대상, 사유) 목록으로 읽는다. 본문·요약 블록 안의 글은 보지 않는다."""
+    errors = []
+    filename = get_log_path(log_type)
+    if not os.path.exists(filename):
+        return errors
+    in_block = False
+    with open(filename, 'r', encoding='utf-8') as f:
+        for raw_line in f:
+            line = raw_line.rstrip("\n")
+            if line.strip() == "---":
+                in_block = False
+            elif in_block:
+                continue
+            elif line.strip().strip("[]") in BLOCK_TAGS and line.strip().startswith("["):
+                in_block = True
+            else:
+                match = re.match(r"\[(?:수집|평가|요약) 오류\] (.+?) - (.*)$", line)
+                if match:
+                    errors.append((match.group(1), match.group(2)))
+    return errors
+
+
 def read_records(log_type):
     """오늘 로그에서 [LINK]가 있는 레코드만 읽는다. 키는 태그의 소문자."""
     return read_records_from(get_log_path(log_type))

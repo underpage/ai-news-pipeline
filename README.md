@@ -47,6 +47,7 @@
 - 로그와 리포트는 같은 폴더 체계를 쓰고 날짜는 파일명으로 구분
 - Job마다 러너가 달라 `archive/logs/`는 artifact로 다음 Job에 전달
 - 마지막 Publish Job에서 `archive/logs/`와 리포트를 함께 커밋
+- Publish 단계에서 그날의 단계별 성공·실패 건수를 `archive/stats/YYYY.csv`에 하루 한 줄로 기록
 - Gemini 호출은 하루에 추출 한 번 + 요약 기사 수만큼
 
 
@@ -70,6 +71,7 @@
 │       ├── filter_prompt.txt    # 추출 기준, 중요도 기준
 │       └── summary_prompt.txt   # 요약/번역·감성 태그 프롬프트
 ├── archive/              # 실행 결과 (매일 누적, 자동 커밋)
+│   ├── stats/YYYY.csv    # 연도별 실행 통계 (하루 한 줄)
 │   ├── logs/YYYY/MM/     # 연월별 단계 로그 (파일명이 날짜)
 │   └── news/YYYY/MM/     # 연월별 리포트 (파일명이 날짜)
 ├── archive-test/         # 테스트 실행 결과 (커밋 제외)

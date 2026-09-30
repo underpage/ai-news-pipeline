@@ -2,7 +2,7 @@ import os
 import re
 import datetime
 
-from common import CONFIG_DIR, NEWS_DIR, ROOT_DIR, read_records, run_date
+from common import CONFIG_DIR, DATA_DIR, NEWS_DIR, ROOT_DIR, read_errors, read_records, run_date
 
 
 
@@ -184,10 +184,88 @@ def save_to_markdown(news_list, candidates):
     print(f"{os.path.relpath(folder_report_path, ROOT_DIR)} 생성 완료 (요약 {len(unique_news)}건, 목록 {len(candidates)}건)")
 
 
+STATS_DIR = os.path.join(DATA_DIR, "stats")
+STATS_COLUMNS = [
+    "date", "updated", "feeds_ok", "feeds_failed", "collected", "listed", "skipped",
+    "rank_ok", "rank_failed_calls", "body_ok", "body_failed",
+    "summary_target", "summary_ok", "summary_failed", "summary_pending", "failed_feeds",
+]
+
+
+def collect_stats():
+    """그날 로그에서 단계별 성공·실패 건수를 센다."""
+    from collect import FEEDS
+
+    collected = [record for record in read_records("수집") if record.get("title")]
+    evaluated = read_records("필터링")
+    listed = [record for record in evaluated if record.get("title")]
+    with_body = {record["link"] for record in listed if record.get("body")}
+    summarized = {record["link"] for record in read_records("요약") if record.get("title")}
+
+    failed_feeds = sorted({target for target, _ in read_errors("수집")})
+    evaluate_errors = read_errors("필터링")
+    rank_failures = [reason for target, reason in evaluate_errors if target == "전체 후보"]
+    # 재실행으로 나중에 성공한 기사는 실패에서 뺀다
+    body_failures = {target for target, reason in evaluate_errors if "본문" in reason} - with_body
+    summary_failures = {target for target, _ in read_errors("요약")} - summarized
+
+    return {
+        "date": f"{run_date():%Y-%m-%d}",
+        "updated": f"{datetime.datetime.now():%Y-%m-%d %H:%M}",
+        "feeds_ok": len(FEEDS) - len(failed_feeds),
+        "feeds_failed": len(failed_feeds),
+        "collected": len(collected),
+        "listed": len(listed),
+        "skipped": len(evaluated) - len(listed),
+        # 선정 단계를 거친 기록이 있으면 성공. 호출이 실패해 기록이 없으면 0
+        "rank_ok": 1 if evaluated else 0,
+        "rank_failed_calls": len(rank_failures),
+        "body_ok": len(with_body),
+        "body_failed": len(body_failures),
+        "summary_target": len(with_body),
+        "summary_ok": len(summarized & with_body),
+        "summary_failed": len(summary_failures),
+        "summary_pending": len(with_body - summarized - summary_failures),
+        "failed_feeds": ";".join(failed_feeds),
+    }
+
+
+def write_stats():
+    """하루에 한 줄씩 쌓이는 연도별 통계 파일을 갱신한다. 같은 날 다시 실행하면 그날 줄을 바꿔 쓴다.
+
+    파일을 연도마다 나누는 것은 매번 파일 전체를 다시 쓰기 때문이다. 쓰다가 문제가 생겨도 그해만 영향을 받는다.
+    """
+    import csv
+
+    today = collect_stats()
+    stats_file = os.path.join(STATS_DIR, f"{run_date():%Y}.csv")
+    rows = {}
+    if os.path.exists(stats_file):
+        with open(stats_file, "r", encoding="utf-8", newline="") as f:
+            for row in csv.DictReader(f):
+                if row.get("date"):
+                    rows[row["date"]] = row
+    rows[today["date"]] = today
+
+    ensure_dir(STATS_DIR)
+    with open(stats_file, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=STATS_COLUMNS, extrasaction="ignore", restval="")
+        writer.writeheader()
+        for date in sorted(rows):
+            writer.writerow(rows[date])
+
+    print(f"[통계] 수집 매체 성공 {today['feeds_ok']} / 실패 {today['feeds_failed']}, 수집 기사 {today['collected']}건")
+    print(f"[통계] 선정 {'성공' if today['rank_ok'] else '실패'} (목록 {today['listed']}건, 미선정 {today['skipped']}건, 호출 실패 {today['rank_failed_calls']}회)")
+    print(f"[통계] 본문 수집 성공 {today['body_ok']} / 실패 {today['body_failed']}")
+    print(f"[통계] 요약 대상 {today['summary_target']}건 중 성공 {today['summary_ok']} / 실패 {today['summary_failed']} / 미처리 {today['summary_pending']}")
+    print(f"[통계] {os.path.relpath(stats_file, ROOT_DIR)} 갱신")
+
+
 def main():
     print("--- 4. 마크다운 발행 파이프라인 시작 ---")
     news_list = load_summarized_news()
     save_to_markdown(news_list, load_listed_news())
+    write_stats()
     print("--- 4. 마크다운 발행 파이프라인 종료 ---")
 
 
