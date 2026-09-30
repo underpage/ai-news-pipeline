@@ -2,7 +2,7 @@ import re
 import json
 
 from common import (
-    append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, clean_inline,
+    GEMINI_MODEL, append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, clean_inline,
 )
 
 TONES = ("긍정", "부정", "중립")
@@ -115,7 +115,13 @@ def main():
                 ("TOPIC", news.get('topic')),
                 ("SCORE", news.get('score')),
                 ("REASON", news.get('reason')),
+                ("MODEL", GEMINI_MODEL),
             ], block=("SUMMARY", summary))
+        except NotSummarizable as e:
+            # 본문이 기사가 아니라 모델이 요약을 거절한 경우 (로그인 요구, 차단 안내 등)
+            print(f" -> [요약 불가] {e}")
+            append_error("요약", "요약 오류", news['link'], f"요약 불가: {e}")
+            failed += 1
         except Exception as e:
             print(f" -> [요약 오류] {e}")
             append_error("요약", "요약 오류", news['link'], f"요약 실패: {e}")

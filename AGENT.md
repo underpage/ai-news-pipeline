@@ -7,7 +7,7 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 ## 작업 규칙
 
 - 리포트의 목적: AI, 보안 등 최신 기술의 현재 상태와 방향 파악. 선정 기준이나 매체 조정은 이 목적에 맞는지로 판단
-- 선정 관점은 "AI 에이전트 개발 실무". 프롬프트에 사용자 개인 정보 금지
+- 선정 관점은 "AI·보안·신기술·AI 에이전트의 현재 상태와 방향". 프롬프트에 사용자 개인 정보 금지
 - README는 사람용으로 뼈대만 유지, 상세 내용은 이 문서. 두 문서에 같은 내용 중복 금지
 - README 상단(제목 ~ 실행 방법)은 사용자가 직접 관리. 요청 없이 수정 금지
 - 동작을 바꾸면 해당 내용이 적힌 문서도 갱신
@@ -41,6 +41,8 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 | 프롬프트의 출력 형식 | `RANK_SCHEMA` / `SUMMARY_SCHEMA`, `rank_articles` / `parse_summary` |
 | 중요도 항목, 제외 기준 | README "선정 기준" |
 | `[SUMMARY]` 블록의 소제목·`#논조` 표기 (`summarize.parse_summary`) | `publish.parse_summary_blocks` |
+| 요약 응답 형식 (`summarize.parse_summary`) | `manual_summary.py`도 같은 함수로 검증하므로 작업 파일의 `answer` 형식 안내(모듈 설명) |
+| 주간 리포트에 넘기는 값 (`weekly.render_weekly`) | `config/weekly.md.j2` 맨 위 주석 |
 | 템플릿에 넘기는 값 (`publish.render_report`) | `config/report.md.j2` 맨 위 주석. 정의되지 않은 이름은 오류 (`StrictUndefined`) |
 | 환경 변수 추가, 기본값 변경 | 코드 기본값과 워크플로우 `env:` 양쪽, 아래 표 |
 | 오류 줄 형식 (`[… 오류] 대상 - 사유`), 본문 수집 실패 사유 문구 | `common.read_errors`, `publish.collect_stats` |
@@ -54,14 +56,14 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 
 ## 테스트
 
-- 테스트는 테스트 모드로 실행: `uv run src/main.py --test` 또는 단계별로 `TEST_MODE=true uv run src/<단계>.py`
+- 자동 테스트: `uv run pytest` (`tests/`). Gemini와 매체 요청은 가짜 함수로 바꾸고, 결과 폴더는 `PIPELINE_DATA_DIR`로 임시 폴더를 씀. 코드·설정을 push하면 `test.yml`이 같은 테스트를 실행
+- 동작을 바꾸면 해당 테스트도 함께 고치거나 추가
+- 실제 실행 테스트는 테스트 모드로: `uv run src/main.py --test` 또는 단계별로 `TEST_MODE=true uv run src/<단계>.py`
 - 테스트 모드에서는 결과가 `archive-test/`(커밋 제외)에 쌓이고, 중복 이력도 그 폴더만 봄. 실제 기록 `archive/`는 읽지도 쓰지도 않음
 - 테스트를 처음부터 다시 하려면 `archive-test/`를 지우고 실행 (같은 날 재실행은 이어서 처리하므로)
 - 결과 경로는 실행 위치가 아니라 `src/`의 상위 폴더 기준
 - 테스트 모드의 수집 건수는 `COLLECT_LIMIT`
 - 실제 Gemini 테스트는 하루 요청 한도를 같이 씀. 자동 실행 몫을 남겨 둘 것
-- Gemini 없이 흐름 확인: `evaluate.call_gemini`, `summarize.call_gemini`를 가짜 함수로 교체
-- 문법 확인: `python3 -m py_compile src/*.py`
 - 실제 호출 검증은 소량 후보까지만 완료 (2026-09-30). 수집 상한 규모의 후보는 미확인
 
 
@@ -79,6 +81,8 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 | `REQUEST_INTERVAL` | common | 매체 사이트 요청 간격(초) |
 | `COLLECT_MAX` | collect | 하루 수집 상한 |
 | `TEST_MODE` | common, collect | 테스트 모드. 결과 폴더를 `archive-test/`로 바꾸고 수집 건수를 `COLLECT_LIMIT`로 제한 |
+| `PIPELINE_DATA_DIR` | common | 결과 폴더를 지정한 경로로 바꿈. 자동 테스트 전용 |
+| `WEEKLY_TRENDS` | weekly | 주간 리포트의 최대 흐름 수 |
 | `COLLECT_TEST_MODE`, `COLLECT_LIMIT` | collect | 수집 건수만 제한 (결과 폴더는 그대로). 워크플로우의 수동 테스트 실행에서 사용 |
 | `LIST_N` | evaluate | 목록 건수 |
 | `MIN_SCORE` | evaluate | 목록에 올릴 최소 중요도 |
@@ -94,12 +98,14 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 
 ### 1. Collect (`src/collect.py`)
 
-- 수집 조건 (모두 충족): 발행일시가 `WINDOW_HOURS` + `WINDOW_GRACE_HOURS` 안, 링크가 `http(s)://`, 제목 또는 RSS 요약에 `ai_terms` 포함, 중복 이력에 없는 링크
+- 수집 조건 (모두 충족): 발행일시가 `WINDOW_HOURS` + `WINDOW_GRACE_HOURS` 안, 링크가 `http(s)://`, 제목 또는 RSS 요약에 `ai_terms` 포함(또는 `standalone_topics`에 적힌 주제의 키워드 포함), 중복 이력에 없는 링크
+- `standalone_topics`(보안, 신기술)는 AI 용어가 없어도 수집. 이 주제의 국문 키워드는 부분 문자열로 비교하므로 일상어와 겹치는 단어(`공격`, `유출` 등)는 넣지 않음
 - 중복 이력: 모든 날짜의 필터링 로그(선정 단계를 거친 기사)와 오늘 수집 로그. 수집만 되고 선정을 거치지 못한 기사는 이력에 넣지 않음 (선정이 실패한 날의 후보가 다음 실행에서 다시 수집되도록)
 - `WINDOW_GRACE_HOURS`는 실행 지연으로 생기는 틈을 막는 여유. 겹친 기사는 링크 중복 제거로 걸러짐
 - 발행일시를 읽지 못한 기사는 제외 (피드별 건수 출력)
 - 시간대: `naive_kst: true` 피드는 시간대 표기 없는 한국 시간이라 9시간 보정. 날짜 문자열에 시간대 표기가 있으면 보정 안 함. `KST`로 끝나는 날짜는 직접 해석
 - 키워드 일치: 영문은 앞뒤가 영문자가 아닐 때만 (복수형 `s`, `es` 허용), 국문은 부분 문자열
+- 제목 중복: 제목이 거의 같은 기사(`TITLE_SIMILARITY` 이상)는 먼저 나온 것만 남김. 설정 파일에서 앞에 적힌 매체가 우선. 같은 언어끼리만 걸러지고, 국문·영문으로 나뉜 같은 사건은 선정 단계가 거름
 - 주제: `topics`에 적힌 순서가 우선순위, 일치 없으면 `일반`. 상한 초과 시 주제 우선순위 → 최근 순으로 남김
 - 중복 이력은 레코드 단위로 읽음 (본문 안에 적힌 `[LINK]` 줄은 무시)
 - 실패: 피드 하나 실패는 재시도 없이 `[수집 오류]` 기록 후 계속 (피드 형식이 아닌 응답 포함). 전부 실패하면 `fail()`
@@ -126,6 +132,10 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
   - 국문: `**[국문 3줄 요약]**`, `#논조`
   - 그 밖: `**[기사 제목 번역]**`, `**[국문 3줄 요약]**`, `#논조`
 - 실패: 기사별로 `[요약 오류]` 기록 후 계속 (다른 기사로 보충하지 않음). 전부 실패하면 `fail()`
+- 요약하지 못한 상위 기사도 리포트에서 빼지 않고 상태를 표시 (`summary_status`): `[요약 실패]` 호출 실패, `[요약 불가]` 본문이 기사가 아님(오류 사유가 `요약 불가:`로 시작), `[요약 대기]` 시도하지 못함
+- 요약 로그의 `[MODEL]`에 요약한 모델을 기록. `manual`이면 리포트에 `[수동 요약]` 표시
+- 상태 표시는 `[…]` 형식 유지. 블로그(Jekyll)가 `{{ }}`를 Liquid 문법으로 해석해 지워 버리므로 중괄호 표기 금지
+- 다시 요약: Gemini로는 `RUN_DATE=날짜`로 summarize → publish 재실행. Gemini 없이는 `manual_summary.py export` → 작업 파일의 `answer` 채움 → `import` (같은 `parse_summary` 검증을 거침)
 
 ### 4. Publish (`src/publish.py`)
 
@@ -182,7 +192,21 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 - 2026-06-29 ~ 09-30 리포트는 구글 뉴스 기반 이전 방식. 건수가 일정하지 않고 중요도 순이 아님
 
 
+### 주간 요약 (`src/weekly.py`)
+
+- 대상: 지정한 ISO 주(기본은 실행 날짜 기준 지난주 월~일)의 요약 로그. 요약이 있는 기사만
+- 새로 기사를 읽지 않고, 이미 만든 국문 요약과 점수만 모아 Gemini 한 번 호출 (`weekly_prompt.txt`, `TREND_SCHEMA`)
+- 응답 검증: 존재하지 않는 기사 ID는 버리고, 근거 기사가 없는 흐름은 제외
+- 결과: `archive/weekly/YYYY-Www.md` (`config/weekly.md.j2`), 목록 `archive/weekly/index.md`
+- 요약 기사가 없는 주는 만들지 않음. 호출 실패는 `fail()`
+
+
 ## 워크플로우 (`.github/workflows/ai-news-pipeline.yml`)
+
+- 워크플로우 네 개: 일일 실행(`ai-news-pipeline.yml`), 주간 요약(`weekly-summary.yml`), 실행 누락 확인(`check-run.yml`), 자동 테스트(`test.yml`)
+- 일일 실행과 주간 요약은 같은 `concurrency` 그룹이라 겹치면 차례로 실행 (커밋 충돌 방지)
+- 실행 누락 확인: 그날 통계 줄이 `archive/stats/YYYY.csv`에 없으면 실패 처리해 GitHub 알림 발송. 수집 0건인 날도 줄이 없어 알림이 감 (드문 경우라 허용)
+- 자동 테스트는 코드·설정·테스트·의존성·워크플로우가 바뀐 push에만 실행 (매일의 `archive/` 자동 커밋에는 실행 안 함)
 
 - Job 간 전달: `archive/logs/`를 artifact로 (`logs-collect` → `logs-evaluate` → `logs-summarize`). 업로드는 모두 `overwrite: true` (실패한 Job만 재실행 가능). Evaluate와 Summarize의 업로드는 `if: always()`라 스크립트가 실패해도 로그를 넘김
 - 실행 날짜는 Collect Job이 한 번 정해 `RUN_DATE`로 전달 (자정 전후에도 같은 날짜 파일). `TZ=Asia/Seoul`

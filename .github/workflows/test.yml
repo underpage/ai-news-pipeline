@@ -1,0 +1,34 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+    # 매일 자동 커밋(archive/)에는 돌지 않고, 코드·설정이 바뀔 때만 실행
+    paths:
+      - 'src/**'
+      - 'config/**'
+      - 'tests/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/**'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: 테스트 (pytest)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install Dependencies
+        run: uv sync --locked
+      - name: Run Tests
+        # Gemini와 매체 사이트에는 요청하지 않는다 (테스트 안에서 가짜로 대체)
+        run: uv run --locked pytest -q

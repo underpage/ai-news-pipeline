@@ -1,0 +1,51 @@
+name: Weekly Summary
+
+on:
+  schedule:
+    # 매주 월요일 10:00 KST (UTC 01:00). 일일 실행(09:00)이 끝난 뒤 지난주 월~일을 정리
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'Week to summarize (YYYY-Www). Empty = last week'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+# 일일 파이프라인과 같은 그룹이라 커밋이 겹치지 않게 차례로 실행된다
+concurrency:
+  group: ai-news-pipeline
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Seoul
+  GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+  WEEKLY_TRENDS: ${{ vars.WEEKLY_TRENDS || '5' }}
+
+jobs:
+  weekly:
+    name: 주간 요약 (Weekly)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      WEEK: ${{ github.event.inputs.week }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install Dependencies
+        run: uv sync --locked
+      - name: Run Weekly
+        run: uv run --locked src/weekly.py $WEEK
+      - name: Commit and Push
+        run: |
+          git config --local user.email "yoojj.dev@gmail.com"
+          git config --local user.name "yjj"
+          git add archive/weekly/ || true
+          git diff --staged --quiet || (git commit -m "docs: 주간 AI 뉴스 요약" && git pull --rebase && git push)

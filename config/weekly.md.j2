@@ -1,0 +1,40 @@
+{#
+  주간 리포트 형식. 이 파일을 고치면 주간 리포트 모양이 바뀐다 (Jinja2 문법).
+
+  쓸 수 있는 값
+    week        주 (YYYY-Www)
+    start, end  그 주의 월요일, 일요일 (YYYY-MM-DD)
+    overview    이번 주 개요
+    trends      주요 흐름 목록
+      .title, .description
+      .articles   근거 기사 목록 (아래 articles 항목과 같은 값)
+    articles    그 주에 요약한 기사 전체 (중요도 순)
+      .id, .date, .title, .title_ko, .link, .source, .topic, .score, .reason, .tone, .summary_ko
+#}
+# {{ week }} ({{ start }} ~ {{ end }})
+
+{% if overview %}
+## 개요
+
+{{ overview }}
+
+{% endif %}
+{% if trends %}
+## 주요 흐름
+
+{% for t in trends %}
+### {{ loop.index }}. {{ t.title }}
+
+{{ t.description }}
+
+{% for a in t.articles %}
+- [{{ (a.title_ko or a.title) | replace("[", "(") | replace("]", ")") }}]({{ a.link }}) - {{ a.date }}
+{% endfor %}
+
+{% endfor %}
+{% endif %}
+## 이번 주 기사 ({{ articles | length }}건)
+
+{% for a in articles %}
+{{ loop.index }}. [{{ (a.title_ko or a.title) | replace("[", "(") | replace("]", ")") }}]({{ a.link }}) - {{ [a.date, a.topic.split(",")[0], a.source] | select | join(" · ") }}
+{% endfor %}

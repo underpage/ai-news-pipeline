@@ -13,7 +13,7 @@
 | 항목 | 내용 |
 |---|---|
 | 주제 | AI |
-| 키워드 | 에이전트, 개발, 모델, 보안, 산업, 규제 (국문·영문, 우선순위 순) |
+| 키워드 | 에이전트, 개발, 모델, 보안, 신기술, 산업, 규제 (국문·영문, 우선순위 순) |
 | 실행 주기 | 매일 09:00 KST (cron `0 0 * * *`, UTC 기준) |
 | 수집 범위 | 실행 시점 기준 지난 24시간에 발행된 기사 |
 | 수집 건수 | 하루 상한은 `COLLECT_MAX` |
@@ -55,26 +55,37 @@
 
 ```text
 .
-├── .github/workflows/ai-news-pipeline.yml   # 스케줄/Job 정의
+├── .github/workflows/
+│   ├── ai-news-pipeline.yml  # 일일 실행 (매일 09:00)
+│   ├── weekly-summary.yml    # 주간 요약 (매주 월요일 10:00)
+│   ├── check-run.yml         # 실행 누락 확인 (매일 12:00)
+│   └── test.yml              # 자동 테스트 (코드 변경 시)
 ├── config/
 │   ├── feeds.yml         # 뉴스 소스(RSS 피드) 목록
 │   ├── keywords.yml      # AI 용어, 주제별 키워드
-│   └── report.md.j2      # 리포트 형식 템플릿
+│   ├── report.md.j2      # 일일 리포트 형식 템플릿
+│   └── weekly.md.j2      # 주간 리포트 형식 템플릿
 ├── src/
 │   ├── main.py           # 아래 네 단계를 순서대로 한 번에 실행 (로컬용)
+│   ├── manual_summary.py # 요약 실패 기사를 Gemini 없이 다시 요약해 채움 (로컬용)
 │   ├── common.py         # 공용 모듈: 로그 읽기/쓰기, Gemini 호출(간격 조절·백오프). 직접 실행하지 않음
 │   ├── collect.py        # 1. RSS 수집, 기간·AI 기사 필터, 주제 분류, 중복 제거
 │   ├── evaluate.py       # 2. 목록 선정, 상위 기사 본문 수집
 │   ├── summarize.py      # 3. 요약, 감성 태그
-│   ├── publish.py        # 4. 마크다운 리포트 생성
+│   ├── publish.py        # 4. 마크다운 리포트 생성, 통계 기록
+│   ├── weekly.py         # 주간 요약 (지난주 요약 기사로 흐름 정리)
 │   └── prompts/
 │       ├── filter_prompt.txt    # 추출 기준, 중요도 기준
-│       └── summary_prompt.txt   # 요약/번역·감성 태그 프롬프트
+│       ├── summary_prompt.txt   # 요약/번역·감성 태그 프롬프트
+│       └── weekly_prompt.txt    # 주간 흐름 정리 프롬프트
+├── tests/                # 자동 테스트 (Gemini·매체 요청 없이 실행)
 ├── archive/              # 실행 결과 (매일 누적, 자동 커밋)
 │   ├── stats/YYYY.csv    # 연도별 실행 통계 (하루 한 줄)
 │   ├── logs/YYYY/MM/     # 연월별 단계 로그 (파일명이 날짜)
-│   └── news/YYYY/MM/     # 연월별 리포트 (파일명이 날짜)
+│   ├── news/YYYY/MM/     # 연월별 리포트 (파일명이 날짜)
+│   └── weekly/YYYY-Www.md # 주간 리포트
 ├── archive-test/         # 테스트 실행 결과 (커밋 제외)
+├── summary-work/         # 수동 요약 작업 파일 (커밋 제외)
 ├── pyproject.toml        # 의존성 정의
 ├── uv.lock               # 의존성 잠금 파일
 ├── .env                  # 환경 변수 (커밋 금지)
@@ -118,15 +129,36 @@ uv run src/publish.py
 - `--test`로 실행하면 결과가 `archive-test/`에 따로 쌓이고 커밋되지 않음. 실제 기록과 중복 이력에 영향 없음
 - 단계별로 테스트할 때는 명령 앞에 `TEST_MODE=true`를 붙임
 
+**주간 요약**
+
+```bash
+uv run src/weekly.py            # 지난주
+uv run src/weekly.py 2026-W40   # 지정한 주
+```
+
+**자동 테스트**
+
+```bash
+uv run pytest                   # Gemini와 매체 사이트에 요청하지 않음
+```
+
+**요약 실패 기사 다시 요약 (Gemini 없이)**
+
+```bash
+uv run src/manual_summary.py export 2026-10-01   # summary-work/2026-10-01.json 생성
+# 각 항목의 prompt를 아무 LLM에 주고, 받은 JSON을 answer에 넣음
+uv run src/manual_summary.py import 2026-10-01   # 검증 후 요약 로그에 넣고 리포트 다시 생성
+```
+
 
 ## 선정 기준
 
 - 기준은 `src/prompts/filter_prompt.txt`에 정의, 이 파일을 통해 기준 변경
-- 선정 관점: AI 에이전트 개발 실무에 도움이 되는가
+- 선정 관점: AI·보안·신기술·AI 에이전트의 현재 상태와 방향을 파악하는 데 중요한가
 
 **제외**
 
-- AI와 직접 관련 없는 기사
+- AI, 보안, 신기술 어느 쪽과도 관련 없는 기사
 - 홍보성 보도자료, 광고, 행사 안내, 인사·수상 소식
 - 주가·투자 전망, 추측, 의견 위주 칼럼
 - 같은 사건의 중복 기사 (국문·영문 포함, 1건만 선정)
@@ -135,7 +167,7 @@ uv run src/publish.py
 
 **중요도** (항목별 점수를 더해 높은 순으로 나열, 배점은 프롬프트에 정의)
 
-- 에이전트 개발 관련성
+- 기술적 파급력
 - 실무 활용도
 - 새로움
 - 근거의 확실성
@@ -144,9 +176,10 @@ uv run src/publish.py
 ## 리포트 구성
 
 - 저장 위치: `archive/news/YYYY/MM/YYYY-MM-DD.md`, 월별 목록은 같은 폴더의 `index.md`
-- **요약 기사**: 중요도 순, 3줄 요약과 감성 태그(긍정/부정/중립)
+- **요약 기사**: 중요도 순, 3줄 요약과 감성 태그(긍정/부정/중립). 요약하지 못해도 목록에서 빼지 않고 `[요약 실패]`, `[요약 불가]`, `[요약 대기]`로 표시. 수동으로 채운 요약은 `[수동 요약]`
 - **뉴스 목록**: 선정한 기사 전체를 중요도 순으로 제목과 원문 링크
 - 국문 기사는 국문 요약만, 영문 기사는 번역 제목과 영문/국문 요약
+- **주간 리포트**: 매주 월요일 지난주 요약 기사로 개요와 주요 흐름을 정리 (`archive/weekly/`)
 
 
 ## 설정

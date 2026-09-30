@@ -17,6 +17,9 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # 테스트 모드(TEST_MODE=true)의 결과는 archive-test/ 에 따로 쌓아 실제 기록과 섞이지 않게 한다
 TEST_MODE = os.environ.get("TEST_MODE", "false").lower() in {"1", "true", "yes", "y"}
 DATA_DIR = os.path.join(ROOT_DIR, "archive-test" if TEST_MODE else "archive")
+# 자동 테스트(pytest)는 결과 폴더를 임시 폴더로 바꿔 실제 기록을 건드리지 않는다
+if os.environ.get("PIPELINE_DATA_DIR"):
+    DATA_DIR = os.environ["PIPELINE_DATA_DIR"]
 LOGS_DIR = os.path.join(DATA_DIR, "logs")
 NEWS_DIR = os.path.join(DATA_DIR, "news")
 CONFIG_DIR = os.path.join(ROOT_DIR, "config")

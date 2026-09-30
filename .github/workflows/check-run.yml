@@ -1,0 +1,31 @@
+name: Check Daily Run
+
+on:
+  schedule:
+    # 매일 12:00 KST (UTC 03:00). 09:00 실행이 남긴 오늘 자 통계 줄이 있는지 확인
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: 실행 누락 확인 (Check)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Today's Stats Row
+        shell: bash
+        run: |
+          today=$(TZ=Asia/Seoul date +%F)
+          stats="archive/stats/${today:0:4}.csv"
+          if grep -q "^${today}," "$stats" 2>/dev/null; then
+            echo "오늘(${today}) 실행 기록 있음"
+            grep "^${today}," "$stats"
+          else
+            # 실행이 안 됐거나, 수집 단계에서 멈췄거나, 수집 기사가 0건이었던 경우
+            echo "::error::오늘(${today}) 실행 기록이 ${stats}에 없습니다. Actions에서 AI News Pipeline 실행 여부를 확인하세요."
+            exit 1
+          fi

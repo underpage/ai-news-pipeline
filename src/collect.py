@@ -2,6 +2,7 @@ import os
 import glob
 import html
 import calendar
+import difflib
 import email.utils
 import datetime
 import re
@@ -13,6 +14,8 @@ WINDOW_HOURS = 24
 # 실행이 어제보다 늦게 시작해도 그 사이 기사를 놓치지 않도록 수집 기간에 더하는 여유(시간)
 WINDOW_GRACE_HOURS = 2
 SUMMARY_LIMIT = 500
+# 제목이 이 비율 이상 비슷하면 같은 기사로 보고 하나만 남긴다 (0~1)
+TITLE_SIMILARITY = 0.85
 # 주제 키워드에 걸리지 않은 AI 기사에 붙이는 주제
 DEFAULT_TOPIC = "일반"
 
@@ -32,6 +35,8 @@ FEEDS = load_config("feeds.yml")["feeds"]
 _keywords = load_config("keywords.yml")
 AI_TERMS = _keywords["ai_terms"]
 TOPIC_KEYWORDS = _keywords["topics"]
+# AI 용어가 없어도 수집하는 주제 (보안, 신기술 등)
+STANDALONE_TOPICS = _keywords.get("standalone_topics") or []
 
 
 def check_config():
@@ -53,6 +58,9 @@ def check_config():
     for topic, terms in TOPIC_KEYWORDS.items():
         if not is_text_list(terms):
             raise ValueError(f"config/keywords.yml: 주제 '{topic}'의 키워드는 비어 있지 않은 문자열 목록이어야 합니다.")
+    for topic in STANDALONE_TOPICS:
+        if topic not in TOPIC_KEYWORDS:
+            raise ValueError(f"config/keywords.yml: standalone_topics의 '{topic}'이 topics에 없습니다.")
 
 
 check_config()
@@ -162,6 +170,38 @@ def clean_text(text):
     return " ".join(text.split())
 
 
+def normalize_title(title):
+    """비교용 제목: 소문자, 끝의 매체명과 문장부호를 지우고 공백을 하나로."""
+    title = re.sub(r"\s+[-|–—]\s+[^-|–—]{1,40}$", "", title.lower())
+    title = re.sub(r"[^\w\s]", " ", title)
+    return " ".join(title.split())
+
+
+def is_similar_title(a, b):
+    if not a or not b:
+        return False
+    if a == b:
+        return True
+    matcher = difflib.SequenceMatcher(None, a, b)
+    # 빠른 상한 검사로 대부분의 쌍을 먼저 걸러낸다
+    return matcher.real_quick_ratio() >= TITLE_SIMILARITY and matcher.quick_ratio() >= TITLE_SIMILARITY \
+        and matcher.ratio() >= TITLE_SIMILARITY
+
+
+def remove_similar_titles(candidates, known_titles=()):
+    """제목이 거의 같은 기사를 하나만 남긴다. 먼저 나온 기사(설정 파일에서 앞에 적힌 매체)를 남긴다.
+    같은 언어끼리만 걸러지며, 국문과 영문으로 나뉜 같은 사건은 선정 단계에서 걸러진다."""
+    kept = []
+    seen = [normalize_title(title) for title in known_titles]
+    for news in candidates:
+        normalized = normalize_title(news["title"])
+        if any(is_similar_title(normalized, other) for other in seen):
+            continue
+        seen.append(normalized)
+        kept.append(news)
+    return kept
+
+
 def get_collect_max():
     try:
         return max(1, int(os.environ.get("COLLECT_MAX", "300")))
@@ -170,12 +210,15 @@ def get_collect_max():
 
 
 def match_topics(title, summary_text):
-    """AI 기사가 아니면 빈 목록, AI 기사면 일치한 주제 목록(없으면 기본 주제)을 돌려준다."""
+    """수집 대상이 아니면 빈 목록, 대상이면 일치한 주제 목록을 돌려준다.
+    AI 기사는 주제가 없어도 기본 주제로 수집하고, AI 용어가 없는 기사는 standalone_topics에 해당할 때만 수집한다."""
     text = f"{title} {summary_text}"
-    if not AI_PATTERN.search(text):
-        return []
     topics = [topic for topic, pattern in TOPIC_PATTERNS.items() if pattern.search(text)]
-    return topics or [DEFAULT_TOPIC]
+    if AI_PATTERN.search(text):
+        return topics or [DEFAULT_TOPIC]
+    if any(topic in STANDALONE_TOPICS for topic in topics):
+        return topics
+    return []
 
 
 def topic_priority(topics):
@@ -251,7 +294,12 @@ def main():
         fail("모든 RSS 피드 수집에 실패했습니다.")
 
     # 상한은 하루 기준이다. 같은 날 다시 실행하면 이미 수집한 건수만큼 줄인다
-    collected_today = sum(1 for record in read_records("수집") if record.get("title"))
+    collected_titles = [record["title"] for record in read_records("수집") if record.get("title")]
+    collected_today = len(collected_titles)
+    before = len(candidates)
+    candidates = remove_similar_titles(candidates, collected_titles)
+    if before > len(candidates):
+        print(f"\n -> 제목이 거의 같은 기사 {before - len(candidates)}개를 중복으로 제외했습니다.")
     limit = max(0, (get_test_limit() or get_collect_max()) - collected_today)
     # 상한을 넘으면 주제 우선순위가 높고 최근인 기사부터 남긴다
     candidates.sort(key=lambda news: news["published"], reverse=True)

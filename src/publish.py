@@ -21,8 +21,32 @@ def by_score(news_list):
     return sorted(news_list, key=lambda news: -score(news))
 
 
-def load_summarized_news():
-    return by_score([news for news in read_records("요약") if news.get("title")])
+def load_summary_targets():
+    """요약 대상 기사(본문을 가져온 상위 기사)와 그 요약. 요약에 실패한 기사도 빼지 않고 상태만 표시한다."""
+    targets = [record for record in read_records("필터링") if record.get("title") and record.get("body")]
+    summaries = {record["link"]: record for record in read_records("요약") if record.get("title")}
+    errors = read_errors("요약")
+    failed_links = {target for target, _ in errors}
+    unavailable_links = {target for target, reason in errors if reason.startswith("요약 불가")}
+
+    items = []
+    for target in targets:
+        summary = summaries.get(target["link"])
+        if summary:
+            items.append({**target, **summary, "summary_status": "ok"})
+        else:
+            # unavailable: 본문이 기사가 아니라 요약할 수 없음 / failed: 요약 호출이 실패함
+            # pending: 요약을 시도하지 못함 (실행 중단 등)
+            if target["link"] in unavailable_links:
+                status = "unavailable"
+            elif target["link"] in failed_links:
+                status = "failed"
+            else:
+                status = "pending"
+            items.append({**target, "summary": "", "summary_status": status})
+    target_links = {target["link"] for target in targets}
+    items += [{**summary, "summary_status": "ok"} for link, summary in summaries.items() if link not in target_links]
+    return by_score(items)
 
 
 def load_listed_news():
@@ -54,6 +78,9 @@ def render_report(report_date, news_list, listed_news):
             "summary_original": eng_sum,
             "summary_ko": kor_sum,
             "summary_raw": item.get("summary", ""),
+            "summary_status": item.get("summary_status", "ok"),
+            # manual: Gemini가 아닌 방법으로 채운 요약 (manual_summary.py)
+            "summary_source": "manual" if item.get("model") == "manual" else "gemini",
         })
 
     summarized_links = {item["link"] for item in news_list}
@@ -263,7 +290,7 @@ def write_stats():
 
 def main():
     print("--- 4. 마크다운 발행 파이프라인 시작 ---")
-    news_list = load_summarized_news()
+    news_list = load_summary_targets()
     save_to_markdown(news_list, load_listed_news())
     write_stats()
     print("--- 4. 마크다운 발행 파이프라인 종료 ---")

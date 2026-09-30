@@ -14,3 +14,7 @@ __pycache__/
 
 # 테스트 실행 결과
 archive-test/
+
+# 수동 요약 작업 파일
+summary-work/
+.pytest_cache/

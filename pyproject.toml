@@ -17,3 +17,15 @@ dependencies = [
 
 [tool.uv]
 package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    # feedparser가 updated_parsed 접근 시 내는 예고성 경고
+    "ignore::DeprecationWarning:feedparser.*",
+]
