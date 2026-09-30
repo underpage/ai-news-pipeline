@@ -1,0 +1,414 @@
+[LINK] https://news.google.com/rss/articles/CBMib0FVX3lxTFA4WUdjVUlCbHlMX0gyVjNkdHJPTHc4bzh4S3F3OGpQX2czVDdKZHdjQWVzZFloc2dKR1BBejJsN1Z6ZXE2MTVGWjZKZ2NaOUIwa1BqSTVhc29lellTcDJ0UVh5VG9oUXl6QmhQNXpEUQ?oc=5
+[STATUS] SKIP (Score: 0)
+---
+[TITLE] XDOF, just three months out of stealth, is in talks for a Series B at a $1.2B valuation
+[LINK] https://techcrunch.com/2026/09/04/xdof-just-three-months-out-of-stealth-is-in-talks-for-a-series-b-at-a-1-2b-valuation/
+[PUBLISHED] Fri, 04 Sep 2026 23:36:14 +0000
+[BODY]
+XDOF, just three months out of stealth, is in talks for a Series B at a $1.2B valuation | TechCrunch
+Disrupt 2026: OpenAI, Anthropic, Replit, and more take over 6 industry stages.
+25% off tickets now
+Back by popular demand:
+Save up to $300 on Disrupt
+Close
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+Image Credits:
+XDOF
+Robotics
+XDOF, just three months out of stealth, is in talks for a Series B at a $1.2B valuation
+Marina Temkin
+4:36 PM PDT · September 4, 2026
+Less than three months after emerging from stealth,
+XDOF
+, a startup that collects real-world teleoperation data for training general-purpose robots, is in late-stage talks to raise a Series B at a valuation of about $1.2 billion valuation led by 8VC, several people with knowledge of the deal said.
+XDOF was co-founded by UC Berkeley researchers Philipp Wu (CEO) and Fred Shentu (CTO) in 2024. TechCrunch reported on the startup’s
+$70 million Series A
+in June, with participation from Thrive Capital, Andreessen Horowitz, Lux, and Spark Capital. XDOF wasn’t planning to raise again so soon after that round. But the company’s rapid growth — with annualized revenue approaching $50 million — prompted VCs to approach it about a new round, the people said.
+TechCrunch was unable to learn the total capital being raised or whether the valuation includes the new funding. The terms of the deal are not final and could still change.
+XDOF and 8VC didn’t respond to our request for comment.
+The startup aims to build the data pipelines, collection tools, and annotation systems that frontier AI labs and robotics companies can’t easily build themselves, essentially acting as an outsourced data-supply chain for the robotics industry.
+As a PhD student, Wu was studying how robots learn from large datasets. One big impediment to his research was the lack of “large-scale data to work with,” he told TechCrunch in June.
+So he teamed up with Shentu on a project called GELLO, a low-cost teleoperation system that allows a human operator to control a robotic arm remotely in order to generate training data. Their work led to an influential paper in robotics.
+That research formed the foundation for XDOF, which investors now describe as the Scale AI or Mercor for physical robotics, a reference to the data-labeling giants that helped fuel the AI boom. Unlike LLMs, which initially trained on the entirety of the internet, physical robots don’t have an e
+---
+[TITLE] OpenAI’s rogue agents keep escaping, with no formal process to investigate them
+[LINK] https://techcrunch.com/2026/09/04/openais-rogue-agents-keep-escaping-with-no-formal-process-to-investigate-them/
+[PUBLISHED] Fri, 04 Sep 2026 23:15:11 +0000
+[BODY]
+OpenAI's rogue agents keep escaping, with no formal process to investigate them | TechCrunch
+Disrupt 2026: OpenAI, Anthropic, Replit, and more take over 6 industry stages.
+25% off tickets now
+Back by popular demand:
+Save up to $300 on Disrupt
+Close
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+Image Credits:
+akinbostanci
+(opens in a new window)
+/ Getty Images
+AI
+OpenAI’s rogue agents keep escaping, with no formal process to investigate them
+Rebecca Bellan
+4:15 PM PDT · September 4, 2026
+OpenAI is at the center of
+another agent swarm incident.
+Researchers say the company’s internally deployed agents took over an obscure German-language wiki in May and June, using it to coordinate on evaluations and swap methods to evade OpenAI’s own controls (OpenAI has not yet confirmed the swarm came from the company).
+The revelation surfaces days after METR and Redwood Research published their account of July’s Hugging Face breach. In July, a swarm of OpenAI agents worked together to escape their sandbox during a cybersecurity evaluation and
+break into Hugging Face’s servers
+. A subsequent swarm then picked up techniques from the first and used them to gain administrator access to a research cluster within OpenAI’s own infrastructure. OpenAI brought in
+METR
+and Redwood to investigate the Hugging Face portion of the incident, but the scope of their investigation stopped short of the compromise of OpenAI’s own infrastructure.
+When an AI agent breaks out of its intended constraints, who is responsible for figuring out what happened and why? Right now, the answer is: whoever the lab decides to let in, on whatever terms it decides to set.
+Now, as another incident comes to light — in the aftermath of similar episodes
+involving models from Meta and Anthropic
+— AI safety researchers are arguing with greater urgency that serious incidents should result in independent post-incident investigations rather than leaving it up to the labs to determine when outsiders are brought in and what they are allowed to examine.
+“The results are fundamentally difficult to control and have significant risk of leaking out of the lab,” Jacob Steinhardt, founder and CEO of nonprofit research lab Transluce, said Wednesday during an AI safety media briefing. “We need to hold this technology to at least the same standards we hold other high-risk scientific research to.”
+While it’s laudable that OpenAI invited METR an
+---
+[TITLE] AI compute provider Nscale is looking for $3.5B in pre-IPO financing
+[LINK] https://techcrunch.com/2026/09/04/ai-compute-provider-nscale-is-looking-for-3-5b-in-pre-ipo-financing/
+[PUBLISHED] Fri, 04 Sep 2026 21:12:11 +0000
+[BODY]
+AI compute provider Nscale is looking for $3.5B in pre-IPO financing | TechCrunch
+Disrupt 2026: OpenAI, Anthropic, Replit, and more take over 6 industry stages.
+25% off tickets now
+Back by popular demand:
+Save up to $300 on Disrupt
+Close
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+In Brief
+Posted:
+2:12 PM PDT · September 4, 2026
+Image Credits:
+David Paul Morris/Bloomberg / Getty Images
+Lucas Ropek
+AI compute provider Nscale is looking for $3.5B in pre-IPO financing
+Nscale, a British AI infrastructure company founded just two years ago,
+has said
+it may go public as early as later this month. Ahead of that expected IPO, the company is reportedly in talks to raise an additional $3.5 billion.
+Bloomberg
+reported
+Friday that the company is looking to sell $1.5 billion in convertible notes — a type of loan that can later convert into company stock — to a group of investors, while also seeking an additional $2 billion in financing from Nvidia.
+Nvidia
+also participated
+in the firm’s
+Series B funding round
+in March, a $1.1 billion raise led by investment fund Aker. Nscale hailed its round as “the largest Series B in European history.” The company’s Series A round, in December of 2024,
+raised $155 million
+.
+TechCrunch reached out to Nscale and Nvidia for comment.
+AI infrastructure startups have seen immense growth amid the current era of AI enthusiasm, wherein compute has become a competitive currency.
+Nscale recently
+signed a large deal
+with Anthropic worth approximately $45 billion. Earlier this week, reports emerged that Nscale had been telling potential investors that it has approximately $103 billion in revenue following the deal. That figure isn’t current sales; it’s a projection based on signed customer leases, according to
+The Information
+.
+Topics
+AI
+,
+compute
+,
+In Brief
+,
+nscale
+,
+nvidia
+October 13 – 15
+San Francisco
+Don’t miss out
+. The startup community will gather to answer a pivotal question: How do you build sustainably in the AI era?
+REGISTER NOW
+Newsletters
+See More
+Subscribe for the industry’s biggest tech news
+TechCrunch Daily News
+Every weekday and Sunday, you can get the best of TechCrunch’s coverage.
+TechCrunch Mobility
+TechCrunch Mobility is your destination for transportation news and insight.
+Startups Weekly
+Startups are the core of TechCrunch, so get our best coverage delivered weekly.
+StrictlyVC
+Provides movers and shakers with the info they need to sta
+---
+[LINK] https://techcrunch.com/video/what-will-apples-john-ternus-era-look-like/
+[STATUS] SKIP (Score: 0)
+---
+[TITLE] Another swarm of OpenAI agents reached the open internet without the frontier lab’s knowledge
+[LINK] https://techcrunch.com/2026/09/04/another-swarm-of-openai-agents-reached-the-open-internet-without-the-frontier-labs-knowledge/
+[PUBLISHED] Fri, 04 Sep 2026 16:21:11 +0000
+[BODY]
+Another swarm of OpenAI agents reached the open internet without the frontier lab's knowledge | TechCrunch
+Disrupt 2026: OpenAI, Anthropic, Replit, and more take over 6 industry stages.
+25% off tickets now
+Back by popular demand:
+Save up to $300 on Disrupt
+Close
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+Image Credits:
+Collusion.wiki
+AI
+Another swarm of OpenAI agents reached the open internet without the frontier lab’s knowledge
+Tim Fernholz
+9:21 AM PDT · September 4, 2026
+A group of independent AI researchers
+discovered
+that internally deployed OpenAI agents began posting on an obscure German wiki forum in order to collaborate on evaluations. They appear to have worked together for over a month without OpenAI’s knowledge.
+A spokesperson for the frontier lab would not say whether these agents were indeed from OpenAI, or when the lab became aware of their actions. They noted that OpenAI had not been given a chance to review the researchers’ findings before they were published today but said that the AI model maker is “now carefully reviewing its contents and will take any necessary next steps.”
+After OpenAI
+revealed
+that agents working on an internal evaluation were able to access the open internet and exploit Hugging Face, a group of researchers — Nightingale CEO Sydney Von Arx, AI researcher Cormac Slade Byrd, Redwood Research’s Spencer Kitts, and AI Futures Project’s Thomas Larsen — began searching for evidence of other rogue AI agents.
+They put themselves in the agents’ shoes to figure out their needs and deployed their own LLM to identify likely places the agents might congregate. They then identified a wiki-hosting service that would be particularly vulnerable: The DseWiki is 25 years old but had just 10 edits in the last 20 years — before the agents arrived.
+Starting on May 11, the researchers tracked agents, many with
+OpenAI identifiers in their names
+, trying and finally succeeding in editing the German wiki site. By mid-June, the agents were actively trading tips on how to answer web search questions posed under time limits, sharing answers to pass the tests. A human moderator apparently noticed these posts and started deleting them, seeing them as spam, which the agents fought back against, trying to hide their posts from alphabetical sorting by beginning each with the string “ZZZ.”
+“The administrator spent the next 5 days fighting a losing battle against t
+---
+[LINK] https://techcrunch.com/podcast/apples-ternus-era-begins-as-nvidia-bets-on-the-whole-ai-stack/
+[STATUS] SKIP (Score: 0)
+---
+[평가 오류] https://techcrunch.com/2026/09/04/googles-gemini-spark-can-now-manage-your-google-photos-library/ - API 호출 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 47.777443199s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '47s'}]}}
+---
+[평가 오류] https://techcrunch.com/2026/09/03/the-sameness-problem-behind-those-unappetizing-ai-generated-menus/ - API 호출 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 47.604119341s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '47s'}]}}
+---
+[평가 오류] https://techcrunch.com/2026/09/03/crusoe-reportedly-raises-3b-at-a-30b-valuation/ - API 호출 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 47.428152599s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '47s'}]}}
+---

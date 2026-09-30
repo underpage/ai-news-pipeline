@@ -1,0 +1,78 @@
+{#
+  일일 리포트 형식. 이 파일을 고치면 리포트 모양이 바뀐다 (Jinja2 문법).
+
+  쓸 수 있는 값
+    date                 실행 날짜 (YYYY-MM-DD)
+    articles             요약한 기사 목록 (중요도 순)
+      .rank              순위
+      .title             원문 제목
+      .title_ko          번역 제목 (국문 기사는 빈 값)
+      .published         발행일시
+      .topic             주제
+      .score             중요도 점수 (0~10)
+      .reason            선정 이유 (선정 단계에서 이 기사를 고른 이유 한 문장)
+      .tone              논조 (긍정 / 부정 / 중립)
+      .source            매체 이름
+      .link              원문 주소
+      .summary_original  원문 언어 요약 3줄 (영문 기사만, 그 밖에는 빈 목록)
+      .summary_ko        국문 요약 3줄
+      .summary_raw       요약을 나누어 읽지 못했을 때의 원본 글
+    listed               목록으로 선정한 기사 전체 (중요도 순)
+      .rank, .title, .link, .topic, .source, .published, .score
+      .summarized        위에서 요약한 기사면 참
+#}
+# {{ date }}
+
+{% for a in articles %}
+## {{ a.rank }}. {{ a.title }}
+
+{% if a.title_ko %}
+- **번역 제목**: {{ a.title_ko }}
+{% endif %}
+{% if a.published %}
+- **날짜**: {{ a.published }}
+{% endif %}
+{% if a.topic %}
+- **주제**: {{ a.topic }}
+{% endif %}
+{% if a.score %}
+- **중요도**: {{ a.score }}/10{% if a.reason %} - {{ a.reason }}{% endif %}
+
+{% endif %}
+{% if a.tone %}
+- **태그**: {{ a.tone }}
+{% endif %}
+{% if a.source %}
+- **출처**: {{ a.source }}
+{% endif %}
+- **링크**: [원문 기사]({{ a.link }})
+
+{% if a.summary_original %}
+### 요약
+{% for line in a.summary_original %}
+- {{ line }}
+{% endfor %}
+
+### 번역
+{% for line in a.summary_ko %}
+- {{ line }}
+{% endfor %}
+{% elif a.summary_ko %}
+### 요약
+{% for line in a.summary_ko %}
+- {{ line }}
+{% endfor %}
+{% else %}
+### 요약
+{{ a.summary_raw }}
+{% endif %}
+
+{% endfor %}
+{% if listed %}
+## 뉴스 목록 ({{ listed | length }}건)
+
+{% for n in listed %}
+{{ n.rank }}. {% if n.summarized %}★ {% endif %}[{{ n.title }}]({{ n.link }}){% if n.topic or n.source or n.published %} - {{ [n.topic, n.source, n.published] | select | join(" · ") }}{% endif %}
+
+{% endfor %}
+{% endif %}

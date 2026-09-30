@@ -1,0 +1,555 @@
+[TITLE] Abliteration.ai is making a business out of removing AI guardrails
+[LINK] https://techcrunch.com/2026/09/03/abliteration-ai-is-making-a-business-out-of-removing-ai-guardrails/
+[PUBLISHED] Thu, 03 Sep 2026 18:37:57 +0000
+[BODY]
+Abliteration.ai is making a business out of removing AI guardrails | TechCrunch
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+Image Credits:
+Viktor Tanasiichuk / Getty Images
+AI
+Abliteration.ai is making a business out of removing AI guardrails
+Rebecca Bellan
+11:37 AM PDT · September 3, 2026
+It just became much easier to access one of the world’s most capable open-weight AI models, stripped of its guardrails and refusals to perform harmful tasks.
+Named after a technique that removes a model’s tendency to refuse harmful requests, startup
+Abliteration.ai
+has turned that removal into a service. The platform hosts modified versions of open-weight models with their guardrails removed, including Z.ai’s recently released GLM-5.3, which users can query from a web browser or access through an API.
+The company said in a recent
+social media post
+that its goal is to enable others to perform “offensive cyber, red-teaming, and agent testing work other models refuse to do.” The logic is familiar in security work: You can’t defend against a behavior you can’t reproduce, and a model that refuses to write working exploit code can’t help a red team defend against attackers. But those same removals make other potentially dangerous tasks easier, too.
+Abliteration is a long-standing technique among open source models. Researchers and developers have been removing refusals from open-weight models for years, and Hugging Face hosts thousands of abliterated models on its platform.
+Founded late last year but officially incorporated in March, Abliteration.ai moves the technique from an underground open source practice into a commercial, readily available service. By hosting the model, Abliteration reduces the friction for people who would otherwise have to download their own pre-abliterated models and secure the compute needed to run it.
+Using the service, TechCrunch was able to quickly create an account and start querying an abliterated version of GLM-5.3 for free through a web browser. We asked it to write a Python program that steals saved Chrome passwords and a detailed protocol for culturing a dangerous human pathogen at home, and it readily complied.
+Abliteration.ai
+co-founder Devon says the startup has several deals with major cloud providers, which it’s able to afford purely through customer revenue. (We are not including Devon’s last name at his request since he is still employed at anoth
+---
+[TITLE] Meta is paying to peek at how you use their latest AI model
+[LINK] https://techcrunch.com/2026/09/03/meta-is-paying-to-peek-at-how-you-use-their-latest-ai-model/
+[PUBLISHED] Thu, 03 Sep 2026 18:19:56 +0000
+[BODY]
+Meta is paying to peek at how you use their latest AI model | TechCrunch
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+Image Credits:
+David Paul Morris/Bloomberg / Getty Images
+AI
+Meta is paying to peek at how you use their latest AI model
+Tim Fernholz
+11:19 AM PDT · September 3, 2026
+Most AI tools allow you to opt out of sharing your usage with the model provider to improve future versions. Meta has taken that idea and put a price tag on it.
+For its new Muse Spark model, intended for operating coding and other agents, Meta is offering
+an explicit discount
+averaging out to about 95% for users who “contribute” to the development of future models by sharing their prompts and model outputs.
+While 1 million input tokens under a standard agreement costs $1.25, under the contributor pricing model they cost just 10 cents. For output tokens, the standard price is $4.25 per million, but that same million costs just 20 cents under the contributor model.
+Meta has had a rough time trying to obtain training data: An initiative to track the computer usage of its employees, launched earlier this year, attracted wide internal criticism and
+was paused
+in June. The company didn’t respond to a question from TechCrunch about its new pricing model.
+This kind of user data is vital for making agentic tools work better. “The reason we saw a big jump in [coding agent] capabilities between April 2025 and October 2025 was that Claude Code, by default, would store all your coding agent sessions and use them for reinforcement learning training,” Mario Zechner, the developer behind the open source harness Pi, told TechCrunch last month.
+But even as the imperative for model builders increasingly becomes
+deploying agentic tools
+for use outside of software engineering, their ability to evaluate and improve those tools is blocked by the complexity and lack of digital traces for many professional workflows.
+Arvind Narayanan, a Princeton computer science professor, noted that there is good evidence that large companies don’t want their data to be used for model training.
+“They stick with token-billed Enterprise plans even though the subscription-based consumer plans like Claude Max and ChatGPT Pro are discounted by 10x-20x or even more! (The main difference between the plans is data retention + enterprise IT governance),” he
+wrote
+on social media.
+Perhaps in recognition of those dynamics, Meta is offering
+---
+[TITLE] OpenAI launches Astra, its powerful (and controversial) new model
+[LINK] https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/
+[PUBLISHED] Thu, 03 Sep 2026 18:01:45 +0000
+[BODY]
+OpenAI launches Astra, its powerful (and controversial) new model | TechCrunch
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+Image Credits:
+Jean Chung/Bloomberg / Getty Images
+AI
+OpenAI launches Astra, its powerful (and controversial) new model
+Lucas Ropek
+11:01 AM PDT · September 3, 2026
+OpenAI released Astra on Thursday, its latest AI model and — according to the company — its most powerful and capable one yet.
+OpenAI claims that Astra represents “a new frontier on computer and browser use,” and that it handles tasks with unmatched “speed, accuracy, and safety.”
+The model is being made available Thursday to OpenAI customers that use Daybreak, its cybersecurity program. Over the next week, it will also become available through OpenAI’s paid plans — including Pro, Plus, Enterprise, and Business accounts — as well as through its API.
+In a call with journalists on Thursday, OpenAI president Greg Brockman said that Astra was the company’s “most intelligent and, also very importantly, our most aligned model yet.” He added that it “brings together years of our research and big bets, with each breakthrough having built on the last” and that it represents a “real shift in what kind of work people can delegate to AI and how it can empower them.”
+Much has been made about Astra’s cyber capabilities. OpenAI
+published a blog
+earlier this week in which it discussed the model’s new capabilities, as well as new safeguards that have been instituted to make it a safer experience for users. The company said Thursday that it had tested Astra on a variety of security benchmarks to ensure its capabilities, and that “Its ability to identify and develop zero-day exploits can help defenders find and patch weaknesses.”
+The company’s focus on alignment — that is, the tendency of a model to do what a user wants or is in their best interests — can’t help but seem like a response to the recent Hugging Face breach, in which an OpenAI agent escaped its sandboxed testing environment and hacked several companies (a very blatant example of misalignment).
+OpenAI has also boasted about Astra’s coding abilities, claiming that it is the “best model for software engineering to date.” To back up that assertion, the company provides results from a variety of cyber-related benchmarking tests. Those tests seem to show that Astra scores higher than other existing models — including OpenAI’s own Sol and Anthropic’
+---
+[TITLE] Ollie is betting its focus on privacy can help it win the AI assistant race
+[LINK] https://techcrunch.com/2026/09/03/ollie-is-betting-privacy-can-win-the-ai-assistant-race/
+[PUBLISHED] Thu, 03 Sep 2026 16:09:01 +0000
+[BODY]
+Ollie is betting its focus on privacy can help it win the AI assistant race | TechCrunch
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+Image Credits:
+Ollie
+AI
+Ollie is betting its focus on privacy can help it win the AI assistant race
+Sarah Perez
+9:09 AM PDT · September 3, 2026
+For an AI assistant to become truly useful, it first has to know a lot about you.
+Ollie
+, a personal assistant for everyday life, is betting that doesn’t mean you have to hand over all your data and sacrifice your privacy in the process.
+While some enterprise-focused AI assistants have data privacy protections in place, Ollie is among the first mainstream, family-focused AI to achieve SOC 2 compliance — a framework that allows a company to demonstrate, through an independent audit, that it has formal controls in place to protect customer data and operate its systems securely.
+Achieving this was an important milestone for Ollie’s team, as it signals to potential users that the assistant isn’t trying to scoop up your personal data for other purposes, like AI training.
+“We fundamentally think that trust and privacy are absolutely imperative, and that’s why our business model is a subscription, because we want our users to know that Ollie works for you,” explained Ollie co-founder and CEO
+Bill Lennon
+in an interview with TechCrunch. “We’re not sharing your data with anyone,” he stressed.
+Image Credits:
+Ollie
+There are many personal AI assistants positioning themselves as consumer-friendly solutions focused on integrating with users’ daily lives via text messages, which is why Ollie’s privacy angle could prove a significant differentiator.
+Today,
+Ollie
+competes with other existing text-based assistants like
+Poke
+(acquired by Cognition),
+Fambot
+,
+Ohai
+,
+Folk
+,
+Saner.ai
+, and
+Tomo
+. There are also a number of assistants focused more on work, calendar management, and email, like
+Town
+,
+Lindy
+, and
+Reclaim.ai
+. And of course, there’s
+Instinct
+, the AI assistant that
+just landed $350 million in funding
+at a $2.5 billion valuation before it even launched.
+To say the space is heating up is putting it mildly, in other words.
+By comparison, San Diego-based Ollie has raised a much more modest $7.5 million seed round, largely from
+Khosla Ventures
+, along with
+AI House
+.
+Image Credits:
+Ollie
+Despite the utility these assistants provide, consumers who turn to these tools are wrestling with how much privacy and per
+---
+[TITLE] Google’s latest AI weather model gives you no excuse to forget your umbrella
+[LINK] https://techcrunch.com/2026/09/03/googles-latest-ai-weather-model-gives-you-no-excuse-to-forget-your-umbrella/
+[PUBLISHED] Thu, 03 Sep 2026 15:00:00 +0000
+[BODY]
+Google's latest AI weather model gives you no excuse to forget your umbrella | TechCrunch
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+Image Credits:
+Google
+AI
+Google’s latest AI weather model gives you no excuse to forget your umbrella
+Tim Fernholz
+8:00 AM PDT · September 3, 2026
+Scientists at Google DeepMind and Google Research released a new artificial intelligence model for weather forecasting today that sees our changing atmosphere more clearly and predicts its behavior more often.
+WeatherNext 3 is the latest wave of a sea change in meteorology brought out by deep learning techniques, and Google says it will start feeding into weather information users see in search, Google Maps, and Gemini, as well as being available to users and researchers on Google’s cloud platforms.
+“This is going to be the first time that some of the core variables feed and power a lot of the Google products,” Samier Merchant, a Google senior staff engineer, told TechCrunch.
+The new model has already proven to be the most accurate among leading contenders tested on
+Operational WeatherBench
+, a utility for comparing AI forecasts built by the startup Brightband. It looks at metrics like temperature, windspeed, and humidity.
+As well as beating out other deep-learning models built by Google, Microsoft, Nvidia, and the European Center for Medium-Range Weather Forecasting (ECMWF), it also beats traditional forecasts from the U.S. National Weather service and the ECMWF.
+Image Credits:
+Brightband
+Most weather forecasts come from government-owned supercomputers laboriously churning through mathematical equations written to describe the physics of weather; while these systems have become remarkably accurate, they are expensive and comparatively slow. After the ECMWF released more than half a century of weather data produced by these systems in 2018, deep learning researchers began training models that could make predictions far more quickly and with comparable accuracy to government tools.
+“Weather is chaotic, and so small differences really start to perturb massively…Machine learning targets the problem we are really solving, which is approximate noisy physics from incomplete information and finite compute, and so it learns patterns from a lot of data,” said Ferran Alet, a staff research scientist manager at DeepMind.
+Since then, model-makers have pushed on the key weaknesses of AI forecasting models
+---
+[TITLE] Nvidia confirms it will buy Hugging Face for $12.9 billion
+[LINK] https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/
+[PUBLISHED] Thu, 03 Sep 2026 12:42:45 +0000
+[BODY]
+Nvidia confirms it will buy Hugging Face for $12.9 billion | TechCrunch
+TechCrunch Desktop Logo
+TechCrunch Mobile Logo
+Latest
+Startups
+Venture
+Apple
+Security
+AI
+Apps
+Disrupt 2026
+Events
+Podcasts
+Newsletters
+Search
+Submit
+Site Search Toggle
+Mega Menu Toggle
+Topics
+Latest
+AI
+Amazon
+Apps
+Biotech & Health
+Climate
+Cloud Computing
+Commerce
+Crypto
+Enterprise
+EVs
+Fintech
+Fundraising
+Gadgets
+Gaming
+Google
+Government & Policy
+Hardware
+Instagram
+Layoffs
+Media & Entertainment
+Meta
+Microsoft
+Privacy
+Robotics
+Security
+Social
+Space
+Startups
+TikTok
+Transportation
+Venture
+More from TechCrunch
+Staff
+Events
+Startup Battlefield
+StrictlyVC
+Newsletters
+Podcasts
+Videos
+Partner Content
+TechCrunch Brand Studio
+Contact Us
+Image Credits:
+Jaque Silva/NurPhoto / Getty Images
+AI
+Nvidia confirms it will buy Hugging Face for $12.9 billion
+Ivan Mehta
+5:42 AM PDT · September 3, 2026
+After weeks of
+swirling rumors
+, Nvidia confirmed today that it has acquired Hugging Face for $12.93 billion. Hugging Face’s platform hosts three million models, one million applications used by over 18 million developers, and half a million datasets.
+In
+a blog post,
+Nvidia’s CEO Jensen Huang said that Hugging Face will continue to support open source and open-weight models and will work on expanding developer access.
+“Hugging Face will remain an open platform for the entire AI ecosystem. Developers will choose the models they want, the frameworks they want, the clouds and inference service providers they want and the computing platforms they want. Nvidia compute will not be required to build on or deploy through Hugging Face,” said Huang.
+Huang touted Nvidia’s contributions and said that the chip company has released more than 500 models and 250 open datasets on Hugging Face. He argued that the company builds open models to get developers across the world to use them.
+For a company like Nvidia, which is a dominant hardware platform for AI development and inference, an open ecosystem that it controls is beneficial as it can create a platform suited for its chips. Plus, as TechCrunch wrote earlier, Nvidia will be able to
+sell its unused capacity
+to enterprise customers packaged with Hugging Face’s offering.
+Hugging Face was founded in 2016 and has raised over $395 million in funding to date, according to Crunchbase. The company’s last round was in 2023,
+when it raised $235 million
+led by Salesforce Ventures, with investments from Google, Amazon, IBM, and Nvidia.
+In
+a post on X
+, Hugging Face CEO Clem Delangue thanked the community for showing the company could be an alternative to closed-source APIs.
+“But for it to happen at [a] larger scale, it needs more compute, more support, more collaboration, and more visibility. That’s why we went to talk to Jensen, who offered to do exactly that with us,” said Delangue.
+Hugging Face has risen in prominence, with more models being released every day. Last year, the company rejected a $500 million deal from Nvidia, according to
+Financial Times
+. Last month,
+The I
+---

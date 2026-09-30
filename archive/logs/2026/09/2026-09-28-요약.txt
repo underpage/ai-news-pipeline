@@ -1,0 +1,40 @@
+[TITLE] Anthropic’s CEO is about to have dinner with President Trump
+[LINK] https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump/
+[PUBLISHED] Sun, 27 Sep 2026 20:34:28 +0000
+[SUMMARY]
+**[기사 제목 번역]**
+앤트로픽 CEO, 트럼프 대통령과 만찬을 앞두고 있다
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic CEO Dario Amodei is scheduled to have a one-on-one dinner with President Donald Trump at the White House.
+- This meeting occurs amid their contrasting stances on AI safety, with Amodei advocating for caution while Trump dismisses AI backlash as a "hoax."
+- Their relationship has been fraught, as the Trump administration previously designated Anthropic a supply-chain risk over its AI guardrail efforts.
+
+**[국문 3줄 요약 (Translated)]**
+- 앤트로픽 CEO 다리오 아모데이가 도널드 트럼프 대통령과 백악관에서 단독 만찬을 가질 예정이다.
+- 이 만남은 아모데이가 AI 개발 신중론을 펼치는 반면 트럼프는 AI 우려를 "사기"로 일축하는 등 AI 안전에 대한 상반된 견해 속에 이뤄진다.
+- 트럼프 행정부가 이전에 앤트로픽의 AI 안전장치 노력을 이유로 공급망 위험으로 지정하는 등 양측 관계는 긴장 상태였다.
+
+#중립
+---
+[TITLE] Can Muse overcome Meta’s trust issues?
+[LINK] https://techcrunch.com/2026/09/27/can-muse-overcome-metas-trust-issues/
+[PUBLISHED] Sun, 27 Sep 2026 19:57:30 +0000
+[SUMMARY]
+**[기사 제목 번역]**
+뮤즈는 메타의 신뢰 문제를 극복할 수 있을까?
+
+**[영문 3줄 요약 (Original)]**
+- Meta unveiled its new consumer-focused AI agent, Muse, at its annual Connect event, signaling a significant push for AI integration across its platforms.
+- This consumer-centric approach contrasts with other leading AI companies largely focusing on enterprise solutions, making Meta's strategy stand out.
+- However, questions arise about Muse's practical utility beyond "party tricks" and, crucially, user trust in Meta's AI with sensitive data due to its ad-driven business model.
+
+**[국문 3줄 요약 (Translated)]**
+- 메타는 연례 Connect 행사에서 새로운 소비자 중심 AI 에이전트 Muse를 공개하며, 자사 플랫폼 전반에 걸친 AI 통합 노력을 강조했습니다.
+- 이는 기업용 솔루션에 집중하는 다른 주요 AI 기업들과 대비되는 메타의 소비자 중심 전략으로 주목받고 있습니다.
+- 하지만 Muse의 실용성(단순한 '파티용 속임수' 이상인지)과, 광고 기반 사업 모델로 인해 메타 AI에 민감한 정보를 신뢰할 수 있는지에 대한 우려가 제기됩니다.
+
+(논조 태그: #중립)
+---
+[요약 오류] https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/ - API 호출 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 14.411924382s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '14s'}]}}
+---

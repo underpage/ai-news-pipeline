@@ -1,0 +1,214 @@
+name: AI News Pipeline
+
+on:
+  schedule:
+    # 매일 09:00 KST (UTC 00:00)
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      test_mode:
+        description: 'Collect up to 2 test articles'
+        required: false
+        default: 'false'
+      collect_limit:
+        description: 'Max articles to collect in test mode'
+        required: false
+        default: '2'
+
+# Job의 기본 권한은 읽기 전용. 커밋하는 publish Job만 쓰기 권한을 따로 받는다
+permissions:
+  contents: read
+
+# 실행이 겹쳐 커밋이 충돌하지 않도록 한 번에 하나만 실행한다
+concurrency:
+  group: ai-news-pipeline
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Seoul
+  # 아래 값은 저장소 변수(Settings > Secrets and variables > Actions > Variables)로 바꿀 수 있다
+  # 하루에 수집할 최대 기사 수
+  COLLECT_MAX: ${{ vars.COLLECT_MAX || '300' }}
+  # 뉴스 목록에 올릴 기사 수
+  LIST_N: ${{ vars.LIST_N || '30' }}
+  # 목록에 올릴 최소 중요도 점수 (0~10)
+  MIN_SCORE: ${{ vars.MIN_SCORE || '4' }}
+  # 3줄 요약할 기사 수
+  TOP_N: ${{ vars.TOP_N || '10' }}
+  GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+  # 매체 사이트 요청 사이 간격(초)
+  REQUEST_INTERVAL: ${{ vars.REQUEST_INTERVAL || '2' }}
+  # 무료 요금제 기준 값. 유료 요금제로 바꾸면 0으로 낮춘다
+  GEMINI_MIN_INTERVAL: ${{ vars.GEMINI_MIN_INTERVAL || '13' }}
+
+jobs:
+  collect:
+    name: 1. 기사 수집 (Collect)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      has_articles: ${{ steps.collect_state.outputs.has_articles }}
+      run_date: ${{ steps.run_date.outputs.run_date }}
+      article_count: ${{ steps.collect_state.outputs.article_count }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install Dependencies
+        run: uv sync --locked
+      # 모든 Job이 같은 날짜 파일을 보도록 실행 날짜를 여기서 한 번만 정한다
+      - name: Set Run Date
+        id: run_date
+        run: |
+          echo "run_date=$(date +%F)" >> "$GITHUB_OUTPUT"
+          echo "RUN_DATE=$(date +%F)" >> "$GITHUB_ENV"
+      - name: Run Collect
+        env:
+          COLLECT_TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
+          COLLECT_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.collect_limit || '2' }}
+        run: uv run --locked src/collect.py
+      - name: Detect Collected Articles
+        id: collect_state
+        shell: bash
+        run: |
+          collect_file=$(ls -1t ./archive/logs/${RUN_DATE:0:4}/${RUN_DATE:5:2}/${RUN_DATE}-수집.txt 2>/dev/null | head -n 1 || true)
+          if [ -z "$collect_file" ]; then
+            echo "article_count=0" >> "$GITHUB_OUTPUT"
+            echo "has_articles=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          count=$(grep -c '^\[TITLE\] ' "$collect_file" || true)
+          echo "article_count=$count" >> "$GITHUB_OUTPUT"
+          if [ "$count" -gt 0 ]; then
+            echo "has_articles=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_articles=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Upload Logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-collect
+          path: ./archive/logs/
+          if-no-files-found: ignore
+          overwrite: true
+
+  evaluate:
+    name: 2. 중요도 평가 (Evaluate)
+    needs: collect
+    if: needs.collect.outputs.has_articles == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      RUN_DATE: ${{ needs.collect.outputs.run_date }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install Dependencies
+        run: uv sync --locked
+      - name: Download Logs
+        uses: actions/download-artifact@v4
+        with:
+          name: logs-collect
+          path: ./archive/logs/
+      - name: Run Evaluate
+        run: uv run --locked src/evaluate.py
+      - name: Upload Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-evaluate
+          path: ./archive/logs/
+          if-no-files-found: ignore
+          overwrite: true
+
+  summarize:
+    name: 3. 요약 생성 (Summarize)
+    needs: [collect, evaluate]
+    if: needs.collect.outputs.has_articles == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      RUN_DATE: ${{ needs.collect.outputs.run_date }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install Dependencies
+        run: uv sync --locked
+      - name: Download Logs
+        uses: actions/download-artifact@v4
+        with:
+          name: logs-evaluate
+          path: ./archive/logs/
+      - name: Run Summarize
+        run: uv run --locked src/summarize.py
+      - name: Upload Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-summarize
+          path: ./archive/logs/
+          if-no-files-found: ignore
+          overwrite: true
+
+  publish:
+    name: 4. 문서 발행 (Publish)
+    needs: [collect, evaluate, summarize]
+    # 앞 단계가 실패해도 그때까지의 결과와 로그는 발행한다
+    if: always() && needs.collect.outputs.has_articles == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    env:
+      RUN_DATE: ${{ needs.collect.outputs.run_date }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      # 가장 나중 단계의 로그가 앞 단계 로그를 덮어쓴다
+      - name: Download Collect Logs
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: logs-collect
+          path: ./archive/logs/
+      - name: Download Evaluate Logs
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: logs-evaluate
+          path: ./archive/logs/
+      - name: Download Summarize Logs
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: logs-summarize
+          path: ./archive/logs/
+      - name: Run Publish
+        run: uv run --locked src/publish.py
+      # 테스트 실행 결과는 저장소에 남기지 않고, 확인용으로 내려받을 수 있게만 올린다
+      - name: Upload Test Report
+        if: github.event.inputs.test_mode == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: ./archive/news/
+          if-no-files-found: ignore
+          overwrite: true
+      - name: Commit and Push
+        if: github.event.inputs.test_mode != 'true'
+        run: |
+          git config --local user.email "yoojj.dev@gmail.com"
+          git config --local user.name "yjj"
+          git add archive/logs/ || true
+          git add archive/news/ || true
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: AI 뉴스 리포트 자동 업데이트" && git pull --rebase && git push)

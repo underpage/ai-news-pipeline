@@ -1,0 +1,19 @@
+[project]
+name = "ai-news-pipeline"
+version = "0.1.0"
+description = "지난 24시간의 AI 뉴스를 수집해 중요한 기사를 골라 3줄로 요약하는 파이프라인"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4",
+    "feedparser",
+    "google-genai",
+    "jinja2>=3.1.6",
+    "python-dotenv",
+    "pyyaml>=6.0.3",
+    "requests",
+    "trafilatura>=2.2.0",
+]
+
+[tool.uv]
+package = false

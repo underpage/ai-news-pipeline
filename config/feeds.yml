@@ -1,0 +1,89 @@
+# 뉴스 소스 (RSS 피드) 목록. 매체를 추가·삭제할 때 이 파일만 고친다
+#   name      리포트에 표시할 매체 이름
+#   url       RSS 또는 Atom 피드 주소
+#   naive_kst 발행일시에 시간대 표기가 없고 한국 시간으로 적는 피드면 true (생략하면 false)
+feeds:
+  # 국내
+  - name: AI타임스
+    url: https://www.aitimes.com/rss/allArticle.xml
+    naive_kst: true
+  - name: 인공지능신문
+    url: https://www.aitimes.kr/rss/allArticle.xml
+    naive_kst: true
+  - name: GeekNews
+    url: https://news.hada.io/rss/news
+  - name: ITWorld Korea
+    url: https://www.itworld.co.kr/feed/
+  - name: ZDNet Korea
+    url: https://feeds.feedburner.com/zdkorea
+  - name: 전자신문
+    url: https://rss.etnews.com/04.xml
+  - name: IT조선
+    url: https://it.chosun.com/rss/allArticle.xml
+    naive_kst: true
+  - name: 테크M
+    url: https://www.techm.kr/rss/allArticle.xml
+    naive_kst: true
+  - name: 블로터
+    url: https://www.bloter.net/rss/allArticle.xml
+    naive_kst: true
+  - name: 바이라인네트워크
+    url: https://byline.network/feed/
+  - name: 더에이아이
+    url: https://www.newstheai.com/rss/allArticle.xml
+    naive_kst: true
+  - name: 데일리시큐
+    url: https://www.dailysecu.com/rss/allArticle.xml
+    naive_kst: true
+  # 해외: 공식 블로그, 개발자 매체
+  - name: OpenAI
+    url: https://openai.com/news/rss.xml
+  - name: Google AI
+    url: https://blog.google/technology/ai/rss/
+  - name: Hugging Face
+    url: https://huggingface.co/blog/feed.xml
+  - name: GitHub Blog
+    url: https://github.blog/ai-and-ml/feed/
+  - name: Microsoft Foundry
+    url: https://devblogs.microsoft.com/foundry/feed/
+  - name: AWS Machine Learning
+    url: https://aws.amazon.com/blogs/machine-learning/feed/
+  - name: Simon Willison
+    url: https://simonwillison.net/atom/everything/
+  - name: Latent Space
+    url: https://www.latent.space/feed
+  - name: The New Stack
+    url: https://thenewstack.io/category/ai/feed/
+  - name: InfoQ
+    url: https://feed.infoq.com/ai-ml-data-eng/
+  - name: InfoWorld
+    url: https://www.infoworld.com/feed/
+  # 해외: IT, 보안 매체
+  - name: The Decoder
+    url: https://the-decoder.com/feed/
+  - name: TechCrunch
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+  - name: VentureBeat
+    url: https://venturebeat.com/category/ai/feed/
+  - name: The Verge
+    url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+  - name: Ars Technica
+    url: https://arstechnica.com/ai/feed/
+  - name: WIRED
+    url: https://www.wired.com/feed/tag/ai/latest/rss
+  - name: MIT Technology Review
+    url: https://www.technologyreview.com/topic/artificial-intelligence/feed
+  - name: The Hacker News
+    url: https://feeds.feedburner.com/TheHackersNews
+  - name: BleepingComputer
+    url: https://www.bleepingcomputer.com/feed/
+  - name: SecurityWeek
+    url: https://www.securityweek.com/feed/
+  - name: Help Net Security
+    url: https://www.helpnetsecurity.com/feed/
+  - name: SiliconANGLE
+    url: https://siliconangle.com/category/ai/feed/
+  - name: The Guardian
+    url: https://www.theguardian.com/technology/artificialintelligenceai/rss
+  - name: Computerworld
+    url: https://www.computerworld.com/feed/
