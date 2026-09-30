@@ -97,13 +97,20 @@ def init_log(log_type):
 
 
 def load_history_from_logs():
+    """다시 수집하지 않을 링크: 선정 단계를 거친 기사(모든 날짜의 필터링 로그)와 오늘 이미 수집한 기사.
+
+    수집만 되고 선정 단계를 거치지 못한 기사(선정 호출이 실패한 날)는 이력에 넣지 않는다.
+    다음 실행 때 수집 기간 안에 있으면 다시 후보가 되게 하기 위함이다.
+    """
     history = set()
     if not os.path.exists(LOGS_DIR):
         return history
-    for filepath in glob.glob(os.path.join(LOGS_DIR, "**", "*.txt"), recursive=True):
+    for filepath in glob.glob(os.path.join(LOGS_DIR, "**", "*-필터링.txt"), recursive=True):
         # 본문 안에 적힌 링크가 이력에 섞이지 않도록 레코드 단위로 읽는다
         for record in read_records_from(filepath):
             history.add(record["link"])
+    for record in read_records("수집"):
+        history.add(record["link"])
     return history
 
 
