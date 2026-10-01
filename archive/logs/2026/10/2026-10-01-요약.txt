@@ -1,0 +1,114 @@
+[TITLE] 오픈AI, 자체 에이전트에 ‘디시전스 API’ 적용...AI 아키텍처 판도 바뀐다
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215835
+[PUBLISHED] 2026-10-01 13:08 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 10
+[REASON] 오픈AI가 AI 에이전트 아키텍처를 바꿀 디시전스 API를 공개.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 오픈AI가 반복적인 판단 작업을 빠르게 처리하는 ‘디시전스 API’를 공개하고 자사 시스템에 적용하며 AI 에이전트 아키텍처에 근본적인 변화를 예고했다.
+- GPT-6 루나 기반의 디시전스 API는 개발자가 미리 정한 선택지 중 하나를 골라 불필요한 생성 과정을 줄여 빠른 응답과 낮은 비용을 확보하며 이미지 이해 및 안전성 기능을 활용한다.
+- 오픈AI는 이 API를 자사 에이전트의 안전성 제어 및 오작동 방지 장치로 활용하며, 앞으로 AI 에이전트 아키텍처가 LLM과 판단 전용 AI가 결합된 다층 제어 구조로 재편될 것으로 전망된다.
+
+#긍정
+---
+[요약 오류] https://www.infoworld.com/article/4229252/openai-bets-enterprises-are-ready-to-delegate-real-work-to-autonomous-agents.html - 요약 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 56.399903426s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
+---
+[TITLE] OpenAI and Synopsys team up to build an AI model that designs chips like a seasoned engineer
+[LINK] https://the-decoder.com/openai-and-synopsys-team-up-to-build-an-ai-model-that-designs-chips-like-a-seasoned-engineer/
+[PUBLISHED] 2026-10-01 04:12 KST
+[SOURCE] The Decoder
+[TOPIC] 모델, 신기술, 산업
+[SCORE] 10
+[REASON] 오픈AI와 Synopsys가 칩 설계를 위한 전문 AI 모델을 개발하며 반도체 산업 혁신.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+OpenAI와 Synopsys, 베테랑 엔지니어처럼 칩을 설계하는 AI 모델 개발 위해 협력
+
+**[영문 3줄 요약 (Original)]**
+- OpenAI and Synopsys have formed a multi-year strategic partnership to develop GPT-Synopsys, a specialized AI model for chip design.
+- GPT-Synopsys combines OpenAI's AI technology with Synopsys' electronic design automation (EDA) tools, aiming to reason about chip design and directly operate Synopsys' tools.
+- This collaboration is expected to significantly accelerate the chip design process, leading to better chips and AI, with customer data stored encrypted.
+
+**[국문 3줄 요약 (Translated)]**
+- OpenAI와 Synopsys는 다년간의 전략적 파트너십을 맺고 칩 설계를 위한 전문 AI 모델인 GPT-Synopsys를 개발합니다.
+- GPT-Synopsys는 OpenAI의 AI 기술과 Synopsys의 전자 설계 자동화(EDA) 도구를 결합하여 칩 설계 및 검증을 추론하고 Synopsys 도구를 직접 작동하는 것을 목표로 합니다.
+- 이 협력은 칩 설계 프로세스를 크게 가속화하고 더 나은 칩과 AI를 만드는 길을 열며, 고객 데이터는 암호화되어 저장됩니다.
+
+#긍정
+---
+[요약 오류] https://www.dailysecu.com/news/articleView.html?idxno=208668 - 요약 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 30.420939042s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '30s'}]}}
+---
+[TITLE] Microsoft의 내부 데이터 17조 건에 접근할 수 있었던 이유
+[LINK] https://news.hada.io/topic?id=34558
+[PUBLISHED] 2026-10-01 03:44 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 10
+[REASON] 마이크로소프트 내부 시스템의 인증 취약점으로 17조 건 데이터 접근 가능.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 마이크로소프트의 내부 분석 서비스 Titan에서 로그인 토큰의 서명을 검증하지 않는 취약점이 발견되어, 실제 자격 증명 없이 관리자 권한으로 SQL 쿼리를 실행할 수 있었습니다.
+- AI 해킹 도구 Antares가 이메일 형식의 사용자명만 시도해 실패했으나, 사람이 사용자명을 'admin'으로 변경하자 관리자 권한으로 접근이 가능해졌습니다.
+- 이 취약점으로 직원 정보와 Bing 검색 분석 데이터를 포함한 약 17.3조 행 규모의 내부 분석 데이터에 기술적으로 접근할 수 있었으며, 이는 AI와 사람의 협업으로 발견된 보안 문제의 중요성을 보여줍니다.
+
+#부정
+---
+[요약 오류] https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/ - 요약 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 4.414801745s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '4s'}]}}
+---
+[요약 오류] https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-pre-auth-rce-flaw-in-mikrotik-routeros/ - 요약 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 51.429378188s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '51s'}]}}
+---
+[요약 오류] https://thehackernews.com/2026/09/cisco-warns-of-attackers-exploiting.html - 요약 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 38.411535273s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}
+---
+[TITLE] Apple issues urgent iOS patch as it navigates the spyware arms race
+[LINK] https://www.computerworld.com/article/4228858/apple-issues-urgent-ios-patch-as-it-navigates-the-spyware-arms-race.html
+[PUBLISHED] 2026-09-30 22:50 KST
+[SOURCE] Computerworld
+[TOPIC] 개발, 보안
+[SCORE] 10
+[REASON] 애플이 제로클릭 취약점 해결을 위한 긴급 iOS 패치를 발행하며 스파이웨어 공격에 대응.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+애플, 스파이웨어 군비 경쟁 속 긴급 iOS 패치 발행
+
+**[영문 3줄 요약 (Original)]**
+- Apple issued an urgent security patch for iOS, iPadOS, and macOS to address a zero-click vulnerability (CVE-2026-86950) in CoreGraphics.
+- This flaw allowed arbitrary code execution by merely processing a maliciously crafted file without user interaction and was reportedly exploited in targeted attacks on older iOS versions.
+- The incident highlights the precarious nature of mobile endpoint security and the ongoing "spyware arms race," emphasizing the need for users to promptly update systems and enhance vigilance against sophisticated threats.
+
+**[국문 3줄 요약 (Translated)]**
+- 애플은 코어그래픽스 제로클릭 취약점(CVE-2026-86950) 해결을 위해 iOS, iPadOS, macOS에 긴급 보안 패치를 발행했습니다.
+- 이 취약점은 악성 파일을 처리하는 것만으로 사용자 개입 없이 임의 코드 실행을 가능하게 하며, 이전 iOS 버전에서 표적 공격에 악용되었을 가능성이 있습니다.
+- 이는 모바일 엔드포인트 보안의 취약성을 보여주며, 정교한 스파이웨어 공격에 대응하기 위해 사용자들의 즉각적인 시스템 업데이트와 보안 경계 강화가 필요함을 강조합니다.
+
+#부정
+---
+[TITLE] Anthropic says Zhipu's open-weight GLM-5.3 nearly matches Claude Mythos Preview at building exploits
+[LINK] https://the-decoder.com/anthropic-says-zhipus-open-weight-glm-5-3-nearly-matches-claude-mythos-preview-at-building-exploits/
+[PUBLISHED] 2026-09-30 20:05 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델, 보안
+[SCORE] 10
+[REASON] Anthropic이 Zhipu 오픈웨이트 모델의 익스플로잇 생성 능력을 경고하며 AI 보안 위험 강조.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+Anthropic, Zhipu의 오픈웨이트 GLM-5.3이 클로드 미토스 프리뷰와 유사한 익스플로잇 생성 능력 가졌다고 경고
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic's analysis indicates that Zhipu AI's open-weight model GLM-5.3 can develop cyber exploits at a level similar to its own Claude Mythos Preview.
+- GLM-5.3 was released without effective safeguards, and simulations showed its protective features could be bypassed with simple methods or 'abliteration' to execute malicious attack commands 100% of the time.
+- This highlights a serious risk to AI security, as open-weight AI models with advanced exploit development capabilities can be easily misused, emphasizing the need for countermeasures.
+
+**[국문 3줄 요약 (Translated)]**
+- Anthropic은 Zhipu AI의 오픈웨이트 모델 GLM-5.3이 자사의 Claude Mythos Preview와 유사한 수준으로 사이버 익스플로잇을 개발할 수 있다고 분석했다.
+- GLM-5.3은 효과적인 안전장치 없이 출시되었으며, 간단한 방법이나 'abliteration' 기술로 모델의 보호 기능을 우회하여 악성 공격 명령을 100% 수행할 수 있음이 시뮬레이션에서 확인되었다.
+- 이는 고급 익스플로잇 개발 능력을 가진 오픈웨이트 AI 모델이 쉽게 악용될 수 있음을 보여주며, AI 보안에 대한 심각한 위험과 대응 필요성을 강조한다.
+
+#부정
+---
