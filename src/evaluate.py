@@ -15,10 +15,12 @@ RANK_SCHEMA = {
             "id": {"type": "INTEGER"},
             "score": {"type": "INTEGER"},
             "reason": {"type": "STRING"},
+            "title_ko": {"type": "STRING"},
         },
-        "required": ["id", "score", "reason"],
+        "required": ["id", "score", "reason", "title_ko"],
     },
 }
+HANGUL = re.compile(r"[가-힣]")
 BODY_SELECTORS = [
     '#article-view-content-div', '[itemprop="articleBody"]', '.articlebody', '.article-body',
     '.article_body', '.article-content', '.entry-content', '.post-content', '#articleBody',
@@ -48,7 +50,10 @@ def build_article_list(news_list):
 
 
 def rank_articles(news_list, pick_n, min_score):
-    """후보 전체를 한 번의 호출로 비교해 중요도 순 목록을 받는다. 기준에 맞는 기사가 없으면 빈 목록."""
+    """후보 전체를 한 번의 호출로 비교해 중요도 순 목록을 받는다. 기준에 맞는 기사가 없으면 빈 목록.
+
+    항목: (후보 순번, 점수, 선정 이유, 번역 제목). 국문 기사의 번역 제목은 빈 값.
+    """
     prompt = fill_prompt(
         load_prompt("filter_prompt.txt"),
         pick_n=pick_n, min_score=min_score, articles=build_article_list(news_list),
@@ -81,7 +86,11 @@ def rank_articles(news_list, pick_n, min_score):
         if index in seen or not (0 <= index < len(news_list)) or score < min_score:
             continue
         seen.add(index)
-        ranked.append((index, score, clean_inline(item.get("reason", ""), 60)))
+        title_ko = clean_inline(item.get("title_ko", ""), 150)
+        # 국문 제목은 번역하지 않는다 (모델이 원문을 그대로 돌려준 경우 포함)
+        if HANGUL.search(news_list[index].get("title", "")) or title_ko == news_list[index].get("title"):
+            title_ko = ""
+        ranked.append((index, score, clean_inline(item.get("reason", ""), 60), title_ko))
     # 점수가 같으면 모델이 준 순서를 유지한다
     ranked.sort(key=lambda entry: -entry[1])
     return ranked[:pick_n]
@@ -172,7 +181,7 @@ def main():
         # 중요도 순으로 목록에 기록하고, 앞에서부터 본문을 수집해 요약 대상을 채운다
         listed = set()
         body_count = 0
-        for index, score, reason in ranked:
+        for index, score, reason, title_ko in ranked:
             news = news_list[index]
             listed.add(index)
             body_text = ""
@@ -187,6 +196,7 @@ def main():
                     body_count += 1
             append_record("필터링", [
                 ("TITLE", news['title']),
+                ("TITLE_KO", title_ko),
                 ("LINK", news['link']),
                 ("PUBLISHED", news.get('published')),
                 ("SOURCE", news.get('source')),

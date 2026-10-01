@@ -16,7 +16,8 @@ def add_candidates(count):
 
 
 def rank_response(pairs):
-    return json.dumps([{"id": i, "score": s, "reason": f"이유 {i}"} for i, s in pairs], ensure_ascii=False)
+    return json.dumps([{"id": i, "score": s, "reason": f"이유 {i}", "title_ko": f"번역 {i}"} for i, s in pairs],
+                      ensure_ascii=False)
 
 
 def test_rank_articles_validates_response(monkeypatch):
@@ -25,9 +26,19 @@ def test_rank_articles_validates_response(monkeypatch):
                                     {"id": 99, "score": 9, "reason": "범위 밖"}, {"id": 1, "score": 5, "reason": "중복"},
                                     {"id": 3, "score": 6, "reason": "r"}]})
     monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None: wrapped)
-    assert evaluate.rank_articles(news, 5, 4) == [(0, 9, "a 이유"), (2, 6, "r")]
+    assert evaluate.rank_articles(news, 5, 4) == [(0, 9, "a 이유", ""), (2, 6, "r", "")]
     monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None: "[]")
     assert evaluate.rank_articles(news, 5, 4) == []
+
+
+def test_rank_articles_keeps_translated_title_only_for_foreign_titles(monkeypatch):
+    news = [{"title": "OpenAI ships agents", "link": "l1"}, {"title": "오픈AI 에이전트 공개", "link": "l2"},
+            {"title": "Same title", "link": "l3"}]
+    response = json.dumps([{"id": 1, "score": 9, "reason": "r", "title_ko": "오픈AI, 에이전트 출시"},
+                           {"id": 2, "score": 8, "reason": "r", "title_ko": "오픈AI 에이전트 공개"},
+                           {"id": 3, "score": 7, "reason": "r", "title_ko": "Same title"}], ensure_ascii=False)
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None: response)
+    assert [entry[3] for entry in evaluate.rank_articles(news, 5, 4)] == ["오픈AI, 에이전트 출시", "", ""]
 
 
 def test_prompt_contains_all_candidates_with_labels(monkeypatch):
@@ -59,6 +70,8 @@ def test_evaluate_fills_list_and_summary_slots_across_reruns(monkeypatch):
     listed = [record for record in records if record.get("title")]
     assert [record["link"] for record in listed] == [f"http://a/{n}" for n in range(1, 6)]
     assert [record["link"] for record in listed if record.get("body")] == ["http://a/1", "http://a/3", "http://a/4"]
+    # 후보 제목이 국문이라 번역 제목은 기록하지 않는다
+    assert not any(record.get("title_ko") for record in listed)
     assert len([record for record in records if not record.get("title")]) == 3
 
     # 같은 날 다시 실행해도 목록·요약 건수가 늘지 않는다

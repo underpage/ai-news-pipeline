@@ -293,6 +293,7 @@ In an Anthropic simulation, GLM-5.3 refused openly malicious attack commands. Wh
 Anthropic's team says this was its first time using abliteration. The process took about 2,200 GPU hours at a cost of roughly $4,400, and Anthropic estimates an experienced team could do it for around $1,200.
 ---
 [TITLE] AI coding agents leaked 13,000 internal company screenshots to public GitHub repos
+[TITLE_KO] AI 코딩 에이전트, 기업 내부 스크린샷 1만 3천 장을 공개 GitHub 저장소에 유출
 [LINK] https://www.helpnetsecurity.com/2026/09/30/ai-coding-agents-github-screenshot-leak/
 [PUBLISHED] 2026-09-30 20:52 KST
 [SOURCE] Help Net Security
@@ -317,6 +318,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] 몽고DB가 AI 에이전트의 기업 환경 배포 및 운영을 위한 통합 플랫폼 출시.
 ---
 [TITLE] Stack Overflow expands Stack Internal to give AI agents ‘trusted’ enterprise knowledge
+[TITLE_KO] 스택 오버플로, AI 에이전트에 '신뢰할 수 있는' 기업 지식을 제공하도록 Stack Internal 확장
 [LINK] https://www.infoworld.com/article/4229132/stack-overflow-expands-stack-internal-to-give-ai-agents-trusted-enterprise-knowledge.html
 [PUBLISHED] 2026-10-01 05:54 KST
 [SOURCE] InfoWorld
@@ -325,6 +327,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] Stack Overflow가 AI 에이전트의 신뢰할 수 있는 기업 지식 활용 기능 확장.
 ---
 [TITLE] Google drops Gems for Skills, joining OpenAI and Anthropic in the shift to agent-ready prompt formats
+[TITLE_KO] 구글, Gems 대신 Skills 도입하며 오픈AI·앤트로픽과 함께 에이전트용 프롬프트 형식으로 전환
 [LINK] https://the-decoder.com/google-drops-gems-for-skills-joining-openai-and-anthropic-in-the-shift-to-agent-ready-prompt-formats/
 [PUBLISHED] 2026-10-01 03:16 KST
 [SOURCE] The Decoder
@@ -333,6 +336,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] 구글이 에이전트 준비 프롬프트 형식인 Skills를 도입하며 개방형 표준에 합류.
 ---
 [TITLE] Build a multi-agent music production pipeline on Amazon Bedrock AgentCore Runtime Instances
+[TITLE_KO] Amazon Bedrock AgentCore Runtime 인스턴스로 멀티 에이전트 음악 제작 파이프라인 구축하기
 [LINK] https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances/
 [PUBLISHED] 2026-10-01 00:21 KST
 [SOURCE] AWS Machine Learning
@@ -357,6 +361,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] 오라클이 기업용 에이전틱 실행 런타임을 출시하며 AI와 엔터프라이즈 시스템 통합.
 ---
 [TITLE] “Think of it as Kubernetes for agents”: OpenClaw lands in the enterprise with OpenAI, Nvidia and Red Hat on board
+[TITLE_KO] "에이전트를 위한 쿠버네티스": 오픈AI·엔비디아·레드햇과 함께 기업 시장에 진출한 OpenClaw
 [LINK] https://thenewstack.io/openclaw-enterprise-kubernetes-agents/
 [PUBLISHED] 2026-09-30 19:36 KST
 [SOURCE] The New Stack
@@ -365,6 +370,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] OpenClaw가 기업용 AI 에이전트 오케스트레이션 플랫폼으로 출시되며 주요 기업 참여.
 ---
 [TITLE] Observability for AI-native systems: New SLIs beyond latency and error rate
+[TITLE_KO] AI 네이티브 시스템의 관측성: 지연 시간과 오류율을 넘어서는 새 SLI
 [LINK] https://www.infoworld.com/article/4228328/observability-for-ai-native-systems-new-slis-beyond-latency-and-error-rate.html
 [PUBLISHED] 2026-09-30 18:00 KST
 [SOURCE] InfoWorld
@@ -389,6 +395,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] 신한은행에서 2.5만명 고객 대출 정보 유출 사고 발생, 금감원 긴급 조사.
 ---
 [TITLE] TeamViewer urges users to patch severe flaws “as soon as possible”
+[TITLE_KO] 팀뷰어, 심각한 취약점 "가능한 한 빨리" 패치하라고 사용자에 촉구
 [LINK] https://www.bleepingcomputer.com/news/security/teamviewer-urges-users-to-patch-severe-flaws-as-soon-as-possible/
 [PUBLISHED] 2026-09-30 21:25 KST
 [SOURCE] BleepingComputer
@@ -397,6 +404,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] TeamViewer가 고위험 취약점 패치를 긴급 권고하며 사용자 보안 강화 촉구.
 ---
 [TITLE] OpenSSL Fixes High-Severity DTLS Flaw That Can Leak Heap Memory Unencrypted
+[TITLE_KO] OpenSSL, 힙 메모리를 암호화 없이 유출할 수 있는 고위험 DTLS 취약점 수정
 [LINK] https://thehackernews.com/2026/09/openssl-fixes-high-severity-dtls-flaw.html
 [PUBLISHED] 2026-09-30 17:09 KST
 [SOURCE] The Hacker News
@@ -405,6 +413,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] OpenSSL이 고위험 DTLS 취약점을 패치하여 힙 메모리 유출 가능성 해결.
 ---
 [TITLE] AI's Third Wave: Coworkers Break the Security Model That Worked for Agents
+[TITLE_KO] AI의 세 번째 물결: 'AI 동료'가 에이전트에 통하던 보안 모델을 무너뜨린다
 [LINK] https://www.bleepingcomputer.com/news/security/ais-third-wave-coworkers-break-the-security-model-that-worked-for-agents/
 [PUBLISHED] 2026-09-30 23:01 KST
 [SOURCE] BleepingComputer
@@ -413,6 +422,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] 지속적인 접근 권한을 가진 AI 코워커로 인해 새로운 보안 모델 필요성 제기.
 ---
 [TITLE] Unsloth’s model picker had a code-execution problem
+[TITLE_KO] Unsloth의 모델 선택 기능에 코드 실행 문제 있었다
 [LINK] https://www.infoworld.com/article/4228904/unsloths-model-picker-had-a-code-execution-problem.html
 [PUBLISHED] 2026-09-30 22:53 KST
 [SOURCE] InfoWorld
@@ -421,6 +431,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] AI 모델 훈련 도구 Unsloth에서 악성 코드 실행 가능한 취약점 발견.
 ---
 [TITLE] WatchGuard Patches Critical Fireware OS Code Injection Vulnerability
+[TITLE_KO] 워치가드, Fireware OS의 치명적 코드 주입 취약점 패치
 [LINK] https://www.securityweek.com/watchguard-patches-critical-fireware-os-code-injection-vulnerability/
 [PUBLISHED] 2026-09-30 22:16 KST
 [SOURCE] SecurityWeek
@@ -429,6 +440,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] WatchGuard Fireware OS의 치명적인 코드 주입 취약점 패치.
 ---
 [TITLE] Chrome, Firefox Updates Patch Over 100 Vulnerabilities
+[TITLE_KO] 크롬·파이어폭스 업데이트로 취약점 100여 개 패치
 [LINK] https://www.securityweek.com/chrome-firefox-updates-patch-over-100-vulnerabilities/
 [PUBLISHED] 2026-09-30 21:16 KST
 [SOURCE] SecurityWeek
@@ -437,6 +449,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] Chrome, Firefox가 100개 이상 취약점을 패치하며 RCE 및 샌드박스 탈출 위험 해결.
 ---
 [TITLE] High-Severity Vulnerabilities Patched in OpenSSL, WolfSSL
+[TITLE_KO] OpenSSL·WolfSSL의 고위험 취약점 패치
 [LINK] https://www.securityweek.com/high-severity-vulnerabilities-patched-in-openssl-wolfssl/
 [PUBLISHED] 2026-09-30 15:55 KST
 [SOURCE] SecurityWeek
@@ -445,6 +458,7 @@ Anthropic's team says this was its first time using abliteration. The process to
 [REASON] OpenSSL과 WolfSSL에서 고위험 취약점이 패치되어 즉시 업데이트 필요.
 ---
 [TITLE] Security tools can now scan Claude Enterprise chats and uploads for sensitive data
+[TITLE_KO] 보안 도구로 Claude Enterprise 대화와 업로드 파일의 민감 정보 검사 가능해져
 [LINK] https://www.helpnetsecurity.com/2026/09/30/claude-compliance-api-integrations/
 [PUBLISHED] 2026-09-30 15:31 KST
 [SOURCE] Help Net Security

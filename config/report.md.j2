@@ -6,7 +6,7 @@
     articles             요약한 기사 목록 (중요도 순)
       .rank              순위
       .title             원문 제목
-      .title_ko          번역 제목 (국문 기사는 빈 값)
+      .title_ko          번역 제목 (국문 기사는 빈 값). 요약이 없으면 선정 단계에서 받은 번역 제목
       .published         발행일시
       .topic             주제
       .score             중요도 점수 (0~10)
@@ -22,6 +22,12 @@
       .summary_source    gemini / manual(manual_summary.py로 채운 요약)
     listed               목록으로 선정했지만 위에서 요약하지 않은 기사 (중요도 순)
       .rank, .title, .link, .topic, .source, .published, .score
+      .title_ko          번역 제목 (국문 기사는 빈 값)
+
+  서식 규칙
+    "요약", "번역" 머리글은 제목(###)이 아니라 굵은 글씨 한 줄(**요약**)이다.
+    Jekyll의 hard_wrap 때문에 굵은 글씨, [요약 실패] 같은 표시, 요약 원문, 목록은
+    각각 앞뒤에 빈 줄을 두어 별도 문단으로 나눠야 한다. 빈 줄을 지우지 말 것.
 #}
 # {{ date }}
 
@@ -50,7 +56,8 @@
 - **링크**: [원문 기사]({{ a.link }})
 
 {% if a.summary_status != "ok" %}
-### 요약
+**요약**
+
 {% if a.summary_status == "unavailable" %}
 [요약 불가]
 {% elif a.summary_status == "pending" %}
@@ -59,28 +66,34 @@
 [요약 실패]
 {% endif %}
 {% elif a.summary_original %}
-### 요약
+**요약**
+
 {% if a.summary_source == "manual" %}
 [수동 요약]
+
 {% endif %}
 {% for line in a.summary_original %}
 - {{ line }}
 {% endfor %}
 
-### 번역
+**번역**
+
 {% for line in a.summary_ko %}
 - {{ line }}
 {% endfor %}
 {% elif a.summary_ko %}
-### 요약
+**요약**
+
 {% if a.summary_source == "manual" %}
 [수동 요약]
+
 {% endif %}
 {% for line in a.summary_ko %}
 - {{ line }}
 {% endfor %}
 {% else %}
-### 요약
+**요약**
+
 {{ a.summary_raw }}
 {% endif %}
 
@@ -91,5 +104,8 @@
 {% for n in listed %}
 {{ n.rank }}. [{{ n.title }}]({{ n.link }}){% if n.topic or n.source or n.published %} - {{ [n.topic, n.source, n.published] | select | join(" · ") }}{% endif %}
 
+{% if n.title_ko %}
+    - {{ n.title_ko }}
+{% endif %}
 {% endfor %}
 {% endif %}

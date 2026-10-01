@@ -67,7 +67,8 @@ def render_report(report_date, news_list, listed_news):
         articles.append({
             "rank": rank,
             "title": item["title"],
-            "title_ko": translated_title,
+            # 요약에서 받은 번역 제목이 우선, 요약이 없으면 선정 단계에서 받은 번역 제목
+            "title_ko": translated_title or item.get("title_ko", ""),
             "published": item.get("published", ""),
             "topic": item.get("topic", ""),
             "score": item.get("score", ""),
@@ -93,6 +94,7 @@ def render_report(report_date, news_list, listed_news):
             "rank": rank,
             # 대괄호는 마크다운 링크 표기와 겹치므로 바꿔 쓴다
             "title": item["title"].replace("[", "(").replace("]", ")"),
+            "title_ko": item.get("title_ko", ""),
             "link": item["link"],
             "topic": (item.get("topic") or "").split(",")[0].strip(),
             "source": item.get("source", ""),

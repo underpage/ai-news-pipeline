@@ -60,6 +60,21 @@ def test_news_list_excludes_articles_in_summary_section():
     assert "★" not in report
 
 
+def test_translated_titles_from_selection_step():
+    # 요약에 실패한 기사와 목록 기사는 선정 단계의 번역 제목을 쓴다
+    failed = "http://a/1"
+    common.append_record("필터링", [("TITLE", "Agents ship"), ("TITLE_KO", "에이전트 출시"), ("LINK", failed), ("SCORE", 9)],
+                         block=("BODY", "본문"))
+    common.append_error("요약", "요약 오류", failed, "요약 실패: 429")
+    common.append_record("필터링", [("TITLE", "Patch now"), ("TITLE_KO", "지금 패치하라"), ("LINK", "http://a/2"), ("SCORE", 8)])
+    common.append_record("필터링", [("TITLE", "국문 기사"), ("LINK", "http://a/3"), ("SCORE", 7)])
+
+    publish.main()
+    report = open(os.path.join(common.NEWS_DIR, "2026", "10", "2026-10-01.md"), encoding="utf-8").read()
+    assert "- **번역 제목**: 에이전트 출시" in report
+    assert "2. [Patch now](http://a/2)\n    - 지금 패치하라\n3. [국문 기사](http://a/3)\n" in report
+
+
 def test_tone_tag_only_on_its_own_line():
     _, _, summary_ko, tone = publish.parse_summary_blocks("**[국문 3줄 요약]**\n- 이 소식은 #긍정 평가.\n- 둘.\n- 셋.\n\n#부정")
     assert summary_ko[0] == "이 소식은 #긍정 평가." and tone == "#부정"
