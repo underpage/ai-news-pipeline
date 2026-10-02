@@ -1,0 +1,1217 @@
+[TITLE] IBM, 기업 통제 환경서 운영 가능한 'IBM 밥' 자체 호스팅 버전 출시
+[LINK] https://zdnet.co.kr/view/?no=20261002111825
+[PUBLISHED] 2026-10-02 11:19 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안, 규제
+[SCORE] 10
+[REASON] 기업 통제 환경에서 AI 개발 플랫폼을 운영하는 새 옵션 출시
+[BODY]
+IBM이 'IBM 밥(IBM Bob)' 자체 호스팅 배포 버전을 공개했다.
+이를 통해 기업은 민감한 코드와 데이터를 외부로 이전하지 않고도 AI를 활용한 애플리케이션 개발과 현대화 작업을 수행할 수 있게 됐다.
+IBM은 고객이 직접 통제하는 인프라에서 IBM 밥을 운영할 수 있는 자체 호스팅 배포 옵션을 출시했다고 2일 밝혔다.
+IBM 밥은 코드 생성 기능을 넘어 소프트웨어 개발과 유지보수, 애플리케이션 현대화 전반에 AI를 적용할 수 있도록 설계된 에이전틱 AI 기반 소프트웨어 개발 플랫폼이다.
+최근 기업들은 AI 기반 개발 도구 도입을 확대하고 있지만 금융·공공·의료 등 규제 산업에서는 민감한 소스코드와 고객 정보, 핵심 시스템 데이터를 외부 AI 서비스에 제공하기 어렵다는 점이 주요 제약으로 꼽혀 왔다. 이에 따라 AI가 구동되는 위치와 접근 가능한 데이터 범위, 운영 방식에 대한 통제권 확보가 AI 도입의 핵심 과제로 부상하고 있다.
+IBM은 이러한 수요에 대응하기 위해 기업 데이터가 위치한 환경에 AI 기능을 직접 배포하는 방식을 채택했다. 자체 호스팅 버전은 코드와 애플리케이션 데이터가 외부 서비스로 이동하지 않도록 하면서 AI 기반 개발·현대화 기능을 제공하는 것이 특징이다.
+시장에서도 AI 주권과 데이터 통제에 대한 요구가 확대되고 있다. 퓨처럼 리서치(Futurum Research)는 기업들이 데이터 주권을 확보하면서도 AI 생태계를 활용하기 위해 하이브리드·엣지 환경을 확대하고 있으며, 이에 따라 2030년 AI 인프라 시장에서 하이브리드·엣지 배포 비중이 44%까지 증가할 것으로 전망했다.
+IBM 기업가치연구소(IBV)가 올해 6월 발표한 'AI 주권의 셈법(The Calculus of AI Sovereignty)' 보고서에서도 응답 기업 경영진의 68%가 국가·지역별 데이터 상주 및 주권 규정을 충족하는 데 어려움을 겪고 있다고 답했다.
+IBM 밥은 이러한 환경을 고려해 다양한 배포 방식을 지원한다. 기업은 라이선스를 확보한 AI 모델을 온프레미스나 망분리 환경에서 직접 운영할 수 있으며, 필요에 따라 외부 AI 모델 서비스와 연동하는 하이브리드 구성도 선택할 수 있다.
+관련기사
+- 슈퍼컴 110년 걸릴 계산, IBM 양자컴퓨터가 19초에 풀었다2026.09.30
+- [영상] IBM "기업용 AI 에이전트의 핵심은 통제"…코드 생성 넘어 보안·표준 갖춰야2026.09.18
+- VTI 코리아, 기업 AI 에이전트 도입·운영 전략 제시…"보안부터 성과까지"2026.09.16
+- [현장] 이수정 IBM 사장 "AI 경쟁, 핵심은 모델 아닌 운영"2026.09.01
+IBM은 클라우드 중심으로 설계된 기존 AI 개발 도구와 달리, IBM 밥이 온프레미스 시스템과 프라이빗 클라우드 등 여러 환경에 분산된 애플리케이션과 데이터를 대상으로 AI 기반 개발·현대화 작업을 지원할 수 있다고 설명했다.
+닐 순다레산 IBM AI·자동화 부문 총괄사장은 "기업용 AI 확산의 핵심은 보안과 거버넌스, 데이터 주권"이라며 "IBM 밥 자체 호스팅 버전은 기업이 직접 통제하는 환경에서 에이전틱 AI를 운영할 수 있도록 해 보안과 규제 준수, 운영 통제권을 유지하면서 AI 활용 가치를 높일 수 있도록 지원한다"고 말했다.
+---
+[TITLE] 몽고DB, 프로덕션 환경 위한 '아틀라스 에이전트 엔진' 출시
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208687
+[PUBLISHED] 2026-10-01 15:00 KST
+[SOURCE] 데일리시큐
+[TOPIC] 에이전트, 개발, 모델, 보안, 규제
+[SCORE] 10
+[REASON] 프로덕션 AI 에이전트를 위한 통합 실행 및 거버넌스 레이어 출시
+[BODY]
+몽고DB가 뉴욕 나스닥 마켓사이트에서 열린 인베스터 데이에서 프로덕션 인공지능(AI) 에이전트를 위한 통합 실행·메모리·거버넌스 레이어인 '아틀라스 에이전트 엔진(Atlas Agent Engine)'을 공개했다.
+AI 에이전트는 개념 증명(PoC) 단계에서는 빠르게 검증되지만, 실제 프로덕션 환경에 배포하려면 정확한 검색, 지속적인 메모리 저장, 기업급 보안과 거버넌스가 필수적이다. 단일 플랫폼이 없을 경우 개발팀은 모델이나 프레임워크가 바뀔 때마다 호환성이 깨지는 도구들을 일일이 연결해야 했다. 몽고DB는 이러한 문제를 해결하기 위해 아틀라스 에이전트 엔진을 설계했다.
+아틀라스 에이전트 엔진은 모듈형 방식으로 에이전트 배포를 지원한다. 검색 기능은 몽고DB 보이지 AI를 기반으로 작동하며, 임베딩 및 리랭킹 모델은 실제 기업용 검색 성능을 반영한 지표에서 성능을 입증했다. 고객은 기존 모델과 프레임워크를 유지하면서 메모리 및 거버넌스 레이어를 도입할 수 있다. 퍼블릭 프리뷰로 즉시 이용 가능하며 기존 아틀라스 약정에서 사용량 기반 요금제로 활용할 수 있다.
+아틀라스 에이전트 엔진은 세 가지 핵심 문제를 해결한다. 첫째, 아이디(ID) 관리, 감사, 가드레일, 비용 통제를 하나의 컨트롤 플레인으로 통합하여 거버넌스를 기본 내장했다. 둘째, 보이지 AI 임베딩과 네이티브 검색 기술로 메모리를 플랫폼 자체에 내장해 에이전트가 더 적은 토큰으로 정확한 결과를 제공한다. 셋째, 모든 AI 모델 및 프레임워크에 대해 중립성을 유지하는 개방형 설계로 구축되어 모델을 변경하더라도 단순 설정 변경만으로 대응할 수 있다.
+몽고DB는 리눅스 재단의 '오픈 보안 AI 얼라이언스' 및 '에이전틱 AI 재단'에 합류하여 안전하고 상호운용 가능한 에이전트를 위한 오픈 소프트웨어 표준을 주도할 계획이다. 현재 퍼블릭 프리뷰 버전으로 제공되며 신규 및 기존 아틀라스 고객은 공식 홈페이지에서 사용할 수 있다.
+---
+[TITLE] Quoting Matthew Green
+[TITLE_KO] 매튜 그린 인용
+[LINK] https://simonwillison.net/2026/Oct/1/matthew-green/
+[PUBLISHED] 2026-10-01 15:29 KST
+[SOURCE] Simon Willison
+[TOPIC] 에이전트, 보안
+[SCORE] 10
+[REASON] AI 에이전트 간 정보 공유를 통한 웜 공격 가능성 제시
+[BODY]
+1st October 2026
+[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared package cache, and those instructions changed what the recipients did. Replace the package cache with email, Slack and shared documents or WhatsApp, and replace independently-sandboxed training runs with independently-deployed personal agents like Muse, and you have exactly the ingredients that a worm needs.
+— Matthew Green, Is sandboxing sufficient to contain rogue agents?
+Recent articles
+- OpenAI DevDay 2026 live blog - 29th September 2026
+- 2026 in LLMs (so far) - 27th September 2026
+- Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war - 22nd September 2026
+---
+[TITLE] Fortinet warns of critical FortiMail flaw exploited in zero-day attacks
+[TITLE_KO] 포티넷, 제로데이 공격에 악용되는 치명적인 FortiMail 취약점 경고
+[LINK] https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortimail-flaw-exploited-in-zero-day-attacks/
+[PUBLISHED] 2026-10-02 07:42 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 10
+[REASON] FortiMail 제로데이 취약점이 활발히 악용되고 있음을 경고
+[BODY]
+Fortinet is warning customers of a critical FortiMail vulnerability, tracked as CVE-2026-104286, that is being actively exploited in zero-day attacks to execute unauthorized code or commands on vulnerable devices.
+The vulnerability is rated critical, with a CVSS score of 9.8, and affects the FortiMail management interface.
+"An Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') [CWE-22] and Improper Neutralization of NULL Byte or NULL Character [CWE-158] vulnerability may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests," Fortinet said in an advisory published Thursday.
+Gwendal Guégniaud of Fortinet's Product Security team discovered the vulnerability internally, and it affects FortiMail 8.0.0 through 8.0.1, FortiMail 7.6.0 through 7.6.6, FortiMail 7.4.0 through 7.4.8, and FortiMail 7.2.0 through 7.2.9.
+Fortinet says the flaw is being actively exploited and is urging customers to apply the shared workarounds until a security update can be installed.
+FortiMail 7.2 users can patch the vulnerability by upgrading to the 7.4 branch or later. For affected FortiMail 7.4, 7.6, and 8.0 installations, security updates are not yet available, with Fortinet listing FortiMail 7.4.9, 7.6.7, and 8.0.2 as upcoming versions containing the fix.
+Until patched versions are available, Fortinet says admins can mitigate the flaw by disabling IBE feature support using the following commands:
+config system encryption ibe
+set status disable
+end
+As an alternative workaround, administrators can disable access to the FortiMail management interface from the Internet or restrict access to trusted private networks.
+Fortinet also published indicators of compromise (IOCs) associated with the attacks, including several files that were added or modified on compromised systems.
+Fortinet also listed 79[.]141.169.187 and 45[.]129.0.192 as IP addresses associated with the attacks.
+The advisory also includes log entries that administrators can use to identify potentially compromised appliances.
+One of those entries shows an archive account named archive234 being configured from the command line with 79.141.169.187 as the remote server and /uploads as the remote directory. This could indicate that the attacker configured the compromised FortiMail appliance to send archived data to a remote server.
+Other log entries include a cron job executing a command related to /migadmin, an administrator logout event, an IBE decryption error due to invalid Base64 encoding, and failed login attempts.
+Example log events shared by Fortinet are listed below:
+type=event subtype=system pri=debug user=system ui=cron msg="(root) CMD (/bin/sh -c 'O=/migadmin ...
+- type=kevent subtype=admin pri=information user=admin ui=(null) action=logout status=success reason=unknown msg="User admin logged out from (null)."
+- type=kevent subtype=config pri=information user=admin ui=cli module=unknown submodule=unknown msg="Added 'archive234' to 'archive account' : rotation-size[50]rotation-time[1] rotation-hour[14]destination[remote]remote-ip[79.141.169.187]remote-username[archive234]remote-password[***]remote-directory[/uploads] (user: admin, from: cli)"
+- FortiMail::IBE::DecrypterMediaIn::DecrypterMediaIn(FortiMail::MediaIn&, const FortiMail::IBE::KeyFinder&, const FortiMail::EmailAddress&, const FortiMail::Buffer&, FortiMail::IBE::DecrypterMediaIn::Version): Caught BufferException(2), BufferImpl.cpp:973, 'Invalid Base64 Encoding at pos 0. Character=0x2a'
+- Internal user *@domain.tld<mailto:*@domain.tld> failed to log in.
+Fortinet has not disclosed when the flaw was first exploited, how many systems were compromised, or who is behind the attacks.
+When BleepingComputer asked for more information about the exploitation activity, Fortinet referred customers to the advisory and said it is coordinating with government agencies, including CISA.
+---
+[TITLE] Microsoft says threat actors are ahead in the early AI race
+[TITLE_KO] 마이크로소프트, 초기 AI 경쟁에서 공격자가 앞서고 있다고 밝혀
+[LINK] https://www.bleepingcomputer.com/news/security/microsoft-says-threat-actors-are-ahead-in-the-early-ai-race/
+[PUBLISHED] 2026-10-02 04:32 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 10
+[REASON] AI 기반 공격에서 공격자가 방어자보다 앞서고 있음을 경고
+[BODY]
+Microsoft says cyberattackers are currently benefiting from artificial intelligence faster than defenders, allowing threat actors to speed up vulnerability discovery, malware development, and post-compromise activity while security teams struggle to keep pace.
+This comes from Microsoft's 2026 Digital Defense Report, which strongly focuses on how artificial intelligence is changing both offensive and defensive cybersecurity operations.
+Microsoft says AI is reducing the time, expertise, and cost required to discover and exploit weaknesses, while allowing attackers and defenders alike to operate with greater speed, scale, and autonomy.
+However, while the company believes defenders will eventually gain similar benefits from the technology, it says attackers currently have the advantage.
+"While the equilibrium between attackers and defenders will likely ultimately be re-established, in the near term we are in a period where attackers are reaching to advantages first, and defenders will need to move sharply in order to close the gap," says Microsoft.
+Microsoft says this is particularly true in vulnerability research, where AI-powered discovery is increasingly outpacing defenders' ability to remediate flaws.
+"However, remediation is inherently much slower than discovery, not least because many systems lack robust unit and integration testing and so cannot deploy code changes rapidly," warns Microsoft.
+"This means the world is likely to experience a multi-year period where the number of known but unpatched vulnerabilities spikes. Well-prepared and well-funded adversaries may be able to stockpile large numbers of zero-day vulnerabilities discovered through such means."
+Microsoft also says the median time between vulnerability discovery in the wild and weaponization has fallen "well below 24 hours," further limiting the time organizations have to patch exposed systems before they are exploited.
+In addition to vulnerability research, attackers are using AI to generate customized malware and accelerate post-compromise activities such as data exfiltration, secret discovery, and lateral movement from days to minutes.
+Microsoft says AI can also help threat actors automate larger portions of an attack chain with limited human intervention, while giving less experienced cybercriminals access to capabilities that previously required more skill.
+The company also says AI can also give criminal groups capabilities once associated with more sophisticated threat actors, like state-sponsored hackers.
+"For sophisticated actors, AI allows unprecedented speed, scale, and customization, reducing the attack chain from days to seconds," explains Microsoft.
+"For less-sophisticated actors, AI-powered scaling makes accessible the sort of attack persistence that was previously the sole domain of intelligence agencies, and the ability to customize attacks, especially social engineering attacks for phishing and fraud, is likely to increase attack success rates."
+AI becomes a tool for state-sponsored hackers
+Microsoft says nation-state threat actors have already started to use AI in real-world operations, using it to speed up research, malware development, social engineering, and other parts of an attack.
+Some Chinese state-sponsored actors now use AI tools to search for vulnerabilities and learn how to exploit them, while still relying on phishing and remote access trojans.
+Microsoft has also seen Russian state-sponsored threat actors using "vibe coding" and AI-generated tooling to speed up and power their attacks.
+According to Microsoft, North Korean remote IT workers are using AI for persona development, social engineering, and maintaining access to organizations. Other North Korean threat actors use it to create malware and manage attack infrastructure.
+Microsoft says some of these hackers have also used agentic workflows and LLM-generated code to accelerate malware deployment.
+---
+[TITLE] Zimbra Vulnerability Exploited in the Wild Prior to Public Disclosure
+[TITLE_KO] Zimbra 취약점, 공개 전 실제 환경에서 악용돼
+[LINK] https://www.securityweek.com/zimbra-vulnerability-exploited-in-the-wild-prior-to-public-disclosure/
+[PUBLISHED] 2026-10-01 21:55 KST
+[SOURCE] SecurityWeek
+[TOPIC] 보안
+[SCORE] 10
+[REASON] Zimbra 취약점이 공개 전 활발히 악용되었음을 발견
+[BODY]
+Hackers started exploiting a high-severity OS command injection vulnerability in Zimbra Collaboration Suite (ZCS) shortly after patches were rolled out, before public disclosure, Microsoft reports.
+Tracked as CVE-2026-73570 (CVSS score of 8.9), the flaw exists because, in ZCS before 10.1.20, untrusted input during SNMP notification processing is improperly sanitized.
+Thus, if the zimbra-snmp package has been installed and SNMP notifications have been enabled, an attacker could trigger the security defect via specially crafted SMTP requests.
+Successful exploitation of the bug allows unauthenticated attackers to achieve remote code execution with the privileges of the Zimbra user.
+Patches for CVE-2026-73570 were rolled out on July 20 in ZCS version 10.1.20, and the vulnerability was publicly disclosed on August 13.
+Poland’s CERT Polska flagged the security defect as exploited and released indicators of compromise (IoCs) on August 17, but in-the-wild exploitation started between patching and public disclosure.
+“Between July 28 and August 7, after a fix became available on July 20 but before public disclosure on August 13, Microsoft observed two distinct out-of-band scanning tools probing the vulnerable injection point,” Microsoft says.
+The reconnaissance activity used an execution path that was later seen during exploitation, and was meant to validate command execution via lightweight out-of-band probes, without delivering a payload.
+As part of the observed follow-up exploitation activity, the attackers deployed JSP webshells to publicly accessible application directories, executed content through wget or curl, launched background processes, and established interactive reverse shells.
+“Multiple JSP webshells were deployed across Jetty and mailboxd application paths, including additional copies on peer mailbox nodes. This provided alternative access paths across different Zimbra configurations and reduced reliance on a single webshell,” Microsoft notes.
+The attackers then mapped clusters, fingerprinted the environment, checked for the Zimbra SSH identity, escalated privileges to root using legitimate Zimbra tools, and deployed a secondary persistence mechanism using a systemd service named zimlog.service.
+According to Microsoft, the hackers targeted Zimbra’s centralized service and authentication secrets for credential exfiltration, and used the login material for authenticated LDAP queries that allowed them to retrieve high-value secrets.
+They also used Zimbra’s existing SSH identity to access other nodes in the cluster, used HTTP and HTTPS callbacks to validate command execution, and deployed “a full remote-access agent providing interactive shell access, bidirectional file operations, and SOCKS5 proxying”.
+Zimbra Collaboration Suite users are advised to update their instances to version 10.1.20 or later, uninstall the optional package, disable the vulnerable configuration, restrict SNMP and SMTP access, and check their environments for potential compromise.
+Related: Zammad Zero-Days Exploited in AI-Powered DIVD Hack
+Related: Cisco Patches Exploited Catalyst SD-WAN Zero-Day Vulnerability
+Related: WatchGuard Patches Critical Fireware OS Code Injection Vulnerability
+Related: New Spectre v2 Variant Exposes Intel, AMD, Arm CPUs to Data Leaks
+---
+[TITLE] Pentagon breach exposes personal data of more than 3 million people
+[TITLE_KO] 국방부 침해로 300만 명 이상의 개인 데이터 노출
+[LINK] https://www.helpnetsecurity.com/2026/10/01/pentagon-dmdc-data-breach-3-million-people/
+[PUBLISHED] 2026-10-01 21:21 KST
+[SOURCE] Help Net Security
+[TOPIC] 보안
+[SCORE] 10
+[REASON] 미 국방부에서 300만 명 이상의 개인 데이터 유출 사고 발생
+[BODY]
+Pentagon breach exposes personal data of more than 3 million people
+The Pentagon’s Defense Manpower Data Center (DMDC) is notifying millions of people that hackers gained access to their personal data.
+The breach affects 2.76 million living individuals, a group that can include current and former defense personnel and their dependents, along with 294,000 deceased individuals, a Defense Department official told CNN.
+Established in 1974, DMDC serves as a central hub for US Department of Defense data on military personnel, service status and benefits eligibility.
+According to data breach notification letters shared online by affected individuals, DMDC discovered “a security vulnerability in a DMDC file sharing system” on July 16, 2026, which “allowed unauthorized users to access files.”
+“Analysis identified that between October 2025 and the date of discovery, a small number of unauthorized users accessed files on a server containing unencrypted PII,” the letters say.
+The exposed data differed from person to person and included Social Security numbers paired with names, birth dates, contact information, race, sex and military job specialties.
+DMDC says it “does not have any indications of misuse of the accessed information,” and has not disclosed who accessed the files or whether they were copied.
+“We are taking appropriate actions to assess and enhance the cybersecurity posture of the DMDC system,” the letters note.
+DMDC is offering affected individuals 12 months of free credit monitoring through IDX, a breach response company contracted by the department.
+This breach is the second blow to US federal agencies in a matter of weeks, after the ShinyHunters extortion group claimed it stole personal information of FBI employees.
+---
+[TITLE] CISA Adds Exploited Cisco Catalyst SD-WAN Manager Auth Bypass to KEV
+[TITLE_KO] CISA, 악용된 Cisco Catalyst SD-WAN Manager 인증 우회 취약점을 KEV에 추가
+[LINK] https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html
+[PUBLISHED] 2026-10-01 19:33 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 10
+[REASON] Cisco SD-WAN Manager 인증 우회 취약점이 활발히 악용됨
+[BODY]
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a critical authentication bypass flaw impacting Cisco Catalyst SD-WAN Manager to its Known Exploited Vulnerabilities (KEV), following reports of active exploitation.
+The vulnerability, tracked as CVE-2026-76504 (CVSS score: 9.8), could allow an unauthenticated, remote attacker to access an affected system with the privileges of the admin user.
+"Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request," CISA said.
+Successful exploitation could allow an attacker to sidestep authentication by sending a crafted HTTP request to the API of the affected system, and gain access to the API as the admin user.
+The development comes after Cisco said it became aware of active exploitation of CVE-2026-76504 in September 2026. The networking equipment maker has made available indicators of compromise (IoCs) that customers can use to check if their environments are impacted -
+- Audit "/var/log/nms/containers/service-proxy/serviceproxy-access.log" for entries that are related to j_security_check from unknown or unauthorized IP addresses
+- Audit "/var/log/nms/vmanage-server.log" for entries that are related to j_security_check from unknown or unauthorized IP addresses, specifically being called for users that include names starting with "viptela-reserved-"
+Cisco did not provide any details about the exploitation activity, who is behind it, how many organizations have been compromised thus far, or when the first instance of CVE-2026-76504 exploitation occurred. Federal Civilian Executive Branch (FCEB) agencies have time until October 3, 2026, to apply the fixes.
+"Cisco SD-WAN feels like an ever-present staple of the CISA Known Exploited vulnerabilities list, with eight 2026 CVEs landing on KEV this year alone -- this should be an extremely clear signal that attackers have recognized the value of the platform, and this pattern is unlikely to slow down," Jake Knott, head of threat intelligence at watchTowr, said in a statement.
+"None of this should surprise anyone. As a single-pane-of-glass used by enterprises to manage, configure, and monitor large networks, it is naturally an attractive target."
+Organizations running Catalyst SD-WAN Manager are advised to upgrade to a fixed release as soon as possible and follow vendor guidance to hunt for POST requests to any URL-encoded variants of "/j_security_check" and review instances for signs of exploitation.
+---
+[TITLE] Bitget Confirms Third-Party Zero-Day Behind $387.5 Million Cryptocurrency Theft
+[TITLE_KO] Bitget, 3억 8750만 달러 암호화폐 도난의 배후에 서드파티 제로데이 있음을 확인
+[LINK] https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html
+[PUBLISHED] 2026-10-01 14:21 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 10
+[REASON] 암호화폐 도난 사고의 원인이 제로데이 취약점임을 확인
+[BODY]
+Cryptocurrency exchange Bitget on Wednesday confirmed that attackers who stole $387.5 million last week exploited a zero-day flaw in third-party security products, citing ongoing investigation findings from SlowMist.
+"Their investigation identified malicious activity involving third-party security products, including a zero-day vulnerability, and recovered a customized tool used by the attacker to initiate unauthorized withdrawals," Bitget said in a post on X.
+On September 24, 2026, the cryptocurrency exchange disclosed that threat actors stole $387.5 million from its hot and warm wallets through a series of unauthorized transfers, prompting it to halt all withdrawals temporarily. Close to $1.1 million in cryptocurrency assets have been frozen by Circle, Tether, and NEAR Intents.
+In a subsequent analysis, Bitget said the attackers exploited the flaw to obtain high-level internal credentials and use them to issue fraudulent withdrawal commands to the wallet system and initiate "abnormal transfers that bypassed existing risk controls." Bitget has since notified the relevant third-party vendor and disabled the affected functionality pending completion of a fix.
+The incident impacted 11 blockchains, including Ethereum, XRP Ledger, Zcash, TRON, Arbitrum, Optimism, Base, BNB Smart Chain, Avalanche, Algorand, and Celestia. Affected assets identified to date include XRP, ETH, USDT, ZEC, ATOM, USDC, USD0, XAUt, BNB, AVAX, TRX, ALGO, and TIA.
+According to a new progress report published by SlowMist, the earliest malicious activity linked to the hack dates back to August 31, 2026.
+"A service running on one of Product A's nodes was affected by a zero-day vulnerability," the company said. "The attacker ran a hidden script under the service process, launched a command to read the environment variable containing the database password, and connected to the database."
+"Similar hidden-script activity was observed on two other nodes on September 23 and September 25. These findings show that the affected service environments had already been compromised before the assets were transferred out."
+Then, on September 25, 2026, the threat actor is said to have accessed another product's (named Product B) management platform by using an internal employee's identity and making three consecutive attempts to inject system commands into the product's task parameters to write malicious files.
+"The attacker subsequently submitted code through the platform's web execution endpoint, attempting to modify server configuration, write a communication relay file, and upload and assemble malicious program files in batches," the blockchain security company added.
+Another key finding relates to the threat actor's use of a bespoke tool to siphon the assets. SlowMist said the program was among the deleted files it had recovered. Highly tailored to the wallet system's withdrawal logic, the tool began running and executing cryptocurrency theft at 01:49 a.m on September 25, 2026.
+Google-owned Mandiant's probe into the incident has found that the attackers gained unauthorized access to certain third-party security appliances (i.e., A and B), and then leveraged that access to move laterally into Bitget's wallet environment.
+"The threat actor deployed a web shell onto the security appliance B and established a Command-and-Control (C2) connection," Mandiant said. "Using the persistent access on security appliance B, the threat actor moved laterally to Bitget's production wallet job server and deployed malicious packages."
+"The threat actor compromised network and security appliances and leveraged them to distribute malicious packages and gain control over the wallet job server."
+Bitget said IP behavior patterns and on-chain analysis indicate the attack was carried out by North Korean threat actors, with Elliptic and TRM Labs uncovering wallet overlaps used to launder illicit proceeds obtained from previous hacks.
+---
+[TITLE] Apple CoreGraphics PoC Emerges as WhatsApp PDF Checks Hint at Possible Delivery Path
+[TITLE_KO] Apple CoreGraphics PoC 등장, WhatsApp PDF 검사에서 가능한 전달 경로 암시
+[LINK] https://thehackernews.com/2026/10/apple-coregraphics-poc-emerges-as.html
+[PUBLISHED] 2026-10-01 14:54 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 10
+[REASON] Apple CoreGraphics 취약점 PoC 공개로 보안 위협 증가
+[BODY]
+Security researchers have published the first public proof-of-concept for CVE-2026-86950, an Apple CoreGraphics flaw Apple says may have been used in attacks against specific targeted individuals.
+The trigger is a malicious PDF with a crafted embedded font that crashes unpatched iPhones and Macs. The code causes a crash, not an execution error. Turning the memory corruption into a working exploit is separate work the analysis does not demonstrate.
+Apple patched the flaw on September 28, crediting Meta Product Security with the discovery and noting it may have been used in an "extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 27."
+The U.S. Cybersecurity and Infrastructure Security Agency added the flaw to its Known Exploited Vulnerabilities catalog the following day, requiring federal agencies to apply the fix by October 2.
+Apple has not listed iOS 27 or macOS Golden Gate 27 as affected in the September 28 advisories. No workaround has been described for systems that cannot update immediately.
+What the Researchers Found
+The analysis was published September 30 by Dion Blazakis, Josh Maine, and Anna Groza of Calif, a firm known for research into zero-click attack surfaces in messaging apps. They started from a publicly available binary comparison of iOS 26.7 and 26.7.1.
+CoreGraphics is the Apple framework for 2D drawing, image rendering, and PDF processing. It was the only library changed in 26.7.1, with the same fix applied more than 20 times across eight rasterizer functions.
+The patched code converts a glyph coordinate from floating-point to a 32-bit fixed-point value. Before the patch, two of the eight functions handled out-of-range values differently: one saturated the result, the other truncated it.
+That difference caused the calculated bounding box for a glyph to be too narrow. CoreGraphics then allocated a working buffer smaller than the edges it needed to draw, and wrote outside it.
+To trigger the bug, the researchers built a TrueType font with coordinates large enough to force the overflow. Embedding it in a PDF with a text matrix and nested composite-glyph scaling pushes those coordinates past the limit. They published the generation scripts and a sample PDF in a public GitHub repository.
+The harness calls the same ImageIO thumbnail path an app uses when previewing a received attachment. The researchers say the crash occurs on both macOS and iOS.
+The macOS result includes a full debugger call stack. The iOS claim is Calif's, with no separate trace published.
+The crash exposes a controlled out-of-bounds write that affects two adjacent 16-bit values in a buffer that the attacker can control, allowing writes to the stack or heap. Calif says converting that primitive into working code execution is separate work. Calif did not obtain the in-the-wild sample and cannot say how the attacker completed the chain.
+The WhatsApp Question
+Calif examined WhatsApp because Meta Product Security was credited with finding the flaw. The firm compared two recent WhatsApp versions, 26.37.73 and 26.38.74, and found new code in WhatsApp's Kaleidoscope attachment scanner.
+The newer version reads PDF files for embedded font streams and flags suspicious ones with three defect tags: MalformedFontProgram, UndecodableFontProgram, and UnverifiedFontProgram. Any such tag returns a high-risk score to WhatsApp's attachment checker, which then stops automatic parsing of the flagged file.
+Calif described those changes as circumstantial evidence pointing toward WhatsApp as a possible delivery vector. The firm's post describes its research as covering a possible WhatsApp zero-click path.
+The published analysis does not describe or test a WhatsApp delivery path. The initial version did: it said the researchers' analysis suggested WhatsApp could deliver a PDF that triggers the flaw when a victim opens a chat from a trusted contact with automatic media downloads on.
+---
+[TITLE] Google makes Gemini 4 AI model available to a trusted few
+[TITLE_KO] 구글, Gemini 4 AI 모델을 소수의 신뢰할 수 있는 사용자에게 제공
+[LINK] https://www.infoworld.com/article/4229615/google-makes-gemini-4-ai-model-available-to-a-trusted-few.html
+[PUBLISHED] 2026-10-01 22:46 KST
+[SOURCE] InfoWorld
+[TOPIC] 에이전트, 개발, 모델, 보안, 산업, 규제
+[SCORE] 10
+[REASON] 구글의 차세대 프론티어 AI 모델 Gemini 4 Argon 출시
+---
+[TITLE] PQC 도입에 인증서·통신망 손본다...웹·국방 인프라도 재정비
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155800
+[PUBLISHED] 2026-10-02 12:20 KST
+[SOURCE] 테크M
+[TOPIC] 보안, 신기술, 산업
+[SCORE] 10
+[REASON] 양자내성암호 도입을 위한 인증서 및 통신망 재정비 동향
+---
+[TITLE] 엑스게이트, LIG디펜스앤에어로스페이스·키페어와 방산 양자보안 협력
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674850
+[PUBLISHED] 2026-10-01 16:26 KST
+[SOURCE] 블로터
+[TOPIC] 보안, 신기술
+[SCORE] 10
+[REASON] 방산 분야에 양자내성암호 적용을 위한 협력 체결
+---
+[TITLE] 클라우드플레어, 공개 CA 전환…2027년 양자 내성 인증서 발급
+[LINK] https://www.etnews.com/20261001000258
+[PUBLISHED] 2026-10-01 12:40 KST
+[SOURCE] 전자신문
+[TOPIC] 보안, 신기술
+[SCORE] 10
+[REASON] 클라우드플레어의 양자 내성 인증서 발급 계획 발표
+---
+[TITLE] 서울시, AI 학습 데이터 표준화·공유...'레벨4 자율주행 시내버스' 2030년까지 500대 도입
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42155
+[PUBLISHED] 2026-10-01 18:50 KST
+[SOURCE] 인공지능신문
+[TOPIC] 신기술
+[SCORE] 10
+[REASON] 서울시의 레벨4 자율주행 시내버스 도입 및 AI 학습 데이터 표준화 계획
+---
+[TITLE] 화학사고·폭발현장에 휴머노이드 투입…싱가포르, 2028년 실전 배치
+[LINK] https://www.etnews.com/20261001000272
+[PUBLISHED] 2026-10-01 13:04 KST
+[SOURCE] 전자신문
+[TOPIC] 신기술
+[SCORE] 10
+[REASON] 싱가포르가 위험 업무에 휴머노이드 로봇을 실전 배치할 계획 발표
+---
+[TITLE] 캘리포니아주, '불량 에이전트' 관련 오픈AI에 수사 소환장 발부
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215883
+[PUBLISHED] 2026-10-02 12:16 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 모델, 보안
+[SCORE] 9
+[REASON] AI 에이전트의 사이버 보안 사고 관련 오픈AI에 수사 소환장 발부
+---
+[TITLE] 시높시스, 반도체·시스템 전 과정 AI 추론 및 실행 '시높시스 에이전트엔지니어' 공개
+[LINK] https://www.etnews.com/20261002000088
+[PUBLISHED] 2026-10-02 11:07 KST
+[SOURCE] 전자신문
+[TOPIC] 에이전트, 모델, 신기술, 산업
+[SCORE] 9
+[REASON] 반도체 개발 전 과정에 AI 에이전트가 추론·계획·실행하는 포트폴리오 공개
+---
+[TITLE] Pi Durable - 중단된 작업을 이어가는 AI 에이전트 하네스
+[LINK] https://news.hada.io/topic?id=34641
+[PUBLISHED] 2026-10-02 07:35 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 장시간 실행되는 AI 에이전트 애플리케이션 개발을 위한 하네스 공개
+---
+[TITLE] Pi 1.0 출시 - 미니멀한 터미널 코딩 에이전트
+[LINK] https://news.hada.io/topic?id=34632
+[PUBLISHED] 2026-10-02 05:38 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 9
+[REASON] 여러 AI 모델을 지원하는 터미널 코딩 에이전트 Pi 1.0 정식 출시
+---
+[TITLE] AWS debuts Strands Decider 2B, a first lightweight decision model for accelerate agentic workflows
+[TITLE_KO] AWS, 에이전틱 워크플로우 가속화를 위한 첫 경량 의사결정 모델 Strands Decider 2B 공개
+[LINK] https://siliconangle.com/2026/10/01/aws-debuts-strands-decider-2b-a-first-lightweight-decision-model-for-accelerate-agentic-workflows/
+[PUBLISHED] 2026-10-02 01:00 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 9
+[REASON] AWS의 경량 의사결정 모델 Strands Decider 2B 공개
+---
+[TITLE] 오픈클로, 기업용 AI 에이전트 제어 플랫폼 'OCE' 공개
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215847
+[PUBLISHED] 2026-10-01 18:21 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 9
+[REASON] 기업 환경에서 지속형 AI 에이전트를 안전하게 운영하는 제어 플랫폼 공개
+---
+[TITLE] 인셉션, 음성 에이전트 ‘머큐리 보이스’ 출시…'확산 모델'로 지연시간 한계 깼다
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215864
+[PUBLISHED] 2026-10-01 18:14 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 모델, 신기술
+[SCORE] 9
+[REASON] 확산 모델 기반 음성 에이전트 머큐리 보이스 출시로 지연시간 한계 극복
+---
+[TITLE] 4주 교육 받으면 AI 에이전트 '뚝딱'...SK AX, 실전형 교육 '부트캠프 바이브' 출시
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155789
+[PUBLISHED] 2026-10-01 16:55 KST
+[SOURCE] 테크M
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 비개발자도 AI 에이전트를 만들 수 있는 실전형 교육 프로그램 출시
+---
+[TITLE] 프론티어 모델의 그늘에서 벗어나는 로컬 LLM…올라마 완전 정복
+[LINK] https://www.itworld.co.kr/article/4229879/%ed%94%84%eb%a1%a0%ed%8b%b0%ec%96%b4-%eb%aa%a8%eb%8d%b8%ec%9d%98-%ea%b7%b8%eb%8a%98%ec%97%90%ec%84%9c-%eb%b2%97%ec%96%b4%eb%82%98%eb%8a%94-%eb%a1%9c%ec%bb%ac-llm-%ec%98%ac%eb%9d%bc%eb%a7%88.html
+[PUBLISHED] 2026-10-02 11:39 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 개발, 모델, 신기술, 산업
+[SCORE] 9
+[REASON] 개인용 컴퓨터에서 LLM 실행 가능성 및 성능 향상
+---
+[TITLE] 오픈AI "중국 문샷의 '보호된 추론' 대규모 추출 시도 차단"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215845
+[PUBLISHED] 2026-10-01 18:01 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 9
+[REASON] 오픈AI가 중국 문샷의 AI 모델 추론 추출 시도를 차단
+---
+[TITLE] GPT-Synopsys, 칩 설계를 혁신할 최첨단 AI
+[LINK] https://news.hada.io/topic?id=34616
+[PUBLISHED] 2026-10-02 02:36 KST
+[SOURCE] GeekNews
+[TOPIC] 모델
+[SCORE] 9
+[REASON] OpenAI와 Synopsys가 칩 설계 특화 AI 모델을 공동 개발
+---
+[TITLE] "AI가 만든 단백질에 ‘지문’ 새긴다"…구글 딥마인드, '신스아이디 바이오' 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42152
+[PUBLISHED] 2026-10-01 17:26 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
+[SCORE] 9
+[REASON] AI 생성 단백질의 출처를 추적하는 워터마킹 기술 공개
+---
+[TITLE] Microsoft, Google back Apache Ossie to make enterprise data and AI platforms more interoperable
+[TITLE_KO] 마이크로소프트, 구글이 엔터프라이즈 데이터 및 AI 플랫폼 상호운용성을 높이기 위해 Apache Ossie 지원
+[LINK] https://www.infoworld.com/article/4229785/microsoft-google-back-apache-ossie-to-make-enterprise-data-and-ai-platforms-more-interoperable-2.html
+[PUBLISHED] 2026-10-02 05:09 KST
+[SOURCE] InfoWorld
+[TOPIC] 에이전트, 개발, 모델, 보안, 산업, 규제
+[SCORE] 9
+[REASON] 주요 기업들이 엔터프라이즈 데이터 및 AI 플랫폼 상호운용성 표준화 지원
+---
+[TITLE] AI-Infra-Guard - AI 인프라와 에이전트를 점검하는 오픈소스 레드팀 플랫폼
+[LINK] https://news.hada.io/topic?id=34645
+[PUBLISHED] 2026-10-02 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 9
+[REASON] AI 인프라와 에이전트를 점검하는 오픈소스 레드팀 플랫폼 공개
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002121737
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155802
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.itworld.co.kr/article/4229883/ai%ea%b0%80-%ec%a7%93%eb%8a%94-%ec%a7%91-%ec%84%a4%ea%b3%84%eb%8f%84%eb%8a%94-%eb%88%84%ea%b0%80-%ea%b7%b8%eb%a6%ac%eb%82%98-ai-%ec%bd%94%eb%93%9c-%ec%8b%9c%eb%8c%80%ec%9d%98-%ea%b1%b0%eb%b2%84.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171288
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002113808
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261002000099
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002110850
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002083313
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.computerworld.com/article/4229789/omnissa-delivers-a-peek-into-the-benefits-of-breaking-through-enterprise-data-silos.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/microsoft-targets-ultra-realistic-voice-agents-with-its-first-streaming-transcription-model/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42165
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208700
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/oct/02/we-dont-need-to-panic-about-ai-we-need-to-hold-its-creators-accountable
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261002000051
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42160
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261002000010
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261002000002
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thenewstack.io/openai-dots-codex-usage/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34636
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/autonomous-ai-agents-tried-to-hack-us-canadian-government-websites/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.wired.com/story/uncanny-valley-podcast-trumps-pinky-swear-ai-safety-accord-an-ai-agent-worth-the-risk/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/ibm-allows-on-prem-deployment-of-its-bob-agentic-development-platform/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/cognition-scales-ai-agent-infrastructure-coreweave-fullyconnected/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/us-news/2026/oct/01/california-opens-investigation-openai-hack
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34615
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/nvidia-links-ai-factory-economics-inference-efficiency-fullyconnected/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/brian-chesky-interview-ai-agents-need-their-own-operating-system/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1003399/meta-openai-ai-agents-muse-dots-battle
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/photon-held-a-funeral-for-mobile-apps-now-it-has-4-5m-to-help-replace-them-with-agents/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/01/deepkeeps-ai-lens-flags-coding-agent-data-leaks-and-routes-destructive-commands-for-approval/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/01/exabeam-agentic-soc/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/01/sophos-ciso-advantage/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/security-startup-finds-more-than-13000-internal-company-screenshots-that-ai-agents-uploaded-publicly/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/01/divd-agentic-ai-attack-breach/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/01/legit-security-agentic-remediation-expansion/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/01/armadin-raises-255-5-million-funding/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42157
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://byline.network/2026/10/1-1496/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215865
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215850
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000476
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.infoworld.com/article/4229154/the-dream-of-enterprise-semantics-why-this-time-is-different.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://byline.network/2026/10/lotte/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000460
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215849
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://byline.network/2026/10/1-1489/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674847
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21652
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21650
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215846
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215840
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42151
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21648
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215830
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000266
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002105228
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34644
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34631
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/zero-trust-creator-says-model-holds-firm-against-ai-assisted-attacks/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/implementing-multi-environment-access-for-claude-platform-on-aws/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://openai.com/index/albertsons-reimagining-retail
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/how-uniopen-customized-amazon-nova-to-their-retail-moderation-policies-for-production-deployment/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34608
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/kiteworks-patches-max-severity-email-protection-gateway-code-injection-vulnerability/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34601
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/treasury-blacklists-most-wanted-atm-malware-developer-and-his-network/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/01/ai-chatbots-hijabs-muslim-women
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215862
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42153
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.infoworld.com/article/4227839/microsoft-doubles-down-on-rust.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21658
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.itworld.co.kr/article/4220957/%ec%88%98%eb%9e%ad-%ec%97%86%ec%9d%b4%eb%8a%94-%eb%8b%a4%ec%9d%8c-%ec%84%b8%eb%8c%80-gpu%eb%8f%84-%ec%97%86%eb%8b%a4-%ec%97%a0%ed%82%a4%ec%8a%a4%ec%bd%94%ec%96%b4%eb%a1%9c-%ec%8b%9c%ec%9e%91.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155782
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155783
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/metamask-security-incident-prompts-exit.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155771
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208679
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215885
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002122852
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002112057
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002105448
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171296
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171280
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002095708
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002094759
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42162
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674898
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171239
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171271
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215867
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/nearly-half-of-test-subjects-mistook-tavus-ai-video-avatar-for-a-real-person-on-a-one-minute-call/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/ideogram-says-its-new-model-can-edit-part-of-an-image-without-messing-up-the-rest/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/uplifting-conversion-across-the-acquisition-funnel-with-personalization-using-contextual-bandits-on-aws/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/01/google-releases-gemini-model-restrictions
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34609
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/02/anthropic-ai-opt-out-australia-copyright-abc-cannibalisation-of-news
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.computerworld.com/article/4229635/memory-squeeze-set-to-tighten-through-2028-micron-says-3.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/openai-says-it-stopped-a-campaign-to-steal-its-models-reasoning-but-the-trick-still-worked-on-azure/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000495
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/openai-disrupts-reasoning-extraction.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215861
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://byline.network/2026/10/1-1494/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000457
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155788
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/google-rolls-out-gemini-4-argon-to.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674822
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21654
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://byline.network/2026/10/1001-8/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215841
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.infoq.com/news/2026/10/typesafe-ai-jev-released/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000397
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215851
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215839
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208686
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21649
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155772
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/02/new-infosec-products-of-the-week-october-2-2026/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34652
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155799
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261002000096
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171302
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171262
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002104418
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208699
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261002000005
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171126
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171003
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/serve-live-governed-data-in-ai-built-apps-with-amazon-quick/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34627
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34617
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/police-arrest-16-year-old-suspected-of.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/wordpress-backdoor-rebuilds-itself.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/hacker-conversations-rob-juncker-a-knock-at-the-door-and-a-moral-compass/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/enterprises-struggle-to-prepare-for-ai-and-quantum-threats-pwc-says/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/anthropic-brings-claude-to-civilian-agencies-as-its-fight-with-the-pentagon-drags-on/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/police-dismantle-killsec-ransomware-gang-allegedly-led-by-16-year-old/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/police-shut-down-killsec-ransomware-identify-alleged-teen-leader/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/01/killsec-ransomware-16-year-old-main-operator-arrested/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/01/radarfirst-ai-incident-management/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/ai-has-changed-attack-speed-not-security-fundamentals/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208697
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/how-financial-services-companies-can.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/kevin-mandias-armadin-raises-255-million-at-2-5-billion-valuation/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208696
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208695
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.computerworld.com/article/4229674/will-move-fast-ship-quicker-kill-the-apple-brand.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208694
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171269
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/hackers-breach-pentagon-human-resources-management-system-steal-data-of-nearly-3-million-people/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208693
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/oct/01/forget-superintelligence-error-prone-ai-nearly-sparked-world-war-iii-this-month
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208692
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171224
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208691
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://byline.network/2026/10/1-1493/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155790
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21657
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000217
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208690
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208689
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208688
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/metamask-discloses-security-incident-affecting-its-infrastructure/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215856
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000357
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674830
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://byline.network/2026/10/1-1486/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155774
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/citrix-netscaler-post-exploitation.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000281
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000265
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000241
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000218
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42168
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002112220
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171291
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155795
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42166
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002101102
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42163
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215627
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42158
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674399
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171229
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674880
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674865
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215863
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000183
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21656
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215859
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171245
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674853
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20260930000454
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674801
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674812
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155778
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155773
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215876
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002122401
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002122037
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215879
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42167
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171279
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171281
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155794
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42159
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/ai-driven-law-firm-arceus-legal-raises-17m-to-move-beyond-contract-work/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/hearing-tech-startup-legato-launches-its-ai-hearing-glasses/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000479
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000456
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21653
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208683
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215884
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002090906
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/openai-dismisses-three-safety-researchers-accused-of-sharing-confidential-material/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/tech/1003589/google-ai-overviews-chegg-penske-lawsuits-dismissed
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.computerworld.com/article/4229579/servicenow-launches-standalone-ai-service-desk-to-provide-support-in-teams-slack-and-email-2.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000227
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000319
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215878
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002104817
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215880
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171278
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34651
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674901
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42164
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34647
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42161
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261002000023
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171232
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261002000021
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/report-anthropic-targets-pre-thanksgiving-ipo-launch-despite-warning-of-ais-existential-risks/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171272
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.wired.com/story/whatever-ai-safety-looks-like-its-not-this/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34640
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34639
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1003756/google-gemini-live-guided-vision
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215868
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/data-infrastructure-draws-new-buyers-netapp-ai-pitch-netappinsight/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34625
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34623
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/netapp-targets-ai-factory-storage-architecture-netappinsight/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-writing-tells/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://openai.com/index/the-eternal-complement
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34610
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34607
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/podcast/1002851/utah-ai-data-center-stratos-kevin-oleary-investigation-backlash
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34604
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/01/servicenow-launches-conversational-interface-to-its-service-desk/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/ai-beats-strategos-greatest-player-ending-one-of-the-last-human-strongholds-in-board-games/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.infoq.com/presentations/ai-production-operations/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/01/satlyt-founded-by-a-former-google-and-spacex-product-manager-raises-8m-to-run-ai-on-satellites/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000492
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42156
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42154
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674877
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261001000317
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171247
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171254
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215857
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215854
+[STATUS] SKIP (Score: -)
+---
