@@ -66,13 +66,18 @@ def test_translated_titles_from_selection_step():
     common.append_record("필터링", [("TITLE", "Agents ship"), ("TITLE_KO", "에이전트 출시"), ("LINK", failed), ("SCORE", 9)],
                          block=("BODY", "본문"))
     common.append_error("요약", "요약 오류", failed, "요약 실패: 429")
-    common.append_record("필터링", [("TITLE", "Patch now"), ("TITLE_KO", "지금 패치하라"), ("LINK", "http://a/2"), ("SCORE", 8)])
-    common.append_record("필터링", [("TITLE", "국문 기사"), ("LINK", "http://a/3"), ("SCORE", 7)])
+    common.append_record("필터링", [("TITLE", "Patch now"), ("TITLE_KO", "[긴급] 지금 패치하라"), ("LINK", "http://a/2"),
+                                   ("SCORE", 8), ("TOPIC", "보안, 개발"), ("SOURCE", "SecurityWeek"),
+                                   ("PUBLISHED", "2026-10-01 09:00 KST")])
+    common.append_record("필터링", [("TITLE", "국문 기사"), ("LINK", "http://a/3"), ("SCORE", 7), ("SOURCE", "AI타임스")])
 
     publish.main()
     report = open(os.path.join(common.NEWS_DIR, "2026", "10", "2026-10-01.md"), encoding="utf-8").read()
     assert "- **번역 제목**: 에이전트 출시" in report
-    assert "2. [Patch now](http://a/2)\n    - 지금 패치하라\n3. [국문 기사](http://a/3)\n" in report
+    # 목록은 한 줄: 번역 제목이 원문 제목을 대신하고, 발행일시는 싣지 않는다
+    assert ("2. \\[번역\\] [(긴급) 지금 패치하라](http://a/2) (보안) - SecurityWeek\n"
+            "3. [국문 기사](http://a/3) - AI타임스\n") in report
+    assert "Patch now" not in report and "09:00 KST" not in report
 
 
 def test_tone_tag_only_on_its_own_line():

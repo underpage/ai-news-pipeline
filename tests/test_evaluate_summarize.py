@@ -140,3 +140,35 @@ def test_summarize_records_model_and_failure_kinds(monkeypatch):
     reasons = dict(common.read_errors("요약"))
     assert reasons["http://a/2"].startswith("요약 불가")
     assert reasons["http://a/3"].startswith("요약 실패")
+
+
+def test_summarize_retries_temporary_failures_after_other_articles(monkeypatch):
+    for number in (1, 2):
+        common.append_record("필터링", [("TITLE", f"t{number}"), ("LINK", f"http://a/{number}"), ("SCORE", 9)],
+                             block=("BODY", "본문"))
+    calls = []
+
+    def fake(prompt, schema=None):
+        calls.append(prompt.split("제목: ")[1].split("\n")[0])
+        if calls == ["t1"]:
+            raise RuntimeError("503 UNAVAILABLE")
+        return answer(lang="ko", summary_en=[])
+    monkeypatch.setattr(summarize, "call_gemini", fake)
+    summarize.main()
+
+    # 일시 오류로 실패한 t1은 t2를 처리한 뒤 다시 시도해 성공한다
+    assert calls == ["t1", "t2", "t1"]
+    assert {record["link"] for record in common.read_records("요약")} == {"http://a/1", "http://a/2"}
+
+
+def test_summarize_does_not_retry_daily_quota(monkeypatch):
+    common.append_record("필터링", [("TITLE", "t1"), ("LINK", "http://a/1"), ("SCORE", 9)], block=("BODY", "본문"))
+    calls = []
+
+    def fake(prompt, schema=None):
+        calls.append(prompt)
+        raise RuntimeError("429 GenerateRequestsPerDayPerProjectPerModel-FreeTier")
+    monkeypatch.setattr(summarize, "call_gemini", fake)
+    with pytest.raises(SystemExit):
+        summarize.main()
+    assert len(calls) == 1

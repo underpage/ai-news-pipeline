@@ -1,14 +1,18 @@
 import re
 import json
+import time
 
 from common import (
     GEMINI_MODEL, append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, clean_inline,
+    is_retryable,
 )
 
 TONES = ("긍정", "부정", "중립")
 LANGS = ("ko", "en", "other")
 # 형식이 맞지 않는 응답을 받았을 때 다시 요청하는 횟수
 FORMAT_RETRIES = 1
+# 일시 오류로 실패한 기사를 다시 시도하기 전, 첫 실패부터 최소한 기다리는 시간(초)
+RETRY_PASS_DELAY = 300
 SUMMARY_SCHEMA = {
     "type": "OBJECT",
     "properties": {
@@ -95,6 +99,38 @@ def generate_summary(title, reason, body_text):
     raise last_error
 
 
+def is_temporary(error):
+    """나중에 다시 시도할 만한 실패인지. 요약 거절과 형식 오류는 다시 요청해도 결과가 같다고 본다."""
+    return not isinstance(error, (NotSummarizable, ValueError)) and is_retryable(error)
+
+
+def summarize_one(news):
+    """기사 하나를 요약해 기록한다. 실패하면 오류 줄을 남기고 그 예외를, 성공하면 None을 돌려준다."""
+    print(f"\n요약 중: {news['title']}")
+    try:
+        summary = generate_summary(news['title'], news.get('reason'), news['body'])
+    except NotSummarizable as e:
+        # 본문이 기사가 아니라 모델이 요약을 거절한 경우 (로그인 요구, 차단 안내 등)
+        print(f" -> [요약 불가] {e}")
+        append_error("요약", "요약 오류", news['link'], f"요약 불가: {e}")
+        return e
+    except Exception as e:
+        print(f" -> [요약 오류] {e}")
+        append_error("요약", "요약 오류", news['link'], f"요약 실패: {e}")
+        return e
+    append_record("요약", [
+        ("TITLE", news['title']),
+        ("LINK", news['link']),
+        ("PUBLISHED", news.get('published')),
+        ("SOURCE", news.get('source')),
+        ("TOPIC", news.get('topic')),
+        ("SCORE", news.get('score')),
+        ("REASON", news.get('reason')),
+        ("MODEL", GEMINI_MODEL),
+    ], block=("SUMMARY", summary))
+    return None
+
+
 def main():
     print("--- 3. 요약 파이프라인 시작 ---")
     # 필터링 로그는 중요도 순으로 기록되어 있으므로 그 순서대로 요약한다
@@ -102,33 +138,23 @@ def main():
     summarized_links = {record['link'] for record in read_records("요약")}
 
     targets = [news for news in news_list if news['link'] not in summarized_links]
-    failed = 0
+    failed = []
     for news in targets:
-        print(f"\n요약 중: {news['title']}")
-        try:
-            summary = generate_summary(news['title'], news.get('reason'), news['body'])
-            append_record("요약", [
-                ("TITLE", news['title']),
-                ("LINK", news['link']),
-                ("PUBLISHED", news.get('published')),
-                ("SOURCE", news.get('source')),
-                ("TOPIC", news.get('topic')),
-                ("SCORE", news.get('score')),
-                ("REASON", news.get('reason')),
-                ("MODEL", GEMINI_MODEL),
-            ], block=("SUMMARY", summary))
-        except NotSummarizable as e:
-            # 본문이 기사가 아니라 모델이 요약을 거절한 경우 (로그인 요구, 차단 안내 등)
-            print(f" -> [요약 불가] {e}")
-            append_error("요약", "요약 오류", news['link'], f"요약 불가: {e}")
-            failed += 1
-        except Exception as e:
-            print(f" -> [요약 오류] {e}")
-            append_error("요약", "요약 오류", news['link'], f"요약 실패: {e}")
-            failed += 1
-    print(f"\n -> 요약 성공: {len(targets) - failed}건, 실패: {failed}건")
+        error = summarize_one(news)
+        if error:
+            failed.append((news, error, time.time()))
+
+    # 서버 과부하(503) 같은 일시 오류는 몇 분 뒤 풀리는 경우가 많아, 나머지 기사를 다 처리한 뒤 한 번 더 시도한다
+    retry = [(news, failed_at) for news, error, failed_at in failed if is_temporary(error)]
+    if retry:
+        time.sleep(max(0.0, retry[0][1] + RETRY_PASS_DELAY - time.time()))
+        print(f"\n일시 오류로 실패한 {len(retry)}건 다시 요약")
+        recovered = {news['link'] for news, _ in retry if summarize_one(news) is None}
+        failed = [item for item in failed if item[0]['link'] not in recovered]
+
+    print(f"\n -> 요약 성공: {len(targets) - len(failed)}건, 실패: {len(failed)}건")
     print("--- 3. 요약 파이프라인 종료 ---")
-    if targets and failed == len(targets):
+    if targets and len(failed) == len(targets):
         fail(f"요약 대상 {len(targets)}건이 모두 실패했습니다.")
 
 

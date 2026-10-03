@@ -22,9 +22,11 @@
       .summary_source    gemini / manual(manual_summary.py로 채운 요약)
     listed               목록으로 선정했지만 위에서 요약하지 않은 기사 (중요도 순)
       .rank, .title, .link, .topic, .source, .published, .score
-      .title_ko          번역 제목 (국문 기사는 빈 값)
+      .title_ko          번역 제목 (국문 기사는 빈 값). 있으면 원문 제목 대신 이 제목을 싣는다
 
   서식 규칙
+    "더 읽어볼 기사"는 한 줄에 "\[번역\] [번역 제목](링크) (주제) - 출처". 번역 표시의 대괄호를
+    \로 막지 않으면 바로 뒤의 [제목]과 붙어 참조 링크로 해석될 수 있다 (Jekyll kramdown).
     "요약", "번역" 머리글은 제목(###)이 아니라 굵은 글씨 한 줄(**요약**)이다.
     Jekyll의 hard_wrap 때문에 굵은 글씨, [요약 실패] 같은 표시, 요약 원문, 목록은
     각각 앞뒤에 빈 줄을 두어 별도 문단으로 나눠야 한다. 빈 줄을 지우지 말 것.
@@ -102,10 +104,7 @@
 ## 더 읽어볼 기사 ({{ listed | length }}건)
 
 {% for n in listed %}
-{{ n.rank }}. [{{ n.title }}]({{ n.link }}){% if n.topic or n.source or n.published %} - {{ [n.topic, n.source, n.published] | select | join(" · ") }}{% endif %}
+{{ n.rank }}. {% if n.title_ko %}\[번역\] [{{ n.title_ko }}]{% else %}[{{ n.title }}]{% endif %}({{ n.link }}){% if n.topic %} ({{ n.topic }}){% endif %}{% if n.source %} - {{ n.source }}{% endif %}
 
-{% if n.title_ko %}
-    - {{ n.title_ko }}
-{% endif %}
 {% endfor %}
 {% endif %}

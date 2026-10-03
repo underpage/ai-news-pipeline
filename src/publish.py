@@ -94,7 +94,7 @@ def render_report(report_date, news_list, listed_news):
             "rank": rank,
             # 대괄호는 마크다운 링크 표기와 겹치므로 바꿔 쓴다
             "title": item["title"].replace("[", "(").replace("]", ")"),
-            "title_ko": item.get("title_ko", ""),
+            "title_ko": item.get("title_ko", "").replace("[", "(").replace("]", ")"),
             "link": item["link"],
             "topic": (item.get("topic") or "").split(",")[0].strip(),
             "source": item.get("source", ""),

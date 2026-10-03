@@ -192,3 +192,27 @@ GitLab, AI Gateway 서비스의 치명적인 RCE 취약점 발견 경고
 
 #부정
 ---
+[TITLE] GitLab Patches Critical 9.9 AI Gateway Flaw Allowing Command Execution on Self-Hosted Servers
+[LINK] https://thehackernews.com/2026/10/gitlab-patches-critical-self-hosted-ai.html
+[PUBLISHED] 2026-10-03 02:33 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 모델
+[SCORE] 10
+[REASON] GitLab AI Gateway의 치명적인 취약점이 패치되어 AI 에이전트 인프라 보안이 강화됩니다.
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+GitLab, 자체 호스팅 서버에서 명령 실행을 허용하는 AI 게이트웨이의 치명적 취약점(9.9점) 패치
+
+**[영문 3줄 요약 (Original)]**
+- GitLab patched a critical flaw (CVE-2026-90970, CVSS 9.9) in its AI Gateway that could let a logged-in user with Duo Agent Platform access run commands on the gateway.
+- The flaw lets an attacker escape the prompt template sandbox of a custom flow via a crafted flow configuration, and is fixed in gateway versions 19.2.4, 19.3.2, and 19.4.1.
+- Only organizations hosting their own gateway need to update, as it holds JWT signing keys and connects to AI model providers, while no workaround or attack-detection method is provided.
+
+**[국문 3줄 요약 (Translated)]**
+- GitLab이 Duo Agent Platform 접근 권한을 가진 로그인 사용자가 게이트웨이에서 명령을 실행할 수 있는 AI 게이트웨이의 치명적 취약점(CVE-2026-90970, CVSS 9.9)을 패치했다.
+- 커스텀 플로우의 프롬프트 템플릿 샌드박스를 조작된 플로우 설정으로 벗어나는 취약점이며, 게이트웨이 19.2.4, 19.3.2, 19.4.1 버전에서 수정됐다.
+- 게이트웨이를 직접 호스팅하는 조직만 업데이트가 필요하며, 이 게이트웨이는 JWT 서명 키를 보관하고 AI 모델 제공자와 연결되지만 임시 해결책이나 침해 여부 확인 방법은 제시되지 않았다.
+
+#부정
+---

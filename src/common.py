@@ -196,6 +196,11 @@ def get_retry_wait(attempt, error):
     return wait * (1 + random.uniform(0, 0.1))
 
 
+def is_retryable(error):
+    """다시 시도하면 풀릴 수 있는 오류인지. 잘못된 요청·인증 실패와 하루 요청 한도 초과는 기다려도 같다."""
+    return getattr(error, "code", None) not in NO_RETRY_CODES and "PerDay" not in str(error)
+
+
 def call_gemini(prompt, schema=None):
     """schema를 주면 그 구조의 JSON으로 응답을 강제한다."""
     global _client, _last_call
@@ -236,9 +241,6 @@ def call_gemini(prompt, schema=None):
             return response.text.strip()
         except Exception as e:
             last_error = e
-            if getattr(e, "code", None) in NO_RETRY_CODES:
-                break
-            if "PerDay" in str(e):
-                # 하루 요청 한도를 다 쓴 경우. 기다려도 풀리지 않으므로 재시도하지 않는다
+            if not is_retryable(e):
                 break
     raise last_error
