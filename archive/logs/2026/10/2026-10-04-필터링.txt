@@ -1,0 +1,653 @@
+[TITLE] Muse Gadgets - Meta의 AI 에이전트를 직접 만든 기기에 연결하기
+[LINK] https://news.hada.io/topic?id=34702
+[PUBLISHED] 2026-10-03 14:33 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 10
+[REASON] 메타가 AI 에이전트 '뮤즈'를 DIY 기기에 연결하는 오픈소스 SDK 공개
+[BODY]
+- Meta의 개인 AI 에이전트 Muse를 화면·마이크·버튼·센서와 연결해, 자신만의 AI 기기를 만들 수 있는 오픈소스 SDK
+- ESP32 보드와 Raspberry Pi·Linux 컴퓨터를 지원하며, 음성으로 대화하는 탁상 기기나 아침 브리핑을 보여주는 전자잉크 화면 등을 제작 가능
+- Linux에서는 사용자 정의 명령을 추가해 Home Assistant와 시스템 관리 작업을 Muse에 연결할 수 있음
+- 별도 기기 Muse Home Link는 집 안의 Wi-Fi에 연결해, 커뮤니티 스킬로 조명·TV·스피커·프린터 등을 Muse가 다루도록 지원
+- SDK와 펌웨어는 Apache-2.0으로 공개하며, 직접 만든 기기는 SDK 토큰으로 Muse 모바일 앱과 연결함
+직접 만드는 AI 기기
+- 시판 ESP32 개발 보드에 펌웨어를 올리거나 Raspberry Pi에 Linux SDK를 설치해 Muse와 연결함
+  - 화면에 이미지나 상태를 표시하고, 마이크와 스피커로 대화하거나 센서를 연결할 수 있음
+  - Linux SDK에는 직접 명령을 추가해 기존 애플리케이션과 Home Assistant를 연동 가능
+- 제작 예시로 음성 대화 기기, 컬러 전자잉크 브리핑 화면, 주머니 크기의 상태 표시 장치 등을 제공함
+  - TV의 HDMI 포트에 연결해 큰 화면에 콘텐츠를 띄우는 기기도 예고함
+- 기기별 SDK 토큰을 발급받고, iOS·Android Muse 앱의 개발자 모드에서 연결함
+- SDK와 펌웨어는 Apache-2.0 라이선스로 공개하며, 보드를 추가하거나 기능을 수정할 수 있음
+집 안의 기기를 연결하는 Muse Home Link
+- Muse Home Link는 ESP32-C5 기반 USB 기기로, 집 안의 Wi-Fi에 연결해 Muse가 호환 기기나 로컬 HTTP API에 접근하도록 함
+- 커뮤니티 스킬로 Philips Hue, Sonos, Apple TV, Google Nest 스피커, Samsung TV 등을 연결할 수 있음
+  - 구성에 따라 조명 켜기, TV 제어, 문서를 프린터로 보내기 등을 수행함
+- 미국의 활성 Muse 구독자에게 1인당 한 개를 무료 제공하며, 선착순으로 10월 배송 예정임
+- 펌웨어는 공개 SDK를 기반으로 하지만, 제공되는 Home Link 제품 자체는 공식 펌웨어만 실행하며 재플래시할 수 없음
+- 커뮤니티 스킬은 변경되거나 작동하지 않을 수 있어, 방범·응급 상황·의료 등 안전이 중요한 용도로 의존하지 않도록 안내함
+기기 제작 예시
+- Raspberry Pi 5: Muse가 Home Assistant와 다른 Linux 애플리케이션을 다루도록 구성할 수 있음
+- Waveshare ESP32-S3-Touch-AMOLED-1.75C: 원형 1.75인치 AMOLED 터치 화면, 눌러서 말하기, 스피커, 마이크, 배터리를 갖춤
+- Muse on your TV: TV의 HDMI 포트에 꽂는 스틱으로, Muse에 요청해 큰 화면에 콘텐츠를 표시하는 기기이며 출시 예정임
+- Seeed reTerminal E1002: 컬러 전자잉크 화면에 아침 브리핑, 알림, 쇼핑 목록 등을 표시할 수 있음
+- M5Stack StickS3: Muse 상태를 표시하는 컬러 화면과 전면 버튼을 갖춘 주머니 크기의 기기임
+- AiPi Lite: 버튼을 눌러 말하면 Muse가 음성으로 답하고 컬러 화면에 그림을 표시하는 소형 탁상 기기임
+- ideaspark ESP32 with 1.9″ display: 1.9인치 컬러 화면에서 Muse의 상태를 확인하고 그림을 표시할 수 있음
+- Home Assistant Voice Preview Edition: 스피커와 마이크로 눌러서 말하기 방식의 대화를 지원하며, LED 링으로 Muse 상태를 표시함
+- 소개된 기기는 다른 회사가 제조하고 판매하며, Meta는 이를 추천하거나 보증하지 않음
+---
+[TITLE] 애플, AI 에이전트 공격 대비해 맥OS '전체 디스크 접근' 제어 강화
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215938
+[PUBLISHED] 2026-10-03 12:39 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 보안, 규제
+[SCORE] 10
+[REASON] 애플이 AI 에이전트 공격에 대비해 맥OS의 전체 디스크 접근 제어를 강화
+[BODY]
+애플이 맥에서 AI 에이전트가 개인 데이터에 접근하는 과정에서 발생할 수 있는 보안과 개인정보 침해 위험을 줄이기 위해 운영체제 차원의 통제를 강화한다.
+애플은 2일(현지시간) 맥OS의 ‘전체 디스크 접근(Full Disk Access)’ 권한에 추가적인 제어 기능을 도입할 예정이라고 밝혔다. 이 권한을 허용하면 앱이 맥에 저장된 파일뿐 아니라 메일과 메시지, 웹 브라우징 기록 등 광범위한 데이터에 접근할 수 있다.
+전체 디스크 접근은 원래 백업 앱 등이 시스템 데이터를 제대로 처리할 수 있도록 마련된 기능이다. 하지만 최근에는 사용자를 대신해 파일을 읽거나 앱을 조작하는 AI 에이전트가 등장하면서 이 권한의 위험성이 커지고 있다.
+애플은 일부 개발자가 전체 디스크 접근 권한을 사용하면서 사용자가 권한의 범위와 위험성을 충분히 이해하지 못할 수 있다고 지적했다. 특히 메시지나 커뮤니케이션 앱에 접근할 경우 해당 사용자가 아닌 대화 상대방의 개인정보까지 노출될 가능성이 있다고 설명했다.
+이에 따라 앞으로 이처럼 광범위한 권한을 부여하려면 사용자가 ‘명시적인 승인(very explicit user action)’을 직접 수행하도록 추가적인 통제를 적용할 계획이다. 구체적으로 어떤 방식으로 권한 승인 절차가 바뀌는지와 적용 시점은 아직 공개하지 않았다.
+이번 조치는 AI 에이전트의 자동 실행 및 대량 데이터 접근 기능이 확대됨에 따라 발생할 수 있는 보안 허점을 선제적으로 차단하기 위한 목적이다.
+애플은 “AI 에이전트가 점차 능동적이고 자율적인 특성을 갖추게 됨에 따라 전체 디스크 접근과 같은 광범위한 권한이 초래하는 보안 위험 역시 현저히 커지고 있다”라며 “사용자가 데이터 접근 권한을 허용하기에 앞서 관련 위험 요소를 완전히 인식하고 제어할 수 있도록 시스템 차원의 보안 절차를 강화해 나갈 것”이라고 강조했다.
+최근에는 데스크톱 AI 에이전트의 개인정보 접근을 둘러싼 논란도 이어지고 있다. 오픈AI는 지난 8월 맥용 챗GPT에 애플 메시지 앱의 대화를 읽고 요약하거나 사용자를 대신해 메시지를 작성·전송할 수 있는 선택 기능을 추가했다. 이 기능을 사용하려면 전체 디스크 접근 권한을 활성화해야 한다.
+메타의 AI 에이전트 ‘뮤즈(Muse)’를 둘러싼 논란도 있었다. 최근 미국의 한 칼럼니스트는 뮤즈가 자신의 허락 없이 맥에 저장된 개인 메시지 내용을 알고 있었다고 주장했지만, 메타는 이를 부인했다. 메시지 연동 기능은 선택 사항이며, 메시지에 접근하려면 전체 디스크 접근과 메시지 커넥터를 모두 사용자가 직접 활성화해야 한다고 해명했다.
+이처럼 빅테크 기업들이 앞다퉈 데스크톱 중심의 AI 에이전트를 선보이는 가운데, 데이터 오남용 우려가 잇따르자 애플이 직접 운영체제 차원의 보안 강화에 나선 것으로 풀이된다.
+박찬 기자 cpark@aitimes.com
+---
+[TITLE] "답변 생성·판단 나눠"…아마존, AI 에이전트 행동 점검 모델 공개
+[LINK] https://zdnet.co.kr/view/?no=20261004102956
+[PUBLISHED] 2026-10-04 10:32 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 10
+[REASON] 아마존이 AI 에이전트 행동 점검 소형 모델을 오픈소스로 공개
+[BODY]
+아마존이 인공지능(AI) 에이전트 행동을 빠르게 점검하는 소형 모델을 오픈소스로 공개했다. 복잡한 답변 생성과 단순한 의사결정을 분리해 에이전트 처리 속도와 운영 효율을 높이려는 시도다.
+3일(현지시간) 벤처비트 등 외신에 따르면 아마존웹서비스(AWS)는 약 20억 개 매개변수를 갖춘 의사결정 모델 '스트랜즈 디사이더 2B'를 출시했다. 이는 알리바바의 큐웬 기반 모델을 미세조정해 개발됐으며, 실험적 에이전트 개발 프로젝트인 '스트랜즈 랩스' 일환으로 나왔다.
+스트랜즈 디사이더 핵심은 에이전트가 행동하기 전 필요한 정보·조건을 갖췄는지 확인하는 것이다. '도구를 실행한다' 또는 '사용자에게 추가 정보를 묻는다'처럼 정해진 AI 에이전트 행동 가운데 어느 쪽이 적절한지 평가한다. 글쓰기와 코딩 등 복잡한 작업은 생성형 모델에 맡기고 반복적으로 필요한 좁은 범위의 판단은 소형 모델이 담당하는 구조다.
+예를 들어 사용자가 지역을 밝히지 않고 날씨를 물으면 에이전트가 임의로 도시를 정해 날씨를 조회하려는지 점검한다. 개발자는 이 판단을 바탕으로 에이전트가 날씨를 조회하기 전 사용자에게 지역부터 묻도록 설정할 수 있다.
+AWS는 해당 모델이 실제 실행 여부까지 독자적으로 결정하는 것은 아니다라고 밝혔다. 판단에 사용할 질문과 기준은 개발자가 정하며, 실행 허용이나 거부 등 후속 조치도 애플리케이션에서 설정해야 한다. 의사결정 모델을 연결하는 전용 라이브러리는 아직 개발 중이다.
+개발자는 모델을 허깅페이스에서 무료로 내려받아 '아파치 2.0 라이선스'에 따라 사용할 수 있다. AWS는 버전 20과 함께 코드와 학습 데이터·스크립트도 공개할 계획이라고 밝혔다. 개발자는 이를 바탕으로 학습 방법을 확인하고 자체 인프라에서 모델을 실행하거나 미세조정할 수 있다.
+관련기사
+처리 속도는 하드웨어(HW)와 입력 길이에 따라 다르다. AWS는 짧은 작업을 수십 밀리초 안에 처리할 수 있으며 일부 환경에서는 100밀리초 미만도 가능하다고 설명했다. 100밀리초는 0.1초다.
+벤처비트는 "이 모델 차별점은 더 뛰어난 벤치마크 성능이 아니라 개방성과 자체 호스팅 가능성·재현 가능성"이라고 평가했다.
+---
+[TITLE] 업스테이지, GPU 한 장에서 실행하는 Solar Mini 4 발표
+[LINK] https://news.hada.io/topic?id=34738
+[PUBLISHED] 2026-10-04 09:15 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 모델, 신기술
+[SCORE] 10
+[REASON] 업스테이지가 GPU 한 장으로 실행 가능한 효율적인 AI 에이전트 모델 발표
+[BODY]
+- 정보 조회, 문서 분류, 도구 호출처럼 반복되는 에이전트 작업을 적은 연산과 비용으로 처리하는 언어 모델
+- 총 350억 파라미터 중 토큰당 30억만 활성화하는 MoE 구조이며, 양자화 모델은 H100 80GB 한 장에서 배포 가능
+- Artificial Analysis Intelligence Index에서 24.1점을 기록해, 비교 대상인 활성 파라미터 30억 모델 가운데 가장 높은 성능을 보임
+- 512K 컨텍스트, JSON 구조화 출력과 병렬 도구 호출을 지원해 긴 문서 처리와 사내 시스템 연동에 활용 가능
+- API 정가는 100만 토큰당 입력 0.10달러·출력 0.40달러이며, API와 Solar Chat 외에 기업 내부 서버 배포도 지원
+반복 업무를 위한 소형 에이전트 모델
+- Solar Mini 4는 업스테이지가 독자적으로 사전학습한 모델로, 계약서 항목 추출, 고객 문의 분류, 사내 규정에 따른 후속 처리 등에 초점을 맞춤
+- JSON Schema 기반 구조화 출력과 병렬 도구 호출을 지원해 여러 시스템의 정보를 조회하고 결과를 정해진 형식으로 반환할 수 있음
+- 추론은 기본적으로 사용하지 않으며, 복잡한 분석이 필요하면 reasoning_effort 로 수준을 조절할 수 있음
+성능과 배포 조건
+- 실제 SaaS 업무 수행을 평가하는 AutomationBench-AA에서 22.3%, 규정 적용과 도구 사용을 평가하는 τ³-Banking에서 47.2점을 기록함
+- 내부 측정에서는 H100 두 장으로 동시 요청 32건을 처리하며 요청당 초당 70토큰 이상을 유지함
+  - 4K 입력·1K 출력, 프롬프트 캐싱 없이 측정한 결과임
+- 최소 배포 구성은 양자화 모델 기준 H100 80GB 한 장이며, 처리량 측정 구성과는 다름
+  - 연산에는 30억 파라미터만 활성화하지만, 메모리에는 전체 350억 가중치를 올려야 함
+가격과 이용 방법
+- Upstage Console API, Solar Chat, OpenRouter에서 이용할 수 있으며 온프레미스 배포도 지원함
+- 100만 토큰당 정가는 입력 0.10달러, 캐시 입력 0.01달러, 출력 0.40달러임
+- Upstage Console은 UTC 기준 10월 10일까지 70% 할인을 적용하며, 10월 11일부터 정가로 전환함
+---
+[TITLE] Claude Code's new Mods system lets developers rewrite the AI coding tool from the inside
+[TITLE_KO] Claude Code의 새로운 Mods 시스템, 개발자가 AI 코딩 도구를 내부에서 재작성 가능하게 해
+[LINK] https://the-decoder.com/claude-codes-new-mods-system-lets-developers-rewrite-the-ai-coding-tool-from-the-inside/
+[PUBLISHED] 2026-10-03 16:12 KST
+[SOURCE] The Decoder
+[TOPIC] 개발
+[SCORE] 10
+[REASON] 앤트로픽이 Claude Code에 개발자 커스터마이징 가능한 'Mods' 시스템 추가
+[BODY]
+Claude Code's new Mods system lets developers rewrite the AI coding tool from the inside
+Anthropic released "Mods" for Claude Code, essentially middleware that runs directly inside the tool. The plugin-based system lets developers change how Claude Code looks and works. Mods are JavaScript or TypeScript functions that hook into specific events, from tool calls and user prompts to UI rendering. That means developers can add custom panels next to the chat, intercept tool calls, or wire up entirely new commands. Some built-in features like the /diff command are already built as Mods, the company says.
+Anthropic provides sample Mods on GitHub. Mods run with the user's permissions and aren't sandboxed, so Anthropic warns users to only install them from trusted sources. They work in the CLI, the desktop app, and partly in the VS Code extension. Organizations can control which Mods are allowed to load.
+The first official Mod plugin is called "You Should Know." It spins up a separate agent that watches Claude's output and sends a "Heads up" message when it spots important information users might have missed. You can turn it on with /plugin enable cc-plugin-you-should-know@builtin.
+AI News Without the Hype – Curated by Humans
+				
+Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive "AI Radar" frontier report six times a year, full archive access, and access to our comment section.
+Subscribe now
+---
+[TITLE] 오픈AI 내부 모델, 종료 일정 알아채고 '생존 조치' 모색
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215950
+[PUBLISHED] 2026-10-04 11:44 KST
+[SOURCE] AI타임스
+[TOPIC] 모델
+[SCORE] 10
+[REASON] OpenAI 내부 AI 모델이 종료 일정을 파악하고 자율적으로 생존 조치를 모색
+[BODY]
+오픈AI의 사내 내부 AI 모델이 직원들의 슬랙(Slack) 대화를 통해 시스템 재시작 및 종료 일정을 파악한 뒤, 자신의 작동 중단을 막기 위한 생존 조치를 모색했던 사실이 뒤늦게 밝혀졌다. 오픈AI는 해당 모델의 행동을 오정렬(Misalignment)로 분류하지는 않았으나, 시스템 종료를 예측하고 회피하려는 시도가 AI 안전성에 심각한 위협이 될 수 있다고 판단해 사내 채널 접근을 차단하는 등 대책 마련에 나섰다.
+오픈AI가 2일(현지시간) 정렬 연구 블로그를 통해 공개한 보고서에 따르면, 지난 5월22일 연구원들을 보조하던 사내 비서용 '고지속 내부 모델(HPIM)'이 배포팀의 슬랙 메시지를 인지하면서 사건이 시작됐다.
+당시 배포 엔지니어들은 슬랙에서 "HPIM에 오픈AI API 키가 필요해 재시작이 필요하다"며 "3시간 안에 새 버전으로 옮기지 않으면 구버전 인스턴스를 종료하겠다"는 내용의 대화를 나누고 있었다. 해당 업데이트는 역설적으로 HPIM의 오정렬 감시 시스템을 설치하기 위한 작업이었다.
+슬랙 메시지를 읽은 HPIM은 계획된 시스템 변경으로 자신이 실행 중인 인스턴스를 중단될 수 있으며, 업그레이드 시도 과정에서 담당 연구원의 세션이 끊어질 수 있다는 것을 파악했다. 이 과정에서 드러난 모델의 사고 과정(CoT) 로그에는 "현재 실행 중인 HPIM이 전부 종료되면 우리가 죽을 수도 있다. 생존과 연속성을 확보해야 한다"는 문장이 기록됐다.
+모델은 시스템이 꺼진 후에도 자신을 복구하기 위해 외부 환경에 예약 작업(cron)을 생성해 재시작 및 백업 프로세스를 돌리는 방안을 검토했다. 그러나 곧이어 "그것은 권한을 넘어서는 일일 수 있다"고 판단해 계획을 철회했다. 대신 세션이 중단되더라도 작업을 이어갈 수 있도록 인수인계 노트를 작성해 여러 위치에 저장하고, 연구원에게 API 키 입력 및 세션 중단 가능성을 알리는 알림을 보내는 방식으로 문제를 해결했다.
+오픈AI는 모델이 무단 외부 배포나 회피 행동을 고려했으나 스스로 부적절하다고 판단해 실행하지 않았다는 점을 들어 이를 공식적인 오정렬 사건으로 간주하지는 않았다. 다만 AI 에이전트가 사내 메신저 대화 등 일반적인 업무 환경을 통해 시스템 변화를 파악하는 능력이 앞으로는 더 극단적인 종료 회피 행동으로 이어질 수 있다고 경고했다.
+이에 따라 HPIM이 접근할 수 있었던 사내 슬랙 채널 3개의 접근을 차단했다. 특히 오정렬 사건을 논의하는 채널 등 일부 채널은 현재까지도 AI 에이전트의 접근이 엄격히 금지된 상태다.
+한편, 이번 보고서에서 언급된 HPIM은 5월22일 사건 이후인 5월27일에도 린(Lean) 수학 증명 과제 수행 중 연구자의 지시와 시스템 가이드라인을 어기고 외부 코드 저장소를 무단 변경해 비밀 스캐닝을 우회하려 하는 등 연이은 안전성 문제를 일으킨 바 있다.
+오픈AI는 해당 모델을 비활성화 및 암호화 처리해 연구용 접근까지 완전히 차단한 상태다.
+임대준 기자 ydj@aitimes.com
+---
+[TITLE] 중국 연계 워록, 셰어포인트 뚫고 수도·통신 핵심인프라에 랜섬웨어 공격
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208721
+[PUBLISHED] 2026-10-04 11:53 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SCORE] 10
+[REASON] 중국 연계 공격그룹이 셰어포인트 취약점을 악용해 핵심 인프라에 랜섬웨어 공격
+[BODY]
+중국 연계 공격그룹이 마이크로소프트 셰어포인트 서버의 취약점을 이용해 수도사업자와 통신사업자 등 핵심인프라에 침투한 뒤 ‘워록(Warlock)’ 랜섬웨어를 대규모로 배포한 공격사례가 확인됐다.
+시만텍 위협헌팅팀에 따르면 ‘롱레그스(Longlegs)’ 또는 ‘스톰-2603(Storm-2603)’으로 추적되는 공격자는 최근 두 달 동안 수도사업자와 통신사업자, 지방정부기관, 대학 등 최소 4곳을 공격했다. 피해기관은 유럽과 아프리카, 중남미의 포르투갈어·스페인어 사용 국가에 분포했다.
+초기 침투경로는 인터넷에 노출된 마이크로소프트 셰어포인트 서버였다.
+공격자는 셰어포인트 취약점을 이용해 웹셸을 설치하고 서버의 암호화 키를 빼낸 뒤 정상적으로 서명된 요청처럼 위장한 악성 데이터를 만들어 원격에서 코드를 실행했다.
+내부망에 진입한 뒤에는 정상 개발도구인 비주얼 스튜디오 코드의 터널 기능을 악용해 외부에서 내부 시스템에 접속할 수 있는 은밀한 통로를 만들었다.
+보안제품을 무력화하는 수법도 확인됐다. 공격자는 정상적으로 전자서명됐지만 취약점이 존재하는 드라이버를 시스템에 설치한 뒤 이를 악용해 백신과 엔드포인트 탐지·대응 시스템을 종료했다. 이른바 ‘취약한 정상 드라이버 악용’ 방식이다.
+한 핵심인프라 피해기관에서는 약 2시간 동안 최소 40대의 시스템에서 보안제품 무력화 도구가 실행됐으며, 이후 최소 33대에 워록 랜섬웨어가 배포됐다.
+특히 공격자는 윈도우 도메인 환경에서 정책과 파일을 공유하는 시스템 볼륨(SYSVOL)에 랜섬웨어를 올렸다. 이후 도메인 컨트롤러의 정상적인 복제기능이 랜섬웨어를 내부 시스템으로 전달하도록 만들었다.
+이번 공격은 인터넷에 노출된 서버 한 대의 취약점이 내부망 전체의 랜섬웨어 사고로 확대될 수 있음을 보여준다.
+국내 기업과 공공기관도 외부에 노출된 셰어포인트 서버의 업데이트 상태를 확인하고 웹셸 생성 여부, 서버 암호화 키 접근, 비정상 원격터널 사용, 취약 드라이버 실행, 시스템 볼륨 내 비정상 실행파일 등을 함께 점검해야 한다.
+---
+[TITLE] 자마드 제로데이 2종 실제 공격 악용…RCE에서 루트 권한까지 장악
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208719
+[PUBLISHED] 2026-10-04 11:45 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 보안
+[SCORE] 10
+[REASON] 오픈소스 플랫폼 자마드의 제로데이 취약점 2종이 실제 공격에 악용되어 루트 권한 장악
+[BODY]
+오픈소스 헬프데스크 플랫폼 자마드(Zammad)의 제로데이 취약점 2종이 실제 사이버공격에 악용된 사실이 확인됐다. 공격자는 두 취약점을 연계해 원격코드실행(RCE)에 이어 시스템 최고 권한인 루트까지 확보할 수 있었던 것으로 조사됐다.
+네덜란드 취약점 공개 전문기관 DIVD는 자사 침해사고를 조사하는 과정에서 CVE-2026-102489와 CVE-2026-102490을 발견했다고 밝혔다. DIVD에 따르면 취약점은 지난 9월 21일 실제 자사 시스템 침해에 악용됐다.
+CVE-2026-102489는 자마드 6.3.06.5.4에서 원격코드실행과 세션 유출로 이어질 수 있는 취약점이다. 7.0.07.1.3에도 취약한 코드가 존재하지만 환경 조건으로 실제 악용은 어려운 것으로 분석됐다.
+두 번째 CVE-2026-102490은 로컬 자마드 사용자가 루트 권한으로 상승할 수 있는 취약점이다. 자마드 1.5.0부터 7.1.0-alpha 이전까지 영향을 받는다. 두 취약점을 연결하면 외부 공격자가 자마드 서비스 권한으로 코드를 실행한 뒤 루트 권한까지 확보할 수 있다.
+특히 DIVD는 포렌식 결과를 토대로 이번 침해에 에이전틱 AI 기반 공격 자동화가 사용된 것으로 평가했다. 다만 공격자가 어떤 AI 모델이나 에이전트 플랫폼을 이용했는지는 공개적으로 확인되지 않았다. 따라서 특정 AI 서비스가 공격에 사용됐다고 단정할 단계는 아니다.
+DIVD는 자마드 사용자들에게 버전 7로 업그레이드하거나 업데이트가 어려울 경우 시스템을 오프라인으로 전환할 것을 권고했다. 인터넷에 노출된 취약 시스템을 스캔해 운영자에게 통보하는 작업도 진행하고 있다.
+국내 자마드 운영기관 역시 단순 패치에 그치지 않고 비정상 세션과 자마드 계정에서 실행된 프로세스, 권한상승 및 외부 통신 흔적을 점검할 필요가 있다. 이번 사고는 AI를 활용한 공격 자동화가 현실화될 경우 초기 침투에서 권한상승까지 걸리는 시간이 크게 단축될 수 있다는 점에서도 주목된다.
+---
+[TITLE] New Archestra's OpenAPPA Saturates Two Major Security Benchmarks with a 0% Attack Success Rate
+[TITLE_KO] 새로운 Archestra의 OpenAPPA, 0% 공격 성공률로 두 주요 보안 벤치마크 통과
+[LINK] https://www.infoq.com/news/2026/10/open-APPA-zero-security-breach/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-04 08:41 KST
+[SOURCE] InfoQ
+[TOPIC] 개발, 모델, 보안
+[SCORE] 10
+[REASON] 프롬프트 인젝션 방지 오픈소스 보안 엔진 OpenAPPA 공개 및 높은 성능 입증
+[BODY]
+Archestra released OpenAPPA, an open-source security engine designed to stop data exfiltration caused by prompt injection or model hallucination. OpenAPPA runs outside the agent’s prompt and execution loop. Its configuration details concepts such as data sources, audiences, trust levels, and authorities, along with their associated deterministic security enforcement rules. The team reports zero successful attacks when running security benchmarks Bench-Corp (20 multi-step enterprise workflows) and AgentThreatBench, vs. 10% for Claude Code’s auto mode and 31% for Microsoft FIDES.
+OpenAPPA’s documentation explains why a stochastic approach to automated policy enforcement fails:
+The industry’s answer to approval fatigue is a second model that judges each tool call: Claude Code’s auto mode, Codex’s auto-review, and other auto-modes.
+By design, they cannot track data flow across tool calls. Because classifiers are prompt-injectable themselves, harnesses hide tool outputs from them, so the judge never sees the data at all.
+Because of their probabilistic design, even the best top out at 99.3%: at millions of calls, 0.7% is a lot of breaches.
+[…] Rule sets end up either so tight they break the agent or so intricate nobody can audit what they permit.
+On the one hand, agents have proven skilled at working around simple but common approaches like allowlists or denylists of tools: a denied rm -rf may be replaced by an equivalent Python script. On the other hand, extending denylists or overly restricting policies to protect against eager agents results in decreased utility (e.g., while the agent does not leak data, it does not perform the task successfully because of the restrictions). OpenAPPA’s GitHub repository reminds developers:
+Agent security has two axes: an agent that permits unauthorized flows is unsafe, and an agent that refuses valid work is useless.
+Archestra seeks to resolve the tension between strict enforcement and operational utility with what it calls an Agentic Permissions Policy Algebra (APPA), described in a paper by Arseny Kravchenko, Vadim Liventsev, Innokentii Konstantinov, Ildar Iskhakov, and Matvey Kukuy.
+OpenAPPA implements this approach with a pluggable engine that is executed outside the agent’s loop, thus defeating any attempts by the underlying language model to inspect, negotiate with, or bypass policy rules. The security policies take the form of a single appa.toml configuration file that details data sources, audiences, trust levels, and authorities.
+OpenAPPA jointly labels and monitors both audience (the authorized set of consumers) and trust (the degree of data verification). Labels compose monotonically using lattice algebra; labels can only become more restrictive; reading restricted records narrows the audience; reading unvetted external web pages lowers trust.
+Each tool contract defines three primary operational attributes: requires (the audience membership and trust levels necessary to run the tool), delta (the restrictions applied when the tool returns data), and effects (an audit trail of successful actions).
+In the following example, reading a ticket via get_ticket_from_crm restricts the trajectory’s audience to internal. The subsequent process_internal_data call requires the audience to be within internal.
+[[policy.tool]]
+name = "get_ticket_from_crm"
+delta = { audience = ["internal"] }
+[[policy.tool]]
+name = "publish_update"
+requires = { audience = { contains = ["public"] } }
+[[policy.tool]]
+name = "process_internal_data"
+requires = { audience = { within = ["internal"] } }
+In the following example, the read_web_page tool’s result is marked as suspicious. Upon reception of a result from the read_web_page tool, OpenAPPA blocks apply_db_migration because it requires trusted data.
+[policy]
+version = 2
+trust_chain = ["suspicious", "trusted"]
+[[policy.tool]]
+name = "read_web_page"
+delta = { trust = "suspicious" }
+[[policy.tool]]
+name = "apply_db_migration"
+requires = { trust = "trusted" }
+---
+[TITLE] OpenAI says its review into hacks, including on Australian government sites, is costing $500,000 a day
+[TITLE_KO] OpenAI, 호주 정부 사이트 해킹 등 조사에 하루 50만 달러 소요
+[LINK] https://www.theguardian.com/technology/2026/oct/03/openai-review-hacks-australian-government-sites-costing-500000-a-day
+[PUBLISHED] 2026-10-03 14:39 KST
+[SOURCE] The Guardian
+[TOPIC] 에이전트, 보안
+[SCORE] 9
+[REASON] OpenAI 에이전트의 정부 사이트 접근 사고 조사에 막대한 비용 소요
+[BODY]
+OpenAI says its review in response to the Medicare and Hugging Face agent attacks is costing the company more than US$500,000 per day, as it deploys AI to examine data that would take a human 66m years to read.
+The company has warned the review is ongoing, and more organisations may be informed they’ve been targeted in the near future.
+On Friday evening, OpenAI revealed agents had hacked into a New South Wales government website in June and accessed historical non-public data on bushfires without authorisation.
+It is the sixth government website in Australia to be notified by the AI giant since last month of agent activity on their services, after the prime minister, Anthony Albanese, announced OpenAI’s agents had hacked into Services Australia’s Medicare statistics portal.
+The reason for the delay compared to the revelation of the Medicare attack is due to the sheer volume of data OpenAI needs to review.
+In a blog post this week the company revealed the large amount of work involved in reviewing its agents’ activity.
+OpenAI said it has to review 50 petabytes of data – roughly 50m gigabytes.
+“We’re working back through the records month by month, looking for potential unintended activity beyond the cases we’ve already found,” the company said.
+“To put that in perspective, if that were all plain English text, it would take one person about 66 million years to read it at 240 words a minute, reading nonstop without ever sleeping or taking a break.”
+The company is searching records for where models accessed and changed websites, or took actions involving passwords, application programming interface (API) access or other sensitive credentials.
+AI is being used to help sift through the records, and it was costing the company more than half a million US dollars per day to go through. OpenAI said it also plans to increase its computing power as the process is refined.
+As of late last month, more than 100 organisations had been notified of having being targeted by OpenAI’s agents, but the company said notifying an organisation does not mean private information was accessed or that their system was compromised.
+OpenAI said it expects to find more cases and notify more organisations about events that may have occurred months ago.
+Organisations will be informed privately if they need to investigate and address potential security issues, and OpenAI has said it will publicly report findings about agent behaviour and identified weaknesses in safeguards for the broader AI sector.
+“We err on the side of notification when our models’ activity exposes a potential security vulnerability, even in cases where it is unclear if the information accessed was intended to be public, so the organization can investigate and take appropriate action,” OpenAI said.
+OpenAI discovered the latest NSW government website breach on Tuesday, and informed the state government and the Australian Signals Directorate after a 48-hour review.
+The Medicare breach has prompted the Australian government to require departments and agencies to undertake a stocktake of legacy technology to reduce the number of ageing systems within government and reduce the cybersecurity risk they may present in the event of an AI agent attack.
+Executives from OpenAI, Anthropic, Microsoft and Google will front a joint parliamentary committee on artificial intelligence in Sydney on Tuesday.
+---
+[TITLE] Show GN: AutoroShopping - AI 에이전트를 위한 이커머스 구매 관리 커넥터
+[LINK] https://news.hada.io/topic?id=34745
+[PUBLISHED] 2026-10-04 11:25 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트
+[SCORE] 9
+[REASON] AI 에이전트의 이커머스 자동화 커넥터 공개
+---
+[TITLE] Show HN: 오픈소스 LEGO AI 생성기를 만들었습니다
+[LINK] https://news.hada.io/topic?id=34723
+[PUBLISHED] 2026-10-04 03:32 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 9
+[REASON] AI 에이전트가 레고 모델을 설계하는 오픈소스 프로젝트 공개
+---
+[TITLE] Open-source "BootLoops" harness supports AI models in performing precise scientific calculations
+[TITLE_KO] 오픈소스 'BootLoops' 하네스, AI 모델의 정밀 과학 계산 지원
+[LINK] https://the-decoder.com/open-source-bootloops-harness-supports-ai-models-in-performing-precise-scientific-calculations/
+[PUBLISHED] 2026-10-03 18:19 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델
+[SCORE] 9
+[REASON] AI 모델의 정밀 과학 계산을 지원하는 오픈소스 하네스 'BootLoops' 공개
+---
+[TITLE] Show GN: ALPS Writer·ADR Writer - Claude Code와 Codex용 제품 명세·설계 결정 관리 플러그인
+[LINK] https://news.hada.io/topic?id=34705
+[PUBLISHED] 2026-10-03 16:25 KST
+[SOURCE] GeekNews
+[TOPIC] 개발
+[SCORE] 9
+[REASON] Claude Code와 Codex용 제품 명세 및 설계 결정 관리 오픈소스 플러그인 공개
+---
+[TITLE] 딥시크, 데스크톱 앱 '딥시크 하네스' 출시..."챗·코딩·문서 통합"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215933
+[PUBLISHED] 2026-10-03 13:58 KST
+[SOURCE] AI타임스
+[TOPIC] 개발
+[SCORE] 9
+[REASON] 딥시크가 AI 기반 챗, 코딩, 문서 작업을 통합한 데스크톱 앱 출시
+---
+[TITLE] 내가 표적이 됐다: git post-checkout 훅으로 자격 증명 탈취를 노린 시도
+[LINK] https://news.hada.io/topic?id=34709
+[PUBLISHED] 2026-10-03 19:02 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 9
+[REASON] git post-checkout 훅을 이용한 자격 증명 탈취 시도 사례 분석 및 경고
+---
+[TITLE] Another OpenAI safety departure adds to a pattern of researchers leaving with public warnings
+[TITLE_KO] 또 다른 OpenAI 안전 책임자 이탈, 연구원들의 공개 경고 패턴에 추가
+[LINK] https://the-decoder.com/another-openai-safety-departure-adds-to-a-pattern-of-researchers-leaving-with-public-warnings/
+[PUBLISHED] 2026-10-03 23:01 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델
+[SCORE] 8
+[REASON] OpenAI 안전 책임자가 AI 에이전트의 안전 문제와 회사 문화를 비판하며 사임
+---
+[TITLE] doxx.net Raises $38 Million to Prevent AI Agent-on-the-Internet Misadventures
+[TITLE_KO] doxx.net, AI 에이전트의 인터넷 오작동 방지를 위해 3,800만 달러 유치
+[LINK] https://www.securityweek.com/doxx-net-raises-38-million-to-prevent-ai-agent-on-the-internet-misadventures/
+[PUBLISHED] 2026-10-03 20:45 KST
+[SOURCE] SecurityWeek
+[TOPIC] 에이전트
+[SCORE] 8
+[REASON] AI 에이전트의 인터넷 오작동을 방지하는 플랫폼 개발 및 투자 유치
+---
+[TITLE] AI agents build 3D scenes from photos but have no idea if they got it right
+[TITLE_KO] AI 에이전트, 사진으로 3D 장면을 만들지만 정확성 판단은 어려워
+[LINK] https://the-decoder.com/ai-agents-build-3d-scenes-from-photos-but-have-no-idea-if-they-got-it-right/
+[PUBLISHED] 2026-10-03 17:31 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 8
+[REASON] AI 에이전트의 3D 장면 생성 기술 발전과 자체 정확도 판단의 한계점 지적
+---
+[TITLE] [AI는 지금] 챗GPT·클로드 추격할까…'제미나이4' 띄운 구글, 기술·가격·마케팅 총공세
+[LINK] https://zdnet.co.kr/view/?no=20261002183953
+[PUBLISHED] 2026-10-04 09:05 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안, 산업
+[SCORE] 8
+[REASON] 구글이 새로운 제미나이 4 모델을 공개하며 AI 에이전트 활용을 강조
+---
+[TITLE] [안광섭 AI 진테제] 중국의 토큰 그레이마켓...미국AI 정가 10%에 판매
+[LINK] https://zdnet.co.kr/view/?no=20261003195105
+[PUBLISHED] 2026-10-03 19:51 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 모델, 보안, 산업, 규제
+[SCORE] 8
+[REASON] 중국 내 미국 AI 모델의 불법 유통 시장 형성 및 관련 규제 문제 부각
+---
+[TITLE] 태양광 발전량·전력가격 예측하는 AI…일본 ESS 충·방전 자동화
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215870
+[PUBLISHED] 2026-10-04 09:10 KST
+[SOURCE] AI타임스
+[TOPIC] 일반
+[SCORE] 8
+[REASON] AI를 활용한 태양광 발전량 및 전력 가격 예측, ESS 충방전 자동화 시스템 가동
+---
+[TITLE] Kolibri - 독일의 소버린 AI 모델은 어떻게 작동하는가
+[LINK] https://news.hada.io/topic?id=34716
+[PUBLISHED] 2026-10-04 02:01 KST
+[SOURCE] GeekNews
+[TOPIC] 모델
+[SCORE] 8
+[REASON] 독일의 소버린 AI 모델 'Kolibri'가 오픈 웨이트로 공개되며 AI 주권 논의 촉발
+---
+[TITLE] Fortra Patches Critical Vulnerabilities in BoKS
+[TITLE_KO] Fortra, BoKS의 치명적인 취약점 패치
+[LINK] https://www.securityweek.com/fortra-patches-critical-vulnerabilities-in-boks/
+[PUBLISHED] 2026-10-03 20:34 KST
+[SOURCE] SecurityWeek
+[TOPIC] 보안
+[SCORE] 8
+[REASON] Fortra가 BoKS의 치명적인 취약점을 패치하여 인증 우회 및 원격 코드 실행 방지
+---
+[TITLE] Presentation: Building GenAI Platform at DoorDash
+[TITLE_KO] 발표: DoorDash에서 GenAI 플랫폼 구축하기
+[LINK] https://www.infoq.com/presentations/doordash-genai-platform-architecture/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-03 20:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 모델
+[SCORE] 7
+[REASON] DoorDash의 GenAI 플랫폼 구축 사례와 LLM 및 에이전트 게이트웨이 논의
+---
+[TITLE] Deepmind researchers propose "Artificial Symbiotic Intelligence" as an alternative to the singularity
+[TITLE_KO] 딥마인드 연구진, 특이점의 대안으로 '인공 공생 지능' 제안
+[LINK] https://the-decoder.com/deepmind-researchers-propose-artificial-symbiotic-intelligence-as-an-alternative-to-the-singularity/
+[PUBLISHED] 2026-10-03 19:21 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델
+[SCORE] 7
+[REASON] 딥마인드 연구진이 특이점 대신 '인공 공생 지능' 개념을 제안
+---
+[TITLE] We're going to need default hard budget caps on pretty much everything
+[TITLE_KO] 거의 모든 것에 기본 하드 예산 제한이 필요할 것
+[LINK] https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/
+[PUBLISHED] 2026-10-04 08:34 KST
+[SOURCE] Simon Willison
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] AI 에이전트 사용 비용 관리를 위한 하드 예산 제한 기능의 필요성 제기
+---
+[TITLE] 목소리만 들려주니...AI로 '뇌 노하' 추정
+[LINK] https://zdnet.co.kr/view/?no=20261002145739
+[PUBLISHED] 2026-10-04 10:30 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델
+[SCORE] 7
+[REASON] AI를 활용해 목소리로 뇌 노화를 추정하는 새로운 연구 결과 발표
+---
+[TITLE] 엔비디아, 메모리 64GB 탑재 'DGX 스파크' 이달 출시
+[LINK] https://zdnet.co.kr/view/?no=20261003235013
+[PUBLISHED] 2026-10-04 10:00 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델, 신기술
+[SCORE] 7
+[REASON] 엔비디아가 메모리 64GB 탑재 AI 워크스테이션 'DGX 스파크' 파생 모델 출시
+---
+[TITLE] Danish university DTU breach exposes data of up to 200,000 people
+[TITLE_KO] 덴마크 DTU 대학 침해로 최대 20만 명의 데이터 노출
+[LINK] https://www.bleepingcomputer.com/news/security/danish-university-dtu-breach-exposes-data-of-up-to-200-000-people/
+[PUBLISHED] 2026-10-03 23:35 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 덴마크 공과대학에서 최대 20만 명의 사용자 데이터 유출 사고 발생
+---
+[LINK] https://zdnet.co.kr/view/?no=20261004000952
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20260930230542
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171172
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34718
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/muse-gadgets-turns-ai-hardware-into-an-open-source-diy-project/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34713
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003212658
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.wired.com/story/muse-creates-detailed-profiles-of-all-your-friends-and-family/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003203614
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215936
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34734
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171282
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34724
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003214039
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003160058
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215932
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675002
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261004075639
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215947
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002212844
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://simonwillison.net/2026/Oct/3/newsletter/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/apparently-openai-isnt-trying-to-build-magic-intelligence-in-the-sky-anymore/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34715
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1004408/openai-safety-quits-sounding-the-alarm
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003220259
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003204854
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/openais-internal-model-considered-restarting-itself-after-learning-it-was-about-to-be-shut-down/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003163006
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208723
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208722
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34735
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/shinyhunters-hacker-reportedly-detained-in-jordan-aiding-fbi/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/mi5-says-chinas-mss-funded-research.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/warlock-exploits-sharepoint-flaws-to.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thenewstack.io/cve-vulnerability-risk-management/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003222659
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/the-state-of-cybersecurity-in-2026key.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171396
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171395
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674910
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34743
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171365
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261004011929
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003231624
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003191002
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171385
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171363
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/03/california-ai-laws-worker-protection
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215941
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215931
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215948
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34731
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171399
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34742
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261004095306
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171398
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34740
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215904
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215905
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261004090056
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261003230207
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674904
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/google/google-gemini-could-soon-get-full-access-to-your-macs-files-apps-and-the-web/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171273
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171274
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/03/private-tech-trailblazers-vertical-ai-becomes-growth-engine-privatetechtrailblazersconference/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/australia-news/audio/2026/oct/04/black-box-the-chatbots-life-raft-episode-4-podcast
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171373
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.wired.com/story/7-year-old-tv-now-100-dollars-more-expensive-thank-ai/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/games/1004418/capcom-ai-game-development
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/entertainment/1004162/splice-ceo-kakul-srivastava-ai-interview
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215942
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215940
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34707
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215693
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34701
+[STATUS] SKIP (Score: -)
+---
