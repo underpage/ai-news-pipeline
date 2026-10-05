@@ -1,0 +1,192 @@
+[TITLE] [단독] 다크웹에 “서울사이버대학교 학생·교직원 개인정보 13만건 이상 판매" 게시글 올라와
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208727
+[PUBLISHED] 2026-10-05 10:53 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 산업, 규제
+[SCORE] 10
+[REASON] 서울사이버대학교 학생·교직원 개인정보 13만 건 이상 다크웹 판매 게시.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 서울사이버대학교 학생 및 교직원 개인정보 13만 건 이상이 다크웹에 판매 게시되었다.
+- 유출된 데이터는 학적, 인사, 채용지원서 정보는 물론 금융정보와 인증정보 관련 필드까지 포함하는 광범위한 내용이다.
+- 이는 단순 외부 정보 수집이 아닌 대학 내부 시스템 데이터 유출 가능성을 시사하며, 대학과 관계기관이 긴급 대응 및 조사에 착수했다.
+
+#부정
+---
+[TITLE] Citrix patches NetScaler SAML zero-day exploited in attacks
+[LINK] https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/
+[PUBLISHED] 2026-10-05 06:58 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 10
+[REASON] Citrix NetScaler SAML 제로데이 취약점 긴급 패치 발표.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+Citrix, NetScaler SAML 제로데이 취약점 긴급 패치 발표
+
+**[영문 3줄 요약 (Original)]**
+- Citrix has released emergency updates for a NetScaler SAML zero-day vulnerability (CVE-2026-88779) that has been exploited in attacks.
+- This memory buffer flaw affects NetScaler ADC and Gateway appliances using SAML authentication, causing denial-of-service (DoS) conditions, with researchers investigating potential remote code execution (RCE).
+- Citrix recommends organizations install the newly released security updates as soon as possible, warning that those who recently patched other vulnerabilities must upgrade again.
+
+**[국문 3줄 요약 (Translated)]**
+- Citrix는 공격에 악용된 NetScaler SAML 제로데이 취약점(CVE-2026-88779)에 대한 긴급 업데이트를 발표했다.
+- 이 메모리 버퍼 취약점은 SAML 인증을 사용하는 NetScaler ADC 및 Gateway 장치에 영향을 미치며, 서비스 거부(DoS)를 유발하고 원격 코드 실행(RCE) 가능성도 조사 중이다.
+- Citrix는 조직에 가능한 한 빨리 새로 출시된 보안 업데이트를 설치할 것을 권고하며, 최근 다른 취약점을 패치한 경우에도 다시 업그레이드해야 한다고 경고했다.
+
+#부정
+---
+[TITLE] Strata - Qwen 3.8 Flash Next(125B)를 일반 PC에서 초당 100토큰으로 실행하기
+[LINK] https://news.hada.io/topic?id=34761
+[PUBLISHED] 2026-10-04 23:44 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 10
+[REASON] 대규모 LLM을 일반 PC에서 효율적으로 실행하는 오픈소스 추론 엔진 공개.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- Strata는 대규모 언어 모델 Qwen3.8-Flash-Next를 일반 PC에서 클라우드 없이 효율적으로 실행하는 오픈소스 추론 엔진이다.
+- 이 엔진은 모델 작업을 GPU, CPU, 시스템 메모리에 분산하고 작은 보조 모델로 예측을 가속화하여 초당 94토큰의 빠른 답변 생성 속도를 제공한다.
+- Strata는 OpenAI 및 Anthropic 호환 API를 제공하여 기존 앱과 코딩 에이전트를 로컬 모델에 연결할 수 있으며, 다양한 양자화 수준으로 메모리 사양에 맞춰 모델 선택을 지원한다.
+
+#긍정
+---
+[TITLE] 美 의료SW 에픽, ‘미토스’ 적용 후 보안 결함 확인
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171405
+[PUBLISHED] 2026-10-04 17:03 KST
+[SOURCE] IT조선
+[TOPIC] 모델, 보안
+[SCORE] 10
+[REASON] 의료SW 에픽, AI 보안 모델 적용 후 심각한 보안 결함 발견.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 미국 의료 소프트웨어 기업 에픽이 앤트로픽의 AI 사이버 보안 모델 미토스 적용 후 환자 데이터 접근 보안 결함을 확인했다.
+- 이 결함으로 인해 외부인이 환자 기록에 접근해도 일부 설정에서는 침입 기록이 남지 않을 수 있어 에픽은 제품 개발을 최대 6주간 중단하고 보안 강화에 나선다.
+- 이번 사건은 AI 보안 모델 도입 후 발생한 취약점 사례로, 미국 의료기관을 겨냥한 사이버 공격이 잇따르는 가운데 의료 정보 유출 우려를 더욱 키운다.
+
+#부정
+---
+[TITLE] China-Aligned TA419 Targets U.S. AI Policy Experts With Microsoft AitM Phishing
+[LINK] https://thehackernews.com/2026/10/china-aligned-ta419-targets-us-ai.html
+[PUBLISHED] 2026-10-04 16:20 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안, 규제
+[SCORE] 10
+[REASON] 중국 연계 그룹, 미국 AI 정책 전문가 대상 피싱 공격 캠페인 발견.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+중국 연계 TA419, 미국 AI 정책 전문가 대상 마이크로소프트 AitM 피싱 공격
+
+**[영문 3줄 요약 (Original)]**
+- The China-aligned cyber espionage group TA419 conducted Microsoft AitM phishing campaigns targeting U.S. AI policy experts.
+- They impersonated prominent figures to understand AI policy trends, using Frameless BitB technology to stealthily steal credentials without the user's notice.
+- To prevent damage, it is necessary to enable phishing-resistant authentication methods like passkeys and exercise caution and verification for suspicious contacts.
+
+**[국문 3줄 요약 (Translated)]**
+- 중국 연계 사이버 스파이 그룹 TA419가 미국 AI 정책 전문가들을 대상으로 마이크로소프트 AitM 피싱 캠페인을 벌였다.
+- 이들은 저명한 인물들을 사칭하여 AI 정책 동향 파악을 목표로 했으며, Frameless BitB 기술을 활용해 사용자가 눈치채지 못하게 자격 증명을 탈취했다.
+- 피해 방지를 위해 패스키와 같은 피싱 방지 인증 방법을 활성화하고, 의심스러운 연락에 대한 주의와 확인이 필요하다.
+
+#부정
+---
+[TITLE] [이슈 분석] 금융권 공격서 포착된 ‘ARTEX AI’… 분석 결과 14개 국가·지역서 ARTEX 관련 고유 IP 359개 발견돼
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208724
+[PUBLISHED] 2026-10-04 13:37 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SCORE] 10
+[REASON] 금융권 공격에서 AI 기반 침투 테스트 도구 'ARTEX AI' 활용 정황 포착.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 국내 금융기관 공격에서 인공지능(AI) 기반 자율형 침투 테스트 도구 'ARTEX' 관련 정황이 포착되었고, 인터넷에서 수백 개의 ARTEX 관련 IP가 확인되었다.
+- ARTEX는 LLM을 활용해 자산 탐색, 취약점 분석, 도구 호출 등 보안 검증 과정을 자동화하는 AI 에이전트 시스템으로, 공격자가 악용 시 정찰 및 공격 준비 과정을 자동화할 수 있다.
+- 이러한 AI 기반 자동화 침투 시스템이 인터넷에 상당한 규모로 노출되어 공격자들이 더 빠르고 넓은 범위에서 공격을 시도할 가능성이 커지므로, 악용 사례 확대에 대비하고 인프라 추적 역량을 강화해야 한다.
+
+#부정
+---
+[TITLE] OpenMuse - 브라우저와 터미널로 일하는 오픈소스 개인 AI 에이전트
+[LINK] https://news.hada.io/topic?id=34790
+[PUBLISHED] 2026-10-05 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 브라우저와 터미널을 활용하는 오픈소스 개인 AI 에이전트 공개.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- CopilotKit이 브라우저와 터미널을 활용하는 오픈소스 개인 AI 에이전트인 OpenMuse를 개발했다.
+- 이 에이전트는 자체 브라우저와 리눅스 터미널을 통해 자료 조사, 메일 처리, 문서 작성 등 다양한 작업을 수행하며, 사용자가 작업 과정에 개입할 수 있다.
+- Gmail, Google Calendar 연동 및 웹페이지 모니터링 기능을 제공하며, 현재 셀프 호스팅을 위한 알파 버전으로 공개되었다.
+
+#긍정
+---
+[TITLE] "클로드가 일하고, 클로드가 감시한다"... 앤트로픽, 새 플러그인 공개
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215949
+[PUBLISHED] 2026-10-04 17:48 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 앤트로픽, AI 에이전트 작업 감시 및 보조 플러그인 공개.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 앤트로픽은 클로드 코드에 메인 AI 에이전트의 작업을 보조하고 관리하는 '알아두어야 할 사항' 플러그인을 추가했다.
+- 이 보조 에이전트는 복잡한 작업 중 사용자가 놓칠 수 있는 중요한 내용을 감지하여 별도의 노트로 제공하며, 이는 에이전트 오케스트레이션 방식의 본격화를 보여준다.
+- 해당 기능은 기본 비활성화 상태로 사용자 제어권을 명확히 부여하고 특정 조건에서만 작동하도록 보안 및 제어 요소를 갖췄다.
+
+#긍정
+---
+[TITLE] Pizza Bot: Open-Source Inbox for Background AI Agents
+[LINK] https://www.infoq.com/news/2026/10/pizza-bot-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-04 15:34 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 백그라운드 AI 에이전트 관리를 위한 오픈소스 인박스 앱 공개.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+피자 봇: 백그라운드 AI 에이전트를 위한 오픈소스 인박스
+
+**[영문 3줄 요약 (Original)]**
+- A team of AWS developers open-sourced Pizza Bot, a self-hosted application designed to manage background AI agent tasks.
+- The tool provides an email-style inbox interface for long-running AI agent workflows, supporting background work, human approval requests, and local data persistence.
+- Pizza Bot is a community project that allows users to control their data and agent state, efficiently handling complex tasks through an asynchronous inbox model.
+
+**[국문 3줄 요약 (Translated)]**
+- AWS 개발팀이 백그라운드 AI 에이전트 작업을 관리하는 오픈소스 자체 호스팅 애플리케이션 '피자 봇'을 공개했다.
+- 이 도구는 이메일 스타일의 인박스 인터페이스를 통해 장기 실행 AI 에이전트 워크플로우를 관리하며, 백그라운드 작업, 인간 승인 요청, 로컬 데이터 저장을 지원한다.
+- 피자 봇은 사용자가 데이터와 에이전트 상태를 직접 제어하고, 비동기 인박스 모델을 통해 복잡한 작업을 효율적으로 처리할 수 있게 돕는 커뮤니티 프로젝트이다.
+
+#긍정
+---
+[TITLE] NASA and IBM's open source lunar model turns 17 years of orbiter data into a foundation for lunar science
+[LINK] https://the-decoder.com/nasa-and-ibms-open-source-lunar-model-turns-17-years-of-orbiter-data-into-a-foundation-for-lunar-science/
+[PUBLISHED] 2026-10-04 19:10 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델
+[SCORE] 9
+[REASON] NASA와 IBM, 달 과학 연구를 위한 오픈소스 AI 파운데이션 모델 공개.
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+NASA와 IBM의 오픈소스 달 모델, 17년간의 탐사선 데이터를 달 과학의 기반으로 전환하다
+
+**[영문 3줄 요약 (Original)]**
+- NASA and IBM have released an open-source AI foundation model for lunar science, utilizing 17 years of orbiter data.
+- This model makes decades of lunar observation data usable for machine learning, showing strong performance especially in predicting polar ice deposits and detecting craters.
+- As a foundation model pretrained on large volumes of unlabeled data, it provides a basis for adaptation to various lunar research tasks in environments with scarce labeled data.
+
+**[국문 3줄 요약 (Translated)]**
+- NASA와 IBM이 17년간의 달 탐사선 데이터를 활용하여 달 과학 연구를 위한 오픈소스 AI 파운데이션 모델을 공개했다.
+- 이 모델은 수십 년간의 달 관측 데이터를 머신러닝에 활용 가능하게 하며, 특히 극지방 얼음 퇴적물 예측과 충돌구 탐지에서 뛰어난 성능을 보인다.
+- 대규모 비정형 데이터로 사전 학습된 파운데이션 모델로서, 희소한 레이블 데이터 환경에서 다양한 달 연구 작업에 적용될 수 있는 기반을 제공한다.
+
+#긍정
+---

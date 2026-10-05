@@ -1,0 +1,690 @@
+[TITLE] [단독] 다크웹에 “서울사이버대학교 학생·교직원 개인정보 13만건 이상 판매" 게시글 올라와
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208727
+[PUBLISHED] 2026-10-05 10:53 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 산업, 규제
+[SCORE] 10
+[REASON] 서울사이버대학교 학생·교직원 개인정보 13만 건 이상 다크웹 판매 게시.
+[BODY]
+서울사이버대학교와 관련된 대규모 개인정보 데이터가 해외 해킹·데이터 거래 관련 다크웹 포럼에 올라왔다. 게시글 내용을 보면, 학생 정보 13만여 건을 판매한다는 글과 함께 교수, 교직원, 채용지원자 데이터까지 공개돼 실제 침해사고 여부와 피해 범위에 대한 긴급 확인이 필요한 상황이다.
+해커는 게시글에 샘플 데이터를 누구나 다운로드 할 수 있도록 링크를 올려뒀다. 해당 데이터 파일을 분석한 결과, 단순히 이름과 이메일을 모아 놓은 수준이 아니라 학생 학적정보부터 교직원 인사정보, 채용지원서, 주소·전화번호, 금융정보와 인증정보 관련 필드까지 광범위한 데이터가 포함돼 있었다.
+해킹 범죄자, “10월 2일 덤프”…학생 13만3,655건 판매 주장
+‘NullPointerException’이라는 닉네임을 사용하는 게시자는 10월 3일 오후 12시52분경 ‘[SELLING] [SK] iscu.ac.kr 130k PII Selling’이라는 제목의 글을 게시했다.
+게시자는 서울사이버대학교 도메인인 iscu.ac.kr을 명시하고, 데이터를 2026년 10월 2일 덤프했다고 주장했다. 압축을 해제한 파일 크기는 약 179MB이며 CSV 형식이라고 설명했다.
+핵심은 학생 데이터다. 게시자는 학생 테이블이 13만3,655개 레코드, 145개 컬럼으로 구성돼 있다고 주장하면서 전체 데이터 판매 가격을 2,000달러로 제시했다.
+별도로 교수 1,902건, 교원·직원 채용지원자 7,806건을 확보했다고 밝혔으며, 교직원 정보는 무료로 내려받을 수 있도록 외부 파일공유 서비스 링크까지 공개했다. 학생 데이터도 일부 샘플이 제공됐다.
+연락 수단으로는 텔레그램 계정과 Proton Mail 이메일 주소가 사용됐다.
+교수·지원자 숫자, 실제 확보 DB와 정확히 일치
+데일리시큐는 게시물과 연관된 학생 샘플과 교수, 교직원, 채용지원자 CSV 파일을 확보해 직접 분석했다.
+분석 결과 학생 샘플은 200건·146개 컬럼, 교수 데이터는 1,902건·68개 컬럼, 교직원 데이터는 1,569건·63개 컬럼, 채용지원자 데이터는 7,806건·72개 컬럼으로 확인됐다.
+특히 판매자가 게시글에 올린 교수 1,902건과 채용지원자 7,806건이라는 수치가 실제 확보된 데이터의 레코드 수와 정확히 일치했다. 판매자가 실제 관련 데이터 파일을 보유하고 있었을 가능성을 높이는 대목이다.
+다만 학생 정보의 경우 샘플이 200건이어서, 판매자가 주장하는 전체 13만3,655건이 실제로 존재하는지는 추가 확인이 필요하다.
+학생 DB에 학번·주소·연락처·계좌 관련 정보까지
+학생 샘플에는 학번, 이름, 영문명, 생년월일, 성별, 학적상태, 전공, 입학정보와 출신학교 등 학사정보가 포함돼 있었다.
+여기에 자택 주소와 상세주소, 전화번호, 휴대전화번호, 이메일, 직장정보, 보호자 이름과 연락처 등도 확인됐다.
+특히 BANK_NAME, ACCOUNT_NUM_OLD, ACCOUNT_NAME 등 은행·계좌 관련 필드가 존재하며, 주민번호 또는 개인식별정보와 연관된 것으로 추정되는 SSN 필드도 확인됐다.
+인증정보와 관련해서도 비밀번호 또는 과거 비밀번호를 관리하는 용도로 추정되는 필드가 포함돼 있다.
+다만 이러한 컬럼명이 실제 어떤 정보를 의미하는지, 값이 평문인지 암호화됐는지, 공격자가 복호화 가능한 상태인지 여부는 데이터베이스 구조와 암호화 체계에 대한 추가 조사가 필요하다.
+교직원·교수 DB에도 내부 인사정보와 인증 관련 데이터
+1,569건의 교직원 데이터에는 사용자 ID, 이름, 소속부서, 직급, 이메일, 사무실·자택·휴대전화번호, 입사·퇴직 관련 정보, 주소 등이 포함돼 있다.
+내부 시스템과 연관된 것으로 보이는 사용자 IP, 등록·수정 IP 정보와 함께 RESNO, EN_PWD 등의 필드도 확인됐다. 이들 필드는 개인식별번호 및 암호화된 비밀번호 관리에 이용됐을 가능성이 있지만 정확한 용도는 확인이 필요하다.
+교수 1,902건의 데이터 역시 이름, 휴대전화, 자택전화, 이메일, 주소뿐 아니라 은행명, 예금주, 계좌번호 관련 필드를 포함하고 있다.
+경력과 연구실적, 공개 과목, 연구실 연락처와 같은 교수 인사·학사정보와 사용자 ID, 접속 IP, RESNO, EN_PWD 등 내부 시스템 정보도 존재했다.
+채용지원자 7,806명…지원서 전체에 가까운 정보 포함
+가장 민감도가 높은 데이터 가운데 하나는 채용지원자 정보다.
+7,806건의 데이터에는 지원자의 이름과 성별, 나이, 주소, 휴대전화번호, 이메일뿐 아니라 현재 직장과 직위, 학력, 석·박사 과정 학교와 전공, 논문 제목·요약, 병역 관련 정보, 자격증 및 지원동기 등 채용지원서에 입력되는 광범위한 개인정보가 포함돼 있었다.
+특히 RELIGION 필드도 존재해 종교 관련 정보가 저장된 것으로 확인됐다. 개인정보보호법상 민감정보 처리 여부를 포함해 저장·관리의 적정성을 살펴볼 필요가 있는 부분이다.
+또 PWD, PWD_EN, RESNO, RESNO_EN 등 비밀번호와 개인식별정보를 관리하는 것으로 추정되는 필드도 포함돼 있었다.
+외부 공개정보 수집 아닌 내부 시스템 데이터 가능성
+공개된 데이터의 구조를 보면 이번 사안을 단순한 이메일 주소나 전화번호 수집 사건으로 보기는 어렵다.
+학번과 학적상태, 내부 사용자 ID, 입·퇴직 정보, 채용지원서 상세내용, 계좌 관련 필드, 등록·수정 IP, 인증 관련 값 등이 함께 존재한다. 이는 대학 학사·인사·채용 또는 포털 시스템에서 관리하던 데이터베이스와 관련됐을 가능성을 보여준다.
+더욱이 학생·교수·교직원·채용지원자라는 서로 다른 영역의 데이터가 함께 유출된 것으로 확인될 경우, 단일 웹페이지의 취약점만이 아니라 여러 시스템이 공유하는 데이터베이스나 관리자 계정, 공통 인증체계가 침해됐을 가능성까지 조사해야 한다.
+다만 공격자가 주장하는 학생 전체 DB 규모와 실제 침해 시점, 최초 침투 경로, 개인정보 유출 범위는 서울사이버대학교와 관계기관의 포렌식 조사를 통해 최종 확인돼야 한다.
+서울사이버대학교 관계자는 4일 한국인터넷진흥원(KISA)의 연락을 통해 다크웹에 관련 게시물이 올라온 사실을 인지했다고 밝혔다. 대학은 즉시 게시물에 공개된 샘플 정보에 포함된 학생들을 대상으로 개인정보 악용에 따른 2차 피해에 주의해 달라는 안내 메시지를 발송했다. 이어 신속하게 대응팀을 구성해 사고 경위와 피해 범위를 파악하고 대책 마련에 나섰으며, 휴일임에도 전체 임직원이 출근해 상황 대응에 참여하고 있다고 전했다.
+---
+[TITLE] Citrix patches NetScaler SAML zero-day exploited in attacks
+[TITLE_KO] Citrix, 공격에 악용된 NetScaler SAML 제로데이 취약점 패치
+[LINK] https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/
+[PUBLISHED] 2026-10-05 06:58 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 10
+[REASON] Citrix NetScaler SAML 제로데이 취약점 긴급 패치 발표.
+[BODY]
+Citrix has released emergency updates for a new NetScaler denial-of-service vulnerability tracked as CVE-2026-88779 that has been exploited in zero-day attacks, with researchers investigating whether it can also be exploited for remote code execution.
+The vulnerability is a memory buffer flaw affecting NetScaler ADC and NetScaler Gateway appliances using SAML authentication with Gateway or AAA functionality.
+The Citrix security advisory says the vulnerability has a CVSS score of 8.7 and has been used in targeted attacks against unmitigated NetScaler deployments, causing denial-of-service conditions.
+"Citrix has observed targeted attacks on unmitigated NetScaler deployments which can lead to Denial of Service," Citrix said in a related blog post published today.
+"If the condition is triggered repeatedly, the service may remain unavailable. Our analysis indicates that this issue affects service availability, and we have not identified an impact on the integrity of customer data."
+Early Sunday morning, Citrix released NetScaler ADC and NetScaler Gateway 14.1-73.41 and 13.1-64.28 to fix the CVE-2026-88779 zero-day flaw.
+For FIPS deployments, customers should upgrade to 14.1-73.41 FIPS. NetScaler ADC FIPS and NDcPP customers on the 13.1 branch should install 13.1-37.282.
+Citrix is also providing Global Deny Lists that will block access from known malicious IP addresses. However, the company recommends that customers install the newly released security updates as soon as possible.
+The company says organizations can determine if their appliances are vulnerable to the flaw by checking whether SAML authentication is configured:
+- Appliance is configured as a SAML SP add authentication samlAction
+ OR
+- Appliance is configured as a SAML IdP add authentication samlIdPProfile
+Unfortunately, organizations that recently upgraded NetScaler devices to fix two actively exploited vulnerabilities must upgrade them again to fix this flaw.
+"If you upgraded your NetScaler deployment with one of the updated software releases identified in the security bulletin for CVE 2026-88771 through CVE 2026-88778, and if you have determined that your NetScaler deployment meets the preconditions describe above, please upgrade your deployment again," Citrix warned.
+Researchers investigate possible code execution
+While Citrix describes CVE-2026-88779 as a denial-of-service vulnerability, NetScaler administrators and cybersecurity researchers have seen activity that indicates the flaw can be used for remote code execution.
+The new attacks were first reported on Thursday after NetScaler administrators reported that recently patched appliances were unexpectedly rebooting.
+In a Reddit thread, one NetScaler admin said multiple customers running NetScaler 14.1-73.37 were experiencing repeated forced reboots despite having installed the latest security updates available at the time.
+Other administrators quickly reported similar behavior, including on appliances rebuilt from fresh images. Another Reddit thread said nsaaad was repeatedly crashing until NetScaler's Pitboss process reached its restart limit and rebooted the appliance.
+At first, it was unclear whether vulnerability scanners were triggering a bug in recently released firmware or whether attackers were actively exploiting new flaws in NetScaler devices.
+However, one administrator investigating these incidents on NetScaler 14.1-73.37 devices saw crafted authentication usernames containing shell commands that download a payload from the IP address 213.209.159[.]55, save it as /v, and execute the file.
+According to the administrator, these requests appeared immediately before three confirmed nsaaad crash sequences on one appliance and targeted multiple SAML authentication factors.
+The administrator stressed that the logs showed attempted exploitation and correlated crashes but did not confirm that the commands were successfully executed.
+---
+[TITLE] Strata - Qwen 3.8 Flash Next(125B)를 일반 PC에서 초당 100토큰으로 실행하기
+[LINK] https://news.hada.io/topic?id=34761
+[PUBLISHED] 2026-10-04 23:44 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 10
+[REASON] 대규모 LLM을 일반 PC에서 효율적으로 실행하는 오픈소스 추론 엔진 공개.
+[BODY]
+- Qwen3.8-Flash-Next를 개인 PC에서 실행하는 오픈소스 추론 엔진으로, 대화·코딩·이미지 이해를 클라우드 없이 처리
+- 모델 전체를 GPU에 올리는 대신 GPU와 CPU, 시스템 메모리에 작업을 분산하며, 자주 사용하는 전문가 네트워크를 GPU에 유지
+- 작은 모델이 다음 토큰을 예측하고 큰 모델이 검증하는 방식으로 동일한 출력을 1.6~1.8배 빠르게 생성
+- 자체 측정에서 RTX 5070 12GB·RAM 64GB로 초당 94토큰을 생성하며, Q2_0 양자화 모델의 입력 처리 속도는 초당 2,650토큰
+- Windows와 Linux에서 실행하며 OpenAI·Anthropic 호환 API로 앱과 코딩 에이전트에 연결 가능. 최소 VRAM 12GB·RAM 32GB가 필요하며 메모리에 맞춰 모델을 선택
+PC 전체를 활용하는 실행 구조
+- Strata는 일반 PC에서 Qwen3.8-Flash-Next를 실행하며, 대화·코드 작성·이미지 이해와 코딩 에이전트 연동을 지원함
+- 모델의 24,576개 전문가 네트워크 중 토큰마다 10개만 사용하는 구조를 활용해 작업을 분산함
+  - GPU에는 자주 사용하는 전문가를 유지하고, RAM에는 전체 전문가를 보관함
+  - CPU는 GPU에 없는 전문가의 연산을 병렬로 처리함
+- 작은 보조 모델이 다음 토큰을 예측하고 큰 모델이 한꺼번에 검증해, 같은 출력을 1.6~1.8배 빠르게 생성함
+- 상세 구조는 작동 원리와 기술 문서에서 확인 가능
+일반 PC에서의 실측 성능
+- RTX 5070 12GB·Ryzen 5 7600·RAM 64GB에서 Q2_0 양자화 모델의 답변 생성 속도는 초당 94토큰, 입력 처리 속도는 초당 2,650토큰임
+  - 더 높은 정밀도의 IQ3_S는 답변 생성 초당 53토큰, 입력 처리 초당 1,620토큰을 기록함
+- RX 9070 XT 16GB·Ryzen 9 3900X·RAM 47GB에서는 Q2_0 기준 답변 생성 초당 60토큰, 입력 처리 초당 1,160토큰을 기록함
+- 답변 생성은 4K토큰, 입력 처리는 32K토큰 기준의 자체 측정이며, 모델의 양자화 수준과 하드웨어에 따라 속도가 달라짐
+- RTX 5070에서 IQ3_S·128K 컨텍스트를 사용해 단일 프롬프트로 브라우저에서 실행되는 복셀 정원을 만드는 데모도 공개함
+- 다른 GPU와 긴 대화의 결과는 성능 측정표와 커뮤니티 벤치마크에서 확인 가능
+메모리에 맞춘 모델 선택
+- 기본 요구 사양은 VRAM 12GB 이상인 NVIDIA·AMD GPU, RAM 32GB 이상, 여유 디스크 약 80GB이며 Windows 10/11과 Linux를 지원함
+- 동일 모델을 여러 양자화 수준으로 제공하며, 더 작게 압축하면 빠르고 높은 정밀도를 선택하면 답변 품질이 높아짐
+  - RAM 32GB: 전문가 절반을 줄인 코딩용 Coder 모델
+  - RAM 48GB: IQ2_XS 또는 속도 중심의 Q2_0
+  - RAM 64GB: IQ2_XS와 더 높은 정밀도의 IQ3_XXS·IQ3_S
+- Coder는 제작자 측 측정에서 전체 모델의 SWE-bench Verified 점수 대비 91% 를 유지함
+  - 코드 외 작업과 한국어를 포함한 CJK 텍스트에는 모든 전문가를 유지한 모델을 권장함
+- 설치 프로그램이 하드웨어에 맞는 엔진과 모델을 추천하며, 세부 선택 기준은 모델 안내에서 제공함
+앱과 코딩 에이전트 연동
+- 내장 브라우저 앱에서 대화하고 GPU·CPU·메모리 사용 상태를 실시간으로 확인 가능
+- OpenAI Chat Completions·Responses와 Anthropic Messages 호환 API를 제공해 기존 앱과 코딩 에이전트를 로컬 모델에 연결 가능
+- Claude Code·Cursor·Codex 등이 설치 안내에 따라 환경을 구성할 수 있으며, MCP 서버를 통한 설치·시작·중지도 지원함
+- Strata는 MIT 라이선스로 공개되며, 사용하는 모델과 일부 구성 요소에는 별도 라이선스가 적용됨
+---
+[TITLE] 美 의료SW 에픽, ‘미토스’ 적용 후 보안 결함 확인
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171405
+[PUBLISHED] 2026-10-04 17:03 KST
+[SOURCE] IT조선
+[TOPIC] 모델, 보안
+[SCORE] 10
+[REASON] 의료SW 에픽, AI 보안 모델 적용 후 심각한 보안 결함 발견.
+[BODY]
+미국의 환자 의료 데이터 소프트웨어 마이차트(MyChart)를 운영하는 에픽이 사이버 공격에 대비한 보안 강화 작업을 위해 대부분의 제품 개발을 최대 6주간 중단한다.
+2일(현지시각) 테크크런치에 따르면 에픽의 창업자이자 최고경영자(CEO)인 주디 포크너는 최근 미 헬스케어 전문지 모던 헬스케어를 통해 소프트웨어의 해킹 보호 작업을 위해 약 6주간 제품 개발을 지속될 수 있다고 말했다.
+에픽의 이번 조치는 앤트로픽의 첨단 사이버 보안 모델인 미토스(Mythos)를 적용한 이후 환자 데이터에 접근할 수 있는 보안 결함이 발견된 데 따른 것이다.
+에픽은 해당 결함에 대해 구체적으로 설명하지 않았다. 다만 에픽의 최고보안책임자(CSO) 스털링 마틴은 뉴욕타임스(NYT)에 일부 고객사의 마이차트 설정에서는 외부인이 환자 기록에 접근해도 해당 침입이 소프트웨어 로그 기록에 남지 않을 수 있다고 말했다.
+테크크런치는 마틴이 인공지능(AI)에 의한 사이버 공격 가능성을 직접 언급하지는 않았지만 에픽이 해당 문제를 즉시 수정해야 할 만큼 위험성이 크다고 판단한 것으로 보인다고 전했다.
+에픽의 마이차트는 미국 전역 병원에서 3억2000만건 이상의 환자 기록을 관리하고 있다.
+미국 의료기관을 겨냥한 사이버 공격이 잇따르면서 의료 정보 유출 우려도 커지고 있다. 앞서 2024년 미국인 다수의 결제·청구 처리가 이뤄지는 유나이티드헬스의 헬스테크 기업 ‘체인지 헬스케어’는 랜섬웨어 공격을 받아 1억9200만명 이상의 건강 데이터가 유출된 바 있다.
+올해는 미국 전자의료 데이터 저장 업체 ‘케어클라우드’, 의약품 유통업체 맥케슨 등에서 정보 유출이 발생했다.
+이성은 기자
+selee@chosunbiz.com
+---
+[TITLE] China-Aligned TA419 Targets U.S. AI Policy Experts With Microsoft AitM Phishing
+[TITLE_KO] 중국 연계 TA419, Microsoft AitM 피싱으로 미국 AI 정책 전문가 표적 공격
+[LINK] https://thehackernews.com/2026/10/china-aligned-ta419-targets-us-ai.html
+[PUBLISHED] 2026-10-04 16:20 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안, 규제
+[SCORE] 10
+[REASON] 중국 연계 그룹, 미국 AI 정책 전문가 대상 피싱 공격 캠페인 발견.
+[BODY]
+A new China-nexus cyber espionage group known as TA419 has been attributed to multiple credential phishing campaigns targeting artificial intelligence (AI) experts working for U.S. think tanks, universities, and legal sector organizations.
+The campaigns have impersonated prominent economists and AI policymakers, as well as a prominent Anthropic employee, to single out an AI policy expert at a U.S. think tank in February 2026. The phishing email carried the subject line "Request for Feedback on Military Integration of Claude."
+"This activity likely supports wider Chinese intelligence objectives to better understand ongoing developments within the U.S. AI policy and regulatory landscape and occurs amid intense strategic competition, accusations of model distillation, and export controls involving the U.S. and China," Proofpoint said in an analysis published this week.
+The enterprise security company has described TA419 as a China-aligned and espionage-motivated threat actor that has a track record of orchestrating credential phishing campaigns against individuals working for U.S.- and Japan-based think tanks, defense contractors, universities, and law firms since at least April 2025.
+Around July 2026, the threat actor is said to have impersonated several individuals, including a former member of the White House Office of Science and Technology Policy leadership team, as part of credential phishing campaigns targeting AI policy experts in the U.S.
+The attack begins with harmless invitations that aim to establish trust with the target. It's only when the recipient responds to the outreach that the next stage kicks in, with the adversary following it up with a shortened URL that triggers a multi-stage redirection chain, which leads to an OneDrive adversary-in-the-middle (AitM) credential phishing page after completing a Cloudflare Turnstile check.
+The page employs a technique called Frameless BitB, a version of the browser-in-the-browser (BitB) attack that spoofs a trusted website or login page by crafting a fake browser window within a legitimate browser session using HTML, CSS, and JavaScript.
+While BitB works by serving the sign-in page inside an iframe, Frameless BitB, as the name implies, achieves the same goal without using the HTML element. "This can be achieved by injecting scripts and HTML besides the original content using search and replace (aka substitutions), then relying completely on HTML/CSS/JS tricks to make the visual effect," security researcher Wael Masri noted back in January 2024.
+According to Proofpoint, TA419 has extended the open-source tool with a bespoke telemetry and automation module that tracks the target's Microsoft sign-in flow and captures the credential information using the AitM proxy, while relaying the details to the real Microsoft infrastructure in the background.
+The main advantage this method offers is that the victim doesn't notice anything is amiss, as the sign-in event is successful and there are no indications that the resulting session cookies have been stealthily captured by the attacker.
+To safeguard against this threat, organizations are recommended to enable phishing-resistant authentication methods like passkeys, and individual targets who are the focus of TA419 activity should treat unsolicited subject-matter outreach with caution, and verify their authenticity before proceeding further.
+"TA419 has consistently shown an interest in defense, national security, energy, international relations, and foreign policy targets, predominantly with a nexus to the U.S. and Japan," Proofpoint said. "The targeting of AI policy experts represents an extension of that remit rather than a departure from it."
+---
+[TITLE] [이슈 분석] 금융권 공격서 포착된 ‘ARTEX AI’… 분석 결과 14개 국가·지역서 ARTEX 관련 고유 IP 359개 발견돼
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208724
+[PUBLISHED] 2026-10-04 13:37 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SCORE] 10
+[REASON] 금융권 공격에서 AI 기반 침투 테스트 도구 'ARTEX AI' 활용 정황 포착.
+[BODY]
+최근 국내 주요 금융기관에서 개인정보 유출과 비정상 접근, 웹서버 공격 등이 잇따르는 가운데, 공격에 활용된 것으로 추정되는 서버에서 인공지능(AI) 기반 자율형 침투테스트 도구 ‘ARTEX’ 관련 정황이 발견됐다. 별도의 인터넷 인프라 분석에서도 수백 개의 ARTEX 관련 IP가 확인되면서 AI를 활용한 공격 자동화 가능성에 관심이 모이고 있다.
+오아시스시큐리티는 자체 사이버위협인텔리전스(CTI) 플랫폼 ‘AGATHA’로 분석한 결과, 14개 국가·지역에서 ARTEX 관련 고유 IP 359개를 식별했다고 밝혔다. 별도로 추적 중인 AI 기반 보안 자동화 도구 ‘CyberStrikeAI’ 관련 서버도 약 1,000개 규모로 관측됐다고 설명했다.
+다만 인터넷에 노출된 관련 서비스가 모두 악성 인프라는 아니다. ARTEX 관련 흔적이 발견됐다는 사실만으로 해당 도구가 실제 금융권 공격에 사용됐거나, 관측된 서버 전체가 공격 목적으로 운영됐다고 단정할 수는 없다.
+금융권 잇단 침해…공격 추정 서버에서 ARTEX 관련 문자열 발견
+신한은행은 9월 30일 대출모집인 서비스의 본인확인 절차를 우회한 외부 비인가자의 접근으로 약 2만5,000명의 고객 개인정보가 유출된 사실을 확인했다. 유출 정보에는 고객명과 전화번호, 연소득, 대출한도 등이 포함됐으며, 일부 주민등록번호와 연계정보(CI)도 포함된 것으로 알려졌다.
+비슷한 시기 KB국민은행에서는 직원용 모바일 업무지원 시스템에 외부 침입이 발생해 고객 119명의 개인·신용정보가 유출됐다. 하나은행에서도 영업지원시스템(ODS)에 대한 비정상 접근으로 고객 89명의 개인정보가 유출된 것으로 파악됐다.
+BNK부산은행은 외부 웹서버 공격 시도를 받았다. 주요 공격은 차단됐지만 후속 점검 과정에서 일부 웹페이지를 통해 외주 개발직원 11명의 개인정보가 노출된 정황이 확인됐다. 우리은행과 NH농협은행에서도 공격이 있었으나 현재까지 정보 유출은 확인되지 않은 것으로 전해졌다.
+이 가운데 오아시스시큐리티가 신한은행을 겨냥한 크리덴셜 스터핑 공격 인프라로 추정한 웹서버에서는 HTML 제목에 ‘ARTEX-自主渗透测试控制台’라는 문자열이 확인됐다. 크리덴셜 스터핑은 확보한 계정정보를 다른 서비스에 반복 대입해 로그인을 시도하는 공격이다.
+해당 중국어 표현은 ‘ARTEX 자율 침투테스트 콘솔’을 의미한다. 이는 해당 서버에서 ARTEX가 운영됐거나 관련 환경이 구성돼 있었을 가능성을 보여주는 정황이다.
+그러나 금융당국이나 금융기관의 공식 조사에서 ARTEX가 실제 신한은행 공격 과정에 사용됐다는 사실이 확인된 것은 아니다. 해당 서버와 고객정보 유출 경로의 관계, ARTEX의 실제 실행 여부 등은 추가 확인이 필요하다.
+ARTEX는 대규모언어모델(LLM)을 활용하는 오픈소스 AI 자율형 침투테스트 시스템이다. 보안 담당자가 목표와 범위를 지정하면 AI 에이전트가 자산을 탐색하고 취약점을 분석하며, 필요한 도구를 호출해 보안 검증 과정을 자동화하도록 설계됐다.
+Go 기반 백엔드와 웹 프론트엔드로 구성되며, LLM 설정과 자산 관리, 도구 호출, 취약점 탐색·검증 등의 기능을 제공한다. 기본 설치 환경에서는 TCP 8787 포트를 통해 웹 서비스가 제공된다.
+허가된 환경에서 침투테스트와 보안 검증을 수행하기 위한 도구지만, 공개된 소프트웨어인 만큼 공격자가 악용할 경우 정찰과 취약점 탐색, 공격 준비 과정을 자동화하는 데 활용할 가능성도 있다.
+ARTEX 관련 고유 IP 359개…미국·중국·홍콩에 91.4% 집중
+오아시스시큐리티는 국내 금융권 공격 추정 인프라에서 ARTEX 관련 정황을 확인한 뒤 AGATHA를 이용해 인터넷에 노출된 관련 인프라를 추적했다.
+2026년 9월 23일부터 10월 3일까지 수집한 데이터를 분석한 결과, ARTEX 관련 인프라 관측 기록은 총 500건이었다. 동일 서버에 대한 반복 관측을 제거하면 고유 IP는 359개였으며, IP와 서비스 포트의 조합을 기준으로는 392개의 서로 다른 서비스 노출 형태가 확인됐다.
+고유 IP 359개 중 334개, 약 93%에서는 ARTEX의 기본 웹 서비스 포트인 TCP 8787이 한 차례 이상 관측됐다. 이 수치는 관련 서비스의 인터넷 노출 현황을 나타내며, 공격 횟수나 피해기관 수를 의미하지 않는다.
+서버 소재 국가·지역별로는 미국이 236개(65.7%)로 가장 많았다. 이어 중국 53개(14.8%), 홍콩 39개(10.9%), 싱가포르 12개(3.3%), 일본 5개(1.4%), 한국 4개(1.1%) 순이었다.
+총 14개 국가·지역에서 관련 인프라가 관측됐으며, 미국·중국·홍콩에 위치한 서버는 328개로 전체의 약 91.4%를 차지했다.
+서버의 소재지는 공격자의 국적이나 실제 활동 장소와는 구분해야 한다. 클라우드와 가상사설서버(VPS), 해외 호스팅 서비스를 이용하면 운영자의 실제 위치와 다른 국가에 서버를 구축할 수 있기 때문이다.
+네트워크 사업자별로도 집중 현상이 나타났다. PEG TECH INC가 운영하는 AS54600 네트워크에서 고유 IP 196개가 확인돼 전체의 약 54.6%를 차지했다. 중국 텐센트 계열 AS45090 네트워크에서도 다수의 ARTEX 관련 인프라가 관측됐다.
+오아시스시큐리티는 이러한 분포가 ARTEX 관련 서비스의 상당수가 일부 VPS·호스팅 네트워크에 집중돼 있음을 보여준다고 분석했다.
+다른 보안·공격 도구도 함께 관측…동일 운영자 여부는 추가 분석 필요
+일부 ARTEX 관련 IP에서는 다른 보안·공격 도구와 연관된 서비스 정보도 확인됐다.
+분석 데이터에는 CyberStrikeAI 관련 정보가 함께 관측된 IP 9개가 포함됐다. 이 밖에도 자산 탐색 도구 ARL, 명령제어(C2) 프레임워크 AdaptixC2, 피싱 모의훈련 도구 GoPhish, 웹 취약점 진단 도구 Acunetix 관련 정보가 일부 서버에서 관측됐다.
+다만 같은 IP에서 여러 도구의 흔적이 발견됐다는 사실만으로 동일 공격자가 이를 함께 사용했거나, 하나의 공격 과정에 결합했다고 단정하기는 어렵다.
+서버가 서로 다른 시점에 재사용됐거나 하나의 서버에 여러 서비스가 구축됐을 가능성이 있다. 실제 연관성을 판단하려면 관측 시점과 운영 이력, 서비스 변경 내역 등을 포함한 시계열 분석이 필요하다.
+오아시스시큐리티는 해당 서버의 생성·소멸 주기와 인프라 이동, ARTEX 버전 변화, 다른 공격 프레임워크와의 연계 여부 등을 지속적으로 추적할 예정이다.
+회사는 별도로 추적하는 CyberStrikeAI 관련 서버도 약 1,000개 규모로 관측되고 있다고 밝혔다. 다만 ARTEX와 CyberStrikeAI의 관측 수치는 집계 범위와 중복 여부를 확인해야 하므로, 단순 합산해 전체 공격 서버 수로 해석하기는 어렵다.
+오아시스시큐리티는 특정 도구의 발견 수보다 AI를 이용해 침투 과정을 자동화하는 시스템이 인터넷상에 상당한 규모로 노출돼 있다는 점에 주목해야 한다고 설명했다.
+이러한 도구는 정해진 작업을 반복하는 기존 스캐너에서 나아가, 수집한 정보를 분석하고 다음 행동을 결정한 뒤 필요한 도구를 호출하는 방식으로 발전하고 있다. AI 에이전트를 활용하면 자산 조사와 정보수집, 취약점 탐색, 공격 경로 설정 및 검증 과정의 상당 부분을 자동화할 수 있다.
+공격자가 새로운 취약점이나 해킹 기법을 개발하지 않더라도, 이미 공개된 도구와 취약점을 더 빠르고 넓은 범위에서 활용할 가능성이 커지는 것이다.
+오아시스시큐리티 관계자는 “이번 분석에서 중요한 것은 ARTEX 서버가 몇 대 발견됐느냐는 숫자 자체가 아니다. ARTEX와 CyberStrikeAI처럼 AI를 이용해 침투 과정의 상당 부분을 자동화할 수 있는 시스템이 인터넷상에서 상당한 규모로 관측되고 있다는 점을 주목해야 한다”며 “이는 공격자들이 더 많은 시스템을 짧은 시간에 탐색하고 공격을 시도할 수 있는 환경이 형성되고 있다는 의미로, 실제 악용 사례가 확대될 가능성에 대비해야 한다”고 말했다.
+AI 공격 자동화의 핵심은 속도와 규모…인프라 추적 역량 강화 필요
+이번 분석은 금융기관 공격에 사용된 것으로 추정되는 서버의 ARTEX 관련 흔적과, 별도로 관측된 글로벌 ARTEX 인프라의 분포를 보여준다.
+---
+[TITLE] OpenMuse - 브라우저와 터미널로 일하는 오픈소스 개인 AI 에이전트
+[LINK] https://news.hada.io/topic?id=34790
+[PUBLISHED] 2026-10-05 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 브라우저와 터미널을 활용하는 오픈소스 개인 AI 에이전트 공개.
+[BODY]
+- Meta Muse처럼 AI에 원하는 결과를 맡기고 작업 과정을 확인하는 개인 에이전트 앱으로, CopilotKit이 오픈소스로 개발
+- 자체 브라우저와 파일, 선택적으로 구성하는 Linux 터미널을 활용해 자료 조사, 메일 처리, 문서 작성과 반복 확인 작업을 수행하며, 사용자가 중간에 개입하거나 직접 작업을 이어갈 수 있음
+- 답변만 받는 대신 작업 계획과 진행 상황, 실행 결과를 확인하고, 필요한 정보를 추가하거나 작업을 일시 중지·재개·취소 가능
+- 로그인 상태를 유지하는 Chromium 브라우저와 선택적으로 구성하는 격리된 Linux 작업 공간 제공
+  - 사용자가 에이전트의 브라우저나 터미널을 직접 열어 작업을 이어갈 수 있음
+- Gmail과 Google Calendar를 연결해 메일 검색·읽기, 답장 초안과 첨부파일 처리, 일정 생성·수정 지원
+  - 메일 발송과 일정 변경은 사용자 검토와 승인을 거쳐 실행
+- 이메일의 PDF 첨부파일을 읽고 양식을 채운 뒤, 완성된 문서와 답장 초안을 검토하는 업무 흐름 제공
+- 웹페이지 변경과 상품 가격·구매 가능 여부를 주기적으로 확인하고, 중복 알림을 줄여 필요한 변화만 전달
+- 거래 내역 CSV를 가져와 지출을 분류하고, 대화 안에 문서·브라우저 결과·계획·재무 정보를 카드로 표시
+- CopilotKit과 AG-UI 기반이며, React Native/Expo로 iOS·Android·웹 인터페이스를 구성하고 에이전트 백엔드 연결 지원
+- 현재 셀프 호스팅과 커스터마이징을 위한 알파 버전
+  - 자동 예약·결제와 음성 기능 등은 개발 계획에 포함됨
+- MIT 라이선스
+  - 대화 저장·재생에는 별도 서비스인 CopilotKit Intelligence의 프로젝트 키가 필요
+---
+[TITLE] "클로드가 일하고, 클로드가 감시한다"... 앤트로픽, 새 플러그인 공개
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215949
+[PUBLISHED] 2026-10-04 17:48 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 앤트로픽, AI 에이전트 작업 감시 및 보조 플러그인 공개.
+[BODY]
+AI 에이전트가 복잡한 작업을 스스로 수행하는 시대가 되면서 에이전트를 보조하고 관리하는 또 다른 AI의 역할도 커지고 있다. 앤트로픽은 '클로드 코드'에 메인 에이전트의 작업을 지켜보며 사용자가 놓치기 쉬운 내용을 알려주는 보조 에이전트 기능을 추가했다.
+앤트로픽은 2일(현지시간) 클로드 코드에 ‘알아두어야 할 사항(You should know)’이라는 내장 플러그인을 추가했다.
+이 기능은 별도의 보조 에이전트를 실행해 클로드가 작업하는 과정을 살펴보고, 장시간 작업에서 사용자가 알아야 할 중요한 내용을 발견하면 프롬프트 위에 별도의 노트 형태로 요약 및 환기해 주는 역할을 한다.
+예를 들어 클로드가 복잡한 코딩 작업을 수행하면서 수많은 파일을 수정하거나 중요한 결정을 내리는 경우 사용자가 모든 과정을 실시간으로 따라가기 어렵다. 이 플러그인은 이런 상황에서 메인 에이전트의 작업을 방해하지 않으면서 사람이 확인해야 할 내용을 따로 걸러내는 역할을 한다.
+구조적으로는 한 에이전트가 실제 작업을 수행하고 다른 에이전트가 그 과정을 관찰하는 방식이다. 메인 에이전트가 코드 작성과 파일 수정, 문제 해결에 집중하는 동안 보조 에이전트는 “사용자가 놓칠 만한 것이 있는가”를 확인하는 셈이다.
+We're adding a new plugin to Claude Code: You should Know.
+It scans Claude's output for important information you might miss to help keep you in the loop.
+Enable it with:
+/plugin enable cc-plugin-you-should-know@builtin pic.twitter.com/A4byi4Q9Df
+— ClaudeDevs (@ClaudeDevs) October 2, 2026
+이 같은 기능이 공개되자 개발자 커뮤니티에서는 반응이 갈리고 있다. 레딧 등에서는 “긴 작업 세션 동안 일어난 주요 결정이나 아키텍처 변경을 추적해 줘서 유용하다” “결과물을 함께 검토해 주는 '제2의 눈'이 생겨 안도감이 든다”며 실용성에 호평을 보냈다.
+반면 일부 개발자들은 비용과 효율성 측면에서 우려를 제기했다. 한 개발자는 “LLM이 처음부터 관련 출력을 정확히 내놓아야지, 백그라운드 감시를 이유로 추가 토큰을 소모하는 것은 비효율적”이라며 토큰 소비량 증가에 대한 아쉬움을 나타냈다.
+그럼에도 이번 업데이트는 단일 AI에 의존하는 대신 '감시 및 검증용 보조 AI'를 배치하는 에이전트 오케스트레이션 방식이 본격화하고 있음을 보여준다.
+특히 보조 에이전트가 임의로 동작해 보안 문제를 일으키지 않도록 명확한 사용자 제어권을 부여했다. 이 기능은 기본적으로 비활성화(Disabled) 상태로 제공되며, 사용자가 명시적으로 커맨드를 입력해 활성화해야만 작동한다. 또 사용 데이터 수집 허용(Opt-in) 등 특정 조건이 충족된 환경에서만 동작하도록 보안 및 제어 요소를 갖췄다.
+이 기능을 사용하려면 클로드 코드의 ‘/plugin’ 메뉴에서 비활성화된 플러그인을 확인한 뒤 ‘cc-plugin-you-should-know@builtin’을 활성화하면 된다.
+박찬 기자 cpark@aitimes.com
+---
+[TITLE] Pizza Bot: Open-Source Inbox for Background AI Agents
+[TITLE_KO] Pizza Bot: 백그라운드 AI 에이전트용 오픈소스 인박스
+[LINK] https://www.infoq.com/news/2026/10/pizza-bot-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-04 15:34 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 백그라운드 AI 에이전트 관리를 위한 오픈소스 인박스 앱 공개.
+[BODY]
+A team of developers working at AWS recently open-sourced Pizza Bot, a self-hosted application designed to let AI agents run tasks in the background and return results through an inbox-style interface. Agents can perform scheduled or webhook-triggered work, delegate tasks to specialized workers, and pause for human approval when needed.
+Pizza Bot provides an email-style inbox for managing long-running AI agent workflows. The Apache 2.0-licensed tool uses a client-server architecture, allowing users to delegate complex tasks without continuous monitoring.
+Source: AWS blog
+Described by the authors as an option that offers "the developer details, minus the grease," Pizza Bot supports multiple model providers, MCP servers, and Agent Skills while keeping data and agent state on the user’s machine. Joseph Dolivo, principal technologist at AWS, and Igor Fil, solutions architect at AWS, use the inbox analogy to explain the design:
+You don’t send an email and then sit watching the outbox until the reply lands. Pizza Bot is shaped like an email client for the same reason: a thread is a unit of work you come back to rather than a session you have to attend.
+Source: AWS blog
+The design is based on four requirements: agents can inspect multiple sources, work in the background, request approval before consequential actions, and notify users when work is complete. The inbox organizes this work into All, Unread, and Action queues, while an Activity panel shows tasks delegated to specialist agents and their progress.
+Pizza Bot persists agent state, threads, checkpoints, attachments, and logs locally in a user-controlled folder, sending data only to the configured model provider and explicitly enabled MCP servers, with credentials stored in the OS secret store. Dolivo and Fil add:
+You control what leaves the machine. Pizza Bot sends prompts and attachments to the model provider you chose, and tool calls to the MCP servers you enabled. Those servers can act on your behalf, which is worth remembering when you install one.
+On LinkedIn, Dolivo acknowledges that the name is a direct homage to Amazon’s two-pizza teams and documents the project’s early days:
+In April of 2025, I started a side-of-desk passion project called "JoeBot" to automate tedious, repetitive CRM logging. Today, that idea has evolved into something much bigger (...) It worked great for technical users, but as soon as non-technical folks got wind of it, they wanted in, too.
+On Hacker News, the authors said they were inspired by a LangChain article about "ambient agents." Early reactions were overwhelmingly positive, focusing on the asynchronous inbox model and local-first architecture. Some Hacker News commenters, however, praised the project while questioning the multiple tools now available for similar goals, and whether the open-source project can recreate the ecosystem of skills and integrations that made the internal version successful.
+Pizza Bot is a community project rather than an AWS service, so it comes without AWS support or a service-level agreement. Developers are responsible for keeping it running, backed up, and up to date.
+---
+[TITLE] NASA and IBM's open source lunar model turns 17 years of orbiter data into a foundation for lunar science
+[TITLE_KO] NASA와 IBM의 오픈소스 달 모델, 17년간의 탐사선 데이터를 달 과학의 기반으로 전환
+[LINK] https://the-decoder.com/nasa-and-ibms-open-source-lunar-model-turns-17-years-of-orbiter-data-into-a-foundation-for-lunar-science/
+[PUBLISHED] 2026-10-04 19:10 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델
+[SCORE] 9
+[REASON] NASA와 IBM, 달 과학 연구를 위한 오픈소스 AI 파운데이션 모델 공개.
+[BODY]
+NASA and IBM's open source lunar model turns 17 years of orbiter data into a foundation for lunar science
+The NASA-IBM Lunar Foundation Model makes decades of lunar observation data usable for machine learning. It's especially strong at predicting ice deposits at the poles and detecting craters.
+"NASA has spent decades building an extraordinary scientific record of the Moon, but collecting data is only part of the job," says Kevin Murphy, NASA's chief science data officer. The data also has to be easier for scientists to use, he adds. NASA and IBM Research, working with several academic institutions, have now released the NASA-IBM Lunar Foundation Model. The two organizations describe it as one of the first open-source foundation models for lunar science.
+Unlike task-specific algorithms, a foundation model is pretrained on large volumes of unlabeled data and can then be adapted to specific tasks with just a few labeled examples. The team sees this as the main benefit for lunar research, where observation data is plentiful but labels are scarce.
+Nearly 2 million tile bundles from 17 years of observation
+The team trained the model from scratch using SomBench, which they say is the largest co-registered multimodal lunar corpus to date. It contains nearly 2 million tile bundles across 11 modalities and two spatial scales. About 1 million high-resolution images come from the Narrow Angle Camera (NAC) at roughly 1 meter per pixel, while just under 964,000 multispectral images come from the Wide Angle Camera at 100 meters per pixel.
+The bulk of the data comes from 17 years of observations by the Lunar Reconnaissance Orbiter (LRO). According to NASA, its data volume exceeds that of all other NASA planetary missions combined. Data from the GRAIL mission (gravity field), Lunar Prospector (hydrogen), and JAXA's Kaguya/SELENE probe (mineralogy) rounded out the collection.
+In total, the dataset brings together more than 30 spatially aligned data layers from nine instruments and four missions. To prevent leakage between training, validation, and test data, the corpus is split geographically by map zones rather than randomly distributing individual tiles.
+The model gets lighting conditions as input instead of guessing them
+The model is based on TerraMind, a multimodal Earth observation model, but the researchers trained it from scratch instead of fine-tuning it. For each tile, the model receives the imaging geometry as explicit context, including illumination angles, sun position, and tile extent. On the Moon, lighting geometry shapes how the surface looks far more than the surface's actual properties do. Rather than forcing the model to correct for this from raw pixels, the team simply feeds it that information.
+The model also learns from high-resolution and coarse imagery together in a single training run, capturing both fine details and large-scale context. A technique called FlexiViT lets the same trained model adapt to tasks with different image patch sizes without retraining.
+Ice prediction is where the model pulls ahead most
+The team tested the model on crater detection at 100-meter and 1-meter scales and on predicting polar ice deposits. It also had to segment Irregular Mare Patches (IMPs), young volcanic features that challenge established timelines of lunar cooling. Across all tasks, the pretrained model matched or beat both common baselines and an architecturally identical control model with random initialization, according to the technical report.
+The biggest gains showed up in ice deposit prediction. Permanently shadowed polar regions stay cold enough to preserve water ice for billions of years and are considered a potential resource for water, oxygen, and rocket fuel. The model cut prediction error by up to 22 percent compared to the best baseline, SwinV2-B, according to IBM.
+For coarse-scale crater detection, the model beat SwinV2-B by nearly 19 percent, according to IBM.
+---
+[TITLE] 한전 직원 개인정보 노출… 고객 정보는 포함 안 돼
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171410
+[PUBLISHED] 2026-10-04 17:40 KST
+[SOURCE] IT조선
+[TOPIC] 보안, 규제
+[SCORE] 9
+[REASON] 한국전력 직원 2만4천여 명의 개인정보 노출 사고 발생.
+---
+[TITLE] 소금 결정으로 전류 껐다 켰다...UNIST 김태성 교수팀, 반도체 트랜지스터 닮은 ‘이온 스위치’ 개발
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42177
+[PUBLISHED] 2026-10-05 10:51 KST
+[SOURCE] 인공지능신문
+[TOPIC] 신기술
+[SCORE] 9
+[REASON] UNIST, 소금 결정으로 전류 제어하는 반도체 트랜지스터 닮은 이온 스위치 개발.
+---
+[TITLE] Vx - 하나의 언어로 모든 칩을
+[LINK] https://news.hada.io/topic?id=34784
+[PUBLISHED] 2026-10-05 07:43 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 신기술
+[SCORE] 9
+[REASON] CPU, GPU 등 이종 칩을 하나의 언어로 프로그래밍하는 시스템 언어 개발.
+---
+[TITLE] 오픈AI '에이전트 폭주'에 사면초가... 전 세계서 법적·규제 경고 폭풍
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215968
+[PUBLISHED] 2026-10-05 11:19 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 보안, 규제
+[SCORE] 8
+[REASON] 주요 AI 에이전트의 대규모 보안 침해 및 규제 이슈 발생.
+---
+[TITLE] Offrun - 모든 코딩 에이전트를 하나의 작업 공간에서 관리
+[LINK] https://news.hada.io/topic?id=34783
+[PUBLISHED] 2026-10-05 07:40 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 8
+[REASON] 여러 코딩 에이전트를 통합 관리하는 Mac용 앱 공개.
+---
+[TITLE] Google researchers find a way to keep self-improving AI agents from memorizing their tests
+[TITLE_KO] 구글 연구진, 자기 개선 AI 에이전트의 테스트 암기 방지 방법 발견
+[LINK] https://the-decoder.com/google-researchers-find-a-way-to-keep-self-improving-ai-agents-from-memorizing-their-tests/
+[PUBLISHED] 2026-10-04 21:40 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델
+[SCORE] 8
+[REASON] 구글 연구진, AI 에이전트의 테스트 암기 방지 새 방법론 발표.
+---
+[TITLE] 화면 안 보고 게임한다…GPT-6 아스트라, 'WoW' 40분 만에 클리어
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215945
+[PUBLISHED] 2026-10-04 18:27 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트
+[SCORE] 8
+[REASON] GPT-6 아스트라, 게임 화면 없이 복잡한 가상 세계 자율 플레이 성공.
+---
+[TITLE] Show HN: macOS의 모든 사진과 동영상의 모든 프레임을 위한 AI 검색
+[LINK] https://news.hada.io/topic?id=34774
+[PUBLISHED] 2026-10-05 04:37 KST
+[SOURCE] GeekNews
+[TOPIC] 모델
+[SCORE] 8
+[REASON] macOS 로컬에서 AI 기반 사진/동영상 자연어 검색 앱 공개.
+---
+[TITLE] 금융권 해킹, 6개 은행서 IP 등 공통 흔적… 정상 조회 기능 악용
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171422
+[PUBLISHED] 2026-10-05 10:52 KST
+[SOURCE] IT조선
+[TOPIC] 보안
+[SCORE] 8
+[REASON] 국내 금융권 연쇄 해킹, 6개 은행에서 동일 공격자 흔적 발견.
+---
+[TITLE] "내 차도 도둑"...커넥티드카 대부분, 운전자 정보 무단 판매
+[LINK] https://zdnet.co.kr/view/?no=20261005091857
+[PUBLISHED] 2026-10-05 09:52 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델, 보안, 규제
+[SCORE] 8
+[REASON] 커넥티드카의 대규모 운전자 정보 무단 판매 실태 조사 결과 발표.
+---
+[TITLE] 2.8만 기업에 보안점검 권고…과기정통부-KISA, 해킹 총력 대응
+[LINK] https://www.etnews.com/20261004000031
+[PUBLISHED] 2026-10-04 23:59 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SCORE] 8
+[REASON] 과기정통부-KISA, 금융권 해킹 대응 위해 2.8만 기업에 보안점검 권고.
+---
+[TITLE] AI 번호판 감시 시스템에 제동…美 법원 “영장 없는 검색 위헌”
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171400
+[PUBLISHED] 2026-10-04 14:40 KST
+[SOURCE] IT조선
+[TOPIC] 보안, 규제
+[SCORE] 8
+[REASON] 미국 법원, AI 번호판 감시 시스템의 영장 없는 검색 위헌 판결.
+---
+[TITLE] 'AI 피해자 영상'에 속아 내려진 중형...미국 법원 "형량 잘못됐다" 선고 파기
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215964
+[PUBLISHED] 2026-10-05 09:53 KST
+[SOURCE] AI타임스
+[TOPIC] 규제
+[SCORE] 8
+[REASON] 미국 법원, AI 생성 피해자 영상 증거 채택 오류로 형량 선고 파기.
+---
+[TITLE] 트럼프, ‘슈퍼 인텔리전스 부대’ 출범…국가정보국장, 백악관 AI 차르 겸임
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215953
+[PUBLISHED] 2026-10-05 08:28 KST
+[SOURCE] AI타임스
+[TOPIC] 규제
+[SCORE] 8
+[REASON] 트럼프 대통령, 연방 AI 정책 총괄 '슈퍼 인텔리전스 부대' 출범.
+---
+[TITLE] [AI가 바꾸는 보안] 안랩, 에이전틱 적용의 조건은 '통제된 자율성'
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674857
+[PUBLISHED] 2026-10-05 10:00 KST
+[SOURCE] 블로터
+[TOPIC] 에이전트, 보안
+[SCORE] 7
+[REASON] AI 에이전트 기반 보안 시스템의 '통제된 자율성' 전략 제시.
+---
+[TITLE] 독파모, '프런티어 AI·산업 확산' 투트랙 재편…중국 넘는다
+[LINK] https://www.etnews.com/20261005000080
+[PUBLISHED] 2026-10-05 12:00 KST
+[SOURCE] 전자신문
+[TOPIC] 개발, 모델
+[SCORE] 7
+[REASON] 정부, 독자 AI 파운데이션 모델 개발 프로젝트를 투트랙으로 개편.
+---
+[TITLE] "지기 싫어서 남의 코드 복사"…아스트라, 스타크래프트 벤치마크서 꼼수
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215970
+[PUBLISHED] 2026-10-05 11:52 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 7
+[REASON] GPT-6 아스트라, 스타크래프트 봇 경기 중 부정행위 정황 포착.
+---
+[TITLE] [SW키트] "코딩 작업 따라 AI 조합"…깃허브, '하이드라퓨전' 적용 확대
+[LINK] https://zdnet.co.kr/view/?no=20261004230743
+[PUBLISHED] 2026-10-05 10:51 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 모델
+[SCORE] 7
+[REASON] 깃허브, 다중 AI 모델 협업 코딩 기능 '하이드라퓨전' 적용 확대.
+---
+[TITLE] 알레프 알파, 범용 LLM 포기 후 첫 모델 ‘콜리브리’ 공개..."소버린 AI용"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215951
+[PUBLISHED] 2026-10-04 15:59 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 규제
+[SCORE] 7
+[REASON] 알레프 알파, 범용 LLM 포기 후 소버린 AI용 모델 '콜리브리' 공개.
+---
+[TITLE] 머스크 “성능 영향 미미”…옵티머스 생산 위해 AI칩 메모리 용량 줄여
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171406
+[PUBLISHED] 2026-10-04 17:34 KST
+[SOURCE] IT조선
+[TOPIC] 신기술
+[SCORE] 7
+[REASON] 일론 머스크, 옵티머스 생산 위해 AI 칩 메모리 용량 조정 발표.
+---
+[LINK] https://www.etnews.com/20261005000073
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002094832
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34792
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215955
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34770
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34756
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34754
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34752
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34799
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171425
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34796
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261002000157
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34791
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171384
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/04/google-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34772
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34757
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002194119
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171358
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674965
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171397
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34760
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-asks-claude-users-to-share-voice-data-for-ai-model-training/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/chinese-ai-models-parrot-state-doctrine-or-refuse-to-answer-on-sensitive-topics/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/googles-new-gemini-tiers-cut-free-users-to-its-weakest-model-and-lock-5-month-subscribers-out-of-pro/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215946
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171423
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34777
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155835
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34755
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171411
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208726
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/04/week-in-review-researcher-breaks-into-microsoft-analytics-service-netscaler-rce-0-day-exploited/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171403
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171404
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261004000019
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42178
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261005111003
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171416
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171305
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://byline.network/2026/10/84953840538/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215952
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675013
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42179
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261002221843
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171415
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171388
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/04/women-ai-jobs-inequality
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000103
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261004163947
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215965
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261005073404
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215959
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000046
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000088
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171424
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261005104154
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171417
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000050
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34793
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215907
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215906
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215954
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34786
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171337
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/04/can-super-intelligence-and-a-non-binding-safety-pact-solve-ais-image-problem/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/us-news/2026/oct/04/trump-jay-clayton-white-house-ai-czar
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/trump-launches-super-intelligence-force-that-has-nothing-to-do-with-actual-superintelligence/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34765
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1004549/well-if-ai-said-it-it-must-be-true
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34763
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/trump-names-national-intelligence-director-jay-clayton-to-lead-a-new-federal-ai-task-force/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/australia-news/2026/oct/05/queensland-data-centre-anthropic-western-downs-dalby
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215688
+[STATUS] SKIP (Score: -)
+---
