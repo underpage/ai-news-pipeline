@@ -231,6 +231,7 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 - Collect가 `[TITLE]` 개수를 세어 `has_articles` 출력. `false`이거나 Collect가 실패하면 이후 Job 전부 건너뜀 (Publish 포함, 그날 로그는 커밋되지 않음)
 - Evaluate가 실패하면 Summarize는 건너뜀. Publish는 `always()`로 실행해 그때까지의 결과와 로그 커밋
 - Publish는 artifact를 collect → evaluate → summarize 순으로 받아 나중 것이 덮어씀
+- Publish는 실행 시작 커밋이 아니라 그 시점의 `main`을 checkout (`ref: main`). Re-run은 시작 커밋을 다시 받으므로, 선정 실패 날 1차 Publish가 커밋한 로그, 통계와 `git pull --rebase`에서 충돌했음 (2026-10-06). 단, Re-run은 시작 커밋의 workflow 파일을 쓰므로 이 수정 전에 시작된 실행에는 적용 안 됨
 - `needs` 컨텍스트는 직접 의존하는 Job만 담으므로, `if:`에서 참조하는 Job은 `needs:`에 명시
 - 수동 실행의 `test_mode`는 수집 건수만 줄이고, Publish에서 커밋을 건너뛰고 리포트를 `test-report` artifact로 올림 (저장소에 남지 않음)
 - 기본 권한 `contents: read`, Publish만 `contents: write`. API 키는 Evaluate, Summarize에만 주입

@@ -170,7 +170,11 @@ jobs:
     env:
       RUN_DATE: ${{ needs.collect.outputs.run_date }}
     steps:
+      # 실행 시작 커밋이 아니라 지금의 main 위에 발행한다
+      # (Re-run은 시작 커밋을 다시 받으므로, 1차 실패 때 커밋된 같은 날 로그와 rebase 충돌함)
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
