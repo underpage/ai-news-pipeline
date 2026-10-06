@@ -1,9 +1,16 @@
 import os
 import re
 import json
+import time
 
-from common import append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, fetch, clean_inline
+from common import (
+    append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, fetch, clean_inline,
+    is_retryable,
+)
 
+# 선정 호출이 일시 오류(503 과부하 등)로 실패했을 때 다시 시도하기 전 기다리는 시간(초)과 횟수
+RANK_RETRY_DELAY = 600
+RANK_RETRY_PASSES = 2
 BODY_MIN_LENGTH = 500
 BODY_MAX_LENGTH = 4000
 PREVIEW_LENGTH = 500
@@ -47,6 +54,24 @@ def build_article_list(news_list):
         ]
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)
+
+
+def rank_with_retry(news_list, pick_n, min_score):
+    """선정은 하루 한 번뿐이라 실패하면 그날 리포트가 없다.
+
+    call_gemini의 백오프 재시도가 과부하 구간 안에서 끝나 버리는 경우(2026-10-06 503) 대비해, 일시 오류면
+    RANK_RETRY_DELAY초 기다렸다 다시 시도한다. 실패한 시도마다 [평가 오류] 줄을 남긴다 (통계의 호출 실패 횟수).
+    응답 해석 실패, 하루 요청 한도 초과처럼 기다려도 같은 오류는 바로 실패로 넘긴다.
+    """
+    for attempt in range(RANK_RETRY_PASSES + 1):
+        try:
+            return rank_articles(news_list, pick_n, min_score)
+        except Exception as e:
+            if attempt == RANK_RETRY_PASSES or isinstance(e, ValueError) or not is_retryable(e):
+                raise
+            print(f" -> [평가 API 일시 오류] {RANK_RETRY_DELAY}초 후 다시 선정 ({attempt + 1}/{RANK_RETRY_PASSES}): {str(e)[:200]}")
+            append_error("필터링", "평가 오류", "전체 후보", f"선정 실패(다시 시도): {e}")
+            time.sleep(RANK_RETRY_DELAY)
 
 
 def rank_articles(news_list, pick_n, min_score):
@@ -172,7 +197,7 @@ def main():
             append_record("필터링", [("LINK", news['link']), ("STATUS", "SKIP (Score: -)")])
     else:
         try:
-            ranked = rank_articles(news_list, min(len(news_list), list_slots), min_score)
+            ranked = rank_with_retry(news_list, min(len(news_list), list_slots), min_score)
         except Exception as e:
             print(f" -> [평가 API 오류] {e}")
             append_error("필터링", "평가 오류", "전체 후보", f"선정 실패: {e}")

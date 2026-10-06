@@ -90,6 +90,42 @@ def test_evaluate_failure_fails_the_job(monkeypatch):
     assert common.read_errors("필터링")[0][0] == "전체 후보"
 
 
+def test_evaluate_retries_temporary_rank_failure(monkeypatch):
+    add_candidates(2)
+    calls = []
+
+    def flaky(prompt, schema=None):
+        calls.append(prompt)
+        if len(calls) == 1:
+            raise RuntimeError("503 UNAVAILABLE")
+        return rank_response([(1, 9)])
+    monkeypatch.setattr(evaluate, "call_gemini", flaky)
+    monkeypatch.setattr(evaluate, "scrape_body", lambda url: "")
+    evaluate.main()
+
+    # 첫 시도의 실패 줄은 남고, 다시 시도한 선정 결과가 기록된다
+    assert len(calls) == 2
+    assert [target for target, _ in common.read_errors("필터링")].count("전체 후보") == 1
+    assert any(record.get("title") for record in common.read_records("필터링"))
+
+
+@pytest.mark.parametrize("error", [
+    RuntimeError("429 GenerateRequestsPerDayPerProjectPerModel-FreeTier"),
+    ValueError("선정 결과를 해석할 수 없습니다"),
+])
+def test_evaluate_does_not_retry_permanent_rank_failure(monkeypatch, error):
+    add_candidates(2)
+    calls = []
+
+    def boom(prompt, schema=None):
+        calls.append(prompt)
+        raise error
+    monkeypatch.setattr(evaluate, "call_gemini", boom)
+    with pytest.raises(SystemExit):
+        evaluate.main()
+    assert len(calls) == 1
+
+
 def answer(**overrides):
     data = {"lang": "en", "title_ko": "번역 제목", "summary_ko": ["가.", "나.", "다."], "summary_en": ["a.", "b.", "c."], "tone": "중립"}
     data.update(overrides)

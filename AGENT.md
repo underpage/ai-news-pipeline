@@ -125,6 +125,10 @@ LLM 에이전트용. 개요·구조·실행 방법·선정 기준은 [README.md]
 - 본문: `trafilatura` → `BODY_MIN_LENGTH` 미만이면 `BODY_SELECTORS`로 보완 → `BODY_MAX_LENGTH`까지, 문장 끝에서 자름
 - 본문이 `BODY_MIN_LENGTH` 미만이면 목록에만 남기고 `[평가 오류]` 기록, 다음 순위 기사로 대체
 - 선정 호출 실패: `[평가 오류]` 기록 후 `fail()`
+- 일시 오류(503 과부하 등)면 `RANK_RETRY_DELAY`초 기다렸다 다시 선정, 최대 `RANK_RETRY_PASSES`번 (`rank_with_retry`). 선정은 하루 한 번이라 실패하면 그날 리포트가 없음. `call_gemini`의 백오프 재시도가 과부하 구간 안에서 끝나 버리는 경우 대비 (2026-10-06 503으로 그날 선정 실패)
+  - 다시 시도하지 않는 실패: 응답 해석 실패, 하루 요청 한도 초과, 잘못된 요청 (`common.is_retryable`)
+  - 실패한 시도마다 `[평가 오류]` 줄을 남김 (통계 `rank_failed_calls`). 나중에 성공하면 `rank_ok`는 1
+  - 기다리는 시간과 재시도가 Evaluate Job의 `timeout-minutes` 안에 들어와야 함
 
 ### 3. Summarize (`src/summarize.py`)
 
