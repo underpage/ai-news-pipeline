@@ -86,6 +86,51 @@ def test_history_skips_articles_that_were_never_evaluated(monkeypatch):
     assert collect.load_history_from_logs() == {"http://x/C", "http://x/A"}
 
 
+@pytest.fixture
+def write_run(monkeypatch):
+    """그날의 수집 실행 표시와 필터링 기록을 남긴다. evaluated=False면 선정이 실패한 날."""
+    def write(date, run_time, evaluated=True):
+        monkeypatch.setenv("RUN_DATE", date)
+        with open(common.get_log_path("수집"), "a", encoding="utf-8") as f:
+            f.write(f"[수집 파이프라인 실행] {date} {run_time}\n---\n")
+        if evaluated:
+            common.append_record("필터링", [("LINK", "http://x/1"), ("STATUS", "SKIP (Score: -)")])
+        else:
+            common.append_error("필터링", "평가 오류", "전체 후보", "429")
+        monkeypatch.setenv("RUN_DATE", "2026-10-01")
+    return write
+
+
+def kst(text):
+    return datetime.datetime.strptime(text, "%Y-%m-%d %H:%M").replace(tzinfo=collect.KST)
+
+
+def test_window_without_history_is_default():
+    now = kst("2026-10-01 13:00")
+    assert collect.get_window_start(now) == now - datetime.timedelta(hours=collect.WINDOW_HOURS + collect.WINDOW_GRACE_HOURS)
+
+
+def test_window_reaches_back_to_previous_run(write_run):
+    # 어제는 09:00에 제때 돌고 오늘은 13:00에 돎 -> 기본 기간(어제 11:00부터)이면 09:00~11:00이 빔
+    write_run("2026-09-30", "09:00:00")
+    now = kst("2026-10-01 13:00")
+    assert collect.get_window_start(now) == kst("2026-09-30 09:00") - datetime.timedelta(hours=collect.WINDOW_GRACE_HOURS)
+
+
+def test_window_skips_days_whose_selection_failed(write_run):
+    write_run("2026-09-29", "13:00:00")
+    write_run("2026-09-30", "13:00:00", evaluated=False)
+    now = kst("2026-10-01 13:00")
+    assert collect.get_window_start(now) == kst("2026-09-29 13:00") - datetime.timedelta(hours=collect.WINDOW_GRACE_HOURS)
+
+
+def test_window_ignores_today_and_is_capped(write_run):
+    write_run("2026-09-20", "09:00:00")
+    write_run("2026-10-01", "09:00:00")
+    now = kst("2026-10-01 13:00")
+    assert collect.get_window_start(now) == now - datetime.timedelta(hours=collect.WINDOW_MAX_HOURS)
+
+
 def fake_feed(titles, hours_ago=1):
     now = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=hours_ago)
     items = "".join(

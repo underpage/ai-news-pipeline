@@ -7,12 +7,14 @@ import email.utils
 import datetime
 import re
 
-from common import LOGS_DIR, TEST_MODE, get_log_path, append_record, append_error, read_records, read_records_from, fetch, fail
+from common import LOGS_DIR, TEST_MODE, run_date, get_log_path, append_record, append_error, read_records, read_records_from, fetch, fail
 
 KST = datetime.timezone(datetime.timedelta(hours=9))
 WINDOW_HOURS = 24
-# 실행이 어제보다 늦게 시작해도 그 사이 기사를 놓치지 않도록 수집 기간에 더하는 여유(시간)
+# 직전 실행 시각보다 이만큼 앞에서 수집 기간을 시작한다. 발행 후 피드에 늦게 올라오는 기사 대비(시간)
 WINDOW_GRACE_HOURS = 2
+# 직전 실행이 오래전이어도 수집 기간은 이 시간을 넘지 않는다 (오래 멈췄다 다시 돌 때 후보 폭증 방지)
+WINDOW_MAX_HOURS = 72
 SUMMARY_LIMIT = 500
 # 제목이 이 비율 이상 비슷하면 같은 기사로 보고 하나만 남긴다 (0~1)
 TITLE_SIMILARITY = 0.85
@@ -100,8 +102,47 @@ def get_test_limit():
 def init_log(log_type):
     filename = get_log_path(log_type)
     with open(filename, 'a', encoding='utf-8') as f:
-        now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # 다음 실행이 이 시각으로 수집 기간을 정하므로 실행 환경의 시간대와 상관없이 한국 시간으로 적는다
+        now_str = datetime.datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S")
         f.write(f"[{log_type} 파이프라인 실행] {now_str}\n---\n")
+
+
+RUN_HEADER = re.compile(r"^\[수집 파이프라인 실행\] (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})")
+
+
+def last_evaluated_run():
+    """오늘 이전에 선정 단계까지 끝난 마지막 날의 첫 수집 실행 시각. 없으면 None.
+
+    선정이 실패한 날은 건너뛴다. 그날 수집한 후보는 중복 이력에 없으므로 그 앞 실행부터 다시 모아야 한다.
+    같은 날 여러 번 실행했으면 첫 실행을 기준으로 해 겹치는 쪽을 택한다 (겹친 기사는 링크 중복 제거로 걸러짐).
+    """
+    today = run_date().strftime("%Y-%m-%d")
+    filter_logs = glob.glob(os.path.join(LOGS_DIR, "**", "*-필터링.txt"), recursive=True)
+    for filepath in sorted(filter_logs, key=os.path.basename, reverse=True):
+        if os.path.basename(filepath)[:10] >= today or not read_records_from(filepath):
+            continue
+        collect_log = filepath[:-len("필터링.txt")] + "수집.txt"
+        if not os.path.exists(collect_log):
+            continue
+        with open(collect_log, "r", encoding="utf-8") as f:
+            for line in f:
+                match = RUN_HEADER.match(line)
+                if match:
+                    return datetime.datetime.strptime(match.group(1), "%Y-%m-%d %H:%M:%S").replace(tzinfo=KST)
+    return None
+
+
+def get_window_start(now):
+    """수집 기간의 시작. 직전 실행까지 빈 시간이 생기지 않게 정한다.
+
+    기본은 지난 WINDOW_HOURS + 여유. 직전 실행이 그보다 앞이면(예약 지연 폭이 날마다 다르거나 하루를 건너뜀)
+    직전 실행 시각 - 여유까지 넓힌다. 단 WINDOW_MAX_HOURS를 넘지 않는다.
+    """
+    start = now - datetime.timedelta(hours=WINDOW_HOURS + WINDOW_GRACE_HOURS)
+    last_run = last_evaluated_run()
+    if last_run:
+        start = min(start, last_run - datetime.timedelta(hours=WINDOW_GRACE_HOURS))
+    return max(start, now - datetime.timedelta(hours=WINDOW_MAX_HOURS))
 
 
 def load_history_from_logs():
@@ -236,7 +277,7 @@ def main():
     failed_feeds = 0
 
     now = datetime.datetime.now(datetime.timezone.utc)
-    window_start = now - datetime.timedelta(hours=WINDOW_HOURS + WINDOW_GRACE_HOURS)
+    window_start = get_window_start(now)
     print(f"수집 기간: {window_start.astimezone(KST):%Y-%m-%d %H:%M} ~ {now.astimezone(KST):%Y-%m-%d %H:%M} KST")
 
     for feed_info in FEEDS:
@@ -282,7 +323,7 @@ def main():
                     "topics": topics,
                     "summary": summary_text[:SUMMARY_LIMIT],
                 })
-            print(f" -> 최근 {WINDOW_HOURS}시간 기사: {recent_count}개, AI 기사: {matched_count}개")
+            print(f" -> 수집 기간 기사: {recent_count}개, AI 기사: {matched_count}개")
             if undated_count:
                 print(f" -> 발행일시를 읽지 못해 제외한 기사: {undated_count}개")
         except Exception as e:
