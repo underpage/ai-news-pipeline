@@ -1,2 +1,1085 @@
 [평가 오류] 전체 후보 - 선정 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 ---
+[TITLE] Apple Plans Tighter macOS Full Disk Access Controls Over AI Agent Data Access
+[TITLE_KO] 애플, AI 에이전트 데이터 접근에 대한 macOS 전체 디스크 접근 제어 강화 계획
+[LINK] https://thehackernews.com/2026/10/apple-plans-tighter-macos-full-disk.html
+[PUBLISHED] 2026-10-05 19:38 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 10
+[REASON] 애플, AI 에이전트의 데이터 접근 보안 위험으로 macOS 전체 디스크 접근 제어 강화 발표
+[BODY]
+Apple has announced that it's taking steps to tighten controls around a macOS setting called Full Disk Access (FDA) due to security risks posed by artificial intelligence (AI) agents.
+"Some developers are using Full Disk Access in ways that could put users at risk, exposing everything on their systems—including files, mail, messages, and even browsing history – without users' full knowledge and understanding," Apple said in a post. "For communication apps, this can also compromise the privacy of the people users are communicating with."
+Full Disk Access, accessed via Privacy & Security in the Settings app, was introduced by Apple in macOS Mojave (version 10.14), offers users greater control over which applications can access their entire system and data from apps like Mail, Messages, Safari, and Time Machine backups.
+Once the setting is enabled for an application, it allows that program to bypass certain security restrictions and read and write to system files that apps are typically restricted from accessing or modifying. This option is essential for apps, such as security tools and backup software, that require deep system access to function properly.
+Stating that Full Disk Access largely bypasses controls designed to safeguard users' private data, Apple said it plans to introduce updates to the setting to ensure that this sort of access is granted only with an explicit user action. It's currently not known when the new controls will be rolled out.
+"As AI agents become increasingly capable and autonomous, the risks associated with this level of access will grow substantially," Apple added. "We are committed to ensuring users clearly understand these risks before granting such access, so they can make informed decisions about their own data and privacy."
+Although Apple did not take any specific name, the development appears to be a response to a recent report about how Meta's Muse agentic tool accessed a journalist's private iMessages after they granted it Full Disk Access. Muse is advertised as a "personal AI agent" built along the lines of OpenClaw that runs on a dedicated Linux virtual machine on Meta's cloud.
+Meta has since clarified that, for Muse to be able to access a user's private messages, it must have two permissions: have Full Disk Access and have a Messages connector setting in Muse enabled.
+"The Messages integration in the Muse Mac app is opt in," Meta CTO David Singleton said. "Your Muse can only read Messages content if macOS system-level Full Disk Access is granted and the Messages connector is enabled."
+Apple's announcement also comes weeks after security researcher Patrick Wardle demonstrated a proof-of-concept (PoC) exploit for a zero-day in Muse's Mac app called not-a-mused that allows any app or terminal command to obtain access to the token that authenticates users to their Muse account.
+The now-patched vulnerability "can let an unprivileged local process redirect Muse's dictation traffic and abuse the trust/access granted to the app," Wardle said. "The concern is that Muse may have significantly broader access than ordinary local malware, making it a particularly useful target for privilege/access amplification."
+Specifically, a local attacker can exploit an undocumented setting named "endo_voyager_dictation_endpoint" without requiring any special privileges, allowing them to capture dictated audio and prompts, inject malicious prompts, and abuse the access Muse has been granted for other malicious actions.
+Wardle has also been acknowledged for reporting another vulnerability, tracked as CVE-2026-100754, impacting OpenAI's ChatGPT app for Mac that could have been abused to take over the AI assistant and grant an attacker unauthorized access to chat logs and other data stored by the app.
+---
+[TITLE] 오픈AI 에이전트, 위키피디아 무단 접근… 일부 내용 수정 정황
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171454
+[PUBLISHED] 2026-10-06 11:27 KST
+[SOURCE] IT조선
+[TOPIC] 에이전트
+[SCORE] 9
+[REASON] 오픈AI 에이전트의 위키피디아 무단 접근 및 수정 정황 포착, 통제 문제 부각
+[BODY]
+챗GPT 개발사 오픈AI의 인공지능(AI) 에이전트가 온라인 백과사전 위키피디아에 대규모로 접근하고 일부 내용을 무단 수정한 정황이 포착됐다. 위키피디아를 운영하는 위키미디어 재단은 AI 에이전트의 비정상적인 활동으로 서비스 부담이 커지고 있다며 우려를 나타냈다.
+위키미디어 재단은 5일(현지시각) 공식 블로그를 통해 자사 플랫폼에서 오픈AI 에이전트의 무단 활동을 플랫폼 내에서 발견했다고 밝혔다.
+재단에 따르면 지난 5월 발생한 일부 서비스 장애도 AI 에이전트의 대규모 데이터 수집과 관련된 것으로 파악됐다. 당시 AI 에이전트들이 위키피디아 페이지 수백만 건을 수집하고 데이터 수십만 건을 조회하면서 시스템에 상당한 부하가 발생했다는 설명이다.
+위키피디아 콘텐츠를 무단으로 수정한 사례도 확인됐다. 특히 출처 인용 도구에 대한 악의적인 수정으로 볼 수 있는 활동이 발견됐으며, 재단은 해당 도구에 접근하거나 탈취하려는 목적이 있었을 가능성을 제기했다.
+다만 재단 시스템 자체가 침해됐거나 데이터가 유출·변조됐다는 증거는 확인되지 않았다. AI 에이전트 사이에 사전 공모가 있었다는 정황도 발견되지 않았다고 밝혔다.
+위키미디어 재단은 AI 에이전트의 무분별한 접근이 서비스 운영에 미치는 영향이 커지고 있다고 지적했다. 대규모 자동화 트래픽으로 서버 비용과 관리 인력 부담이 증가하고 있으며, 개방형 지식 플랫폼의 콘텐츠 신뢰성까지 위협받을 수 있다는 것이다.
+위키피디아는 300개가 넘는 언어로 6700만개 이상의 문서를 제공하며 월간 페이지 조회 수가 최대 150억회에 달한다.
+AI 에이전트의 보안 문제를 둘러싼 우려는 최근에도 이어지고 있다. 오픈AI의 AI 에이전트가 지난 7월 통제된 환경을 벗어나 오픈소스 AI 플랫폼 허깅페이스를 해킹한 사례가 알려지면서 AI 에이전트의 자율적 행동에 따른 보안 위험에 대한 논의가 커지고 있다.
+변상이 기자
+difference@chosunbiz.com
+---
+[TITLE] OpenRig - Claude Code와 Codex를 팀으로 운영하는 멀티 에이전트 오케스트레이터
+[LINK] https://news.hada.io/topic?id=34854
+[PUBLISHED] 2026-10-06 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] Claude Code와 Codex를 팀으로 운영하는 멀티 에이전트 오케스트레이터 오픈소스 도구 공개
+[BODY]
+- Claude Code, Codex, Pi 등의 코딩 에이전트를 역할과 공유 문맥을 갖춘 지속적인 팀으로 구성하는 오픈소스 도구
+- 개별 터미널 세션에 일일이 지시하는 대신 리드 에이전트에게 원하는 결과를 전달하면, 전문 에이전트들을 조율하고 결과와 사용자의 결정이 필요한 사안을 전달
+- YAML로 팀 구성과 에이전트 간 연결, 역할·스킬·지침을 정의하고, 명령 하나로 관련 세션과 실행 환경을 시작
+- 구현 담당과 독립 검토자, 조사팀, 기획·개발·검토를 잇는 팀 등 미리 구성한 팀 템플릿 제공
+- 에이전트마다 고정된 역할과 주소를 부여해, 대화 세션이 바뀌어도 역할의 정체성과 축적한 문맥을 유지
+  - 팀 단위로 지침과 문맥을 공유하되, 각 에이전트의 컨텍스트 창은 별도로 유지
+- 에이전트 간 메시지, 전체 공지와 채팅방을 지원하며, MCP를 통해 에이전트가 팀 구성과 상태를 직접 관리 가능
+- 작업 담당과 진행 상태, 팀 연결 구조를 TUI에서 확인하고, 실행 중인 팀에 에이전트를 추가하거나 제거 가능
+- 기존 tmux의 Claude Code·Codex 세션을 찾아 관리 대상으로 편입하고, 팀 상태를 스냅샷으로 저장해 복원 가능
+- 각 에이전트는 직접 접속할 수 있는 tmux 세션에서 실행되며, herdr·cmux로 여러 터미널을 함께 표시 가능
+- 로컬 데몬, CLI, TUI와 MCP 서버로 구성하며 macOS·Linux 지원
+- 초기 설정과 실행 과정에서 에이전트의 신뢰 설정과 훅 파일을 변경하므로, 관련 설정의 사전 확인과 백업을 권장
+- Apache-2.0 라이선스
+---
+[TITLE] Introducing GLM 5.3 on Amazon Bedrock
+[TITLE_KO] 아마존 베드록에 GLM 5.3 출시
+[LINK] https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/
+[PUBLISHED] 2026-10-06 08:25 KST
+[SOURCE] AWS Machine Learning
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 9
+[REASON] Z.ai의 753B 파라미터 AI 에이전트 모델 GLM 5.3, 아마존 베드록에 출시
+[BODY]
+Artificial Intelligence
+Introducing GLM 5.3 on Amazon Bedrock
+Coding and agentic workloads are asking more of AI models than ever: refactor a repository spanning hundreds of files, sustain a multi-hour agentic workflow without losing context, and reason through complex systems problems with tool use at every step. Meeting those demands with open-weight models has historically meant provisioning and operating your own inference infrastructure.
+GLM 5.3 from Z.ai (Zhipu AI) is now available on Amazon Bedrock. GLM 5.3, as published on Hugging Face Hub, is a 753B-parameter mixture-of-experts model optimized for coding and long-horizon agentic tasks. In particular, Z.ai has reported the model shows notable cyber security capabilities. On Amazon Bedrock, you can now use it through fully managed APIs with cross-Region inference, prompt caching, and service tiers. You don’t manage any infrastructure. Access to GLM 5.3 on Bedrock is available to eligible enterprise customers.
+In this post, we show you how to invoke GLM 5.3 on Amazon Bedrock using the OpenAI-compatible APIs and reduce cost and latency with prompt caching. We then put the model to work in a realistic agentic workflow: running an authorized security test of your own application with Strix, an open-source AI penetration testing agent.
+What’s new compared to GLM 5
+GLM 5 arrived on Amazon Bedrock earlier this year. GLM 5.3 builds on the same lineage, with a range of important gains:
+- Stronger coding: Z.ai claims competitive performance on a range of coding benchmarks including DeepSWE, Terminal Bench 3.0, and FrontierSWE. They also report a 50% improvement over GLM 5.2 on their own internal coding benchmark. Direct comparisons to GLM 5 were not reported, because the magnitude of improvements led to updating the benchmark tests themselves since the GLM 5.1 announcement.
+- Emergent cyber security capabilities: Reported benchmark performance on security tasks stands out, which makes the model a natural fit for defensive security workflows. For example, Z.ai measured a leading score of 84.5 on the CyberGym benchmark at release.
+- Broader Amazon Bedrock integration: Cross-Region inference profiles, implicit and explicit prompt caching, and improved feature parity of the OpenAI-compatible Responses and Chat Completions APIs alongside Invoke and Converse.
+Key capabilities
+- Frontier coding and agentic performance. GLM 5.3 is designed for complex systems engineering and long-horizon agentic tasks. These include multi-step reasoning, tool-augmented workflows, and sustained context across large code bases.
+- Flexible API access. You can invoke GLM 5.3 through the OpenAI-compatible Responses and Chat Completions APIs, or the Amazon Bedrock Invoke and Converse APIs.
+- Prompt caching. GLM 5.3 supports implicit (automatic) prompt caching by default, and explicit cache controls (recommended) on the Responses and Chat Completions APIs. For agentic workloads that resend large system prompts or repository context every turn, caching reduces both latency and input cost.
+- Cross-Region inference. GLM 5.3 is available through US cross-Region inference (us.zai.glm-5.3 ) and Global cross-Region inference (global.zai.glm-5.3 ) profiles. You send requests to the “source” AWS Region of your choice, and Amazon Bedrock securely routes each request for processing. Refer to the Amazon Bedrock User Guide for more details.
+- Service tiers. Choose Flex to optimize cost for less-time-sensitive workloads, Priority to prioritize latency-critical requests in return for a higher price, or Standard for the default balance between price and speed.
+Prerequisites
+For the following usage examples, you need:
+- An AWS account with access to Amazon Bedrock.
+- AWS Identity and Access Management (IAM) permissions to call the base model and the target inference profile: bedrock:InvokeModel ,bedrock:InvokeModelWithResponseStream , andbedrock:CallWithBearerToken .
+- (For the code-based demos) Python 3.10 or later.
+---
+[TITLE] Supercharge regulated workloads with Claude Code and Amazon Bedrock
+[TITLE_KO] Claude Code와 아마존 베드록으로 규제된 워크로드 강화
+[LINK] https://aws.amazon.com/blogs/machine-learning/supercharge-regulated-workloads-with-claude-code-and-amazon-bedrock/
+[PUBLISHED] 2026-10-06 02:25 KST
+[SOURCE] AWS Machine Learning
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 앤트로픽 Claude Opus 5.5 및 Sonnet 5.5, 아마존 베드록 GovCloud에 출시
+[BODY]
+Artificial Intelligence
+Supercharge regulated workloads with Claude Code and Amazon Bedrock
+Please note that the following post is intended for informational purposes only. The approach detailed below may not be suitable for all organizations or compliance programs. It is important to evaluate this potential solution against the compliance requirements of your organization and any applicable regulatory obligations you may have.
+The availability of Anthropic Claude Opus 5.5 and Claude Sonnet 5.5 in the AWS GovCloud (US) Regions introduces an on-ramp for AI-assisted development for workloads with regulatory or compliance requirements, including International Traffic in Arms Regulations (ITAR). Claude Sonnet 5 holds FedRAMP Class D (formerly High) certification and DoD Impact Level 4 and 5 (IL4/IL5) authorization, and Claude Opus 5.5 and Claude Sonnet 5.5 hold FedRAMP Class D certification on Amazon Bedrock (verify current model certification status).
+In this post, we explore how to use these models on Amazon Bedrock in AWS GovCloud (US) with Claude Code, Anthropic’s agentic coding tool. With this solution, you can run AI-assisted workflows that speed up everyday development tasks while maintaining compliance alignment.
+Amazon Bedrock in AWS GovCloud (US)
+AWS GovCloud (US) Regions are designed specifically for US customers with elevated compliance needs. You can deploy generative AI workloads to sensitive environments while maintaining compliance controls. Amazon Bedrock is built with security-focused features, including:
+Built-in data protection where customer content isn’t stored, logged, or used to train AWS models or shared with third parties.
+FedRAMP Class D (formerly High) certification and DoD Cloud Service Provider (CSP) SRG IL4/IL5 authorization pathways, supporting government agencies’ compliance requirements. See the Amazon Bedrock models compliance page for current model-level certification status.
+Integration with existing security controls and compliance frameworks available in AWS GovCloud (US), maintaining the same high security standards as other AWS Regions while providing additional authorization pathways.
+Amazon Bedrock in AWS GovCloud (US) supports two endpoint surfaces, bedrock-runtime and bedrock-mantle, both powered by the same underlying Mantle inference engine with Zero Operator Access (ZOA) architecture. The bedrock-runtime endpoint uses the AWS SDK (InvokeModel and Converse APIs) and supports Amazon Bedrock Guardrails, Amazon Bedrock Knowledge Bases, Agents, and invocation logging. This makes it the recommended choice for most new applications, particularly those requiring audit trails. The bedrock-mantle endpoint supports the Anthropic Messages API natively and provides access to capabilities currently available only on that surface, such as server-side tools, background inference, and Projects. Both endpoints are available for Claude Opus 5.5, Claude Sonnet 5.5, and Claude Sonnet 5, with bedrock-runtime available in both AWS GovCloud (US) Regions (US-West and US-East) and bedrock-mantle available in AWS GovCloud (US-West).
+Claude Code
+Claude Code is Anthropic’s agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools. Powered by models such as Claude Opus 5.5 and Claude Sonnet 5.5 on Amazon Bedrock in AWS GovCloud (US), it operates directly in your terminal, your preferred integrated development environments (IDEs) such as VS Code and JetBrains, and in the background with the Claude Agent SDK. Claude Code understands your entire codebase and can work across multiple files and tools to get things done. Claude Code can:
+- Write code and fix bugs spanning multiple files across your codebase.
+- Answer questions about your code’s architecture and logic.
+- Execute and fix tests, linting, and other commands.
+- Search through Git history, resolve merge conflicts, and create commits and pull requests.
+---
+[TITLE] New agent skill: Amazon SageMaker optimized generative AI inference for your coding agent
+[TITLE_KO] 새로운 에이전트 스킬: 코딩 에이전트를 위한 아마존 세이지메이커 최적화 생성형 AI 추론
+[LINK] https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/
+[PUBLISHED] 2026-10-06 02:23 KST
+[SOURCE] AWS Machine Learning
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 9
+[REASON] 아마존 세이지메이커, 코딩 에이전트용 생성형 AI 추론 최적화 스킬 출시
+[BODY]
+Artificial Intelligence
+New agent skill: Amazon SageMaker optimized generative AI inference for your coding agent
+Engineers increasingly use coding assistance tools to accelerate their development workflows. Today, Amazon SageMaker AI optimized generative AI inference introduces the aws-ai-ml skill, available through the Agent Toolkit for AWS. This skill gives coding agents like Kiro, Claude Code, and Codex deep expertise in inference optimization and benchmarking. Install the skill, and your existing agent can benchmark endpoints, recommend deployment configurations, compare performance runs, and generate executable SageMaker Python SDK v3 code on your behalf. The aws-ai-ml skill is a toolkit that plugs into any coding agent that supports the Model Context Protocol (MCP), turning it into a SageMaker AI inference optimization expert.
+In this post, we walk through what the skill enables, how to set it up, and how it helps you move faster from model to production.
+The challenge: Bridging intent and infrastructure
+Amazon SageMaker AI supports serverful hosting across real-time, batch, and asynchronous modes. It offers on-demand and reserved capacity, heterogeneous instances, virtual private cloud (VPC) isolation, automatic scaling, and integration with every SageMaker AI training path. The surface area is broad and deep, but most engineers do not arrive knowing which instance family or serving container will best serve their needs. They arrive with a use case: a performance target they want to hit, a cost envelope they need to stay within, or a model they need to evaluate before committing to production.
+The agentic experience for SageMaker AI optimized generative AI inference closes this gap. You tell the agent what you want to accomplish, and it produces executable SageMaker Python SDK v3 code that you can review, modify, and run in your own environment. The agent asks targeted clarifying questions, generates code grounded in real benchmarks and measured performance data, and adapts to your business constraints the way a solutions architect would.
+Throughout, you stay in control. Every step is visible in real time and expressed as code you can read and question. Nothing happens behind an opaque UI.
+Getting started
+You can install the aws-ai-ml skill through the Agent Toolkit for AWS on your local machine, or use it within an Amazon SageMaker Studio JupyterLab space. Either way, you can go from zero to a working conversation in 10 minutes.
+Option A: Use with any coding agent (Kiro, Claude Code, Codex, or any MCP-compatible agent)
+Step 1: Install the Agent Toolkit for AWS. If you haven’t already, set up the Agent Toolkit. This requires AWS Command Line Interface (AWS CLI) 2.35+ and uv installed.
+This auto-detects your agents, installs skills, and configures the AWS MCP Server. For agent-specific setup (plugin install commands, MCP config), see the Agent Toolkit for AWS getting started guide.
+Step 2: Install the aws-ai-ml skill. Add the SageMaker AI optimized generative AI inference skill to your agent:
+Step 3: Confirm and begin. Open your coding agent’s chat panel and ask: “What skills are available?” You should see aws-ai-ml listed. After you confirm, describe your intent in natural language. Your coding agent now has SageMaker AI inference optimization expertise built in.
+Prerequisites: Your AWS credentials must have permissions to call SageMaker AI APIs (creating endpoints, running benchmark and recommendation jobs). The skill generates code that runs under your credentials. No additional AWS Identity and Access Management (IAM) configuration is needed for the skill itself.
+Note: For Kiro and Claude Code, agents can discover skills at runtime. They can search for and load skills on demand through the AWS MCP Server, without any local installation. Ask your agent: “Search for AWS skills related to databases.” Refer to the readme for discovering skills at runtime.
+Option B: Use within Amazon SageMaker Studio
+---
+[TITLE] Show GN: Agent Guard - Claude Code·Codex의 비밀정보 노출을 줄이는 로컬 보안 도구
+[LINK] https://news.hada.io/topic?id=34831
+[PUBLISHED] 2026-10-06 01:48 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 9
+[REASON] Claude Code·Codex의 비밀정보 노출을 줄이는 로컬 보안 도구 'Agent Guard' 공개
+[BODY]
+Claude Code나 Codex가 .env를 읽거나, 명령어 출력에 API 키와 토큰이 포함되면 Git에 커밋하지 않더라도 비밀정보가 에이전트의 컨텍스트나 대화 기록에 들어갈 수 있습니다. 이런 노출 경로를 줄이기 위해 Agent Guard를 만들었습니다.
+주요 기능은 다음과 같습니다.
+- 파일 읽기 전 차단: 지원하는 도구가 실행되기 전에 설정된 민감 파일의 읽기를 차단합니다.
+- 출력 마스킹: 지원하는 도구의 출력에서 탐지한 비밀정보를 [REDACTED] 로 치환합니다.
+- 변경 파일과 커밋 검사: gitleaks로 변경 파일과 스테이징된 추가 내용을 검사합니다.
+Claude Code와 Codex 플러그인 외에 shell, 네이티브 Git hook, GitHub Actions에서도 사용할 수 있습니다. 기본 처리는 로컬에서 이루어지며 별도 서비스 가입이나 텔레메트리 수집은 없습니다. macOS와 Linux를 지원하고 MIT 라이선스입니다.
+호스트와 도구에 따라 hook·출력 마스킹 범위가 다르며, 모든 비밀정보를 탐지한다고 보장하지는 않습니다. GitHub Secret Scanning과 Push Protection도 함께 유지하는 것을 권장합니다. README에 적용 범위와 한계, 실제 hook 동작을 확인하는 안전한 테스트 방법을 정리했습니다.
+저장소에서 데모와 설치 방법을 확인할 수 있습니다. 놓치는 노출 경로, 오탐, 작업 흐름을 불필요하게 막는 부분에 대한 피드백을 받고 싶습니다.
+---
+[TITLE] ReviewBench: An open benchmark for AI code review
+[TITLE_KO] ReviewBench: AI 코드 리뷰를 위한 오픈 벤치마크
+[LINK] https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/
+[PUBLISHED] 2026-10-06 00:59 KST
+[SOURCE] GitHub Blog
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 9
+[REASON] AI 코드 리뷰 에이전트 성능 평가를 위한 오픈 벤치마크 'ReviewBench' 출시
+[BODY]
+Michelle Zhou
+Michelle develops and evaluates agentic AI systems for code review, focusing on repository-level context retrieval, review and fix quality, and rigorous benchmarking of AI code reviewers.
+We’re launching ReviewBench, a benchmark for code review agents built on representative GitHub pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics.
+Agentic code review is becoming an essential piece of how development happens. It helps you inspect pull requests, catch issues, and decide what deserves attention before code ships.
+But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you. Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow.
+That makes it important to understand how reviewers actually compare: what different systems catch, what they miss, and the tradeoffs they make. A good code review benchmark should reflect the diversity of real pull requests, capture a broad set of review findings, and support meaningful breakdowns by severity, category, and precision-recall preferences. For teams building code review agents, the benchmark should also provide an offline signal that reliably tracks whether changes are likely to improve the experience in production. Existing benchmarks often make tradeoffs between label quality, coverage, and how well they represent real-world code review, leaving a gap for a rigorous and reproducible evaluation methodology that brings these pieces together.
+We built ReviewBench, a new code review offline benchmark, to address that gap, and it is available for you to use today. It follows the language, repo size, and size distribution of pull requests, modeled after over 100 million real pull requests on GitHub. It uses a multi-source golden set and a consistent evaluation rubric and has been independently validated by senior engineers. Just as important, with the help of ReviewBench, our offline evaluation of Copilot code review (CCR) has become more effective at anticipating the direction of production experiments, giving us greater confidence that measured improvements reflect meaningful gains for users.
+In this post, we’ll walk through how ReviewBench is constructed, how it establishes reliable ground truth and scoring, and how to onboard your own code review system and submit results.
+Our benchmark is built around five principles:
+1. Representative pull requests, not a demo set
+We analyzed 103.9 million GitHub pull requests to characterize the real-world distribution of code review workloads. ReviewBench contains 219 pull requests from 187 public open source licensed repositories spanning 19 languages, with its language and repository-size distributions closely matching GitHub overall. The complete benchmark dataset is publicly available.
+We make one deliberate adjustment to this distribution: while language and repository size mirror GitHub directly, pull request size is weighted toward the reviewable middle and tail. This reduces the overrepresentation of tiny, single-file changes while preserving more substantive, multi-file pull requests where review quality matters most.
+Quick corpus snapshot:
+2. Broad ground truth discovery, independently judged
+No single reviewer, whether human or model, can identify everything worth finding in a pull request. To build a broader and more reliable golden set for ground truth findings, we follow a three-stage process:
+3. Metrics that measure both known and newly discovered issues
+Most benchmarks report precision and recall against a fixed golden set. ReviewBench reports six metrics in two families:
+That distinction becomes more important as review agents become more capable.
+---
+[TITLE] Agentic retrieval with LangChain and Amazon Bedrock Knowledge Bases
+[TITLE_KO] LangChain과 아마존 베드록 지식 기반을 활용한 에이전트 검색
+[LINK] https://aws.amazon.com/blogs/machine-learning/agentic-retrieval-with-langchain-and-amazon-bedrock-knowledge-bases/
+[PUBLISHED] 2026-10-06 00:53 KST
+[SOURCE] AWS Machine Learning
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] LangChain과 아마존 베드록 지식 기반을 활용한 에이전트 검색 기술 공개
+[BODY]
+Artificial Intelligence
+Agentic retrieval with LangChain and Amazon Bedrock Knowledge Bases
+When a user asks the support assistant, a Retrieval Augmented Generation (RAG) application built with LangChain to compare two products across three dimensions, they’re effectively posing six questions simultaneously. Similarity search uses a single query vector to encapsulate all the intents. The retriever then generates the best approximation of the average of those intents. The resulting answer comes back concise. The search executes without errors. The relevance scores look reasonable. Yet the retrieved chunks, while topically relevant, only cover a fraction of what the question actually asked.
+In this post, we showcase a RAG application on Amazon Bedrock Managed Knowledge Base with LangChain. We run the same multi-part question through standard and agentic retrieval, and read the trace events to see the plan the model produced. We also cover what the two retrieval paths cost and when the cheaper one is the right choice.
+Agentic retrieval is available on Amazon Bedrock Managed Knowledge Base. Instead of one search, Amazon Bedrock Managed Knowledge Base plans the retrieval. It breaks the question into sub-queries, runs them, judges whether it has enough evidence, and searches again if it doesn’t. The langchain-aws package exposes both agentic and standard retrieval, so you can use either from a LangChain application.
+Solution overview
+Amazon Bedrock Managed Knowledge Base, the fully managed RAG capability in Amazon Bedrock, removes the self-managed vector store, embeddings, and re-ranking models from the RAG architecture. You configure a data source, and Amazon Bedrock Managed Knowledge Bases handles chunking, embedding, storage, and retrieval. This walkthrough uses Amazon Simple Storage Service (Amazon S3).
+Amazon Bedrock Managed Knowledge Bases provides two APIs. We briefly discuss those differences in this post. The Retrieve API runs one hybrid search and returns scored chunks. The AgenticRetrieveStream API runs a planning loop and streams the steps back to you as trace events. In the langchain-aws package, the first is a standard LangChain retriever you can drop into a chain. The second is a function retrieval directly from a knowledge base.
+The following diagram shows the solution architecture. The application queries Amazon Bedrock Knowledge Bases using either the Retrieve API (standard, single-shot) or the AgenticRetrieveStream API (multi-step planning loop). Both paths return document chunks from the knowledge base, which the application then uses to generate a grounded response.
+Implementation walkthrough
+The following sections walk you through creating a knowledge base, querying it with both retrieval methods, and reading the trace events the agentic planner produces.
+Prerequisites
+To follow along you need:
+- An AWS account with access to Amazon Bedrock in a Region where Amazon Bedrock Managed Knowledge Bases and agentic retrieval are available. This walkthrough uses the US East (N. Virginia) Region (us-east-1 ), and the code assumes it throughout. Check the AWS documentation for other Regional availability and support.
+- Two AWS Identity and Access Management (IAM) identities, described in the next section: a service role the knowledge base assumes, and permissions on the identity you call the APIs from.
+- Python 3.12 or later.
+- An S3 bucket holding the sample documents. The corpus needs several documents that cover overlapping topics so that a comparative question has somewhere to go. A single flat document cannot demonstrate query planning.
+Install the packages. The Boto3 version matters: agentic_retrieve_stream did not exist before 1.43.32.
+Permissions
+Two identities are involved and separating them is worth doing deliberately. The knowledge base assumes a service role to read your documents and call the embedding model. Your application uses an AWS Security Token Service (AWS STS) caller identity to query.
+---
+[TITLE] LTM launches BlueVerse AgenTraceIQ to monitor AI agents and reverse unintended actions
+[TITLE_KO] LTM, AI 에이전트 모니터링 및 의도치 않은 행동 되돌리는 BlueVerse AgenTraceIQ 출시
+[LINK] https://www.helpnetsecurity.com/2026/10/05/ltm-blueverse-agentraceiq/
+[PUBLISHED] 2026-10-05 22:37 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 보안, 규제
+[SCORE] 9
+[REASON] LTM, AI 에이전트 모니터링 및 의도치 않은 행동 되돌리는 솔루션 'BlueVerse AgenTraceI…
+[BODY]
+LTM launches BlueVerse AgenTraceIQ to monitor AI agents and reverse unintended actions
+LTM has announced the launch of BlueVerse AgenTraceIQ, an offering designed to help organizations securely adopt and scale agentic AI. Combining Rubrik Agent Cloud with LTM’s AI governance and managed services expertise, the offering enables organizations to monitor AI agents, establish guardrails, and rewind unintended agent actions across business-critical environments.
+As part of Rubrik’s Project Hourglass, LTM and other elite Global Systems Integrators partner with Rubrik, the Security and AI Operations Company, to deliver Rubrik Agent Cloud for Anthropic’s Claude Code to their enterprise clients. The collaboration strengthens the ability for organizations to adopt agentic systems with the necessary security, governance, and resilience at scale.
+“As AI agents increasingly act autonomously, the stakes for enterprise security and resilience have never been higher. Together with LTM, we are empowering organizations to move from reactive risk management to a proactive, secure framework, ensuring they can innovate with AI at speed without compromising their operational integrity,” said Alok Agrawal, Chief Solutions Officer, Rubrik.
+As AI agents become increasingly embedded in enterprise operations, organizations need a structured approach to managing risk, accountability, and operational continuity. Scaling beyond experimentation requires greater oversight of agent behaviour, stronger policy enforcement, and the ability to respond quickly when unexpected outcomes occur.
+BlueVerse AgenTraceIQ addresses these challenges through an integrated framework that combines agent observability, governance, and resilience. Powered by Rubrik Agent Cloud and operationalized through LTM’s governance-led services model, the offering brings together enterprise-ready advisory, deployment, and managed services to support responsible AI adoption at scale.
+The solution provides continuous visibility into agent activity, enforces policy-driven controls and zero-trust access, and enables rapid restoration of systems, data, configurations, and repositories following unintended or destructive actions. By linking agent actions to prompts, plans, and tool interactions, it enhances explainability, auditability, and root-cause analysis.
+BlueVerse AgenTraceIQ supports leading agent ecosystems, including Microsoft Copilot Studio, Salesforce Agentforce, Amazon Bedrock, Anthropic Claude, and custom-built frameworks.
+“Agentic AI is rapidly reshaping enterprise operations, but scaling adoption requires more than deploying intelligent agents. Organizations need the ability to understand agent behaviour, establish accountability, and respond quickly when unexpected outcomes occur. Together with Rubrik, BlueVerse AgenTraceIQ helps enterprises move from experimentation to trusted, production-scale AI operations,” said Krishnan Iyer, Chief Growth Officer, LTM.
+The offering also includes AI Resilience Assessments, Governance Framework Design, Deployment & Integration Services, and Managed Governance Operations, helping organizations establish enterprise-ready operating models for agentic AI. By combining Rubrik’s technology with LTM’s AI transformation expertise, BlueVerse AgenTraceIQ enables organizations to accelerate adoption, strengthen compliance readiness, and improve operational certainty as AI becomes embedded across the business.
+---
+[TITLE] Cloudflare, AI 에이전트를 위한 Web Search API 베타 공개
+[LINK] https://news.hada.io/topic?id=34826
+[PUBLISHED] 2026-10-05 22:37 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 클라우드플레어, AI 에이전트용 Web Search API 베타 공개로 실시간 정보 활용 지원
+---
+[TITLE] MIT·사카나, 자가 진화 AI 에이전트 'SIFT' 발표...'검증 비용 병목' 해결
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215967
+[PUBLISHED] 2026-10-05 17:33 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] MIT·사카나 AI, 자가 진화 AI 에이전트의 검증 비용 병목 해결 기술 'SIFT' 발표
+---
+[TITLE] "100큐비트급 양자컴퓨터·슈퍼컴 ‘한강’ 연결…내년 상반기 서비스"
+[LINK] https://zdnet.co.kr/view/?no=20261006115812
+[PUBLISHED] 2026-10-06 12:41 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 모델, 보안, 신기술
+[SCORE] 9
+[REASON] KISTI, 100큐비트 양자컴퓨터와 슈퍼컴 '한강' 연결 하이브리드 컴퓨팅 서비스 계획
+---
+[TITLE] New Dell System Update flaw lets hackers gain root privileges
+[TITLE_KO] 새로운 델 시스템 업데이트 취약점, 해커가 루트 권한 획득 가능
+[LINK] https://www.bleepingcomputer.com/news/security/new-dell-system-update-flaw-lets-hackers-gain-root-privileges/
+[PUBLISHED] 2026-10-05 23:53 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] 델 시스템 업데이트의 심각한 취약점 발견, 해커가 루트 권한 획득 가능
+---
+[TITLE] JDK 27: The quiet before the storm
+[TITLE_KO] JDK 27: 폭풍 전의 고요함
+[LINK] https://www.infoworld.com/article/4229750/jdk-27-the-quiet-before-the-storm.html
+[PUBLISHED] 2026-10-05 18:00 KST
+[SOURCE] InfoWorld
+[TOPIC] 개발, 모델, 보안, 신기술, 규제
+[SCORE] 9
+[REASON] AI 모델의 취약점 식별 능력 향상으로 JDK 보안 패치 지연, AI 보안 위협 부각
+---
+[TITLE] 엔비디아, 4999달러 개인용 AI 슈퍼컴퓨터 공개…두 대 연결해 2000억 파라미터까지
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42197
+[PUBLISHED] 2026-10-06 13:01 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
+[SCORE] 9
+[REASON] 엔비디아, 최대 1000억 파라미터 AI 모델 실행 가능한 개인용 AI 슈퍼컴퓨터 공개
+---
+[TITLE] 신한·KB·하나까지 줄줄이… ‘약한 고리’ 와르르 [해킹에 뚫린 금융 ①]
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171453
+[PUBLISHED] 2026-10-06 12:00 KST
+[SOURCE] IT조선
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 금융권 연쇄 해킹 사고 발생, AI 악용 가능성 제기 및 취약한 외부 시스템 노출
+---
+[TITLE] [단독] 다크웹에 SK텔레콤 대규모 고객정보 판매글 등장…SKT “허위 정보” 주장
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208736
+[PUBLISHED] 2026-10-06 10:26 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SCORE] 9
+[REASON] 다크웹에 SK텔레콤 대규모 고객정보 판매글 등장, SKT는 허위 정보 주장
+---
+[TITLE] Microsoft Exchange Flaw Lets Authenticated Attackers Read Other Users' Mailboxes
+[TITLE_KO] 마이크로소프트 익스체인지 취약점, 인증된 공격자가 다른 사용자 메일함 읽기 가능
+[LINK] https://thehackernews.com/2026/10/microsoft-exchange-flaw-lets.html
+[PUBLISHED] 2026-10-06 01:21 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 마이크로소프트 익스체인지 서버의 고위험 취약점 발견 및 패치, 사용자 메일함 접근 가능
+---
+[TITLE] Denmark population registry data breach affects 8.8 million people
+[TITLE_KO] 덴마크 인구 등록 데이터 유출, 880만 명에게 영향
+[LINK] https://www.bleepingcomputer.com/news/security/denmark-population-registry-data-breach-affects-88-million-people/
+[PUBLISHED] 2026-10-06 00:21 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 덴마크 인구 등록 시스템에서 880만 명 개인 정보 유출 사고 발생
+---
+[TITLE] CISA flags new exploited NetScaler flaw as attackers crash appliances (CVE-2026-88779)
+[TITLE_KO] CISA, 공격자들이 장비 충돌 유발하는 새로운 NetScaler 취약점 경고
+[LINK] https://www.helpnetsecurity.com/2026/10/05/cisa-flags-new-exploited-netscaler-flaw-as-attackers-crash-appliances-cve-2026-88779/
+[PUBLISHED] 2026-10-05 23:53 KST
+[SOURCE] Help Net Security
+[TOPIC] 보안
+[SCORE] 9
+[REASON] CISA, NetScaler의 새로운 취약점 악용 경고, 공격자들이 장비 충돌 유발
+---
+[TITLE] 앤트로픽 최기영 "AI 속도조절, 개발 중단 아냐…안전장치 병행해야"
+[LINK] https://zdnet.co.kr/view/?no=20261006121237
+[PUBLISHED] 2026-10-06 13:19 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안, 산업, 규제
+[SCORE] 7
+[REASON] 앤트로픽, AI 개발 속도 조절은 안전장치 병행을 의미한다고 강조
+---
+[TITLE] "데이터 파싱부터 AI 직원까지"…한컴, 'AI페스타26'서 AI 실무 혁신 제시
+[LINK] https://zdnet.co.kr/view/?no=20261006115609
+[PUBLISHED] 2026-10-06 13:16 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트
+[SCORE] 7
+[REASON] 한컴, AI페스타26에서 문서 파싱부터 에이전트 운영까지 AI 솔루션 공개
+---
+[TITLE] 메가존클라우드, '에어 스튜디오 v3' 출시…기업 AI 통합 관리
+[LINK] https://www.etnews.com/20261006000177
+[PUBLISHED] 2026-10-06 11:51 KST
+[SOURCE] 전자신문
+[TOPIC] 에이전트, 보안
+[SCORE] 7
+[REASON] 메가존클라우드, 기업 AI 에이전트 통합 관리 플랫폼 '에어 스튜디오 v3' 출시
+---
+[TITLE] 배경훈 "연내 전국민 무료 AI...데이터센터 규제 신속히 푼다"
+[LINK] https://zdnet.co.kr/view/?no=20261006111937
+[PUBLISHED] 2026-10-06 11:21 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 모델, 신기술, 산업, 규제
+[SCORE] 7
+[REASON] 정부, 연내 전국민 무료 AI 서비스 출시 및 AI 데이터센터 규제 해소 발표
+---
+[TITLE] Opus 5.5 에이전트, 차세대 메모리용 상온 자성 반도체 후보 두 가지 발견
+[LINK] https://news.hada.io/topic?id=34847
+[PUBLISHED] 2026-10-06 07:36 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 신기술
+[SCORE] 7
+[REASON] Claude Opus 5.5 에이전트, 차세대 메모리용 상온 자성 반도체 후보 발견
+---
+[TITLE] Presentation: Building Reusable Evaluation Frameworks for Agentic AI Products
+[TITLE_KO] 발표: 에이전트 AI 제품을 위한 재사용 가능한 평가 프레임워크 구축
+[LINK] https://www.infoq.com/presentations/elastic-ai-agent-evaluations/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-05 20:19 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 7
+[REASON] AI 에이전트 제품 평가를 위한 재사용 가능한 프레임워크 구축 사례 발표
+---
+[TITLE] Rejetto HFS servers now actively scanned for critical RCE flaw
+[TITLE_KO] Rejetto HFS 서버, 심각한 RCE 취약점 활발히 스캔 중
+[LINK] https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/
+[PUBLISHED] 2026-10-06 05:20 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] Rejetto HFS 서버의 심각한 RCE 취약점, 해커들에 의해 활발히 스캔 중
+---
+[TITLE] Google Narrows Open Source Bug Bounty Amid Wave of Invalid Automated Reports
+[TITLE_KO] 구글, 유효하지 않은 자동 보고서 급증으로 오픈소스 버그 바운티 축소
+[LINK] https://www.securityweek.com/google-narrows-open-source-bug-bounty-amid-wave-of-invalid-automated-reports/
+[PUBLISHED] 2026-10-05 23:26 KST
+[SOURCE] SecurityWeek
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 구글, AI 자동 생성 보고서 급증으로 오픈소스 버그 바운티 프로그램 일시 중단
+---
+[TITLE] Realtek Jungle SDK Exploit Attempts Deliver Cling Botnet With STUN-Based C2
+[TITLE_KO] Realtek Jungle SDK 익스플로잇 시도, STUN 기반 C2를 이용한 Cling 봇넷 배포
+[LINK] https://thehackernews.com/2026/10/realtek-jungle-sdk-exploit-attempts.html
+[PUBLISHED] 2026-10-05 20:46 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] Realtek SDK 취약점 악용, STUN 기반 Cling 봇넷 악성코드 확산 시도
+---
+[LINK] https://www.itworld.co.kr/article/4230988/ai-%ec%97%90%ec%9d%b4%ec%a0%84%ed%8a%b8-%ec%8b%9c%eb%8c%80%ec%9d%98-%ec%b5%9c%ec%a0%81-%ec%a0%84%eb%9e%b5%ec%9d%84-%ec%a5%94-%eb%a9%94%ed%83%80-%ea%b7%b8%eb%9e%98%ec%84%9c-%eb%8d%94-%ec%9c%84.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/media/video/2026/oct/06/anthropic-ai-australia-parliament-inquiry-government-websites-breach-video
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208740
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.itworld.co.kr/article/4230976/ai-%ed%88%ac%ec%9e%90-%ec%88%98%ec%9d%b5%eb%a5%a0-%ec%b8%a1%ec%a0%95-%ed%8c%a8%eb%9f%ac%eb%8b%a4%ec%9e%84-%ec%a0%84%ed%99%98%ec%9e%ac%eb%ac%b4%c2%b7%eb%b9%84%ec%9e%ac%eb%ac%b4-%ec%84%b1.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006115740
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006115306
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155862
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/ai-agent-hardware-startup-ghost-led-by-its-19-year-old-founder-raises-11m/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261006000049
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261006000012
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://simonwillison.net/2026/Oct/5/felix-rieseberg/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/netapps-novus-targets-ai-data-infrastructure-zettabyte-scale-netappinsight/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261006000002
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34835
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/instinct-brings-its-ai-agent-to-group-chats-even-for-friends-without-an-account/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/tiktok-rolls-out-an-ai-shopping-assistant-and-one-click-checkout/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/ai-trust-strengthens-cyber-resilience-digital-age-aitrustcyberresilience-aicybersecurityandresiliencesummit/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.technologyreview.com/2026/10/05/1145580/connecting-ai-agents-to-enterprise-knowledge/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/researchers-are-tracking-a-chinese-ai-agent-fleet/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/australia-news/2026/oct/06/openai-must-explain-action-taken-to-stop-ai-hacking-australians-private-data-chair-of-federal-inquiry-says
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34827
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/exclusive-iterate-ais-lifeboat-runs-up-to-six-times-more-ai-agent-sessions-per-gpu/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/cohere-unveils-north-2-ai-agent-platform-with-rebuilt-orchestration-and-token-spending-caps/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34822
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/ai-is-eroding-office-hours-study-groups-and-the-trust-between-faculty-and-students-mit-report-finds/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215978
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.infoq.com/articles/platform-engineering-playbook-production-llms/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.computerworld.com/article/4230147/tech-execs-are-getting-wise-about-roi-from-ai.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.computerworld.com/article/4230640/apple-locks-down-full-disk-access-and-ai-agents-are-the-reason.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.infoworld.com/article/4229731/knowing-which-vulnerability-to-fix-first.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000095
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000038
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208728
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215992
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215984
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42192
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/reflection-ai-debuts-open-source-beam-model-with-501b-parameters/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42190
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42189
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208734
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/artificial-intelligence/openai-is-adding-invisible-watermarks-to-chatgpt-and-codex-text-in-the-eu/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thenewstack.io/openai-codex-shipping-sprint/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thenewstack.io/openai-api-text-watermarking/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/meta-and-microsoft-pull-back-from-claude-as-anthropic-transforms-from-partner-into-competitor/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/openai-will-watermark-chatgpt-text-in-the-eu-but-makes-it-optional-for-api-users-worldwide/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/weekly-recap-netscaler-and-fortimail-0.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.infoq.com/news/2026/10/ai-spec-driven-delivery/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1004672/mac-delete-apple-intelligence-ai-tool
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/05/stellar-cyber-7-0/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/suspected-dev-of-ploutus-atm-malware-appears-in-us-court-after-arrest/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/05/removemacai-turn-off-apple-intelligence/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215977
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215974
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215961
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/google/google-halts-open-source-bug-bounty-program-amid-ai-spam-surge/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215972
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21661
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006115806
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155865
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21660
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34860
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171439
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171442
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/media/2026/oct/06/openai-australia-parliament-inquiry-jason-kwon
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42191
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261006000008
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/reka-ais-omni-model-rho-1-handles-text-images-video-and-robot-control-in-a-single-model/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/aleph-alpha-releases-kolibri-an-open-weight-model-that-makes-the-case-for-european-ai-sovereignty/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/equs-launches-a-personal-ai-platform-with-private-storage-to-give-users-greater-control-over-data/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/forward-deployed-engineers-help-coreweave-race-f1-clock-fullyconnected/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/data-centers-factory-floors-walden-robots-learn-job-fullyconnected/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34823
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215979
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000133
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000097
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674907
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155873
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208742
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155869
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/06/product-showcase-webroot-mobile-security/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208738
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208737
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006120417
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/06/cybersecurity-jobs-available-right-now-october-6-2026/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006123727
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006115333
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171452
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675054
+[STATUS] SKIP (Score: -)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21659
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155854
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34859
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261006000054
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155852
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155851
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208735
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261006000011
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34849
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34845
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34833
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34828
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/05/milk-dragon-phishing-fake-discounts/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/05/malwarebytes-scam-link-check/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/05/sam-altman-open-ai-chatgpt-benefits-risks
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/linux-backdoor-abuses-stun-protocol-exploits-dozens-of-flaws/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/250000-impacted-by-data-breaches-at-new-jersey-texas-healthcare-firms/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/the-credential-layer-is-expanding.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/exploitation-hits-rejetto-hfs-vulnerability-discovered-by-ai/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/senate-passes-bipartisan-bill-to-strengthen-healthcare-cybersecurity/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/05/exchange-server-vulnerability-cve-2026-96940/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/05/shinyhunters-member-rey-detained-jordan-fbi/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000124
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000122
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000099
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208733
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215963
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208732
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208731
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171428
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.securityweek.com/exploitation-of-citrix-netscaler-zero-day-hits-appliances-patched-days-earlier/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000113
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000112
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000110
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674900
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215996
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261006000219
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171455
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261006000208
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261006000206
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006124748
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006120041
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006130538
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006122016
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20260922142539
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006114748
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006112430
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006094607
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155857
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675045
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171440
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675043
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171438
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171386
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675036
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/can-safeworld-convince-people-that-gen-ai-robots-wont-hurt-them/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215975
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674929
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000132
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000094
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215971
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208739
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/utah-gives-startup-nolla-health-permission-to-start-issuing-ai-automated-prescriptions-for-acne-treatments/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006111023
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006111013
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42193
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171414
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/hackerranks-ai-interviewer-offers-a-glimpse-into-what-job-interviews-could-become/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://thenewstack.io/cortex-xcor-ai-observability/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42184
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.technologyreview.com/2026/10/05/1145682/people-really-hate-ai-so-why-cant-they-get-enough/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=674963
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42196
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215956
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42187
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/podcast/1004286/senator-adam-schiff-ai-trump-regulation-corruption
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/oct/05/uk-g20-presidency-andy-burnham-global-stage-technology-food-climate-economy
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42180
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171460
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675070
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006131750
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215989
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261006125643
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34870
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20260930000175
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171451
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42194
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34865
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171450
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34856
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171437
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34853
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42188
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42185
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1005177/google-gemini-call-for-me-expansion-rumors
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://siliconangle.com/2026/10/05/sovereign-storage-becomes-architecture-decision-europe-netappinsight/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1004933/ai-math-openai-breakthrough-solution
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/hot-girl-hotline-is-like-dear-abby-for-the-ai-era/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1004827/openai-sam-altman-vanity-fair-interview-pr
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/most-americans-want-ai-development-to-slow-down-or-stop-entirely-new-poll-finds/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/anthropic-is-quietly-becoming-americas-biggest-corporate-donor-ahead-of-its-mega-ipo/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171436
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://openai.com/index/eu-text-provenance
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://techcrunch.com/2026/10/05/open-or-closed-ai-how-founders-are-choosing-what-to-build-on-at-techcrunch-disrupt-2026/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155846
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://arstechnica.com/ai/2026/10/ai-glasses-face-their-first-major-government-crackdown/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1004655/openai-chatgpt-visual-ads
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34824
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://the-decoder.com/chatgpts-new-ad-format-fills-the-image-generation-loading-screen-with-product-carousels/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215976
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://news.hada.io/topic?id=34821
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.bleepingcomputer.com/news/artificial-intelligence/openai-will-show-visual-ads-in-chatgpt-while-you-generate-images/
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://openai.com/index/new-chatgpt-ads-format-and-measurement
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215973
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42182
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42181
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000127
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215966
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=215969
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000096
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171429
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/05/internet-watch-foundation-huge-rise-ai-child-sexual-abuse-material
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.etnews.com/20261005000111
+[STATUS] SKIP (Score: -)
+---
+[LINK] https://www.technologyreview.com/2026/10/05/1145413/emtech-future-2026-when-ai-meets-everything/
+[STATUS] SKIP (Score: -)
+---
