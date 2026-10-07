@@ -1,0 +1,180 @@
+[TITLE] 금융보안원, 금융권 AI 에이전트 보안 평가기준 마련…‘실행 단계’까지 점검
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208760
+[PUBLISHED] 2026-10-07 08:40 KST
+[SOURCE] 데일리시큐
+[TOPIC] 에이전트, 모델, 보안
+[SCORE] 10
+[REASON] 금융권 AI 에이전트의 실행 단계까지 점검하는 보안 평가기준 마련
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 금융보안원은 금융권 AI 에이전트 도입 확산에 대응하여 자율적인 판단과 실행 과정에서 발생할 수 있는 새로운 보안위협을 점검하기 위한 보안 평가기준을 마련했다.
+- 이 기준은 기존 AI 모델 자체의 취약점 점검을 넘어 AI 에이전트가 실제 시스템과 도구를 사용하는 '실행 계층'까지 검증 범위를 확대한다.
+- AI 에이전트의 실행 권한과 격리 관리, 외부 도구 실행 승인 절차, 자율 실행 제한 및 긴급 중단 가능 여부 등이 주요 점검 대상이며, 이는 금융권의 안전하고 신뢰할 수 있는 AI 기술 활용을 지원한다.
+
+#긍정
+---
+[TITLE] Apple to Tighten Full Disk Access Controls in macOS Amid AI Risks
+[LINK] https://www.securityweek.com/apple-to-tighten-full-disk-access-controls-in-macos-amid-ai-risks/
+[PUBLISHED] 2026-10-06 20:48 KST
+[SOURCE] SecurityWeek
+[TOPIC] 에이전트
+[SCORE] 10
+[REASON] 애플, AI 에이전트 위험으로 macOS 전체 디스크 접근 제어 강화
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+애플, AI 위험에 대응하여 macOS 전체 디스크 접근 제어 강화
+
+**[영문 3줄 요약 (Original)]**
+- Apple announced tightened Full Disk Access controls in macOS in response to the increasing risks posed by AI agents.
+- Some applications are using FDA in ways that could expose sensitive user files, mail, messages, and browsing history without full user knowledge, and the growing autonomy of AI agents substantially increases these risks.
+- Apple plans to introduce additional controls to ensure that applications are granted FDA only with explicit user consent, allowing users to make informed decisions about their data and privacy.
+
+**[국문 3줄 요약 (Translated)]**
+- 애플은 AI 에이전트의 위험 증가에 대응하여 macOS의 전체 디스크 접근(Full Disk Access) 제어를 강화한다고 발표했다.
+- 일부 애플리케이션이 사용자 동의 없이 민감한 파일, 메일, 메시지, 브라우징 기록을 노출할 수 있는 방식으로 FDA를 사용하고 있으며, AI 에이전트의 자율성 증가는 이러한 위험을 크게 키운다.
+- 이에 애플은 사용자가 데이터 및 개인 정보 보호에 대해 정보에 입각한 결정을 내릴 수 있도록 명시적인 동의를 통해서만 앱에 FDA 권한이 부여되도록 추가 제어를 도입할 예정이다.
+
+#부정
+---
+[TITLE] 앤트로픽, '프로젝트 글래스윙' 개편...첨단 모델 접근 대폭 확대
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216023
+[PUBLISHED] 2026-10-07 12:58 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 보안
+[SCORE] 10
+[REASON] 앤트로픽, 사이버 보안 AI의 이중용도 문제 대응 위해 접근 권한 3단계로 확대
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 앤트로픽이 사이버 보안 전문가들이 최신 클로드 모델을 활용하도록 '프로젝트 글래스윙' 프로그램을 확대 개편했다.
+- 이번 개편으로 방어, 레드팀, 특수 등 세 가지 등급으로 접근 권한을 차등 제공하며, 취약점 탐지 및 모의 공격 등 다양한 보안 업무에 AI 모델을 적용한다.
+- 이는 AI를 활용한 사이버 공격 능력 증가에 대응하여 방어자의 역량을 강화하고, 통제된 환경에서 AI의 강력한 사이버 기능을 활용하려는 전략이다.
+
+#긍정
+---
+[TITLE] Atlassian’s critical flaw turns eight enterprise products into one big security problem
+[LINK] https://www.infoworld.com/article/4231553/atlassians-critical-flaw-turns-eight-enterprise-products-into-one-big-security-problem-3.html
+[PUBLISHED] 2026-10-07 11:03 KST
+[SOURCE] InfoWorld
+[TOPIC] 개발, 보안
+[SCORE] 10
+[REASON] 아틀라시안 엔터프라이즈 제품 8종의 치명적인 파일 접근 취약점 공개
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+아틀라시안의 치명적인 취약점으로 8개 엔터프라이즈 제품이 심각한 보안 문제에 직면했다
+
+**[영문 3줄 요약 (Original)]**
+- A critical vulnerability (CVE-2026-21589) has been discovered in Atlassian's data center software, allowing unauthenticated attackers to access specific files.
+- This flaw impacts eight core enterprise products, enabling attackers to read files in web application root directories without login, potentially leading to broader attacks.
+- Atlassian urges immediate patching and suggests temporary mitigations like isolating instances from the internet or applying WAF rules if patching is not immediately possible.
+
+**[국문 3줄 요약 (Translated)]**
+- 아틀라시안의 데이터 센터 소프트웨어에서 인증되지 않은 공격자가 특정 파일에 접근할 수 있는 치명적인 취약점(CVE-2026-21589)이 발견되었다.
+- 이 취약점은 8가지 핵심 엔터프라이즈 제품에 영향을 미치며, 로그인 없이 웹 애플리케이션 루트 디렉터리의 파일을 읽어 더 광범위한 공격으로 이어질 수 있다.
+- 아틀라시안은 즉각적인 패치를 권고하며, 패치가 어려운 경우 인터넷에서 인스턴스를 격리하거나 WAF 규칙 적용 등의 임시 완화 조치를 제안한다.
+
+#부정
+---
+[TITLE] Dell System Update flaw allows attackers to gain root privileges (CVE-2026-86360)
+[LINK] https://www.helpnetsecurity.com/2026/10/06/dell-system-update-vulnerability-cve-2026-86360/
+[PUBLISHED] 2026-10-06 19:44 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 보안
+[SCORE] 10
+[REASON] 델 시스템 업데이트의 치명적인 취약점, 공격자가 루트 권한 획득 가능
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+델 시스템 업데이트 취약점으로 공격자가 루트 권한 획득 가능 (CVE-2026-86360)
+
+**[영문 3줄 요약 (Original)]**
+- A critical vulnerability (CVE-2026-86360) has been discovered in Dell System Update (DSU), allowing remote attackers to gain root privileges.
+- This flaw enables unauthenticated remote attackers to execute arbitrary code, potentially leading to a complete compromise of the system, and has a CVSS score of 9.6.
+- Dell urges PowerEdge server administrators to update to DSU version 2.3.0.0 or later immediately, noting that four other high-severity vulnerabilities were also fixed.
+
+**[국문 3줄 요약 (Translated)]**
+- 델 시스템 업데이트(DSU)에서 원격 공격자가 루트 권한을 획득할 수 있는 치명적인 취약점(CVE-2026-86360)이 발견되었다.
+- 이 취약점은 인증되지 않은 원격 공격자가 임의 코드를 실행하여 시스템을 완전히 손상시킬 수 있으며, CVSS 점수는 9.6이다.
+- 델은 파워엣지 서버 관리자들에게 DSU 2.3.0.0 이상 버전으로 즉시 업데이트할 것을 권고하며, 이 외 4개의 고위험 취약점도 함께 수정되었다.
+
+#부정
+---
+[요약 오류] https://www.bleepingcomputer.com/news/security/hackers-exploit-32-zero-days-on-first-day-of-pwn2own-ireland/ - 요약 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 19h23m18.854844471s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '69798s'}]}}
+---
+[TITLE] New NetScaler Zero-Day Exploited in Targeted Attacks Can Knock SAML Deployments Offline
+[LINK] https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html
+[PUBLISHED] 2026-10-05 15:40 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 10
+[REASON] NetScaler의 새로운 제로데이 취약점, 표적 공격에 악용 중
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+넷스케일러 제로데이 취약점, 표적 공격에 악용되어 SAML 배포를 오프라인으로 만들 수 있음
+
+**[영문 3줄 요약 (Original)]**
+- A high-severity security flaw (CVE-2026-88779) in Citrix NetScaler ADC and Gateway has been exploited in targeted zero-day attacks.
+- This memory overflow vulnerability can lead to denial-of-service (DoS) under specific deployment conditions where SAML service provider or identity provider is configured.
+- Citrix has released security updates for the flaw, and the U.S. CISA has added it to its Known Exploited Vulnerabilities catalog, urging federal agencies to apply patches.
+
+**[국문 3줄 요약 (Translated)]**
+- 시트릭스 넷스케일러 ADC 및 게이트웨이에서 표적 제로데이 공격에 악용되는 심각한 보안 취약점(CVE-2026-88779)이 발견되었다.
+- 이 메모리 오버플로 취약점은 SAML 서비스 공급자 또는 ID 공급자로 구성된 배포 환경에서 서비스 거부(DoS)를 유발할 수 있다.
+- 시트릭스는 해당 취약점에 대한 보안 업데이트를 발표했으며, 미국 CISA는 이를 알려진 악용 취약점 목록에 추가하여 패치를 권고했다.
+
+#부정
+---
+[TITLE] Meta teams up with Bret Taylor’s Sierra Technologies on new standards for AI agent commerce
+[LINK] https://siliconangle.com/2026/10/06/meta-teams-up-with-bret-taylors-sierra-technologies-on-new-standards-for-ai-agent-commerce/
+[PUBLISHED] 2026-10-07 09:54 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 에이전트
+[SCORE] 9
+[REASON] 메타, AI 에이전트 상거래 표준 개발 위해 월마트 등과 협력
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+메타, AI 에이전트 상거래 표준 개발 위해 시에라 테크놀로지스와 협력
+
+**[영문 3줄 요약 (Original)]**
+- Meta is collaborating with Sierra Technologies, Walmart, and Stripe to develop new standards that will define how autonomous AI agents interact with online businesses.
+- This 'Personal Agent Protocol (PAP)' aims to handle authentication, empower consumers, and provide companies with visibility into agent actions, responding to banks' calls for transparency, safety, and privacy.
+- As AI agents like Meta's Muse have already faced security vulnerabilities and privacy concerns, this standard is essential for the widespread adoption and trust of AI agent commerce.
+
+**[국문 3줄 요약 (Translated)]**
+- 메타는 시에라 테크놀로지스, 월마트, 스트라이프와 협력하여 자율 AI 에이전트가 온라인 비즈니스와 상호작용하는 방식을 정의할 새로운 표준을 개발하고 있다.
+- 이 '개인 에이전트 프로토콜(PAP)'은 AI 에이전트의 인증, 소비자 권한 부여, 기업의 활동 가시성 확보를 목표로 하며, 은행권의 투명성, 안전, 개인 정보 보호 요구에 대한 응답이다.
+- 메타의 뮤즈와 같은 AI 에이전트가 이미 보안 취약점과 개인 정보 침해 우려를 겪고 있어, 이 표준은 AI 에이전트 상거래의 광범위한 채택과 신뢰를 위해 필수적이다.
+
+#중립
+---
+[TITLE] llm-openai-decisions 0.1a0
+[LINK] https://simonwillison.net/2026/Oct/6/llm-openai-decisions/
+[PUBLISHED] 2026-10-07 08:04 KST
+[SOURCE] Simon Willison
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 9
+[REASON] OpenAI, 확률·선택지·점수 반환하는 Decisions API 공개 베타 시작
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+OpenAI, 확률·선택지·점수 반환하는 Decisions API 공개 베타 시작
+
+**[영문 3줄 요약 (Original)]**
+- OpenAI has launched its Jev-style Decisions API in public beta, as previously announced at DevDay.
+- This API supports three question types—yes/no, choices, and scores—and the gpt-6-luna model handles image input in addition to text.
+- OpenAI charges 10 cents per million input tokens for input, and an llm-openai-decisions plugin was developed, inspired by the existing llm-typesafe plugin.
+
+**[국문 3줄 요약 (Translated)]**
+- OpenAI가 DevDay에서 발표했던 Jev 스타일의 Decisions API를 공개 베타로 출시했다.
+- 이 API는 예/아니오, 선택지, 점수 세 가지 질문 유형을 지원하며, gpt-6-luna 모델은 텍스트 외에 이미지 입력도 처리한다.
+- OpenAI는 입력 토큰당 10센트의 비용을 부과하며, 기존 llm-typesafe 플러그인에서 영감을 받아 llm-openai-decisions 플러그인이 개발되었다.
+
+#긍정
+---
+[요약 오류] https://aws.amazon.com/blogs/machine-learning/supercharge-regulated-workloads-with-claude-code-and-amazon-bedrock/ - 요약 실패: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 19h22m26.792534374s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '69746s'}]}}
+---
