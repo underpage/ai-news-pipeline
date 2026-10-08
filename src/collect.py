@@ -245,9 +245,9 @@ def remove_similar_titles(candidates, known_titles=()):
 
 def get_collect_max():
     try:
-        return max(1, int(os.environ.get("COLLECT_MAX", "300")))
+        return max(1, int(os.environ.get("COLLECT_MAX", "500")))
     except ValueError:
-        return 300
+        return 500
 
 
 def match_topics(title, summary_text):

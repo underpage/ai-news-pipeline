@@ -28,11 +28,13 @@ env:
   TZ: Asia/Seoul
   # 아래 값은 저장소 변수(Settings > Secrets and variables > Actions > Variables)로 바꿀 수 있다
   # 하루에 수집할 최대 기사 수
-  COLLECT_MAX: ${{ vars.COLLECT_MAX || '300' }}
+  COLLECT_MAX: ${{ vars.COLLECT_MAX || '500' }}
   # 뉴스 목록에 올릴 기사 수
   LIST_N: ${{ vars.LIST_N || '30' }}
-  # 목록에 올릴 최소 중요도 점수 (0~10)
+  # 목록에 올릴 최소 중요도 점수 (0~10, 항목별 점수 합계 0~100을 10으로 나눈 값과 비교)
   MIN_SCORE: ${{ vars.MIN_SCORE || '4' }}
+  # Gemini에 점수를 받으러 보낼 최대 후보 수 (로컬 사전 필터 뒤)
+  PREFILTER_MAX: ${{ vars.PREFILTER_MAX || '200' }}
   # 3줄 요약할 기사 수
   TOP_N: ${{ vars.TOP_N || '10' }}
   GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}

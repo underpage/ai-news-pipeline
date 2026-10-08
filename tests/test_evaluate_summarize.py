@@ -7,49 +7,126 @@ import evaluate
 import summarize
 
 
-def add_candidates(count):
-    for number in range(1, count + 1):
+def add_candidates(count, start=1):
+    for number in range(start, start + count):
         common.append_record("수집", [
             ("TITLE", f"기사 {number}"), ("LINK", f"http://a/{number}"), ("PUBLISHED", "2026-10-01 08:00 KST"),
-            ("SOURCE", "매체"), ("TOPIC", "에이전트"),
+            ("SOURCE", f"매체 {number}"), ("TOPIC", "에이전트"),
         ], block=("SUMMARY", f"미리보기 {number}"))
 
 
-def rank_response(pairs):
-    return json.dumps([{"id": i, "score": s, "reason": f"이유 {i}", "title_ko": f"번역 {i}"} for i, s in pairs],
-                      ensure_ascii=False)
+def score_item(number, impact=5, practical=5, novelty=5, certainty=5, **overrides):
+    item = {"id": number, "impact": impact, "practical": practical, "novelty": novelty, "certainty": certainty,
+            "dup_of": 0, "exclude": "", "reason": f"이유 {number}", "title_ko": f"번역 {number}"}
+    item.update(overrides)
+    return item
 
 
-def test_rank_articles_validates_response(monkeypatch):
-    news = [{"title": f"t{n}", "link": f"l{n}"} for n in range(5)]
-    wrapped = json.dumps({"items": [{"id": 1, "score": 9, "reason": "[a](http://b) 이유"}, {"id": 2, "score": 3, "reason": "낮음"},
-                                    {"id": 99, "score": 9, "reason": "범위 밖"}, {"id": 1, "score": 5, "reason": "중복"},
-                                    {"id": 3, "score": 6, "reason": "r"}]})
-    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None: wrapped)
-    assert evaluate.rank_articles(news, 5, 4) == [(0, 9, "a 이유", ""), (2, 6, "r", "")]
-    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None: "[]")
-    assert evaluate.rank_articles(news, 5, 4) == []
+def score_response(*items):
+    return json.dumps(list(items), ensure_ascii=False)
 
 
-def test_rank_articles_keeps_translated_title_only_for_foreign_titles(monkeypatch):
-    news = [{"title": "OpenAI ships agents", "link": "l1"}, {"title": "오픈AI 에이전트 공개", "link": "l2"},
-            {"title": "Same title", "link": "l3"}]
-    response = json.dumps([{"id": 1, "score": 9, "reason": "r", "title_ko": "오픈AI, 에이전트 출시"},
-                           {"id": 2, "score": 8, "reason": "r", "title_ko": "오픈AI 에이전트 공개"},
-                           {"id": 3, "score": 7, "reason": "r", "title_ko": "Same title"}], ensure_ascii=False)
-    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None: response)
-    assert [entry[3] for entry in evaluate.rank_articles(news, 5, 4)] == ["오픈AI, 에이전트 출시", "", ""]
+def news(number, **fields):
+    return {"title": f"t{number}", "link": f"l{number}", "source": f"S{number}", "published": "2026-10-01 08:00 KST",
+            "topic": "에이전트", **fields}
+
+
+def test_total_score_scale():
+    lowest = {name: 1 for name in evaluate.CRITERIA}
+    highest = {name: 5 for name in evaluate.CRITERIA}
+    assert evaluate.total_score(lowest) == 0
+    assert evaluate.total_score(highest) == 100
+    # 파급력만 5점이면 파급력 가중치만큼
+    assert evaluate.total_score({**lowest, "impact": 5}) == evaluate.CRITERIA_WEIGHTS["impact"] * 100
+
+
+def test_score_articles_validates_response(monkeypatch):
+    news_list = [news(n) for n in range(1, 6)]
+    wrapped = json.dumps({"items": [
+        score_item(1, reason="[a](http://b) 이유", dup_of=1), score_item(2, impact=9, practical=0, dup_of=1),
+        score_item(99), score_item(1, impact=1), {"id": 3, "impact": "x"}, score_item(4, dup_of=77),
+    ]}, ensure_ascii=False)
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: wrapped)
+    scored = evaluate.score_articles(news_list)
+
+    # 범위 밖 ID, 같은 ID 두 번째, 점수가 숫자가 아닌 항목은 버린다
+    assert sorted(scored) == [0, 1, 3]
+    assert scored[0]["reason"] == "a 이유" and scored[0]["total"] == 100
+    # 자기 자신이나 범위 밖을 가리키는 dup_of는 무시한다
+    assert scored[0]["dup_of"] is None and scored[3]["dup_of"] is None
+    assert scored[1]["dup_of"] == 0
+    # 점수는 1~5로 맞춘다
+    assert scored[1]["impact"] == 5 and scored[1]["practical"] == 1
+
+
+def test_score_articles_requires_some_scores(monkeypatch):
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: "[]")
+    with pytest.raises(ValueError):
+        evaluate.score_articles([news(1)])
+
+
+def test_score_articles_keeps_translated_title_only_for_foreign_titles(monkeypatch):
+    news_list = [news(1, title="OpenAI ships agents"), news(2, title="오픈AI 에이전트 공개"), news(3, title="Same title")]
+    response = score_response(score_item(1, title_ko="오픈AI, 에이전트 출시"), score_item(2, title_ko="오픈AI 에이전트 공개"),
+                              score_item(3, title_ko="Same title"))
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: response)
+    scored = evaluate.score_articles(news_list)
+    assert [scored[index]["title_ko"] for index in range(3)] == ["오픈AI, 에이전트 출시", "", ""]
 
 
 def test_prompt_contains_all_candidates_with_labels(monkeypatch):
     seen = {}
-    def fake(prompt, schema=None):
-        seen["prompt"] = prompt
-        return "[]"
+
+    def fake(prompt, schema=None, max_retries=None):
+        seen["prompt"], seen["max_retries"] = prompt, max_retries
+        return score_response(score_item(1))
     monkeypatch.setattr(evaluate, "call_gemini", fake)
-    evaluate.rank_articles([{"title": "제목 {body}", "link": "l", "source": "S", "published": "P", "topic": "T", "summary": "요약"}], 5, 4)
+    evaluate.score_articles([{"title": "제목 {body}", "link": "l", "source": "S", "published": "P", "topic": "T", "summary": "요약"}])
     assert "[ID: 1]\n제목: 제목 {body}\n출처: S | 발행: P | 주제: T\n미리보기: 요약" in seen["prompt"]
-    assert "{pick_n}" not in seen["prompt"] and "{source_max}" not in seen["prompt"]
+    assert "{articles}" not in seen["prompt"]
+    # 호출 횟수는 선정 단계가 관리한다
+    assert seen["max_retries"] == 0
+
+
+def test_prefilter_drops_patterns_and_caps(monkeypatch):
+    monkeypatch.setattr(evaluate, "PREFILTER_SOURCE_MAX", 2)
+    news_list = [
+        news(1, title="AI 보안 세미나 개최 안내"),
+        news(2, topic="일반", published="2026-10-01 12:00 KST"),
+        news(3, topic="에이전트, 보안", published="2026-10-01 07:00 KST"),
+        news(4, published="2026-10-01 09:00 KST", source="A"),
+        news(5, published="2026-10-01 10:00 KST", source="A"),
+        news(6, published="2026-10-01 11:00 KST", source="A"),
+        news(7, title="Award-winning agent", source="B"),
+    ]
+    kept, dropped = evaluate.prefilter(news_list, limit=3)
+
+    # 주제 가중치 합이 큰 기사부터, 같으면 최근 기사부터
+    assert [item["link"] for item in kept] == ["l3", "l6", "l5"]
+    assert dict((item["link"], reason) for item, reason in dropped) == {
+        "l1": "사전 제외: 행사", "l7": "사전 제외: 수상", "l4": "사전 제외: 매체 상한", "l2": "사전 제외: 후보 상한",
+    }
+
+
+def test_decide_handles_duplicates_exclusions_and_caps():
+    news_list = [news(1), news(2), news(3, source="S1"), news(4), news(5), news(6, topic="보안"), news(7)]
+    totals = {0: 90, 1: 95, 2: 80, 3: 70, 4: 30, 5: 70, 6: 60}
+    scored = {index: {"total": total, "dup_of": None, "exclude": ""} for index, total in totals.items()}
+    scored[0]["dup_of"] = 1          # 1번은 2번과 같은 사건 (2번 합계가 더 높음)
+    scored[6]["exclude"] = "홍보"
+    listed, decisions = evaluate.decide(news_list, scored, list_slots=3, list_n=5, min_score=4)
+
+    # 매체 상한은 max(2, LIST_N // 5) = 2. 3번은 1번과 매체가 같지만 1번이 중복으로 빠져 상한에 걸리지 않음
+    # 합계가 같은 4번(에이전트)과 6번(보안)은 주제 순서로 4번이 앞
+    assert listed == [1, 2, 3]
+    assert decisions == {0: "중복", 1: "목록", 2: "목록", 3: "목록", 4: "기준 미달", 5: "순위 밖", 6: "제외"}
+
+
+def test_decide_applies_source_cap():
+    news_list = [news(n, source="S") for n in range(1, 5)]
+    scored = {index: {"total": 90 - index, "dup_of": None, "exclude": ""} for index in range(4)}
+    listed, decisions = evaluate.decide(news_list, scored, list_slots=4, list_n=5, min_score=0)
+    assert listed == [0, 1] and decisions[2] == decisions[3] == "매체 상한"
 
 
 def test_cut_at_sentence():
@@ -58,10 +135,18 @@ def test_cut_at_sentence():
     assert len(cut) <= 4000 and cut.endswith(".")
 
 
+def read_score_csv():
+    import csv
+    with open(evaluate.score_csv_path(), encoding="utf-8-sig", newline="") as f:
+        return list(csv.reader(f))
+
+
 def test_evaluate_fills_list_and_summary_slots_across_reruns(monkeypatch):
     # LIST_N=5, TOP_N=3 (conftest)
     add_candidates(8)
-    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None: rank_response([(n, 10 - n) for n in range(1, 7)]))
+    # 합계: 1번 100점부터 10점씩 내려감, 5번과 6번은 같은 점수
+    response = score_response(*[score_item(n, impact=max(1, 6 - n)) for n in range(1, 7)])
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: response)
     # 2위 기사는 본문을 가져오지 못한다
     monkeypatch.setattr(evaluate, "scrape_body", lambda url: "" if url == "http://a/2" else "본문 " * 200)
     evaluate.main()
@@ -70,19 +155,42 @@ def test_evaluate_fills_list_and_summary_slots_across_reruns(monkeypatch):
     listed = [record for record in records if record.get("title")]
     assert [record["link"] for record in listed] == [f"http://a/{n}" for n in range(1, 6)]
     assert [record["link"] for record in listed if record.get("body")] == ["http://a/1", "http://a/3", "http://a/4"]
+    # [SCORE]는 지난 기록과 같은 0~10
+    assert [record["score"] for record in listed] == ["10", "9", "8", "7", "6"]
     # 후보 제목이 국문이라 번역 제목은 기록하지 않는다
     assert not any(record.get("title_ko") for record in listed)
     assert len([record for record in records if not record.get("title")]) == 3
 
-    # 같은 날 다시 실행해도 목록·요약 건수가 늘지 않는다
-    add_candidates(10)
+    rows = read_score_csv()
+    assert rows[0] == evaluate.SCORE_COLUMNS
+    decisions = {row[-1]: row[1] for row in rows[1:]}
+    assert decisions["http://a/1"] == "요약" and decisions["http://a/2"] == "목록"
+    assert decisions["http://a/6"] == "순위 밖" and decisions["http://a/7"] == "점수 없음"
+    assert len(rows) == 9
+
+    # 같은 날 다시 실행해도 목록, 요약 건수가 늘지 않는다
+    add_candidates(2, start=9)
     evaluate.main()
     assert len([record for record in common.read_records("필터링") if record.get("title")]) == 5
 
 
+def test_evaluate_records_prefilter_drops(monkeypatch):
+    common.append_record("수집", [("TITLE", "AI 웨비나 참가자 모집"), ("LINK", "http://a/x"), ("SOURCE", "매체"),
+                                  ("TOPIC", "에이전트")], block=("SUMMARY", "-"))
+    add_candidates(1)
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: score_response(score_item(1)))
+    monkeypatch.setattr(evaluate, "scrape_body", lambda url: "")
+    evaluate.main()
+
+    statuses = {record["link"]: record.get("status") for record in common.read_records("필터링")}
+    assert statuses["http://a/x"] == "SKIP (사전 제외: 행사)"
+    assert {row[-1]: row[1] for row in read_score_csv()[1:]}["http://a/x"] == "사전 제외: 행사"
+
+
 def test_evaluate_failure_fails_the_job(monkeypatch):
     add_candidates(2)
-    def boom(prompt, schema=None):
+
+    def boom(prompt, schema=None, max_retries=None):
         raise RuntimeError("429 quota")
     monkeypatch.setattr(evaluate, "call_gemini", boom)
     with pytest.raises(SystemExit):
@@ -94,11 +202,11 @@ def test_evaluate_retries_temporary_rank_failure(monkeypatch):
     add_candidates(2)
     calls = []
 
-    def flaky(prompt, schema=None):
+    def flaky(prompt, schema=None, max_retries=None):
         calls.append(prompt)
         if len(calls) == 1:
             raise RuntimeError("503 UNAVAILABLE")
-        return rank_response([(1, 9)])
+        return score_response(score_item(1))
     monkeypatch.setattr(evaluate, "call_gemini", flaky)
     monkeypatch.setattr(evaluate, "scrape_body", lambda url: "")
     evaluate.main()
@@ -109,15 +217,33 @@ def test_evaluate_retries_temporary_rank_failure(monkeypatch):
     assert any(record.get("title") for record in common.read_records("필터링"))
 
 
+def test_evaluate_stops_at_call_limit(monkeypatch):
+    add_candidates(2)
+    calls = []
+
+    def bad_format(prompt, schema=None, max_retries=None):
+        calls.append(prompt)
+        return "그냥 텍스트"
+    monkeypatch.setattr(evaluate, "call_gemini", bad_format)
+    with pytest.raises(SystemExit):
+        evaluate.main()
+    # 형식 오류도 다시 보내지만 상한을 넘지 않는다
+    assert len(calls) == evaluate.RANK_MAX_CALLS
+
+
+class BadRequest(Exception):
+    code = 400
+
+
 @pytest.mark.parametrize("error", [
     RuntimeError("429 GenerateRequestsPerDayPerProjectPerModel-FreeTier"),
-    ValueError("선정 결과를 해석할 수 없습니다"),
+    BadRequest("400"),
 ])
 def test_evaluate_does_not_retry_permanent_rank_failure(monkeypatch, error):
     add_candidates(2)
     calls = []
 
-    def boom(prompt, schema=None):
+    def boom(prompt, schema=None, max_retries=None):
         calls.append(prompt)
         raise error
     monkeypatch.setattr(evaluate, "call_gemini", boom)
