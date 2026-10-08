@@ -35,6 +35,11 @@ NO_RETRY_CODES = {400, 401, 403, 404}
 # 지수 백오프: 실패할 때마다 대기 시간을 2배로 늘려 재시도한다 (기본 30초 → 60초 → 120초)
 GEMINI_MAX_RETRIES = int(os.environ.get("GEMINI_MAX_RETRIES", "3"))
 GEMINI_RETRY_BASE = float(os.environ.get("GEMINI_RETRY_BASE", "30"))
+# 응답 최대 길이(토큰). gemini-2.5-flash의 상한이며, 선정 후보 200건의 항목별 점수가 들어가야 한다
+GEMINI_MAX_OUTPUT_TOKENS = int(os.environ.get("GEMINI_MAX_OUTPUT_TOKENS", "65536"))
+# 생각(thinking) 토큰 예산. 생각 토큰도 출력 한도에 들어간다. 제한하지 않으면 선정(후보 200건)에서 약 5만 토큰을 써
+# 응답이 잘렸다(2026-10-08). 8192면 선정 응답(약 2만 2천)과 합쳐도 한도 안. 0이면 끔, 음수면 모델 기본값(제한 없음)
+GEMINI_THINKING_BUDGET = int(os.environ.get("GEMINI_THINKING_BUDGET", "8192"))
 
 # 매체 사이트에 보내는 요청 사이의 최소 간격(초). 요청을 한꺼번에 보내지 않고 시간차를 둔다
 REQUEST_INTERVAL = float(os.environ.get("REQUEST_INTERVAL", "2"))
@@ -196,8 +201,14 @@ def get_retry_wait(attempt, error):
     return wait * (1 + random.uniform(0, 0.1))
 
 
+class TruncatedResponse(ValueError):
+    """응답이 출력 한도에서 잘림. 같은 요청은 다시 보내도 같은 길이라 또 잘린다."""
+
+
 def is_retryable(error):
-    """다시 시도하면 풀릴 수 있는 오류인지. 잘못된 요청·인증 실패와 하루 요청 한도 초과는 기다려도 같다."""
+    """다시 시도하면 풀릴 수 있는 오류인지. 잘못된 요청·인증 실패, 하루 요청 한도 초과, 출력 한도 잘림은 다시 보내도 같다."""
+    if isinstance(error, TruncatedResponse):
+        return False
     return getattr(error, "code", None) not in NO_RETRY_CODES and "PerDay" not in str(error)
 
 
@@ -216,7 +227,9 @@ def call_gemini(prompt, schema=None, max_retries=None):
         _client = genai.Client(api_key=api_key, http_options={"timeout": int(GEMINI_TIMEOUT * 1000)})
 
     # 같은 입력에 같은 결과가 나오도록 무작위성을 끈다
-    config = {"temperature": 0}
+    config = {"temperature": 0, "max_output_tokens": GEMINI_MAX_OUTPUT_TOKENS}
+    if GEMINI_THINKING_BUDGET >= 0:
+        config["thinking_config"] = {"thinking_budget": GEMINI_THINKING_BUDGET}
     if schema:
         config["response_mime_type"] = "application/json"
         config["response_schema"] = schema
@@ -242,7 +255,7 @@ def call_gemini(prompt, schema=None, max_retries=None):
             candidates = getattr(response, "candidates", None) or []
             finish_reason = str(getattr(candidates[0], "finish_reason", "")) if candidates else ""
             if "MAX_TOKENS" in finish_reason:
-                raise ValueError("Gemini 응답이 출력 한도에서 잘렸습니다.")
+                raise TruncatedResponse("Gemini 응답이 출력 한도에서 잘렸습니다.")
             return response.text.strip()
         except Exception as e:
             last_error = e

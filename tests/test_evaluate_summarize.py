@@ -238,6 +238,7 @@ class BadRequest(Exception):
 @pytest.mark.parametrize("error", [
     RuntimeError("429 GenerateRequestsPerDayPerProjectPerModel-FreeTier"),
     BadRequest("400"),
+    common.TruncatedResponse("Gemini 응답이 출력 한도에서 잘렸습니다."),
 ])
 def test_evaluate_does_not_retry_permanent_rank_failure(monkeypatch, error):
     add_candidates(2)

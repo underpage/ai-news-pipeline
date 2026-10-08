@@ -23,6 +23,8 @@ env:
   TZ: Asia/Seoul
   GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
   WEEKLY_TRENDS: ${{ vars.WEEKLY_TRENDS || '5' }}
+  GEMINI_MAX_OUTPUT_TOKENS: ${{ vars.GEMINI_MAX_OUTPUT_TOKENS || '65536' }}
+  GEMINI_THINKING_BUDGET: ${{ vars.GEMINI_THINKING_BUDGET || '8192' }}
 
 jobs:
   weekly:

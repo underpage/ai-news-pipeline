@@ -72,6 +72,9 @@ def test_call_gemini_retries_temporary_errors(monkeypatch):
     assert len(calls) == 3
     assert calls[0]["config"]["temperature"] == 0
     assert calls[0]["config"]["response_mime_type"] == "application/json"
+    # 생각 토큰이 출력 한도를 다 쓰지 않게 상한을 두고, 출력 한도를 직접 정한다
+    assert calls[0]["config"]["thinking_config"] == {"thinking_budget": common.GEMINI_THINKING_BUDGET}
+    assert calls[0]["config"]["max_output_tokens"] == common.GEMINI_MAX_OUTPUT_TOKENS
 
 
 def test_call_gemini_without_retries_calls_once(monkeypatch):
@@ -104,8 +107,9 @@ def test_call_gemini_stops_on_bad_request(monkeypatch):
 
 
 def test_call_gemini_rejects_truncated_response(monkeypatch):
-    monkeypatch.setattr(common, "GEMINI_MAX_RETRIES", 0)
-    fake_client(monkeypatch, lambda count: types.SimpleNamespace(
+    calls = fake_client(monkeypatch, lambda count: types.SimpleNamespace(
         text='[{"id": 1', candidates=[types.SimpleNamespace(finish_reason="FinishReason.MAX_TOKENS")]))
-    with pytest.raises(ValueError, match="잘렸"):
+    with pytest.raises(common.TruncatedResponse, match="잘렸"):
         common.call_gemini("p")
+    # 같은 요청은 또 잘리므로 다시 보내지 않는다
+    assert len(calls) == 1

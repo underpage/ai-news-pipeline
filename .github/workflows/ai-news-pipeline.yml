@@ -42,6 +42,9 @@ env:
   REQUEST_INTERVAL: ${{ vars.REQUEST_INTERVAL || '2' }}
   # 무료 요금제 기준 값. 유료 요금제로 바꾸면 0으로 낮춘다
   GEMINI_MIN_INTERVAL: ${{ vars.GEMINI_MIN_INTERVAL || '13' }}
+  # Gemini 응답 최대 길이(토큰)와 생각 토큰 상한. 생각 토큰도 응답 길이에 들어가므로, 선정 응답이 잘리면 생각 상한을 낮춘다
+  GEMINI_MAX_OUTPUT_TOKENS: ${{ vars.GEMINI_MAX_OUTPUT_TOKENS || '65536' }}
+  GEMINI_THINKING_BUDGET: ${{ vars.GEMINI_THINKING_BUDGET || '8192' }}
 
 jobs:
   collect:
