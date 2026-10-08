@@ -201,8 +201,12 @@ def is_retryable(error):
     return getattr(error, "code", None) not in NO_RETRY_CODES and "PerDay" not in str(error)
 
 
-def call_gemini(prompt, schema=None):
-    """schema를 주면 그 구조의 JSON으로 응답을 강제한다."""
+def call_gemini(prompt, schema=None, max_retries=None):
+    """schema를 주면 그 구조의 JSON으로 응답을 강제한다.
+
+    max_retries: 실패했을 때 이 함수 안에서 다시 보내는 횟수 (기본 GEMINI_MAX_RETRIES).
+    호출 횟수를 단계에서 직접 관리할 때는 0을 준다.
+    """
     global _client, _last_call
     if _client is None:
         api_key = os.environ.get("GEMINI_API_KEY")
@@ -216,11 +220,12 @@ def call_gemini(prompt, schema=None):
     if schema:
         config["response_mime_type"] = "application/json"
         config["response_schema"] = schema
+    retries = GEMINI_MAX_RETRIES if max_retries is None else max_retries
     last_error = None
-    for attempt in range(GEMINI_MAX_RETRIES + 1):
+    for attempt in range(retries + 1):
         if attempt > 0:
             wait = get_retry_wait(attempt, last_error)
-            print(f" -> Gemini 호출 실패, {wait:.0f}초 후 재시도 ({attempt}/{GEMINI_MAX_RETRIES}): {str(last_error)[:200]}")
+            print(f" -> Gemini 호출 실패, {wait:.0f}초 후 재시도 ({attempt}/{retries}): {str(last_error)[:200]}")
             time.sleep(wait)
         else:
             time.sleep(max(0.0, _last_call + GEMINI_MIN_INTERVAL - time.time()))

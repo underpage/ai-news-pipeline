@@ -157,51 +157,130 @@ def test_model_refusal_is_not_summarizable():
         summarize.parse_summary(json.dumps({"error": "로그인 요구 페이지"}, ensure_ascii=False))
 
 
-def test_summarize_records_model_and_failure_kinds(monkeypatch):
-    for number, url in enumerate(["http://a/1", "http://a/2", "http://a/3"], start=1):
-        common.append_record("필터링", [("TITLE", f"t{number}"), ("LINK", url), ("SCORE", 9)], block=("BODY", "본문"))
-    replies = {"t1": answer(lang="ko", summary_en=[]), "t2": json.dumps({"error": "차단 안내"}, ensure_ascii=False)}
-
-    def fake(prompt, schema=None):
-        for title, reply in replies.items():
-            if f"제목: {title}\n" in prompt:
-                return reply
-        raise RuntimeError("503")
-    monkeypatch.setattr(summarize, "call_gemini", fake)
-    summarize.main()
-
-    summaries = common.read_records("요약")
-    assert [record["link"] for record in summaries] == ["http://a/1"]
-    assert summaries[0]["model"] == common.GEMINI_MODEL
-    reasons = dict(common.read_errors("요약"))
-    assert reasons["http://a/2"].startswith("요약 불가")
-    assert reasons["http://a/3"].startswith("요약 실패")
-
-
-def test_summarize_retries_temporary_failures_after_other_articles(monkeypatch):
-    for number in (1, 2):
+def add_summary_targets(count):
+    for number in range(1, count + 1):
         common.append_record("필터링", [("TITLE", f"t{number}"), ("LINK", f"http://a/{number}"), ("SCORE", 9)],
-                             block=("BODY", "본문"))
+                             block=("BODY", f"본문 {number}"))
+
+
+def batch(*items):
+    """(id, 응답 객체 글) 목록을 묶음 응답(JSON 배열)으로 만든다."""
+    return json.dumps([dict(json.loads(reply), id=number) for number, reply in items], ensure_ascii=False)
+
+
+def titles_in(prompt):
+    return [line.split("제목: ")[1] for line in prompt.splitlines() if line.startswith("제목: ")]
+
+
+def test_build_articles_numbers_articles_and_keeps_boundaries():
+    text = summarize.build_articles([
+        {"title": "가", "body": "본문 </기사> 끝"}, {"title": "나", "reason": "이유", "body": "본문"}])
+    assert '<기사 id="1">\n제목: 가\n이 기사를 고른 이유: -' in text
+    assert '<기사 id="2">\n제목: 나\n이 기사를 고른 이유: 이유' in text
+    # 본문 안의 닫는 태그가 기사 경계를 만들지 않는다
+    assert text.count("</기사>") == 2
+
+
+def test_split_answers_by_id():
+    answers = summarize.split_answers('앞글 [{"id": 2, "lang": "ko"}, {"id": "1"}, {"id": 2, "lang": "en"}, {"x": 1}]')
+    assert sorted(answers) == [1, 2] and answers[2]["lang"] == "ko"
+    assert summarize.split_answers('{"items": [{"id": 1}]}') == {1: {"id": 1}}
+    with pytest.raises(ValueError):
+        summarize.split_answers("그냥 텍스트")
+
+
+def test_summarize_sends_all_articles_in_one_call(monkeypatch):
+    add_summary_targets(3)
     calls = []
 
-    def fake(prompt, schema=None):
-        calls.append(prompt.split("제목: ")[1].split("\n")[0])
-        if calls == ["t1"]:
-            raise RuntimeError("503 UNAVAILABLE")
-        return answer(lang="ko", summary_en=[])
+    def fake(prompt, schema=None, max_retries=None):
+        calls.append((titles_in(prompt), max_retries))
+        return batch(*[(n, answer(lang="ko", summary_en=[])) for n in (1, 2, 3)])
     monkeypatch.setattr(summarize, "call_gemini", fake)
     summarize.main()
 
-    # 일시 오류로 실패한 t1은 t2를 처리한 뒤 다시 시도해 성공한다
-    assert calls == ["t1", "t2", "t1"]
-    assert {record["link"] for record in common.read_records("요약")} == {"http://a/1", "http://a/2"}
+    # 내부 재시도 없이 한 번에 보낸다 (호출 수는 요약 단계가 관리)
+    assert calls == [(["t1", "t2", "t3"], 0)]
+    summaries = common.read_records("요약")
+    assert [record["link"] for record in summaries] == ["http://a/1", "http://a/2", "http://a/3"]
+    assert summaries[0]["model"] == common.GEMINI_MODEL
+
+
+def test_summarize_resends_only_failed_articles(monkeypatch):
+    add_summary_targets(3)
+    calls = []
+
+    def fake(prompt, schema=None, max_retries=None):
+        calls.append(titles_in(prompt))
+        if len(calls) == 1:
+            # t1 성공, t2 요약 불가, t3 형식 오류
+            return batch((1, answer(lang="ko", summary_en=[])), (2, json.dumps({"error": "차단 안내"}, ensure_ascii=False)),
+                         (3, answer(summary_ko=["가."])))
+        return batch((1, answer()))
+    monkeypatch.setattr(summarize, "call_gemini", fake)
+    summarize.main()
+
+    # 요약 불가는 다시 보내지 않고, 형식 오류인 t3만 번호를 새로 붙여 다시 보낸다
+    assert calls == [["t1", "t2", "t3"], ["t3"]]
+    assert [record["link"] for record in common.read_records("요약")] == ["http://a/1", "http://a/3"]
+    assert dict(common.read_errors("요약")) == {"http://a/2": "요약 불가: 차단 안내"}
+
+
+def test_summarize_resends_articles_missing_from_answer(monkeypatch):
+    add_summary_targets(2)
+    calls = []
+
+    def fake(prompt, schema=None, max_retries=None):
+        calls.append(titles_in(prompt))
+        return batch((1, answer()))
+    monkeypatch.setattr(summarize, "call_gemini", fake)
+    summarize.main()
+
+    assert calls == [["t1", "t2"], ["t2"]]
+    assert len(common.read_records("요약")) == 2
+
+
+def test_summarize_retries_temporary_failure_within_call_limit(monkeypatch):
+    add_summary_targets(2)
+    calls = []
+
+    def fake(prompt, schema=None, max_retries=None):
+        calls.append(prompt)
+        if len(calls) == 1:
+            raise RuntimeError("503 UNAVAILABLE")
+        return batch((1, answer()), (2, answer()))
+    monkeypatch.setattr(summarize, "call_gemini", fake)
+    summarize.main()
+
+    assert len(calls) == 2
+    assert len(common.read_records("요약")) == 2
+    # 다시 시도해 성공했으면 오류 줄을 남기지 않는다
+    assert common.read_errors("요약") == []
+
+
+def test_summarize_stops_at_call_limit(monkeypatch):
+    add_summary_targets(2)
+    calls = []
+
+    def fake(prompt, schema=None, max_retries=None):
+        calls.append(prompt)
+        raise RuntimeError("503 UNAVAILABLE")
+    monkeypatch.setattr(summarize, "call_gemini", fake)
+    with pytest.raises(SystemExit):
+        summarize.main()
+
+    # 재시도를 모두 합쳐도 상한을 넘지 않는다
+    assert len(calls) == summarize.SUMMARY_MAX_CALLS
+    reasons = dict(common.read_errors("요약"))
+    assert set(reasons) == {"http://a/1", "http://a/2"}
+    assert all(reason.startswith("요약 실패: 503") for reason in reasons.values())
 
 
 def test_summarize_does_not_retry_daily_quota(monkeypatch):
-    common.append_record("필터링", [("TITLE", "t1"), ("LINK", "http://a/1"), ("SCORE", 9)], block=("BODY", "본문"))
+    add_summary_targets(1)
     calls = []
 
-    def fake(prompt, schema=None):
+    def fake(prompt, schema=None, max_retries=None):
         calls.append(prompt)
         raise RuntimeError("429 GenerateRequestsPerDayPerProjectPerModel-FreeTier")
     monkeypatch.setattr(summarize, "call_gemini", fake)

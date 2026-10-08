@@ -74,6 +74,15 @@ def test_call_gemini_retries_temporary_errors(monkeypatch):
     assert calls[0]["config"]["response_mime_type"] == "application/json"
 
 
+def test_call_gemini_without_retries_calls_once(monkeypatch):
+    def behavior(count):
+        raise RuntimeError("503 UNAVAILABLE")
+    calls = fake_client(monkeypatch, behavior)
+    with pytest.raises(RuntimeError):
+        common.call_gemini("p", max_retries=0)
+    assert len(calls) == 1
+
+
 def test_call_gemini_stops_on_daily_quota(monkeypatch):
     def behavior(count):
         raise RuntimeError("429 RESOURCE_EXHAUSTED quotaId: GenerateRequestsPerDayPerProjectPerModel-FreeTier")

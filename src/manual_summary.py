@@ -5,6 +5,7 @@
 
 날짜(YYYY-MM-DD)를 생략하면 오늘. 작업 파일은 summary-work/날짜.json (커밋 제외).
 작업 파일의 각 항목에 있는 prompt를 아무 LLM(또는 사람)에게 주고, 받은 JSON을 answer에 넣은 뒤 import 한다.
+answer는 기사 하나의 객체({"lang": ..., "title_ko": ..., ...})나 그 객체 하나를 담은 배열(프롬프트가 요구하는 형식) 모두 받는다.
 Gemini로 다시 시도하려면 이 스크립트 대신 RUN_DATE=날짜로 summarize.py와 publish.py를 차례로 실행한다.
 """
 import os
@@ -44,7 +45,8 @@ def main():
         items = [{
             "link": record["link"],
             "title": record["title"],
-            "prompt": fill_prompt(template, title=record["title"], reason=record.get("reason") or "-", body=record["body"]),
+            # 자동 요약과 같은 프롬프트에 기사 하나만 넣는다
+            "prompt": fill_prompt(template, articles=summarize.build_articles([record])),
             "answer": None,
         } for record in targets]
         os.makedirs(WORK_DIR, exist_ok=True)
@@ -69,7 +71,15 @@ def main():
         if not target:
             print(f" -> 요약 대상이 아닌 기사라 건너뜀: {item['title']}")
             continue
-        answer = item["answer"] if isinstance(item["answer"], str) else json.dumps(item["answer"], ensure_ascii=False)
+        answer = item["answer"]
+        if isinstance(answer, str):
+            try:
+                answer = json.loads(answer)
+            except ValueError:
+                pass
+        if isinstance(answer, list):
+            # 프롬프트대로 배열로 받은 경우 첫 객체를 쓴다 (기사 하나만 넣었으므로)
+            answer = answer[0] if answer else {}
         try:
             # Gemini 응답과 같은 검증을 거친다 (3줄, 언어, 논조 값)
             summary = summarize.parse_summary(answer)
