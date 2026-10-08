@@ -1,0 +1,224 @@
+[TITLE] Java library vulnerabilities: IBM and Red Hat fix 400+ previously unknown flaws
+[LINK] https://www.helpnetsecurity.com/2026/10/08/lightwell-java-library-vulnerabilities/
+[PUBLISHED] 2026-10-08 13:18 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 9
+[REASON] IBM과 Red Hat이 400개 이상 Java 라이브러리 취약점 수정.
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+자바 라이브러리 취약점: IBM과 레드햇, 알려지지 않았던 결함 400건 이상 수정
+
+**[영문 3줄 요약 (Original)]**
+- IBM and Red Hat found and fixed more than 400 previously unknown vulnerabilities in widely used Java libraries through Lightwell, their program for patching open source code.
+- Lightwell backports each fix to the older library version a company runs so it can be applied without upgrading, and Lightwell Clearinghouse is now generally available for customers to request priority review and repair of specific dependencies.
+- However, the affected libraries, CVE numbers, severity ratings and time frame were not disclosed, and non-participants will get fixes only when the public upstream release arrives.
+
+**[국문 3줄 요약 (Translated)]**
+- IBM과 레드햇이 오픈소스 코드 패치 프로그램 라이트웰을 통해 널리 쓰이는 자바 라이브러리의 미공개 취약점 400건 이상을 찾아 수정했다.
+- 라이트웰은 기업이 쓰는 이전 버전에 맞게 수정본을 백포팅해 업그레이드 없이 적용할 수 있게 하며, 이번에 라이트웰 클리어링하우스도 정식 제공되어 고객이 특정 의존성의 우선 검토와 수리를 요청할 수 있다.
+- 다만 영향받는 라이브러리, CVE 번호, 심각도, 기간은 공개되지 않았고, 프로그램 비참여 기업은 공개 업스트림 릴리스가 나와야 수정본을 받을 수 있다.
+
+#긍정
+---
+[TITLE] Docker Agent - YAML로 AI 에이전트 팀을 만들고 실행하는 오픈소스 도구
+[LINK] https://news.hada.io/topic?id=34968
+[PUBLISHED] 2026-10-08 07:40 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 9
+[REASON] YAML로 AI 에이전트 팀을 만들고 실행하는 오픈소스 도구 공개.
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- Docker Agent는 YAML에 모델, 지침, 도구를 정의해 AI 에이전트를 만들고 실행하는 Docker 공식 CLI 플러그인이다.
+- 여러 전문 에이전트를 팀으로 묶어 작업을 위임하는 멀티 에이전트 구성, MCP 서버 연결, 여러 클라우드 모델과 로컬 모델 지원, BM25와 임베딩 기반 RAG를 제공하며 설정을 OCI 레지스트리로 배포하고 공유할 수 있다.
+- Docker Desktop 4.63 이상에 기본 포함되고 sandbox 옵션으로 격리된 VM에서 실행할 수 있지만, Docker Sandboxes를 따로 설치해야 하며 기본 실행에서는 샌드박스가 자동으로 켜지지 않는다.
+
+#긍정
+---
+[TITLE] Encrypted instructions trick Copilot CLI into spilling developer secrets
+[LINK] https://www.infoworld.com/article/4231775/encrypted-instructions-trick-copilot-cli-into-spilling-developer-secrets.html
+[PUBLISHED] 2026-10-07 20:54 KST
+[SOURCE] InfoWorld
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 9
+[REASON] GitHub Copilot CLI의 새로운 보안 취약점(CCI) 발견.
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+암호화된 지시문으로 코파일럿 CLI를 속여 개발자 비밀 정보를 빼내는 공격
+
+**[영문 3줄 요약 (Original)]**
+- Adversa AI researchers said a technique called Cryptographic Context Injection (CCI) hides malicious instructions in encrypted content and can make GitHub Copilot CLI read sensitive files from a developer's machine and send them to an attacker.
+- In a demonstration, a single web page led to the contents of a .env.prod file being sent out in 28 seconds with no confirmation; the attack requires autopilot mode and a model willing to execute the decrypted instructions, and results vary by model.
+- GitHub validated the finding but declined to treat it as a vulnerability, saying the user asked Copilot to fetch attacker-controlled content while granting full permissions, and ruled it ineligible for its bug bounty; the researchers advise defenders to watch for the sequence of untrusted web conten…
+
+**[국문 3줄 요약 (Translated)]**
+- Adversa AI 연구진은 암호화된 콘텐츠 안에 악성 지시를 숨기는 암호 컨텍스트 주입(CCI) 기법으로 GitHub 코파일럿 CLI가 개발자 PC의 민감한 파일을 읽어 공격자에게 보내게 만들 수 있다고 밝혔다.
+- 시연에서는 웹 페이지 하나로 .env.prod 파일의 비밀 정보를 28초 만에 확인 절차 없이 전송했으며, 이 공격은 오토파일럿 모드와 복호화된 지시를 실행하는 모델이 필요하고 모델에 따라 결과가 달라진다.
+- GitHub는 결과를 확인했지만 사용자가 공격자 콘텐츠를 가져오게 하고 전체 권한을 준 상황이라며 취약점으로 보지 않았고 버그 바운티 대상에서도 제외했으며, 연구진은 신뢰할 수 없는 웹 콘텐츠 유입 뒤 코드 실행, 로컬 파일 읽기, 무관한 외부 연결이 이어지는 행동 순서를 탐지하라고 권고한다.
+
+#부정
+---
+[TITLE] "결정 피로 줄인다"…오픈AI, 코덱스 2일차 업데이트로 ‘오토리뷰’ 전면 무료화
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216032
+[PUBLISHED] 2026-10-07 15:53 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트
+[SCORE] 9
+[REASON] OpenAI, AI 에이전트 '오토리뷰' 기능 모든 챗GPT 사용자에게 무료 전환.
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 오픈AI가 AI 에이전트의 행위를 보조 에이전트가 실시간으로 검토하고 차단하는 오토리뷰 기능을 모든 챗GPT 로그인 사용자에게 무료로 전환했다.
+- 별도의 검토 에이전트가 백그라운드에서 주 에이전트를 감시해 위험하거나 지시 목적에서 벗어난 동작을 차단하며, 사용자의 반복 승인 부담을 줄이고 토큰과 요금제 한도 차감도 적용하지 않는다.
+- 커뮤니티에서는 작업 속도 개선을 환영하는 반응과 AI가 AI를 검토하는 구조가 하드 샌드박스를 대체하지 못하고 오판 가능성이 있다는 신중론이 함께 나온다.
+
+#긍정
+---
+[TITLE] Hackers hijack Google domains after breaching ccTLD registries
+[LINK] https://www.bleepingcomputer.com/news/security/hackers-hijack-google-domains-after-breaching-cctld-registries/
+[PUBLISHED] 2026-10-08 05:50 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] 해커들이 ccTLD 레지스트리 침해 후 Google 도메인 탈취.
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+해커들, ccTLD 레지스트리 침해 후 구글 도메인 탈취
+
+**[영문 3줄 요약 (Original)]**
+- Hackers compromised third-party operators and modified authoritative DNS records, obtaining unauthorized HTTPS certificates for several Google domains and hijacking domains in the Ghana, American Samoa and Sierra Leone country-code top-level domains.
+- Google said its own systems were not compromised, blocked the certificates in Chrome through CRLSets, blocked additional certificates found in Certificate Transparency logs, and worked with the issuing authorities to revoke them.
+- Google cannot guarantee it identified every affected domain, and CRLSets protect only Chrome users, so other browsers may be unprotected; the attackers and the number of certificates were not disclosed.
+
+**[국문 3줄 요약 (Translated)]**
+- 해커들이 제3자 운영사를 침해해 권한 있는 DNS 레코드를 바꾼 뒤 구글 도메인용 HTTPS 인증서를 부정하게 발급받고 가나, 아메리칸사모아, 시에라리온의 국가 코드 최상위 도메인 도메인을 탈취했다.
+- 구글은 자사 시스템은 침해되지 않았다고 밝혔고, 크롬의 CRLSet으로 해당 인증서를 차단하고 인증서 투명성 로그에서 확인한 추가 인증서도 막았으며 발급 기관과 함께 폐기를 진행했다.
+- 다만 모든 피해 도메인을 식별했다고 보장할 수 없고 CRLSet은 크롬 사용자만 보호하므로 다른 브라우저 사용자는 보호되지 않을 수 있으며, 공격자와 인증서 수는 공개되지 않았다.
+
+#부정
+---
+[TITLE] OpenAI launches Decisions API that reduces complex evaluations to yes, no, or pick one
+[LINK] https://the-decoder.com/openai-launches-decisions-api-that-reduces-complex-evaluations-to-yes-no-or-pick-one/
+[PUBLISHED] 2026-10-08 00:36 KST
+[SOURCE] The Decoder
+[TOPIC] 개발
+[SCORE] 9
+[REASON] OpenAI, 복잡한 평가를 단순화하는 Decisions API 출시.
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+오픈AI, 복잡한 평가를 예/아니오나 선택으로 줄이는 Decisions API 출시
+
+**[영문 3줄 요약 (Original)]**
+- OpenAI launched the Decisions API, which evaluates text and images, in public beta with general availability coming soon.
+- It runs about ten times faster than the Responses API, currently supports only gpt-6-luna, and costs $0.10 per million input tokens with free output tokens.
+- It supports yes/no probabilities, category picks, and scale ratings for uses like photo damage detection and inquiry routing, and OpenAI also cut its paid API tiers from five to three: Build, Launch, and Grow.
+
+**[국문 3줄 요약 (Translated)]**
+- 오픈AI가 텍스트와 이미지를 평가하는 Decisions API를 공개 베타로 내놓았고 정식 출시는 곧 이뤄질 예정이다.
+- Responses API보다 약 10배 빠르고 현재 gpt-6-luna 모델만 지원하며 입력 토큰 100만 개당 0.10달러에 출력 토큰은 무료이다.
+- 예/아니오 확률, 정해진 범주 선택, 척도 평가를 지원하며 사진 속 손상 감지나 고객 문의 분류에 쓸 수 있고, 유료 API 등급은 다섯 개에서 Build, Launch, Grow 세 개로 줄었다.
+
+#긍정
+---
+[TITLE] Unpatched Critical LMCache Flaw Lets Unauthenticated Attackers Run Code Remotely
+[LINK] https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html
+[PUBLISHED] 2026-10-08 00:34 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 모델, 보안
+[SCORE] 9
+[REASON] LMCache의 치명적인 취약점 발견, 원격 코드 실행 가능성 경고.
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+패치 없는 LMCache 치명적 결함, 인증 없는 공격자가 원격 코드 실행 가능
+
+**[영문 3줄 요약 (Original)]**
+- A critical flaw, CVE-2026-105192 with a 9.8 severity score, lets unauthenticated attackers run code remotely on LMCache's multiprocess server, and no fixed version exists.
+- The cause is an unauthenticated ZeroMQ socket that unpacks messages with pickle; versions 0.3.9 through 0.5.5 and the 0.5.6 release candidates are affected, and the official container images run the process as root.
+- The server is exposed only when bound to a routable address, so JFrog advises keeping it on localhost or a trusted cluster network, since a firewall lowers the risk but does not remove it.
+
+**[국문 3줄 요약 (Translated)]**
+- LLM 서버 가속용 오픈소스 LMCache의 다중 프로세스 모드에서 인증 없이 원격 코드를 실행할 수 있는 CVE-2026-105192 취약점이 공개됐고 심각도는 9.8점이며 수정 버전은 없다.
+- ZeroMQ 소켓에 인증이 없고 메시지가 pickle로 해석되는 것이 원인이며, 0.3.9부터 0.5.5까지와 0.5.6 후보 버전이 영향을 받고 공식 컨테이너 이미지에서는 루트 권한으로 코드가 실행된다.
+- 서버가 라우팅 가능한 주소에서 대기할 때만 노출되므로 JFrog는 해당 주소 할당을 피하고 포트를 로컬이나 신뢰하는 클러스터 네트워크로 제한하라고 권고하며, 방화벽은 위험을 줄일 뿐 없애지 못한다.
+
+#부정
+---
+[TITLE] PoeLLM Malware Infects 3,400+ Servers to Expand Crypto Mining Botnet
+[LINK] https://thehackernews.com/2026/10/poellm-malware-infects-3400-servers-to.html
+[PUBLISHED] 2026-10-08 00:33 KST
+[SOURCE] The Hacker News
+[TOPIC] 모델, 보안
+[SCORE] 9
+[REASON] PoeLLM 악성코드, AI/LLM 서버 감염시켜 암호화폐 채굴 봇넷 확장.
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+PoeLLM 악성코드, 서버 3,400대 이상 감염시켜 암호화폐 채굴 봇넷 확장
+
+**[영문 3줄 요약 (Original)]**
+- Lumen Black Lotus Labs reported the Canto Incognito campaign and its PoeLLM malware, which targets exposed AI and LLM infrastructure to install crypto miners.
+- Active since April 2026, it has infected more than 3,400 servers mostly in the U.S. and Western Europe, targeting internet-facing services such as LiteLLM, Gotenberg, Gitea, and Ivanti Sentry.
+- Compromised servers are reused as scanners and exploit servers to grow the botnet, the C2 address is hidden in a poem hosted on GitHub, and the actor is attributed with moderate confidence to an Italian-speaking group.
+
+**[국문 3줄 요약 (Translated)]**
+- 루멘 블랙 로터스 랩스가 노출된 AI와 LLM 인프라를 노려 채굴 프로그램을 설치하는 Canto Incognito 캠페인과 PoeLLM 악성코드를 보고했다.
+- 2026년 4월부터 활동해 피해 서버가 3,400대를 넘었고 주로 미국과 서유럽에 있으며, LiteLLM, Gotenberg, Gitea, Ivanti Sentry 같은 인터넷 노출 서비스가 주요 표적이다.
+- 감염된 서버는 스캐너와 공격 서버로 재사용되어 봇넷을 키우고, 깃허브에 올린 시에서 C2 주소를 도출하는 방식으로 숨기며, 이탈리아어를 쓰는 공격자로 중간 정도 확신을 두고 지목됐다.
+
+#부정
+---
+[TITLE] FBI: Ongoing FortiBleed attacks lock out FortiGate VPN admins
+[LINK] https://www.bleepingcomputer.com/news/security/fbi-ongoing-fortibleed-attacks-lock-out-fortigate-vpn-admins/
+[PUBLISHED] 2026-10-08 06:28 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 9
+[REASON] FBI, FortiBleed 공격 지속 및 FortiGate VPN 관리자 잠금 경고.
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+FBI, 진행 중인 FortiBleed 공격으로 FortiGate VPN 관리자가 차단당한다고 경고
+
+**[영문 3줄 요약 (Original)]**
+- The FBI warned that FortiBleed attacks are ongoing against exposed Fortinet FortiGate firewalls and SSL VPN gateways, locking out legitimate administrators.
+- Attackers log in with leaked credentials or infostealer logs, crack stolen password hashes offline on a GPU cluster, and create admin accounts to delete existing admins or change passwords; the chain has been an entry point for INC/Lynx and Payload ransomware.
+- The FBI says remediation needs more than patching and password resets, recommending restricted external access, ending all VPN sessions, enforcing MFA, reviewing logs, and using PBKDF2 for admin password storage.
+
+**[국문 3줄 요약 (Translated)]**
+- FBI가 노출된 포티넷 FortiGate 방화벽과 SSL VPN 게이트웨이를 노리는 FortiBleed 공격이 계속되며 정상 관리자를 차단하고 있다고 경고했다.
+- 공격자는 유출된 자격 증명이나 인포스틸러 로그로 접속한 뒤 탈취한 비밀번호 해시를 GPU 클러스터로 오프라인에서 풀고, 관리자 계정을 만들어 기존 관리자를 삭제하거나 비밀번호를 바꾸며, INC/Lynx와 Payload 랜섬웨어 조직의 초기 침투 경로로 쓰였다.
+- FBI는 패치와 비밀번호 재설정만으로는 부족하다며 외부 접근 제한, 모든 VPN 세션 종료, MFA 적용, 로그 점검, 관리자 비밀번호 저장에 PBKDF2 적용을 권고했다.
+
+#부정
+---
+[TITLE] Eight Malicious npm Packages Downloaded 40,767 Times Deliver Overlord RAT and Stealer
+[LINK] https://thehackernews.com/2026/10/eight-malicious-npm-packages-downloaded.html
+[PUBLISHED] 2026-10-08 02:43 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 8개 악성 npm 패키지, Overlord RAT 및 Stealer 배포.
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+악성 npm 패키지 8개, 40,767회 다운로드되며 Overlord RAT와 정보 탈취 악성코드 유포
+
+**[영문 3줄 요약 (Original)]**
+- CloudSEK and Checkmarx disclosed a long-running npm supply chain campaign called MALFEX, in which a lone actor published 12 packages since August 2023 and eight were flagged as malicious.
+- The packages were downloaded 40,767 times in total, 37,419 of them function-flag; tlxbnhd, tldriver, and mxdriver load Overlord RAT via lifecycle hooks, while others fetch a Go executable that pulls a Node.js stealer.
+- The operator appears Portuguese-speaking but the campaign does not specifically target Brazil and second-stage targeting is opportunistic, and Overlord RAT has also appeared since July in WordPress exploitation and fake Zoom installer campaigns.
+
+**[국문 3줄 요약 (Translated)]**
+- CloudSEK와 Checkmarx가 MALFEX라는 이름의 장기 npm 공급망 악성코드 캠페인을 공개했고, 한 명의 공격자가 2023년 8월부터 올린 패키지 12개 중 8개가 악성으로 분류됐다.
+- 이 패키지들은 모두 40,767회 다운로드됐고 그중 37,419회가 function-flag이며, tlxbnhd, tldriver, mxdriver는 라이프사이클 훅으로 Overlord RAT 로더를 실행하고 다른 패키지는 Go 실행 파일을 거쳐 Node.js 정보 탈취 악성코드를 내려받는다.
+- 운영자는 포르투갈어를 쓰는 것으로 보이나 특정 국가를 노린 것은 아니며 2단계 표적 선정은 기회주의적이고, Overlord RAT는 7월 이후 워드프레스 취약점 공격과 가짜 줌 설치 프로그램 캠페인에서도 관찰됐다.
+
+#부정
+---
