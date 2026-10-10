@@ -1,0 +1,240 @@
+[TITLE] PCI SSC calls for human approval of AI agent actions involving cardholder data
+[LINK] https://www.helpnetsecurity.com/2026/10/09/pci-ssc-payment-environments-ai-security-guidance/
+[PUBLISHED] 2026-10-09 14:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 보안, 규제
+[SCORE] 9
+[REASON] PCI SSC, AI 시스템 보안 지침 발표
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+PCI SSC, 카드 소유자 데이터 관련 AI 에이전트 작업에 대한 인간 승인 요구
+
+**[영문 3줄 요약 (Original)]**
+- The PCI SSC has published guidance on protecting data in AI systems within payment environments and defending against AI-assisted attacks.
+- The guidance recommends defining AI system purpose, permissions, and data access, and explicit human approval for actions involving cardholder data.
+- Organizations should avoid combining sensitive data access, external communications, and untrusted input in a single AI system.
+
+**[국문 3줄 요약 (Translated)]**
+- PCI SSC는 결제 환경에서 AI 시스템의 데이터 보호 및 AI 지원 공격 방어에 대한 지침을 발표했다.
+- 이 지침은 AI 시스템의 목적, 권한, 데이터 접근을 정의하고, 카드 소유자 데이터 관련 작업에는 명시적인 인간 승인을 권고한다.
+- 조직은 AI 시스템에 민감한 데이터 접근, 외부 통신, 신뢰할 수 없는 소스 입력을 결합하지 않도록 주의해야 한다.
+
+#중립
+---
+[TITLE] Researchers Publish Working Exploit for Pre-Auth AnyDesk Linux Flaw That Gives Root Access
+[LINK] https://thehackernews.com/2026/10/researchers-publish-working-exploit-for.html
+[PUBLISHED] 2026-10-09 21:59 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] AnyDesk Linux 취약점 익스플로잇 공개
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+연구원들, AnyDesk Linux 사전 인증 취약점에 대한 작동하는 익스플로잇 공개
+
+**[영문 3줄 요약 (Original)]**
+- Security researchers have published a working exploit for a pre-authentication remote code execution flaw in AnyDesk Linux.
+- The vulnerability, a heap buffer overflow, allows attackers to gain root access without connection approval.
+- AnyDesk patched the issue in version 8.0.3, and administrators should update immediately or restrict access to TCP port 7070.
+
+**[국문 3줄 요약 (Translated)]**
+- 보안 연구원들이 AnyDesk Linux의 사전 인증 원격 코드 실행 취약점에 대한 작동하는 익스플로잇을 공개했다.
+- 이 취약점은 힙 버퍼 오버플로우를 통해 공격자가 연결 승인 없이 루트 권한을 얻을 수 있게 한다.
+- AnyDesk는 버전 8.0.3에서 이 문제를 패치했으나, 관리자들은 즉시 최신 버전으로 업데이트하거나 TCP 포트 7070 접근을 제한해야 한다.
+
+#부정
+---
+[TITLE] Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge
+[LINK] https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html
+[PUBLISHED] 2026-10-09 21:47 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] AhsayCBS 취약점 악용 XMRig 채굴기 배포
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+공격자들이 AhsayCBS 취약점을 악용하여 Microsoft Edge로 위장한 XMRig 채굴기 배포
+
+**[영문 3줄 요약 (Original)]**
+- Attackers are exploiting two recently disclosed flaws (CVE-2026-105133, CVE-2026-105134) in the AhsayCBS backup utility to deploy web shells and XMRig cryptocurrency miners.
+- They chain the vulnerabilities for authentication bypass and arbitrary command execution, disguising miners as Microsoft Edge and using an AI-assisted PowerShell script.
+- Huntress revealed that the latest version (10.3.4) is also affected, making them zero-days, and users should restrict management interface access and hunt for compromise.
+
+**[국문 3줄 요약 (Translated)]**
+- 공격자들이 AhsayCBS 백업 유틸리티의 두 가지 취약점(CVE-2026-105133, CVE-2026-105134)을 악용하여 장치를 장악하고 웹 셸 및 XMRig 암호화폐 채굴기를 배포하고 있다.
+- 이들은 인증 우회 및 임의 명령 실행을 위해 두 취약점을 연쇄적으로 사용하며, 채굴기는 Microsoft Edge로 위장하고 AI 지원 PowerShell 스크립트를 사용한다.
+- Huntress는 최신 버전(10.3.4)도 영향을 받는다고 밝혀 제로데이 취약점이 되었으며, 사용자들은 관리 인터페이스 접근을 제한하고 침해 징후를 찾아야 한다.
+
+#부정
+---
+[TITLE] Anthropic offers free AI security scans to open-source maintainers
+[LINK] https://www.helpnetsecurity.com/2026/10/09/anthropic-oss-scanner-ai-security-scans/
+[PUBLISHED] 2026-10-09 18:55 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 모델, 보안
+[SCORE] 9
+[REASON] 앤트로픽, 오픈소스 AI 보안 스캐너 출시
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+앤트로픽, 오픈소스 유지보수 담당자에게 무료 AI 보안 스캔 제공
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic has launched OSS Scanner, a new free service that uses its strongest AI models to find security vulnerabilities in open-source software.
+- The service identifies vulnerabilities and reports findings directly to project teams without human review.
+- While early tests showed high accuracy, Anthropic acknowledges that reports might overstate severity or misunderstand project security assumptions.
+
+**[국문 3줄 요약 (Translated)]**
+- 앤트로픽은 오픈소스 소프트웨어의 보안 취약점을 찾는 무료 AI 보안 스캔 서비스인 OSS 스캐너를 출시했다.
+- 이 서비스는 앤트로픽의 강력한 AI 모델을 사용하여 취약점을 식별하고, 발견 사항을 인간 검토 없이 프로젝트 팀에 직접 보고한다.
+- OSS 스캐너는 초기 테스트에서 높은 정확도를 보였으나, 보고서가 심각도를 과장하거나 프로젝트의 보안 가정을 오해할 수 있다는 한계도 있다.
+
+#긍정
+---
+[TITLE] Citrix Patches Critical NetScaler Flaw That Could Enable RCE in SAML Deployments
+[LINK] https://thehackernews.com/2026/10/citrix-patches-critical-netscaler-flaw.html
+[PUBLISHED] 2026-10-09 17:11 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] Citrix NetScaler 치명적 취약점 패치
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+Citrix, SAML 배포에서 RCE를 유발할 수 있는 치명적인 NetScaler 취약점 패치
+
+**[영문 3줄 요약 (Original)]**
+- Citrix has released patches for a critical security flaw (CVE-2026-107406) affecting NetScaler ADC and NetScaler Gateway.
+- This memory overflow vulnerability could lead to remote code execution or denial-of-service under specific SAML configuration conditions.
+- Customers must upgrade their NetScaler instances to recommended versions to address this flaw, especially as other NetScaler vulnerabilities are actively exploited.
+
+**[국문 3줄 요약 (Translated)]**
+- Citrix는 NetScaler ADC 및 NetScaler Gateway에 영향을 미치는 치명적인 보안 취약점(CVE-2026-107406)에 대한 패치를 발표했다.
+- 이 메모리 오버플로우 취약점은 특정 SAML 구성 조건에서 원격 코드 실행 또는 서비스 거부(DoS)를 초래할 수 있다.
+- 고객은 NetScaler 인스턴스를 권장 버전으로 업그레이드하여 이 취약점을 해결해야 하며, 현재 다른 NetScaler 취약점들이 활발히 악용되고 있다.
+
+#부정
+---
+[TITLE] Max severity SonicWall SMA1000 flaw now exploited in attacks
+[LINK] https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/
+[PUBLISHED] 2026-10-09 21:32 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 9
+[REASON] SonicWall SMA1000 취약점 공격 악용
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+최대 심각도 SonicWall SMA1000 취약점, 현재 공격에 악용 중
+
+**[영문 3줄 요약 (Original)]**
+- Attackers are exploiting a maximum-severity vulnerability (CVE-2026-102255) in SonicWall SMA1000 appliances, which was patched three days prior.
+- This flaw allows a remote unauthenticated attacker to direct the appliance to issue requests on their behalf and perform unauthorized operations.
+- SMA1000 gateways are frequently targeted due to their use for VPN access, and CISA has previously listed 19 SonicWall vulnerabilities as actively exploited.
+
+**[국문 3줄 요약 (Translated)]**
+- 공격자들이 SonicWall SMA1000 어플라이언스의 최대 심각도 취약점(CVE-2026-102255)을 악용하고 있으며, 이는 3일 전 패치되었다.
+- 이 취약점은 원격 비인증 공격자가 어플라이언스를 통해 내부 기능에 접근하고 무단 작업을 수행할 수 있게 한다.
+- SMA1000 게이트웨이는 VPN 접근에 사용되어 자주 표적이 되며, CISA는 이전에 19개의 SonicWall 취약점을 활발히 악용되는 목록에 추가했다.
+
+#부정
+---
+[TITLE] Anthropic's Claude can now orchestrate up to 1,000 AI agents in parallel through dynamic workflows
+[LINK] https://the-decoder.com/anthropics-claude-can-now-orchestrate-up-to-1000-ai-agents-in-parallel-through-dynamic-workflows/
+[PUBLISHED] 2026-10-10 03:28 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트
+[SCORE] 8
+[REASON] 앤트로픽 클로드, 동적 워크플로우로 에이전트 오케스트레이션
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+앤트로픽의 Claude, 동적 워크플로우를 통해 최대 1,000개의 AI 에이전트를 병렬로 오케스트레이션 가능
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic has introduced dynamic workflows to its Claude Managed Agents, enabling multi-agent orchestration on the platform.
+- A lead agent can now create a plan, distribute tasks to sub-agents, and run up to 1,000 agents in parallel per execution.
+- Anthropic's testing showed dynamic workflows significantly improved bug detection compared to single agents, though cost-effectiveness remains a point of debate.
+
+**[국문 3줄 요약 (Translated)]**
+- 앤트로픽은 Claude Managed Agents에 동적 워크플로우를 추가하여 멀티 에이전트 오케스트레이션 기능을 도입했다.
+- 이 기능을 통해 리드 에이전트가 계획을 세우고 작업을 서브 에이전트에 분배하며, 최대 1,000개의 에이전트가 병렬로 실행될 수 있다.
+- 앤트로픽의 테스트 결과, 동적 워크플로우는 단일 에이전트보다 훨씬 많은 버그를 발견하는 등 성능 향상을 보였으나, 비용 효율성은 논쟁의 여지가 있다.
+
+#긍정
+---
+[TITLE] Lightwell project filters out 400 Java library vulnerabilities
+[LINK] https://www.infoworld.com/article/4233237/lightwell-project-filters-out-400-java-library-vulnerabilities.html
+[PUBLISHED] 2026-10-10 01:07 KST
+[SOURCE] InfoWorld
+[TOPIC] 에이전트, 개발, 보안, 산업
+[SCORE] 8
+[REASON] 자바 라이브러리 취약점 발견 및 새 서비스 출시
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+Lightwell 프로젝트, 400개 이상의 자바 라이브러리 취약점 발견 및 제거
+
+**[영문 3줄 요약 (Original)]**
+- Lightwell, an open-source security initiative by IBM and Red Hat, has identified over 400 previously undiscovered vulnerabilities in widely used Java libraries.
+- Lightwell aims to counter the threat landscape shift where AI agents exploit old dependencies at machine speed, focusing on identifying and introducing remediation software.
+- They are offering a new service, Lightwell Clearinghouse, for customers to submit code dependencies for review, backed by 20,000 engineers and $5 billion investment.
+
+**[국문 3줄 요약 (Translated)]**
+- IBM과 Red Hat의 오픈소스 보안 이니셔티브인 Lightwell은 400개 이상의 이전에 발견되지 않은 자바 라이브러리 취약점을 식별했다.
+- Lightwell은 AI 에이전트가 머신 속도로 오래된 의존성을 악용하는 위협 환경 변화에 대응하여, 취약점 식별 및 수정 소프트웨어 도입을 목표로 한다.
+- 이들은 새로운 서비스인 Lightwell Clearinghouse를 통해 고객의 코드 의존성 검토를 제공하며, 20,000명의 엔지니어와 50억 달러를 투자하고 있다.
+
+#긍정
+---
+[TITLE] Credential-Stealing GitHub Actions Workflows Planted in Tens of Thousands of Repositories
+[LINK] https://thehackernews.com/2026/10/credential-stealing-github-actions.html
+[PUBLISHED] 2026-10-10 04:14 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] GitHub Actions 워크플로우를 이용한 자격 증명 탈취 공격
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+자격 증명 탈취 GitHub Actions 워크플로우가 수만 개의 저장소에 심어졌다
+
+**[영문 3줄 요약 (Original)]**
+- Cybersecurity researchers have disclosed an ongoing credential-theft campaign where malicious GitHub Actions workflows were planted in tens of thousands of repositories via compromised open-source maintainer accounts.
+- The malicious workflows, disguised as 'Security Audit' or 'GitHub Actions Security,' exfiltrate sensitive data including CI/CD secrets, cloud, AI, and SaaS credentials.
+- Developers should check their repositories for these workflows since August 31, 2026, and assume compromise if found, then revoke credentials and delete the malicious workflows.
+
+**[국문 3줄 요약 (Translated)]**
+- 사이버 보안 연구원들은 두 개의 유명 오픈소스 유지보수 계정이 침해되어 수만 개의 GitHub 저장소에 악성 GitHub Actions 워크플로우가 심어진 자격 증명 탈취 캠페인을 공개했다.
+- 이 악성 워크플로우는 'Security Audit' 또는 'GitHub Actions Security'로 위장하여 CI/CD 비밀, 클라우드, AI, SaaS 자격 증명 등 민감한 데이터를 탈취한다.
+- 개발자들은 2026년 8월 31일 이후 자신의 저장소에서 해당 워크플로우를 확인하고, 발견 시 침해를 가정하여 자격 증명 폐기 및 워크플로우 삭제 등의 조치를 취해야 한다.
+
+#부정
+---
+[TITLE] Github Migrates Copilot Runtime to Rust with AI-Assisted Rewrite
+[LINK] https://www.infoq.com/news/2026/10/github-copilot-rust-migration/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-09 23:29 KST
+[SOURCE] InfoQ
+[TOPIC] 개발
+[SCORE] 8
+[REASON] GitHub Copilot 런타임, AI 지원으로 Rust로 마이그레이션
+[MODEL] gemini-2.5-flash
+[SUMMARY]
+**[기사 제목 번역]**
+GitHub, AI 지원 재작성을 통해 Copilot 런타임을 Rust로 마이그레이션
+
+**[영문 3줄 요약 (Original)]**
+- GitHub has migrated the runtime for GitHub Copilot CLI, app, and SDK from TypeScript and Node.js to Rust, using an AI-assisted rewrite.
+- This migration replaced over 800,000 lines of code and significantly reduced client startup and session creation times from 5.25 seconds to 292 milliseconds.
+- AI agents generated most of the implementation, and the process involved an incremental replacement strategy, automated validation, and human review to maintain stable behavior.
+
+**[국문 3줄 요약 (Translated)]**
+- GitHub는 AI 지원 재작성을 통해 GitHub Copilot CLI, 앱, SDK의 런타임을 TypeScript 및 Node.js에서 Rust로 마이그레이션했다.
+- 이 마이그레이션은 80만 줄 이상의 코드를 대체했으며, 클라이언트 시작 및 세션 생성 시간을 5.25초에서 292밀리초로 크게 단축했다.
+- AI 에이전트가 구현의 대부분을 생성했고, 점진적 교체 전략과 자동화된 검증, 인간 검토를 통해 안정적인 동작을 유지하며 진행되었다.
+
+#긍정
+---

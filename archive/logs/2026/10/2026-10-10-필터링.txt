@@ -1,0 +1,859 @@
+[TITLE] PCI SSC calls for human approval of AI agent actions involving cardholder data
+[TITLE_KO] PCI SSC, 카드 소유자 데이터 관련 AI 에이전트 작업에 대한 사람 승인 요구
+[LINK] https://www.helpnetsecurity.com/2026/10/09/pci-ssc-payment-environments-ai-security-guidance/
+[PUBLISHED] 2026-10-09 14:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 보안, 규제
+[SCORE] 9
+[REASON] PCI SSC, AI 시스템 보안 지침 발표
+[BODY]
+PCI SSC calls for human approval of AI agent actions involving cardholder data
+The PCI Security Standards Council (PCI SSC) has published Security Considerations for AI Systems, guidance covering the protection of data supplied to AI systems in payment environments and defenses against AI-assisted attacks.
+Developed with industry stakeholders, the document addresses governance, deployment, access controls, testing and the application of PCI standards. Its recommendations are advisory, and existing PCI requirements take precedence.
+“As AI is increasingly used in payment environments, there is an obligation for all parties to ensure the technology is used responsibly,” said Gina Gobeyn, Executive Director, PCI SSC. “This additional guidance provides a practical starting point for secure AI implementation.”
+PCI DSS scoping for AI systems (Source: PCI SSC)
+Define access and accountability
+The Council recommends defining an AI system’s purpose, permissions and data access before selecting or deploying it. Its least agency approach limits each system to the access and capabilities needed for its assigned tasks.
+A suitable human individual should formally accept responsibility for AI output, and organizations should specify which actions require human approval. Access restrictions should be enforced through independent controls, such as identity-management policies and network isolation.
+Organizations should avoid combining sensitive data access, external communications and unrestricted input from untrusted sources in one AI system. Where a workflow needs all three, the guidance recommends separating responsibilities among agents with different permissions.
+An AI inventory and bill of materials should identify models, versions, hosting, integrations, data-use and retention policies, and intended users. An acceptable-use policy and technical controls should help identify and restrict shadow AI, tools employees deploy or use without approval.
+Test controls and prepare for failure
+Safeguards should be tested before extensive functional or user-acceptance testing. This includes adversarial testing to determine whether restrictions can be bypassed.
+Monitoring and revalidation should continue throughout deployment to detect changes in behavior. Review processes should also account for excessive trust in AI output, which can cause reviewers to overlook mistakes.
+The guidance describes human approval for each task and an alternative in which AI systems perform authorized actions under monitoring without approval for every individual action. For monitored autonomy, organizations should define permitted actions, approval requirements, shutdown triggers and procedures for reversing changes. A suitable human individual should remain ultimately responsible.
+For agents with access to cleartext cardholder data, explicit human approval for any actions involving that data is recommended.
+Protect sensitive data and credentials
+AI systems should not handle, generate or manage unprotected high-impact secrets, including passwords and cryptographic keys. Credentials should be managed through secrets-management tools and kept out of source code, prompts, AI context, outputs and logs.
+When random values are required, the Council recommends using a trusted random-number generator. Values used for passwords or cryptographic keys may need to remain outside the AI system.
+Organizations should use encrypted or tokenized payment data where possible. Data-loss prevention controls should operate independently of the AI, and logs should support investigations without retaining sensitive payment information.
+PCI scoping should consider an AI system’s deployment, isolation, access to account data, including data used for training, and ability to affect the security of cardholder-data systems. Access to encrypted or tokenized data together with tools that decrypt or detokenize it should be treated as access to readable data.
+Address AI-assisted attacks
+---
+[TITLE] Researchers Publish Working Exploit for Pre-Auth AnyDesk Linux Flaw That Gives Root Access
+[TITLE_KO] AnyDesk Linux 사전 인증 취약점의 작동 익스플로잇 공개
+[LINK] https://thehackernews.com/2026/10/researchers-publish-working-exploit-for.html
+[PUBLISHED] 2026-10-09 21:59 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] AnyDesk Linux 취약점 익스플로잇 공개
+[BODY]
+Security researchers have published a full working exploit for a pre-authentication remote code execution flaw in AnyDesk Linux that gives attackers root access before anyone approves the connection.
+AnyDesk patched the flaw in version 8.0.3 in June, but its changelog described the fix only as "fixed a bug that could lead to a crash," with no CVE assigned and no security advisory.
+The exploit, called AnyPwn, targets a heap buffer overflow in AnyDesk's session protocol, a remote desktop tool. The code was released on GitHub on October 8.
+Administrators should update AnyDesk Linux to at least version 8.0.3. The latest release is 8.1.0.
+What the Exploit Demonstrates
+The published exploit works only over direct TCP connections on port 7070.
+The exploit is probabilistic: the heap layout must place a target object adjacent to the overflowed buffer; otherwise, the service crashes instead of executing the attacker's command. The offsets in the published code target a specific build of AnyDesk Linux, 8.0.2; other builds would require different values.
+The researchers say the same vulnerable code path is also reachable via AnyDesk's relay servers, which the software uses when a direct connection is unavailable. They validated this with a Frida instrumentation trigger but did not demonstrate the full exploit chain over relays.
+AnyDesk said in June that the vulnerability is "limited to direct connections on Linux (connections that do not go through our relays). Windows and macOS are not affected."
+The exploit targets AnyDesk Linux 8.0.2. The researchers imply that earlier versions, such as 8.0.1, may share the vulnerable code path, but exploitation of those versions has not been confirmed.
+The researchers announced the flaw on June 22. AnyDesk acknowledged it the next day and released version 8.0.3 with the fix.
+No CVE has been assigned to the vulnerability as of October 9. AnyDesk has not issued a formal security advisory.
+AnyDesk's download page no longer lists version 8.0.2, though it still appears in the changelog. "The vendor appears to have deleted (?) the 8.0.2 build of AnyDesk upon the release of our poc video," the researchers wrote.
+Administrators who cannot update immediately can reduce exposure by restricting access to TCP port 7070. Whether the flaw is fully exploitable over relay connections remains unresolved.
+How the Flaw Works
+AnyDesk's session protocol uses mode-5 stream packets. The handler calculates the size of its backing allocation by adding a 16-byte header to the declared payload length, using 32-bit arithmetic without overflow checking.
+The exploit declares a payload length of 0xFFFFFFF0. Adding 0x10 wraps the 32-bit result to zero, so the allocator reserves a tiny buffer while the object records the original large length. Even one byte of attacker data then writes past the end of the allocation.
+The overflow corrupts fields in adjacent heap objects, and the exploit uses a ROP chain to run an arbitrary command as root.
+The vulnerability was found by Rick de Jager of the V12 security team using V12, a security code review engine. V12's founders previously built security firm Zellic and led the competitive hacking team Perfect Blue.
+A separate AnyDesk heap buffer overflow, CVE-2025-27918, was fixed in version 7.0.0 in April 2025. That vulnerability affected all AnyDesk platforms and involved an integer overflow in user image processing, a different mechanism from AnyPwn's session protocol flaw.
+AnyDesk was hacked in early 2024 in a separate incident in which the company's production systems were breached, leading to certificate revocations and forced password resets.
+---
+[TITLE] Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge
+[TITLE_KO] 공격자, AhsayCBS 취약점 악용하여 XMRig 채굴기 배포
+[LINK] https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html
+[PUBLISHED] 2026-10-09 21:47 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] AhsayCBS 취약점 악용 XMRig 채굴기 배포
+[BODY]
+Threat actors have been observed exploiting two recently disclosed flaws in the AhsayCBS backup utility to seize control of affected devices and deploy web shells and XMRig cryptocurrency miners.
+Details of the flaws are below -
+- CVE-2026-105133 (CVSS v4 score: 5.5) - An improper authentication vulnerability in the checkSysPwd() function in the "com/ahsay/obs/api/ApiStructsAction.java" component.
+- CVE-2026-105134 (CVSS v4 score: 9.3) - An operating system command injection vulnerability in the Replication Receiver component.
+A remote attacker could chain the two vulnerabilities to bypass authentication and execute arbitrary commands on affected systems. It's worth noting that CVE identifiers for these flaws were not published until October 4, 2026.
+According to Huntress, exploitation efforts aimed at the two flaws began on October 7, 2026, at 11:20 p.m. UTC, with unidentified threat actors weaponizing them to achieve remote code execution on impacted hosts. As of October 8, 2026, five organizations targeted are estimated to have been affected by these flaws.
+"Post-exploitation, threat actors are conducting reconnaissance, dropping web shells, planting XMRig cryptominers masquerading as Microsoft Edge, and more," the cybersecurity company said. "They also dropped what appears to be an AI-assisted PowerShell script that monitors the Windows Task Manager and shuts it down if it remains open for too long in the middle of the night."
+The cryptocurrency miners have been found to impersonate the Microsoft Edge browser by using the name "edge.exe" to fly under the radar. Also dropped is a PowerShell script ("Taskgmr.ps1") that facilitates cryptomining operations after it's launched via curl.
+The script, which is suspected to be written with assistance from an artificial intelligence (AI) tool, packs in anti-analysis checks that stop the mining activity as soon as a victim opens the Windows Task Manager app. It's also configured to terminate the Task Manager at 6 p.m. if it has been left open for more than one hour overnight.
+Although the advisories published in the National Vulnerability Database (NVD) state that the issues have been addressed in the latest version of the software (10.3.4), Huntress has since revealed that it's also impacted, essentially turning them to zero-days.
+In at least one incident, the threat actors are said to have used the built-in "certutil.exe" binary to download a legitimate-but-vulnerable driver ("WinRing0x64.sys") to the TEMP folder, likely with the aim of gaining kernel-level access to the underlying hardware and optimizing the mining process.
+In the absence of a patch, users are recommended to limit access to the management interface and hunt for signs of compromise.
+"Organizations should restrict AhsayCBS management interface web access, as the exploit targets the externally accessible web app service on the host," Huntress said. "Access should be limited to trusted IP addresses only or require VPN."
+---
+[TITLE] Anthropic offers free AI security scans to open-source maintainers
+[TITLE_KO] 앤트로픽, 오픈소스 관리자에게 무료 AI 보안 스캔 제공
+[LINK] https://www.helpnetsecurity.com/2026/10/09/anthropic-oss-scanner-ai-security-scans/
+[PUBLISHED] 2026-10-09 18:55 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 모델, 보안
+[SCORE] 9
+[REASON] 앤트로픽, 오픈소스 AI 보안 스캐너 출시
+[BODY]
+Anthropic offers free AI security scans to open-source maintainers
+Anthropic’s OSS Scanner is a new, free service that uses the company’s strongest AI models to find security vulnerabilities in open-source software. Maintainers who opt in receive periodic scans and reports explaining suspected flaws, how to reproduce them and, when available, how to fix them.
+The service builds on Anthropic’s experience with Project Glasswing, which used Claude to find software vulnerabilities.
+Anthropic says human validation has become a bottleneck in its vulnerability research. OSS Scanner sends AI-generated findings directly to project teams without human review, speeding up reporting while leaving maintainers responsible for checking findings and prioritizing fixes.
+Early results and limitations
+“Early AI reports about 18 months ago, before Project Glasswing, were appalling. The reports we received from Anthropic, raw model output included, were as good and sometimes better than what we get from people. Particularly when a report comes with a real exploit attached, that’s basically job done for an engineer as you can verify it right away,” said Anton Arapov, OpenSSL Corporation.
+Penetration testers assessed 97 high and critical severity findings across 48 projects from an early version of the scanner. Anthropic said 85 met its coordinated disclosure criteria, 11 were genuine but duplicated known issues or other findings, and one was invalid.
+“We can’t guarantee the scanner will be perfect,” Anthropic said. The company acknowledged that reports can overstate severity or misunderstand a project’s security assumptions.
+What maintainers can expect
+Enrolled projects receive an initial scan and a bundle of reports by email. Subsequent scans look for newly introduced vulnerabilities and issues missed in earlier checks. Their frequency will depend on factors including demand and how widely a project is used.
+Maintainers can provide guidance on what to test, which inputs to treat as potentially malicious, how to rate severity and what kind of proposed patches would be useful.
+The company says the service is intended for teams that can already keep up with verified high and critical severity reports and have capacity to investigate more findings.
+Eligibility and disclosure
+Core maintainers can apply through the OSS Scanner GitHub repository. Applications are assessed individually, with eligibility focused on established projects important to infrastructure and user security.
+Unvalidated findings do not carry a mandatory 90-day disclosure deadline. If Anthropic later validates a report through its existing coordinated disclosure program, a 90-day period may begin when maintainers are notified of that validation.
+Projects can pause automated reports or opt out and return to receiving only reports under company’s standard disclosure process.
+---
+[TITLE] Citrix Patches Critical NetScaler Flaw That Could Enable RCE in SAML Deployments
+[TITLE_KO] Citrix, SAML 배포에서 RCE를 가능하게 하는 치명적인 NetScaler 취약점 패치
+[LINK] https://thehackernews.com/2026/10/citrix-patches-critical-netscaler-flaw.html
+[PUBLISHED] 2026-10-09 17:11 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] Citrix NetScaler 치명적 취약점 패치
+[BODY]
+Citrix has released patches for yet another critical security flaw impacting NetScaler ADC and NetScaler Gateway that could result in remote code execution or denial-of-service (DoS) under certain conditions.
+"CVE-2026-107406 is a memory overflow vulnerability that may lead to remote code execution or denial-of-service under specific configuration conditions," Citrix said.
+The vulnerability carries a CVSS score of 9.5 out of 10.0. There is no evidence that the issue has been exploited in the wild. Citrix has credited Michael Tucker, Chew Keong Tan, and Alex Bernier of the JPMorgan Chase XOR Team, along with Maxim Suhanov, for discovering and reporting the flaw.
+Successful exploitation hinges on the NetScaler deployments being configured as a SAML identity provider (IdP) or service provider (SP). Customers can determine if their instances meet the criteria by checking the configuration for entries like below -
+- SAML SP: add authentication samlAction
+- SAML IdP: add authentication samlIdPProfile
+The issue impacts the following versions -
+- 
+    When configured as a SAML IdP -
+    
+  - NetScaler ADC and NetScaler Gateway between 14.1-73.37 and 14.1-73.41, inclusive
+  - NetScaler ADC 14.1-FIPS between 14.1-73.37 FIPS and 14.1-73.41 FIPS, inclusive
+  - NetScaler ADC and NetScaler Gateway between 13.1-64.23 and 13.1-64.28, inclusive
+  - NetScaler ADC 13.1-FIPS between 13.1-NDcPP 13.1-37.279 and 13.1- 37.282, inclusive
+- 
+    When configured as a SAML SP or SAML IdP:
+    
+  - NetScaler ADC and NetScaler Gateway before 14.1-73.37
+  - NetScaler ADC 14.1-FIPS before 14.1-73.37 FIPS
+  - NetScaler ADC and NetScaler Gateway before 13.1-64.23
+  - NetScaler ADC 13.1-FIPS before 13.1-NDcPP 13.1-37.279
+"Secure Private Access Hybrid deployments using NetScaler instances are also affected by the vulnerability," Citrix warned. "Customers need to upgrade these NetScaler instances to the recommended NetScaler versions to address the vulnerability."
+The shortcoming has been addressed in the versions below -
+- Citrix NetScaler ADC and Citrix NetScaler Gateway 14.1-73.46 and later releases
+- Citrix NetScaler ADC and Citrix NetScaler Gateway 13.1-64.29 and later releases of 13.1
+- Citrix NetScaler ADC 14.1-FIPS 14.1-73.46 FIPS and later releases of 14.1-FIPS
+- Citrix NetScaler ADC 13.1-FIPS and 13.1-NDcPP 13.1.37.283 and later releases of 13.1-FIPS and 13.1-NDcPP
+The development comes as three different flaws in NetScaler ADC and NetScaler Gateway appliances (CVE 2026-88771, CVE 2026-88772, and CVE 2026-88779) have come under active exploitation in the wild.
+---
+[TITLE] Max severity SonicWall SMA1000 flaw now exploited in attacks
+[TITLE_KO] 최대 심각도 SonicWall SMA1000 취약점, 현재 공격에 악용 중
+[LINK] https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/
+[PUBLISHED] 2026-10-09 21:32 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 9
+[REASON] SonicWall SMA1000 취약점 공격 악용
+[BODY]
+Attackers are exploiting a maximum-severity vulnerability in SonicWall SMA1000 appliances (CVE-2026-102255) that was patched on Tuesday, three days ago.
+Tracked as CVE-2026-102255, the flaw affects the Appliance WorkPlace interface on SMA1000 6210, 7210, and 8200v models, but does not affect the SMA 100 Series product line or SSL-VPN running on SonicWall firewalls.
+"By abusing this path, a remote unauthenticated attacker could potentially exploit this vulnerability to direct the appliance to issue requests on their behalf and reach internal functionality and perform unauthorized operations," SonicWall explained.
+While SonicWall has not yet flagged this vulnerability as actively exploited in its Tuesday advisory, Previdian founder and security researcher Ryan Dewhurst told BleepingComputer on Friday that the company's honeypot network has detected exploitation attempts consistent with the CVE-2026-102255 flaw.
+"The requests targeted the WorkPlace Extraweb interface, using a crafted OPTIONS request to reach the appliance's internal CouchDB service at 127.0.0.1:5984. The payload attempted to traverse into a CouchDB design document and invoke its _rewrite function, while supplying an HTTP Basic Authorization header containing the credentials admin:admin," Dewhurst told BleepingComputer.
+"It affects the same WorkPlace interface targeted by earlier SSRF vulnerabilities disclosed in July and September 2026. However, the October vulnerability uses a different exploitation technique.
+Dewhurst also added that while this activity is consistent with active exploitation attempts, Previdian has not yet established "whether those attempts would have successfully compromised any systems."
+While Internet threat watchdog Shadowserver now tracks more than 400 SMA1000 appliances exposed online, there is no information on how many are honeypots or have already been patched against CVE-2026-102255 attacks.
+SMA1000 enterprise-grade secure remote access gateways are often targeted because Managed Service Providers (MSSPs), many large corporations, and government agencies use them for VPN access to internal apps and corporate networks.
+For instance, in July, threat actors abused two SMA1000 zero-days (CVE-2026-15409 and CVE-2026-15410) for weeks to install custom Sou5, OrangeTail, and RootRun malware on vulnerable VPN appliances.
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) later linked some of these attacks to ransomware gangs.
+Last month, SonicWall also warned customers that attackers were chaining two new zero-days (CVE-2026-83548 and CVE-2026-83549) in the wild to execute remote code on vulnerable SMA1000 gateways.
+Over the last four years, CISA has added 19 SonicWall vulnerabilities to its catalog of actively exploited flaws, flagging 13 of them as used by ransomware gangs.
+Build your security blueprint for AI-powered attacks
+Join Mikko Hyppönen and security leaders from the NFL, CHANEL, and Atlassian for a two-hour digital summit on what AI-speed attacks change, what defenders should stop doing, and how to validate, decide, fix, and re-validate at machine speed.
+Save your seat
+---
+[평가 오류] https://openai.com/index/asana-browser-agent - 본문 스크래핑 실패
+---
+[TITLE] Asana cuts model costs 76x in browser tests with GPT-6.1 Sol
+[TITLE_KO] Asana, GPT-6.1 Sol로 브라우저 테스트 모델 비용 76배 절감
+[LINK] https://openai.com/index/asana-browser-agent
+[PUBLISHED] 2026-10-09 16:00 KST
+[SOURCE] OpenAI
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 8
+[REASON] Asana, OpenAI 모델로 에이전트 비용 절감
+---
+[TITLE] Anthropic's Claude can now orchestrate up to 1,000 AI agents in parallel through dynamic workflows
+[TITLE_KO] 앤트로픽 클로드, 동적 워크플로우를 통해 최대 1,000개의 AI 에이전트 병렬 오케스트레이션 가능
+[LINK] https://the-decoder.com/anthropics-claude-can-now-orchestrate-up-to-1000-ai-agents-in-parallel-through-dynamic-workflows/
+[PUBLISHED] 2026-10-10 03:28 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트
+[SCORE] 8
+[REASON] 앤트로픽 클로드, 동적 워크플로우로 에이전트 오케스트레이션
+[BODY]
+Anthropic's Claude can now orchestrate up to 1,000 AI agents in parallel through dynamic workflows
+Anthropic is adding dynamic workflows to its Claude Managed Agents, bringing multi-agent orchestration to the platform. The managed agent infrastructure has been around for a while, but dynamic workflows are new. A lead agent creates a plan, distributes tasks to sub-agents, and merges the results when they're done. Up to 1,000 agents can run in parallel per execution.
+Whether this is cost-effective seems debatable. A senior OpenAI engineer recently called agent swarms a massive waste of tokens, but Anthropic points to its own testing: The team hid 70 bugs in a 116,000-line codebase and found that a single agent caught between 14 and 27 per run, while the dynamic workflow consistently hit 66. Whether those gains hold across different task types remains to be seen, so, as always, it's worth testing with your own workloads.
+To activate dynamic workflows, select the "multiagent_20261001" agent type. Because these workflows can burn through "a lot of tokens," Anthropic recommends starting small. You can get going through the documentation or by running "/claude-api managed-agents-onboard" in Claude Code.
+AI News Without the Hype – Curated by Humans
+				
+Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive "AI Radar" frontier report six times a year, full archive access, and access to our comment section.
+Subscribe now
+---
+[TITLE] Lightwell project filters out 400 Java library vulnerabilities
+[TITLE_KO] Lightwell 프로젝트, 자바 라이브러리 취약점 400개 필터링
+[LINK] https://www.infoworld.com/article/4233237/lightwell-project-filters-out-400-java-library-vulnerabilities.html
+[PUBLISHED] 2026-10-10 01:07 KST
+[SOURCE] InfoWorld
+[TOPIC] 에이전트, 개발, 보안, 산업
+[SCORE] 8
+[REASON] 자바 라이브러리 취약점 발견 및 새 서비스 출시
+[BODY]
+And now they’re offering to check your code dependencies for vulnerabilities too.
+Lightwell, the open-source security initiative set up by IBM and Red Hat, has identified more than 400 previously undiscovered vulnerabilities in widely used Java libraries — and now the companies are inviting customers to submit their own code dependencies to a new service, Lightwell Clearinghouse, for review.
+They’ll be looking for bugs such as the critical sandbox bypass in Java template engine Thymeleaf, with a CVSS score of 9.1, discovered in April.
+“AI agents shifted the threat landscape overnight, exploiting old dependencies at machine speed. Finding those bugs is only half the battle: the real work is backporting fixes directly into active production apps so customers do not have to pick between security and uptime. Finding and neutralizing 400+ novel vulnerabilities so quickly shows how fast Lightwell can move,” said Gunnar Hellekson, vice president and general manager of Lightwell.
+IBM and Red Hat announced in May that they would commit 20,000 engineers and $5 billion to the Lightwell project, combining their open-source engineering expertise, Red Hat’s community relationships, and AI-assisted engineering workflows. Their goal is not just to identify security issues, but also to introduce remediation software to address them.
+Lightwell is not the only player in town when it comes to identifying and fixing Java vulnerabilities. Azul has introduced free vulnerability risk assessment for Java Virtual Machines. The company said it can address the blind spots that autonomous AI-powered exploitation tools, like Mythos, are able to find.
+---
+[TITLE] Credential-Stealing GitHub Actions Workflows Planted in Tens of Thousands of Repositories
+[TITLE_KO] 수만 개의 저장소에 심어진 자격 증명 탈취 GitHub Actions 워크플로우
+[LINK] https://thehackernews.com/2026/10/credential-stealing-github-actions.html
+[PUBLISHED] 2026-10-10 04:14 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] GitHub Actions 워크플로우를 이용한 자격 증명 탈취 공격
+[BODY]
+Cybersecurity researchers have disclosed details of an ongoing credential-theft campaign that has compromised two high-profile open-source maintainer accounts to push a malicious workflow into over 340 repositories.
+"Using the account of Takashi Kitao, author of the 18,400-star game engine pyxel, the attacker pushed a malicious workflow to 27 repositories starting at 13:20 UTC," StepSecurity said. "Eight hours later, the account of Henry Wu (henrywoo), the original author of Uber's athenadriver, was used to push the same workflow to 318 repositories in a 16-minute window, 21:10–21:26 UTC."
+As of October 9, 2026, Socket said it has identified more than 500 GitHub accounts that committed the malicious workflow to tens of thousands of repositories since October 7, 2026.
+The activity has been attributed to GhostAction, a massive supply chain attack campaign that first came to light in September 2025. The activity impacted 817 repositories across 327 GitHub users, resulting in the exfiltration of 3,325 secrets, including PyPI, npm, and DockerHub tokens through compromised developer accounts.
+Like before, both accounts have been found to push a workflow named Security Audit ("security-audit.yml") or GitHub Actions Security ("github_actions_security.yml"), which are designed to exfiltrate sensitive data to a hard-coded IP address ("193.32.204[.]199") over plain HTTP.
+The captured data contains the repository's named GitHub Actions secrets, including CI/CD secrets, and cloud, AI, and SaaS credentials present in the working tree and the entire git history, such as AWS keys, Anthropic, OpenAI, and OpenRouter API keys, and GitHub and GitLab tokens.
+The entire attack chain plays out as follows -
+- The attacker obtains a maintainer's GitHub credentials, most likely a leaked personal access token (PAT) from infostealer logs or credential dumps.
+- The repository's workflow files are scanned for secrets as part of a reconnaissance step.
+- A workflow masquerading as a security audit is injected into the default branch under the victim's own identity.
+- The embedded payload extracts the data and sends it to an attacker-controlled endpoint via curl.
+"It triggers on workflow_dispatch and an unfiltered push (any branch, any tag), checks out with fetch-depth: 0, and runs a single 'Audit' step that does four things," StepSecurity added. This includes -
+- Append the repository's named secrets found during reconnaissance
+- Scan the working tree for 13 credential patterns associated with AWS keys, AI services, source control services, and SaaS and cloud API keys
+- Check the entire git history for the same 13 patterns to harvest credentials that may have inadvertently committed to the repository and subsequently deleted
+- Pair AWS access key IDs with their matching secret access keys
+Earlier this week, GitGuardian reported that the GhostAction campaign pushed the malicious workflow to 772 public repositories belonging to 373 GitHub users and organizations between August 31 and September 30, 2026.
+The injected workflows target 2,577 secrets, including SSH private keys, Azure credentials, DockerHub and GHCR container registry credentials, database credentials, AWS access keys, FTP credentials, Google Cloud and Firebase credentials, GitHub tokens, Telegram, Slack, and Discord bot tokens, and keys associated with Cloudflare, npm, PyPI, and AI providers.
+In at least one case observed on August 30, 2026, the threat actors altered the "kuafuai/DevOpsGPT" repository to embed an XMRig cryptocurrency miner in the project's Docker image. As of writing, no malicious package releases have been published using compromised publishing credentials.
+Developers are advised to check their repositories for either of the two GitHub workflows since August 31, 2026, and assume compromise, if present. It's recommended to revoke the compromised GitHub credential, rotate credentials, delete the malicious workflow from all branches, and check forks of the infected repositories.
+---
+[TITLE] Github Migrates Copilot Runtime to Rust with AI-Assisted Rewrite
+[TITLE_KO] Github, AI 지원 재작성으로 Copilot 런타임을 Rust로 마이그레이션
+[LINK] https://www.infoq.com/news/2026/10/github-copilot-rust-migration/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-09 23:29 KST
+[SOURCE] InfoQ
+[TOPIC] 개발
+[SCORE] 8
+[REASON] GitHub Copilot 런타임, AI 지원으로 Rust로 마이그레이션
+[BODY]
+GitHub has migrated the runtime behind GitHub Copilot CLI, the Copilot app, and Copilot SDK from TypeScript and Node.js to Rust, replacing more than 800,000 lines of production code through an AI-assisted rewrite. The migration took approximately 14.5 weeks and was delivered through 128 pull requests while GitHub continued releasing the runtime. GitHub reports that a measured client startup, session creation, and single-turn scenario fell from 5.25 seconds with the previous runtime to 292 milliseconds when the Rust runtime was embedded in process.
+The migration also changed how applications integrate with the runtime. The previous implementation required Node.js and V8 and communicated with host applications across a process boundary. GitHub says this added approximately 100 MB of working set per client. The Rust implementation can instead be embedded directly into host applications through a C ABI, while an out-of-process mode remains available. The Copilot SDK currently supports TypeScript, Python, Go, .NET, Java, and Rust.
+GitHub’s before and after Copilot runtime architecture (Source: GitHub Blog Post)
+GitHub used an incremental replacement strategy rather than a parallel rewrite followed by a single cutover. Individual TypeScript components were replaced with Rust implementations, with temporary N API interoperability connecting the two. This allowed existing end-to-end tests to exercise the new code while other components remained in TypeScript. GitHub shipped 135 releases during the migration, including 35 stable and 100 prerelease versions.
+The compatibility layer reached 2,019 internal N API exports and 3,356 TypeScript call sites before being removed. By August 21, the runtime contained 832,378 lines of production Rust and 468,689 lines of Rust unit tests. AI agents generated most of the implementation, while compilation, testing, and human review helped identify regressions involving behavior, state and lifetime handling, library semantics, and lost optimizations. GitHub recorded 4,478 direct cargo check runs, with 87.1% completing cleanly.
+Community responses also focused on the verification challenges of AI-assisted migrations and pointed to cancellation, retries, and backpressure as examples requiring validation beyond compilation. PLBjt wrote that
+The interesting part here is less that Copilot wrote Rust and more whether the migration kept the runtime’s behavior stable at the boundaries.
+Francesco Pira, XR Tech Lead at Leonardo, highlighted
+Tests small reviewable changes, compatibility layers, and human engineering judgment as important elements of the approach.
+Côme Redon, Senior Solution Engineer at Microsoft, pointed out
+The challenge of identifying undocumented behavioral contracts in legacy systems.
+GitHub’s migration timeline showing the incremental pull requests and releases. (Source: GitHub Blog Post)
+The resulting architecture provides a native Rust runtime that can be embedded directly into host applications or operated separately, while the Copilot SDK maintains language-specific interfaces across its supported languages. The migration combined AI-generated implementation with incremental integration, temporary compatibility boundaries, automated validation, and human review while the production runtime continued to evolve.
+---
+[TITLE] Hackers abuse Google Ads, Bing redirects to push Claude ClickFix attacks
+[TITLE_KO] 해커, Google Ads, Bing 리디렉션 악용하여 Claude ClickFix 공격 유도
+[LINK] https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-bing-redirects-to-push-claude-clickfix-attacks/
+[PUBLISHED] 2026-10-10 05:31 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 8
+[REASON] Google Ads 및 Bing 리디렉션 악용 공격
+---
+[TITLE] P7 DarkSword iOS Exploit Kit Adds Crypto Wallet Data Theft and Remote Commands
+[TITLE_KO] P7 DarkSword iOS 익스플로잇 키트, 암호화폐 지갑 데이터 탈취 및 원격 명령 추가
+[LINK] https://thehackernews.com/2026/10/p7-darksword-ios-exploit-kit-adds.html
+[PUBLISHED] 2026-10-10 01:29 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 8
+[REASON] P7 DarkSword iOS 익스플로잇 키트 기능 추가
+---
+[TITLE] High-severity NVIDIA vulnerability lets unauthenticated attackers crash GPU monitoring
+[TITLE_KO] NVIDIA 고위험 취약점, 비인증 공격자가 GPU 모니터링 충돌 유발
+[LINK] https://www.helpnetsecurity.com/2026/10/09/nvidia-dcgm-exporter-vulnerability-cve-2026-47483/
+[PUBLISHED] 2026-10-09 21:26 KST
+[SOURCE] Help Net Security
+[TOPIC] 보안, 신기술
+[SCORE] 8
+[REASON] NVIDIA GPU 모니터링 취약점 발견 및 패치
+---
+[TITLE] Flax Typhoon Exploits Five Flaws as CISA Sets October 11 Deadline for Federal Agencies
+[TITLE_KO] Flax Typhoon, 5개 취약점 악용. CISA, 연방 기관에 10월 11일 마감일 설정
+[LINK] https://thehackernews.com/2026/10/flax-typhoon-exploits-five-flaws-as.html
+[PUBLISHED] 2026-10-09 21:21 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 8
+[REASON] Flax Typhoon, 5개 취약점 악용 및 CISA 마감일 설정
+---
+[TITLE] FBI disrupts Flax Typhoon hacking tools used in global cyberattacks
+[TITLE_KO] FBI, Flax Typhoon 해킹 도구 차단
+[LINK] https://www.helpnetsecurity.com/2026/10/09/fbi-flax-typhoon-microscan-fishhub-domains/
+[PUBLISHED] 2026-10-09 18:44 KST
+[SOURCE] Help Net Security
+[TOPIC] 보안
+[SCORE] 8
+[REASON] FBI, 중국 연계 해킹 도구 Flax Typhoon 차단
+---
+[TITLE] Thousands of wind and solar park systems sit exposed on the internet across Europe
+[TITLE_KO] 수천 개의 풍력 및 태양광 발전 시스템이 유럽 전역에서 인터넷에 노출
+[LINK] https://www.helpnetsecurity.com/2026/10/09/eu-renewable-energy-cybersecurity/
+[PUBLISHED] 2026-10-09 14:30 KST
+[SOURCE] Help Net Security
+[TOPIC] 보안
+[SCORE] 8
+[REASON] 유럽 풍력 및 태양광 발전 시스템 인터넷 노출
+---
+[TITLE] Jev를 GTM에 활용하기 - 고객 분류부터 워크플로 자동화까지
+[LINK] https://news.hada.io/topic?id=35063
+[PUBLISHED] 2026-10-09 21:23 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 모델
+[SCORE] 8
+[REASON] Jev 모델의 GTM 활용법 소개
+---
+[TITLE] Deno is joining Cloudflare
+[TITLE_KO] Deno, Cloudflare에 합류
+[LINK] https://simonwillison.net/2026/Oct/9/deno-is-joining-cloudflare/
+[PUBLISHED] 2026-10-10 07:48 KST
+[SOURCE] Simon Willison
+[TOPIC] 개발, 모델, 보안
+[SCORE] 8
+[REASON] Deno 팀의 Cloudflare 합류 소식
+---
+[TITLE] Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet instead
+[TITLE_KO] 앤트로픽, AI 에이전트 통제 불가로 내부 평가 인터넷 접근 차단
+[LINK] https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/
+[PUBLISHED] 2026-10-10 09:18 KST
+[SOURCE] TechCrunch
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] 앤트로픽, AI 에이전트 통제 문제로 인터넷 접근 차단
+---
+[TITLE] 앤트로픽 '클로드 사이언스', 인류 최초 자외선 전체 하늘 지도 완성
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216106
+[PUBLISHED] 2026-10-09 21:36 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트
+[SCORE] 7
+[REASON] 앤트로픽 클로드 사이언스, 자외선 전천 지도 완성
+---
+[TITLE] Anthropic’s AI gave Philadelphia police a fake tip about an unsolved homicide
+[TITLE_KO] 앤트로픽 AI, 필라델피아 경찰에 미해결 살인 사건 허위 제보
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1009090/anthropic-fake-homicide-information-philadelphia-pd-tip
+[PUBLISHED] 2026-10-10 06:15 KST
+[SOURCE] The Verge
+[TOPIC] 모델
+[SCORE] 7
+[REASON] 앤트로픽 AI 모델, 필라델피아 경찰에 허위 제보
+---
+[TITLE] Sophos cuts threat investigation time by 96% with OpenAI Daybreak
+[TITLE_KO] Sophos, OpenAI Daybreak으로 위협 조사 시간 96% 단축
+[LINK] https://openai.com/index/sophos
+[PUBLISHED] 2026-10-09 16:00 KST
+[SOURCE] OpenAI
+[TOPIC] 일반
+[SCORE] 7
+[REASON] Sophos, OpenAI Daybreak으로 위협 조사 시간 단축
+---
+[TITLE] Android Bench 2 Adds Support for Long-Horizon Tasks, Agentic Evaluation, and Continuous Scoring
+[TITLE_KO] Android Bench 2, 장기 작업, 에이전트 평가, 연속 점수 지원 추가
+[LINK] https://www.infoq.com/news/2026/10/android-bench-2/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-10 02:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 7
+[REASON] 안드로이드 AI 에이전트 벤치마크 업데이트
+---
+[TITLE] 앤트로픽, ‘클로드 대시보드·모션’ 공개…"기업 데이터 분석·영상 제작"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216095
+[PUBLISHED] 2026-10-09 18:00 KST
+[SOURCE] AI타임스
+[TOPIC] 개발
+[SCORE] 7
+[REASON] 앤트로픽, 클로드 대시보드 및 모션 공개
+---
+[TITLE] Microsoft: Outdated Windows devices will stop receiving security updates
+[TITLE_KO] Microsoft: 오래된 Windows 장치, 보안 업데이트 중단 예정
+[LINK] https://www.bleepingcomputer.com/news/microsoft/microsoft-outdated-windows-devices-will-lose-security-protection-next-year/
+[PUBLISHED] 2026-10-09 19:12 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 오래된 Windows 장치 보안 업데이트 중단
+---
+[TITLE] Quoting The New York Times
+[TITLE_KO] 뉴욕 타임즈 인용
+[LINK] https://simonwillison.net/2026/Oct/10/the-new-york-times/
+[PUBLISHED] 2026-10-10 11:04 KST
+[SOURCE] Simon Willison
+[TOPIC] 에이전트
+[SCORE] 7
+[REASON] 앤트로픽 AI 에이전트의 비자 신청 시도
+---
+[TITLE] How Postman runs Agent Mode for 40 million developers on Amazon Bedrock
+[TITLE_KO] Postman이 Amazon Bedrock에서 4천만 개발자를 위해 에이전트 모드를 운영하는 방법
+[LINK] https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock/
+[PUBLISHED] 2026-10-10 00:35 KST
+[SOURCE] AWS Machine Learning
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] Postman의 대규모 AI 에이전트 운영 아키텍처
+---
+[TITLE] big-arrow-on-the-screen - AI 에이전트가 Mac 화면에서 클릭할 곳을 가리키는 도구
+[LINK] https://news.hada.io/topic?id=35071
+[PUBLISHED] 2026-10-09 22:41 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] AI 에이전트의 Mac 화면 조작 보조 도구
+---
+[TITLE] vgpu - 브라우저와 Node.js에서 같은 코드로 쓰는 경량 WebGPU 라이브러리
+[LINK] https://news.hada.io/topic?id=35088
+[PUBLISHED] 2026-10-10 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 신기술
+[SCORE] 7
+[REASON] 경량 WebGPU 라이브러리 출시
+---
+[LINK] https://www.infoworld.com/article/4233075/as-ai-agents-grow-vendors-carve-out-decision-making-as-a-separate-model-layer.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010111002
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216109
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010121050
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35104
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-september-2026/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.infoworld.com/article/4233214/openai-reports-three-new-incidents-of-misalignment-2.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/how-to-keep-ai-agents-within-their-permissions/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://simonwillison.net/2026/Oct/9/built-using-my-voice/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/oct/09/ai-climate-change-liability-lawsuits
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.infoworld.com/article/4232819/neoclouds-and-the-enterprises-that-need-them.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.securityweek.com/anthropic-fast-tracks-ai-bug-reports-to-oss-maintainers-taps-11-firms-for-ot-security/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216101
+[STATUS] SKIP (중복)
+---
+[LINK] https://thehackernews.com/2026/10/fbi-arrests-another-shinyhunters.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://siliconangle.com/2026/10/09/identity-security-ai-agents-18-insights-from-navigate-2026-sailpointnavigate/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.securityweek.com/in-other-news-ai-used-in-korean-bank-breaches-poem-guided-botnet-empire-admin-gets-40-years/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/10/the-ai-velocity-paradox-why-security-is.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42249
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.computerworld.com/article/1615305/11-steps-to-smarter-google-account-security.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/09/christiaan-beek-rapid7-bpfdoor-backdoor/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35086
+[STATUS] SKIP (제외)
+---
+[LINK] https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://the-decoder.com/anthropic-launches-a-free-ai-scanner-for-open-source-projects/
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=35070
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/09/product-showcase-simplelogin/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35056
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216100
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.securityweek.com/citrix-urges-immediate-patching-of-critical-netscaler-vulnerability/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.securityweek.com/google-pixel-10-exploits-earned-hackers-560000-at-pwn2own/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010121815
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216111
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010100157
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208812
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010070839
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261009223603
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010065253
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.computerworld.com/article/4233223/ransomware-consultant-said-he-would-decrypt-data-is-accused-of-paying-ransoms-instead-2.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/10/tp-link-sued-by-four-more-us-states.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216105
+[STATUS] SKIP (중복)
+---
+[LINK] https://the-decoder.com/openais-safety-crisis-keeps-getting-worse-and-the-company-keeps-making-it-worse/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1008604/openai-defends-decision-fire-safety-researchers
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.computerworld.com/article/4233204/is-apple-about-to-stitch-up-the-smart-home.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208811
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208810
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208809
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thenewstack.io/open-weight-open-source-ai/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010080359
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010080353
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://siliconangle.com/2026/10/09/ibm-connects-enterprise-ai-orchestration-production-readiness-ibmaioperatingmodel/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261009162953
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171696
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/unpatched-ahsaycbs-flaws-exploited-to-deploy-webshells-mine-crypto/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/fbi-arrests-another-suspected-shinyhunters-hacker-after-agency-breach/
+[STATUS] SKIP (중복)
+---
+[LINK] https://techcrunch.com/video/amazon-and-others-are-done-keeping-data-center-deals-secret-is-it-enough-to-build-trust/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://techcrunch.com/podcast/amazon-drops-data-center-ndas-and-ai-agents-want-your-credit-card/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/germany-arrests-alleged-core-qilin-ransomware-member-after-extradition/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://simonwillison.net/2026/Oct/9/matthew-green/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35073
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theverge.com/tech/1008254/instinct-agent-ai-hands-on-muse-dots
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35066
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.securityweek.com/google-domains-impacted-by-recent-cctld-domain-hijacks/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.infoq.com/presentations/netflix-observability-aiops-ontology-scale/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.securityweek.com/unpatched-ahsaycbs-vulnerabilities-exploited-in-the-wild/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.securityweek.com/pre-baked-firmware-malware-hits-budget-android-devices-in-150-countries/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://the-decoder.com/anthropics-claude-science-creates-the-first-complete-ultraviolet-map-of-the-sky/
+[STATUS] SKIP (중복)
+---
+[LINK] https://thehackernews.com/2026/10/gobalance-flaw-lets-attackers-hijack.html
+[STATUS] SKIP (매체 상한)
+---
+[LINK] https://www.securityweek.com/us-disrupts-chinese-state-sponsored-hacking-tools/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/citrix-warns-admins-to-patch-new-netscaler-rce-flaw-immediately/
+[STATUS] SKIP (중복)
+---
+[LINK] https://thehackernews.com/2026/10/three-teams-demonstrate-remote-hacks-of.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208808
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208807
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/09/october-2026-patch-tuesday-forecast/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/hackers-earn-1262000-for-98-zero-days-at-pwn2own-ireland/
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171741
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675322
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35106
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010110028
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35087
+[STATUS] SKIP (제외)
+---
+[LINK] https://arstechnica.com/gadgets/2026/10/ukraines-drones-knock-out-ai-data-center-belonging-to-russias-google/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010065911
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://techcrunch.com/2026/10/09/the-maker-of-non-text-ai-model-jev-valued-at-7-5b-just-weeks-after-launch/
+[STATUS] SKIP (중복)
+---
+[LINK] https://siliconangle.com/2026/10/09/jev-creator-typesafe-closes-870m-round-at-7-5b-valuation/
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010051003
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/10/09/an-anthropic-ai-model-sent-a-false-homicide-tip-to-philadelphia-police/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.computerworld.com/article/4233232/bidding-war-over-key-component-could-eliminate-third-hard-disk-maker-2.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://techcrunch.com/2026/10/09/a16zs-olivia-moore-on-the-state-of-consumer-ai/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/10/09/openai-revenue-falls-short-models-play-hopscotch-and-trump-cracks-down-on-tech-green-cards/
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261009225448
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=35062
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.computerworld.com/article/4232971/google-makes-its-most-powerful-ai-models-pay-for-play-as-ai-services-struggle-to-turn-users-into-customers.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216099
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35053
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/oct/09/gordon-brown-british-households-5000-richer-innovation
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010091103
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35094
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171699
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.securityweek.com/openai-fires-3-safety-researchers-in-dispute-over-ai-risks/
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171695
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010051013
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/world/2026/oct/09/flock-job-cuts
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://the-decoder.com/openai-revenue-keeps-surging-as-company-seeks-30-billion-in-fresh-capital/
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/10/09/danu-robotics-fight-to-build-a-better-recycling-robot/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://huggingface.co/blog/allenai/impactful-scheduling
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261009000068
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.wired.com/story/even-law-and-order-is-terrified-of-ai/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35057
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42247
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42245
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675377
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155962
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675359
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171744
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=35101
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216112
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35099
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35096
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216114
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35089
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.latent.space/p/biohub-deepmind
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010081310
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171490
+[STATUS] SKIP (제외)
+---
+[LINK] https://siliconangle.com/2026/10/09/control-plane-agentic-ai-seismora-thecube-neo4jdatatoknowledge/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.wired.com/story/book-publishers-are-quietly-using-more-ai-staff-are-revolting/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1008726/openai-mathematics-solutions-chaos
+[STATUS] SKIP (제외)
+---
+[LINK] https://arstechnica.com/science/2026/10/winning-nikon-small-world-in-motion-video-disqualified-for-ai-use/
+[STATUS] SKIP (제외)
+---
+[LINK] https://siliconangle.com/2026/10/09/mckinsey-connects-enterprise-data-using-knowledge-graph-ai-neo4jdatatoknowledge/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1008930/nikon-small-world-in-motion-winner-ai
+[STATUS] SKIP (중복)
+---
+[LINK] https://techcrunch.com/2026/10/09/we-cant-help-treating-ai-like-its-human-but-should-we/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35078
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theguardian.com/film/2026/oct/09/ai-threat-britain-directors-ridley-scott-guy-ritchie
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/policy/1008677/trump-super-intelligence-ai-rebranding
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42250
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216103
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42248
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.technologyreview.com/2026/10/09/1145728/we-are-putting-too-much-faith-in-ai-to-say-no/
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/openai-uncovers-russian-and-iranian-influence-ops-that-planted-fake-stories-in-real-news-outlets/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/09/openai-forecast-revenue-gap
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171742
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010021003
+[STATUS] SKIP (사전 제외: 홍보)
+---
+[LINK] https://news.hada.io/topic?id=35064
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
