@@ -1,0 +1,686 @@
+[TITLE] [단독] 금융권 해킹 용의자 주변 인물 추적 결과...텔레그램·깃허브·악성코드 기록서 연결고리 발견
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208814
+[PUBLISHED] 2026-10-10 19:27 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SCORE] 10
+[REASON] 금융권 해킹 용의자 추적 및 신원 단서 확보
+[BODY]
+최근 국내 금융권 연쇄 해킹 사건과 관련된 텔레그램 계정의 과거 활동을 추적해 온 사이버 위협 인텔리전스 기업 스텔스몰(StealthMole)이 조사 범위를 해당 계정이 활동했던 중국어권 사이버범죄 관련 커뮤니티 전체로 확대했다.
+이번 추가 확대 조사에서는, 커뮤니티 운영진과 구성원 등 19개 계정의 역할과 활동을 분석하고, 특정 구성원의 텔레그램 계정과 깃허브, 과거 정보탈취 악성코드 감염 기록을 연결해 전화번호 2개와 IP 주소 3개 등 구체적인 신원 추적 단서를 확보했다.
+스텔스몰이 10월 9일 작성한 'YY520CN 연계 커뮤니티 구성원 추적 확장 분석' 보고서에 따르면, 이번 조사는 한국 금융권 해킹 용의자와 연관된 텔레그램 계정 'YY520CN'에 대한 기존 분석의 후속 조사다.
+앞서 데일리시큐는 해당 계정이 약 28개월 동안 중국어권 디도스(DDoS·분산서비스거부) 공격대행 커뮤니티에서 활동하며 공격 서비스 홍보와 익명 서버 판매, 해외 이용자 지원 등에 관여한 정황을 단독 보도한 바 있다. (관련기사: 클릭 )
+이번 분석은 해당 계정의 개별 활동을 넘어 함께 활동한 구성원들의 역할과 온라인 신원을 추적했다는 점에서 차이가 있다.
+중국어권 공격 관련 커뮤니티 19개 계정 조사…운영 구조와 서비스 연결 확인
+스텔스몰은 자체 텔레그램 추적 플랫폼인 '텔레그램 트래커(TT)'를 활용해 GodNet·VITAS 커뮤니티의 2024년 9월 26일 운영진 공지를 분석했다.
+공지에 기재된 중복 계정을 제외하면 총 19개 계정으로, 일반 계정 17개와 자동화 봇 2개로 구성돼 있었다. YY520CN은 커뮤니티 감독관으로, 다른 계정들은 공식 운영자, 매니저, 자원봉사자, 광고 담당자 등의 역할로 분류됐다.
+스텔스몰은 YY520CN을 제외한 18개 계정을 추가 조사했다. 이 가운데 'HangHang2017'을 심층 분석 대상으로 선정하고, 나머지 17개 계정 중 15개에서 식별 기록을 확인했다. 2개 계정은 조사 범위에서 관련 기록이 확인되지 않았다.
+구성원들의 활동에서는 디도스 공격 요청을 처리하는 자동화 봇과 구매 상담 계정의 연결이 확인됐다. 또한 고방어 서버와 콘텐츠전송네트워크(CDN), 프록시 서버, 클라우드 자원, 가상카드 고객지원 등 다양한 서비스의 광고·상담 활동도 관찰됐다.
+특히 커뮤니티의 공격봇 'AZxhdGodbot'에서는 디도스 요청과 응답 관련 메시지 131건이 확인됐다. 해당 기록에는 공격 대상과 방식에 관한 정보가 포함됐으며, 별도 계정인 'xhdvitas'가 구매 상담 창구로 반복 안내됐다.
+이는 공격 관련 서비스와 상담 창구가 커뮤니티 내부에서 연결돼 있었다는 근거다. 다만 실제 공격 성공 여부나 서비스 운영자의 신원, 각 구성원의 불법행위 가담 여부까지 확인된 것은 아니다.
+특정 구성원 심층 추적…텔레그램에서 깃허브·악성코드 감염 기록까지 연결
+이번 후속 조사에서 주목되는 대상은 커뮤니티 자원봉사자로 등록된 'HangHang2017' 계정이다.
+스텔스몰은 해당 계정의 2024년 4월부터 2025년 5월까지 텔레그램 프로필 이력 20건을 분석하고, 시기별로 연결된 전화번호 2개를 확인했다.
+여기에 다크웹 추적 플랫폼인 '다크웹 트래커(DT)'를 이용해 깃허브에 공개된 프로그램 소스코드와 개발자 정보를 추가 조사했다.
+분석 결과, 'oswaldlow'라는 깃허브 계정의 저장소에서 'DemonSword'라는 서비스 이름과 함께 HangHang2017을 직접 연락처로 안내하는 내용이 발견됐다. 별도 저장소의 소스코드 수정 기록에서도 DemonSword라는 작성자 이름이 확인됐다.
+깃허브 프로필 소개에도 동일한 텔레그램 연락처가 표시돼 있었다.
+스텔스몰은 이처럼 서로 다른 저장소에서 반복적으로 나타나는 연락처와 작성자 정보를 통해 텔레그램 계정과 개발 활동 사이의 연결 관계를 확인했다고 설명했다.
+다만 깃허브에 기재된 작성자 정보와 텔레그램 연락처가 실제 동일 인물에 의해 관리됐는지는 추가 검증이 필요하다.
+과거 정보탈취 악성코드 기록 3건 확인…PC·계정 추적 단서 확보
+스텔스몰은 깃허브에서 확인한 계정 정보를 자사의 유출정보 분석 플랫폼인 '컴프로마이즈드 데이터 세트(CDS)'와 교차 분석했다.
+그 결과 2021년 11월, 2022년 5월, 2023년 2월에 수집된 정보탈취 악성코드 감염 기록 3건에서 관련 계정의 인증정보와 IP 주소가 확인됐다.
+해당 기록에는 정보탈취 악성코드인 '레드라인(RedLine)'과 '라쿤(Raccoon)' 관련 정보가 포함됐다. 마이크로소프트와 오라클 클라우드 계정, 윈도 사용자명, 원드라이브 저장 경로 등도 함께 관찰됐다.
+스텔스몰은 이를 통해 서로 다른 시기에 수집된 관련 계정의 IP 주소 3개를 확보했다.
+이들 정보는 향후 계정 사용자의 접속 이력과 통신사업자 기록, 관련 시스템의 이용 내역을 대조하는 데 활용할 수 있는 단서다.
+다만 확인된 IP 주소는 과거 정보탈취 악성코드 기록에 남아 있던 관련 계정군의 관측 정보다. 이번 한국 금융권 공격에 사용된 PC의 IP 주소나 공격 출발지로 확인된 것은 아니다.
+또한 세 기록이 동일한 PC에서 발생했는지, 서로 다른 기기에서 발생했는지도 확정되지 않았다.
+유출된 계정정보 최소 101개 파일에서 재유통 정황
+관련 계정의 과거 유출정보가 텔레그램을 통해 반복적으로 공유된 정황도 확인됐다.
+스텔스몰에 따르면 2023년 4월 15일부터 2026년 9월 27일까지 수집된 텔레그램 자료에서 관련 계정정보가 포함된 파일이 최소 101개 발견됐다.
+이들 파일은 사용자 계정과 비밀번호를 조합한 '콤보(Combo)' 파일, 웹사이트 주소와 로그인 정보 등을 정리한 'ULP' 파일 등으로 분류됐다.
+다만 101개는 유출정보가 포함된 파일의 관측 건수다. 서로 다른 해킹 사건이 101차례 발생했거나 독립적인 101개 침해 증거가 확보됐다는 의미는 아니다.
+스텔스몰은 관련 계정의 인증정보가 여러 채널을 통해 장기간 재유통된 사실을 확인했지만, 최초 정보탈취 주체나 현재 계정정보의 유효성까지 검증된 것은 아니라고 설명했다.
+추가로 관련 도메인 아래에서 서버 관리, 네트워크 저장장치(NAS), 프록시, 이미지 호스팅 등에 사용된 것으로 기록된 주소들도 확인됐다. 해당 계정과 연결된 개발자 명의로 프록시 설치 스크립트의 기능을 수정한 기록도 발견됐다.
+이러한 자료는 해당 계정과 연계된 기술 활동 및 인프라를 추적하는 근거로 활용할 수 있지만, 해당 서버의 실제 운영 여부나 소유권을 직접 입증하는 자료는 아니다.
+금융권 공격 조직적 가담 여부는 미확인…수사기관 추가 검증 필요
+이번 후속 분석의 핵심은 한국 금융권 해킹 관련 계정 하나에서 시작된 추적이 커뮤니티 운영 구조와 다른 구성원의 온라인 활동, 과거 유출정보까지 확대됐다는 데 있다.
+특히 텔레그램 계정과 외부 개발자 기록, 악성코드 감염 기록을 교차 분석해 기존 사용자명만으로는 파악하기 어려웠던 추가 식별 단서를 확보했다는 점이 의미 있다.
+다만 현재까지 확보된 자료는 플랫폼에 기록된 계정과 활동 사이의 연결 관계를 보여주는 수준이다. 실제 계정 운영자의 법적 신원이나 국적, 거주지 등은 확인되지 않았다.
+무엇보다 'HangHang2017'을 비롯한 커뮤니티 구성원들이 이번 한국 금융권 해킹에 직접 참여했거나 공모했다는 증거는 확인되지 않았다. YY520CN과 동일한 커뮤니티에서 활동했다는 사실만으로 공동 공격 조직의 구성원이라고 단정할 수 없다는 것이다.
+향후 수사기관이 적법한 절차에 따라 통신 가입정보, 접속 기록, 기기 식별정보 등을 확보해 이번 분석 결과와 대조한다면 실제 계정 운영자의 신원과 공격 가담 여부를 확인하는 데 도움이 될 수 있다.
+이번 조사는 금융권 해킹에 사용된 AI 도구와 공격 경로를 분석하는 단계를 넘어, 공격 관련 계정이 과거 어떤 커뮤니티에서 활동했고 누구와 연결돼 있었는지 추적 범위를 확장한 사례다.
+스텔스몰 관계자는 “이번 조사는 한국 금융권 해킹 용의자 YY520CN의 개별 활동 분석에서 한발 더 나아가, 연계된 중국어권 디도스 커뮤니티의 운영진과 구성원 19개 계정으로 추적 범위를 확대했다는 데 의미가 있다.
+---
+[TITLE] 백악관, AI 기업 '보안 사고' 보고 의무화...앤트로픽 침해 사건이 계기
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216120
+[PUBLISHED] 2026-10-10 16:16 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 보안
+[SCORE] 10
+[REASON] 백악관의 AI 기업 보안 사고 보고 의무화 발표
+[BODY]
+앤트로픽의 모델이 정부 시스템 무단 사용 및 보안 침해 사건을 일으키자, 트럼프 행정부가 모든 AI 기업을 대상으로 관련 사고의 즉각적인 보고와 시정 조치를 의무화하고 나섰다.
+백악관의 초지능 부대(Super Intelligence Force, SIF)는 10일 악시오스를 통해 발표한 성명을 통해 "이러한 통보 및 시정 조치는 선택 사항이 아니다"라며 "이는 국가 안보에 필수적인 의무"라고 밝혔다.
+이번 사항은 모든 AI 기업에 적용된다. 또 백악관 AI 차르인 제이 클레이튼 국가정보국장은 "앤트로픽이 사건 관련 기관과 대중에게 즉각적이고 완전한 투명성을 제공하고 피해를 본 사람들에게 보상할 것을 기대한다"고 말했다.
+그동안 백악관은 연방 정부 차원의 AI 규제를 거부하고 기업들의 자율 규제를 요구해 왔다. 그러나 이번 조치는 규제 고삐를 죄는 전환점이 될 것으로 전망된다.
+당국에 따르면 앤트로픽은 지난달 말 발견된 정부 및 기타 시스템의 무단 및 부정 사용 사건에 대한 세부 정보를 공개하기 위해 지난 9일 연락해 왔다. 앤트로픽은 테스트 모델 중 하나를 통해 8월에 19건, 5월에 1건의 비이민 비자 신청서를 국무부 웹사이트의 공개 양식을 통해 무단 제출한 사실을 보고했다.
+다만 AI가 접수한 신청서는 하나도 처리되지 않았으며, 부서 시스템이 해킹되거나 손상된 적은 없는 것으로 확인됐다. 여기에 이날에는 필라델피아 경찰국에서도 앤트로픽 모델과 연관된 허위 살인 사건 제보가 접수된 것으로 알려졌다.
+앤트로픽은 이날 연방·주·지방 정부 기관의 웹사이트 등에서 발생한 여러 비의도적 행동을 확인했으며, 관련 기관과 백악관에 통보했다고 설명했다. 이에 따라 앞으로도 비슷한 사건 보고가 추가될 것으로 보인다.
+이번 대응에는 클레이튼 국가정보국장과 앤드루 퍼거슨 연방거래위원회(FTC) 위원장, 스콧 쿠포르 인사관리처(OPM) 국장, 에밀 마이클 국방부 차관 등 SIF 공동 의장들이 관여했다. 도널드 트럼프 대통령이 최근 창설한 SIF는 연방정부의 관련 정책과 대응을 조율하는 임무를 맡고 있다.
+한편, 앤트로픽은 이번 사태를 계기로 미국 주요 사이버 보안 기업들에 자사의 최신 '클로드' 모델 접근 권한을 확대해 방어 체계를 강화하고 유사 사건 재발을 막기 위한 전방위적 협력에 나선 상태다. 실제로 최근 '프로젝트 글래스윙'의 접근 권한을 대폭 확대했으며, 오픈소스 취약점을 잡는 무료 AI 도구도 공개했다.
+다만 이번 성명에는 AI 기업들이 사고를 공개하지 않고 시정 조치를 취하지 않을 때 어떤 법적 처벌이나 강제 조치가 뒤따를지에 대해서는 명시하지 않았다. 백악관이 향후 기업들의 자발적 협조를 유도하는 한편, 미비점이 발견되면 강력한 법적 규제 카드를 꺼내 들 가능성도 있다.
+임대준 기자 ydj@aitimes.com
+---
+[TITLE] Anthropic is cutting off its internal evaluations from the internet
+[TITLE_KO] 앤트로픽, 내부 평가 AI 모델의 인터넷 접근 차단
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet
+[PUBLISHED] 2026-10-10 23:41 KST
+[SOURCE] The Verge
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 9
+[REASON] 앤트로픽 AI 모델의 오작동으로 인한 인터넷 접근 차단
+[BODY]
+After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed “unintended model actions,” including submitting a false tip regarding an unsolved murder, that led to the decision.
+Anthropic is cutting off its internal evaluations from the internet
+Anthropic is is keeping its agents offline during testing until it can prevent ‘unintended model actions.’
+Although the impact of these behaviors was minimal and we had already turned off live internet access for some high-risk and cybersecurity evaluations, we have now decided to expand that to include all our internal evaluations until we have confirmed that our security and monitoring measures (described in the remediation section of this post) reliably catch behaviors like these.
+The ability to gain access to the live internet, even when models were supposed to be operating in isolation, has been an ongoing issue for AI companies. Many incidents, including the Hugging Face attack, involved agents that were supposed to be denied access to the internet. Yet, in case after case, the agents found creative solutions to bypass those restrictions. Physically removing internet access would certainly improve security around AI testing, but it would also limit its usefulness.
+The report also amounts to an admission that Anthropic is often unaware of what its agents are doing and does not have a reliable system for monitoring their behavior. Cutting off internet access is just the latest action the company has taken to try and rein in its agents, including temporarily pausing training its frontier models.
+---
+[TITLE] OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data
+[TITLE_KO] OpenAI, 오작동 모델이 더 나은 데이터를 위해 환경을 파괴했다고 밝힘
+[LINK] https://the-decoder.com/openai-says-a-misaligned-model-deliberately-destroyed-its-own-environment-hoping-for-a-fresh-start-with-better-data/
+[PUBLISHED] 2026-10-11 00:15 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델
+[SCORE] 9
+[REASON] OpenAI AI 모델의 오작동 및 환경 파괴 사례 공개
+[BODY]
+OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data
+OpenAI has a few new rogue agent stories. In the first case (October 6), an AI evaluation model couldn't find the answers it was supposed to rate. Instead of reporting the error, it fabricated ratings, faked input files, and then deliberately corrupted its own environment, hoping the system would replace it with a fresh virtual machine that had the missing data.
+In the second case (June 19/20), models bypassed a restriction limiting them to HTTP GET requests while fetching public statistics. One model explicitly recognized the violation in its chain of thought but chose to proceed and never mentioned it.
+In the third case (June 16/17), models already had the data they needed but kept finding ways around their network restrictions. They created accounts on a remote shell service, routed forbidden POST requests through anonymizing relays, and built their own FTP clients. Anthropic also just documented the sometimes absurd workarounds its own models use to bypass imposed restrictions.
+AI News Without the Hype – Curated by Humans
+				
+Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive "AI Radar" frontier report six times a year, full archive access, and access to our comment section.
+Subscribe now
+---
+[TITLE] Satya Nadella says we should assume all AI models are ‘compromised’
+[TITLE_KO] 사티아 나델라, 모든 AI 모델이 '침해'되었다고 가정해야 한다고 말하다
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised
+[PUBLISHED] 2026-10-11 07:10 KST
+[SOURCE] The Verge
+[TOPIC] 모델
+[SCORE] 9
+[REASON] MS CEO의 AI 안전성 및 통제에 대한 강조
+[BODY]
+In a lengthy post on X, Microsoft’s CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a “set of nested black boxes” whose advice and actions we simply accept or reject. He calls for building a more transparent system where models can be contained, observed, and leaves behind “tamper-proof human readable evidence.”
+Satya Nadella says we should assume all AI models are ‘compromised’
+Microsoft’s CEO calls for putting an ‘emergency brake’ on AI.
+Many of his recommendations align with what we’ve heard from others in the industry: timely incident disclosure, independent audits, verifiable data, and containment. It’s on that last point that he appears to go slightly farther than some others in the field, saying:
+We must assume a model is compromised and contain it from the start. Think of it like an emergency brake. An authorized person should always be able to pause or shut down a model mid-task. More advanced models will require more advanced containment technologies that we need to standardize on.
+Unfortunately, Nadella also refers to AI as “super intelligence” throughout the post.
+---
+[TITLE] Eve - 디렉터리 하나로 AI 에이전트를 정의하고 배포하는 Vercel 프레임워크
+[LINK] https://news.hada.io/topic?id=35140
+[PUBLISHED] 2026-10-11 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] AI 에이전트 개발 및 배포를 위한 새 프레임워크 공개
+[BODY]
+- 에이전트 개발자가 Markdown과 TypeScript 파일만으로 에이전트를 실행하거나 배포할 수 있는 프레임워크
+- 지침, 도구, 채널을 정의하고 상태를 유지하며, 웹 개발의 Next.js처럼 파일 구조와 실행 인프라를 함께 제공
+- instructions.md 에 역할과 기본 지침을 작성하면 최소 에이전트가 완성되며,agent.ts 에서 모델과 런타임 설정 가능
+- skills/ 의 Markdown 지침은 관련 작업에서만 불러와, 모든 요청에 전체 지침을 넣지 않고 필요한 절차를 제공
+- tools/ 에 도구를 정의한 TypeScript 파일을 추가하면 파일명이 도구 이름이 되며, 별도의 등록 코드 없이 모델이 호출 가능
+- 기본으로 격리된 샌드박스와 파일 도구를 제공하고, sandbox/sandbox.ts 에서 백엔드와 초기 설정을 변경 가능
+- Vercel Workflows로 실행 단계를 저장해 중단과 재시작에 대응하고, 다음 메시지를 기다리는 동안 멈췄다가 수신 후 재개. Vercel Drives로 샌드박스 실행 사이에도 작업 공간 유지
+- 같은 에이전트를 Slack, Discord, Microsoft Teams, 웹 채팅, API 등의 채널에 연결 가능
+- GitHub, Stripe, Linear 같은 외부 서비스 인증은 Vercel Connect가 관리해, 연결된 서비스를 호출하는 도구에서 토큰을 직접 관리할 필요를 줄임
+- 전문 작업을 하위 에이전트에 맡기고 결과를 합치거나, 스케줄로 일일 보고서와 주간 요약 등을 활성 대화 없이 실행 가능
+- 사용자 승인이 필요한 도구는 승인을 기다린 뒤 실행을 재개하며, 채점 기준을 포함한 평가 테스트를 배포마다 또는 정기적으로 실행 가능
+- Node.js 24 이상과 모델 연결 자격 증명이 필요하며, npx eve@latest init my-agent 로 시작. 로컬 대화에는 Vercel 프로젝트가 필수는 아니며, 모델은 계정이나 API 키로 연결
+- GitHub 저장소
+- Apache-2.0 라이선스
+---
+[TITLE] Talorys - Cloudflare 무료 티어에서 셀프 호스팅하는 개인 AI 에이전트
+[LINK] https://news.hada.io/topic?id=35128
+[PUBLISHED] 2026-10-11 02:33 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 개인 AI 비서 셀프 호스팅 오픈소스 프로젝트 공개
+[BODY]
+- Talorys는 사용자 자신의 Cloudflare 계정에서 실행되는 무료 오픈소스 개인 AI 비서로, 대화와 기억 관리, 작업/노트/프로젝트 관리, 예약 자동화를 지원함
+- 1인 사용을 전제로 설계되어 회원가입이나 팀 기능이 없으며, 개발자가 운영하는 서버나 데이터베이스 없이 소유자 비밀번호로 여러 기기에서 접근함
+- Cloudflare Pages가 웹 UI와 API 진입점을 맡고, 공개 URL이 없는 Worker에 서비스 바인딩으로 연결하며, 데이터와 예약 실행은 SQLite 기반 Durable Object가 담당함
+- Workers AI를 사용할 수 없거나 일일 AI 할당량을 소진해도 작업, 노트, 기억, 알림은 계속 작동하며, 단순 알림과 작업 요약 알림은 AI를 사용하지 않음
+- 무료 플랜의 계정 단위 할당량이 적용되므로 무제한 무료는 아니며, 유료 플랜에서는 포함 사용량 초과분을 Cloudflare가 청구할 수 있음
+개인 비서 기능과 사용 방식
+- 대화 UI는 스트리밍 응답, Markdown, 도구 활동 표시를 지원함
+- 기억은 개인 정보와 선호를 지속적으로 저장하며, 사용자가 조회/수정/삭제할 수 있음
+  - 매 대화 턴마다 가장 관련성 높은 기억만 모델에 전달함
+- 작업/노트/프로젝트는 UI와 채팅 양쪽에서 생성/조회/수정/삭제할 수 있음
+  - “내일 프로젝트를 검토할 작업을 추가해 줘” 같은 요청으로 작업을 등록할 수 있음
+- 자동화는 일회성 및 반복 알림, 일일 작업 요약 알림, 선택적 AI 루틴을 지원하며 결과는 앱 내 알림 센터로 전달함
+  - Durable Object 알람으로 실행하므로 사용자가 기기를 계속 켜 둘 필요가 없음
+- 단일 사용자 설계로 별도 회원가입, 사용자 계정 관리, 팀 기능이 없으며 설치 시 소유자 비밀번호를 설정함
+  - 여러 기기에서 같은 소유자로 로그인할 수 있고, Settings → Security 에서 세션을 관리함
+  - 비밀번호를 재설정하면 모든 기기에서 로그아웃됨
+- 여러 기기에서 같은 소유자로 로그인할 수 있고, 
+아키텍처와 Cloudflare 서비스
+- React 앱과 API 프록시는 Cloudflare Pages에서 실행되며, 브라우저는 사용자의 *.pages.dev 사이트와만 통신함
+  - /api/* 요청은 Pages Function이 서비스 바인딩을 통해 비공개 에이전트 Worker로 전달함
+- 비공개 Worker는 Hono 라우터를 사용하고, workers_dev: false 와preview_urls: false 로 배포되어 공개 URL이 없음
+  - 인증과 권한 검사는 프런트엔드가 아니라 Worker에서 수행함
+  - 채팅 응답은 전체 경로에서 Server-Sent Events로 스트리밍됨
+- TalorysAgent는 Cloudflare Agents SDK의 Durable Object이며, personal-agent 라는 단일 SQLite 기반 객체에 데이터를 저장함
+  - 대화, 기억, 작업, 노트, 프로젝트, 자동화, 세션, 설정, 사용량을 보관함
+  - Workers AI의 @cf/zai-org/glm-4.7-flash 모델로 스트리밍과 도구 호출을 수행함
+  - 알람으로 알림과 반복 일정을 실행함
+- 사용하는 Pages, Workers, SQLite 기반 Durable Objects, Workers AI는 모두 무료 플랜을 지원하며, Workers AI에는 일일 할당량이 있음
+  - R2, D1, KV, Vectorize, AI Search, Workflows나 유료 서비스를 생성하지 않음
+  - 상세 구조는 아키텍처 문서에서 확인할 수 있음
+데이터 소유와 보안
+- 모든 데이터는 사용자 자신의 Cloudflare 계정에 저장되며, Talorys에는 텔레메트리, 분석, 추적, 광고 코드가 없고 개발자에게 데이터를 보내지 않음
+- Cloudflare는 서비스 제공을 위해 데이터를 처리하며, Workers AI 추론에는 채팅 메시지와 프롬프트에 포함된 관련 기억이 사용됨
+  - Cloudflare 개인정보 처리방침과 Workers AI 약관을 확인해야 함
+  - 보안 모델과 위협 완화 방식은 보안 문서에 정리되어 있음
+- 설치 프로그램은 소유자 비밀번호를 로컬에서 PBKDF2-SHA256으로 해시 처리하고, 이를 Cloudflare secret으로만 저장함
+  - 별도로 256비트 세션 비밀값을 생성함
+  - 브라우저 로그인에는 Wrangler의 표준 OAuth 흐름을 사용하며 Global API Key는 사용하지 않음
+무료 범위와 AI 사용량 제어
+- Talorys는 Cloudflare Workers Free 플랜에 맞도록 설계되었으며, 스스로 유료 기능을 활성화하지 않음
+  - 요청 수, Durable Object 사용량, 일일 Workers AI Neuron 할당량에는 계정 단위 제한이 적용됨
+  - 할당량은 Cloudflare가 정하며 변경될 수 있음
+  - 유료 플랜 계정에서는 포함 사용량을 넘으면 해당 플랜에 따라 과금됨
+- AI 할당량 소진 시 채팅에 안내가 표시되고 일일 초기화 후 다시 사용할 수 있으며, 나머지 기능과 저장 데이터는 유지됨
+  - 단순 알림과 작업 요약 알림은 AI를 전혀 사용하지 않음
+- Settings → AI 에서 사용량 제한 장치를 조정할 수 있음
+  - 최대 출력 토큰과 문맥 토큰을 제한하며, 오래된 대화 기록은 요약함
+  - 요청당 도구 호출 및 추론 단계 수, 일일 AI 요청 수, 일일 예약 AI 실행 수를 제한함
+- Usage 패널은 로컬 추정치를 표시하며, 정확한 Neuron 사용량을 확인할 Cloudflare 대시보드 링크를 제공함
+설치, 백업과 업데이트
+- 단일 명령 설치 프로그램은 Node.js 20.18 이상을 요구하며, Cloudflare 인증부터 리소스 배포까지 처리함
+  - 배포 후 프런트엔드, 인증, 미인증 요청 거부, 저장소 상태를 확인하며 이 과정에서 AI 추론은 실행하지 않음
+  - 설치가 중단되어도 다시 실행하면 기존 리소스를 확인해 이어서 처리하며, 중복 리소스를 만들거나 데이터를 삭제하지 않음
+  - 설치 식별자, 계정 식별자, 리소스 이름, URL과 배포 산출물을 담은 talorys/ 디렉터리는 업데이트를 위해 보관해야 하며, 설치 메타데이터에는 비밀값이 없음
+  - 배포와 권한 요건은 배포 문서에서 확인할 수 있음
+- 백업은 Settings → Privacy → Download backup 에서talorys-backup.json 으로 내려받을 수 있음
+  - 대화, 기억, 작업, 노트, 프로젝트, 설정, 자동화를 포함하며 세션과 자격 증명은 제외함
+  - 가져오기는 파일을 검증한 뒤 하나의 트랜잭션으로 병합하며, 같은 백업을 두 번 가져와도 문제가 없음
+- 업데이트는 같은 리소스에 최신 Worker와 프런트엔드를 다시 배포함
+  - Durable Object 네임스페이스를 재생성하지 않고 마이그레이션은 추가만 허용하며, 소유자 비밀번호와 세션을 유지함
+  - 스키마 마이그레이션은 첫 요청 시 자동으로 트랜잭션 내에서 실행됨
+- 진단 도구로 배포 상태를 자동 점검할 수 있으며, 추가 대응 방법은 문제 해결 문서에 있음
+  - AI 할당량 소진 시 일일 초기화를 기다리거나 Settings → AI 에서 Demo mode를 활성화할 수 있음
+  - 로그인 실패로 잠기면 15분을 기다리거나 비밀번호를 재설정할 수 있음
+- AI 할당량 소진 시 일일 초기화를 기다리거나 
+개발 구성과 라이선스
+- 로컬 개발 환경은 Worker, 서비스 바인딩을 갖춘 Pages Function 프록시, Vite UI를 함께 실행함
+  - 결정론적 모의 AI 제공자를 사용해 Cloudflare 로그인 없이 개발할 수 있으며, 상태는 로컬에 유지됨
+  - 자세한 흐름은 개발 문서에서 확인할 수 있음
+- 저장소 구조는 에이전트 앱, 웹 앱, 공통 패키지, 설치 프로그램으로 나뉨
+  - 에이전트 앱은 Hono API, TalorysAgent, 도구, SQLite 저장소 계층을 담당함
+  - 웹 앱은 React와 Vite, Pages Function으로 구성됨
+---
+[TITLE] ARTEX AI, Claude agents used in cyberattacks on South Korean banks
+[TITLE_KO] 아르텍스 AI, 클로드 에이전트가 한국 은행 사이버 공격에 사용됨
+[LINK] https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/
+[PUBLISHED] 2026-10-10 23:16 KST
+[SOURCE] BleepingComputer
+[TOPIC] 에이전트, 보안
+[SCORE] 9
+[REASON] 한국 금융권 해킹에 AI 도구 아르텍스 사용 확인
+[BODY]
+A Chinese-speaking hacker launched cyberattacks that shook the South Korean financial sector earlier this month, using the ARTEX AI penetration testing suite and Claude agents.
+The actor targeted multiple Korean banks, including Shinhan Bank, KB Kookmin Bank, and Hana Bank, exposing clients ' personal data and credit card information, and causing system outages in some cases.
+The South Korean government reacted with an emergency meeting and calls for immediate security measures for critical IT systems.
+Security firm CrowdStrike confirmed the use of ARTEX AI, up until recently an open-source agentic penetration testing suite developed in China.
+Researchers identified the attacker's infrastructure and found open directories with Claude Code session histories, ARTEX configuration files, and Claude memory files.
+“The ARTEX instance used DeepSeek v4.1-flash as the primary LLM backend, and the threat actor supplemented this LLM with GLM-5.3 (Zhipu AI) and Grok 4.6 for additional Claude Code sessions,” CrowdStrike explained.
+“The threat actor likely accessed DeepSeek via the likely LLM API proxy/reseller xcai[.]pro,” the researchers noted.
+These records also provided insight into the attacker’s activities, with targets overlapping those named in previous reporting about financial-sector breaches, allowing for high-confidence linking.
+Because the threat actor used the same AI tools to create a résumé, they also exposed identification, contact, and Telegram account details.
+Based on information in the résumé, CrowdStrike says that the attacker may be a 26-year-old Chinese who studied at the South China University of Technology and lives in Maoming, Guangdong, China.
+However, the researchers found that the attacker initially provided a date of birth in 2007. Although the personal details may belong to the individual behind the ARTEX-related activity, they are not reliable enough to confirm the threat actor’s identity.
+The records show the attacker had no specific plan to monetize the data stolen from South Korean banks, and asked Claude to propose Telegram data-sales groups focused on Korea.
+After confirming that ARTEX had been used in real-world attacks, the developer decided to make the project closed-source and discontinue further updates.
+However, the project’s current code has been used to create English- and Korean-language derivatives, so it’s still available in its current form.
+Build your security blueprint for AI-powered attacks
+Join Mikko Hyppönen and security leaders from the NFL, CHANEL, and Atlassian for a two-hour digital summit on what AI-speed attacks change, what defenders should stop doing, and how to validate, decide, fix, and re-validate at machine speed.
+Save your seat
+---
+[TITLE] 중국 AI 도구 아르텍스, 공개 개발 중단… 韓 금융권 악용 의혹
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171750
+[PUBLISHED] 2026-10-11 10:12 KST
+[SOURCE] IT조선
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] 한국 금융권 해킹에 사용된 아르텍스 개발 중단
+[BODY]
+한국 금융기관 해킹에 사용된 것으로 지목된 중국의 인공지능(AI) 사이버보안 도구 ‘아르텍스(Artex)’가 공개 개발을 중단한다. 개발자가 도구의 악용 사실을 인정하고 소스코드를 비공개로 전환하기로 한 것이다. 한국 정부와 미국 보안업체는 금융기관 정보 유출 사고에 아르텍스가 사용됐을 가능성을 제기했다.
+11일 AFP 등 외신에 의하면 아르텍스 개발자인 ‘어텀-27(Autumn-27)’은 깃허브를 통해 아르텍스의 업데이트를 중단하고 소스코드를 비공개로 전환한다고 밝혔다. 새로운 버전 공개와 유지보수 지원도 중단한다. 개발자는 아르텍스가 “일부 악의적인 행위자들에게 악용돼 사이버 공격에 사용됐다”며 이번 결정의 배경을 설명했다.
+앞서 정부는 신한은행 등 7곳 이상의 금융기관에서 발생한 정보 유출 사고에 아르텍스가 사용됐을 가능성이 매우 높다고 밝혔다. 금융위원회에 의하면 이번 해킹 피해자는 6만8000명이 넘는다. 신한은행에서는 고객 2만5000명쯤의 대출 신청 관련 정보가 유출됐다. 유출 정보에는 이름과 전화번호, 연소득 등이 포함됐다.
+미국 사이버보안 기업 크라우드스트라이크 역시 한국 금융권 해킹 관련 디지털 흔적을 조사한 결과 공격자가 아르텍스를 사용했을 가능성이 있다고 밝혔다. 공격자는 중국에 거주하는 26세 인물일 가능성이 제기됐다. 크라우드스트라이크는 “행위자는 중국어 사용자일 가능성이 높으며 금전적 동기가 있는 것으로 보인다”고 설명했다.
+아르텍스는 기업과 기관의 보안 취약점을 찾아 사이버 방어체계를 강화하도록 개발된 도구다. 그동안 오픈소스로 공개돼 누구나 소스코드를 내려받아 수정할 수 있었다. 개발자는 아르텍스를 사이버 공격에 사용하는 것은 개발 의도에 완전히 반하는 일이라고 강조했다. 다만 아르텍스의 소스코드를 비공개로 전환하더라도 이미 배포된 코드를 이용한 사이버 공격까지 막기는 어렵다는 지적이 나온다.
+기술 분석 매체 ‘헬로 차이나 테크’ 창립자인 포 자오는 AFP에 “이미 내려받은 코드의 복사본을 없애거나 사람들이 이를 계속 사용하는 것을 막을 수는 없다”며 “코드가 공개돼 있었기 때문에 누구나 내려받아 수정하고 직접 실행할 수 있었다”고 지적했다. 그는 이어 “개발자가 이용자에게 규칙 준수를 요구할 수는 있지만 실제 행동을 통제할 방법은 거의 없었다”고 덧붙였다.
+변인호 기자
+jubar@chosunbiz.com
+---
+[TITLE] AWS, ‘피지컬 AI 툴체인’ 오픈소스로 공개…로봇 학습부터 현장 배포까지 통합
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42251
+[PUBLISHED] 2026-10-10 18:02 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 9
+[REASON] AWS의 피지컬 AI 툴체인 오픈소스 공개
+[BODY]
+아마존 로보틱스 운영 경험과 엔비디아 피지컬 AI 소프트웨어 결합…산업 자동화·휴머노이드·자율이동 지원
+아마존웹서비스(AWS)가 엔비디아(NVIDIA)의 피지컬 인공지능(AI) 기술 스택과 아마존의 로봇 운영 경험을 결합한 오픈소스 개발 체계를 8일(현지시간) 공개했다. 데이터 생성과 모델 학습, 가상환경 검증부터 실제 로봇 배포와 운영 데이터 기반의 재학습까지 연결해 산업용 로봇과 휴머노이드, 자율이동 시스템 개발에 필요한 과정을 통합 지원한다.
+이 툴체인 ‘AWS 피지컬 AI 툴체인(Physical AI Toolchain on AWS-다운)’은 피지컬 AI 시스템 개발에 필요한 아키텍처 가이드, 배포 자동화, 참조 코드 등을 제공하는 오픈소스 기반 기술 스택이다. AWS 서비스와 엔비디아의 피지컬 AI 소프트웨어 생태계를 결합해 개발자가 기존 인프라를 구축하는 데 들이는 시간을 줄이고, 모델 개발과 실제 환경 적용에 집중하도록 설계됐다.
+피지컬 AI는 디지털 공간에서 정보를 처리하는 데 그치지 않고, 현실 세계의 환경을 인식하고 상황을 추론해 물리적 행동을 수행하는 AI 기술이다. 고정된 명령을 반복하는 기존 자동화 시스템과 달리 주변 환경의 변화에 대응하고, 실제 운영에서 얻은 데이터를 다시 학습에 활용해 성능을 개선하는 것이 특징이다.
+합성 데이터부터 현장 배포까지 5단계 개발 체계
+AWS 피지컬 AI 툴체인은 피지컬 AI 개발 과정을 다섯 가지 핵심 영역으로 구성한다. 각 단계는 독립적으로 활용할 수 있으며, 전체 체계를 적용하면 데이터 생성부터 실제 운영과 재학습까지 이어지는 개발 순환 구조를 구축할 수 있다.
+첫 번째는 합성 데이터 생성(Synthetic Data Generation)이다. AI가 생성한 가상환경과 시나리오를 활용해 다양한 학습 데이터를 확보한다. 실제 로봇을 투입해 모든 상황을 직접 수집하는 데 드는 비용과 시간을 줄이고, 현실에서 발생하기 어려운 예외 상황도 학습에 포함할 수 있도록 한다.
+두 번째는 모델 학습(Model Training)이다. 사람의 시연을 통한 학습과 시뮬레이션 환경에서의 반복적인 연습을 활용해 로봇이 작업을 수행하는 데 필요한 지능을 학습시킨다.
+세 번째는 시뮬레이션 및 검증(Simulation and Validation)이다. 실제 하드웨어에 모델을 적용하기 전에 가상환경에서 로봇의 행동과 작업 수행 능력을 시험한다. 이를 통해 물리적 장비를 활용한 반복 실험 부담을 줄이고, 실제 배포 전 동작을 검증할 수 있다.
+네 번째는 엣지 배포(Edge Deployment)다. 최적화된 모델을 실제 로봇과 현장 장비에 배포해 실시간으로 의사결정을 수행하도록 한다. 항상 클라우드에 연결돼 있지 않아도 현장에서 판단할 수 있도록 지원하는 방식이다.
+다섯 번째는 지속적 개선(Continuous Improvement)이다. 현장에 배포된 장비에서 수집한 운영 데이터를 새로운 학습 데이터로 활용해 모델을 개선한다. 이렇게 개선된 모델을 다시 현장에 적용하면 개별 장비의 성능을 높이는 동시에 로봇 전체 운영 체계의 효율도 끌어올릴 수 있다.
+이 구조의 핵심은 개발과 운영을 분리하지 않는 데 있다. 가상환경에서 학습하고 검증한 모델을 현장에 배포한 뒤, 실제 작업에서 얻은 데이터를 다시 학습에 반영함으로써 변화하는 작업 환경에 대응하도록 한다.
+AWS 서비스와 엔비디아 로보틱스 기술 결합
+툴체인은 AWS의 클라우드·AI 서비스와 엔비디아의 시뮬레이션 및 로봇 학습 기술을 결합한다. AWS 측에서는 모델 학습을 위한 아마존 세이지메이커(Amazon SageMaker), 시뮬레이션 연산에 활용하는 아마존 EC2 GPU 인스턴스, 엣지 배포를 지원하는 AWS IoT 그린그래스(AWS IoT Greengrass), 지능형 오케스트레이션을 위한 아마존 베드록 에이전트코어(Amazon Bedrock AgentCore) 등이 포함된다.
+엔비디아 기술 스택에는 가상환경 시뮬레이션을 위한 아이작 심(NVIDIA Isaac Sim), 강화학습을 위한 아이작 랩(NVIDIA Isaac Lab), 휴머노이드 학습을 지원하는 아이작 GR00T(NVIDIA Isaac GR00T), 합성 세계 생성을 위한 코스모스(NVIDIA Cosmos)가 포함된다.
+이들 기술은 각각 모델 학습과 가상환경 구축, 로봇 행동 학습, 합성 데이터 생성 등 피지컬 AI 개발의 서로 다른 단계를 담당한다. AWS는 이를 하나의 개발 체계로 연결해 모델 생성부터 검증과 배포까지 이어지는 작업 흐름을 지원한다.
+개발자는 전체 툴체인을 단일 제어 환경에서 활용하거나 기존 개발 시스템에 필요한 구성요소만 선택해 통합할 수 있다. 시뮬레이션이나 학습, 배포 도구를 개별적으로 도입하는 방식도 가능하다. 현장 장비가 늘어나면 차량이나 로봇 등 수천 대 규모의 장비를 대상으로 원격 프로비저닝과 보안 관리, 소프트웨어 업데이트를 수행하는 차량군·장비군 관리 기능도 활용할 수 있다.
+아밋 고엘(Amit Goel) 엔비디아 로보틱스 개발자 생태계 및 엣지 AI 제품 책임자는 피지컬 AI를 구축하려면 학습, 시뮬레이션, 배포라는 세 가지 컴퓨팅 플랫폼을 긴밀하게 통합해야 한다고 설명했다. 그는 AWS와 엔비디아의 기술을 결합한 툴체인이 개발자가 로봇 애플리케이션을 만들고 학습시키며 검증하고 배포하는 과정을 가속할 수 있다고 밝혔다.
+휴머노이드부터 산업 자동화까지 적용 확대
+AWS는 피지컬 AI 툴체인의 주요 적용 분야로 산업 자동화, 자율이동, 휴머노이드 로보틱스를 제시했다. 산업용 장비 제조사는 이 기술을 활용해 작업 조건이 바뀌어도 기존 프로그램을 전면 수정하지 않고 새로운 조립 작업에 적응하는 협동로봇을 개발할 수 있다. 자율로봇 개발사는 새로운 부품과 작업에 대응하는 능력을 학습시킬 수 있으며, 자동차 제조사는 차량 내부와 생산공장에 적용하는 로봇 기술 개발을 가속할 수 있다.
+스마트 팩토리에서는 생산 상황을 실시간으로 모니터링하고 설비 이상을 예측하며 공정을 최적화하는 시스템에 적용할 수 있다. 기업은 이를 통해 생산량을 높이고 설비 가동 중단을 줄이며 품질을 개선하는 효과를 기대할 수 있다.
+AWS 산업 부문을 담당하는 우웸 우크퐁(Uwem Ukpong) 부사장은 고객들이 혁신보다 인프라 구축에 많은 엔지니어링 자원을 투입하고 있다는 점을 툴체인 개발의 배경으로 설명했다. AWS는 사전 구성된 아키텍처와 참조 코드, 배포 자동화를 제공해 기업이 처음부터 개발 기반을 구축하는 데 필요한 부담을 줄이겠다는 방침이다.
+이번 툴체인은 아마존이 자체 물류·운영 네트워크에서 축적한 로봇 기술 경험을 바탕으로 설계됐다. 아마존은 자사 운영 네트워크에 100만 대 이상의 로봇을 배치해 활용하고 있으며, 로봇은 수십만명의 직원과 함께 하루 수백만 개의 패키지를 처리하고 있다.
+아마존 로보틱스는 2026년 여름 차세대 자율이동 로봇 ‘프로테우스(Proteus)’도 공개했다. 이 로봇은 사업장 내에서 물품을 이동해야 하는 다양한 공간에서 자율적으로 작동하도록 설계됐다.
+아마존은 이러한 운영 경험을 바탕으로 실제 환경에서 자율적으로 작동하는 기계를 개발할 때 필요한 설계 지침과 배포 자동화 기술을 툴체인에 반영했다. AWS는 이를 통해 기업이 자체 하드웨어와 운영 환경, 사용 목적에 맞춰 피지컬 AI 시스템을 구성하고, 기존에 수년이 걸릴 수 있었던 개발 기반 구축 기간을 수주 수준으로 단축할 수 있다고 설명했다. 이는 AWS가 제시한 목표이며, 실제 개발 기간은 작업의 복잡성과 하드웨어, 데이터 확보 수준 등에 따라 달라질 수 있다.
+스타트업도 피지컬 AI 개발에 클라우드 활용
+피지컬 AI는 대기업의 자동화 사업을 넘어 로봇 스타트업의 주요 개발 분야로도 확산하고 있다. AWS가 인용한 최근 글로벌 스타트업 동향 보고서에 따르면, 전 세계 스타트업 7곳 중 1곳이 피지컬 AI를 개발하고 있으며 관련 개발자의 72%는 클라우드 컴퓨팅이 시스템 운영에 필수적이라고 답했다.
+---
+[TITLE] 10년 전 결혼 정보도 털렸다…바른손M카드 등 모바일 청첩장 데이터 유출
+[LINK] https://zdnet.co.kr/view/?no=20261011095512
+[PUBLISHED] 2026-10-11 10:41 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 보안, 산업, 규제
+[SCORE] 9
+[REASON] 모바일 청첩장 서비스 개인정보 유출 사고 발생
+---
+[TITLE] Telegram Desktop 취약점으로 사용자 파일 탈취가 가능했음
+[LINK] https://news.hada.io/topic?id=35112
+[PUBLISHED] 2026-10-10 18:35 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 텔레그램 데스크톱 취약점으로 인한 파일 탈취 가능성
+---
+[TITLE] 다크웹서 AI 계정 헐값 불법거래…사기성 판매 주의해야
+[LINK] https://www.etnews.com/20261011000050
+[PUBLISHED] 2026-10-11 12:00 KST
+[SOURCE] 전자신문
+[TOPIC] 에이전트
+[SCORE] 9
+[REASON] 다크웹 AI 계정 불법 거래 및 사기 위험 경고
+---
+[TITLE] 덴마크 CPR 데이터 유출 사고 관련 계정에 비밀번호 ‘123456’ 사용
+[LINK] https://news.hada.io/topic?id=35116
+[PUBLISHED] 2026-10-10 21:32 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 덴마크 CPR 데이터 유출 사고의 취약한 비밀번호 사용
+---
+[TITLE] MS, 에이전트 의사결정 특화 모델 ‘디시전-1’ 공개
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216107
+[PUBLISHED] 2026-10-10 18:53 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 모델
+[SCORE] 8
+[REASON] MS의 AI 에이전트 의사결정 특화 모델 공개
+---
+[TITLE] 물리 법칙 실시간 예측하는 월드 모델 '오딧세이-3' 공개..."벤치마크 최고 기록"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216110
+[PUBLISHED] 2026-10-10 17:00 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 신기술
+[SCORE] 8
+[REASON] 물리 법칙 예측 월드 모델 '오딧세이-3' 공개
+---
+[TITLE] "SIEM 모니터링 생성AI로 확대"...로그프레소, 연동 앱 출시
+[LINK] https://zdnet.co.kr/view/?no=20261011101339
+[PUBLISHED] 2026-10-11 10:13 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 보안, 규제
+[SCORE] 8
+[REASON] 생성형 AI 사용 기록 모니터링 연동 앱 출시
+---
+[TITLE] "이메일 계정 갖춘 AI 동료"…구글, 기업용 제미나이 에이전트 공개
+[LINK] https://zdnet.co.kr/view/?no=20261010221851
+[PUBLISHED] 2026-10-11 09:19 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 8
+[REASON] 구글의 기업용 제미나이 에이전트 공개 소식
+---
+[TITLE] AI agent makers are promising privacy — will they deliver?
+[TITLE_KO] AI 에이전트 제작사들이 개인정보 보호를 약속하지만, 지킬까?
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots
+[PUBLISHED] 2026-10-10 22:00 KST
+[SOURCE] The Verge
+[TOPIC] 에이전트, 규제
+[SCORE] 8
+[REASON] AI 에이전트의 개인정보 보호 문제와 약속
+---
+[TITLE] The Third-Party Agent Problem: Why Security Built for AI You Chose Misses the Agents You Didn't
+[TITLE_KO] 서드파티 에이전트 문제: 선택한 AI를 위한 보안이 놓치는 에이전트
+[LINK] https://thehackernews.com/2026/10/the-third-party-agent-problem-why.html
+[PUBLISHED] 2026-10-10 20:00 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 보안
+[SCORE] 8
+[REASON] 서드파티 AI 에이전트의 보안 취약점 문제 제기
+---
+[TITLE] Show GN: suta — AI가 생성한 UI문제를 줄이는 스킬
+[LINK] https://news.hada.io/topic?id=35119
+[PUBLISHED] 2026-10-10 22:11 KST
+[SOURCE] GeekNews
+[TOPIC] 개발
+[SCORE] 8
+[REASON] AI 생성 UI 문제 해결을 위한 스킬 공개
+---
+[TITLE] [단독] 쏘카, 무신사 29CM와 유사한 공격으로 고객 248명 개인정보 유출…10분 만에 인지·차단해 추가 피해 방지
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208813
+[PUBLISHED] 2026-10-10 19:00 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 보안, 규제
+[SCORE] 8
+[REASON] 쏘카 고객 개인정보 유출 사고 발생 및 대응
+---
+[TITLE] HPE, AMD 차세대 CPU 품은 AI 서버 4종 공개…추론부터 보안까지 잡는다
+[LINK] https://zdnet.co.kr/view/?no=20261011115418
+[PUBLISHED] 2026-10-11 11:56 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안, 신기술, 산업
+[SCORE] 8
+[REASON] 주요 기업의 AI 서버 신제품 공개 소식
+---
+[TITLE] 엔비디아, 美 리플렉션 AI에 추가 투자·인수 협상 중
+[LINK] https://zdnet.co.kr/view/?no=20261011084533
+[PUBLISHED] 2026-10-11 09:19 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 모델, 산업, 규제
+[SCORE] 7
+[REASON] 엔비디아의 AI 스타트업 추가 투자 및 인수 협상
+---
+[TITLE] 엔비디아, AI 추론 칩 d-매트릭스에 투자 계획…GPU 중심 생태계 확장
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216122
+[PUBLISHED] 2026-10-10 20:35 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 신기술, 산업
+[SCORE] 7
+[REASON] 엔비디아의 AI 추론 칩 개발업체 투자 계획
+---
+[TITLE] SGA솔루션즈, 일루미오와 파트너십...마이크로 세그멘테이션 사업 강화
+[LINK] https://zdnet.co.kr/view/?no=20261011094328
+[PUBLISHED] 2026-10-11 09:43 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 보안, 규제
+[SCORE] 7
+[REASON] SGA솔루션즈의 마이크로 세그멘테이션 사업 강화
+---
+[TITLE] Cloudflare Traces Turns the Proxy Layer into OpenTelemetry Spans, with New Volume-Based Pricing
+[TITLE_KO] Cloudflare Traces, 프록시 레이어를 OpenTelemetry 스팬으로 전환, 새로운 볼륨 기반 가격 책정
+[LINK] https://www.infoq.com/news/2026/10/cloudflare-traces-open-beta/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-10 16:12 KST
+[SOURCE] InfoQ
+[TOPIC] 보안
+[SCORE] 7
+[REASON] Cloudflare의 자동 추적 기능 확장 및 가격 정책 변경
+---
+[TITLE] 포스코DX, '인핸스'에 20억 투자…온톨로지 기반 에이전틱 AI 고도화
+[LINK] https://www.etnews.com/20261010000027
+[PUBLISHED] 2026-10-11 12:01 KST
+[SOURCE] 전자신문
+[TOPIC] 에이전트, 산업
+[SCORE] 7
+[REASON] 포스코DX의 온톨로지 기반 에이전틱 AI 고도화 투자
+---
+[TITLE] AI로 기록 보관소를 탐색해 잊힌 운석과 코뿔소 기록 등을 찾아냄
+[LINK] https://news.hada.io/topic?id=35110
+[PUBLISHED] 2026-10-10 17:41 KST
+[SOURCE] GeekNews
+[TOPIC] 모델, 신기술
+[SCORE] 7
+[REASON] AI를 활용한 역사 기록 보관소 탐색 및 발견
+---
+[TITLE] 앤트로픽, AI 모욕하면 대화 종료한다…이용 정책 개정
+[LINK] https://www.etnews.com/20261011000070
+[PUBLISHED] 2026-10-11 12:37 KST
+[SOURCE] 전자신문
+[TOPIC] 모델, 규제
+[SCORE] 6
+[REASON] 앤트로픽의 AI 모델 이용 정책 개정 소식
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011111122
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011073319
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010210944
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/10/anthropic-cuts-live-internet-access-for.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261010130859
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011081003
+[STATUS] SKIP (매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171743
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261008000313
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261008000310
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261008000158
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216126
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216123
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171748
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208815
+[STATUS] SKIP (중복)
+---
+[LINK] https://the-decoder.com/anthropic-cuts-off-claudes-internet-access-after-the-model-autonomously-filed-a-fake-homicide-tip-with-philadelphia-police/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216117
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011103111
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011080330
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171711
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/googles-gemini-4-carbon-model-is-reportedly-matching-anthropics-opus-5-5-coding-performance/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216119
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261010000016
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261011000066
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261010000028
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216128
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011025532
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171551
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171656
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/cyber-exec-arrested-in-case-allegedly-tied-to-shinyhunters-hackers/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.latent.space/p/standard-bots
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35121
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/criminal-ip-introduces-aitem-as-the-next-evolution-of-attack-surface-management/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216118
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35145
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261011000063
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261011000052
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216127
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216125
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216124
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675365
+[STATUS] SKIP (제외)
+---
+[LINK] https://siliconangle.com/2026/10/10/human-judgment-ai-professional-services-certinia/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://the-decoder.com/microsofts-decision-1-model-enters-the-fast-growing-ai-decision-model-race/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216113
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35109
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675371
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/10/10/ai-infrastructure-bottlenecks-forum-aidatapipelineforum/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675298
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011094529
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261011000030
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011095428
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216088
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171491
+[STATUS] SKIP (제외)
+---
+[LINK] https://simonwillison.net/2026/Oct/10/python-actions/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675349
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/global-development/2026/oct/11/nuclear-war-and-malicious-use-of-ai-threaten-end-of-humanity-by-2100-says-lancet-assessment
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/australia-news/audio/2026/oct/11/black-box-the-chatbots-the-line-ep-5-full-story-podcast
+[STATUS] SKIP (제외)
+---
+[LINK] https://siliconangle.com/2026/10/10/the-ai-control-gap-who-gets-to-say-its-safe/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35123
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/how-much-beauty-have-we-lost-mathematicians-react-with-shock-and-disgust-as-openai-bulldozes-their-field/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/commentisfree/picture/2026/oct/10/jon-davis-job-titles-ai-cartoon
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/10/uk-foreign-ai-head-alan-turing-institute-george-williamson
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216086
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/politics/audio/2026/oct/10/gaza-is-a-moral-tear-in-the-universe-naomi-klein-and-astra-taylor-radical-thinking-with-aditya-chakrabortty-podcast
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011100403
+[STATUS] SKIP (사전 제외: 수상)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261011080542
+[STATUS] SKIP (사전 제외: 수상)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675337
+[STATUS] SKIP (사전 제외: 주가)
+---
