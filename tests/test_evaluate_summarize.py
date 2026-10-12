@@ -15,8 +15,8 @@ def add_candidates(count, start=1):
         ], block=("SUMMARY", f"미리보기 {number}"))
 
 
-def score_item(number, impact=5, practical=5, novelty=5, certainty=5, **overrides):
-    item = {"id": number, "impact": impact, "practical": practical, "novelty": novelty, "certainty": certainty,
+def score_item(number, impact=10, relevance=5, novelty=3, certainty=3, **overrides):
+    item = {"id": number, "impact": impact, "relevance": relevance, "novelty": novelty, "certainty": certainty,
             "dup_of": 0, "exclude": "", "reason": f"이유 {number}", "title_ko": f"번역 {number}"}
     item.update(overrides)
     return item
@@ -32,18 +32,29 @@ def news(number, **fields):
 
 
 def test_total_score_scale():
-    lowest = {name: 1 for name in evaluate.CRITERIA}
-    highest = {name: 5 for name in evaluate.CRITERIA}
-    assert evaluate.total_score(lowest) == 0
+    highest = dict(evaluate.CRITERIA_MAX)
+    no_penalty = {"impact": 1, "relevance": 1, "novelty": 3, "certainty": 3}
     assert evaluate.total_score(highest) == 100
-    # 파급력만 5점이면 파급력 가중치만큼
-    assert evaluate.total_score({**lowest, "impact": 5}) == evaluate.CRITERIA_WEIGHTS["impact"] * 100
+    assert evaluate.total_score(no_penalty) == 0
+    # 파급력만 최고점이면 파급력 가중치만큼. 새로움, 근거는 합계에 더하지 않는다
+    assert evaluate.total_score({**no_penalty, "impact": 10}) == evaluate.CRITERIA_WEIGHTS["impact"] * 100
+    # 새로움, 근거가 1점이면 감점하고, 합계는 0 아래로 내려가지 않는다
+    penalty = evaluate.PENALTIES["novelty"] + evaluate.PENALTIES["certainty"]
+    assert evaluate.total_score({**highest, "novelty": 1, "certainty": 1}) == 100 - penalty
+    assert evaluate.total_score({"impact": 1, "relevance": 1, "novelty": 1, "certainty": 1}) == 0
+
+
+def test_exclude_reason_accepts_only_defined_reasons():
+    assert evaluate.exclude_reason("홍보") == "홍보"
+    assert evaluate.exclude_reason("홍보성 보도자료") == "홍보"
+    assert evaluate.exclude_reason("규제") == ""
+    assert evaluate.exclude_reason(None) == ""
 
 
 def test_score_articles_validates_response(monkeypatch):
     news_list = [news(n) for n in range(1, 6)]
     wrapped = json.dumps({"items": [
-        score_item(1, reason="[a](http://b) 이유", dup_of=1), score_item(2, impact=9, practical=0, dup_of=1),
+        score_item(1, reason="[a](http://b) 이유", dup_of=1), score_item(2, impact=99, relevance=0, dup_of=1),
         score_item(99), score_item(1, impact=1), {"id": 3, "impact": "x"}, score_item(4, dup_of=77),
     ]}, ensure_ascii=False)
     monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: wrapped)
@@ -55,8 +66,8 @@ def test_score_articles_validates_response(monkeypatch):
     # 자기 자신이나 범위 밖을 가리키는 dup_of는 무시한다
     assert scored[0]["dup_of"] is None and scored[3]["dup_of"] is None
     assert scored[1]["dup_of"] == 0
-    # 점수는 1~5로 맞춘다
-    assert scored[1]["impact"] == 5 and scored[1]["practical"] == 1
+    # 점수는 항목별 범위(파급력 1~10, 관련성 1~5)로 맞춘다
+    assert scored[1]["impact"] == 10 and scored[1]["relevance"] == 1
 
 
 def test_score_articles_requires_some_scores(monkeypatch):
@@ -108,23 +119,38 @@ def test_prefilter_drops_patterns_and_caps(monkeypatch):
     }
 
 
+def scored_entry(total, impact=5, dup_of=None, exclude=""):
+    return {"total": total, "impact": impact, "dup_of": dup_of, "exclude": exclude}
+
+
 def test_decide_handles_duplicates_exclusions_and_caps():
     news_list = [news(1), news(2), news(3, source="S1"), news(4), news(5), news(6, topic="보안"), news(7)]
     totals = {0: 90, 1: 95, 2: 80, 3: 70, 4: 30, 5: 70, 6: 60}
-    scored = {index: {"total": total, "dup_of": None, "exclude": ""} for index, total in totals.items()}
+    scored = {index: scored_entry(total) for index, total in totals.items()}
     scored[0]["dup_of"] = 1          # 1번은 2번과 같은 사건 (2번 합계가 더 높음)
     scored[6]["exclude"] = "홍보"
+    scored[5]["impact"] = 8          # 합계가 같은 4번과 6번 중 6번의 파급력이 더 높음
     listed, decisions = evaluate.decide(news_list, scored, list_slots=3, list_n=5, min_score=4)
 
     # 매체 상한은 max(2, LIST_N // 5) = 2. 3번은 1번과 매체가 같지만 1번이 중복으로 빠져 상한에 걸리지 않음
-    # 합계가 같은 4번(에이전트)과 6번(보안)은 주제 순서로 4번이 앞
-    assert listed == [1, 2, 3]
-    assert decisions == {0: "중복", 1: "목록", 2: "목록", 3: "목록", 4: "기준 미달", 5: "순위 밖", 6: "제외"}
+    # 합계가 같으면 주제 순서가 아니라 파급력으로 가른다 (6번 보안 기사가 앞)
+    assert listed == [1, 2, 5]
+    assert decisions == {0: "중복", 1: "목록", 2: "목록", 3: "순위 밖", 4: "기준 미달", 5: "목록", 6: "제외"}
+    # 같은 사건을 다룬 기사 수를 남긴다
+    assert scored[1]["coverage"] == 2 and scored[2]["coverage"] == 1
+
+
+def test_decide_breaks_ties_by_coverage():
+    news_list = [news(n) for n in range(1, 5)]
+    scored = {0: scored_entry(80), 1: scored_entry(80), 2: scored_entry(50, dup_of=1), 3: scored_entry(40, dup_of=1)}
+    listed, _ = evaluate.decide(news_list, scored, list_slots=1, list_n=5, min_score=0)
+    # 합계, 파급력이 같으면 여러 기사가 다룬 사건(2번)이 먼저
+    assert listed == [1]
 
 
 def test_decide_applies_source_cap():
     news_list = [news(n, source="S") for n in range(1, 5)]
-    scored = {index: {"total": 90 - index, "dup_of": None, "exclude": ""} for index in range(4)}
+    scored = {index: scored_entry(90 - index) for index in range(4)}
     listed, decisions = evaluate.decide(news_list, scored, list_slots=4, list_n=5, min_score=0)
     assert listed == [0, 1] and decisions[2] == decisions[3] == "매체 상한"
 
@@ -144,8 +170,9 @@ def read_score_csv():
 def test_evaluate_fills_list_and_summary_slots_across_reruns(monkeypatch):
     # LIST_N=5, TOP_N=3 (conftest)
     add_candidates(8)
-    # 합계: 1번 100점부터 10점씩 내려감, 5번과 6번은 같은 점수
-    response = score_response(*[score_item(n, impact=max(1, 6 - n)) for n in range(1, 7)])
+    # 합계(관련성 5 고정, 파급력만 다름): 1번 100, 2번 86.7, 3번 80, 4번 66.7, 5번과 6번 60 (같은 점수)
+    impacts = {1: 10, 2: 8, 3: 7, 4: 5, 5: 4, 6: 4}
+    response = score_response(*[score_item(n, impact=impacts[n]) for n in range(1, 7)])
     monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: response)
     # 2위 기사는 본문을 가져오지 못한다
     monkeypatch.setattr(evaluate, "scrape_body", lambda url: "" if url == "http://a/2" else "본문 " * 200)
@@ -331,6 +358,15 @@ def test_summarize_sends_all_articles_in_one_call(monkeypatch):
     summaries = common.read_records("요약")
     assert [record["link"] for record in summaries] == ["http://a/1", "http://a/2", "http://a/3"]
     assert summaries[0]["model"] == common.GEMINI_MODEL
+
+
+def test_summary_schema_writes_english_before_korean():
+    # 실제 SDK 형식으로 읽혀야 하고, 국문이 영문의 번역이 되도록 summary_en이 summary_ko보다 앞에 와야 한다
+    from google.genai import types
+    schema = types.Schema.model_validate(summarize.SUMMARY_SCHEMA)
+    order = schema.items.property_ordering
+    assert order.index("summary_en") < order.index("summary_ko")
+    assert set(order) == set(summarize.SUMMARY_SCHEMA["items"]["properties"])
 
 
 def test_summarize_resends_only_failed_articles(monkeypatch):

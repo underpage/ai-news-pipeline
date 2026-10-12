@@ -9,7 +9,7 @@ from common import (
     append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, fetch, clean_inline,
     is_retryable, get_log_path,
 )
-from collect import load_config, build_pattern, TOPIC_KEYWORDS
+from collect import load_config, build_pattern
 
 KST = datetime.timezone(datetime.timedelta(hours=9))
 # 선정 호출이 일시 오류(503 과부하 등)로 실패했을 때 다시 보내기 전 기다리는 시간(초). 호출은 첫 호출을 포함해
@@ -21,9 +21,14 @@ PREFILTER_SOURCE_MAX = 20
 BODY_MIN_LENGTH = 500
 BODY_MAX_LENGTH = 4000
 PREVIEW_LENGTH = 500
-# 중요도 항목. Gemini가 항목마다 1~5점을 주고, 코드가 가중합으로 0~100 합계를 계산한다
-CRITERIA = ("impact", "practical", "novelty", "certainty")
-CRITERIA_KO = {"impact": "파급력", "practical": "활용도", "novelty": "새로움", "certainty": "확실성"}
+# 중요도 항목과 점수 범위(1~최댓값). Gemini가 항목마다 점수를 주고, 코드가 합계 0~100을 계산한다.
+# 합계에는 criteria_weights에 적힌 항목(파급력, 관련성)만 들어가고, 새로움과 근거는 가장 낮은 단계일 때 감점에만 쓴다
+CRITERIA = ("impact", "relevance", "novelty", "certainty")
+CRITERIA_MAX = {"impact": 10, "relevance": 5, "novelty": 3, "certainty": 3}
+CRITERIA_KO = {"impact": "파급력", "relevance": "관련성", "novelty": "새로움", "certainty": "근거"}
+WEIGHTED_CRITERIA = ("impact", "relevance")
+# 제외 사유. 모델이 이 밖의 이름을 쓰면 제외로 보지 않는다 (정의 밖 사유가 거부권이 되지 않게)
+EXCLUDE_REASONS = ("관련 없음", "홍보", "행사 안내", "인사", "주가", "추측")
 RANK_SCHEMA = {
     "type": "ARRAY",
     "items": {
@@ -39,8 +44,8 @@ RANK_SCHEMA = {
         "required": ["id", *CRITERIA, "dup_of", "exclude", "reason", "title_ko"],
     },
 }
-SCORE_COLUMNS = ["실행", "결정", "합계", *[CRITERIA_KO[name] for name in CRITERIA], "같은 사건", "제외 사유", "선정 이유",
-                 "출처", "발행", "주제", "제목", "번역 제목", "링크"]
+SCORE_COLUMNS = ["실행", "결정", "합계", *[CRITERIA_KO[name] for name in CRITERIA], "같은 사건", "같은 사건 수", "제외 사유",
+                 "선정 이유", "출처", "발행", "주제", "제목", "번역 제목", "링크"]
 HANGUL = re.compile(r"[가-힣]")
 BODY_SELECTORS = [
     '#article-view-content-div', '[itemprop="articleBody"]', '.articlebody', '.article-body',
@@ -52,8 +57,11 @@ _selection = load_config("selection.yml")
 EXCLUDE_PATTERNS = {name: build_pattern(terms) for name, terms in (_selection.get("exclude_title") or {}).items()}
 TOPIC_WEIGHTS = _selection.get("topic_weights") or {}
 CRITERIA_WEIGHTS = _selection.get("criteria_weights") or {}
-if set(CRITERIA_WEIGHTS) != set(CRITERIA) or abs(sum(CRITERIA_WEIGHTS.values()) - 1) > 1e-6:
-    raise ValueError(f"config/selection.yml: criteria_weights는 {', '.join(CRITERIA)}의 가중치이고 합이 1이어야 합니다.")
+PENALTIES = _selection.get("penalties") or {}
+if set(CRITERIA_WEIGHTS) != set(WEIGHTED_CRITERIA) or abs(sum(CRITERIA_WEIGHTS.values()) - 1) > 1e-6:
+    raise ValueError(f"config/selection.yml: criteria_weights는 {', '.join(WEIGHTED_CRITERIA)}의 가중치이고 합이 1이어야 합니다.")
+if not set(PENALTIES) <= set(CRITERIA) - set(WEIGHTED_CRITERIA):
+    raise ValueError("config/selection.yml: penalties에는 novelty, certainty만 적을 수 있습니다.")
 
 
 def get_int_env(name, default, minimum=1):
@@ -83,13 +91,6 @@ def topics_of(news):
 
 def topic_weight(news):
     return sum(TOPIC_WEIGHTS.get(topic, 0) for topic in topics_of(news))
-
-
-def topic_priority(news):
-    """동점일 때 앞에 둘 순서: keywords.yml의 topics에 적힌 순서 (첫 주제 기준)"""
-    order = list(TOPIC_KEYWORDS)
-    topics = topics_of(news)
-    return order.index(topics[0]) if topics and topics[0] in order else len(order)
 
 
 def prefilter(news_list, limit):
@@ -122,8 +123,16 @@ def prefilter(news_list, limit):
 
 
 def total_score(values):
-    """항목별 1~5점을 0~100으로 바꿔 가중합한다 (실습 자료의 final_eval_score와 같은 방식)."""
-    return round(sum(CRITERIA_WEIGHTS[name] * (values[name] - 1) / 4 * 100 for name in CRITERIA), 1)
+    """합계 0~100. 파급력, 관련성을 각각 0~100으로 바꿔 가중합하고, 새로움, 근거가 1점이면 감점한다."""
+    weighted = sum(CRITERIA_WEIGHTS[name] * (values[name] - 1) / (CRITERIA_MAX[name] - 1) * 100 for name in WEIGHTED_CRITERIA)
+    penalty = sum(points for name, points in PENALTIES.items() if values[name] == 1)
+    return round(max(0, weighted - penalty), 1)
+
+
+def exclude_reason(value):
+    """모델이 적은 제외 표시를 정해진 사유 이름으로 맞춘다. 정해진 사유가 아니면 빈 문자열 (제외 아님)."""
+    text = clean_inline(value or "", 60)
+    return next((reason for reason in EXCLUDE_REASONS if reason in text), "")
 
 
 def parse_score_items(result):
@@ -145,7 +154,7 @@ def parse_score_items(result):
 def score_articles(news_list):
     """후보 전체를 한 번의 호출로 보내 기사마다 항목별 점수를 받는다. {후보 순번: 점수 정보}
 
-    점수 정보: 항목별 점수(1~5), total(0~100), dup_of(같은 사건 다른 기사의 순번 또는 None), exclude, reason, title_ko
+    점수 정보: 항목별 점수(1~CRITERIA_MAX), total(0~100), dup_of(같은 사건 다른 기사의 순번 또는 None), exclude, reason, title_ko
     """
     prompt = fill_prompt(load_prompt("filter_prompt.txt"), articles=build_article_list(news_list))
     items = parse_score_items(call_gemini(prompt, schema=RANK_SCHEMA, max_retries=0))
@@ -154,7 +163,7 @@ def score_articles(news_list):
     for item in items:
         try:
             index = int(item["id"]) - 1
-            values = {name: min(5, max(1, int(item[name]))) for name in CRITERIA}
+            values = {name: min(CRITERIA_MAX[name], max(1, int(item[name]))) for name in CRITERIA}
         except (KeyError, TypeError, ValueError):
             continue
         if index in scored or not (0 <= index < len(news_list)):
@@ -171,7 +180,7 @@ def score_articles(news_list):
             **values,
             "total": total_score(values),
             "dup_of": dup_of if dup_of != index and 0 <= dup_of < len(news_list) else None,
-            "exclude": clean_inline(item.get("exclude", ""), 60),
+            "exclude": exclude_reason(item.get("exclude")),
             "reason": clean_inline(item.get("reason", ""), 60),
             "title_ko": title_ko,
         }
@@ -208,7 +217,8 @@ def decide(news_list, scored, list_slots, list_n, min_score):
     """점수표로 목록에 올릴 기사를 정한다. (목록 순번 목록, {순번: 결정})
 
     같은 사건 묶음에서는 합계가 가장 높은 기사만 남기고, 제외 표시와 최소 점수 미달을 뺀 뒤
-    합계, 주제 순서, 최신순으로 정렬해 매체별 상한을 지키며 list_slots건을 고른다.
+    합계, 파급력, 같은 사건을 다룬 기사 수, 최신순으로 정렬해 매체별 상한을 지키며 list_slots건을 고른다.
+    같은 사건 기사 수는 scored[순번]["coverage"]에 남긴다 (점수표에 기록).
     """
     decisions = {}
     # 같은 사건 묶음: dup_of로 이어진 기사들
@@ -227,6 +237,8 @@ def decide(news_list, scored, list_slots, list_n, min_score):
     for index in scored:
         groups.setdefault(find(index), []).append(index)
     for members in groups.values():
+        for index in members:
+            scored[index]["coverage"] = len(members)
         keeper = min(members, key=lambda index: (-scored[index]["total"], index))
         for index in members:
             if index != keeper:
@@ -243,7 +255,8 @@ def decide(news_list, scored, list_slots, list_n, min_score):
         else:
             candidates.append(index)
     candidates.sort(key=lambda index: news_list[index].get("published") or "", reverse=True)
-    candidates.sort(key=lambda index: (-scored[index]["total"], topic_priority(news_list[index])))
+    # 동점은 파급력, 같은 사건을 다룬 기사 수(여러 매체가 다룬 사건 먼저) 순. 키워드 주제 순서로 가르면 보안 기사가 밀렸다
+    candidates.sort(key=lambda index: (-scored[index]["total"], -scored[index]["impact"], -scored[index]["coverage"]))
 
     # 한 매체가 목록의 1/5을 넘지 않게 한다
     source_max = max(2, list_n // 5)
@@ -284,12 +297,13 @@ def write_score_csv(news_list, scored, decisions, dropped):
         dup_of = info.get("dup_of")
         rows.append([
             run_at, decisions[index], info.get("total", ""), *[info.get(name, "") for name in CRITERIA],
-            news_list[dup_of]["link"] if dup_of is not None else "", info.get("exclude", ""), info.get("reason", ""),
+            news_list[dup_of]["link"] if dup_of is not None else "", info.get("coverage", ""), info.get("exclude", ""),
+            info.get("reason", ""),
             news.get("source", ""), news.get("published", ""), news.get("topic", ""), news["title"],
             info.get("title_ko", ""), news["link"],
         ])
     for news, reason in dropped:
-        rows.append([run_at, reason, "", *[""] * len(CRITERIA), "", "", "", news.get("source", ""),
+        rows.append([run_at, reason, "", *[""] * len(CRITERIA), "", "", "", "", news.get("source", ""),
                      news.get("published", ""), news.get("topic", ""), news["title"], "", news["link"]])
     with open(path, "a", encoding="utf-8-sig" if is_new else "utf-8", newline="") as f:
         writer = csv.writer(f)

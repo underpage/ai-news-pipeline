@@ -61,9 +61,14 @@ topic_weights:
   산업: 0
   일반: 0
 
-# 중요도 항목별 가중치 (합 1). Gemini가 항목마다 1~5점을 주면 각 점수를 0~100으로 바꿔 가중합한다.
+# 합계에 들어가는 항목의 가중치 (impact, relevance 둘 다 있고 합 1).
+# Gemini가 준 점수(파급력 1~10, 관련성 1~5)를 각각 0~100으로 바꿔 가중합한다.
 criteria_weights:
-  impact: 0.4
-  practical: 0.3
-  novelty: 0.2
-  certainty: 0.1
+  impact: 0.6
+  relevance: 0.4
+
+# 합계에서 빼는 점수. 새로움, 근거는 상위권에서 순위를 거의 가르지 못해 합계에 넣지 않고,
+# 가장 낮은 단계(1점: 새 사실 없는 해설, 근거가 드러나지 않음)일 때만 이만큼 뺀다.
+penalties:
+  novelty: 10
+  certainty: 10
