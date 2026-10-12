@@ -14,13 +14,19 @@
 JSON 배열만 출력하세요. 입력한 <기사> 블록마다 아래 키를 가진 객체를 하나씩 넣습니다. 코드 블록 표시(```)나 다른 텍스트는 절대 포함하지 마세요.
 - id: <기사> 태그의 id 번호 (정수)
 - lang: 기사 원문의 언어. 한국어는 "ko", 영어는 "en", 그 밖의 언어는 "other"
-- title_ko: 한국어 제목. 원문이 한국어면 원문 제목 그대로, 아니면 자연스러운 한국어로 옮김
-- summary_ko: 한국어 요약 문장 3개의 배열
-- summary_en: 원문이 영어일 때만 영어 요약 문장 3개의 배열 (summary_ko와 같은 내용). 원문이 영어가 아니면 빈 배열
+- title_ko: 한국어 제목. 원문이 한국어면 원문 제목 그대로, 아니면 아래 [번역 규칙]대로 옮김
+- summary_en: 원문이 영어일 때만 영어 요약 문장 3개의 배열. 원문이 영어가 아니면 빈 배열
+- summary_ko: 한국어 요약 문장 3개의 배열. 원문이 영어면 summary_en을 먼저 쓴 뒤 그 세 문장을 순서대로 한 문장씩 한국어로 옮김 (아래 [번역 규칙]). 원문이 영어가 아니면 본문을 바로 한국어로 요약
 - tone: "긍정", "부정", "중립" 중 하나
 - error: 요약할 수 없을 때만 그 이유. 요약할 수 있으면 이 키를 넣지 않음
 
-예시 (기사가 1건일 때): [{"id": 1, "lang": "en", "title_ko": "오픈AI, 새 에이전트 SDK 공개", "summary_ko": ["오픈AI가 에이전트 개발용 SDK를 공개했다.", "도구 호출과 작업 이어가기를 기본으로 지원한다.", "기존 API 사용자는 추가 비용 없이 쓸 수 있다."], "summary_en": ["OpenAI released an SDK for building agents.", "It supports tool calling and task handoff out of the box.", "Existing API users can use it at no extra cost."], "tone": "긍정"}]
+예시 (기사가 1건일 때): [{"id": 1, "lang": "en", "title_ko": "오픈AI, 새 에이전트 SDK 공개", "summary_en": ["OpenAI released an SDK for building agents.", "It supports tool calling and task handoff out of the box.", "Existing API users can use it at no extra cost."], "summary_ko": ["오픈AI가 에이전트 개발용 SDK를 공개했다.", "도구 호출과 작업 이어가기를 기본으로 지원한다.", "기존 API 사용자는 추가 비용 없이 쓸 수 있다."], "tone": "긍정"}]
+
+[번역 규칙] 영어를 한국어로 옮길 때 (제목, 요약 모두)
+- 원문에 있는 내용만 옮깁니다. 문장을 더하거나 빼지 말고, 평가나 설명을 덧붙이지 마세요.
+- 누가 누구에게 무엇을 했는지(주어, 목적어, 행위)를 원문 그대로 유지하세요. 행위의 주체를 바꾸지 마세요.
+- 수치, 버전, 제품명, CVE 번호는 원문 그대로 둡니다.
+- 보안, AI 용어는 업계에서 쓰는 뜻으로 옮깁니다: compromised는 "침해된", misaligned는 "정렬에서 벗어난", disrupt(해킹 조직, 도구)는 "무력화", exploit(명사)은 "익스플로잇", rogue agent는 "통제를 벗어난 에이전트"
 
 [요약 규칙]
 - 정확히 3문장으로 작성하고, 각 문장은 한 줄에 읽히는 길이로 유지하세요.

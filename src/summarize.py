@@ -19,12 +19,14 @@ SUMMARY_SCHEMA = {
             "id": {"type": "INTEGER"},
             "lang": {"type": "STRING", "enum": list(LANGS)},
             "title_ko": {"type": "STRING"},
-            "summary_ko": {"type": "ARRAY", "items": {"type": "STRING"}},
             "summary_en": {"type": "ARRAY", "items": {"type": "STRING"}},
+            "summary_ko": {"type": "ARRAY", "items": {"type": "STRING"}},
             "tone": {"type": "STRING", "enum": list(TONES)},
             "error": {"type": "STRING"},
         },
         "required": ["id", "lang", "title_ko", "summary_ko", "tone"],
+        # 출력 순서를 고정한다. 순서를 주지 않으면 모델이 summary_ko를 먼저 써서 국문이 영문의 번역이 아니게 됨 (2026-10-12 확인)
+        "property_ordering": ["id", "lang", "title_ko", "summary_en", "summary_ko", "tone", "error"],
     },
 }
 
