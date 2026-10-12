@@ -40,7 +40,8 @@
 | 바꾸는 것 | 함께 수정 |
 |---|---|
 | 프롬프트의 출력 형식 | `RANK_SCHEMA` / `SUMMARY_SCHEMA`, `score_articles` / `split_answers`, `parse_summary` |
-| 중요도 항목 추가, 삭제 | README "선정 기준", `evaluate.CRITERIA`, `RANK_SCHEMA`, `config/selection.yml`의 `criteria_weights` |
+| 중요도 항목 추가, 삭제, 점수 범위 | README "선정 기준", `evaluate.CRITERIA`, `CRITERIA_MAX`, `CRITERIA_KO`, `WEIGHTED_CRITERIA`, `config/selection.yml`의 `criteria_weights`, `penalties`, 점수표 열 이름을 읽는 `tools/feedback_server.rb` |
+| 제외 사유 이름 | `filter_prompt.txt`의 [제외 표시], `evaluate.EXCLUDE_REASONS`, README "선정 기준" |
 | `filter_prompt.txt`의 점수 기준, 제외 기준, 같은 사건 기준 문구 | README "선정 기준"의 항목 표와 제외 목록 |
 | `evaluate.prefilter`, `total_score`, `decide`의 순서나 계산 | README "선정 기준"의 해당 단계 |
 | `config/selection.yml` (사전 제외 단어, 주제 가중치, 항목 가중치) | 지난 로그로 선정 기사가 빠지지 않는지 확인 (`tools/check_prefilter.rb`, 로컬). 제외 단어 묶음 이름을 바꾸면 README "선정 기준" |
@@ -129,7 +130,9 @@
 - 대상: 오늘 수집 로그 중 오늘 필터링 로그에 링크가 없는 기사
 - 함수: 사전 필터 `prefilter`, 점수 `score_articles`(Gemini 한 번), 합계 `total_score`, 결정 `decide`. `prefilter`와 `decide`는 호출 없음
 - 항목별 점수 + 코드 가중합으로 바꾼 이유 (LLM-as-a-Judge의 `final_eval_score` 방식): 이전 방식(모델이 30건을 골라 총점 0~10)은 점수가 9~10에 몰려 상위 기사가 사실상 모델 나열 순서로 정해졌음
-- 응답 검증: 범위 밖 id, 같은 id 두 번째, 점수가 숫자가 아닌 항목은 버림. 점수는 1~5로 맞춤. 자기 자신이나 범위 밖을 가리키는 `dup_of`는 무시. 점수를 하나도 못 받으면 형식 오류
+- 2026-10-12 점수표 개편 (Fable reviewer의 타당성 검토 근거, 10-08~10-11 점수표): 새로움, 확실성은 상위권에서 상수라 합계에서 빼고 1점일 때 감점만. 활용도는 목적(파악)과 다른 조치 가능성을 재고 보안 기사에 일괄 5점이라 독자 관련성으로 교체. 1~5점 4항목은 상위 30의 합계 값이 4~13개뿐이라 파급력을 1~10으로. 동점 처리의 주제 순서는 보안 기사를 밀어서 파급력, 같은 사건 기사 수로 교체
+- 응답 검증: 범위 밖 id, 같은 id 두 번째, 점수가 숫자가 아닌 항목은 버림. 점수는 항목별 범위(`CRITERIA_MAX`)로 맞춤. 자기 자신이나 범위 밖을 가리키는 `dup_of`는 무시. 제외 표시는 `EXCLUDE_REASONS`에 있는 이름만 인정(`exclude_reason`, 정의 밖 사유가 제외가 되던 문제). 점수를 하나도 못 받으면 형식 오류
+- 같은 사건 기사 수는 `decide`가 `scored[순번]["coverage"]`에 넣고 동점 처리와 점수표에 씀
 - 기록: 목록 기사는 필터링 로그에 `[SCORE]`(README "합계 계산"의 N/10 값, `log_score`). 예전 로그, 리포트, 주간 요약과 같은 0~10 척도를 유지하기 위함. 나머지 후보는 `[STATUS] SKIP (결정)`
 - 번역 제목(`title_ko`)을 점수 응답에서 함께 받아 `[TITLE_KO]`로 기록. 호출을 늘리지 않고 요약하지 않는 목록 기사의 제목을 번역하기 위함. 원문 제목에 한글이 있거나 원문과 같으면 버림
 - 본문: `trafilatura` -> `BODY_MIN_LENGTH` 미만이면 `BODY_SELECTORS`로 보완 -> `BODY_MAX_LENGTH`까지, 문장 끝에서 자름. `BODY_MIN_LENGTH` 미만이면 `[평가 오류]` 기록
@@ -145,6 +148,7 @@
 - 대상: 오늘 필터링 로그에서 `[BODY]`가 있고 오늘 요약 로그에 없는 기사. 전체를 한 번 호출로 보냄 (`summarize_all`, 기사마다 `<기사 id="번호">` 블록)
 - 응답: 기사별 객체의 JSON 배열, `id`로 기사와 맞춤 (`split_answers`). 프롬프트에 기사끼리 내용을 섞지 말라는 규칙 유지
 - 검증: `summary_ko` 3줄, `lang`이 `en`이면 `summary_en`도 3줄, 말줄임표만 있는 줄은 불인정. 기사 단위로 검사해 맞는 기사는 기록
+- 영문 기사의 국문 요약은 영문 요약의 줄별 번역. `SUMMARY_SCHEMA`의 `property_ordering`으로 `summary_en`을 먼저 쓰게 함. 순서를 고정하지 않으면 모델이 국문을 먼저 본문에서 따로 써서 영문과 내용이 달라짐 (2026-10-12, 3.8-flash로 확인. 스키마 키 순서만 바꿔서는 효과 없음). 번역 용어와 규칙은 `summary_prompt.txt`의 [번역 규칙]
 - 다시 요청: 형식 오류, 응답에 빠진 기사, 호출 오류인 기사만 모아 번호를 새로 붙여 다시 보냄. 요약 단계의 호출은 첫 호출 포함 `SUMMARY_MAX_CALLS`번까지
   - 일시 오류(503 과부하 등)는 `get_retry_wait`만큼 점점 길게 기다렸다 다시. 형식 오류는 바로 다시
   - 다시 시도하지 않는 실패: 요약 불가, 하루 요청 한도 초과, 잘못된 요청, 잘린 응답 (`common.is_retryable`)
@@ -190,7 +194,7 @@
 ## 로그 형식
 
 - 파일: `archive/logs/YYYY/MM/YYYY-MM-DD-{수집|필터링|요약}.txt`
-- 점수표: `archive/logs/YYYY/MM/YYYY-MM-DD-점수.csv` (Evaluate, UTF-8 BOM). 후보마다 한 줄 (열은 `evaluate.SCORE_COLUMNS`): 실행 시각, 결정(값은 README "선정 기준"의 "기록과 기준 변경"), 합계, 항목별 점수, 같은 사건 링크, 제외 사유, 선정 이유, 출처, 발행, 주제, 제목, 번역 제목, 링크. 같은 날 재실행하면 이어 씀
+- 점수표: `archive/logs/YYYY/MM/YYYY-MM-DD-점수.csv` (Evaluate, UTF-8 BOM). 후보마다 한 줄 (열은 `evaluate.SCORE_COLUMNS`): 실행 시각, 결정(값은 README "선정 기준"의 "기록과 기준 변경"), 합계, 항목별 점수, 같은 사건 링크, 같은 사건 수, 제외 사유, 선정 이유, 출처, 발행, 주제, 제목, 번역 제목, 링크. 같은 날 재실행하면 이어 씀. 2026-10-12 이전 파일은 열이 다름(활용도, 확실성, 같은 사건 수 없음)
 - 통계: `archive/stats/YYYY.csv` (연도별 파일). Publish가 그날의 세 로그를 세어 하루 한 줄로 기록 (단계별 성공, 실패 건수, 실패한 매체). 같은 날 재실행하면 그날 줄을 바꿔 씀. 수집 0건으로 Publish가 돌지 않은 날에는 줄이 없음
 - 현황 화면은 원본 로그가 아니라 연도별 통계 파일만 읽으면 되도록 유지. 모든 해의 열 구성은 같게 유지하고, 열을 추가할 때는 맨 뒤에 (`publish.STATS_COLUMNS`)
 - 레코드는 `---` 한 줄로 구분. 한 줄 태그는 `[TAG] 값`
