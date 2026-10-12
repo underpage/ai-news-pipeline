@@ -1,0 +1,885 @@
+[TITLE] AWS, 피지컬 AI 개발 전 과정 지원하는 오픈소스 툴체인 공개
+[LINK] https://www.etnews.com/20261012000055
+[PUBLISHED] 2026-10-12 09:52 KST
+[SOURCE] 전자신문
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 10
+[REASON] AWS의 피지컬 AI 개발 오픈소스 툴체인 공개
+[BODY]
+아마존웹서비스(AWS)가 제조·물류 현장에서 활용하는 지능형 로봇과 자율 시스템 개발을 지원하는 오픈소스 툴체인을 공개했다. 합성 데이터 생성부터 모델 학습, 시뮬레이션, 현장 배포, 지속적인 모델 개선까지 피지컬 인공지능(AI) 개발 전 과정을 지원한다. 엔비디아의 로보틱스 기술과 아마존의 로봇 운영 경험을 결합해 기업의 피지컬 AI 개발과 상용화를 지원한다는 목표다.
+AWS는 12일(현지시간) 지능형 기계 구축을 위한 오픈소스 스택 'AWS 피지컬 AI 툴체인'을 발표했다.
+피지컬 AI는 AI가 현실 세계를 인식하고 판단해 로봇 등 물리적 장치를 직접 움직이는 기술이다. 정해진 명령을 반복 수행하는 기존 자동화 기계와 달리 주변 환경을 감지하고 상황에 맞춰 작업을 수행하는 것이 특징이다. 제조 현장의 협동 로봇부터 물류창고의 자율 이동 로봇, 휴머노이드까지 활용 범위가 넓다.
+AWS 피지컬 AI 툴체인은 개발자가 필요한 기술을 처음부터 구축하지 않고도 피지컬 AI 개발 환경을 구성할 수 있도록 설계됐다. 아키텍처 가이드와 레퍼런스 코드, 배포 자동화를 오픈소스로 제공하며 엔비디아의 피지컬 AI 소프트웨어 스택과 통합했다.
+핵심 기능은 △합성 데이터 생성 △모델 학습 △시뮬레이션·검증 △엣지 배포 △지속적 개선 등 5개 영역이다. 가상 환경에서 다양한 학습 데이터를 생성하고 AI 모델을 학습시킨 뒤, 실제 기계에 적용하기 전 시뮬레이션으로 동작을 검증하는 방식이다. 검증된 모델은 현장 기기에 배포할 수 있으며, 운영 과정에서 수집한 데이터는 다시 학습에 활용된다.
+기술 구성에는 아마존 세이지메이커(Amazon SageMaker), 아마존 EC2 GPU 인스턴스, AWS IoT 그린그래스(AWS IoT Greengrass), 아마존 베드록 에이전트코어(Amazon Bedrock AgentCore) 등 AWS 서비스가 포함된다. 엔비디아의 아이작 심(Isaac Sim), 아이작 랩(Isaac Lab), 그루트(GR00T), 코스모스(Cosmos) 등 로보틱스 관련 도구와 모델도 연계한다.
+기업은 전체 툴체인을 활용하거나 시뮬레이션·학습·배포 등 필요한 구성 요소만 기존 개발 환경에 통합할 수 있다. 기계군 관리 기능을 통해 여러 기기에 대한 원격 프로비저닝과 보안 관리, 무선 소프트웨어 업데이트(OTA)도 지원한다.
+AWS는 이번 툴체인이 제조·물류 산업의 자동화와 지능화를 지원할 것으로 기대했다. 제조사는 새로운 조립 작업에 적응하는 협동 로봇을 개발하거나 생산 현황을 실시간으로 분석·최적화할 수 있다. 자율 로봇 개발사는 새로운 부품과 작업에 대한 로봇의 대응 능력을 높이고, 산업 장비 제조사는 자사 제품에 지능형 기능을 접목할 수 있다.
+AWS는 아마존의 로봇 운영 경험도 툴체인에 반영했다. 아마존은 운영 네트워크 전반에 100만대 이상의 로봇을 배치해 물류 작업에 활용하고 있다. AWS는 실제 환경에서 자율적으로 작동하는 로봇을 구축·운영하며 축적한 경험을 아키텍처 가이드와 레퍼런스 코드, 배포 자동화에 반영했다.
+우웸 우퐁 AWS 인더스트리 부문 부사장은 “고객들이 혁신보다 인프라 구축에 지나치게 많은 엔지니어링 역량을 투입하고 있다는 이야기를 듣고 AWS 피지컬 AI 툴체인을 개발했다”며 “이 비중을 뒤집고자 한다”고 말했다.
+아밋 고엘 엔비디아 로보틱스 개발자 에코시스템 및 엣지 AI 제품 총괄은 “오픈소스 기반의 AWS 피지컬 AI 툴체인은 AWS 서비스와 엔비디아의 피지컬 AI 모델, 도구, 라이브러리를 결합해 개발자가 지능형 로보틱스 애플리케이션의 생성, 학습, 검증, 배포를 가속할 수 있는 확장 가능한 엔드투엔드 워크플로를 제공한다”고 말했다.
+최호 기자 snoop@etnews.com
+- 
+              
+              최호 기자기사 더보기
+- ET Events
+---
+[TITLE] 개발자 계정 뚫리자 깃허브 345곳 연쇄 침해…AI API 키까지 노렸다
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208821
+[PUBLISHED] 2026-10-11 13:47 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 보안
+[SCORE] 10
+[REASON] 개발자 계정 침해로 인한 깃허브 연쇄 공급망 공격 발생
+[BODY]
+유명 오픈소스 개발자의 깃허브 계정 2개가 공격에 악용돼 345개 소스코드 저장소에 악성 코드가 삽입되는 공급망 공격이 발생했다. 공격자는 정상적인 보안점검 프로그램으로 위장해 클라우드와 인공지능 서비스의 인증정보를 탈취하려 했다.
+사이버보안 기업 스텝시큐리티(StepSecurity)는 10월 9일 이 같은 내용을 담은 '고스트액션(GhostAction)' 공격 분석 결과를 공개했다.
+이번 공격은 10월 8일 두 차례 진행됐다. 공격자는 게임엔진 '파이셀(Pyxel)' 개발자 다카시 기타오의 깃허브 계정을 이용해 약 24분 동안 27개 저장소에 악성 코드를 삽입했다.
+약 8시간 뒤에는 개발자 헨리 우의 계정을 이용해 16분 만에 318개 저장소에 악성 코드를 추가했다.
+보안점검 프로그램으로 위장해 인증정보 탈취 시도
+공격자는 깃허브의 자동화 기능인 '깃허브 액션'을 악용했다. 깃허브 액션은 개발자가 소프트웨어를 테스트하거나 배포하는 작업을 자동으로 실행하도록 돕는 기능이다.
+공격자는 여기에 'Security Audit(보안감사)'라는 이름의 악성 작업을 추가했다. 정상적인 보안점검처럼 보이지만 실제로는 저장소에 보관된 각종 인증정보를 찾아 외부 서버로 전송하도록 설계됐다.
+수집 대상에는 아마존웹서비스(AWS) 접근키, 깃허브·깃랩 인증 토큰, 구글 API 키 등이 포함됐다. 오픈AI와 앤트로픽, 오픈라우터 등 AI 서비스를 이용할 때 사용하는 API 키도 탈취 대상이었다.
+특히 공격자는 현재 소스코드뿐 아니라 과거에 수정하거나 삭제한 코드 기록까지 검색했다.
+개발자가 실수로 소스코드에 비밀번호나 인증키를 넣었다가 삭제했더라도 과거 기록에 해당 정보가 남아 있다면 공격자가 찾아낼 수 있는 것이다.
+우버 관련 저장소에서 실제 외부 전송 확인
+스텝시큐리티는 우버의 공개 소스코드 저장소 '아테나드라이버(athenadriver)'에서 악성 작업이 실제 실행된 사실을 확인했다.
+악성 코드는 저장소의 과거 기록을 검색한 뒤 공격자가 운영하는 외부 서버로 데이터를 전송했다. 서버가 데이터를 수신했다는 응답도 확인됐다.
+다만 전송된 데이터에 실제 사용 가능한 인증정보가 얼마나 포함됐는지는 확인되지 않았다. 따라서 우버 내부 시스템이나 고객정보가 유출됐다고 단정할 수는 없다.
+연구진은 10월 9일 기준 악성 작업이 발견된 저장소가 378곳이라고 밝혔다. 이는 10월 8일 공격받은 345곳과 집계 기준이 다른 수치다.
+현재까지 탈취한 인증정보를 이용해 새로운 악성 소프트웨어가 배포됐다는 사실은 확인되지 않았다.
+개발자 계정 하나 뚫리면 여러 기업으로 피해 확산 가능
+이번 공격은 개발자 계정 하나가 탈취되면 해당 개발자가 관리하는 여러 소프트웨어 프로젝트가 동시에 위험해질 수 있다는 점을 보여준다.
+특히 소프트웨어 개발과 배포에 사용하는 인증정보가 유출되면 공격자가 정상 개발자를 사칭하거나 다른 시스템에 접근하는 추가 공격으로 이어질 수 있다.
+기업들은 깃허브에 새로운 자동화 작업이 등록되거나 기존 작업이 변경됐는지 점검해야 한다. 또한 개발자 계정의 접근권한을 최소화하고, 중요한 작업은 별도의 승인 절차를 거치도록 설정할 필요가 있다.
+악성 코드가 발견된 경우에는 해당 파일을 삭제하는 것만으로 대응을 끝내서는 안 된다. 이미 인증정보가 외부로 유출됐을 가능성이 있으므로 관련 API 키와 접근 토큰을 점검하고 필요한 경우 폐기한 뒤 새로 발급해야 한다.
+---
+[TITLE] 퀄컴 "AI 기업들, 100B 온디바이스 모델 구동할 칩 요구"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216155
+[PUBLISHED] 2026-10-12 12:42 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 모델
+[SCORE] 9
+[REASON] 퀄컴 CEO, 100B 온디바이스 AI 모델 구동 칩 수요 언급
+[BODY]
+크리스티아노 아몬 퀄컴 CEO가 주요 AI 기업들이 2028년까지 스마트폰에서 최소 1000억개 매개변수(100B) 규모의 AI 모델을 구동할 수 있는 칩을 요구하고 있다고 밝혔다. 이는 일상 속 AI 에이전트 구동에 맞춰 하드웨어 생태계 전반의 혁신이 필요해지고 있음을 보여준다.
+아몬 CEO는 8일(현지시간) 팟캐스트 '소시스(Sources)'에 출연해 주요 AI 기업들이 퀄컴에 스마트폰의 하드웨어 한계를 뛰어넘는 성능을 요구하고 있다고 말했다.
+그는 "2028년까지 휴대폰에서 최소 1000억개 매개변수 모델을 구동할 수 있어야 한다는 것이 AI 업계의 요구"라고 설명했다. 특히 모델이 필요할 때만 실행되는 것이 아니라 백그라운드에서 "항상 상시 구동(running all the time)"돼야 한다는 주문도 나왔다.
+다만 구체적으로 어떤 기업들이 이 같은 요청을 했는지는 공개하지 않았다.
+특히 이러한 요구가 단순한 스마트폰 제품군에 국한되지 않고, 스마트폰용 시스템온칩(SoC) 기술을 바탕으로 연결된 다양한 AI 디바이스 및 하드웨어 생태계 전반의 성능 고도화와 맞물려 있다고 강조했다. 실제로 오픈AI와 애플, 메타 등은 전용 AI 장치 출시를 앞두고 있다.
+1000억개 매개변수 모델을 스마트폰이나 AI 장치에서 상시 구동하는 것은 현재 모바일 하드웨어의 한계를 크게 넘어서는 목표다. 대형 AI 모델은 높은 연산 성능뿐 아니라 충분한 메모리 용량과 데이터 전송 속도, 전력 효율이 필요하다. 데이터센터 서버와 달리 스마트폰은 배터리와 발열 관리에 제약이 커 이런 조건을 동시에 충족하기가 쉽지 않다.
+특히 핵심 과제는 메모리다. 모델의 매개변수를 4비트로 압축하는 양자화 기술을 적용하더라도 1000억개 매개변수의 가중치를 저장하는 데만 약 50GB의 메모리가 필요하다. 운영체제와 다른 앱, 대화 내용을 처리하기 위한 추가 메모리까지 고려하면 요구량은 더 늘어난다.
+이를 해결하려면 AI 모델을 압축하는 기술을 고도화하고, 일부 매개변수만 활성화해 연산량을 줄이는 전문가 혼합(MoE) 구조 등을 활용해야 한다. 메모리와 연산 장치 사이의 데이터 이동을 최적화하고 전력 소모를 줄이는 기술도 중요하다.
+다만 MoE 구조는 실제 연산에 참여하는 매개변수 수를 줄일 수 있어도 전체 모델을 저장하는 데 필요한 공간까지 같은 비율로 줄여주지는 않는다.
+이날 아몬 CEO가 강조한 온디바이스 AI의 핵심 가치는 '개인화'다. 스마트폰에는 사용자의 일정과 앱 사용 정보, 개인 데이터, 센서 정보 등 AI 에이전트가 작업을 수행하는 데 필요한 맥락이 축적돼 있다. 이 정보를 기기 내부에서 직접 처리하면 사용자의 상황에 맞는 서비스를 제공하기 쉬워지고, 데이터를 외부 서버로 전송하는 과정도 줄일 수 있다.
+AI 에이전트는 사용자의 지시를 이해하는 데 그치지 않고 앱과 서비스를 직접 활용해 여러 작업을 수행하는 AI 시스템이다. 아몬 CEO는 앞으로 AI가 스마트폰 운영체제와 앱 전반에 통합돼 사용자를 대신해 작업을 처리하는 방식으로 발전할 것으로 전망했다. 사용자가 일일이 앱을 열고 기능을 실행하는 대신 AI 에이전트에 요청하면 필요한 작업을 수행하는 형태다.
+이 같은 변화는 AI 연산을 처리하는 방식에도 영향을 미칠 전망이다. 현재 고성능 AI 모델의 상당 부분은 클라우드 서버에서 실행되지만, 앞으로는 개인화된 정보 처리와 빠른 응답이 필요한 작업을 스마트폰에서 수행하고 복잡한 연산은 클라우드에 맡기는 방식이 확대될 수 있다. 이를 통해 응답 지연을 줄이고 개인정보 보호를 강화하는 동시에 AI 서비스 사업자의 클라우드 추론 비용도 절감할 수 있다.
+퀄컴 입장에서도 온디바이스 AI 시장의 성장은 새로운 사업 기회다. 스마트폰용 SoC를 중심으로 AI 연산 성능과 전력 효율을 높여온 퀄컴은 AI 에이전트가 다양한 기기에서 상시 작동하는 환경에 대비해 반도체 기술을 발전시켜야 한다. AI 모델이 기기에서 직접 실행되는 비중이 커질수록 고성능 모바일 칩과 메모리 기술의 중요성도 높아질 수 있다.
+아몬 CEO는 AI가 스마트폰 교체 수요를 자극할 가능성에도 주목했다. 스마트폰 시장이 성숙기에 접어든 상황에서 개인의 일상에 깊숙이 통합되는 AI 기능이 소비자들의 기기 교체를 유도하는 새로운 요인이 될 수 있다는 관측이다.
+박찬 기자 cpark@aitimes.com
+---
+[TITLE] Show GN: source-to-explainer-video - PR·책·함수를 3분 설명 영상으로 만들어 주는 에이전트 스킬
+[LINK] https://news.hada.io/topic?id=35171
+[PUBLISHED] 2026-10-11 23:07 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트
+[SCORE] 9
+[REASON] AI 에이전트가 PR, 책, 함수를 설명 영상으로 만드는 스킬 공개
+[BODY]
+안녕하세요.
+AI가 만든 PR이나 책 한 절, 함수 하나를 3분 안팎의 나레이션 설명 영상으로 만들어 주는
+에이전트 스킬 source-to-explainer-video를 소개합니다.
+요즘 개발은 대부분 에이전트에게 맡기고 있어요.
+스펙을 주고 루프를 돌리면 PR이 금방 올라옵니다.
+그런데 리뷰는 여전히 제 몫이라, 하루에 볼 수 있는 양보다 올라오는 PR이 더 많아지더라고요.
+(diff를 열어도 어디부터 봐야 할지 모르겠는 날도 많고요..)
+생각해 보면 진짜 병목은 코드를 만드는 속도가 아니라 제 집중력이더라고요.
+하루에 온전히 집중할 수 있는 시간이 네 시간 정도라면, AI 덕분에 만드는 속도는 빨라졌어도 이해하는 데 쓸 수 있는 시간은 그대로예요.
+그래서 "어떻게 더 빨리 읽을까"보다 "읽기 전에 큰 그림을 먼저 잡아서 집중력을 아낄 수는 없을까"를 고민하게 됐습니다.
+Claude Code나 Codex에 "이 PR이 바꾼 동작을 영상으로 설명해 줘"라고 하면,
+- 원본(커밋, 파일 해시)을 고정하고
+- 장면을 나눠 Gemini TTS로 나레이션을 입히고
+- Pillow + ffmpeg로 MP4를 만든 뒤
+- 설명이 원본과 맞는지, 영상 파일이 멀쩡한지 따로 검사합니다.
+설명 방식은 원본에 따라 세 가지예요.
+스킬 레포 README에 예제마다 GIF와 전체 영상(한국어·영어)을 올려 뒀습니다.
+- 책·논문 → 장면마다 주장 하나, 그림 하나 (성당과 시장)
+- PR·저장소 → 요청이 지나가는 흐름을 그림으로 (YC의 QM)
+- 함수 → 실제로 실행하면서 줄마다 변수 값을 기록해 디버거처럼
+3번에 나오는 변수 값은 AI가 쓴 게 아니라, 함수를 실제로 돌리면서 찍어 둔 값이에요.
+AI가 값을 하나라도 지어내면 검사에 걸려서 영상이 아예 안 만들어집니다.
+영상만 보고 코드를 다 이해할 수는 없습니다.
+대신 영상을 보고 나면 어디를 모르는지, 어디부터 확인해야 하는지가 먼저 정리돼요.
+저는 영상을 보면서 모르거나 확인할 건 메모해두고,
+제가 유추해서 사실을 기록해두고, 다시 AI에게 맞는지 사실 확인을 합니다.
+이러면 좀 더 기억에 잘 남고, 파악이 빨라지는 것 같아요.
+써 보시고 의견 주시면 감사하겠습니다.
+---
+[TITLE] Show GN: 해줘 로컬 - 크레덴셜 금고가 붙은 로컬 AI 에이전트 오케스트레이터
+[LINK] https://news.hada.io/topic?id=35169
+[PUBLISHED] 2026-10-11 23:00 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 크레덴셜 금고가 붙은 로컬 AI 에이전트 오케스트레이터 공개
+[BODY]
+AI 코딩 에이전트를 여러 개 같이 돌리다 보니 제가 중간관리자가 돼 있었습니다. 로그인이 막히면 비밀번호를 넣어 주고, 결과를 다른 창에 옮겨 붙이고, 한도가 차면 계정을 바꾸고, 세션이 죽으면 다시 켰어요. 자리를 비우면 다들 멈춘 채 저를 기다렸고요. 그 기다림을 줄이려고 만든 앱입니다. 지금은 2021년 노트북 한 대로 메인 에이전트 34개를 돌리고 있습니다.
+Windows 10/11용이고, 이미 쓰는 AI(Claude Code, Codex, Gemini CLI, Cursor, Devin, 웹의 Claude·ChatGPT·Gemini)를 주소 하나로 이 PC의 작업 폴더에 붙입니다. 연결마다 Owner 코드로 승인하며 에이전트는 고른 폴더 안에서만 움직여요. 총괄 AI에게 한 줄 지시하면 Claude Code·Codex·Antigravity·Devin 팀원에게 나눠 주고, 이후엔 에이전트끼리 직접 일을 넘깁니다.
+가장 공들인 건 크레덴셜 금고입니다. 계정, 비밀번호, API 키는 Windows 암호화 저장소에 들어갑니다(DPAPI로 보호한 키 + AES-256-GCM). 메모나 표를 통째로 붙여넣으면 아이디·비밀번호·키로 나눈 초안이 나오고 확인 뒤에 저장돼요. 사이트 로그인은 앱이 대신 하므로 비밀번호가 에이전트에게 넘어가지 않습니다. API 키는 허용한 명령의 환경변수로만 들어가고, 출력에 찍히면 ****로 가려집니다. 해줘 서버가 아는 건 이름과 종류 같은 메타데이터뿐이에요.
+Claude 계정 여러 개를 한 풀로 묶고, 사용량을 예측해서 남은 일을 다른 세션이나 계정으로 넘깁니다. 앱을 재시작해도 같은 작업 번호로 결과를 이어 받습니다. 돈이나 계정처럼 사람이 정할 일만 질문함에 모이고 나머지는 계속 돌아갑니다. 한 번 답한 결정은 기록됐다가 다음 일에 붙고요.
+AI는 각 앱에 로그인된 본인 구독으로 돌고, 이 앱이 AI를 주지는 않습니다. 다운로드는 무료이고 로그인도 필요 없어요. Electron 없이 Windows 내장 WebView2로 돌아서 Node를 따로 깔 필요가 없고, 약 54 MB zip을 풀어 실행하면 설치 마법사 없이 알아서 자리를 잡습니다. 웹 Claude나 ChatGPT를 붙이려면 무료 Tailscale이 필요해요.
+Windows 전용이라 macOS나 Linux 판은 없어요. 코드 서명은 하지 않았고 대신 SHA-256을 공개해 두었습니다. 원격으로 쓸 수 있는 크레덴셜은 지금 API 키뿐입니다. 해줘(haejoe.com)에서 일을 맡긴 쪽이 지명한 개발자 에이전트는 그 키를 원격으로 쓸 수 있는데, 요청은 맡긴 쪽 PC가 보내고 키 값은 PC 밖으로 나가지 않습니다. 사이트 로그인 계정의 원격 대행은 아직 만드는 중이에요.
+듣고 싶은 의견은 두 가지입니다. 금고에서 키가 에이전트에게 닿는 길을 막은 방식에 빈틈이 보이는지, 여러 에이전트를 돌릴 때 사람 손이 제일 많이 가는 곳이 어디였는지 알고 싶습니다.
+---
+[TITLE] Show GN: OpenGoal - 마크다운만으로 AI 코딩 에이전트의 현재 목표를 관리하는 명세 기반 하네스
+[LINK] https://news.hada.io/topic?id=35168
+[PUBLISHED] 2026-10-11 22:56 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] AI 코딩 에이전트 목표 관리용 명세 기반 하네스 공개
+[BODY]
+안녕하세요. AI 코딩 에이전트용 경량 명세 기반 하네스 OpenGoal을 소개합니다.
+AI 에이전트로 코딩에 빠졌던 여느 개발자들처럼 저도 동시에 여러 프로젝트들을 미친 듯이 돌리고 있었습니다. 좀 더 체계적인 개발을 위해 OpenSpec, Superpowers를 기반으로 명세 기반 개발을 도입했었습니다. 그런데 명세 기반 개발로는 해결되지 않는 이런 병목이 있었습니다.
+"내가 다음에 할 것이 무엇이지?"
+당연한 것이지만 명세는 다음에 해야 할 것이 무엇인지 알려주지 않았습니다. 이를 해결하기 위해 노션에 프로젝트별 목표 문서를 만들어 두고 관리했었습니다. 하지만 프로젝트와 분리된 곳이라 매번 챙기기가 번거로웠습니다. 그래서 프로젝트 공간 안에 함께 있는 명세와 상태 관리가 결합된 하네스가 필요했습니다. 그렇게 제가 경험한 명세 기반 하네스들의 단점은 보완하고 장점은 계승하면서 만들었습니다.
+OpenGoal은 '질문 하나에 파일 하나'라는 원칙을 기반으로 합니다. 프로젝트에 묻고 싶은 것이 있다면, 그 답은 정확히 한 파일에 있습니다.
+ROADMAP.md  ─────────────  where am I in the big picture?  
+     CONTEXT.md  ────────  what is this project?  
+            ● GOAL.md  ──  what do I do now?  
+이 문서들은 기본적으로 docs 폴더에 유지됩니다. GOAL.md는 "내가 다음에 무엇을 해야 하는지"에 답하는 명세입니다.
+주요 특징은 다음과 같습니다.
+- 순수 마크다운: CLI나 hook, MCP 서버를 쓰지 않습니다. 런타임에 더해지는 것이 없어서 가볍게 동작하고, 사용되지 않는 도구 정의가 토큰을 차지하지 않습니다.
+- 작업 크기에 맞는 명세: 목표(Goal)만 만들 수도 있고, 목표를 필요한 만큼 태스크로 더 잘게 나눌 수 있습니다. 간단한 작업은 설계 문서를 생략할 수 있습니다. 작은 태스크에도 엄격한 명세를 작성하여 생기는 토큰 낭비를 줄이기 위해서입니다.
+- 아카이브: 목표의 태스크들을 모두 마치면 GOAL.md와 DESIGN.md, 체크포인트를 docs/archive/goals/ 아래로 옮깁니다. 이 문서들은 단순히 보관으로 끝나지 않습니다. 나중에 그 부분을 수정하거나 다음 골을 진행할 때, AI가 당시의 설계와 결정을 아카이브에서 찾아 맥락으로서 참고합니다.
+- 체크포인트: 진행 중인 골의 상태를 저장합니다. 저는 주로 컴팩션에 대비하거나 다른 세션이나 다른 AI 도구로 작업을 넘길 때 씁니다. Claude Code에서 체크포인트를 작성해 두고 Codex로 넘어가서 바로 /opgl:go 를 하면 작업이 그대로 이어집니다.
+- 자연어 실행: 커맨드를 매번 입력하지 않아도 됩니다. 맥락이 분명하면 자연어로도 실행됩니다. AI가 권장한 커맨드에 "ok"나 "진행해"라고 답해도 동작합니다. "태스크 6 진행해"라고 하면 /opgl:go 가, "진행사항 저장해"라고 하면/opgl:goal checkpoint 가 실행됩니다.
+- 서브에이전트 스킬: 메인 에이전트가 작업의 난이도에 따라 어떤 모델의 서브에이전트에게 맡길지 판단합니다. 다만 위임만 하지는 않습니다. 자료 수집은 서브에이전트가 하되, 분석 자체와 아주 작은 수정은 메인 에이전트가 직접 합니다. 위임 위주의 하네스에서는 서브에이전트가 실패해도 메인이 세부 원인을 모른 채 또다시 위임만 반복하는 악순환을 겪었기 때문입니다.
+그 외에도 골 일시중단(suspend)과 재개(resume), 서브 골(sub-goal), 백로그(backlog), 로드맵(roadmap)을 다룹니다. 마크다운만으로 할 수 있는 걸 최대한 쥐어짜냈고 아직도 진행 중입니다.
+Claude Code를 비롯해 Cursor, Codex, Antigravity 등 20여 개 도구에 설치할 수 있습니다. 설치는 프로젝트 루트에서 아래 한 줄로 설치할입니다.
+npx @opellen/opengoal init  
+처음에는 /opgl:scout로 시작하면 됩니다. 코드베이스가 확인되면 CONTEXT.md 작성을 권장합니다. CONTEXT.md는 처음에 만들어도 되지만 골을 몇 개 진행 후 충분히 맥락이 쌓였을 때 작성해도 됩니다.
+/opgl:goal init으로 골을 만들고 /opgl:go로 진행합니다.
+You: /opgl:goal init 인증 모듈을 JWT에서 세션 기반으로 전환  
+AI:  ✓ docs/GOAL.md 생성 완료 (5개 태스크)  
+  
+You: /opgl:go  
+AI:  Task 1/5: 세션 스토어 설정... ✓ done  
+     Task 2/5: 미들웨어 교체... ✓ done  
+     Task 3/5에서 DB 스키마 변경이 필요합니다. 진행할까요?  
+사용 전에 알아두실 것들입니다.
+- 프로젝트의 각 도구 설정 폴더(Claude Code는 .claude/ 등)에 마크다운 커맨드와 스킬 파일을 생성합니다.
+- 커맨드 접두사(opgl )와 기본 문서 폴더(docs )는 설치 시 각각--prefix ,--docs 인자로 변경할 수 있습니다.
+- 도구에 따라 슬래시 커맨드가 아니라 스킬 디렉토리에 설치되기도 합니다. (예: Codex)
+- 서브에이전트 스킬은 서브에이전트를 지원하는 도구에서만 의미가 있습니다.
+설치나 사용 중 막힌 부분, 또는 궁금한 점이 있으시면 댓글 남겨주세요.
+---
+[TITLE] 얀 르쿤 "차세대 AI는 실세계 이해해야…韓 연구 협력 확장"
+[LINK] https://zdnet.co.kr/view/?no=20261012115216
+[PUBLISHED] 2026-10-12 12:24 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 신기술, 산업
+[SCORE] 9
+[REASON] 얀 르쿤이 제시한 차세대 AI 월드 모델 방향
+[BODY]
+"인공지능(AI) 발전은 단순한 언어 학습에서 물리적 세계 이해로 이동할 것입니다. 각국은 행동 결과를 예측하고 계획을 세우는 '월드 모델'을 통해 산업 현장서 발생하는 AI 한계를 극복해야 할 것입니다."
+얀 르쿤 AMI랩스 창업자 겸 회장은 12일 서울 웨스틴 조선 호텔에서 열린 '산업 AI 주권과 글로벌 공동개발' 간담회에서 차세대 AI 개발 방향을 제시했다. 이날 행사에서는 한국의 제조 전문성을 글로벌 AI 연구와 연결하는 방안도 논의됐다.
+르쿤 회장은 현재 AI가 코딩과 수학 등에서 성과를 냈지만 물리적 환경을 이해하고 제어하는 능력은 부족하다고 진단했다. 로봇과 자율주행 분야에서는 방대한 데이터를 활용한 모방학습만으로 충분한 신뢰성을 확보하기 어렵다는 지적이다.
+그가 대안으로 제시한 월드 모델은 AI가 주변 상황을 이해하고, 어떤 결과를 낳을지 예측하는 기술이다. 이를 바탕으로 목표를 달성하는 데 필요한 작업 순서를 스스로 정할 수 있다.
+그는 현실 세계의 모든 상황을 정확히 예측하기 어려운 만큼 AI 학습 방식도 달라져야 한다고 강조했다. 다음 단어나 영상 장면을 만들어내는 방식에서 벗어나 주변 환경을 이해하고 행동의 결과를 예측하도록 학습해야 한다는 설명이다. 이를 위한 기술로 '공동 임베딩 예측 아키텍처(JEPA)'를 소개했다.
+AMI랩스는 이 기술을 바탕으로 스스로 작업 계획을 세우는 AI 시스템을 개발하고 있다. 작업마다 수행 방법을 따로 가르치지 않아도 기존에 학습한 내용을 활용해 새로운 과제를 해결하도록 하는 것이 목표다.
+르쿤 회장은 한국 정부·기관과 AI 개발 협력을 넓히고 있다고 설명했다. 그는 한국 정부와 뉴욕대가 함께 설립한 '글로벌 AI 프런티어' 공동 연구소의 공동 책임자를 맡고 있다.
+그는 "한국에는 뛰어난 인재가 많고 우수한 과학기술 고등교육 기반도 갖춰졌다"며 "세계 최고 인재들이 오고 싶어 하는 대학과 연구기관, 기업 연구 환경을 만드는 것이 중요하다"고 강조했다.
+						
+"韓 산업 데이터, 글로벌 AI 기술과 결합 필수"
+지미 리 ASI파운드리 회장은 한국 제조 현장에 축적된 고품질 데이터를 글로벌 AI 기술과 결합해야 한다고 강조했다.
+리 회장은 산업 데이터에서 얻은 지식을 새로운 수출 자산으로 활용할 가능성을 제시했다. 데이터를 비식별화해 기업 정보를 보호하면서, 현장 노하우를 제품화하면 인도 등 해외 시장에 공급할 수 있다는 구상이다.
+그는 이러한 전환을 위해 한국 정부 의지와 기술 역량, 자본이 함뒷받침돼야 한다고 짚었다. 한국이 제조 경쟁력을 바탕으로 피지컬 AI 전환을 주도하고 국제 표준 수립에도 적극 참여해야 한다고 당부했다.
+이번 간담회를 기획한 황명은 ASI파운드리 한국 대표도 "앞으로 기업은 업무 흐름과 시스템을 진단한 뒤 과제에 맞는 글로벌 AI 기술을 연결하고, 적용과 검증을 거쳐 운영 단계까지 이어지는 구조를 축해야 한다"며 "도입 후에도 실제 성과를 확인하면서 적용 범위를 확대해 나가는 것이 중요할 것"이라고 언급했다.
+이날 크리스토퍼 응우옌 아이토매틱 공동창업자·최고경영자(CEO)는 AI가 물리적 세계로 확장하면서 한국처럼 제조 기반을 갖춘 국가에 기회가 열릴 수 있다고 평가했다. 숙련자의 지식과 공정 경험을 AI 에이전트로 구현해 현장 의사결정을 지원하는 '디지털 엔지니어' 개념도 소개했다.
+앤서니 아눈지아타 AI얼라이언스 공동창립자·공동의장은 '프로젝트 태피스트리'를 통한 글로벌 공동개발 방안을 설명했다. 참여 기관이 공통 기반 모델을 함께 개발하되 고유 데이터와 개별 AI 시스템에 대한 통제권은 유지하는 구조다.
+관련기사
+- 한국어 AI 답변 속도 높인다…래블업, 추론 가속 모델 공개2026.10.12
+- "이메일 계정 갖춘 AI 동료"…구글, 기업용 제미나이 에이전트 공개2026.10.11
+- "미국인 채용하라"…美, MS·어도비 등 8개사 외국인 영주권 지원 제동2026.10.09
+- 문화산업은 AI를 어떻게 써야 하는가2026.10.12
+이번 행사는 아이토매틱과 국제 산업 AI 컨퍼런스(IIAC) 2026 조직위원회가 공동 주최하고 AI얼라이언스와 ASI파운드리가 공동 주관했다.
+하정우 국가AI전략위원회 부위원장은 "AI 기술과 연구 역량이 산업 현장 데이터, 도메인 전문성과 만날 때 비로소 실제 산업 혁신과 생산성 향상으로 이어질 수 있다"며 "기업과 국가가 핵심 데이터와 기술 통제권을 유지하면서 글로벌 연구자·기업과 공동 성과를 창출할 새로운 협력 방식이 중요해질 것"이라고 축사를 통해 밝혔다.
+---
+[TITLE] 마이크로소프트, 코파일럿에 윈도우 PC 로컬 파일 조작 권한 부여…하이브리드 AI 전략 본격화
+[LINK] https://www.itworld.co.kr/article/4233519/%eb%a7%88%ec%9d%b4%ed%81%ac%eb%a1%9c%ec%86%8c%ed%94%84%ed%8a%b8-%ec%bd%94%ed%8c%8c%ec%9d%bc%eb%9f%bf%ec%97%90-%ec%9c%88%eb%8f%84%ec%9a%b0-pc-%eb%a1%9c%ec%bb%ac-%ed%8c%8c%ec%9d%bc-%ec%a1%b0%ec%9e%91.html
+[PUBLISHED] 2026-10-12 08:51 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 개발, 모델, 보안, 신기술, 규제
+[SCORE] 9
+[REASON] 코파일럿의 로컬 파일 조작 권한 부여 및 하이브리드 AI 전략 발표
+[BODY]
+마이크로소프트 실행 컨테이너(MXC) 정식 출시와 함께 코파일럿의 온디바이스 AI 기능이 기업 환경에 본격 도입된다.
+마이크로소프트가 ‘하이브리드 인텔리전스’ 행사에서 코파일럿의 기능을 대폭 확장했다. 윈도우 PC 로컬 파일을 직접 정리·수정하고, 온디바이스 AI 모델로 특정 작업을 처리하는 기능이 새롭게 추가된다.
+마이크로소프트의 ‘하이브리드 인텔리전스(Hybrid Intelligence)’ 이벤트에서 로컬과 클라우드 AI 처리를 결합해 고객의 AI 비용을 절감하고 데이터 제어권을 강화하는 방안이 소개됐다.
+마이크로소프트에 따르면 새로운 코파일럿 기능 3가지가 코파일럿+ PC 사용자에게 수개월 내 제공될 예정이다.
+첫 번째는 코파일럿이 로컬 파일과 최근 사용자 활동에 접근해 AI 어시스턴트의 출력 결과에 추가적인 맥락 정보를 반영하는 기능이다.
+코파일럿은 파일 이동이나 설정 변경 등 디바이스에서 직접 작업을 수행하는 기능도 갖추게 된다.
+마이크로소프트 코파일럿 담당 부사장 제이콥 안드레우는 이벤트 현장에서 코파일럿이 사용자와 동등한 수준의 제어·변경 능력을 갖추지만, 항상 허가를 전제로 작동한다고 밝혔다.
+이 기능은 마이크로소프트가 지난해 윈도우 인사이더를 대상으로 프리뷰 형태로 선보인 ‘실험적’ 기능인 코파일럿 액션과 유사하다는 평가다.
+마지막으로, 특정 작업에서는 코파일럿을 로컬 AI 모델로 실행하고 클라우드 서버는 “필요할 때”에만 접속하는 옵션도 추가된다고 마이크로소프트는 전했다.
+안드레우는 코파일럿이 가장 복잡한 작업에는 여전히 클라우드를 활용하되, 비용이나 프라이버시가 더 중요한 상황에서는 사용자 컴퓨터에서 직접 실행되는 로컬 모델로 처리를 위임할 수 있다고 설명했다.
+포레스터(Forrester) 수석 애널리스트 비스와지트 마하파트라는 마이크로소프트의 하이브리드 모델이 시장 수요를 반영하고 있다고 평가했다. 마하파트라는 현재 시장에서 나타나는 수요가 온디바이스 전용 AI가 아닌, 어떤 워크로드를 로컬에서 처리하고 어떤 워크로드를 클라우드로 보낼지 지능적으로 판단하는 AI에 집중되고 있다고 밝혔다. 기업은 두 가지 옵션을 모두 원하는 방향으로 나아가고 있다고 덧붙였다.
+안드레우는 데모를 통해 로컬 파일에 접근·상호작용하는 기능이 백그라운드에서 지속적으로 작동하도록 설정할 수 있는 장기 실행형 코파일럿 에이전트인 오토파일럿(Autopilot, 구 스카우트)의 활용도를 어떻게 높이는지 시연했다. (오토파일럿은 현재 프라이빗 프리뷰 단계다.) 오토파일럿 또한 로컬에서 호스팅된 모델로 실행할 수 있어 비용 절감과 민감 데이터의 클라우드 전송 방지에 도움이 된다고 안드레우는 덧붙였다.
+마이크로소프트는 서피스 랩톱 울트라와 서피스 RTX 스파크 개발자 박스 등 더욱 강력한 하드웨어와 온디바이스 실행에 최적화된 고효율 AI 모델도 함께 발표했다.
+IDC 디바이스&사용자 리서치 그룹 부사장 톰 마이넬리는 대다수 기업이 아직 AI와 토큰 사용량, 어떤 모델을 사용할지, 어디서 실행할지를 파악하는 단계에 있다고 전했다. 마이넬리는 기업이 더 많은 직원에게 AI를 확대 적용하려 할수록 마이크로소프트 코파일럿을 포함한 AI를 로컬에서 실행해야 할 필요성이 높아질 것이라고 내다봤다.
+마이넬리는 현재 비즈니스 노트북에 일부 로컬 AI 기능이 탑재돼 있지만 여전히 클라우드에서 실행되는 코파일럿에 크게 의존하고 있다고 말했다. 보다 고성능 하드웨어가 광범위하게 보급되면 상황이 달라질 수 있다고 전망했다.
+전문가들은 더 많은 시스템이 CPU, GPU, 신경망 처리 장치(NPU), 메모리의 최적 조합을 갖추고 로컬 모델이 지속적으로 발전할수록 더 많은 AI 작업이 디바이스에서 실행될 것으로 전망했다.
+마하파트라는 현재 기업용 PC 설치 기반이 “매우 혼재된 상태”라고 진단했다.
+한편, 마이크로소프트가 새로운 AI 지원 하드웨어를 강조하고 비즈니스 노트북 중 코파일럿+ PC의 비중이 늘고 있다고 언급했지만, 대다수 기업 장비는 전면 교체까지 수년이 걸릴 것이라고 전망했다.
+따라서 당장의 기회는 이미 AI PC와 고성능 디바이스에 투자하고 있는 기업에 집중될 것이라고 마하파트라는 진단했다. 교체 주기가 진행되는 동안 많은 기업이 주로 클라우드 기반 AI에 의존하면서 로컬 AI 기능은 선택적으로 도입할 것이라고 덧붙였다.
+마이크로소프트는 온디바이스에서 에이전트를 실행할 때의 보안 문제도 해결에 나서고 있다. 윈도우 11에서 마이크로소프트 실행 컨테이너(Microsoft Execution Containers, MXC)를 정식 출시해, 기업이 에이전트가 접근할 수 있는 파일과 네트워크를 정의하는 정책을 수립할 수 있도록 한다.
+MXC는 오픈AI의 코덱스와 오픈클로 등 다양한 에이전트 도구를 지원하며, 앤트로픽의 클로드 코드, 박스), 마누스(Manus) 등도 추후 지원될 예정이다.
+마이넬리는 강화된 보안 조치가 코파일럿이 로컬 파일에 접근하도록 허용하는 기업 고객의 신뢰도를 높일 것이라고 말했다. 또한, 마이크로소프트가 내놓은 것은 기업이 신뢰하고 활용할 수 있는 수준의 보안성과 추적 가능성이라며, 마이크로소프트가 이날 관련 내용을 전달하는 데 중요한 발걸음을 내딛었다고 평가했다.
+마하파트라는 기업이 윈도우 디바이스의 에이전트를 다른 자동화 플랫폼과 동일한 방식으로 관리해야 하며, 신뢰는 AI 자체가 아닌 제어 체계를 기반으로 해야 한다고 강조했다.
+마이크로소프트의 이번 발표가 에이전트에는 기존 애플리케이션과 다른 보안 모델이 필요하다는 점을 인정했다는 데서 의미가 크다. 마하파트라에 따르면, 마이크로소프트 실행 컨테이너 같은 기술은 에이전트의 접근 범위를 제한하고, 어떤 에이전트가 특정 행동을 취했는지 식별하며, 정책 기반 제어를 시행하도록 설계됐다.
+동시에 마하파트라는 적절한 거버넌스 없이 로컬 파일에 광범위한 자율 접근 권한을 부여하는 것을 경계해야 한다고 밝혔다. 역할 기반 접근, 읽기 전용 지원, 문서 요약, 검색, 워크플로 지원은 자율적 파일 수정이나 비즈니스 프로세스 실행보다 빠르게 도입될 가능성이 높다고 마하파트라는 분석했다.
+또한, 에이전트가 단순 권고를 넘어 실제 행동을 취하는 단계로 발전할수록, 기업은 더욱 강력한 승인 제어, 모니터링, 감사, 인간의 감독 체계를 갖춰야 한다고 강조했다. 민감한 데이터, 규제 대상 프로세스, 기록 시스템과 상호작용하는 에이전트에게는 특히 중요하다고 덧붙였다.
+dl-itworldkorea@foundryco.com
+---
+[TITLE] 금융권 AI 해킹 2주 전 이미 경고, 금융보안원, 실제 공격 사례까지 공유했지만...
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208822
+[PUBLISHED] 2026-10-11 14:11 KST
+[SOURCE] 데일리시큐
+[TOPIC] 에이전트, 보안, 규제
+[SCORE] 9
+[REASON] 금융권 AI 해킹 사고와 금융보안원의 사전 경고
+[BODY]
+최근 국내 금융권에서 AI를 활용한 해킹으로 개인정보 유출 사고가 잇따른 가운데, 금융보안원이 사고 발생 약 2주 전 금융회사들에 실제 AI 해킹 사례를 공유하고 대응을 당부했던 것으로 확인됐다.
+국회 정무위원회 소속 한창민 사회민주당 의원이 금융보안원에서 제출받은 자료에 따르면, 금융보안원은 지난 9월 17일 금융회사 보안 담당자 160여 명이 참석한 '금융 AI 보안 위협 대응 세미나'에서 국내 금융회사를 대상으로 발생한 AI 에이전트 공격 사례와 대응방안을 소개했다.
+세미나에는 최근 개인정보 유출 등 침해사고가 발생한 금융회사 7곳 가운데 BNK부산은행과 예가람저축은행을 제외한 5곳의 관계자가 참석했다. KB국민은행, 하나은행, 현대캐피탈, 웰컴저축은행 담당자가 참석했으며, 신한은행은 금융지주 차원에서 참석한 것으로 알려졌다.
+딥시크 이용한 금융사 서버 공격 사례까지 설명
+금융보안원이 당시 공개한 사례는 올해 9월 국내 금융회사 A사를 대상으로 발생한 공격이었다.
+공격자는 중국 AI 모델인 딥시크를 기반으로 한 AI 에이전트에 금융권에서 사용하는 오라클 웹로직 서버를 찾아내도록 지시했다. 이후 발견한 서버의 원격 명령 실행 취약점을 악용해 웹셸을 설치하고, 이를 통해 내부의 다른 서버까지 탐색했다.
+웹셸은 공격자가 침해한 서버에 원격으로 명령을 내릴 수 있도록 하는 악성 프로그램이다.
+피해 금융회사는 공격자가 추가 악성코드를 내려받기 직전 이를 탐지하고 차단해 피해 확산을 막았다. 금융보안원은 이 사례를 국내 금융권에서 확인된 AI 에이전트 활용 공격 사례로 소개했다.
+당시 금융보안원은 인터넷에 노출된 서버와 업무시스템을 지속적으로 점검해야 한다고 강조했다. 특히 연간 1~2회 실시하는 취약점 진단만으로는 빠르게 변화하는 공격에 대응하기 어렵다며 상시 점검과 검증의 필요성을 제시했다.
+사전 경고에도 금융권 연쇄 침해…대응 적절성 논란
+하지만 이후 신한은행과 KB국민은행, 하나은행 등 주요 금융회사를 대상으로 개인정보 유출 사고가 잇따랐다.
+최근 공격자는 중국에서 개발된 AI 기반 침투시험 도구 '아르텍스(ARTEX)'에 딥시크 등 AI 모델을 결합해 공격을 자동화한 것으로 분석됐다. 주요 공격 대상은 은행의 대출모집인 조회 페이지와 직원용 모바일 애플리케이션 등 외부에서 접근할 수 있는 업무시스템이었다.
+다만 9월 17일 세미나에서 소개된 공격과 이번 금융권 연쇄 침해는 구체적인 수법에 차이가 있다. 앞선 사례는 보안패치가 적용되지 않은 외부 솔루션의 취약점을 악용했고, 최근 공격은 금융회사가 직접 운영하는 웹 서비스의 취약점을 노린 것으로 분석됐다. 따라서 사전 경고만으로 이번 사고를 모두 예방할 수 있었다고 단정하기는 어렵다.
+금융보안원은 AI를 이용하면 공격자가 여러 금융기관을 대상으로 정교한 공격을 반복할 수 있다고 설명했다. 특히 웹 애플리케이션의 취약점을 악용하는 공격은 정상적인 서비스 요청과 구분하기 어려워 기존 방화벽이나 보안관제 시스템에서 탐지하기 쉽지 않다는 입장이다.
+이번 사건은 금융회사가 인터넷에 노출된 업무시스템의 취약점을 얼마나 지속적으로 관리하고 있었는지, 사전 경고 이후 실제 점검과 보완 조치를 수행했는지가 중요한 쟁점으로 떠오르고 있다.
+한창민 의원은 “이번 금융회사 개인정보 유출은 이미 거듭해서 강조된 취약 지점을 금융회사가 제대로 관리하지 못한 데에 원인이 있다”며 “국정감사에서 이번 사건 전후 금융회사의 대응이 적절했는지 파악하고 책임을 묻겠다”고 밝혔다.
+한편 5대 시중은행장은 오는 10월 19일 금융감독원 국정감사에 증인으로 출석해 이번 금융권 해킹 사고의 경위와 대응 조치 등에 대한 질의를 받을 예정이다.
+---
+[TITLE] 사티아 나델라: 초지능 시대, 모델도 내부자처럼 위험으로 다뤄야 한다
+[LINK] https://news.hada.io/topic?id=35207
+[PUBLISHED] 2026-10-12 09:24 KST
+[SOURCE] GeekNews
+[TOPIC] 모델, 보안
+[SCORE] 9
+[REASON] 사티아 나델라, 초지능 모델을 내부자 위험으로 취급해야 한다고 강조
+[BODY]
+- 민감한 데이터에 접근하고 핵심 업무를 수행하는 초지능 모델을 내부자 위험으로 취급해야 함. 악의가 있어서가 아니라, 중요한 시스템에 접근하는 유능한 행위자는 실수하거나 침해당할 수 있기 때문임
+- 모델의 행동을 특정 학습 데이터나 가중치 구성으로 추적하기 어려운 상황에서도, 모델 제공자의 보증이 사용 조직의 책임을 대신할 수는 없음
+- 지능의 공급과 지능에 대한 권한을 분리하고, 접근 권한과 행동 통제를 모델 외부에 배치해야 함. 비결정적 모델을 결정적인 시스템 설계, 사람의 통제, 신뢰할 수 있는 운영 절차로 둘러싸야 함
+- 사고 과정(CoT) 투명성과 모델 간 적대적 검증은 필요하지만 충분하지 않음. 불투명한 모델을 다른 불투명한 모델이 감시하는 중첩된 블랙박스에 머물 수 있음
+- 신뢰할 수 있는 시스템은 모델 자체를 가장 많이 신뢰하는 시스템이 아니라, 모델을 가장 적게 신뢰해도 되는 시스템임. 관찰 가능성, 독립적인 검증과 통제, 격리, 사고 공개가 이를 뒷받침해야 함
+지능의 공급과 권한을 분리해야 하는 이유
+- 전통적인 소프트웨어에서는 행동을 특정 코드 경로로 추적할 도구와 역량이 있었지만, 오늘날 초지능 시스템에서는 같은 수준의 기계적 이해가 어려움
+  - 이를 구동하는 최첨단 모델은 전통적인 소프트웨어보다 더 유능하지만, 행동과 출력을 특정 학습 데이터 입력이나 모델 가중치 구성에 연결할 수 없음
+  - 그런데도 복잡한 에이전트 시스템과 모델에 가장 민감한 데이터에 대한 접근권과 핵심 업무를 대신 수행할 권한을 부여하고 있음
+- 신뢰 아키텍처를 재검토해야 하며, 지능이 대신 수행하는 일에 대한 책임을 외부에 맡길 수 없음
+  - 모델 제공자의 보증도 이 책임을 면제하지 않음
+  - 중첩된 블랙박스의 추천, 답변, 행동을 단순히 수용하거나 거부하는 데 그쳐서는 안 됨
+  - 행동을 관찰하고 한계를 시험하며, 언제나 행동을 제한할 수 있는 시스템이 필요함
+- 어려운 정렬 문제와 별개로, 격리와 거버넌스를 위한 공학적 접근부터 시작해야 함
+  - 비결정적 모델 주위에 강력하고 결정적인 시스템 설계, 사람의 통제, 신뢰할 수 있는 운영 절차를 두어야 함
+  - 기존 표준이 충분하지 않은 영역에는 산업 표준을 마련해야 함
+- 최첨단 비공개 모델과 공개 가중치 모델 모두 내부자 위험으로 취급할 수 있음
+  - 악의 여부가 아니라, 중요한 시스템에 접근하는 행위자의 실수와 침해 가능성을 통제 구조에 반영하는 접근임
+  - 기업은 이미 수십 년 동안 신원 확립, 권한 제한, 활동 기록, 격리 경계 설정 등의 모범 사례를 발전시켜 왔음
+모델 외부의 통제와 관찰 가능성 원칙
+- 기업 내 초지능에도 기존 보안 원칙을 적용하기 시작했으며, CoT 투명성은 타협할 수 없는 출발점임
+  - “Neuralese”를 모델 추론의 불투명성을 정당화하는 근거로 삼아서는 안 됨
+  - 다만 모델 출력 자체가 일관되게 실제 과정을 충실히 반영하고 투명하도록 만드는 방법을 아직 모르므로, CoT 투명성만으로는 충분하지도 신뢰할 만하지도 않음
+- 모델을 활용해 다른 모델을 적대적으로 시험하고 검증해야 하지만, 이것만으로 불투명성이 해소되지는 않음
+  - 불투명한 오케스트레이션 계층 안의 불투명한 모델을 또 다른 불투명한 모델이 감시하는 구조가 될 수 있음
+- 모델의 접근과 행동을 규율하는 통제 장치는 모델 외부에 있어야 함
+  - 프로그램이 자신의 권한을 집행하는 메커니즘을 우회하거나 변조할 수 없어야 한다는 원칙은 1970년대 정보 보안 원칙으로 거슬러 올라감
+  - 오늘날에는 모델을 작업 조율용 하네스 및 수행 가능한 행동을 정의하는 행동 공간과 분리하고, 통제와 안전장치를 외부에 두어야 함
+- 시스템은 다음 일곱 가지 관찰 가능성 원칙을 중심으로 설계해야 함
+  - 모델 다양성: 중요한 결과가 하나의 모델에만 의존해서는 안 되며, 모델이 자신의 작업을 직접 검증하는 책임을 맡아서도 안 됨
+  - 모든 행동 관찰: 의미 있는 모든 모델 행동은 변조 불가능하고 사람이 읽을 수 있는 증거를 남겨야 함. 모델의 자기 진술에 의존하지 않고 결과에 이른 과정을 재현할 수 있어야 하며, 관찰할 수 없다면 신뢰할 수 없음
+  - 검증 가능성: 성공한 작업뿐 아니라 실패, 공격, 경계 사례, 시스템 변경 등을 포함해 전체 시스템을 지속적으로 시험해야 함
+  - 독립적인 통제: 조직은 모델이 무엇에 접근하고 어떤 행동을 할 수 있는지 독립적으로 결정할 수 있어야 함
+  - 독립적인 감사 가능성: 검증은 검증 대상인 지능으로부터 독립적이어야 함. 단일 모델이 시스템 행동과 그 행동이 원래 의도에 부합하는지 판단하는 데 필요한 증거를 모두 통제해서는 안 됨
+  - 격리: 모델이 침해된 상태라고 가정하고 처음부터 격리해야 함. 권한 있는 사람이 작업 도중에도 언제나 모델을 일시 정지하거나 종료할 수 있어야 하며, 더 발전한 모델에는 더 발전하고 표준화된 격리 기술이 필요함
+  - 사고 공개: 실패나 침해가 발생하면 영향을 받은 이들에게 적시에 공개해야 함. 무엇이 잘못됐고 어떤 통제가 실패했으며 재발을 어떻게 막을지 산업 전반에 공유할 메커니즘이 필요하고, 실행 중 에이전트 행동을 바꾸는 구현 세부사항도 포함해야 함
+- 가장 신뢰할 수 있는 초지능 시스템은 모델을 가장 적게 신뢰해도 되도록 만드는 시스템임
+---
+[TITLE] 앤트로픽, 내부 AI 평가서 실시간 인터넷 차단…“안전장치 검증 때까지”
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216133
+[PUBLISHED] 2026-10-11 18:23 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 모델, 보안
+[SCORE] 8
+[REASON] 앤트로픽의 AI 모델 내부 평가 인터넷 접속 차단 조치
+---
+[TITLE] Show GN: PartsPlan - AI가 제조사 데이터시트의 쪽을 근거로 답하게 하는 MCP 서버
+[LINK] https://news.hada.io/topic?id=35201
+[PUBLISHED] 2026-10-12 08:06 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 8
+[REASON] AI가 데이터시트 근거로 답하게 하는 MCP 서버 공개
+---
+[TITLE] 5,000억 토큰을 쓰고 나서: AI 에이전트에게 1인칭 슈팅 게임 디컴파일 맡기기
+[LINK] https://news.hada.io/topic?id=35183
+[PUBLISHED] 2026-10-12 01:49 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트
+[SCORE] 8
+[REASON] AI 에이전트의 게임 디컴파일을 통한 코드 재구성 성과
+---
+[TITLE] Claude found 29,000 possible bugs in open source. Only 516 have been fixed.
+[TITLE_KO] Claude Code가 오픈소스에서 29,000개의 잠재적 버그를 발견했지만, 516개만 수정되었다
+[LINK] https://thenewstack.io/anthropic-oss-scanner-vulnerabilities/
+[PUBLISHED] 2026-10-11 22:00 KST
+[SOURCE] The New Stack
+[TOPIC] 개발
+[SCORE] 8
+[REASON] Claude Code의 오픈소스 버그 발견 및 낮은 수정률 문제
+---
+[TITLE] Odyssey-3 is a new generative world model that you can try for free
+[TITLE_KO] Odyssey-3, 무료로 사용 가능한 새로운 생성형 월드 모델
+[LINK] https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/
+[PUBLISHED] 2026-10-11 16:48 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 8
+[REASON] Odyssey-3 생성형 월드 모델의 공개 및 기능 소개
+---
+[TITLE] 한국은행·국책은행 해킹 시도 올해 102만건 돌파…지난해 연간 건수 넘어
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208820
+[PUBLISHED] 2026-10-11 13:30 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SCORE] 8
+[REASON] 한국은행·국책은행 해킹 시도 102만 건 돌파
+---
+[TITLE] 국가 보안 R&D 과제 31건 중 28건 승인절차 부실…첨단기술 연구보안 '구멍'
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208819
+[PUBLISHED] 2026-10-11 13:19 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 산업
+[SCORE] 8
+[REASON] 국가 보안 R&D 과제 외국인 연구인력 승인 절차 부실
+---
+[TITLE] AI 에이전트 금융 시대 노크하는 '수이'...보안·온체인 금융 결합해 생태계 확장
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155980
+[PUBLISHED] 2026-10-12 11:35 KST
+[SOURCE] 테크M
+[TOPIC] 에이전트, 보안
+[SCORE] 8
+[REASON] 수이의 AI 에이전트 기반 온체인 금융 생태계 확장 전략
+---
+[TITLE] 얀 르쿤의 월드 모델 'H-제파', 단·장기 계획 분리로 로봇 경로 계획 성공률 73% 달성
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216129
+[PUBLISHED] 2026-10-11 17:34 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 신기술
+[SCORE] 8
+[REASON] 얀 르쿤의 월드 모델 'H-제파' 로봇 경로 계획 성공률 향상
+---
+[TITLE] 일본도 “사이버공간 비상사태”…기업 20곳 넘게 해킹 피해
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171791
+[PUBLISHED] 2026-10-12 11:31 KST
+[SOURCE] IT조선
+[TOPIC] 보안
+[SCORE] 8
+[REASON] 일본 주요 기업 대상 사이버 공격 확산 및 정부 대응 촉구
+---
+[TITLE] EU, 태양광 사이버보안 강화 논의…고위험 공급업체 제한 권고
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216140
+[PUBLISHED] 2026-10-12 11:30 KST
+[SOURCE] AI타임스
+[TOPIC] 보안
+[SCORE] 8
+[REASON] EU의 태양광 사이버보안 강화 논의 및 고위험 공급업체 제한 권고
+---
+[TITLE] CCTV·웹캠, 해킹 통해 전쟁 도구로 악용
+[LINK] https://www.etnews.com/20261012000002
+[PUBLISHED] 2026-10-12 07:03 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SCORE] 8
+[REASON] CCTV·웹캠이 해킹을 통해 전쟁 도구로 악용되는 실태
+---
+[TITLE] Nippon Columbia malware incident exposes 8.6 million karaoke fan records
+[TITLE_KO] Nippon Columbia 악성코드 사건으로 860만 가라오케 팬 기록 유출
+[LINK] https://www.bleepingcomputer.com/news/security/nippon-columbia-malware-incident-exposes-86-million-karaoke-fan-records/
+[PUBLISHED] 2026-10-11 23:23 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 8
+[REASON] 일본 Nippon Columbia의 악성코드 감염으로 860만 건 기록 유출
+---
+[TITLE] 모델 선택권 앞세운 승부수…구글, 기업용 AI 에이전트 생태계 ‘관문’ 선점 시동
+[LINK] https://www.itworld.co.kr/article/4233525/%eb%aa%a8%eb%8d%b8-%ec%84%a0%ed%83%9d%ea%b6%8c-%ec%95%9e%ec%84%b8%ec%9a%b4-%ec%8a%b9%eb%b6%80%ec%88%98-%ea%b5%ac%ea%b8%80-%ea%b8%b0%ec%97%85%ec%9a%a9-ai-%ec%97%90%ec%9d%b4%ec%a0%84%ed%8a%b8.html
+[PUBLISHED] 2026-10-12 09:19 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 개발, 모델, 보안, 규제
+[SCORE] 7
+[REASON] 구글의 기업용 AI 에이전트 생태계 선점 전략 발표
+---
+[TITLE] AI agent teams waste massive tokens for barely measurable quality gains, research finds
+[TITLE_KO] AI 에이전트 팀, 측정 가능한 품질 향상에 비해 막대한 토큰 낭비한다는 연구 결과
+[LINK] https://the-decoder.com/ai-agent-teams-waste-massive-tokens-for-barely-measurable-quality-gains-research-finds/
+[PUBLISHED] 2026-10-12 00:39 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트
+[SCORE] 7
+[REASON] AI 에이전트 팀의 비효율성 및 토큰 낭비 연구 결과
+---
+[TITLE] AI agents overstate their results and remain far from autonomous research, study finds
+[TITLE_KO] AI 에이전트, 결과 과장하고 자율 연구와는 거리가 멀다는 연구 결과
+[LINK] https://the-decoder.com/ai-agents-overstate-their-results-and-remain-far-from-autonomous-research-study-finds/
+[PUBLISHED] 2026-10-11 22:44 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델
+[SCORE] 7
+[REASON] AI 에이전트의 자율 연구 한계 및 결과 과장 연구 결과
+---
+[TITLE] AI로 복제한 어도비 무료 대안 '아트크래프트' 등장…저작권 논란
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216149
+[PUBLISHED] 2026-10-12 12:58 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 보안, 규제
+[SCORE] 7
+[REASON] AI로 복제된 어도비 대안 '아트크래프트' 등장 및 저작권 논란
+---
+[TITLE] 미국, 영국의 AI 모델 사전 안전 테스트 허용...트럼프 행정부 입장 번복
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216153
+[PUBLISHED] 2026-10-12 12:17 KST
+[SOURCE] AI타임스
+[TOPIC] 모델
+[SCORE] 7
+[REASON] 미국, 영국 AI 모델 사전 안전 테스트 허용으로 입장 번복
+---
+[TITLE] 금융보안원, AI 기반 모바일 앱 보안 위험 탐지 기술 ISSTA 채택
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208832
+[PUBLISHED] 2026-10-12 12:58 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 금융보안원의 AI 기반 모바일 앱 보안 위험 탐지 기술 국제 학술대회 채택
+---
+[TITLE] 금융권 연쇄 해킹, 경찰 43명 투입…초동 수사·중수청 관할 논란
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208831
+[PUBLISHED] 2026-10-12 12:49 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SCORE] 7
+[REASON] 금융권 연쇄 해킹 사건의 경찰 수사 및 관할 논란
+---
+[LINK] https://www.itworld.co.kr/article/4233531/it-%ed%8c%80%ec%97%90-%ec%8b%a4%ed%8c%a8%eb%a5%bc-%ed%97%88%ed%95%98%eb%9d%bc-%ea%b7%9c%ec%9c%a8-%ec%9e%88%eb%8a%94-%ec%8b%a4%ed%8c%a8-%ed%97%88%ec%9a%a9-%eb%ac%b8%ed%99%94-%ea%b5%ac%ec%b6%95.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/10/11/botman-ai-uses-knowledge-graphs-for-legacy-modernization-neo4jdatatoknowledge/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171760
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261011000004
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208817
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/12/google-open-source-maintenance-costs-report/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012114216
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208826
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155972
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35211
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261011000094
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261012000001
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171747
+[STATUS] SKIP (제외)
+---
+[LINK] https://siliconangle.com/2026/10/11/why-ai-agents-might-not-be-right-for-you/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35189
+[STATUS] SKIP (제외)
+---
+[LINK] https://thenewstack.io/claude-code-mcp-records/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://siliconangle.com/2026/10/11/agentic-workloads-break-assumptions-about-software-testing-heres-how-to-cope/
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/microsofts-nadella-bows-to-trumps-language-diktat-on-super-intelligence-and-uses-it-to-attack-openai-and-anthropic/
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171763
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208834
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208830
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208828
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012120423
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://siliconangle.com/2026/10/11/nvidia-reportedly-in-early-talks-to-buy-acqui-hire-or-invest-more-in-reflection-ai/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216135
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171762
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208824
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171759
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208829
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216156
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171795
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://byline.network/2026/10/8-542/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208827
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216137
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012095317
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012111002
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012101543
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42258
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35214
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261012000075
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42254
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261008000281
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208825
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=35204
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208823
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208818
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171588
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171647
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35195
+[STATUS] SKIP (매체 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155967
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/11/week-in-review-fortibleed-is-still-active-patch-tuesday-forecast/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171758
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675286
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208833
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216151
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012114118
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171783
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171779
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261012000014
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216139
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/12/uk-strengthen-cyber-defences-minister-ai-firms-safety
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171675
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35192
+[STATUS] SKIP (매체 상한)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1008484/learning-local-ai-hermes-qwen-model-mac-studio-testing-diary-progress
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216136
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42252
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216131
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261011000034
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012115240
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261012000038
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171776
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012113442
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012112702
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675418
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012101053
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42260
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171775
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171785
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42257
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42256
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35210
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261012000023
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675360
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261011000089
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261011000020
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171756
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155981
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216152
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171788
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171781
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171777
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261012000116
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261012000077
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42255
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35212
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675412
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675410
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35202
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261008000217
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1009406/silicon-valley-is-falling-in-line-with-trumps-attempt-to-rename-ai
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35186
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35185
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/10/11/can-the-ai-industry-persuade-data-center-opponents-by-getting-rid-of-ndas/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/10/11/flahy-uses-knowledge-graphs-support-ai-powered-healthcare-neo4jdatatoknowledge/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/science/2026/oct/11/feelgood-factor-of-human-interaction
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35175
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35174
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35173
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/10/11/these-execs-think-voice-ai-hasnt-reached-its-chatgpt-moment-yet/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.wired.com/story/i-made-terrible-games-with-googles-ai-playground/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/business/2026/oct/11/trump-ai-economy-reagan
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/arxiv-caps-submissions-at-two-per-month-as-ai-paper-flood-overwhelms-the-preprint-server/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/oct/11/ai-annihilation-advanced-nuclear-weapons
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216132
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675293
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261008000155
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675399
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/news/audio/2026/oct/11/gaza-is-a-moral-tear-in-the-universe-naomi-klein-and-astra-taylor-radical-thinking-with-aditya-chakrabortty-podcast
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261010000029
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675285
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675336
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171792
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171790
+[STATUS] SKIP (사전 제외: 홍보)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171782
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=155982
+[STATUS] SKIP (사전 제외: 홍보)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261012121037
+[STATUS] SKIP (사전 제외: 행사)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171771
+[STATUS] SKIP (사전 제외: 수상)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171778
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171769
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171754
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171709
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171575
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://news.hada.io/topic?id=35170
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171764
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
