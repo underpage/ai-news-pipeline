@@ -25,7 +25,7 @@ NEWS_DIR = os.path.join(DATA_DIR, "news")
 CONFIG_DIR = os.path.join(ROOT_DIR, "config")
 BLOCK_TAGS = ("SUMMARY", "BODY")
 
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 # 호출 사이에 두는 최소 간격(초). 무료 한도(분당 5회)에 맞춘 값이며 유료 요금제에서는 0으로 낮춘다
 GEMINI_MIN_INTERVAL = float(os.environ.get("GEMINI_MIN_INTERVAL", "13"))
 # 응답이 멈췄을 때 끊는 시간(초)
@@ -35,7 +35,7 @@ NO_RETRY_CODES = {400, 401, 403, 404}
 # 지수 백오프: 실패할 때마다 대기 시간을 2배로 늘려 재시도한다 (기본 30초 → 60초 → 120초)
 GEMINI_MAX_RETRIES = int(os.environ.get("GEMINI_MAX_RETRIES", "3"))
 GEMINI_RETRY_BASE = float(os.environ.get("GEMINI_RETRY_BASE", "30"))
-# 응답 최대 길이(토큰). gemini-2.5-flash의 상한이며, 선정 후보 200건의 항목별 점수가 들어가야 한다
+# 응답 최대 길이(토큰). 선정 후보 200건의 항목별 점수가 들어가야 한다 (gemini-2.5-flash의 상한, gemini-3.8-flash에서도 이 값으로 응답 확인)
 GEMINI_MAX_OUTPUT_TOKENS = int(os.environ.get("GEMINI_MAX_OUTPUT_TOKENS", "65536"))
 # 생각(thinking) 토큰 예산. 생각 토큰도 출력 한도에 들어간다. 제한하지 않으면 선정(후보 200건)에서 약 5만 토큰을 써
 # 응답이 잘렸다(2026-10-08). 8192면 선정 응답(약 2만 2천)과 합쳐도 한도 안. 0이면 끔, 음수면 모델 기본값(제한 없음)
