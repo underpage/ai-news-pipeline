@@ -1,20 +1,216 @@
-[요약 오류] https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/ - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] Microsoft October 2026 Patch Tuesday fixes 1,411 flaws, 3 zero-days
+[LINK] https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/
+[PUBLISHED] 2026-10-14 04:56 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 9
+[REASON] MS 패치 튜즈데이 1,411개 취약점 및 제로데이
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+마이크로소프트 2026년 10월 패치 화요일, 1,411개 취약점과 제로데이 3건 수정
+
+**[영문 3줄 요약 (Original)]**
+- Microsoft addressed a record-breaking 1,411 flaws in its October 2026 Patch Tuesday, including one actively exploited and two publicly disclosed zero-day vulnerabilities.
+- The massive volume of addressed flaws is attributed to Microsoft continuing to use artificial intelligence platforms to discover and remediate security vulnerabilities.
+- The update also resolved critical security feature bypasses, including an actively exploited Windows Shell flaw (CVE-2026-96951) and a publicly disclosed .NET Framework bug (CVE-2026-108398).
+
+**[국문 3줄 요약 (Translated)]**
+- 마이크로소프트는 활발히 익스플로잇된 취약점 1건과 공개된 제로데이 취약점 2건을 포함해 역대 최대 규모인 1,411건의 결함을 2026년 10월 패치 화요일에 해결했다.
+- 이처럼 대규모 결함이 해결된 배경에는 마이크로소프트가 보안 취약점을 발견하고 조치하기 위해 인공지능 플랫폼을 계속 활용한 점이 자리잡고 있다.
+- 이번 업데이트는 활발히 익스플로잇된 윈도우 셸 결함(CVE-2026-96951)과 공개된 닷넷 프레임워크 버그(CVE-2026-108398)를 포함한 치명적 보안 기능 우회 문제를 해결했다.
+
+#중립
 ---
-[요약 오류] https://www.securityweek.com/ivanti-zero-day-chain-gave-attackers-root-access-to-fully-patched-vpn/ - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] Ivanti Zero-Day Chain Gave Attackers Root Access to Fully Patched VPN
+[LINK] https://www.securityweek.com/ivanti-zero-day-chain-gave-attackers-root-access-to-fully-patched-vpn/
+[PUBLISHED] 2026-10-14 03:43 KST
+[SOURCE] SecurityWeek
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] 이반티 완전 패치 VPN 대상 루트 제로데이 연쇄
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+이반티 제로데이 체인, 완전히 패치된 VPN에 대한 루트 접근 권한을 공격자에게 부여
+
+**[영문 3줄 요약 (Original)]**
+- A threat actor tracked as UTA0576 chained three zero-day vulnerabilities to gain unauthenticated root-level code execution on fully patched Ivanti Connect Secure appliances.
+- Ivanti released patches for the authentication bypass and remote code execution flaws tracked as CVE-2026-104935, while a privilege escalation bug remains unpatched.
+- Volexity assessed with medium confidence that the threat actor utilized large language models (LLMs) for exploit development and post-exploitation activities.
+
+**[국문 3줄 요약 (Translated)]**
+- UTA0576으로 추적되는 위협 행위자가 세 가지 제로데이 취약점을 연쇄적으로 활용하여 완전히 패치된 이반티 커넥트 시큐어 장비에서 인증되지 않은 루트 수준 코드 실행 권한을 획득했다.
+- 이반티는 CVE-2026-104935로 추적되는 인증 우회 및 원격 코드 실행 결함에 대한 패치를 배포했으나, 권한 상승 버그는 아직 패치되지 않았다.
+- 볼렉시티는 해당 위협 행위자가 익스플로잇 개발 및 공격 후속 활동에 거대언어모델(LLM)을 활용한 것으로 중간 신뢰도를 바탕으로 평가했다.
+
+#부정
 ---
-[요약 오류] https://thehackernews.com/2026/10/docker-fixes-critical-two-year-old-hub.html - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] Docker Fixes Critical Two-Year-Old Hub Flaw That Let One User Push Images as Another
+[LINK] https://thehackernews.com/2026/10/docker-fixes-critical-two-year-old-hub.html
+[PUBLISHED] 2026-10-14 03:03 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 도커 허브의 타인 이미지 푸시 가능 취약점 패치
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+도커, 한 사용자가 다른 사용자로 이미지를 푸시할 수 있었던 2년 된 도커 허브의 치명적 결함 수정
+
+**[영문 3줄 요약 (Original)]**
+- Docker fixed a critical flaw in Docker Hub (CVE-2026-105445) that allowed a user to push, pull, or delete images as another user via the personal account conversion feature.
+- The vulnerability, named GhostPat, persisted for over two years and stemmed from personal access tokens being transferred to a newly designated owner while secrets remained unchanged.
+- Docker stated it resolved the flaw directly on Docker Hub without requiring user updates, and found no evidence of malicious exploitation after reviewing roughly 304,000 pushes.
+
+**[국문 3줄 요약 (Translated)]**
+- 도커는 개인 계정 전환 기능을 통해 한 사용자가 다른 사용자의 권한으로 이미지를 푸시, 풀, 삭제할 수 있도록 허용했던 도커 허브의 치명적 결함(CVE-2026-105445)을 수정했다.
+- GhostPat으로 명명된 이 취약점은 2년 넘게 방치되었으며, 토큰의 시크릿이 변경되지 않은 채 개인 액세스 토큰이 새로 지정된 소유자에게 이전되면서 발생했다.
+- 도커는 사용자 업데이트가 필요 없는 도커 허브 자체 패치를 적용했으며, 약 30만 4천 건의 푸시 이력을 검토한 결과 악의적으로 익스플로잇된 정황은 발견되지 않았다고 밝혔다.
+
+#부정
 ---
-[요약 오류] https://www.helpnetsecurity.com/2026/10/13/gitlab-ci-cd-regular-expression-compiler-vulnerability-cve-2026-97229/ - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] GitLab admins urged to patch critical RCE flaw (CVE-2026-97229)
+[LINK] https://www.helpnetsecurity.com/2026/10/13/gitlab-ci-cd-regular-expression-compiler-vulnerability-cve-2026-97229/
+[PUBLISHED] 2026-10-13 18:19 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] 깃랩 정규식 컴파일러 치명적 RCE 취약점
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+깃랩 관리자들에게 치명적인 RCE 결함(CVE-2026-97229) 패치 권고
+
+**[영문 3줄 요약 (Original)]**
+- GitLab urged self-managed instance administrators to patch a maximum-severity remote code execution vulnerability (CVE-2026-97229) in its CI/CD Regular Expression Compiler.
+- The flaw affects GitLab CE and EE editions and allows unauthenticated remote attackers to execute arbitrary code via specially crafted regular expressions in CI/CD configurations.
+- Rapid7 researchers confirmed the execution on an unpatched image, noting that an ordinary account can exploit the vulnerability on self-managed instances allowing public projects.
+
+**[국문 3줄 요약 (Translated)]**
+- 깃랩은 자체 관리형 인스턴스 관리자들에게 CI/CD 정규식 컴파일러에 존재하는 최고 심각도의 원격 코드 실행 취약점(CVE-2026-97229)을 패치할 것을 강력히 촉구했다.
+- 해당 결함은 깃랩 CE 및 EE 버전에 영향을 미치며, 인증되지 않은 원격 공격자가 CI/CD 구성 내 특수 제작된 정규식을 통해 임의 코드를 실행할 수 있게 한다.
+- 래피드7 연구원들은 패치되지 않은 이미지에서 코드 실행을 재현했으며, 공개 프로젝트 생성을 허용하는 자체 관리형 인스턴스에서는 일반 계정으로도 이를 익스플로잇할 수 있다고 설명했다.
+
+#부정
 ---
-[요약 오류] https://www.helpnetsecurity.com/2026/10/13/slugfest-npm-trusted-publishing-flaw/ - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] npm Trusted Publishing flaw exposed 1,500+ npm packages to takeover
+[LINK] https://www.helpnetsecurity.com/2026/10/13/slugfest-npm-trusted-publishing-flaw/
+[PUBLISHED] 2026-10-13 18:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 보안
+[SCORE] 9
+[REASON] npm 신뢰 게시 기능 취약점으로 패키지 탈취 위협
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+npm의 신뢰 게시 기능 결함으로 1,500개 이상의 패키지가 탈취 위험에 노출
+
+**[영문 3줄 요약 (Original)]**
+- A flaw in npm's Trusted Publishing feature allowed attackers to take over and publish malicious updates for more than 1,500 npm packages by claiming abandoned GitHub repository slugs.
+- Because npm did not check permanent numeric IDs in identity tokens, any newly registered matching slug could obtain short-lived publish credentials and push validly signed versions.
+- Security researchers highlighted that AI coding agents increase the blast radius of such vulnerabilities by automatically installing dozens to hundreds of unreviewed packages per month.
+
+**[국문 3줄 요약 (Translated)]**
+- npm의 신뢰 게시(Trusted Publishing) 기능에 결함이 발생해, 공격자가 버려진 깃허브 저장소 슬러그를 선점함으로써 1,500개 이상의 패키지를 탈취하고 악성 업데이트를 배포할 수 있는 상태가 되었다.
+- npm이 식별 토큰의 영구 숫자 ID를 검증하지 않았기 때문에, 일치하는 슬러그를 새로 등록한 누구나 단기 게시 인증 정보를 받아 서명된 정식 버전을 푸시할 수 있었다.
+- 보안 연구진은 AI 코딩 에이전트가 검증되지 않은 패키지를 한 달에 수십에서 수백 개씩 자동 설치하기 때문에 이러한 취약점의 영향 범위가 더욱 커진다고 지적했다.
+
+#부정
 ---
-[요약 오류] https://www.aitimes.kr/news/articleView.html?idxno=42294 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] "AI의 한계를 다시 쓴다"…구글, 코딩·과학·로봇을 관통하는 ‘제미나이 4 아르곤’ 전 세계 출시
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42294
+[PUBLISHED] 2026-10-14 11:36 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 모델, 보안, 신기술
+[SCORE] 8
+[REASON] 구글의 차세대 제미나이 4 아르곤 출시
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 구글이 다단계 추론과 도구 활용 능력을 바탕으로 코딩, 기업 업무, 과학 연구, 로보틱스를 포괄하는 차세대 모델 '제미나이 4 아르곤'을 전 세계에 공식 출시했다.
+- 해당 모델은 크롬 브라우저의 대규모 코드 리팩터링 기간을 대폭 단축하고, 영상 데이터를 로봇 관절 움직임 코드로 자동 변환하는 비디오-시뮬레이션-실세계 파이프라인을 지원한다.
+- 입출력 통합 최대 100만 토큰을 지원하고 연속 실행 프로토콜을 제공하며, 기업용 에이전트 개발 키트(ADK)와 오픈 모델 젬마의 추론 속도 최적화에도 기여했다.
+
+#긍정
 ---
-[요약 오류] https://news.hada.io/topic?id=35309 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] Anthropic, AI 코딩으로 늘어난 변경량에 대응해 Git을 자체 버전 관리 시스템 Scion으로 교체
+[LINK] https://news.hada.io/topic?id=35309
+[PUBLISHED] 2026-10-14 04:43 KST
+[SOURCE] GeekNews
+[TOPIC] 개발
+[SCORE] 8
+[REASON] 앤트로픽의 깃 대체 자체 버전관리 Scion 도입
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 앤트로픽은 AI 코딩으로 인해 병합량과 CI 체크아웃이 급증하자 Git 대신 자체 분산 버전 관리 시스템인 'Scion'을 개발해 모노레포를 전면 이전했다.
+- Scion은 항상 온라인 상태인 AI 에이전트를 전제로 설계되어 서버에서 커밋과 병합, 조회를 처리하고 클라이언트는 필요한 데이터만 희소 체크아웃하는 구조를 갖췄다.
+- 이를 통해 기존 Git 인프라 대비 CPU와 메모리 요구량을 200분의 1로 줄였으며, 에이전트의 작업 트리 생성 시간도 7.1분에서 5.1초로 단축했다.
+
+#긍정
 ---
-[요약 오류] https://thehackernews.com/2026/10/sap-discloses-critical-cvss-10-flaw-in.html - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] SAP Discloses Critical CVSS 10 Flaw in Cloud SDK for Python Allowing OAuth2 Credential Theft
+[LINK] https://thehackernews.com/2026/10/sap-discloses-critical-cvss-10-flaw-in.html
+[PUBLISHED] 2026-10-14 02:28 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] SAP 파이썬 SDK 치명적 인증정보 탈취 취약점
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+SAP, OAuth2 인증정보 탈취를 허용하는 파이썬용 클라우드 SDK의 치명적인 CVSS 10 결함 공개
+
+**[영문 3줄 요약 (Original)]**
+- SAP disclosed a critical CVSS 10.0 vulnerability (CVE-2026-89111) in its Cloud SDK for Python that could send an application's OAuth2 client credentials to an attacker-controlled server.
+- The SSRF flaw occurs when multi-tenant applications process tenant subdomains without proper validation, routing credentials to unauthorized endpoints.
+- Although an initial fix was released in version 0.45.2, several subsequent versions and older releases re-introduced or lacked the necessary validation checks.
+
+**[국문 3줄 요약 (Translated)]**
+- SAP는 파이썬용 클라우드 SDK에서 애플리케이션의 OAuth2 클라이언트 인증 정보를 공격자가 제어하는 서버로 전송할 수 있는 CVSS 10.0의 치명적인 취약점(CVE-2026-89111)을 공개했다.
+- 해당 SSRF 결함은 멀티 테넌트 애플리케이션이 테넌트 하위 도메인을 적절히 검증하지 않고 처리할 때 발생하며, 이로 인해 인증 정보가 비정상적인 엔드포인트로 라우팅된다.
+- 버전 0.45.2에서 최초 수정이 이루어졌으나, 이후 출시된 일부 후속 버전과 구버전 릴리스에서 필요한 유효성 검사 누락이 다시 발생했던 것으로 나타났다.
+
+#부정
 ---
-[요약 오류] https://www.securityweek.com/meta-says-hackers-took-code-personal-data-of-1500-in-github-breach/ - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] Meta Says Hackers Took Code, Personal Data of 1,500 in GitHub Breach
+[LINK] https://www.securityweek.com/meta-says-hackers-took-code-personal-data-of-1500-in-github-breach/
+[PUBLISHED] 2026-10-14 01:01 KST
+[SOURCE] SecurityWeek
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 메타 깃허브 침해로 소스코드 및 직원정보 유출
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+메타, 깃허브 침해로 해커들이 코드와 1,500명의 개인정보를 탈취했다고 밝혀
+
+**[영문 3줄 요약 (Original)]**
+- Meta announced that hackers accessed some of its GitHub repositories using stolen employee credentials, impacting source code and the personal information of roughly 1,500 individuals.
+- The company stated that 99% of the accessed data was software code related to its products, while the remaining 1% was mistakenly uploaded personal data.
+- In response, Meta shut down access, rotated exposed secrets, notified affected individuals, and introduced proactive scanning controls to keep sensitive data off GitHub.
+
+**[국문 3줄 요약 (Translated)]**
+- 메타는 직원의 도난당한 인증 정보를 이용해 해커가 일부 깃허브 저장소에 접근했으며, 소스 코드와 약 1,500명의 개인정보가 영향을 받았다고 발표했다.
+- 접근된 데이터의 99%는 제품 관련 소프트웨어 코드인 비즈니스 데이터였으며, 나머지 1%는 실수로 저장소에 포함된 개인정보였다고 설명했다.
+- 메타는 공격자의 접근을 차단하고 노출된 시크릿을 교체했으며, 피해 대상자 통지와 함께 민감 정보가 깃허브에 올라가지 않도록 선제적 스캐닝 통제를 추가했다.
+
+#부정
 ---
-[요약 오류] https://www.aitimes.com/news/articleView.html?idxno=216196 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] 오픈AI, 'GPT-6.1 솔' 컨텍스트 길이 50만 토큰으로 대폭 상향
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216196
+[PUBLISHED] 2026-10-13 17:35 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 8
+[REASON] 오픈AI 코덱스 컨텍스트 50만 토큰 확장
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 오픈AI가 코덱스와 챗GPT 워크에서 사용되는 'GPT-6.1 솔'의 기본 컨텍스트 길이를 기존 27만 2000 토큰에서 50만 토큰으로 약 80% 확대했다.
+- 이번 조치는 장시간 작업 시 발생하는 맥락 압축 빈도를 줄이고 대규모 코드베이스와 세부 요구사항을 안정적으로 유지할 수 있도록 지원한다.
+- 사용자는 필요에 따라 컨텍스트 크기를 직접 조절할 수 있으며, 해당 모델이 지원하는 최대 컨텍스트 길이는 100만 토큰이다.
+
+#긍정
 ---
