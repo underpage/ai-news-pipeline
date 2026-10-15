@@ -18,3 +18,235 @@
 ---
 [요약 오류] https://www.helpnetsecurity.com/2026/10/14/radware-mcp-server-protection/ - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 ---
+[TITLE] CISA warns admins to immediately fix Ivanti flaw exploited as zero-day
+[LINK] https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/
+[PUBLISHED] 2026-10-14 21:58 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 9
+[REASON] CISA의 이반티 악용 제로데이 즉각 패치 긴급 권고
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+CISA, 제로데이로 악용된 Ivanti 결함을 즉시 수정하라고 관리자에게 경고
+
+**[영문 3줄 요약 (Original)]**
+- CISA urged security teams to immediately patch an Ivanti Connect Secure flaw, CVE-2026-104935, that has been exploited in zero-day attacks since at least October 1st.
+- This high-severity authentication bypass lets remote attackers without privileges execute arbitrary commands, and Volexity reported that a threat actor it tracks as UTA0576 chained it with two other flaws to gain unauthenticated root-level code execution and target Active Directory credentials.
+- Ivanti released fixed ICS versions, CISA ordered federal agencies to secure their networks by Friday, and CISA warned that Ivanti's Integrity Checker Tool may not detect exploitation because commands execute in memory.
+
+**[국문 3줄 요약 (Translated)]**
+- CISA가 최소 10월 1일부터 제로데이 공격에 악용된 Ivanti Connect Secure 결함 CVE-2026-104935를 즉시 패치하라고 보안팀에 촉구했다.
+- 이 심각도 높은 인증 우회 취약점은 권한 없는 원격 공격자가 임의의 명령을 실행하게 하며, Volexity는 UTA0576으로 추적하는 위협 행위자가 이를 다른 두 결함과 연계해 인증 없는 루트 수준 코드 실행을 달성하고 Active Directory 자격 증명을 노렸다고 보고했다.
+- Ivanti가 수정된 ICS 버전을 배포했고, CISA는 연방 기관에 금요일까지 네트워크를 보호하라고 명령했으며, 명령이 메모리에서 실행되기 때문에 Ivanti의 Integrity Checker Tool이 익스플로잇을 탐지하지 못할 수 있다고 경고했다.
+
+#부정
+---
+[TITLE] Cisco Warns of Active Attacks Exploiting New Critical Secure Email Gateway Vulnerability
+[LINK] https://thehackernews.com/2026/10/cisco-warns-of-active-attacks.html
+[PUBLISHED] 2026-10-15 03:38 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 시스코 이메일 게이트웨이 루트 권한 탈취 제로데이 악용 경고
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+시스코, 새로운 치명적 Secure Email Gateway 취약점을 노린 공격 진행 중이라고 경고
+
+**[영문 3줄 요약 (Original)]**
+- Cisco warned that attackers are exploiting CVE-2026-76519 (CVSS score: 9.8), a critical flaw in Cisco Secure Email Gateway that lets an unauthenticated sender write files to the appliance's operating system and could then run commands as root.
+- Only gateways with the File Reputation service enabled and a Content Scanner Tools package older than version 25.3.0.5525 are vulnerable, and the advisory does not say how many devices were attacked or who is behind the attacks.
+- The fix is available in AsyncOS 15.5.5-014, 16.5.0-780, and Content Scanner Tools 25.3.0.5525 or later, there is no workaround, and Cisco says a compromised virtual appliance should be rebuilt with new credentials because upgrading destroys forensic data.
+
+**[국문 3줄 요약 (Translated)]**
+- 시스코는 인증 없는 발신자가 어플라이언스 운영체제에 파일을 쓰고 이어서 루트 권한으로 명령을 실행할 수 있는 Cisco Secure Email Gateway의 치명적 결함 CVE-2026-76519(CVSS 점수: 9.8)를 공격자들이 악용하고 있다고 경고했다.
+- File Reputation 서비스가 활성화되어 있고 Content Scanner Tools 패키지가 25.3.0.5525 버전보다 오래된 게이트웨이만 취약하며, 권고문은 공격받은 장치 수나 공격 배후를 밝히지 않았다.
+- 수정은 AsyncOS 15.5.5-014, 16.5.0-780, 그리고 Content Scanner Tools 25.3.0.5525 이상에서 제공되고, 우회 방법은 없으며, 시스코는 업그레이드하면 포렌식 데이터가 파괴되므로 침해된 가상 어플라이언스는 새 자격 증명으로 재구축하라고 안내한다.
+
+#부정
+---
+[TITLE] Microsoft Patches Record 1,413 Flaws, Including Exploited Windows Shell Bug
+[LINK] https://thehackernews.com/2026/10/microsoft-patches-record-1413-flaws.html
+[PUBLISHED] 2026-10-14 13:34 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] 악용 중인 제로데이 포함 MS 사상 최대 패치 발표
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+마이크로소프트, 악용된 Windows Shell 버그를 포함해 사상 최대 1,413개 결함 패치
+
+**[영문 3줄 요약 (Original)]**
+- Microsoft shattered its own Patch Tuesday record by patching 1,413 vulnerabilities, including one in Windows Shell, CVE-2026-96951, that it said has come under active exploitation.
+- CVE-2026-96951 (CVSS score: 8.8) lets an attacker evade Mark of the Web defenses, CISA added it to its Known Exploited Vulnerabilities catalog with a federal deadline of October 16, 2026, and the .NET Framework flaw CVE-2026-108398 was publicly known and can bypass Windows Defender Application Contr…
+- Dustin Childs of the Zero Day Initiative said AI is partly accelerating bug-hunting on both sides, and that teams should prioritize by exploitability rather than by sheer CVE count.
+
+**[국문 3줄 요약 (Translated)]**
+- 마이크로소프트가 1,413개 취약점을 패치해 자체 Patch Tuesday 기록을 갈아치웠으며, 여기에는 활발히 악용되고 있다고 밝힌 Windows Shell 결함 CVE-2026-96951이 포함된다.
+- CVE-2026-96951(CVSS 점수: 8.8)은 공격자가 Mark of the Web 방어를 회피하게 하며, CISA는 이를 Known Exploited Vulnerabilities 카탈로그에 추가해 연방 기관의 기한을 2026년 10월 16일로 정했고, .NET Framework 결함 CVE-2026-108398은 공개적으로 알려져 있으며 Windows Defender Application Control을 우회할 수 있다.
+- Zero Day Initiative의 Dustin Childs는 AI가 양쪽 모두에서 버그 사냥을 부분적으로 가속하고 있다고 말했으며, 팀은 CVE 수가 아니라 악용 가능성을 기준으로 우선순위를 정해야 한다고 했다.
+
+#부정
+---
+[TITLE] Palo Alto Networks warns of PAN-OS RCE flaw exploited in attacks
+[LINK] https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/
+[PUBLISHED] 2026-10-15 07:56 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 방화벽 표적 공격에 실제 악용된 PAN-OS 제로데이 패치
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+팔로알토 네트웍스, 공격에 악용된 PAN-OS RCE 결함 경고
+
+**[영문 3줄 요약 (Original)]**
+- Palo Alto Networks released security updates for a high-severity PAN-OS RCE zero-day, CVE-2026-0322, that has been exploited in limited attacks targeting firewalls.
+- The flaw has a severity score of 8.6 and lets authenticated attackers with network access to the management interface execute code as root on PA-Series, VM-Series, and Panorama devices, while Cloud NGFW and Prisma Access are not affected.
+- The company recommends restricting management interface access to trusted internal IP addresses and upgrading, there are no known workarounds, and CISA added the flaw to its Known Exploited Vulnerabilities catalog with an October 17 deadline.
+
+**[국문 3줄 요약 (Translated)]**
+- 팔로알토 네트웍스가 방화벽을 노린 제한적 공격에 악용된 심각도 높은 PAN-OS RCE 제로데이 CVE-2026-0322에 대한 보안 업데이트를 공개했다.
+- 이 결함의 심각도 점수는 8.6이며 관리 인터페이스에 네트워크로 접근할 수 있는 인증된 공격자가 PA-Series, VM-Series, Panorama 장비에서 루트 권한으로 코드를 실행하게 하고, Cloud NGFW와 Prisma Access는 영향을 받지 않는다.
+- 회사는 관리 인터페이스 접근을 신뢰할 수 있는 내부 IP 주소로 제한하고 업그레이드하라고 권고하며, 알려진 우회 방법은 없고, CISA는 이 결함을 Known Exploited Vulnerabilities 카탈로그에 추가해 기한을 10월 17일로 정했다.
+
+#부정
+---
+[TITLE] Researchers Used a Public OpenAI Model to Build a $250,000 Chrome Full-Chain Exploit in Six Days
+[LINK] https://thehackernews.com/2026/10/researchers-used-public-openai-model-to.html
+[PUBLISHED] 2026-10-14 20:19 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 9
+[REASON] 공개 모델로 크롬 풀체인 익스플로잇 개발 성공
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+연구진, 공개된 OpenAI 모델로 6일 만에 25만 달러짜리 Chrome 풀체인 익스플로잇 제작
+
+**[영문 3줄 요약 (Original)]**
+- Security firm XBOW chained three previously unknown Google Chrome bugs into a full-chain attack that runs code on a Windows computer when a user only loads a web page, and built it in six days by directing AI agents running OpenAI's publicly available GPT-5.6 Sol model.
+- Google confirmed and fixed all three bugs, paid XBOW its top $250,000 reward, and XBOW says the bugs were never used against Chrome users, while the six-day run cost about $40,000 in AI charges and followed months of earlier work.
+- The AI agents searched source code, tested ideas, and wrote first drafts of the exploit while researchers chose targets and decided which pieces to join, and users should relaunch Chrome and confirm the version is 152.0.7977.82 or later.
+
+**[국문 3줄 요약 (Translated)]**
+- 보안 업체 XBOW가 당시 알려지지 않았던 Google Chrome 버그 세 개를 연결해 사용자가 웹 페이지를 로드하기만 해도 Windows 컴퓨터에서 코드가 실행되는 풀체인 공격을 만들었으며, OpenAI의 공개 GPT-5.6 Sol 모델을 실행하는 AI 에이전트를 지휘해 6일 만에 제작했다.
+- Google은 세 버그를 모두 확인하고 수정했으며 XBOW에 최고액인 25만 달러의 보상을 지급했고, XBOW는 이 버그들이 Chrome 사용자에게 사용된 적이 없다고 밝혔으며, 6일간의 작업에는 AI 비용이 약 4만 달러 들었고 이는 수개월간의 이전 작업 이후의 결과였다.
+- AI 에이전트는 소스 코드를 검색하고 아이디어를 시험하며 익스플로잇의 초안을 작성했고 연구자들은 목표를 고르고 어떤 부분을 연결할지 결정했으며, 사용자는 Chrome을 다시 시작해 버전이 152.0.7977.82 이상인지 확인해야 한다.
+
+#중립
+---
+[TITLE] AI-Found Linux Kernel Flaw Gives Local Users Root, and Can Break a Guest Out to the Host
+[LINK] https://thehackernews.com/2026/10/ai-found-linux-kernel-flaw-gives-local.html
+[PUBLISHED] 2026-10-14 16:46 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 9
+[REASON] AI로 발견된 리눅스 vhost 서브시스템의 게스트 탈출 및 권한 상승 결함
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+AI가 찾아낸 Linux 커널 결함, 로컬 사용자에게 루트 권한을 주고 게스트가 호스트로 탈출하게 할 수 있음
+
+**[영문 3줄 요약 (Original)]**
+- A flaw in Linux's vhost subsystem, tracked as CVE-2026-74580 and named Vghost, lets a local user read and write kernel memory at will and become root across nearly a decade of kernel versions.
+- In one virtualization setup it also lets an untrusted virtual machine write out of bounds into the host's QEMU process, Tencent Zhuque Lab found the flaw and published a full write-up with working demos on October 12, and there is no public sign it has been exploited.
+- The flaw affects Linux kernels from 4.11 up to 7.2-rc4, users should install a kernel with the fix and reboot, and until then should restrict access to the vhost device nodes, though there is no interim workaround for the guest-to-host escape.
+
+**[국문 3줄 요약 (Translated)]**
+- CVE-2026-74580으로 추적되고 Vghost로 명명된 Linux vhost 서브시스템의 결함은 로컬 사용자가 커널 메모리를 마음대로 읽고 쓰며 거의 10년에 걸친 커널 버전에서 루트가 되게 한다.
+- 한 가상화 구성에서는 신뢰할 수 없는 가상 머신이 호스트의 QEMU 프로세스에 경계를 벗어나 쓰기를 할 수도 있으며, Tencent Zhuque Lab이 이 결함을 찾아 10월 12일 작동하는 데모가 포함된 전체 분석을 공개했고, 악용된 공개 징후는 없다.
+- 이 결함은 4.11부터 7.2-rc4까지의 Linux 커널에 영향을 주며, 사용자는 수정이 포함된 커널을 설치하고 재부팅해야 하고 그때까지 vhost 장치 노드 접근을 제한해야 하지만 게스트에서 호스트로의 탈출에는 임시 우회 방법이 없다.
+
+#부정
+---
+[TITLE] Mecatl - 자체 인프라에서 AI 에이전트를 실행하는 클라우드 네이티브 런타임
+[LINK] https://news.hada.io/topic?id=35378
+[PUBLISHED] 2026-10-15 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 8
+[REASON] 클라우드 네이티브 에이전트 런타임 공개
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- Mecatl은 AI 에이전트를 로컬과 원격 서버, Kubernetes에서 같은 실행 구조로 운영하려는 개발자를 위한 클라우드 네이티브 런타임이다.
+- 에이전트 실행 루프와 모델, 저장소, 파일 시스템, UI를 분리해 교체할 수 있고, 세션과 이벤트 이력을 외부 저장소에 보관해 프로세스가 교체된 뒤에도 작업을 복구하며, Kubernetes용 런타임은 Redis와 세션 임대로 여러 복제본의 동시 쓰기를 조정한다.
+- 터미널 클라이언트와 gRPC, HTTP/SSE, TypeScript SDK를 제공하고 Apache 2.0 라이선스이지만, 기본 서버는 인증 없는 단일 사용자용이므로 외부 접속을 허용하기 전에 인증과 TLS 설정이 필요하다.
+
+#긍정
+---
+[TITLE] Hackers Backdoor Nextcloud Servers Through Critical Flaw in Collabora’s Built-in CODE App
+[LINK] https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html
+[PUBLISHED] 2026-10-15 02:38 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] Nextcloud 연동 플러그인 취약점을 악용한 웹셸 침투
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+해커들이 Collabora 내장 CODE 앱의 치명적 결함으로 Nextcloud 서버에 백도어 설치
+
+**[영문 3줄 요약 (Original)]**
+- Attackers exploited a flaw in the optional Nextcloud app Collabora Online - Built-in CODE Server to plant web shells on Nextcloud servers, with the first logged attack on September 10.
+- The flaw, CVE-2026-110447, lets an unauthenticated request run a command on the server through proxy.php, but only while the app's local document server is not running, and it affects every version before 26.4.303.
+- Collabora fixed it in version 26.4.303 and warned that disabling the app is not enough because it must be updated or removed, while in one case an attacker used the web shell to search for credential stores and cryptocurrency wallets.
+
+**[국문 3줄 요약 (Translated)]**
+- 공격자들이 선택 설치형 Nextcloud 앱인 Collabora Online - Built-in CODE Server의 결함을 악용해 Nextcloud 서버에 웹 셸을 심었으며, 처음 기록된 공격은 9월 10일이었다.
+- CVE-2026-110447인 이 결함은 인증 없는 요청이 proxy.php를 통해 서버에서 명령을 실행하게 하지만 앱의 로컬 문서 서버가 실행 중이지 않을 때만 가능하며, 26.4.303 이전의 모든 버전이 영향을 받는다.
+- Collabora는 26.4.303 버전에서 이를 수정했고 앱을 비활성화하는 것으로는 충분하지 않으며 업데이트하거나 제거해야 한다고 경고했으며, 한 사례에서는 공격자가 웹 셸로 자격 증명 저장소와 암호화폐 지갑을 검색했다.
+
+#부정
+---
+[TITLE] curl Patches HTTP/2 Upload Flaw After PoC Demonstrates Client-Side Code Execution
+[LINK] https://thehackernews.com/2026/10/curl-patches-http2-upload-flaw-after.html
+[PUBLISHED] 2026-10-14 21:13 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] curl의 HTTP/2 RCE 유발 메모리 손상 패치
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+curl, PoC가 클라이언트 측 코드 실행을 입증한 HTTP/2 업로드 결함 패치
+
+**[영문 3줄 요약 (Original)]**
+- The curl project fixed a use-after-free flaw, CVE-2026-92392, in how curl handles HTTP/2 uploads, which lets a malicious server corrupt the client's memory, and the reporter turned it into code execution on the uploading machine.
+- It affects curl and libcurl 8.12.0 through 8.22.0, curl rates it High, its first High-severity flaw since October 2023, and a real attack needs exact knowledge of the client's build and memory layout, so curl expects a crash instead.
+- Users should upgrade to curl 8.23.0, released October 14, or to a fixed version on an older branch, and if they cannot update yet, curl advises not using HTTP/2.
+
+**[국문 3줄 요약 (Translated)]**
+- curl 프로젝트가 curl의 HTTP/2 업로드 처리에서 악의적인 서버가 클라이언트 메모리를 손상시킬 수 있는 use-after-free 결함 CVE-2026-92392를 수정했으며, 이를 보고한 연구자는 업로드하는 기기에서 코드 실행까지 이끌어냈다.
+- 이 결함은 curl과 libcurl 8.12.0부터 8.22.0까지 영향을 주고, curl은 이를 High로 평가했으며 이는 2023년 10월 이후 첫 High 등급 결함이고, 실제 공격에는 클라이언트의 빌드와 메모리 배치에 대한 정확한 지식이 필요해 curl은 대신 충돌이 일어날 것으로 예상한다.
+- 사용자는 10월 14일 공개된 curl 8.23.0이나 이전 브랜치의 수정된 버전으로 업그레이드해야 하며, 아직 업데이트할 수 없다면 curl은 HTTP/2를 사용하지 말라고 권고한다.
+
+#부정
+---
+[TITLE] Radware MCP Server Protection monitors agent activity and guards against protocol abuse
+[LINK] https://www.helpnetsecurity.com/2026/10/14/radware-mcp-server-protection/
+[PUBLISHED] 2026-10-14 19:35 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 모델, 보안, 규제
+[SCORE] 8
+[REASON] 에이전트 MCP 서버 전용 보안 솔루션 발표
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+Radware MCP Server Protection, 에이전트 활동을 모니터링하고 프로토콜 악용을 방어
+
+**[영문 3줄 요약 (Original)]**
+- Radware announced Radware Model Context Protocol (MCP) Server Protection, a purpose-built solution to help organizations more securely adopt MCP as AI agents gain greater access to enterprise applications, data and workflows.
+- It provides visibility into MCP servers, exposed tools and agent activity, protects against protocol abuse, authentication attacks, tool and resource enumeration, tool flooding and denial-of-service attacks, and analyzes agent identities and behavioral anomalies.
+- It joins Radware Agentic AI Protection and LLM Firewall in Radware's cloud security platform and is available as a cloud-based service or as a cloud-augmented service for on-premises Alteon and DefensePro platforms.
+
+**[국문 3줄 요약 (Translated)]**
+- Radware가 AI 에이전트가 기업 애플리케이션, 데이터, 워크플로에 더 많이 접근하는 상황에서 조직이 MCP를 더 안전하게 도입하도록 돕는 전용 솔루션 Radware Model Context Protocol(MCP) Server Protection을 발표했다.
+- 이 솔루션은 MCP 서버, 노출된 도구, 에이전트 활동에 대한 가시성을 제공하고 프로토콜 악용, 인증 공격, 도구와 리소스 열거, 도구 플러딩, 서비스 거부 공격을 방어하며 에이전트 신원과 행동 이상을 분석한다.
+- Radware의 클라우드 보안 플랫폼에서 Radware Agentic AI Protection 및 LLM Firewall과 함께 제공되며, 클라우드 기반 서비스 또는 온프레미스 Alteon과 DefensePro 플랫폼용 클라우드 보강 서비스로 이용할 수 있다.
+
+#긍정
+---
