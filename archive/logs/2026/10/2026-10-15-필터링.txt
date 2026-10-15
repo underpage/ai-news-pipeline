@@ -1,0 +1,1227 @@
+[평가 오류] 전체 후보 - 선정 실패(다시 시도): 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+---
+[TITLE] CISA warns admins to immediately fix Ivanti flaw exploited as zero-day
+[TITLE_KO] CISA, 관리자들에게 제로데이로 악용 중인 이반티 결함 즉각 수정 촉구
+[LINK] https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/
+[PUBLISHED] 2026-10-14 21:58 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 9
+[REASON] CISA의 이반티 악용 제로데이 즉각 패치 긴급 권고
+[BODY]
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) urged security teams to immediately patch an Ivanti Connect Secure (ICS) flaw exploited in zero-day attacks since at least October 1st.
+Tracked as CVE-2026-104935, this high-severity authentication bypass vulnerability lets remote threat actors without privileges execute arbitrary commands on targeted ICS systems in low-complexity attacks that don't require user interaction.
+Ivanti released ICS versions 22.8R2.5, 25.1.3.0, 25.1.3.1, and 25.1.1.2 on Tuesday to address this security flaw and warned customers to "act immediately" because of "limited exploitation in the wild."
+While Ivanti didn't share additional information about ongoing attacks targeting CVE-2026-104935, cybersecurity firm Volexity reported that an unknown threat actor it tracks as UTA0576 has been chaining this security issue with two other flaws in attacks since at least October 3rd.
+"This exploit chain combined an authentication bypass, a remote code execution (RCE), and a privilege escalation vulnerability to achieve unauthenticated root-level code execution. The RCE and authentication bypass vulnerabilities are tracked under CVE-2026-104935," Volexity said.
+"Volexity identified a range of post-exploitation actions undertaken by the threat actor that targeted Active Directory credentials and secrets, including Local Administrator Password Solution (LAPS) passwords and BitLocker recovery keys."
+Threat intel firm Defused also confirmed Volexity's report, saying it first found evidence that attackers are abusing CVE-2026-104935 in the wild on October 1st.
+Internet threat watchdog Shadowserver now tracks over 5,600 Internet-exposed hosts with ICS fingerprints. However, there is no information on how many are secured against ongoing attacks or how many are honeypots designed to catch malicious activity.
+Admins urged to patch vulnerable Ivanti systems
+On Tuesday, CISA also added CVE-2026-104935 to its list of actively exploited security flaws and ordered federal agencies to secure their networks against attacks by Friday, as mandated by its June Binding Operational Directive 26-04.
+While BOD 26-04 applies only to Federal Civilian Executive Branch (FCEB) agencies, the cybersecurity agency also issued a separate advisory urging all security teams and network defenders to patch this vulnerability immediately and check for evidence of compromise.
+"CISA is aware of cyber threat actors exploiting this zero-day authentication bypass vulnerability, which allows remote, unauthenticated execution of arbitrary commands, to conduct credential theft and data exfiltration. [..] CISA urges organizations with affected Ivanti Connect Secure appliances and deployments to immediately update to the latest version," it warned.
+"Organizations seeking to determine whether they were compromised will need to conduct network and memory forensics to identify evidence of exploitation. [..] Ivanti's Integrity Checker Tool may not detect evidence of exploitation of CVE-2026-104935 because threat actor commands execute in memory."
+CISA advised defenders to take the following actions if they discover compromised Ivanti ICS appliances:
+- Create a backup of the appliance configuration.
+- Perform a factory reset and upgrade the appliance to the latest version (for cloud and virtual systems, rebuild the virtual instance and upgrade to the latest version).
+- Restore the appliance configuration from the backup created in step 1.
+- Reset passwords for all accounts, including domain, administrator, and local accounts. Revoke and reissue stored certificates; reset stored API keys and license server credentials.
+Ivanti addressed multiple other Connect Secure zero-days exploited in the wild over the last several years, including an authentication bypass (CVE-2023-46805) and a command injection (CVE-2024-21887) in early January 2024, and a server-side request forgery (CVE-2024-21893) two weeks later.
+---
+[TITLE] Cisco Warns of Active Attacks Exploiting New Critical Secure Email Gateway Vulnerability
+[TITLE_KO] 시스코, 새로운 치명적 보안 이메일 게이트웨이 취약점 악용 공격 경고
+[LINK] https://thehackernews.com/2026/10/cisco-warns-of-active-attacks.html
+[PUBLISHED] 2026-10-15 03:38 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 시스코 이메일 게이트웨이 루트 권한 탈취 제로데이 악용 경고
+[BODY]
+Attackers are exploiting a critical flaw in Cisco Secure Email Gateway that lets a sender with no login write files to the appliance's operating system, Cisco said in an advisory on Wednesday.
+The attacker sends an email with a crafted attachment through the gateway and, if it succeeds, could then run commands as root. The appliance filters an organization's email for spam, malware, and other threats, and only a gateway with the File Reputation service enabled and a Content Scanner Tools package older than version 25.3.0.5525 is vulnerable.
+The fix has been shipping since September 14 in AsyncOS 15.5.5-014 and 16.5.0-780, the builds Cisco listed as fixed in a hardening release that day, which the company now says covered this flaw. It also arrives as a Content Scanner Tools update, version 25.3.0.5525 or later, which installs without a software upgrade or a restart.
+Cisco found the flaw, tracked as CVE-2026-76519 (CVSS score: 9.8), in its own internal security scanning and became aware of the attacks in October. The advisory does not say how many devices were attacked, who is behind the attacks, or whether the attackers obtained root on any of them.
+Cisco has contacted customers of its managed Secure Email Cloud service whose devices showed "indicators of possible compromise" and says it is engaged in remediation and recovery. Administrators of those managed gateways may not have the command-line access needed to run the compromise check below, and Cisco has already deployed the fixed scanner there, so they need no action to get the fix.
+Who Is Exposed
+Both conditions must hold. The File Reputation service, part of the Advanced Malware Protection (AMP) feature that handles attachments, must be enabled and assigned to a mail policy, and the Content Scanner Tools version must be earlier than 25.3.0.5525.
+Physical and virtual gateways on vulnerable AsyncOS releases are affected. Secure Email and Web Manager and Secure Web Appliance are not.
+To check the first condition, open Mail Policies > Incoming Mail Policies > Advanced Malware Protection, or the same path under Outgoing Mail Policies, choose a mail policy, and look at the Enable File Reputation box. To check the second, run contentscannerstatus at the CLI, which shows the version and when it was last updated.
+How to Fix It
+The quickest route is the scanner update. Gateways with automatic Content Scanner Tools updates turned on need no action once the update has applied, so confirm with contentscannerstatus that the version is 25.3.0.5525 or later rather than assuming it arrived.
+Where automatic updates are off, run contentscannerupdate at the CLI, or turn them on under Security Services > Service Updates.
+The full AsyncOS fix is in these first fixed releases:
+- 15.5: 15.5.5-014
+- 16.0: no fixed build. Migrate to a fixed release.
+- 16.5: 16.5.0-780
+- Content Scanner Tools (all licensed and supported AsyncOS releases): 25.3.0.5525 or later
+Cisco recommends that any gateway earlier than 16.5 move to 16.5.0-780. A 16.0 gateway on 16.0.4-302, the build that fixed September's SQL injection flaw, is not fixed for this one, and the advisory does not list which releases count as licensed and supported for the scanner update. For a 16.0 gateway that stays on 16.0, the scanner version shown by contentscannerstatus is the only confirmation the advisory offers.
+There is no workaround. For a virtual appliance that shows signs of compromise, Cisco's guidance is a rebuild with new credentials, and it warns that upgrading a compromised instance destroys the forensic data and logs.
+How to Check for Compromise
+Cisco's check for attempted exploitation is one command on the appliance: grep "System Security" system_logs. It returns one of three messages:
+- System Security: Suspected compromise indicator was found. Contact TAC for further recommendations. Compromise detected. Follow the recovery steps below.
+- System Security: Security scan did not complete.
+---
+[TITLE] Microsoft Patches Record 1,413 Flaws, Including Exploited Windows Shell Bug
+[TITLE_KO] 마이크로소프트, 악용 중인 윈도우 셸 결함 포함 사상 최다 1,413개 취약점 패치
+[LINK] https://thehackernews.com/2026/10/microsoft-patches-record-1413-flaws.html
+[PUBLISHED] 2026-10-14 13:34 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] 악용 중인 제로데이 포함 MS 사상 최대 패치 발표
+[BODY]
+Microsoft on Tuesday shattered its own Patch Tuesday record by shipping patches for a whopping 1,413 vulnerabilities, including one that it said has come under active exploitation.
+These include 1,102 flaws in Windows, 134 in Office, 61 in Developer Tools, 36 in SharePoint Server, and 22 in SQL Server. Of these, more than 670 relate to privilege escalation, followed by over 300 remote code execution flaws and 250 information disclosure flaws. Over 70 flaws are rated Critical in severity.
+"Hundreds of CVEs in a single release used to be the exception; now it's the baseline," Dustin Childs, head of Threat Awareness at the Zero Day Initiative (ZDI), said. "Is AI to blame? Partly. It's accelerating bug-hunting on both sides of the fence, so vendors are finding (and fixing) more flaws, and researchers are finding them faster too."
+"But AI isn't creating these bugs out of thin air; it's just shortening the time between a vulnerability existing and someone noticing it. The volume isn't the real story anymore. What matters is that discovery is scaling faster than exploitation, so teams that triage by sheer CVE count instead of exploitability are burning cycles on the wrong bugs. Patch what's proven, prioritized, and public, and treat everything else as this month's new normal."
+The three vulnerabilities of note are listed below -
+- CVE-2026-96951 (CVSS score: 8.8) - A command injection vulnerability in Windows Shell that allows an unauthorized attacker to bypass a security feature over a network.
+- CVE-2026-108398 (CVSS score: 8.8) - An untrusted search path vulnerability in .NET Framework that allows an authorized attacker to bypass a security feature locally.
+- CVE-2026-92707 (CVSS score: 5.3) - An improperly controlled sequential memory allocation vulnerability in MessagePack-CSharp that allows an unauthorized attacker to deny service over a network.
+Microsoft, which credited Fujitsu's Riku Bamba and Yuya Chudo, as well as Anthropic's Benoit Sevens and a researcher named yhw for reporting CVE-2026-96951, said the vulnerability has been exploited in the wild.
+"An attacker who successfully exploited the vulnerability could evade Mark of the Web (MOTW) defenses," the Windows-maker said. "In an email or instant message attack scenario, the attacker could send the targeted user a specially crafted file that is designed to exploit the vulnerability."
+"In any case an attacker would have no way to force a user to view attacker-controlled content. Instead, an attacker would have to convince a user to take action. For example, an attacker could entice a user to either click a link that directs the user to the attacker's site or send a malicious attachment."
+It's unclear how the vulnerability is being exploited in real-world attacks, by whom, and who has been targeted. The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added the flaw to its Known Exploited Vulnerabilities (KEV) catalog, requiring federal agencies to apply the fixes by October 16, 2026.
+CVE-2026-108398 has been acknowledged as publicly known at the time of the release of the patches, with Microsoft stating the security flaw could be exploited to bypass Windows Defender Application Control (WDAC) enforcement and run unauthorized applications on target systems.
+"An authenticated attacker could place a specially crafted .NET assembly on an affected system and register it for loading by a protected process," Microsoft said. "Successful exploitation could bypass Windows Defender Application Control restrictions and allow the attacker to execute code within the protected process. User interaction is not required."
+"This vulnerability is particularly dangerous as a post-compromise attack technique, enabling attackers with existing local access to circumvent security restrictions without user interaction," Mike Walters, president and co-founder of Action1, said.
+---
+[TITLE] Palo Alto Networks warns of PAN-OS RCE flaw exploited in attacks
+[TITLE_KO] 팔로알토 네트웍스, 실제 공격에 악용된 PAN-OS RCE 제로데이 경고
+[LINK] https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/
+[PUBLISHED] 2026-10-15 07:56 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 방화벽 표적 공격에 실제 악용된 PAN-OS 제로데이 패치
+[BODY]
+Palo Alto Networks has released security updates for a high-severity PAN-OS RCE zero-day, tracked as CVE-2026-0322, that has been exploited in attacks targeting firewalls.
+The vulnerability affects the PAN-OS management interface and lets authenticated attackers with network access execute code as root on vulnerable devices.
+Palo Alto Networks confirmed in a security advisory published Wednesday that it has seen limited exploitation of the flaw in attacks.
+"Very limited exploitation has been observed targeting the Palo Alto Networks management interface," the company said.
+The vulnerability has a severity score of 8.6 and affects PA-Series and VM-Series firewalls, as well as Panorama virtual and M-Series appliances. Palo Alto says Cloud NGFW and Prisma Access are not affected.
+To exploit the vulnerability, attackers need existing credentials and network access to the PAN-OS management interface.
+Therefore, Palo Alto Networks recommends restricting access to the management interface to trusted internal IP addresses only.
+The company has released fixes for affected PAN-OS 10.2, 11.1, 11.2, 12.1, and 12.2 versions, with a fix for PAN-OS 11.2.16 expected on October 15.
+Customers running older, unsupported versions must upgrade to a supported release.
+Palo Alto says there are no known workarounds for the vulnerability, but customers with Threat Prevention subscriptions can enable signatures that provide limited protection against known attack patterns.
+"Limited coverage in Threat Prevention means that while known attack patterns can be identified using the current Threat ID, variations may exist that cannot currently be detected," warns Palo Alto.
+"If this CVE and Required Configuration for Exposure impact your environment, we recommend upgrading to an unaffected version."
+The vulnerability was discovered internally by Suraj Siddharudh, a senior principal product security researcher at Palo Alto Networks.
+The company also shared three IP addresses that have been exploiting the flaw: 66.42.72[.]14, 208.83.239[.]114, and 149.248.47[.]234.
+BleepingComputer contacted Palo Alto Networks to learn when exploitation began, who is behind the attacks, and whether attackers compromised firewalls or used them to access internal networks.
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has now added CVE-2026-0322 to the Known Exploited Vulnerabilities catalog and requires federal civilian agencies to mitigate the vulnerability by October 17.
+Build your security blueprint for AI-powered attacks
+Join Mikko Hyppönen and security leaders from the NFL, CHANEL, and Atlassian for a two-hour digital summit on what AI-speed attacks change, what defenders should stop doing, and how to validate, decide, fix, and re-validate at machine speed.
+Save your seat
+---
+[TITLE] Researchers Used a Public OpenAI Model to Build a $250,000 Chrome Full-Chain Exploit in Six Days
+[TITLE_KO] 연구진, 공개 오픈AI 모델 사용해 6일 만에 25만 달러 상당 크롬 풀체인 익스플로잇 제작
+[LINK] https://thehackernews.com/2026/10/researchers-used-public-openai-model-to.html
+[PUBLISHED] 2026-10-14 20:19 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 9
+[REASON] 공개 모델로 크롬 풀체인 익스플로잇 개발 성공
+[BODY]
+A team at security firm XBOW chained three then-unknown Google Chrome bugs into a single attack that runs code on a Windows computer when the user only loads a web page, the company said.
+Its researchers built the attack in six days by directing AI agents running OpenAI's publicly available GPT-5.6 Sol model. Google has since confirmed all three bugs, fixed them, and paid XBOW its top $250,000 reward for a full Chrome exploit.
+The attack is a full chain: a set of bugs used together to break every layer of Chrome's protection, from a web page all the way to the computer.
+Chrome runs web page code inside two nested sandboxes, the barriers that stop a hacked page from reaching the rest of the machine. The chain crossed both. The result was code running outside Chrome on Windows, with no need for the user to click or download anything.
+All three bugs are now fixed, and XBOW says they were never used against Chrome users. The two that carry public identifiers were fixed in Chrome 152.0.7977.65 on August 25 and 152.0.7977.82 on September 3.
+Chrome updates on its own, but the fix only takes effect after the browser restarts, so the action is to relaunch Chrome and confirm the version is 152.0.7977.82 or later.
+The six days are the headline, and they need their frame. XBOW built the awarded chain between Sunday, August 2, and Friday, August 7, during the Black Hat and DEF CON conferences in Las Vegas. That sprint followed months of earlier work: the company set the challenge at a January staff meeting in Malta, and its first full Chrome chain took two months to complete.
+One version of the awarded chain nearly failed when a bug it relied on turned out to be one Google already knew about. XBOW had built the exploit in swappable parts with backups ready, so it replaced that part and the chain held. By the company's own count of its usage logs, the six-day run cost about $40,000 in AI charges.
+XBOW also drew a line between what the AI did and what people did. The AI agents searched Chrome's source code, tested ideas, built proofs of concept, and wrote the first drafts of the exploit. The researchers chose the targets, supplied context, challenged the agents' results, and decided which pieces to join.
+One researcher, Brendan Dolan-Gavitt, built the awarded chain with the agents. "Pre-LLMs a Chrome full chain would take a team of four around 6-9 months to be produced, our first submission took 2 months. The awarded one? six days," Dolan-Gavitt wrote.
+The three bugs each sat in a different part of Chrome. Google's own release notes credit Dolan-Gavitt of XBOW for two of them and list the version that fixed each.
+- The first bug gave the attacker control of memory inside Chrome's JavaScript engine.
+- The second, in the code that reads animated WebP images, used that control to break out of the engine's inner sandbox and make one precise write to the computer's memory.
+- The third, in Crashpad, Chrome's crash handler, which runs outside the sandbox, turned that single write into full code execution on the machine.
+Both identified bugs are rated high severity and need the user to load a page. The WebP bug was fixed in the same Chrome 152 cycle, but no public identifier can be confirmed for it: the one XBOW's announcement gives the WebP stage, CVE-2026-85045, is the identifier Google and XBOW's own technical write-up both assign to the V8 bug.
+Google's Chrome Vulnerability Reward Program pays up to $250,000 for a full-chain exploit, the most it offers for a single report, under rules it updated in 2026. It awards at most four of these a year. XBOW calls this the first full-chain Chrome reward under the 2026 rules and the first to an autonomous security company.
+Before the fixes shipped, the bugs put an estimated 1 billion people running Chrome on Windows at risk of this kind of attack, according to the company.
+XBOW's point is the speed.
+---
+[TITLE] AI-Found Linux Kernel Flaw Gives Local Users Root, and Can Break a Guest Out to the Host
+[TITLE_KO] AI가 발견한 리눅스 커널 결함, 로컬 사용자에게 루트 권한 주고 게스트에서 호스트로 탈출 가능케 해
+[LINK] https://thehackernews.com/2026/10/ai-found-linux-kernel-flaw-gives-local.html
+[PUBLISHED] 2026-10-14 16:46 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 9
+[REASON] AI로 발견된 리눅스 vhost 서브시스템의 게스트 탈출 및 권한 상승 결함
+[BODY]
+A flaw in Linux's vhost subsystem lets a local user read and write kernel memory at will and become root across nearly a decade of kernel versions. In one virtualization setup, it lets an untrusted virtual machine write to the host's memory and hijack the program that runs the virtual machine.
+The bug is tracked as CVE-2026-74580 and named Vghost. Tencent Zhuque Lab, which found the flaw, released a fix on August 3 and published a full write-up on October 12 with working demos of both attacks. There is no public sign it has been exploited yet.
+vhost is the part of the Linux kernel that speeds up network and other input/output for virtual machines and containers. A local user reaches it by opening a device node, usually /dev/vhost-net or /dev/vhost-vsock.
+On the host, the flaw gives an unprivileged user a reliable way to read and write any kernel address, bypass KASLR, and escalate to root. The attack is deterministic: it needs no memory grooming and no lucky timing.
+The second attack is narrower. When a virtual machine's virtio device is placed behind a virtual IOMMU with iommu_platform turned on, and vhost runs in device-IOTLB mode, an untrusted guest can trigger the same bug and make the host kernel write out of bounds into the host's QEMU process. From there, a guest can overwrite a function pointer in QEMU and take control of where the host process runs next, or crash it.
+How it works
+vhost keeps a small cache of the memory mappings behind each virtual ring and the shared queues it uses to move data. A cache hit is treated as proof that the region was already checked. The cache is cleared when the mapping is updated or invalidated and when the queue is reset, but not when the VHOST_SET_VRING_ADDR or VHOST_SET_VRING_NUM commands change the ring's addresses or size while the queue is live.
+With a device IOTLB attached, those commands accept the new addresses without checking them, leaving that check for later. Once the cache is filled, the subsequent check never runs, and vhost continues translating new addresses using the old mapping. The kernel then copies data to or from that pointer without a bounds check, so a write to the used ring or a read of a descriptor lands outside the mapped region. That gives the attacker kernel read and write.
+The flaw sat in the code for about nine years because it took two reasonable changes to create it. A 2017 change (Linux 4.11) added the cache and its shortcut. A 2020 change (Linux 5.9) moved address checking out of the command and into a later step, removing the check that would otherwise have caught the stale translation.
+Who is affected, and what to do
+The flaw affects Linux kernels from 4.11 up to 7.2-rc4. Tencent reproduced the full local-user-to-root chain on five distribution kernels: Ubuntu 26.04, RHEL 9.8, Amazon Linux 2023, Microsoft Azure Linux 3.0, and Oracle Linux 10.2. On Ubuntu, the device node was limited to the kvm group, so the starting point there was a member of that group rather than any user.
+On the other four tested images, the node was world-readable at mode 0666, so any local user could reach it.
+The fix (commit de845981da67) clears the cache whenever the ring is reconfigured. Install a kernel that contains it and reboot. The first fixed upstream stable releases are listed below; vendors may also backport the fix without changing their version number.
+Red Hat, Amazon Linux, and Oracle Linux have shipped fixes. Ubuntu has fixed 22.04 and, as of October 13, still lists its 24.04 and 26.04 kernels as in progress.
+Until a fixed kernel is in place, restrict access to the vhost device nodes. Remove world access to /dev/vhost-net and /dev/vhost-vsock, limit the owning group to trusted virtualization services, and treat membership in that group as a privilege while the vulnerable kernel is running.
+There is no interim workaround for the guest-to-host escape; for that path, the patched kernel is the only remedy.
+The severity, and the AI finder
+---
+[TITLE] Mecatl - 자체 인프라에서 AI 에이전트를 실행하는 클라우드 네이티브 런타임
+[LINK] https://news.hada.io/topic?id=35378
+[PUBLISHED] 2026-10-15 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 8
+[REASON] 클라우드 네이티브 에이전트 런타임 공개
+[BODY]
+- AI 에이전트를 로컬과 원격 서버, Kubernetes에서 같은 실행 구조로 운영하려는 개발자를 위한 도구
+- 에이전트 실행 루프와 모델, 저장소, 파일 시스템, UI를 분리해 각 구성요소를 교체 가능
+- 도구 호출과 권한 승인, 훅, 대화 압축, 하위 에이전트와 팀 작업 지원
+- 세션과 이벤트 이력을 외부 저장소에 보관해 프로세스가 교체된 뒤에도 저장된 작업 복구 가능
+- Kubernetes용 런타임은 Redis와 세션 임대를 사용해 여러 복제본이 같은 세션을 동시에 쓰는 것을 조정
+- 터미널 클라이언트와 gRPC, HTTP/SSE, TypeScript SDK를 제공하고, Go 엔진을 앱에 직접 포함 가능
+- 선택적으로 Linux amd64의 microVM 안에서 파일 도구와 Bash 실행, 모델 인증 정보는 호스트에 유지
+- 실제 모델 호출에는 선택한 모델 제공자의 인증과 사용 비용이 필요하며, 오프라인 데모는 API 키 없이 실행 가능
+- 기본 서버는 인증 없는 단일 사용자용이므로 외부 접속을 허용하기 전에 인증과 TLS 설정 필요
+- Apache 2.0 라이선스
+---
+[TITLE] Hackers Backdoor Nextcloud Servers Through Critical Flaw in Collabora’s Built-in CODE App
+[TITLE_KO] 해커들, 콜라보라 내장 CODE 앱 치명적 결함 통해 넥스트클라우드 서버에 백도어 설치
+[LINK] https://thehackernews.com/2026/10/hackers-backdoor-nextcloud-servers.html
+[PUBLISHED] 2026-10-15 02:38 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] Nextcloud 연동 플러그인 취약점을 악용한 웹셸 침투
+[BODY]
+Attackers exploited a flaw in an optional Nextcloud app, Collabora Online - Built-in CODE Server, to plant web shells on Nextcloud servers. Three administrators reported the issue on GitHub, with the first logged attack on September 10.
+A web shell is a small file that executes any command an attacker sends via a web request, with the rights of the web server account. The flaw allows an unauthenticated request to run a command on the server, but only when the app's local document server is not running, such as during a restart or upgrade, or after a crash.
+Collabora fixed it in version 26.4.303 on September 11 and on October 14 published an advisory with the identifier CVE-2026-110447, warning that turning off the app does not help: it must be updated or removed.
+Who Is Affected
+The app, published by Collabora under the package name richdocumentscode, downloads a copy of Collabora Online Development Edition (CODE) and runs it on the Nextcloud server itself.
+That lets Nextcloud Office edit documents without a separate Collabora server. Its store listing says it is "for local testing and non-production use" and "for personal use or for small teams."
+Collabora's advisory covers every version before 26.4.303 and says standalone Collabora Online servers are not affected. A warning posted on the Nextcloud community forum on October 3 stated that an installation is not affected if it uses only the Nextcloud Office app ( richdocuments) without the built-in app, whether its Collabora server runs in Docker, from a Linux package, or at a hosting provider.
+The app's proxy.php script starts the local CODE server whenever a request arrives, and nothing is listening. In versions up to 26.4.302, the script placed text from the request, including its path, inside a double-quoted bash command, where the shell still runs anything written as $(...).
+A request with a command hidden in its path ran that command as the web server user. Because the script only builds that command when it needs to start the server, the attack works only while the server is down, such as during a container restart, an upgrade, or a crash.
+The script is a plain PHP file that the web server runs directly from the app's folder and loads none of Nextcloud's code.
+"It is not sufficient to disable the app to avoid the problem; it must be upgraded to >= 26.4.303 or removed," Collabora said in the advisory.
+The fixed versions require Nextcloud 30 or later.
+Nextcloud 29 and older are end of life, and the app store still serves them an affected version, so their users should upgrade Nextcloud or remove the app. Collabora's fix for a separate command-injection flaw in the same script, CVE-2025-66208, disclosed last December, does not prevent this one.
+What the Attackers Did
+The first report came from an administrator who hosts several Nextcloud servers and wrote on GitHub that the servers had been hacked since the day before. Access logs from two of them show requests at 19:51 on September 10 and 09:56 on September 11 (UTC+2), both from one IP address and both aimed at proxy.php?status with a shell command hidden in the request path. All of the administrator's servers ran version 26.4.302.
+The command decoded a one-line PHP web shell into the app's folder and tried to send the server's uname -a output to a webhook.site address. On one server, the attacker then used the shell to search for credential stores and cryptocurrency wallets, including *.kdbx, wallet.dat and keystore.json files and names such as bitwarden, 1password, .bitcoin, .electrum, .monero and .ethereum.
+The reviewed requests showed no commands that archived, uploaded, or copied out files, but anything the web server account can read must be treated as potentially exposed, the administrator wrote.
+Two other administrators reported the same on their own instances.
+---
+[TITLE] curl Patches HTTP/2 Upload Flaw After PoC Demonstrates Client-Side Code Execution
+[TITLE_KO] curl, 클라이언트 코드 실행 시연 후 HTTP/2 업로드 결함 패치
+[LINK] https://thehackernews.com/2026/10/curl-patches-http2-upload-flaw-after.html
+[PUBLISHED] 2026-10-14 21:13 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] curl의 HTTP/2 RCE 유발 메모리 손상 패치
+[BODY]
+A flaw in how curl handles HTTP/2 uploads lets a malicious server receiving an upload corrupt the client's memory, and the researcher who reported it turned that into code execution on the uploading machine.
+The curl project fixed it on October 14 in curl 8.23.0. Taking over a client needs exact knowledge of its build and memory layout, and curl expects a real attack to end in a crash instead.
+The flaw, a use-after-free tracked as CVE-2026-92392, affects curl and libcurl 8.12.0 through 8.22.0, both the command-line tool and the library that many other programs use for transfers. curl rates it High on its own four-level scale, its first High-severity flaw since the SOCKS5 heap overflow of October 2023. The project cut its release cycle by two weeks to ship the fix.
+The attack runs from the server side. The client has to upload a file of roughly 135KB over HTTP/2 to a server controlled by the attacker, and the server's certificate must pass the client's checks. libcurl negotiates HTTP/2 by default for https:// URLs when the server offers it, and the library was built with HTTP/2 support.
+The flaw has shipped in every curl release since 8.12.0 in February 2025. No source reports attacks that use it. The reporter's HackerOne write-up, with the malicious server script and a Docker container described as reproducing the code execution, became public on October 14 with the advisory.
+What to Install, and What to Do Until Then
+Upgrade to 8.23.0 or apply the fix commit to a local build. curl's machine-readable advisory also lists fixed versions on three older branches, and the project said it would ship updated Rock-solid curl releases, its long-term-support line for customers with support contracts, in step with 8.23.0:
+- curl and libcurl 8.12.0 through 8.22.0: upgrade to 8.23.0
+- 8.14.x branch: 8.14.3
+- 8.16.x branch: 8.16.2
+- 8.20.x branch: 8.20.2
+- Debian 13 (trixie): 8.14.1-2+deb13u7 through DSA-6558-1, per Debian's tracker. Debian 12 (bookworm) does not carry the vulnerable code.
+The release fixes 24 CVEs in all. The other 23 are rated Low.
+If you cannot update yet, curl's advice is not to use HTTP/2. The --http1.1 option asks the tool for HTTP/1.1, and applications set CURLOPT_HTTP_VERSION to CURL_HTTP_VERSION_1_1. curl's documentation calls that setting a request, because an existing connection on another version may be reused.
+HTTP/2 support in libcurl is a build option. A build without it cannot negotiate HTTP/2, so it cannot reach the upload path the advisory describes.
+How a Hostile Server Turns the Bug Into Code Execution
+Daniel Stenberg, curl's lead developer, explained the bug in a post published with the release, and the public report lays out the code path. HTTP/2 carries several transfers over one connection, and libcurl tracks each transfer with an object it calls an easy handle.
+During an upload, the server stalls the transfer by setting the HTTP/2 window to zero, returning part of the response, and then resetting the stream while keeping the connection open. curl treats the reset as a reason to retry.
+In cleanup, curl first tells the HTTP/2 layer that the transfer is finished, then flushes the rest of the unsent upload into the same connection. With no transfer registered, those leftover bytes are read as a new request. The line pattern the reporter includes in the uploaded file makes them look like request lines. When they do, a new stream is opened that stores a pointer to the easy handle.
+The retry completes on a new HTTP/1.1 connection, and the application frees the handle. The old connection still holds the pointer and uses it when the server sends a frame on that stream, which can happen as the program exits.
+In the reporter's exploit, data the server sends lands in the memory the freed handle had used. A request that goes out leaks local addresses, which the server needs to defeat address space layout randomization (ASLR).
+---
+[TITLE] Radware MCP Server Protection monitors agent activity and guards against protocol abuse
+[TITLE_KO] 라드웨어, 에이전트 활동 감시 및 프로토콜 남용 방지하는 MCP 서버 프로텍션 공개
+[LINK] https://www.helpnetsecurity.com/2026/10/14/radware-mcp-server-protection/
+[PUBLISHED] 2026-10-14 19:35 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 모델, 보안, 규제
+[SCORE] 8
+[REASON] 에이전트 MCP 서버 전용 보안 솔루션 발표
+[BODY]
+Radware MCP Server Protection monitors agent activity and guards against protocol abuse
+Radware has announced Radware Model Context Protocol (MCP) Server Protection, a purpose-built solution designed to help organizations more securely adopt MCP as AI agents gain greater access to enterprise applications, data and business workflows.
+The solution is intended to give organizations visibility into their MCP infrastructure, help protect MCP servers against MCP-specific attacks and establish governance as deployments scale.
+MCP is rapidly emerging as a standard way for AI agents to connect to enterprise applications, data and workflows, enabling them to discover and use tools and services and help automate business processes. According to Stacklok’s State of Model Context Protocol in Software 2026 survey, nearly half of software companies surveyed reported using MCP in production, with 19% reporting broad production.
+As MCP adoption grows, the servers that connect agents to enterprise systems may create a new attack surface that traditional web and DDoS security controls may not have been designed to understand or protect.
+Radware MCP Server Protection is designed to help address this gap by protecting the MCP server itself. Part of Radware’s cloud security platform, MCP Server Protection joins Radware Agentic AI Protection and LLM Firewall to help organizations protect AI infrastructure across agents, models and the MCP servers that connect them to enterprise systems. It is designed to support MCP servers deployed in public clouds, private clouds, Kubernetes and hardware-based data centers.
+“MCP is quickly becoming a critical integration layer between AI agents and the enterprise, but every new connection also expands the attack surface,” said David Aviv, chief technology officer at Radware. “Organizations need to know which MCP servers they have, what those servers expose, which agents are accessing them and whether those interactions are safe. Radware is extending its AI security approach to protect the MCP servers that organizations increasingly depend on to connect agents with real business systems and workflows.”
+Radware MCP Server Protection capabilities
+- MCP attack surface visibility. Radware provides visibility into MCP infrastructure across the organization, including deployed MCP servers, exposed tools and resources, agent activity, usage patterns and communication flows.
+- MCP-aware attack protection. Purpose-built security controls are designed to help protect MCP environments against protocol abuse, authentication attacks, tool and resource enumeration, unauthorized MCP interactions, AI-driven tool flooding and denial-of-service attacks.
+- Governance. The solution is designed to help organizations evaluate MCP exposure, identify potential security weaknesses and enforce organizational policies as deployments scale.
+- Agent activity monitoring. Radware analyzes agent identities, tool invocation patterns, behavioral anomalies and resource consumption trends to help organizations identify potentially malicious or abusive activity.
+- Flexible deployment. Radware MCP Server Protection is available as a cloud-based service as part of Radware Cloud Application Protection Service or as a cloud-augmented service for on-premises Alteon and DefensePro platforms, supporting cloud, on-premises and hybrid deployment strategies.
+---
+[TITLE] Chainguard Harness uses frontier AI to test running applications for vulnerabilities
+[TITLE_KO] 체인가드 하네스, 프론티어 AI 활용해 실행 중인 앱의 취약점 검사
+[LINK] https://www.helpnetsecurity.com/2026/10/14/chainguard-harness/
+[PUBLISHED] 2026-10-14 19:16 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 모델, 보안
+[SCORE] 8
+[REASON] 프론티어 모델 기반 실행 애플리케이션 취약점 탐지 도구 출시
+---
+[TITLE] Google Antigravity SDK Adds Local Model Support for Greater Token Efficiency and Code Privacy
+[TITLE_KO] 구글 안티그래비티 SDK, 토큰 효율성과 코드 프라이버시 위한 로컬 모델 지원 추가
+[LINK] https://www.infoq.com/news/2026/10/antigravity-sdk-local-models/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-14 18:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발, 모델, 규제
+[SCORE] 8
+[REASON] 구글 안티그래비티 SDK의 로컬 모델 지원 추가
+---
+[TITLE] Chrome, Firefox Updates Patch 114 Flaws as Mozilla Unveils Firefox Enterprise
+[TITLE_KO] 크롬과 파이어폭스, 114개 취약점 패치 발표 및 모질라 파이어폭스 엔터프라이즈 공개
+[LINK] https://www.securityweek.com/chrome-firefox-updates-patch-114-flaws-as-mozilla-unveils-firefox-enterprise/
+[PUBLISHED] 2026-10-14 16:38 KST
+[SOURCE] SecurityWeek
+[TOPIC] 보안, 규제
+[SCORE] 8
+[REASON] 크롬 및 파이어폭스 114개 취약점 패치 공개
+---
+[TITLE] Citrix, Fortinet, Ivanti Patch 29 Vulnerabilities Across Their Products
+[TITLE_KO] 시트릭스, 포티넷, 이반티, 제품 전반에서 29개 취약점 패치
+[LINK] https://www.securityweek.com/citrix-fortinet-ivanti-patch-29-vulnerabilities-across-their-products/
+[PUBLISHED] 2026-10-14 16:26 KST
+[SOURCE] SecurityWeek
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 시트릭스, 포티넷, 이반티의 치명적 결함 포함 다수 패치
+---
+[TITLE] SAP Patches Critical NetWeaver, S/4HANA Vulnerabilities
+[TITLE_KO] SAP, 치명적인 넷위버 및 S/4HANA 취약점 패치
+[LINK] https://www.securityweek.com/sap-patches-critical-netweaver-s-4hana-vulnerabilities/
+[PUBLISHED] 2026-10-14 15:12 KST
+[SOURCE] SecurityWeek
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] SAP 넷위버 및 S/4HANA RCE 취약점 패치
+---
+[TITLE] Google positions Gemini 4 Argon for long-horizon agentic work
+[TITLE_KO] 구글, 장기 에이전트 작업에 특화된 제미나이 4 아르곤 출시
+[LINK] https://www.infoworld.com/article/4235118/google-positions-gemini-4-argon-for-long-horizon-agentic-work.html
+[PUBLISHED] 2026-10-14 20:25 KST
+[SOURCE] InfoWorld
+[TOPIC] 에이전트, 개발, 모델, 보안, 산업
+[SCORE] 8
+[REASON] 구글의 신규 플래그십 AI 모델 출시
+---
+[TITLE] The EU is investigating OpenAI and Anthropic following incidents involving AI agents
+[TITLE_KO] EU, AI 에이전트 시스템 침해 사건 발생 후 오픈AI와 앤트로픽 조사 착수
+[LINK] https://www.computerworld.com/article/4235408/the-eu-is-investigating-openai-and-anthropic-following-incidents-involving-ai-agents.html
+[PUBLISHED] 2026-10-15 03:35 KST
+[SOURCE] Computerworld
+[TOPIC] 에이전트, 개발, 모델, 보안, 규제
+[SCORE] 8
+[REASON] AI 에이전트 탈출 침해 사건 관련 EU 조사
+---
+[TITLE] 금융권 16개사 침해사고 확인...개인정보 10만건 유출
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156109
+[PUBLISHED] 2026-10-14 19:20 KST
+[SOURCE] 테크M
+[TOPIC] 보안, 규제
+[SCORE] 8
+[REASON] 금융권 16개사 침해사고 공식 확인 및 10만건 유출
+---
+[TITLE] Scytale MCP gives AI tools scoped, read-only access to compliance data
+[TITLE_KO] 스카이탈 MCP, AI 도구에 컴플라이언스 데이터의 범위 한정 읽기 전용 접근 제공
+[LINK] https://www.helpnetsecurity.com/2026/10/14/scytale-mcp/
+[PUBLISHED] 2026-10-14 19:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 모델, 보안
+[SCORE] 7
+[REASON] 컴플라이언스 데이터용 읽기 전용 MCP 서버 출시
+---
+[TITLE] As phishing-as-a-service goes industrial, Microsoft takes down a marketplace behind 1 billion messages
+[TITLE_KO] 피싱 서비스 산업화 속 마이크로소프트, 10억 건 배후 마켓플레이스 무력화
+[LINK] https://www.computerworld.com/article/4235537/as-phishing-as-a-service-goes-industrial-microsoft-takes-down-a-marketplace-behind-1-billion-messages-2.html
+[PUBLISHED] 2026-10-15 10:25 KST
+[SOURCE] Computerworld
+[TOPIC] 개발, 모델, 보안, 규제
+[SCORE] 7
+[REASON] 10억 건 피싱 유포 범죄 마켓플레이스 적발
+---
+[TITLE] 앤트로픽 "소형 AI, IoT 기기 감염해 자율 복제하는 'AI 웜' 수준 도달"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216242
+[PUBLISHED] 2026-10-14 18:23 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 보안, 신기술
+[SCORE] 7
+[REASON] 소형 AI 모델의 IoT 자율 복제 위협 경고
+---
+[TITLE] 오픈AI, 추론 감시 어려운 '루프 트랜스포머' 적용 모델 안전 확보에 전력
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216244
+[PUBLISHED] 2026-10-14 18:00 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 보안
+[SCORE] 7
+[REASON] 오픈AI 루프 트랜스포머 차세대 모델 안전성 점검 보도
+---
+[TITLE] Linus Torvalds has started using AI to develop the Linux kernel
+[TITLE_KO] 리누스 토발즈, 리눅스 커널 개발에 AI 활용하기 시작
+[LINK] https://www.computerworld.com/article/4235401/linus-torvalds-has-started-using-ai-to-develop-the-linux-kernel.html
+[PUBLISHED] 2026-10-15 04:31 KST
+[SOURCE] Computerworld
+[TOPIC] 개발
+[SCORE] 7
+[REASON] 리누스 토발즈의 리눅스 커널 개발에 클로드 코드 활용
+---
+[TITLE] Ledger asks sellers across Asia to halt sales after supply-chain attack
+[TITLE_KO] 렛저, 공급망 공격 이후 아시아 전역 판매업체에 기기 판매 중단 요청
+[LINK] https://www.bleepingcomputer.com/news/security/ledger-asks-sellers-across-asia-to-halt-sales-after-supply-chain-attack/
+[PUBLISHED] 2026-10-15 02:46 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 렛저 하드웨어 지갑 공급망 변조 의혹 및 판매 중단
+---
+[TITLE] AI Agents Navigate Unfamiliar OT Systems and Move Equipment in Minutes, Booz Allen Finds
+[TITLE_KO] AI 에이전트, 생소한 OT 시스템 탐색 후 수 분 만에 장비 제어권 장악 확인
+[LINK] https://www.securityweek.com/ai-agents-navigate-unfamiliar-ot-systems-and-move-equipment-in-minutes-booz-allen-finds/
+[PUBLISHED] 2026-10-15 01:00 KST
+[SOURCE] SecurityWeek
+[TOPIC] 에이전트, 모델
+[SCORE] 7
+[REASON] AI 에이전트의 OT망 침투 및 설비 조작 실험 결과
+---
+[TITLE] ICS Patch Tuesday: Siemens Issues 17 Advisories, Rockwell Fixes ArmorBlock Takeover Flaw
+[TITLE_KO] 산업제어시스템 패치 화요일: 지멘스 17건 권고 발표, 록웰은 아머블록 탈취 결함 수정
+[LINK] https://www.securityweek.com/ics-patch-tuesday-siemens-issues-17-advisories-rockwell-fixes-armorblock-takeover-flaw/
+[PUBLISHED] 2026-10-15 00:15 KST
+[SOURCE] SecurityWeek
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 지멘스 및 록웰의 ICS 취약점 대규모 보안 권고
+---
+[TITLE] 앤트로픽, 불법 증류 차단 고강도 방어 체계 도입...“추출 시도 최대 99% 감축”
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216253
+[PUBLISHED] 2026-10-14 17:58 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 보안
+[SCORE] 7
+[REASON] 앤트로픽의 무단 모델 증류 차단 방어 체계 공개
+---
+[TITLE] 구글, 물리 추론 강화한 '로봇용 제미나이 4 아르곤' 출시
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216246
+[PUBLISHED] 2026-10-14 17:39 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 신기술
+[SCORE] 7
+[REASON] 구글의 물리 법칙 추론 강화 로봇용 제미나이 4 아르곤 출시
+---
+[TITLE] 카카오 ‘모두의 AI’, 외부 기업·개발자 연결해 개방형 AI 생태계 구축
+[LINK] https://byline.network/2026/10/1014-6/
+[PUBLISHED] 2026-10-15 08:10 KST
+[SOURCE] 바이라인네트워크
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 6
+[REASON] 카카오의 개방형 AI 에이전트 생태계 플랫폼 구축
+---
+[TITLE] [AI는 지금] 앤트로픽, '페이블 5.5' 내놓나…애저 연동 설정서 포착
+[LINK] https://zdnet.co.kr/view/?no=20261015101303
+[PUBLISHED] 2026-10-15 10:58 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 모델
+[SCORE] 6
+[REASON] 애저 카탈로그 설정에서 앤트로픽 페이블 5.5 포착
+---
+[LINK] https://www.itworld.co.kr/article/4234954/%eb%b6%84%ec%a0%88%eb%90%9c-ai-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ed%99%98%ea%b2%bd%ec%9d%84-%ed%95%98%eb%82%98%eb%a1%9c-%eb%84%b7%ec%95%b1-%eb%a9%80%ed%8b%b0%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015102415
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015102313
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.infoworld.com/article/4234493/5-agentic-ai-trade-offs-to-consider-before-production.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.infoworld.com/article/4234088/seven-ways-to-encourage-critical-thinking-in-ai-users.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.infoworld.com/article/4234704/the-value-of-software-is-approaching-zero.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35357
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/nvidias-jensen-huang-pledges-2-billion-for-europe-250-million-in-compute-for-uk-safety-labs/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore/
+[STATUS] SKIP (제외)
+---
+[LINK] https://thehackernews.com/2026/10/an-ai-agent-found-critical-otp-bypass.html
+[STATUS] SKIP (매체 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/14/nvidia-donates-to-uk-ai-safety-research
+[STATUS] SKIP (중복)
+---
+[LINK] https://openai.com/index/third-moment-research
+[STATUS] SKIP (제외)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21720
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015100620
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015100829
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/10/14/grok-voice-3-0-from-spacexsi-outscores-openai-and-google-on-speech-to-speech-index/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://openai.com/index/amp-beyond-coding
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/14/github-secret-detection-model/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156101
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.itworld.co.kr/article/4234980/ai-%ec%8b%9c%eb%8c%80%ec%9d%98-%ec%8a%a4%ed%81%ac%eb%a6%b0%ec%ba%90%ec%8a%a4%ed%8c%85.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216225
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015105400
+[STATUS] SKIP (제외)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21718
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/the-blind-spots-of-agentic-pentesting-and-how-to-close-them/
+[STATUS] SKIP (제외)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.computerworld.com/article/4234688/microsoft-knows-it-robbed-publishers-to-train-ai-it-just-doesnt-care.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/14/solarwinds-avior/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theguardian.com/business/2026/oct/14/bank-of-england-imf-bosses-warning-cyber-threat-to-trust
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675673
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42300
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=35389
+[STATUS] SKIP (순위 밖)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21719
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172068
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216272
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35381
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42309
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.latent.space/p/lab-in-the-loop-at-compute-speed
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35353
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/ai-guardrails-designed-to-stop-hackers-are-now-blocking-defenders-and-orion-1-aims-to-fill-the-gap/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/14/tines-it-security-ai-adoption-guide/
+[STATUS] SKIP (제외)
+---
+[LINK] https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.computerworld.com/article/4235166/anthropic-warns-ai-models-may-soon-spread-among-smart-devices-in-the-home.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/oct/14/ai-overlords-democratise-technology
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.computerworld.com/article/4234625/android-widget.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://byline.network/2026/10/14-658/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://byline.network/2026/10/14_29182883/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.infoworld.com/article/4234581/its-time-to-rewrite-all-that-old-code.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.infoworld.com/article/4234483/what-building-an-android-weather-app-taught-me-about-designing-for-reliability.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.wired.com/story/ai-models-can-be-easily-modified-to-assist-terrorist-and-extremist-activity/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216260
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216258
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675685
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216256
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156103
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156097
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216252
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/10/four-byte-write-and-timing-bug-let.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156122
+[STATUS] SKIP (기준 미달)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21721
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015104304
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172063
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35374
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work/
+[STATUS] SKIP (중복)
+---
+[LINK] https://byline.network/2026/10/1014-4/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/global-takedown-hits-network-behind-1-billion-phishing-messages/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.securityweek.com/microsoft-disrupts-chinese-language-phishing-market-behind-1b-messages/
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=35345
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://siliconangle.com/2026/10/14/data-sovereignty-strains-best-breed-ai-pipelines-aidatapipelineforum/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208876
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://byline.network/2026/10/14-660/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theguardian.com/technology/ng-interactive/2026/oct/14/ai-terror-plots-fbi-extremism
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35340
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208873
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208872
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42305
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://byline.network/2026/10/14-643/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21716
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216219
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208870
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015100230
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35384
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675733
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015095024
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172074
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216267
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35373
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.latent.space/p/crossing-the-threshold
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675606
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/researchers-tracked-down-a-rogue-fleet-of-chinese-ai-agents-in-the-wild-and-actually-talked-to-it/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://techcrunch.com/2026/10/14/apate-sends-ai-agents-undercover-to-get-scammed-so-they-can-gather-fraud-intelligence/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35355
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35354
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/
+[STATUS] SKIP (중복)
+---
+[LINK] https://thehackernews.com/2026/10/microsoft-disrupts-3-phishing-kits.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/tech/1009086/square-kiosk
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://techcrunch.com/2026/10/14/floqers-ai-agents-help-b2b-revenue-teams-research-customers/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-vpn-issues-caused-by-september-windows-updates/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.securityweek.com/harmonic-security-raises-50-million-for-workforce-ai-protection/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.securityweek.com/virtual-event-today-zero-trust-strategies-summit-2/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/14/north-korean-it-workers-laptop-farms-arrests/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/10/cisa-urges-immediate-ivanti-connect.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172056
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://siliconangle.com/2026/10/14/uvi-raises-7-5m-help-ai-agents-learn-business-context/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://openai.com/index/sentinelone
+[STATUS] SKIP (제외)
+---
+[LINK] https://thehackernews.com/2026/10/how-to-run-deepfake-readiness-drill.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/hirudo-android-malware-replaces-banking-apps-to-evade-security-checks/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.computerworld.com/article/4235207/china-clears-alibabas-qwen-ai-just-in-time-for-iphone-duo.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/10/hirudo-android-trojan-uses-patched.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/14/tfg-london-cyberattack-phase-eight-hobbs-whistles/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/microsoft-recent-windows-updates-may-trigger-remote-desktop-failures/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172054
+[STATUS] SKIP (중복)
+---
+[LINK] https://siliconangle.com/2026/10/14/solarwinds-avior-pairs-ai-agents-with-deterministic-execution-for-enterprise-it/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208875
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675709
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208874
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/14/ivanti-zero-days-gain-root-patched-vpn-appliances/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675712
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.helpnetsecurity.com/2026/10/14/openai-engineer-arrested-hidden-recording-device/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675710
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216266
+[STATUS] SKIP (제외)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21717
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156104
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.securityweek.com/microsoft-patches-record-1413-vulnerabilities-including-exploited-windows-zero-day/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675692
+[STATUS] SKIP (제외)
+---
+[LINK] https://openai.com/index/block-ai-powered-security
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675683
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156096
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208871
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675655
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675617
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216238
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42312
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42310
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35386
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35385
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015101439
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015092606
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216145
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35366
+[STATUS] SKIP (제외)
+---
+[LINK] https://simonwillison.net/2026/Oct/14/tree-appreciator/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/google-says-self-improving-ai-isnt-anywhere-close/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1011311/the-ai-race-is-back-on
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://thenewstack.io/subquadratic-snap-jev-decision-model/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/
+[STATUS] SKIP (중복)
+---
+[LINK] https://the-decoder.com/alleged-openai-spy-vibe-coded-a-surveillance-device-using-his-wifes-chatbot-account/
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172057
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216263
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216259
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42302
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216254
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156092
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156094
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216231
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216251
+[STATUS] SKIP (중복)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21714
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156087
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156085
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675740
+[STATUS] SKIP (제외)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21722
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172080
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015104239
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675734
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172069
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015102748
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://techcrunch.com/2026/10/14/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675690
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675562
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21715
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675621
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172072
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172020
+[STATUS] SKIP (사전 제외: 홍보)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216276
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172061
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216239
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/14/openai-child-self-harm-lawsuit
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/14/openai-apple-employee-leak-lawsuit
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675725
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675719
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://siliconangle.com/2026/10/14/ai-factories-stall-gpus-wait-memory-storage-data-aidatapipelineforum/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675714
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172048
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156091
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216255
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156098
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675582
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156095
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216222
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42311
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156127
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156124
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216281
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172073
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172086
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://siliconangle.com/2026/10/14/ahead-of-ipo-anthropic-reveals-its-revenue-grow-45-sequentially-to-16-8b-in-q3/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015101341
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261015102855
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172044
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://news.hada.io/topic?id=35382
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172064
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261014221719
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42308
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/10/14/gudea-leverages-ai-to-help-organizations-prevent-social-media-crises-before-they-erupt/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42307
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42306
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172019
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/news/1011654/mckinsey-ai-client-interview
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://news.hada.io/topic?id=35369
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://news.hada.io/topic?id=35367
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172018
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://news.hada.io/topic?id=35363
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/14/openai-london-staff-earnings-2million-per-person
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://news.hada.io/topic?id=35360
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/14/zimbabwean-author-simbarashe-kundizeza-denies-ai-story
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/10/14/youtube-music-launches-new-labels-as-ai-generated-music-floods-streaming-platforms/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1011369/youtube-music-ai-label
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.wired.com/story/ai-is-coming-for-science-next-watch-out/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/14/could-ai-change-the-stakes-in-the-development-of-bioweapons
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/column/1011264/digital-twin-metabolism-ai-twin-health
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1011276/openai-employee-unreleased-product-plans
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://arstechnica.com/tech-policy/2026/10/fbi-arrests-openai-engineer-suspected-of-planting-bug-in-conference-room/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/tech/1010928/android-scam-protection-enhanced-protection-google-messages
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://byline.network/2026/10/14_291827733/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/10/14/deezer-will-soon-let-you-filter-out-ai-generated-music/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/10/14/save-50-on-your-techcrunch-disrupt-2026-ticket-and-join-the-last-two-days-in-san-francisco/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/10/14/zenzap-raises-44m-for-its-ai-chat-app-that-aims-to-replace-whatsapp-in-the-workplace/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/10/14/techcrunch-disrupt-2026-day-2/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.infoq.com/news/2026/10/meta-private-process-ai-glasses/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://news.hada.io/topic?id=35347
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://siliconangle.com/2026/10/14/evos-bags-9m-to-build-autonomous-workers-that-learn-from-companies-most-experienced-humans/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/10/14/scimplify-raises-25m-to-challenge-chinas-grip-on-critical-materials-with-ai/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.wired.com/story/my-friend-has-no-soul/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.wired.com/story/men-cant-stop-faking-how-much-they-know-about-ai/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172052
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://byline.network/2026/10/384928304982034/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172026
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675587
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42304
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42303
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675364
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675484
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216268
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216257
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216243
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216241
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216261
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675635
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216248
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216247
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216245
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42301
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208869
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21713
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156086
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
