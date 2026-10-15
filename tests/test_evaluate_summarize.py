@@ -424,6 +424,8 @@ def test_summarize_retries_temporary_failure_within_call_limit(monkeypatch):
 def test_summarize_stops_at_call_limit(monkeypatch):
     add_summary_targets(2)
     calls = []
+    waits = []
+    monkeypatch.setattr(summarize.time, "sleep", waits.append)
 
     def fake(prompt, schema=None, max_retries=None):
         calls.append(prompt)
@@ -434,6 +436,8 @@ def test_summarize_stops_at_call_limit(monkeypatch):
 
     # 재시도를 모두 합쳐도 상한을 넘지 않는다
     assert len(calls) == summarize.SUMMARY_MAX_CALLS
+    # 일시 오류는 SUMMARY_RETRY_WAITS 순서로 기다리고, 마지막 호출 뒤에는 기다리지 않는다
+    assert waits == list(summarize.SUMMARY_RETRY_WAITS[:summarize.SUMMARY_MAX_CALLS - 1])
     reasons = dict(common.read_errors("요약"))
     assert set(reasons) == {"http://a/1", "http://a/2"}
     assert all(reason.startswith("요약 실패: 503") for reason in reasons.values())

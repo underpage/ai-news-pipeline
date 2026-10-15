@@ -70,7 +70,7 @@
 | `GEMINI_MODEL` | common | 선정, 요약 모델. gemini-2.5-flash는 새 사용자에게 막혀(2026-10-10 테스트 키로 확인) 기본값을 gemini-3.8-flash로 |
 | `GEMINI_MIN_INTERVAL` | common | 호출 사이 최소 간격(초). 무료 요금제의 분당 한도 기준, 유료면 0 |
 | `GEMINI_MAX_RETRIES` | common | `call_gemini` 안의 백오프 재시도 횟수. 주간 요약만 사용 |
-| `GEMINI_RETRY_BASE` | common | 백오프 첫 대기(초). 요약 단계의 일시 오류 대기에도 씀 |
+| `GEMINI_RETRY_BASE` | common | 백오프 첫 대기(초). 주간 요약만 사용 |
 | `GEMINI_TIMEOUT` | common | 응답 대기 상한(초) |
 | `GEMINI_MAX_OUTPUT_TOKENS` | common | 응답 최대 길이(토큰). gemini-2.5-flash의 출력 상한(2026-10-09 확인), 3.8-flash에서도 동작 확인(2026-10-12) |
 | `GEMINI_THINKING_BUDGET` | common | 생각 토큰 상한. 0이면 끔, 음수면 설정을 보내지 않음. 모델을 바꾸면 함께 확인 |
@@ -119,6 +119,7 @@
 - 대상 전체를 한 번 호출로 보내고(`<기사 id="번호">` 블록), 응답은 `id`로 맞춤. 기사끼리 내용을 섞지 말라는 프롬프트 규칙 유지
 - 영문 기사의 국문 요약은 영문 요약의 줄별 번역. `SUMMARY_SCHEMA`의 `property_ordering`으로 `summary_en`을 먼저 쓰게 함 (고정하지 않으면 모델이 국문을 따로 써서 내용이 달라짐. 스키마 키 순서만으로는 효과 없음)
 - 검증은 기사 단위 (3줄, 말줄임표만 있는 줄 불인정). 형식 오류, 빠진 기사, 호출 오류인 기사만 다시 보냄 (`SUMMARY_MAX_CALLS`까지)
+- 일시 오류(503 등)는 `SUMMARY_RETRY_WAITS`만큼 기다렸다 다시. 짧은 백오프로는 3.8-flash 과부하가 풀리기 전에 상한을 다 써서 요약 전체가 실패함(2026-10-14, 10-15). 기다림과 호출 시간이 Summarize Job의 `timeout-minutes` 안에 들어와야 함
 - `error`가 있으면 요약 불가로 재요청 없음. `error`를 필수 키로 바꾸지 말 것 ("없음" 같은 값이 요약 불가로 오인됨)
 - 국문은 해라체. 프롬프트에 규칙이 없으면 합니다체가 섞임 (요약, 주간 요약 모두)
 - 선정 이유(`reason`)는 초점 참고용. 본문에 없는 내용을 가져오지 않게 하는 문구 유지

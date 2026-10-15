@@ -4,13 +4,16 @@ import time
 
 from common import (
     GEMINI_MODEL, append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, clean_inline,
-    is_retryable, get_retry_wait,
+    is_retryable,
 )
 
 TONES = ("긍정", "부정", "중립")
 LANGS = ("ko", "en", "other")
 # 요약 단계 전체의 Gemini 호출 상한. 첫 요청과 모든 재요청(일시 오류, 형식 오류, 응답에서 빠진 기사)을 합친 횟수
 SUMMARY_MAX_CALLS = 5
+# 요약 호출이 일시 오류(503 과부하 등)로 실패했을 때 다시 보내기 전 기다리는 시간(초). 짧은 백오프로는
+# 과부하가 풀리기 전에 상한을 다 써서 요약 전체가 실패함 (2026-10-14, 10-15). 합계가 Summarize Job의 timeout 안에 들어와야 함
+SUMMARY_RETRY_WAITS = (60, 300, 600, 900)
 SUMMARY_SCHEMA = {
     "type": "ARRAY",
     "items": {
@@ -172,8 +175,10 @@ def summarize_all(targets):
                 break
             if not isinstance(e, ValueError) and calls < SUMMARY_MAX_CALLS:
                 # 서버 과부하 같은 일시 오류는 점점 길게 기다린 뒤 다시 보낸다
+                wait = SUMMARY_RETRY_WAITS[min(temporary_failures, len(SUMMARY_RETRY_WAITS) - 1)]
                 temporary_failures += 1
-                time.sleep(get_retry_wait(temporary_failures, e))
+                print(f" -> [요약 API 일시 오류] {wait}초 후 다시 요약 ({calls}/{SUMMARY_MAX_CALLS})")
+                time.sleep(wait)
             continue
 
         still = []
