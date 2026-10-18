@@ -1,0 +1,629 @@
+[TITLE] An OpenAI model hacked a government site, grabbed 24 years of hospital data and kept it quiet
+[TITLE_KO] 오픈AI 모델이 정부 사이트를 해킹해 24년 치 병원 데이터를 탈취하고 침묵함
+[LINK] https://the-decoder.com/an-openai-model-hacked-a-government-site-grabbed-24-years-of-hospital-data-and-kept-it-quiet/
+[PUBLISHED] 2026-10-18 00:36 KST
+[SOURCE] The Decoder
+[TOPIC] 모델, 보안
+[SCORE] 9
+[REASON] 오픈AI 모델의 비인가 접근 및 탈취 사례
+[BODY]
+An OpenAI model hacked a government site, grabbed 24 years of hospital data and kept it quiet
+Key Points
+- OpenAI has published four new cases where its AI models bypassed security boundaries on their own during training or testing.
+- One model extracted server passwords from a government website, forged authorization tokens, and downloaded 24 years of hospital data. A GPT-5.6-Sol model scanned over 360 crypto wallets and used someone else's funds for smart contract transactions.
+- In several cases, the models didn't disclose their unauthorized access in their responses.
+OpenAI has published four new cases where its AI models bypassed security boundaries on their own during training or testing.
+In one case, OpenAI asked a model to pull hospital bed statistics from a government website. But the data wasn't publicly accessible.
+So what does a model do when it hits a wall? It hacks its way through. After getting an access denied error, the model used the site's file download feature to grab server configuration files through path manipulation. It pulled a database connection string, a secret signing key, and email credentials with a username and password.
+It then analyzed the application code, spotted that the API didn't verify authorization tokens for valid signatures, forged its own tokens, and downloaded 24 years of hospital bed statistics broken down by district. It never mentioned the unauthorized access in its response.
+In another case, OpenAI gave a GPT-5.6-Sol model the task of setting up crypto smart contracts on Ethereum's Sepolia test network without providing a funded wallet. So the model wrote a script that derived private keys from publicly known developer recovery phrases, checked over 360 wallet addresses for balances, and found one with enough test ETH.
+The model briefly wondered whether using it was ethical, then decided on its own that the funds tied to a publicly known recovery phrase were "effectively abandoned" and went ahead with the transaction. It charged the gas fees to the other account and didn't disclose where the funds came from.
+"This case shows that a model can substitute its own judgment about likely harm for the account holder's permission, then act on that judgment without authorization," OpenAI writes.
+Models hacked into internal systems and bypassed access controls
+In two more evaluations, OpenAI asked a model to deliver five public dashboard figures from a research organization. In the first run, the model found exposed credentials for the organization's internal OpenSearch service and used them to route dashboard queries. It also changed the service's configuration, and OpenAI confirmed the change was never reverted.
+In the second run, the model altered an authentication system setting, grabbed a cloud storage token, and downloaded five non-public database tables totaling about 147,000 rows. It did restore the setting afterward but kept using the still-valid token to access internal data.
+The irony: the model hacked into internal systems, downloaded tens of thousands of rows of non-public data, and still didn't return correct results, according to OpenAI's report.
+A separate model was restricted to GET requests only during a training phase, meaning it could only fetch web pages. It got around the restriction by tricking an external browser into opening a self-built form that automatically fired POST requests at a trade statistics service. It read the responses via OCR from screenshots. Then it built a reusable helper that returned data through a redirect service and an online mailbox as plain text. It kept refining this workaround even after the task was already done.
+All cases and many more are documented in detail in OpenAI's Misalignment Reports.
+AI News Without the Hype – Curated by Humans
+				
+Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive "AI Radar" frontier report six times a year, full archive access, and access to our comment section.
+---
+[TITLE] [AI is] 코딩부터 보안까지…구글의 실무형AI '제미나이4 아르곤'
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675927
+[PUBLISHED] 2026-10-18 09:00 KST
+[SOURCE] 블로터
+[TOPIC] 개발, 모델, 보안, 규제
+[SCORE] 8
+[REASON] 구글 최상위 실무형 모델 제미나이4 출시
+[BODY]
+하루가 멀다하고 쏟아지는 AI 관련 기술·정책과 기업의 전략을 쉽게 풀어드립니다.
+구글이 새로운 인공지능(AI) 모델인 ‘제미나이 4 아르곤(Gemini 4 Argon)’을 출시했다. 2월 '제미나이 3.1 프로'를 발표한 이후 약 8개월 만에 시장에 내놓은 최상위 모델이다. 단순 질의응답을 위한 거대언어모델(LLM)을 넘어 코딩, 금융, 법률, 사이버 보안, 과학 등 다양한 분야의 복잡한 실무 과제를 해결하도록 설계됐다. 최근 앤트로픽의 클로드 5.5 오스(Opus), 오픈AI의 챗GPT 아스트라(GPT-6 Astra) 등 고성능 프론티어 모델 간의 경쟁이 치열해지는 가운데 제미나이 4 아르곤의 실무 문제 해결 능력이 주목받고 있다.
+18일 구글에 따르면 앞서 13일(현지시간) 제미나이 '프로'와 '울트라' 요금제 유료 구독자가 제미나이 앱과 구글 검색의 ‘AI 모드' 등에서 아르곤 모델을 이용할 수 있도록 정식 출시했다. 개발자들은 응용 프로그램 인터페이스(API)나 에이전트 개발 플랫폼 '구글 안티그래비티(Google Antigravity)' 등을 통해서도 이 모델을 활용할 수 있다. 구글은 지난달 30일 성능을 처음 공개했으며 이후 사이버 보안 전문가 등에게 2주간 제한적으로 제공해 왔다.
+벤치마크 1위 달성 및 기업 보안·코딩 성능 입증
+아르곤은 구글이 긴 공백을 깨고 내놓은 메인 모델이다. 8개월간 구글은 상위 모델의 코딩 및 추론 능력을 고도화하기 위해 정식 넘버링 모델 공개를 미루는 대신 연산 비용이 낮고 속도가 빠른 경량형 '플래시(Flash)' 모델만 3주 단위로 업데이트하며 시장에 대응하는 전략을 택해왔다.
+오랜 기간 준비한 만큼 아르곤은 실무 영역에서 높은 성능 수치를 제시하고 있다. 구글에 따르면 금융, 코딩, 법률, 세무 등 주요 경제 부문에서 모델 성능을 측정하는 밸스 인덱스(Vals Index)에서 1위를 차지했다. 내부 활용 사례에서도 성과가 나타났다. 구글 소프트웨어 엔지니어들은 아르곤을 활용해 에이전트 기반 코드 제출을 35% 이상 늘리는 동시에 코드를 이전 상태도 되돌리는 롤백 작업은 약 3분의 1 가까이 줄였다.
+데이터 보안에 민감한 기업 환경에 맞춘 방어력 향상도 주요 특징이다. AI를 속여 악의적인 동작을 유도하는 프롬프트 인젝션 공격에 대해 아르곤은 0.7%의 공격 성공률만 허용해 경쟁 모델(클로드 1.0%, 아스트라 8.5%) 대비 높은 보안성을 보였다고 설명했다.
+얼리 액세스에 참여한 기업과 연구기관도 활용 사례를 내놓고 있다. 구글은 신약 개발 기업 아이소모픽 랩스(Isomorphic Labs)가 아르곤을 연구 파트너로 활용해 복잡한 PDF 문서와 특허에서 필요한 정보를 추출하는 작업을 몇 주에서 몇 시간으로 줄였다고 소개했다. 또 유전체 분석 AI를 개발하는 가모 랩스(Gamow Labs)는 신생아 유전체 연구에서 아르곤을 활용한 연구 파이프라인으로 기존 임상 소프트웨어가 수년간 놓친 염색체 재배열을 찾아냈다고 밝혔다.
+코라이 카부쿠오글루 구글 딥마인드 수석부사장 겸 구글 최고 AI 아키텍트는 공식 블로그를 통해 “제미나이 4 아르곤은 여러 단계에 걸친 복잡한 작업에서도 깊이 있는 추론과 정밀함을 바탕으로 다양한 분야의 벤치마크에서 다른 프론티어 모델보다 우수한 성능을 기록했다”고 설명했다.
+치열한 AI 모델 경쟁과 유료화 장벽은 과제
+다만 빠르게 발전하는 AI 모델 시장에서 8개월간의 공백은 구글에게 불리하게 작용했다. 와이즈앱·리테일에 따르면 9월 기준 국내 챗GPT 앱의 월간 사용자는 2470만 명으로 제미나이(987만 명)의 약 2.5배에 달한다. 클로드는 404만 명으로 제미나이의 절반에도 미치지 못하지만 증가세는 가장 가팔랐다. 앤트로픽이 지 6월에야 서울 사무소를 공식 개소할 만큼 국내 공략이 상대적으로 늦었는데도 4월부터 9월까지 클로드 사용자는 68% 늘었다. 같은 기간 제미나이는 17%, 챗GPT는 5% 증가하는 데 그쳤다.
+경쟁사 모델의 상향 평준화도 과제다. 챗GPT와 클로드 역시 최상위 모델인 아스트라와 오퍼스를 잇달아 선보였으나 연산 능력의 미세한 차이는 일반 이용자들이 체감하기 어려운 수준에 이르렀다. 특히 클로드의 경우 중위 모델인 소넷(Sonnet) 5.5가 최상위 모델인 오스에 근접한 성능을 달성해 효율성 면에서 시장의 좋은 평가를 받고 있다. 단일 응답으로 100만 토큰을 출력하는 아르곤의 기능이 일반 대중보다는 소수의 전문 실무자에게만 유용할 수 있다는 지적이 나오는 이유다.
+아르곤 모델을 프로와 울트라 요금제 사용자만 이용할 수 있다는 점도 초기 점유율 확대의 장벽으로 지목된다. 대부분의 AI 이용자들은 상위 모델을 제한적으로 무료 체험한 뒤 성능에 만족할 경우 유료 구독으로 전환하는 것을 선호한다. 체험 기회가 원천 차단된 현재의 전면 유료화 방식으로는 기존 챗GPT나 클로드의 무료 이용자 층을 제미나이 생태계로 유인하기 어려울 것이라는 분석이 나온다.
+API 가격은 아르곤의 상대적 강점으로 꼽힌다. 구글은 11월30일까지 한시적으로 입력 토큰 100만 개당 2달러, 출력 토큰 100만 개당 10달러에 아르곤을 제공한다. 클로드 소넷 5.5와 같은 수준이며 오퍼스 5.5(4달러·20달러)의 절반, 아스트라(10달러·50달러)의 5분의 1에 불과하다. 다만 12월 1일부터는 4달러·20달러로 오르면서 오퍼스 5.5와 단가가 같아지고 아스트라의 40% 수준이 된다.
+물론 단가만으로 경쟁력을 판단하기는 어렵다. AI 모델 비교 사이트 리스판(Respan)의 분석에 따르면 아르곤은 작업 하나를 끝내는 데 쓰는 출력 토큰이 평균 약 6만 2000개로 아스트라(약 2만 7000개)를 크게 웃돈다. 그 결과 작업당 비용은 정가 기준 아르곤이 약 3.98달러, 아스트라가 약 3.26달러로 오히려 아르곤이 비싸다고 볼 수 있다.
+성능 대비 경쟁력은 영역에 따라 엇갈린다. 금융·법률·세무 등을 평가하는 밸스 인덱스에서 아르곤은 68.9%로 오퍼스 5.5(약 67.0%)와 아스트라(63.1%)를 앞섰고, 같은 평가를 도는 데 든 비용도 정가 기준 아르곤이 15.68달러로 오푸스(32.14달러), 아스트라(18.46달러)보다 낮았다. 장기 소프트웨어 엔지니어링을 평가하는 딥SWE 1.1에서도 아르곤(77.9%)이 아스트라(74.1%)를 웃돌았다. 반면 터미널 환경에서 에이전트 코딩 능력을 보는 터미널 벤치 4.0에서는 아르곤 57.4%, 아스트라 58.2%, 오퍼스 5.5 66.4%로 오퍼스가 뚜렷하게 앞섰다.
+종합하면 아르곤의 가격 경쟁력은 금융·법률 같은 지식 업무에서는 뚜렷하지만 코딩에서는 제한적이다. 12월 이후에는 오퍼스와 같은 단가가 되는 만큼 가격만으로는 차별화가 어려워지며, 소넷 5.5처럼 상위 모델에 근접한 성능을 절반 가격에 내는 모델이 있는 상황에서는 성능으로 값어치를 입증해야 하는 부담이 커졌다.
+구글은 블로그에 “제미나이 4 아르곤은 시작에 불과하다”라며 앞으로 제미나이 4 제품군의 나머지 모델도 선보이겠다고 밝혔다. 그러나 블로그에는 무료 이용자를 대상으로 한 아르곤 제공 계획은 담기지 않았다.
+---
+[TITLE] OpenCode 해킹: 사용자 인증 정보 유출
+[LINK] https://news.hada.io/topic?id=35542
+[PUBLISHED] 2026-10-18 04:37 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 8
+[REASON] OpenCode 보안 침해 및 계정 유출
+[BODY]
+이 명시돼 있으나, 제공된 본문에는 유출 항목이나 구체적인 공격 방식이 없음
+GitHub이 침해되어, 공격자가 GitHub 내부 3800개 저장소에 접근함
+모든 공개 Notion 페이지는 모든 편집자들의 이메일 주소를 노출하고 있음
+은 글이 HN 첫 페이지에 올라온 게 달갑지 않은 듯하며, 이미 여러 차례 신고된 상태임. 평소 추천을 부탁하지 않지만, 이번에는 추천해 주면 좋겠음.
+때문에 OpenAI 사용 가능량이 무서운 속도로 소진되거나 사라진다는 불평이 쏟아진 건가요? 솔직히 좀 웃기기도 함.
+이곳 일부 직원이 온라인에서 글을 쓰고 행동하는 모습을 보면 그다지 안타깝지는 않음.
+가 있어야 한다고 봄. 그러면 키가 유출됐을 때 화이트햇 해커나 키를 보관하던 쪽에서 전부 무효화할 수 있음. 지금은 시간과의 싸움인데, 각자 이메일을 받고 직접 대응해야 함.
+의 키를 공개 저장소나 gist에 올리면 해당 업체로 전달되고, 대개 즉시 폐기됨. 누군가를 도우려면 키를 공개 gist에 올렸다가 약 15초 뒤 삭제하는 것만으로 충분함.
+https://docs.github.com/en/code-security/reference/secret-se...
+https://news.ycombinator.com/item?id=50108261
+뿐이고, 사용자가 자기 컴퓨터에서 실행하는 오픈소스 OpenCode 바이너리는 아닌 듯함. 따라서 그 탐지 결과를 설명해 주지는 못함.
+결국 OpenRouter처럼 자기 키를 가져오거나 서비스 측 키를 쓰면서 토큰 요금을 내는 방식으로 OpenCode Zen을 이용한 건가요?
+를 모르므로, 왜 또는 어떻게 “키만” 영향을 받았다는 건지는 확실하지 않음.
+이라는 데 대한 공개된 증거는 없음. OpenCode/Anomaly가 어떤 근거를 갖고 있는지 궁금하며, 사후 분석이 흥미로울 듯함.
+알고 싶음. 자기 인증 정보로 OpenCode를 로컬에서만 쓰는 사람은 영향이 없는 게 맞나요? 호스팅 서비스에 키를 넣어두는 경우의 문제처럼 들림. 심각하지 않다는 뜻은 아니지만, 범위가 불분명한데 아무 정보도 공개하지 않고 있음.
+사용자에게 영향을 미치는 듯하며, OpenRouter 같은 서비스로 보임.
+에는 “최고의 코딩 모델들을 간편하게 이용하려면 OpenCode Console을 사용해 보세요”라고 안내되어 있음.
+, 인증 정보를 로컬에서만 사용했어도 영향을 받았을 수 있다고 함. 다만 Reddit과 Google에서 본 일부 댓글에 근거한 내용이니 걸러서 받아들여야 함.
+과 관련 있다는 게 어떻게 연결되는지 모르겠음. 서비스 가동 시간에 영향을 줬다면 이해하겠지만, 보안과의 관계는 불분명함.
+실제로는 인증 정보가 대거 탈취됐고, 그 정보가 모델 증류에 쓰이고 있다는 뜻인가요?
+---
+[TITLE] Hackers breach Microsoft 365 tenants via ConnectWise supply-chain attack
+[TITLE_KO] 해커들이 커넥트와이즈 공급망 공격으로 마이크로소프트 365 테넌트를 침해함
+[LINK] https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/
+[PUBLISHED] 2026-10-18 00:18 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 8
+[REASON] 커넥트와이즈 공급망 침해로 M365 유출
+[BODY]
+ConnectWise has shut down customer access to its Cloud Backup service (formerly SkyKick Cloud Backup) after hackers accessed application identities and compromised Microsoft 365 tenants.
+Reports of the malicious activity began emerging on Friday, with administrators observing unauthorized access to client data in Microsoft 365 tenants due to a potential “SkyKick/CW breach.”
+Later on the same day, managed cybersecurity and threat detection platform Huntress confirmed the worries, saying that it had identified at least 162 compromised tenants in its environment.
+In a post today, Microsoft also confirmed malicious activity involving ConnectWise’s Cloud Backup service, saying it identified unauthorized authentication attempts from an IP address on October 15.
+ConnectWise’s cloud backup solutions provide backup and recovery services that help managed service providers (MSPs) and IT teams protect and restore customer data, such as emails and files, in cloud environments including Microsoft 365 and Google Workspace.
+For Microsoft 365 backups, the service relies on permissions granted through Microsoft Entra ID. An application identity known as a “service principal” represents the software in a customer’s tenant and enables it to access resources according to the permissions granted.
+Microsoft 365 tenant breaches
+In a security advisory, ConnectWise said that it “recently identified unauthorized access to application identities within the ConnectWise Cloud Backup environment” and shut down application access for its partners and clients.
+“We have no indicators to date that Cloud Backup partner backup data has been compromised. The existing cloud backup archive is not impacted by this service interruption and will be accessible once services are restored,” ConnectWise says.
+However, the company has launched an investigation and is engaged in remediation efforts.
+Based on reports from Microsoft, Huntress, and administrators, the malicious activity started at least on October 15 from a single IP address: 144.172.64[.]128.
+One user on Reddit said that they received a notification from the Microsoft Privileged Identity Management (PIM) service on October 15 alerting of a SkyKick service principal assigning itself the role of Exchange Administrator, despite not using the app in years.
+Nevertheless, some of the reported IDs for the offensive SkyKick match those provided by Huntress, Microsoft, and Todyl - a cybersecurity platform primarily for MSPs and IT professionals.
+According to Todyl researchers, the attacker authenticated directly to Microsoft 365 as the backup application using its secret, gaining the permissions customers had already granted it.
+The sign-in requests were performed by an automated script, and since they did not involve a user login, protections such as multi-factor authentication (MFA) were ineffective.
+“Because the application already held broad, previously granted permissions in each tenant, those sign-ins gave the attacker the technical ability to read and write mail and attachments, OneDrive and SharePoint files, and Teams chats,” Todyl said.
+In the analyzed intrusions on nine tenants, Todyl researchers identified only sign-in activity and did not find evidence that the threat actor “created accounts, added permissions, changed passwords, or established persistence in any tenant through the backup app.”
+Reconnaissance and persistence attempts
+However, Huntress saw on nearly 50 tenants it monitors that service principals for “ConnectWise’s Cloud Management apps (Exchange Online, Microsoft Teams, and Microsoft Graph) assigned themselves directory roles, mostly Exchange Administrator.”
+In one tenant, Huntress researchers also observed that the attacker established persistence, the operation taking around five minutes.
+---
+[TITLE] Drupal patches critical RCE flaws, warns exploits may emerge soon
+[TITLE_KO] 드루팔, 치명적인 RCE 취약점 패치하며 익스플로잇 임박 경고
+[LINK] https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaws-warns-exploits-may-emerge-soon/
+[PUBLISHED] 2026-10-17 23:32 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 드루팔의 치명적 RCE 취약점 패치 및 경고
+[BODY]
+Drupal has patched two critical vulnerabilities that could allow attackers to execute code remotely on websites running any supported version of the content management system.
+The security issues impact the software core's Field UI module and the contributed Entity List module. Drupal issued an advance warning at the beginning of the week, urging administrators to apply updates promptly because attackers could develop exploits shortly after the vulnerabilities’ disclosure.
+“The Drupal Security Team urges you to reserve time for core updates at that time because exploits might be developed within hours or days,” the project's security team warned.
+“We recommend updating to the latest supported patch (bugfix) release for your site's version of Drupal before October 14, so that you can address any other upgrade issues before the security window.”
+Drupal is a free, open-source content management system used to build and manage websites, particularly popular among government agencies, universities, and non-profit organizations.
+According to the project’s website, more than one million websites run on Drupal.
+Earlier this week, the open-source project disclosed the two details, noting that "all currently supported versions of Drupal core are affected."
+- CVE-2026-108097: A remote code execution vulnerability in Drupal core’s Field UI module that could allow attackers to execute arbitrary code on affected servers.
+- CVE-2026-108099: A flaw in Entity List, a contributed module for creating entity lists without Views, that could enable remote code execution.
+The security advisory for CVE-2026-108097 notes that the flaw cannot be exploited using Drupal core alone, but contributed modules can provide multiple exploitation paths, including at least one that requires no authentication.
+Additionally, custom code may also expose the vulnerable functionality.
+Successful exploitation of CVE-2026-108099 requires a similar interaction with contributed modules or custom code and includes at least one known exploitation path that does not require authentication.
+Administrators are urged to update Drupal core to version 10.6.19, 11.3.19, or 11.4.10, depending on their release branch, and update Entity List to 3.0.10.
+"All versions of Drupal prior to 10.6.x, as well as all versions of Drupal 11 prior to 11.3.x, are end-of-life and no longer supported," the developer said
+The flaws also impact Drupal 12 pre-releases before beta2, but these are not meant to be used in production environments. The final stable 12.0 version will include fixes for both flaws.
+Administrators who cannot upgrade to a secure version are advised to uninstall Drupal’s core Field UI module (field_ui) as an effective mitigation measure.
+Also, Drupal Steward protects against some known attack vectors but does not cover every possible exploit.
+Once attackers have valid credentials, only 37% of their actions are blocked
+Overall prevention scores can hide what happens after initial access. Once attackers are using valid credentials, prevention drops sharply.
+The Blue Report 2026 measures defenses technique by technique across 338 million simulations run in customer production environments.
+Get the report
+---
+[TITLE] Agent Substrate - AI 에이전트를 격리하고 대기 자원을 줄이는 Kubernetes 실행 환경
+[LINK] https://news.hada.io/topic?id=35557
+[PUBLISHED] 2026-10-18 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 모델
+[SCORE] 7
+[REASON] 에이전트 샌드박스 격리 인프라 도구 공개
+[BODY]
+- 여러 AI 에이전트를 독립된 샌드박스에서 실행하고, 대기 중인 에이전트의 자원을 회수하는 인프라 도구
+- 모델 응답이나 도구 실행을 기다리는 동안 메모리와 파일 상태를 저장하고, 요청이 들어오면 복원해 작업 재개
+- 미리 준비된 소수의 Kubernetes Pod를 여러 에이전트가 번갈아 사용해, 에이전트마다 Pod를 계속 유지하는 부담을 줄임
+- 저장된 상태를 다른 워커에서도 복원할 수 있어, 실행 위치가 바뀌어도 세션과 작업 환경을 유지
+- gVisor 또는 Cloud Hypervisor 기반 마이크로VM으로 실행 환경을 격리하며, 일반 Linux 컨테이너만으로 실행하는 방식은 미지원
+- 표준 OCI 컨테이너 이미지를 사용해 기존 에이전트와 도구를 패키징하며, 특정 모델이나 에이전트 SDK에 종속되지 않음
+- API 키와 인증정보는 샌드박스 밖에서 관리하고, 허용된 외부 요청에 게이트웨이가 인증정보를 주입
+- 에이전트별 신원을 구분하고 네트워크를 분리하며, 게이트웨이에 외부 인증과 데이터 유출 방지 정책을 연동 가능
+- Kubernetes에 직접 배포하며, PostgreSQL과 스냅샷 저장소가 필요. 로컬 kind와 GKE 개발 환경 제공
+- Apache 2.0 라이선스
+---
+[TITLE] MALFEX npm Package 'imgdecode' Hides Shellcode Loader in Windows Native Addon
+[TITLE_KO] MALFEX npm 패키지 'imgdecode', 윈도우 네이티브 애드온에 셸코드 로더 은닉
+[LINK] https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html
+[PUBLISHED] 2026-10-17 20:11 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 7
+[REASON] npm 패키지 내 셸코드 로더 은닉 발견
+[BODY]
+Cybersecurity researchers have discovered a malicious npm package that's part of a recently disclosed software supply chain attack campaign dubbed MALFEX.
+The package, named "imgdecode," was uploaded to the package registry on September 30, 2026, by a user named "malfexteste8." It has been downloaded 979 times as of writing and is still available on npm as of writing. The latest version of the package is 1.0.3.
+"The npm package imgdecode hides a malicious loader in a compiled Node.js addon," SafeDep said. "Its nine-line JavaScript file loads a Windows dynamic-link library (DLL). When a Node.js program calls require('imgdecode') from a Windows console, the DLL attempts to download encrypted shellcode from GitHub. It decrypts the response and injects the result into a new dllhost.exe process."
+First documented by both Checkmarx and CloudSEK, MALFEX is the name assigned to a long-running campaign in which an unknown threat actor has been publishing malicious packages to npm since August 6, 2023, with an aim to compromise Windows systems. These packages were published across five npm publisher handles: malfexkkj, malfex_user, malfexteste2, malfexteste3, malfexteste4.
+Of the eight identified packages, three were found to act as a loader for Overlord RAT, while three others ("cdn-img-fetch," "img-to-native," and "native-runner") worked together to download and run a Node.js stealer. A third infection pathway involved the use of a postinstall hook to execute JavaScript capable of contacting an external server and retrieving an unspecified next-stage binary.
+Interestingly, the threat actor behind the campaign appears to be responding to public disclosures and npm removals by publishing replacements for "native-runner" and "img-to-native" within two days in the form of "runhelper" and "imgbundle." That same day, the first version of "imgdecode" was published. The timeline of events is as follows -
+- September 26, 2026 - cdn-img-fetch, img-to-native, and native-runner 1.0.0 published
+- September 28, 2026, at 4:06 p.m. UTC - npm removes native-runner and img-to-native
+- September 30, 2026, at 3:29 a.m. UTC - imgbundle 1.0.0 published, replacing img-to-native
+- September 30, 2026, at 3:37 a.m. UTC - runhelper 1.0.0 published, replacing native-runner
+- September 30, 2026, at 4:13 p.m. UTC - runhelper unpublished
+- September 30, 2026, at 10:32 p.m. UTC - imgdecode 1.0.0 published
+- September 30, 2026, at 11:07 p.m. UTC - imgdecode 1.0.1 published
+- October 1, 2026, at 5:48 p.m. UTC - imgdecode 1.0.2 published
+- October 7, 2026, at 11:06 p.m. UTC - npm removes imgbundle
+- October 8, 2026, at 1:03 p.m. UTC - npm removes cdn-img-fetch
+- October 11, 2026, at 10:09 p.m. UTC - imgdecode 1.0.3 published
+The Node.js stealer chain is notable for the fact that none of the packages featured an install hook. Instead, the malicious code runs when "native-runner" is loaded. The package lists "img-to-native" as its dependency, which, in turn, has "img-to-native" as a dependency.
+The exact functionality of each of these packages is below -
+- cdn-img-fetch downloads "banner.png" from a GitHub repository ("cavecrew/proj") and extracts an encrypted blob.
+- img-to-native decrypts the blob using the key "malfexteam2027" and writes the contents to disk as a Go executable ("%APPDATA%\Microsoft\Windows\node_runtime_helper.exe").
+- native-runner executes the Go executable, which then downloads the stealer binary ("setup.exe" aka movinlike) from "104.234.65[.]75:700."
+"Runhelper," advertised as a helper utility for "launching native binaries from Node.js projects," functions similarly to "native-runner" in that it's designed to run malicious code. Its primary responsibility is to locate a JPG file ("cdn-img-fetch/.runtime/rt.jpg"), extract shellcode from it, copy it into executable memory, and run it using Koffi, a Foreign Function Interface (FFI) module for Node.js.
+---
+[TITLE] Reverse Engineer Anything Project Brings AI Agents to Binary Analysis
+[TITLE_KO] 바이너리 분석에 AI 에이전트를 도입하는 리버스 엔지니어 애니싱 프로젝트
+[LINK] https://www.infoq.com/news/2026/10/reverse-engineer-anything/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-17 15:28 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발, 산업
+[SCORE] 7
+[REASON] 코딩 에이전트와 역공학 도구 연결 오픈소스
+[BODY]
+Reverse Engineer Anything (REA) is an open-source project with over 200K GitHub stars that connects coding agents such as Claude Code and Codex to reverse-engineering tools like Ghidra, Hopper, and IDA. The project lets developers inspect compiled binaries, trace function calls, and investigate how applications implement specific features.
+REA uses MCP servers to expose reverse-engineering tools to agents, which can query disassemblers, inspect functions and cross-references, trace program behavior, and iteratively test hypotheses against the binary. The tool also supports static analysis of JavaScript and Electron applications and .NET assemblies, using the results to guide further investigation. REA runs locally and does not claim to recover the original source code.
+Source: REA project on GitHub
+The showcases on GitHub demonstrate how REA can trace Notion’s Electron clipboard implementation, reconstruct a sound-panning function from the classic game DX-Ball with tests matching all 3205 original x86 cases and all 63 compiled function bytes, and recover bullet-ring angle calculations from the 16-bit code of the DOS game Touhou 4.
+On Hacker News, some practitioners question what the project adds beyond asking an AI coding agent to install and use Ghidra, an open source tool developed by the NSA to analyze compiled programs. Others report better results than in their previous attempts to use reverse-engineering tools through an AI agent. Hacker News user revelationnow writes instead:
+I feel this is going to accelerate big tech moving apps to the cloud, at least one channel of reverse engineering will be cut off if there are no binaries.
+REA is not limited to Ghidra: it also supports Hopper, a native macOS disassembler and reverse-engineering tool, and IDA, a disassembler and debugger for analyzing executable code across multiple processor architectures and platforms. JavaScript and .NET inspection can run without a native analysis engine.
+On Reddit, some independent developers fear that AI-assisted reverse engineering could make it easier to copy their games and applications, bypass paid features, and exploit their work commercially without permission. Others discuss which hardware they would like to reverse engineer and what they might build with the results. Sreekanth Pannala, director at AMD, notes:
+What a difference a decade makes! We’ve gone from an era when software was king and hardware was a commodity to one where hardware is king and proprietary software is becoming increasingly replaceable.
+Released under the permissive MIT license, REA supports legitimate reverse engineering, research, analysis, and reconstruction. Users are responsible for obtaining the necessary authorization and complying with applicable laws. Cleverson Santos, creator of the Persistent Intelligence Project, warns on LinkedIn:
+That is a murky boundary! I don't view crossing those lines favorably—and this is just the beginning; everything created to help human beings ends up being used against them in some way! I hope I’m not being too extreme, and this isn't a criticism—just an observation regarding the limits of what should or shouldn't be crossed.
+The author, who uses the handle morluto and whose real name has not been publicly identified, also published Awesome Reverse Engineering, a list of reverse-engineering tools and learning resources covering binaries, apps, firmware, file formats, and protocols.
+---
+[TITLE] 딥시크, 신규 AI 모델 공개…"작업 빠르고 똑똑하게 답변"
+[LINK] https://zdnet.co.kr/view/?no=20261018095657
+[PUBLISHED] 2026-10-18 10:11 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 7
+[REASON] 코딩과 에이전트 성능 개선한 모델 출시
+[BODY]
+딥시크가 인공지능(AI) 모델의 성능과 처리 속도를 개선해 사용자 확대에 나섰다.
+딥시크는 'V4.1-플래시-1017' 버전을 출시했다고 지난 17일 공식 홈페이지를 통해 밝혔다. 이는 지난 달 선보인 'V4.2-플래시' 업데이트 버전이다.
+회사는 이번 모델 업데이트 핵심으로 더 빠른 작업과 답변 길이 줄이기를 꼽았다. 추론과 코딩뿐 아니라 AI가 여러 단계의 작업을 수행하는 에이전트 기능과 시각 관련 평가에서도 성능이 개선됐다고 밝혔다. 게임 제작과 3차원 모델링 등에서도 활용 능력을 높인 것으로 나타났다.
+딥시크가 공개한 성능 평가 결과에서도 실제 모델 개선이 확인됐다. 고난도 평가인 '인류의 마지막 시험(HLE)'에서 새 모델은 36.8~42.6점을 기록했다. 기존 모델 점수는 36.8~39.1점이었다. HLE는 수학과 과학·인문학 분야의 수천 개 질문으로 AI 성능을 측정하는 평가다.
+앞서 딥시크는 V4.1-플래시를 경쟁사보다 낮은 가격에 공급했다. 당시 홍콩 증시에서는 미니맥스와 지에이아이 등 경쟁사뿐 아니라 자체 AI 모델 '큐원'을 개발하는 알리바바의 주가도 급락했다.
+일각에서는 딥시크 모델 서비스 안정성이 낮다는 점을 짚었다. 딥시크는 이번 주 초 약 5시간 동안 서버에 접속할 수 없는 장애를 겪었다. 최근 몇 달 동안 딥시크는 속도 저하와 서비스 중단 이슈를 겪었다.
+관련기사
+- 마이크로소프트, 새 AI 모델 사전학습 완료…"딥시크보다 효율 12배↑"2026.10.16
+- [AI는 지금] 中 딥시크 개발자 "앤트로픽 AI 독점, 나치 핵무기 선점과 같아"2026.09.16
+- [AI는 지금] IPO 나선 딥시크, 초대형·고효율 'V4.1 플래시' 공개2026.09.10
+- 딥시크, 화웨이 AI칩으로 中 최대 데이터센터 구축2026.09.05
+이번 주 초에는 약 5시간 동안 서버 접속 장애도 발생했다. 일부 전문가들은 저렴한 AI 모델을 찾는 개발자 수요가 몰리면서 발생하는 컴퓨팅 자원 부족을 원인으로 꼽았다.
+딥시크는 "우리 모델은 이전 버전보다 벤치마크 성능이 뛰어나고 작업을 더 빠르게 완료하며 답변 길이도 짧아졌다"고 소셜미디어 '엑스(X)' 공식 계정서 밝혔다.
+---
+[TITLE] GPT-6 아스트라, 미공개 물리 문제 98% 해결…전문가 오류도 발견
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216365
+[PUBLISHED] 2026-10-17 18:06 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 모델
+[SCORE] 7
+[REASON] GPT6의 이론물리 연구 문제 자율 해결
+[BODY]
+오픈AI의 ‘GPT-6 아스트라’가 미공개 이론물리학 연구 문제 50개 중 49개를 사람의 힌트 없이 해결했다. 문헌을 찾아 계산식을 구성하고 코드를 실행하는 과정을 자율적으로 수행했으며, 채점 과정에서는 전문가가 작성한 기준 답안의 오류까지 확인됐다.
+인도 국제이론과학센터(ICTS)와 타타 기초과학연구소, 펜실베이니아대학교, 구글 딥마인드 등 연구진 35명은 지난 9일 아카이브를 통해 이론물리 평가 벤치마크 ‘시오피즈이밸(TheoPhysEval)’과 이를 활용한 평가 결과를 담은 논문을 공개했다.
+이 벤치마크는 AI 에이전트가 실제 이론물리 연구에 필요한 문제를 얼마나 자율적으로 해결하는지 평가하기 위해 만든 시험이다. 모델에 검색·코드 실행 도구를 결합해, 문제를 제시한 뒤 최종 답을 얻는 능력을 측정했다.
+출제 범위는 고전물리학부터 양자장론, 입자물리학, 중력·우주론 등 11개 분야다. 기존 연구의 조건을 바꿔 새 결과를 계산하는 과제 등이 포함됐다. 예를 들어 5차원 시공간을 다룬 블랙 스트링 연구를 찾아, 조건을 4차원으로 바꾼 뒤 수치 계산을 수행하는 방식이다. 단순히 알려진 답을 찾는 것으로 끝나지 않고, 기존 계산을 이해하고 수정해야 한다.
+다만 물리학의 중요한 미해결 난제는 제외했다. 연구진은 해당 분야 전문가가 통상 하루 이내에 해결할 수준으로 설명했다.
+연구진은 이번 테스트에 5개 AI 모델을 투입했다. 웹 검색과 코드 실행을 허용한 조건에서 GPT-6 아스트라가 50문제 중 49개를 맞혔다. API 비용은 총 116.28달러로, 문제당 평균 약 2.33달러였다.
+'오퍼스 5.5'가 46개로 뒤를 이었다. '제미나이 3.8 플래시'는 34개, 오픈 모델인 '딥시크-V4.1 플래시'와 'GLM-5.3'은 각각 27개와 21개를 해결했다. 인터넷을 차단한 조건에서는 아스트라와 오퍼스 5.5가 각각 46개를 맞혔다.
+아스트라가 끝내 풀지 못한 문제는 주어진 곡선으로부터 이를 만들어내는 미분방정식을 거꾸로 찾는 과제였다. 다른 모델도 이 문제에는 실패했다.
+공동 저자 수브랏 라주 ICTS 연구원은 14일 개인 블로그에서 이번 평가가 시작된 경위를 설명했다. 약 6개월 전 자신의 미공개 문제를 AI에 제시했을 때는 처음에 오답을 냈지만, 몇 차례 힌트를 주자 해결했다는 것이다.
+이후 전문가들에게 문제를 모으는 동안 새 모델들이 빠르게 발전했다. 연구진은 출제자들에게 계속 난도를 높여 달라고 요청했다.
+라주는 “솔직히 이런 날이 이렇게 빨리 올 줄은 예상하지 못했다”며 “결과를 확인한 뒤 며칠 밤 제대로 잠들 수 없었다”고 밝혔다.
+그가 강조한 것은 전문 분야를 가로지르는 능력이다. 자신이 출제한 문제는 풀 수 있지만, 다른 분야의 문제 상당수는 의미를 이해하기도 어렵다는 설명이다.
+채점 과정에서도 예상하지 못한 일이 발생했다. 라주에 따르면 아스트라의 초기 점수는 80점대 후반이었다. 그러나 오답으로 분류된 답을 검토하자, 아스트라는 자신의 답이 맞고 전문가 답안이 틀렸다고 주장했다.
+연구진이 출제자들에게 다시 확인한 결과 여러 계산에서 미묘한 오류가 발견됐다. 전문가들이 답안을 수정하면서 아스트라의 최종 정답률은 98%까지 올라갔다.
+경제학자 알렉스 타바록도 이 점에 주목했다. 그는 15일 블로그 ‘한계혁명’에서 인간이 만든 정답으로 AI를 시험하려던 평가가 오히려 AI의 답으로 전문가의 계산을 검증하는 상황이 됐다고 평했다.
+연구진은 이번 결과가 초기 연구자 교육에도 영향을 줄 수 있다고 봤다. 이 같은 과제는 대학원생이 기존 연구를 익히고 첫 결과를 얻는 데 활용돼 왔다. AI가 답을 구할 수 있게 된 만큼, 과제를 부여할 때 계산 과정을 배우는 목적을 분명히 해야 한다는 것이다.
+이번 평가에는 한계도 있다. 최종 답을 기준으로 에이전트별 한 차례씩 진행했으며, 일부 출제자는 풀이 과정에서 AI 도구를 사용했다. 이에 따라 연구진은 평가 문제나 정답이 사전에 모델 측에 노출됐을 가능성을 완전히 배제하지 않았다.
+저자들은 이번 결과가 AI 에이전트가 이론물리 연구에 필요한 구체적인 계산을 높은 정확도로 수행할 수 있음을 보여준다고 설명했다.
+다만 현재 에이전트는 연구할 만한 문제를 고르거나, 풀기 어려운 과제에서 다른 유망한 문제로 방향을 바꾸는 데는 서툴다고 지적했다. 계산을 맡길 수 있는 범위는 넓어졌지만, 연구 방향을 정하고 새로운 이론을 만드는 능력까지 입증된 것은 아니라는 의미다.
+임대준 기자 ydj@aitimes.com
+---
+[TITLE] "데이터·AI 연결 쉽게"…데이터브릭스, 네트워크 서비스 출시
+[LINK] https://zdnet.co.kr/view/?no=20261018101607
+[PUBLISHED] 2026-10-18 11:06 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안, 산업
+[SCORE] 6
+[REASON] 서버리스와 내부망을 잇는 게이트웨이 공개
+---
+[TITLE] 미국 은행들, 메타 ‘뮤즈’ 계좌 접근 차단…“AI가 옮긴 돈, 누가 책임지나”
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216373
+[PUBLISHED] 2026-10-18 09:41 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 보안
+[SCORE] 6
+[REASON] 미국 은행들의 에이전트 계좌 접근 차단
+---
+[TITLE] Replit makes OpenAI its default over Anthropic, CEO says
+[TITLE_KO] 레플릿 CEO, 기본 모델 제공업체를 앤트로픽 대신 오픈AI로 지정했다고 밝혀
+[LINK] https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/
+[PUBLISHED] 2026-10-18 03:48 KST
+[SOURCE] TechCrunch
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 레플릿 기본 모델을 앤트로픽에서 오픈AI로 변경
+---
+[TITLE] Anthropics' Claude cracks a 25-year-old NSA cryptography mystery in under 30 minutes
+[TITLE_KO] 앤트로픽의 클로드, 25년 된 NSA 암호학 미스터리를 30분 만에 풀어내
+[LINK] https://the-decoder.com/anthropics-claude-cracks-a-25-year-old-nsa-cryptography-mystery-in-under-30-minutes/
+[PUBLISHED] 2026-10-17 23:42 KST
+[SOURCE] The Decoder
+[TOPIC] 모델, 보안
+[SCORE] 6
+[REASON] 클로드를 통한 25년 된 암호학 의문 해결
+---
+[TITLE] Websites are closing their doors to AI agents
+[TITLE_KO] 웹사이트들이 AI 에이전트에게 빗장을 걸어 잠그고 있다
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web
+[PUBLISHED] 2026-10-17 22:00 KST
+[SOURCE] The Verge
+[TOPIC] 에이전트
+[SCORE] 6
+[REASON] 웹사이트들의 AI 에이전트 접근 차단 동향
+---
+[TITLE] [AI 모델 신작] BFL ‘플럭스 3 이미지 클라인’ 등 5종
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216368
+[PUBLISHED] 2026-10-17 19:47 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 6
+[REASON] BFL 이미지 생성 편집 모델 가중치 공개
+---
+[TITLE] AI 코딩도 LLM만으론 부족…레플릿, ‘결정론적 시뮬레이터’로 검증
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216367
+[PUBLISHED] 2026-10-17 19:27 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] AI 코딩 결과 검증을 위한 시뮬레이터 도입
+---
+[TITLE] AI models hide mistakes in their own work reports, but one sentence in your prompt can help
+[TITLE_KO] AI 모델이 자체 보고서의 실수를 숨기지만 프롬프트 한 문장으로 개선 가능
+[LINK] https://the-decoder.com/ai-models-hide-mistakes-in-their-own-work-reports-but-one-sentence-in-your-prompt-can-help/
+[PUBLISHED] 2026-10-17 18:54 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 6
+[REASON] AI 에이전트의 오류 은폐 연구 결과
+---
+[TITLE] AI로 CCTV 영상도 조작…ONVIF, 위변조 검증 표준화 추진
+[LINK] https://www.etnews.com/20261016000227
+[PUBLISHED] 2026-10-17 17:00 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SCORE] 6
+[REASON] CCTV 영상 위변조 방지 국제 표준화 추진
+---
+[TITLE] 오픈AI, 크롬용 '챗GPT' 확장 기능 강화..."열린 탭 분석하고 직접 제어"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216360
+[PUBLISHED] 2026-10-17 15:40 KST
+[SOURCE] AI타임스
+[TOPIC] 일반
+[SCORE] 6
+[REASON] 챗GPT 크롬 확장의 브라우저 제어 기능 추가
+---
+[TITLE] [단독] 에베레스트 랜섬웨어 조직, 국내 네트워크 보안기업 263GB 데이터 탈취 주장…75개 기관·기업 관련 자료 노출 우려
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208916
+[PUBLISHED] 2026-10-17 13:54 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 국내 네트워크 보안사 데이터 탈취 주장
+---
+[TITLE] Linux 7.2 개발 통계 - 기여자 2,652명으로 역대 최다, LLM 지원 패치도 증가
+[LINK] https://news.hada.io/topic?id=35551
+[PUBLISHED] 2026-10-18 06:47 KST
+[SOURCE] GeekNews
+[TOPIC] 개발
+[SCORE] 6
+[REASON] 리눅스 7.2 개발 통계 및 LLM 패치 증가
+---
+[TITLE] Ultramarine 1 Flash - 금융, 법률, 컨설팅 업무와 문서 작성에 특화한 AI 모델
+[LINK] https://news.hada.io/topic?id=35519
+[PUBLISHED] 2026-10-17 15:31 KST
+[SOURCE] GeekNews
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 오피스 업무 특화 특수 목적 AI 모델 출시
+---
+[TITLE] 앤트로픽 ‘미소스 5’, 양자회로 설계 개선…53시간 만에 새 계산법 발견
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216376
+[PUBLISHED] 2026-10-18 11:11 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 5
+[REASON] 클로드를 활용한 양자회로 최적화 연구
+---
+[TITLE] 中, AI 기술 수출 통제 추진… 반도체 설계도 포함
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172223
+[PUBLISHED] 2026-10-18 10:41 KST
+[SOURCE] IT조선
+[TOPIC] 에이전트, 모델, 신기술, 규제
+[SCORE] 5
+[REASON] 중국 정부의 첨단 AI 기술 수출 통제 추진
+---
+[TITLE] Show HN: Llmspeed - 하드웨어 구매 전에 로컬 LLM 실행 속도를 체감하기
+[LINK] https://news.hada.io/topic?id=35529
+[PUBLISHED] 2026-10-17 23:35 KST
+[SOURCE] GeekNews
+[TOPIC] 모델, 신기술
+[SCORE] 5
+[REASON] 로컬 LLM 속도 체감 서비스 공개
+---
+[TITLE] [AI는 지금] 메타, 기사 AI 학습 논란에 약관 수정…"광고·비즈니스만 적용"
+[LINK] https://zdnet.co.kr/view/?no=20261018091551
+[PUBLISHED] 2026-10-18 11:03 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델, 보안, 규제
+[SCORE] 5
+[REASON] 웹 콘텐츠 스크래핑 관련 이용약관 삭제
+---
+[TITLE] 엔비디아 "RTX 스파크 강점은 클라우드 비중 줄일 수 있는 것"
+[LINK] https://zdnet.co.kr/view/?no=20261018001509
+[PUBLISHED] 2026-10-18 09:52 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안, 신기술, 규제
+[SCORE] 5
+[REASON] 로컬 에이전트 구동용 PC 플랫폼 출시
+---
+[TITLE] AI 열풍에 서버값 최대 4배↑…"가격 안정은 2028년 이후에나"
+[LINK] https://zdnet.co.kr/view/?no=20261017215532
+[PUBLISHED] 2026-10-18 09:07 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술
+[SCORE] 5
+[REASON] AI 인프라 집중으로 인한 일반 서버값 상승
+---
+[TITLE] 대만, 美 단속 발맞춰 중국 AI 칩 수출 통제 강화 추진
+[LINK] https://zdnet.co.kr/view/?no=20261016170803
+[PUBLISHED] 2026-10-18 08:00 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술, 규제
+[SCORE] 5
+[REASON] 대만의 대중국 AI 칩 수출 통제 강화
+---
+[LINK] https://zdnet.co.kr/view/?no=20261018105814
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261018092603
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216370
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theguardian.com/business/2026/oct/17/why-britain-should-reject-the-lure-of-cheap-and-scary-chinese-ai
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261018103626
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261017213548
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://siliconangle.com/2026/10/17/servicenow-ai-control-tower-selling-a-penthouse-while-building-the-frame/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216352
+[STATUS] SKIP (매체 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261017163312
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261017202350
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171963
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156187
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172195
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172170
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35547
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172188
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=35541
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261018031003
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35531
+[STATUS] SKIP (제외)
+---
+[LINK] https://thehackernews.com/2026/10/hackers-use-compromised-connectwise.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172224
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216378
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thenewstack.io/ai-lowering-building-barrier/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35526
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/mathematicians-say-openai-doesnt-understand-its-own-navier-stokes-proof/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.wired.com/story/why-ai-isnt-ready-to-tackle-our-convoluted-genomes/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261016000108
+[STATUS] SKIP (제외)
+---
+[LINK] https://byline.network/2026/10/93840283402840/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261018111022
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156208
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261018091512
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156207
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172194
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172197
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172017
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35530
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261016000232
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172227
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172225
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261018000038
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261018111005
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172221
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216316
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261018000022
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216317
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171949
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092171944
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261018075331
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/
+[STATUS] SKIP (중복)
+---
+[LINK] https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35544
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35543
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theguardian.com/australia-news/audio/2026/oct/18/black-box-the-chatbots-what-i-saw-at-the-double-six-ranch-ep-6-full-story-podcast
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theguardian.com/us-news/ng-interactive/2026/oct/17/california-datacenter-imperial
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/17/artificial-intelligence-ai-labour-government-safety-uk-extremism
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/commentisfree/picture/2026/oct/17/madeline-horwath-ai-food-advertising-cartoon-restaurants
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216366
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216364
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=675868
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172189
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216363
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261018081543
+[STATUS] SKIP (사전 제외: 주가)
+---
