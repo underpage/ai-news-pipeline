@@ -37,7 +37,7 @@
 | 프롬프트의 출력 형식 | `RANK_SCHEMA` / `SUMMARY_SCHEMA`, `score_articles` / `split_answers`, `parse_summary` |
 | 중요도 항목, 점수 범위 | README "선정 기준", `evaluate.CRITERIA`, `CRITERIA_MAX`, `CRITERIA_KO`, `WEIGHTED_CRITERIA`, `config/selection.yml`의 `criteria_weights`, `penalties`, `tools/feedback_server.rb`(점수표 열 이름) |
 | 제외 사유 이름 | `filter_prompt.txt`의 [제외 표시], `evaluate.EXCLUDE_REASONS`, README "선정 기준" |
-| `filter_prompt.txt`의 점수, 제외, 같은 사건 기준 문구 | README "선정 기준"의 항목 표와 제외 목록 |
+| `filter_prompt.txt`의 점수, 제외, 같은 사건, 지난 보도 기준 문구 | README "선정 기준"의 항목 표와 제외 목록 |
 | `evaluate.prefilter`, `total_score`, `decide`의 순서나 계산 | README "선정 기준"의 해당 단계 |
 | `config/selection.yml` | 지난 로그로 선정 기사가 빠지지 않는지 확인 (`tools/check_prefilter.rb`). 제외 단어 묶음 이름은 README "선정 기준" |
 | `src/*.py`의 선정, 요약 로직 | Ruby 이식본 `tools/rb/`, `tools/test/` (로컬, 커밋 안 함) |
@@ -105,7 +105,8 @@
 
 - 점수 산정은 README "선정 기준". 함수: `prefilter`, `score_articles`(Gemini 한 번), `total_score`, `decide`
 - 모델은 항목별 점수만, 합계와 순위는 코드가 정함. 모델에 총점을 맡기면 9~10에 몰려 순서가 모델 나열 순서로 정해졌기 때문
-- 응답 검증: 범위 밖 id, 중복 id, 숫자가 아닌 점수는 버림. 점수는 `CRITERIA_MAX` 범위로 맞춤. 잘못된 `dup_of`는 무시. 제외는 `EXCLUDE_REASONS`의 이름만 인정. 점수를 하나도 못 받으면 형식 오류
+- 응답 검증: 범위 밖 id, 중복 id, 숫자가 아닌 점수는 버림. 점수는 `CRITERIA_MAX` 범위로 맞춤. 잘못된 `dup_of`, `prev_of`는 무시. 제외는 `EXCLUDE_REASONS`의 이름만 인정. 점수를 하나도 못 받으면 형식 오류
+- 지난 목록(`load_previous_listed`): 오늘(재실행)과 지난 `PREV_REPORT_DAYS`일 필터링 로그의 목록 기사 제목만 프롬프트에 넣음. 링크가 아니라 사건으로 비교해야 해서 모델에 맡김(다음 날 다른 매체 기사는 링크도 제목도 다름). 선정 실패로 목록이 없는 날은 건너뜀
 - 필터링 로그의 `[SCORE]`는 합계를 0~10으로 바꾼 값 (`log_score`). 예전 로그, 리포트, 주간 요약과 척도를 맞추기 위함
 - 번역 제목(`title_ko`)은 점수 응답에서 함께 받음 (요약하지 않는 목록 기사 제목 번역에 호출을 늘리지 않기 위함)
 - 본문이 `BODY_MIN_LENGTH` 미만이면 `[평가 오류]`

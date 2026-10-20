@@ -7,7 +7,7 @@ import datetime
 
 from common import (
     append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, fetch, clean_inline,
-    is_retryable, get_log_path,
+    is_retryable, get_log_path, read_records_from, run_date, LOGS_DIR,
 )
 from collect import load_config, build_pattern
 
@@ -16,6 +16,9 @@ KST = datetime.timezone(datetime.timedelta(hours=9))
 # RANK_MAX_CALLS번까지이며 call_gemini 안에서는 다시 보내지 않는다 (재시도가 곱으로 늘지 않게)
 RANK_RETRY_WAITS = (60, 300, 600)
 RANK_MAX_CALLS = len(RANK_RETRY_WAITS) + 1
+# 선정 프롬프트에 함께 넣는 지난 목록의 날짜 수 (오늘 이미 올린 목록은 따로 함께 넣음). 같은 날 후보끼리의 dup_of만으로는
+# 다음 날 다른 매체가 쓴 같은 사건이 다시 상위권에 오름 (10-15, 10-16 목록 30건 중 5건씩, 상위 10 중 2건씩)
+PREV_REPORT_DAYS = 3
 # Gemini에 보내기 전 사전 필터에서 매체 하나가 남길 수 있는 후보 수
 PREFILTER_SOURCE_MAX = 20
 BODY_MIN_LENGTH = 500
@@ -37,15 +40,16 @@ RANK_SCHEMA = {
             "id": {"type": "INTEGER"},
             **{name: {"type": "INTEGER"} for name in CRITERIA},
             "dup_of": {"type": "INTEGER"},
+            "prev_of": {"type": "INTEGER"},
             "exclude": {"type": "STRING"},
             "reason": {"type": "STRING"},
             "title_ko": {"type": "STRING"},
         },
-        "required": ["id", *CRITERIA, "dup_of", "exclude", "reason", "title_ko"],
+        "required": ["id", *CRITERIA, "dup_of", "prev_of", "exclude", "reason", "title_ko"],
     },
 }
 SCORE_COLUMNS = ["실행", "결정", "합계", *[CRITERIA_KO[name] for name in CRITERIA], "같은 사건", "같은 사건 수", "제외 사유",
-                 "선정 이유", "출처", "발행", "주제", "제목", "번역 제목", "링크"]
+                 "선정 이유", "출처", "발행", "주제", "제목", "번역 제목", "링크", "지난 보도"]
 HANGUL = re.compile(r"[가-힣]")
 BODY_SELECTORS = [
     '#article-view-content-div', '[itemprop="articleBody"]', '.articlebody', '.article-body',
@@ -83,6 +87,28 @@ def build_article_list(news_list):
         ]
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)
+
+
+def load_previous_listed(days):
+    """오늘(재실행 때 이미 올린 목록)과 지난 days일 필터링 로그에서 목록에 오른 기사. 최근 날짜 먼저"""
+    today = run_date()
+    previous = []
+    for offset in range(days + 1):
+        day = today - datetime.timedelta(days=offset)
+        path = os.path.join(LOGS_DIR, day.strftime("%Y"), day.strftime("%m"), f"{day:%Y-%m-%d}-필터링.txt")
+        previous += [record for record in read_records_from(path) if record.get("title")]
+    return previous
+
+
+def build_previous_list(previous):
+    # 국문, 영문으로 나뉜 같은 사건도 알아보게 번역 제목을 함께 적는다
+    if not previous:
+        return "(없음)"
+    lines = []
+    for number, record in enumerate(previous, start=1):
+        title_ko = f" / {record['title_ko']}" if record.get("title_ko") else ""
+        lines.append(f"[P{number}] {record['title']}{title_ko}")
+    return "\n".join(lines)
 
 
 def topics_of(news):
@@ -151,12 +177,14 @@ def parse_score_items(result):
     return items
 
 
-def score_articles(news_list):
+def score_articles(news_list, previous=()):
     """후보 전체를 한 번의 호출로 보내 기사마다 항목별 점수를 받는다. {후보 순번: 점수 정보}
 
-    점수 정보: 항목별 점수(1~CRITERIA_MAX), total(0~100), dup_of(같은 사건 다른 기사의 순번 또는 None), exclude, reason, title_ko
+    점수 정보: 항목별 점수(1~CRITERIA_MAX), total(0~100), dup_of(같은 사건 다른 기사의 순번 또는 None),
+    prev_of(같은 사건을 다룬 지난 목록 기사의 previous 순번 또는 None), exclude, reason, title_ko
     """
-    prompt = fill_prompt(load_prompt("filter_prompt.txt"), articles=build_article_list(news_list))
+    prompt = fill_prompt(load_prompt("filter_prompt.txt"), articles=build_article_list(news_list),
+                         previous=build_previous_list(previous))
     items = parse_score_items(call_gemini(prompt, schema=RANK_SCHEMA, max_retries=0))
 
     scored = {}
@@ -172,6 +200,10 @@ def score_articles(news_list):
             dup_of = int(item.get("dup_of") or 0) - 1
         except (TypeError, ValueError):
             dup_of = -1
+        try:
+            prev_of = int(item.get("prev_of") or 0) - 1
+        except (TypeError, ValueError):
+            prev_of = -1
         title_ko = clean_inline(item.get("title_ko", ""), 150)
         # 국문 제목은 번역하지 않는다 (모델이 원문을 그대로 돌려준 경우 포함)
         if HANGUL.search(news_list[index].get("title", "")) or title_ko == news_list[index].get("title"):
@@ -180,6 +212,7 @@ def score_articles(news_list):
             **values,
             "total": total_score(values),
             "dup_of": dup_of if dup_of != index and 0 <= dup_of < len(news_list) else None,
+            "prev_of": prev_of if 0 <= prev_of < len(previous) else None,
             "exclude": exclude_reason(item.get("exclude")),
             "reason": clean_inline(item.get("reason", ""), 60),
             "title_ko": title_ko,
@@ -189,7 +222,7 @@ def score_articles(news_list):
     return scored
 
 
-def score_with_retry(news_list):
+def score_with_retry(news_list, previous=()):
     """선정은 하루 한 번뿐이라 실패하면 그날 리포트가 없다. 호출은 RANK_MAX_CALLS번까지.
 
     일시 오류(503 과부하 등)는 RANK_RETRY_WAITS만큼 기다렸다가, 응답 형식 오류는 바로 다시 보낸다.
@@ -199,7 +232,7 @@ def score_with_retry(news_list):
     temporary_failures = 0
     for attempt in range(1, RANK_MAX_CALLS + 1):
         try:
-            return score_articles(news_list)
+            return score_articles(news_list, previous)
         except Exception as e:
             if attempt == RANK_MAX_CALLS or not is_retryable(e):
                 raise
@@ -216,7 +249,8 @@ def score_with_retry(news_list):
 def decide(news_list, scored, list_slots, list_n, min_score):
     """점수표로 목록에 올릴 기사를 정한다. (목록 순번 목록, {순번: 결정})
 
-    같은 사건 묶음에서는 합계가 가장 높은 기사만 남기고, 제외 표시와 최소 점수 미달을 뺀 뒤
+    같은 사건 묶음에서는 합계가 가장 높은 기사만 남기고(묶음의 한 기사라도 지난 목록과 같은 사건이면 묶음 전체를 뺌),
+    제외 표시와 최소 점수 미달을 뺀 뒤
     합계, 파급력, 같은 사건을 다룬 기사 수, 최신순으로 정렬해 매체별 상한을 지키며 list_slots건을 고른다.
     같은 사건 기사 수는 scored[순번]["coverage"]에 남긴다 (점수표에 기록).
     """
@@ -243,6 +277,8 @@ def decide(news_list, scored, list_slots, list_n, min_score):
         for index in members:
             if index != keeper:
                 decisions[index] = "중복"
+        if any(scored[index].get("prev_of") is not None for index in members):
+            decisions[keeper] = "지난 보도"
 
     candidates = []
     for index, info in scored.items():
@@ -258,8 +294,8 @@ def decide(news_list, scored, list_slots, list_n, min_score):
     # 동점은 파급력, 같은 사건을 다룬 기사 수(여러 매체가 다룬 사건 먼저) 순. 키워드 주제 순서로 가르면 보안 기사가 밀렸다
     candidates.sort(key=lambda index: (-scored[index]["total"], -scored[index]["impact"], -scored[index]["coverage"]))
 
-    # 한 매체가 목록의 1/5을 넘지 않게 한다
-    source_max = max(2, list_n // 5)
+    # 한 매체가 목록의 1/4을 넘지 않게 한다. 1/5(30건 중 6건)일 때 15위 수준 기사가 빠지고 63점 기사가 들어갔음 (10-15, 10-16)
+    source_max = max(2, list_n // 4)
     listed, per_source = [], {}
     for index in candidates:
         source = news_list[index].get("source") or "-"
@@ -285,7 +321,7 @@ def score_csv_path():
     return os.path.splitext(get_log_path("점수"))[0] + ".csv"
 
 
-def write_score_csv(news_list, scored, decisions, dropped):
+def write_score_csv(news_list, scored, decisions, dropped, previous=()):
     """후보 전체의 점수표를 남긴다. 같은 날 다시 실행하면 아래에 이어 쓴다 (엑셀에서 열리게 UTF-8 BOM)."""
     path = score_csv_path()
     is_new = not os.path.exists(path)
@@ -294,17 +330,17 @@ def write_score_csv(news_list, scored, decisions, dropped):
     order = sorted(range(len(news_list)), key=lambda index: -(scored.get(index) or {}).get("total", -1))
     for index in order:
         news, info = news_list[index], scored.get(index) or {}
-        dup_of = info.get("dup_of")
+        dup_of, prev_of = info.get("dup_of"), info.get("prev_of")
         rows.append([
             run_at, decisions[index], info.get("total", ""), *[info.get(name, "") for name in CRITERIA],
             news_list[dup_of]["link"] if dup_of is not None else "", info.get("coverage", ""), info.get("exclude", ""),
             info.get("reason", ""),
             news.get("source", ""), news.get("published", ""), news.get("topic", ""), news["title"],
-            info.get("title_ko", ""), news["link"],
+            info.get("title_ko", ""), news["link"], previous[prev_of]["link"] if prev_of is not None else "",
         ])
     for news, reason in dropped:
         rows.append([run_at, reason, "", *[""] * len(CRITERIA), "", "", "", "", news.get("source", ""),
-                     news.get("published", ""), news.get("topic", ""), news["title"], "", news["link"]])
+                     news.get("published", ""), news.get("topic", ""), news["title"], "", news["link"], ""])
     with open(path, "a", encoding="utf-8-sig" if is_new else "utf-8", newline="") as f:
         writer = csv.writer(f)
         if is_new:
@@ -389,9 +425,10 @@ def main():
             append_record("필터링", [("LINK", news['link']), ("STATUS", "SKIP (목록 마감)")])
     else:
         candidates, dropped = prefilter(news_list, prefilter_max)
-        print(f"사전 필터: {len(news_list)}건 -> {len(candidates)}건 (제외 {len(dropped)}건)")
+        previous = load_previous_listed(PREV_REPORT_DAYS)
+        print(f"사전 필터: {len(news_list)}건 -> {len(candidates)}건 (제외 {len(dropped)}건), 지난 목록 {len(previous)}건")
         try:
-            scored = score_with_retry(candidates)
+            scored = score_with_retry(candidates, previous)
         except Exception as e:
             print(f" -> [평가 API 오류] {e}")
             append_error("필터링", "평가 오류", "전체 후보", f"선정 실패: {e}")
@@ -429,7 +466,7 @@ def main():
                 append_record("필터링", [("LINK", news['link']), ("STATUS", f"SKIP ({decisions[index]})")])
         for news, reason in dropped:
             append_record("필터링", [("LINK", news['link']), ("STATUS", f"SKIP ({reason})")])
-        write_score_csv(candidates, scored, decisions, dropped)
+        write_score_csv(candidates, scored, decisions, dropped, previous)
         if not listed:
             print(f"\n -> 목록에 올릴 기사가 없습니다 (최소 합계 {min_score * 10}점).")
         print(f"\n -> 목록 선정: {len(listed)}건, 요약 대상: {body_count}건, 점수표: {os.path.basename(score_csv_path())}")

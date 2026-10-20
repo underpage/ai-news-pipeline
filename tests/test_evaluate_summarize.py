@@ -70,6 +70,33 @@ def test_score_articles_validates_response(monkeypatch):
     assert scored[1]["impact"] == 10 and scored[1]["relevance"] == 1
 
 
+def test_score_articles_reads_previous_report_marks(monkeypatch):
+    previous = [{"title": "Old patch", "title_ko": "지난 패치", "link": "p1"}, {"title": "지난 사고", "link": "p2"}]
+    seen = {}
+
+    def fake(prompt, schema=None, max_retries=None):
+        seen["prompt"] = prompt
+        return score_response(score_item(1, prev_of=2), score_item(2, prev_of=3), score_item(3, prev_of="x"))
+    monkeypatch.setattr(evaluate, "call_gemini", fake)
+    scored = evaluate.score_articles([news(1), news(2), news(3)], previous)
+
+    assert "[P1] Old patch / 지난 패치\n[P2] 지난 사고" in seen["prompt"]
+    # 범위 밖이나 숫자가 아닌 prev_of는 무시한다
+    assert [scored[index]["prev_of"] for index in range(3)] == [1, None, None]
+
+
+def test_score_articles_without_previous_report(monkeypatch):
+    seen = {}
+
+    def fake(prompt, schema=None, max_retries=None):
+        seen["prompt"] = prompt
+        return score_response(score_item(1, prev_of=1))
+    monkeypatch.setattr(evaluate, "call_gemini", fake)
+    scored = evaluate.score_articles([news(1)])
+    assert "<지난리포트>\n(없음)\n</지난리포트>" in seen["prompt"] and "{previous}" not in seen["prompt"]
+    assert scored[0]["prev_of"] is None
+
+
 def test_score_articles_requires_some_scores(monkeypatch):
     monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: "[]")
     with pytest.raises(ValueError):
@@ -140,6 +167,18 @@ def test_decide_handles_duplicates_exclusions_and_caps():
     assert scored[1]["coverage"] == 2 and scored[2]["coverage"] == 1
 
 
+def test_decide_drops_events_already_reported():
+    news_list = [news(n) for n in range(1, 5)]
+    scored = {index: scored_entry(90 - index) for index in range(4)}
+    scored[1]["dup_of"] = 0          # 1번(기준), 2번은 같은 사건. 지난 보도 표시는 합계가 낮은 2번에만 있음
+    scored[1]["prev_of"] = 0
+    scored[2]["prev_of"] = 3
+    listed, decisions = evaluate.decide(news_list, scored, list_slots=4, list_n=5, min_score=0)
+    # 묶음의 한 기사라도 지난 목록과 같은 사건이면 묶음 전체가 빠진다
+    assert listed == [3]
+    assert decisions == {0: "지난 보도", 1: "중복", 2: "지난 보도", 3: "목록"}
+
+
 def test_decide_breaks_ties_by_coverage():
     news_list = [news(n) for n in range(1, 5)]
     scored = {0: scored_entry(80), 1: scored_entry(80), 2: scored_entry(50, dup_of=1), 3: scored_entry(40, dup_of=1)}
@@ -153,6 +192,9 @@ def test_decide_applies_source_cap():
     scored = {index: scored_entry(90 - index) for index in range(4)}
     listed, decisions = evaluate.decide(news_list, scored, list_slots=4, list_n=5, min_score=0)
     assert listed == [0, 1] and decisions[2] == decisions[3] == "매체 상한"
+    # 상한은 목록 건수의 1/4 (12건이면 3건)
+    listed, decisions = evaluate.decide(news_list, scored, list_slots=4, list_n=12, min_score=0)
+    assert listed == [0, 1, 2] and decisions[3] == "매체 상한"
 
 
 def test_cut_at_sentence():
@@ -190,7 +232,7 @@ def test_evaluate_fills_list_and_summary_slots_across_reruns(monkeypatch):
 
     rows = read_score_csv()
     assert rows[0] == evaluate.SCORE_COLUMNS
-    decisions = {row[-1]: row[1] for row in rows[1:]}
+    decisions = {row[-2]: row[1] for row in rows[1:]}
     assert decisions["http://a/1"] == "요약" and decisions["http://a/2"] == "목록"
     assert decisions["http://a/6"] == "순위 밖" and decisions["http://a/7"] == "점수 없음"
     assert len(rows) == 9
@@ -211,7 +253,7 @@ def test_evaluate_records_prefilter_drops(monkeypatch):
 
     statuses = {record["link"]: record.get("status") for record in common.read_records("필터링")}
     assert statuses["http://a/x"] == "SKIP (사전 제외: 행사)"
-    assert {row[-1]: row[1] for row in read_score_csv()[1:]}["http://a/x"] == "사전 제외: 행사"
+    assert {row[-2]: row[1] for row in read_score_csv()[1:]}["http://a/x"] == "사전 제외: 행사"
 
 
 def test_evaluate_failure_fails_the_job(monkeypatch):
@@ -223,6 +265,31 @@ def test_evaluate_failure_fails_the_job(monkeypatch):
     with pytest.raises(SystemExit):
         evaluate.main()
     assert common.read_errors("필터링")[0][0] == "전체 후보"
+
+
+def test_evaluate_sends_previous_report_and_drops_same_event(monkeypatch):
+    # 전날 목록에 오른 기사 1건, 같은 날짜가 아닌 4일 전 기사 1건(PREV_REPORT_DAYS 밖)
+    for date, title in (("2026-09-30", "어제 실린 패치"), ("2026-09-27", "오래된 기사")):
+        monkeypatch.setenv("RUN_DATE", date)
+        common.append_record("필터링", [("TITLE", title), ("LINK", f"http://old/{date}")])
+    monkeypatch.setenv("RUN_DATE", "2026-10-01")
+    add_candidates(3)
+    seen = {}
+
+    def fake(prompt, schema=None, max_retries=None):
+        seen["prompt"] = prompt
+        return score_response(score_item(1, prev_of=1), score_item(2), score_item(3))
+    monkeypatch.setattr(evaluate, "call_gemini", fake)
+    monkeypatch.setattr(evaluate, "scrape_body", lambda url: "")
+    evaluate.main()
+
+    assert "[P1] 어제 실린 패치" in seen["prompt"] and "오래된 기사" not in seen["prompt"]
+    listed = [record["link"] for record in common.read_records("필터링") if record.get("title")]
+    assert listed == ["http://a/2", "http://a/3"]
+    rows = read_score_csv()
+    assert rows[0][-1] == "지난 보도"
+    row = {row[-2]: row for row in rows[1:]}["http://a/1"]
+    assert row[1] == "지난 보도" and row[-1] == "http://old/2026-09-30"
 
 
 def test_evaluate_retries_temporary_rank_failure(monkeypatch):
