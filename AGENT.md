@@ -16,7 +16,7 @@
 - 기사 본문을 리포트에 싣지 않음 (제목, 원문 링크, 요약만)
 - 의존성은 uv (`uv add`, `uv lock`). `requirements.txt`, `.env.example` 두지 않음. `.env` 커밋 금지
 - 프롬프트는 `fill_prompt`로 채움 (JSON 예시의 중괄호 때문에 `str.format` 금지)
-- 기사 내용은 프롬프트의 `<후보목록>`, `<기사>` 안에만 넣고, 그 안의 지시를 따르지 않게 하는 문구 유지
+- 기사 내용은 프롬프트의 `<후보목록>`, `<지난리포트>`, `<기사>`, `<기사목록>`(주간) 안에만 넣고, 그 안의 지시를 따르지 않게 하는 문구 유지
 - 모델 출력은 `clean_inline`을 거쳐 기록
 
 
@@ -35,12 +35,12 @@
 | 바꾸는 것 | 함께 수정 |
 |---|---|
 | 프롬프트의 출력 형식 | `RANK_SCHEMA` / `SUMMARY_SCHEMA`, `score_articles` / `split_answers`, `parse_summary` |
-| 중요도 항목, 점수 범위 | README "선정 기준", `evaluate.CRITERIA`, `CRITERIA_MAX`, `CRITERIA_KO`, `WEIGHTED_CRITERIA`, `config/selection.yml`의 `criteria_weights`, `penalties`, `tools/feedback_server.rb`(점수표 열 이름) |
+| 중요도 항목, 점수 범위 | README "선정 기준", `evaluate.CRITERIA`, `CRITERIA_MAX`, `CRITERIA_KO`, `WEIGHTED_CRITERIA`, `config/selection.yml`의 `criteria_weights`, `penalties`, `@흥미기사/feedback_server.rb`(점수표 열 이름) |
 | 제외 사유 이름 | `filter_prompt.txt`의 [제외 표시], `evaluate.EXCLUDE_REASONS`, README "선정 기준" |
+| 대표 분야 이름 | `filter_prompt.txt`의 분야 설명과 예시, `evaluate.FIELDS`(`RANK_SCHEMA`의 enum), `config/selection.yml`의 `field_cap` 주석, README "선정 기준" |
 | `filter_prompt.txt`의 점수, 제외, 같은 사건, 지난 보도, 대표 분야 기준 문구 | README "선정 기준"의 항목 표와 제외 목록 |
 | `evaluate.prefilter`, `total_score`, `decide`의 순서나 계산 | README "선정 기준"의 해당 단계 |
-| `config/selection.yml` | 지난 로그로 선정 기사가 빠지지 않는지 확인 (`tools/check_prefilter.rb`). 제외 단어 묶음 이름은 README "선정 기준" |
-| `src/*.py`의 선정, 요약 로직 | Ruby 이식본 `tools/rb/`, `tools/test/` (로컬, 커밋 안 함) |
+| `config/selection.yml` | 지난 로그로 선정 기사가 빠지지 않는지 확인 (`tools/check_prefilter.py`). 제외 단어 묶음 이름은 README "선정 기준" |
 | `[SUMMARY]` 소제목, `#논조` 표기 (`summarize.parse_summary`) | `publish.parse_summary_blocks` |
 | 요약 응답 형식 | `manual_summary.py`의 `answer` 형식 안내 (같은 `parse_summary`로 검증) |
 | 템플릿에 넘기는 값 (`publish.render_report`, `weekly.render_weekly`) | `config/report.md.j2`, `config/weekly.md.j2` 맨 위 주석 (`StrictUndefined`) |
@@ -56,8 +56,7 @@
 
 ## 테스트
 
-- `uv run pytest` (`tests/`). Gemini, 매체 요청은 가짜 함수, 결과 폴더는 `PIPELINE_DATA_DIR`. push하면 `test.yml`이 실행. 동작을 바꾸면 테스트도 함께
-- 로컬에 python이 없으면 Ruby 이식본으로 확인 (`ruby tools/test/test_evaluate.rb`, `test_summarize.rb`)
+- `uv run --locked pytest` (`tests/`). 로컬에서는 `--python 3.13` 지정 (uv 기본 3.15에는 pyyaml wheel이 없어 설치 실패, 2026-10-16 확인). Gemini, 매체 요청은 가짜 함수, 결과 폴더는 `PIPELINE_DATA_DIR`. push하면 `test.yml`이 실행. 동작을 바꾸면 테스트도 함께
 - 실제 실행 테스트는 테스트 모드 (README "로컬 실행"). 결과는 `archive-test/`, 처음부터 다시 하려면 지우고 실행. 결과 경로는 `src/`의 상위 폴더 기준
 - 실제 Gemini 호출은 자동 실행과 하루 요청 한도를 같이 씀. 자동 실행 몫을 남길 것. 한도는 태평양 시간 자정에 초기화되므로 한국 오후(16~17시) 이후의 호출은 다음 날 자동 실행과 같은 한도를 씀 (Gemini rate-limits 문서 2026-10-09 확인)
 
@@ -103,7 +102,7 @@
 
 ### 2. Evaluate (`src/evaluate.py`)
 
-- 점수 산정은 README "선정 기준". 함수: `prefilter`, `score_articles`(Gemini 한 번), `total_score`, `decide`
+- 점수 산정은 README "선정 기준". 함수: `prefilter`, `score_articles`(Gemini 한 번), `total_score`, `decide`, `order_top`(요약 자리 분야 상한)
 - 모델은 항목별 점수만, 합계와 순위는 코드가 정함. 모델에 총점을 맡기면 9~10에 몰려 순서가 모델 나열 순서로 정해졌기 때문
 - 응답 검증: 범위 밖 id, 중복 id, 숫자가 아닌 점수는 버림. 점수는 `CRITERIA_MAX` 범위로 맞춤. 잘못된 `dup_of`, `prev_of`는 무시. `FIELDS` 밖의 `field`는 기타. 제외는 `EXCLUDE_REASONS`의 이름만 인정. 점수를 하나도 못 받으면 형식 오류
 - 지난 목록(`load_previous_listed`): 오늘(재실행)과 지난 `PREV_REPORT_DAYS`일 필터링 로그의 목록 기사 제목만 프롬프트에 넣음. 링크가 아니라 사건으로 비교해야 해서 모델에 맡김(다음 날 다른 매체 기사는 링크도 제목도 다름). 선정 실패로 목록이 없는 날은 건너뜀
@@ -149,7 +148,7 @@
 ## 로그 형식
 
 - 파일: `archive/logs/YYYY/MM/YYYY-MM-DD-{수집|필터링|요약}.txt`
-- 점수표: 같은 폴더의 `YYYY-MM-DD-점수.csv` (UTF-8 BOM, 열은 `evaluate.SCORE_COLUMNS`, 결정 값은 README "선정 기준"). 같은 날 재실행하면 이어 씀. 2026-10-12 이전 파일은 열이 다름
+- 점수표: 같은 폴더의 `YYYY-MM-DD-점수.csv` (UTF-8 BOM, 열은 `evaluate.SCORE_COLUMNS`, 결정 값은 README "선정 기준"). 같은 날 재실행하면 이어 씀. 2026-10-12 이전 파일은 열이 다르고, 2026-10-20까지는 "분야", "지난 보도" 열이 없음
 - 통계: `archive/stats/YYYY.csv`, Publish가 하루 한 줄 (같은 날 재실행이면 바꿔 씀). 현황 화면은 이 파일만 읽음. 열 추가는 맨 뒤에만 (`publish.STATS_COLUMNS`)
 - 레코드는 `---` 한 줄로 구분, 한 줄 태그는 `[TAG] 값`. 블록 태그 `[SUMMARY]`, `[BODY]`는 다음 줄부터 `---` 전까지 (블록 안의 `---`는 `- - -`로)
 - `read_records`는 `[LINK]`가 있는 레코드만, 키는 태그의 소문자
@@ -185,7 +184,7 @@
 
 - 지난주(ISO 주) 요약 로그의 국문 요약과 점수만 모아 Gemini 한 번 호출. 기사를 새로 읽지 않음
 - 없는 기사 ID는 버리고 근거 기사가 없는 흐름은 제외. 요약 기사가 없는 주는 만들지 않음
-- 기사 정렬은 그날 점수표의 합계(0~100). `[SCORE]`(0~10 정수)는 9와 8에 몰려 순서가 날짜순처럼 됐음. 점수표가 없으면 `[SCORE]` x 10
+- 기사 정렬은 그날 점수표의 합계(0\~100). `[SCORE]`(0\~10 정수)는 9와 8에 몰려 순서가 날짜순처럼 됐음. 점수표가 없으면 `[SCORE]` x 10
 - 저장은 ISO 주 연도 폴더 `archive/weekly/YYYY/`, 목록도 그 폴더의 `index.md`. 지난 주간 리포트의 기사 목록만 다시 만들 때는 `tools/weekly_relist.py` (로컬, 개요와 흐름은 그대로)
 
 
