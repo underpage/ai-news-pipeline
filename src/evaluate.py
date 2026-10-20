@@ -279,7 +279,8 @@ def order_top(listed, scored, top_slots):
 def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0):
     """점수표로 목록에 올릴 기사를 정한다. (목록 순번 목록, {순번: 결정})
 
-    같은 사건 묶음에서는 합계가 가장 높은 기사만 남기고(묶음의 한 기사라도 지난 목록과 같은 사건이면 묶음 전체를 뺌),
+    같은 사건 묶음에서는 제외 표시가 없는 기사 중 합계가 가장 높은 기사만 남기고(모두 제외 표시면 합계가 가장 높은 기사,
+    묶음의 한 기사라도 지난 목록과 같은 사건이면 묶음 전체를 뺌),
     제외 표시와 최소 점수 미달을 뺀 뒤
     합계, 파급력, 같은 사건을 다룬 기사 수, 최신순으로 정렬해 매체별 상한을 지키며 list_slots건을 고른다.
     마지막으로 위쪽 top_slots건(요약 자리)에 분야 상한을 적용해 순서를 바꾼다 (order_top).
@@ -304,7 +305,8 @@ def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0):
     for members in groups.values():
         for index in members:
             scored[index]["coverage"] = len(members)
-        keeper = min(members, key=lambda index: (-scored[index]["total"], index))
+        # 홍보 기사가 합계로 대표가 되면 같은 사건의 정상 기사까지 빠지므로 제외 표시가 없는 기사를 먼저 남긴다
+        keeper = min(members, key=lambda index: (bool(scored[index]["exclude"]), -scored[index]["total"], index))
         for index in members:
             if index != keeper:
                 decisions[index] = "중복"

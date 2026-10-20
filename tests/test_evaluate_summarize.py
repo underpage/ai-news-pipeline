@@ -167,6 +167,16 @@ def test_decide_handles_duplicates_exclusions_and_caps():
     assert scored[1]["coverage"] == 2 and scored[2]["coverage"] == 1
 
 
+def test_decide_keeps_non_excluded_article_of_event():
+    news_list = [news(n) for n in range(1, 5)]
+    scored = {0: scored_entry(90, exclude="홍보"), 1: scored_entry(80, dup_of=0), 2: scored_entry(85, exclude="홍보"),
+              3: scored_entry(70, dup_of=2, exclude="추측")}
+    listed, decisions = evaluate.decide(news_list, scored, list_slots=4, list_n=5, min_score=0)
+    # 홍보 기사(90점)가 합계는 높아도 같은 사건의 정상 기사(80점)를 남긴다. 묶음이 모두 제외 표시면 사건이 빠진다
+    assert listed == [1]
+    assert decisions == {0: "중복", 1: "목록", 2: "제외", 3: "중복"}
+
+
 def test_decide_drops_events_already_reported():
     news_list = [news(n) for n in range(1, 5)]
     scored = {index: scored_entry(90 - index) for index in range(4)}
