@@ -101,18 +101,32 @@ def test_stats_row_is_replaced_on_rerun():
         ("2026-10-01", "2", "1", "1", "1")
 
 
+def write_totals(day, totals):
+    folder = os.path.join(common.LOGS_DIR, day[:4], day[5:7])
+    os.makedirs(folder, exist_ok=True)
+    with open(os.path.join(folder, f"{day}-점수.csv"), "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["결정", "합계", "링크"])
+        writer.writerows(["요약", total, link] for link, total in totals.items())
+
+
 def test_weekly_report(monkeypatch):
-    for day in ("2026-09-28", "2026-10-04"):
+    for day, score, title_ko in (("2026-09-28", 9, ""), ("2026-10-01", 9, "번역된 제목"), ("2026-10-04", 7, "")):
         monkeypatch.setenv("RUN_DATE", day)
-        common.append_record("요약", [("TITLE", f"{day} 기사"), ("LINK", f"http://w/{day}"), ("SCORE", 9 if day.endswith("28") else 7)],
-                             block=("SUMMARY", KOREAN_SUMMARY))
+        summary = (f"**[기사 제목 번역]**\n{title_ko}\n\n" if title_ko else "") + KOREAN_SUMMARY
+        common.append_record("요약", [("TITLE", f"{day} 기사"), ("LINK", f"http://w/{day}"), ("SCORE", score),
+                                     ("SOURCE", "매체"), ("TOPIC", "보안, 에이전트")], block=("SUMMARY", summary))
     monkeypatch.setenv("RUN_DATE", "2026-10-05")  # 다음 주 월요일 = 다른 주
     common.append_record("요약", [("TITLE", "다음 주"), ("LINK", "http://w/next"), ("SCORE", 10)], block=("SUMMARY", KOREAN_SUMMARY))
+    # 같은 [SCORE] 9라도 합계가 높은 10-01 기사가 먼저. 점수표가 없는 날은 [SCORE] x 10
+    write_totals("2026-09-28", {"http://w/2026-09-28": 86.7})
+    write_totals("2026-10-01", {"http://w/2026-10-01": 93.3})
 
     monday = weekly.previous_week_monday(datetime.date(2026, 10, 7))
     assert monday == datetime.date(2026, 9, 28) == weekly.parse_week("2026-W40")
     articles = weekly.load_week_articles(monday)
-    assert [article["link"] for article in articles] == ["http://w/2026-09-28", "http://w/2026-10-04"]
+    assert [article["link"] for article in articles] == ["http://w/2026-10-01", "http://w/2026-09-28", "http://w/2026-10-04"]
+    assert [article["total"] for article in articles] == [93.3, 86.7, 70]
 
     monkeypatch.setattr(weekly, "call_gemini", lambda prompt, schema=None: json.dumps(
         {"overview": "개요.", "trends": [{"title": "흐름", "description": "설명.", "article_ids": [2, 1, 99]},
@@ -122,4 +136,14 @@ def test_weekly_report(monkeypatch):
     assert [article["id"] for article in trends[0]["articles"]] == [2, 1]
     content = weekly.render_weekly("2026-W40", monday, overview, trends, articles)
     assert content.startswith("# 2026-W40 (2026-09-28 ~ 2026-10-04)")
-    assert "## 이번 주 기사 (2건)" in content
+    assert "## 이번 주 기사 (3건)" in content
+    # 일간 리포트의 "더 읽어볼 기사"와 같은 형식에 날짜. 번역 제목이 있으면 \[번역\] 표시, 주제는 첫 번째만
+    assert "1. \\[번역\\] [번역된 제목](http://w/2026-10-01) (보안) - 매체, 2026-10-01\n\n" in content
+    assert "2. [2026-09-28 기사](http://w/2026-09-28) (보안) - 매체, 2026-09-28\n" in content
+
+    # 연도 폴더에 저장하고 목록도 연도 폴더에
+    monkeypatch.setattr(weekly.sys, "argv", ["weekly.py", "2026-W40"])
+    weekly.main()
+    assert os.path.exists(os.path.join(weekly.WEEKLY_DIR, "2026", "2026-W40.md"))
+    index = open(os.path.join(weekly.WEEKLY_DIR, "2026", "index.md"), encoding="utf-8").read()
+    assert index.startswith("# 2026 주간 AI 뉴스") and "(./2026-W40.md)" in index

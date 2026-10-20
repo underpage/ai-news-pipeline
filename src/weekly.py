@@ -3,10 +3,11 @@
     uv run src/weekly.py              지난주 (실행 날짜 기준 직전 월~일)
     uv run src/weekly.py 2026-W40     지정한 주 (ISO 주 번호)
 
-결과: archive/weekly/YYYY-Www.md, 목록은 archive/weekly/index.md
+결과: archive/weekly/YYYY/YYYY-Www.md, 목록은 archive/weekly/YYYY/index.md (YYYY는 ISO 주의 연도)
 """
 import os
 import re
+import csv
 import sys
 import json
 import datetime
@@ -55,11 +56,30 @@ def previous_week_monday(today):
     return today - datetime.timedelta(days=today.weekday() + 7)
 
 
+def load_totals(day):
+    """그날 점수표의 합계(0~100). {링크: 합계}. 같은 날 다시 실행해 같은 링크가 또 있으면 뒤의 값"""
+    path = os.path.join(LOGS_DIR, f"{day:%Y}", f"{day:%m}", f"{day:%Y-%m-%d}-점수.csv")
+    totals = {}
+    if os.path.exists(path):
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            for row in csv.DictReader(f):
+                try:
+                    totals[row["링크"]] = float(row["합계"])
+                except (KeyError, TypeError, ValueError):
+                    continue
+    return totals
+
+
 def load_week_articles(monday):
-    """그 주 월~일의 요약 로그에서 기사를 모아 중요도 순으로 돌려준다."""
+    """그 주 월~일의 요약 로그에서 기사를 모아 합계 순으로 돌려준다.
+
+    [SCORE](0~10 정수)는 동점이 많아(9와 8에 몰림) 순서가 날짜순처럼 되므로 점수표의 합계(0~100)로 정렬한다.
+    점수표에 없는 기사(2026-10-08 이전 등)는 [SCORE] x 10. 같으면 날짜, 그날 순위 순
+    """
     articles = []
     for offset in range(7):
         day = monday + datetime.timedelta(days=offset)
+        totals = load_totals(day)
         path = os.path.join(LOGS_DIR, f"{day:%Y}", f"{day:%m}", f"{day:%Y-%m-%d}-요약.txt")
         for record in read_records_from(path):
             if not record.get("title"):
@@ -79,11 +99,12 @@ def load_week_articles(monday):
                 "source": record.get("source", ""),
                 "topic": record.get("topic", ""),
                 "score": score,
+                "total": totals.get(record["link"], score * 10),
                 "reason": record.get("reason", ""),
                 "tone": tone.lstrip("#"),
                 "summary_ko": summary_ko,
             })
-    articles.sort(key=lambda article: -article["score"])
+    articles.sort(key=lambda article: -article["total"])
     for number, article in enumerate(articles, start=1):
         article["id"] = number
     return articles
@@ -169,11 +190,12 @@ def main():
         fail(f"주간 요약에 실패했습니다: {e}")
 
     content = render_weekly(week, monday, overview, trends, articles)
-    ensure_dir(WEEKLY_DIR)
-    path = os.path.join(WEEKLY_DIR, f"{week}.md")
+    year_dir = os.path.join(WEEKLY_DIR, f"{iso_year}")
+    ensure_dir(year_dir)
+    path = os.path.join(year_dir, f"{week}.md")
     with open(path, "w", encoding="utf-8") as f:
         f.write(content.rstrip("\n") + "\n")
-    update_index(os.path.join(WEEKLY_DIR, "index.md"), "주간 AI 뉴스", f"{week}.md", "주별 AI 뉴스 흐름 요약입니다.")
+    update_index(os.path.join(year_dir, "index.md"), f"{iso_year} 주간 AI 뉴스", f"{week}.md", "주별 AI 뉴스 흐름 요약입니다.")
     print(f"{os.path.relpath(path, ROOT_DIR)} 생성 완료 (흐름 {len(trends)}개, 기사 {len(articles)}건)")
     print("--- 주간 요약 종료 ---")
 

@@ -8,8 +8,12 @@
     trends      주요 흐름 목록
       .title, .description
       .articles   근거 기사 목록 (아래 articles 항목과 같은 값)
-    articles    그 주에 요약한 기사 전체 (중요도 순)
-      .id, .date, .title, .title_ko, .link, .source, .topic, .score, .reason, .tone, .summary_ko
+    articles    그 주에 요약한 기사 전체 (합계 순)
+      .id, .date, .title, .title_ko, .link, .source, .topic, .score(0~10), .total(0~100), .reason, .tone, .summary_ko
+
+  "이번 주 기사"는 일간 리포트의 "더 읽어볼 기사"와 같은 형식에 날짜를 붙인다:
+  "\[번역\] [번역 제목](링크) (주제) - 출처, 날짜". 번역 표시의 대괄호를 \로 막지 않으면 뒤의 [제목]과 붙어
+  참조 링크로 해석될 수 있고(Jekyll kramdown), 목록 사이 빈 줄은 hard_wrap 때문에 둔다 (config/report.md.j2 주석)
 #}
 # {{ week }} ({{ start }} ~ {{ end }})
 
@@ -36,5 +40,7 @@
 ## 이번 주 기사 ({{ articles | length }}건)
 
 {% for a in articles %}
-{{ loop.index }}. [{{ (a.title_ko or a.title) | replace("[", "(") | replace("]", ")") }}]({{ a.link }}) - {{ [a.date, a.topic.split(",")[0], a.source] | select | join(" · ") }}
+{% set topic = a.topic.split(",")[0].strip() %}
+{{ loop.index }}. {% if a.title_ko and a.title_ko != a.title %}\[번역\] [{{ a.title_ko | replace("[", "(") | replace("]", ")") }}]{% else %}[{{ a.title | replace("[", "(") | replace("]", ")") }}]{% endif %}({{ a.link }}){% if topic %} ({{ topic }}){% endif %}{% if a.source %} - {{ a.source }}{% endif %}, {{ a.date }}
+
 {% endfor %}
