@@ -32,6 +32,8 @@ CRITERIA_KO = {"impact": "파급력", "relevance": "관련성", "novelty": "새�
 WEIGHTED_CRITERIA = ("impact", "relevance")
 # 제외 사유. 모델이 이 밖의 이름을 쓰면 제외로 보지 않는다 (정의 밖 사유가 거부권이 되지 않게)
 EXCLUDE_REASONS = ("관련 없음", "홍보", "행사 안내", "인사", "주가", "추측")
+# 대표 분야. 모델이 기사마다 하나 고르고, 요약 자리의 분야 상한(field_cap)에 쓴다. 이 밖의 값은 "기타"
+FIELDS = ("AI 모델", "AI 에이전트", "보안", "신기술", "기타")
 RANK_SCHEMA = {
     "type": "ARRAY",
     "items": {
@@ -41,15 +43,16 @@ RANK_SCHEMA = {
             **{name: {"type": "INTEGER"} for name in CRITERIA},
             "dup_of": {"type": "INTEGER"},
             "prev_of": {"type": "INTEGER"},
+            "field": {"type": "STRING", "enum": list(FIELDS)},
             "exclude": {"type": "STRING"},
             "reason": {"type": "STRING"},
             "title_ko": {"type": "STRING"},
         },
-        "required": ["id", *CRITERIA, "dup_of", "prev_of", "exclude", "reason", "title_ko"],
+        "required": ["id", *CRITERIA, "dup_of", "prev_of", "field", "exclude", "reason", "title_ko"],
     },
 }
 SCORE_COLUMNS = ["실행", "결정", "합계", *[CRITERIA_KO[name] for name in CRITERIA], "같은 사건", "같은 사건 수", "제외 사유",
-                 "선정 이유", "출처", "발행", "주제", "제목", "번역 제목", "링크", "지난 보도"]
+                 "선정 이유", "분야", "출처", "발행", "주제", "제목", "번역 제목", "링크", "지난 보도"]
 HANGUL = re.compile(r"[가-힣]")
 BODY_SELECTORS = [
     '#article-view-content-div', '[itemprop="articleBody"]', '.articlebody', '.article-body',
@@ -62,6 +65,9 @@ EXCLUDE_PATTERNS = {name: build_pattern(terms) for name, terms in (_selection.ge
 TOPIC_WEIGHTS = _selection.get("topic_weights") or {}
 CRITERIA_WEIGHTS = _selection.get("criteria_weights") or {}
 PENALTIES = _selection.get("penalties") or {}
+FIELD_CAP = _selection.get("field_cap") or {}
+if FIELD_CAP and not all(isinstance(FIELD_CAP.get(key), (int, float)) for key in ("max", "exempt_impact", "min_total")):
+    raise ValueError("config/selection.yml: field_cap에는 max, exempt_impact, min_total을 숫자로 적어야 합니다.")
 if set(CRITERIA_WEIGHTS) != set(WEIGHTED_CRITERIA) or abs(sum(CRITERIA_WEIGHTS.values()) - 1) > 1e-6:
     raise ValueError(f"config/selection.yml: criteria_weights는 {', '.join(WEIGHTED_CRITERIA)}의 가중치이고 합이 1이어야 합니다.")
 if not set(PENALTIES) <= set(CRITERIA) - set(WEIGHTED_CRITERIA):
@@ -181,7 +187,7 @@ def score_articles(news_list, previous=()):
     """후보 전체를 한 번의 호출로 보내 기사마다 항목별 점수를 받는다. {후보 순번: 점수 정보}
 
     점수 정보: 항목별 점수(1~CRITERIA_MAX), total(0~100), dup_of(같은 사건 다른 기사의 순번 또는 None),
-    prev_of(같은 사건을 다룬 지난 목록 기사의 previous 순번 또는 None), exclude, reason, title_ko
+    prev_of(같은 사건을 다룬 지난 목록 기사의 previous 순번 또는 None), field(FIELDS 중 하나), exclude, reason, title_ko
     """
     prompt = fill_prompt(load_prompt("filter_prompt.txt"), articles=build_article_list(news_list),
                          previous=build_previous_list(previous))
@@ -213,6 +219,7 @@ def score_articles(news_list, previous=()):
             "total": total_score(values),
             "dup_of": dup_of if dup_of != index and 0 <= dup_of < len(news_list) else None,
             "prev_of": prev_of if 0 <= prev_of < len(previous) else None,
+            "field": item.get("field") if item.get("field") in FIELDS else "기타",
             "exclude": exclude_reason(item.get("exclude")),
             "reason": clean_inline(item.get("reason", ""), 60),
             "title_ko": title_ko,
@@ -246,12 +253,36 @@ def score_with_retry(news_list, previous=()):
             time.sleep(wait)
 
 
-def decide(news_list, scored, list_slots, list_n, min_score):
+def order_top(listed, scored, top_slots):
+    """목록 위쪽 top_slots건(요약 자리)에 한 분야가 FIELD_CAP["max"]건을 넘지 않게 순서를 바꾼다. 목록에 오르는 기사는 그대로.
+
+    합계 순으로 보며 분야 상한 안이거나 파급력이 exempt_impact 이상인 기사를 위로 올린다(면제 기사도 분야 건수에 셈). 합계가 min_total 미만인 기사는
+    상한 때문에 끌어올리지 않고, 남은 자리는 상한 없이 합계 순으로 채운다 (상한에 걸린 기사가 다시 들어올 수 있음).
+    점수 기준만 고쳐서는 한 분야가 하루 상위 10건 중 9건을 차지한 날이 있었음 (2026-10-20 보안).
+    면제를 합계가 아니라 파급력으로 정하는 이유: AI와 무관한 보안은 관련성이 4까지라 파급력 9여도 합계 83.3이어서
+    합계 90 기준으로는 업계 전체가 대응할 보안 사태가 면제를 받지 못함
+    """
+    if not FIELD_CAP or top_slots <= 0:
+        return listed
+    top, counts = [], {}
+    for index in listed:
+        info = scored[index]
+        if len(top) >= top_slots or info["total"] < FIELD_CAP["min_total"]:
+            break
+        field = info.get("field") or "기타"
+        if counts.get(field, 0) < FIELD_CAP["max"] or info["impact"] >= FIELD_CAP["exempt_impact"]:
+            counts[field] = counts.get(field, 0) + 1
+            top.append(index)
+    return top + [index for index in listed if index not in top]
+
+
+def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0):
     """점수표로 목록에 올릴 기사를 정한다. (목록 순번 목록, {순번: 결정})
 
     같은 사건 묶음에서는 합계가 가장 높은 기사만 남기고(묶음의 한 기사라도 지난 목록과 같은 사건이면 묶음 전체를 뺌),
     제외 표시와 최소 점수 미달을 뺀 뒤
     합계, 파급력, 같은 사건을 다룬 기사 수, 최신순으로 정렬해 매체별 상한을 지키며 list_slots건을 고른다.
+    마지막으로 위쪽 top_slots건(요약 자리)에 분야 상한을 적용해 순서를 바꾼다 (order_top).
     같은 사건 기사 수는 scored[순번]["coverage"]에 남긴다 (점수표에 기록).
     """
     decisions = {}
@@ -309,7 +340,7 @@ def decide(news_list, scored, list_slots, list_n, min_score):
             decisions[index] = "목록"
     for index in range(len(news_list)):
         decisions.setdefault(index, "점수 없음")
-    return listed, decisions
+    return order_top(listed, scored, top_slots), decisions
 
 
 def log_score(total):
@@ -334,12 +365,12 @@ def write_score_csv(news_list, scored, decisions, dropped, previous=()):
         rows.append([
             run_at, decisions[index], info.get("total", ""), *[info.get(name, "") for name in CRITERIA],
             news_list[dup_of]["link"] if dup_of is not None else "", info.get("coverage", ""), info.get("exclude", ""),
-            info.get("reason", ""),
+            info.get("reason", ""), info.get("field", ""),
             news.get("source", ""), news.get("published", ""), news.get("topic", ""), news["title"],
             info.get("title_ko", ""), news["link"], previous[prev_of]["link"] if prev_of is not None else "",
         ])
     for news, reason in dropped:
-        rows.append([run_at, reason, "", *[""] * len(CRITERIA), "", "", "", "", news.get("source", ""),
+        rows.append([run_at, reason, "", *[""] * len(CRITERIA), "", "", "", "", "", news.get("source", ""),
                      news.get("published", ""), news.get("topic", ""), news["title"], "", news["link"], ""])
     with open(path, "a", encoding="utf-8-sig" if is_new else "utf-8", newline="") as f:
         writer = csv.writer(f)
@@ -433,7 +464,7 @@ def main():
             print(f" -> [평가 API 오류] {e}")
             append_error("필터링", "평가 오류", "전체 후보", f"선정 실패: {e}")
             fail(f"기사 선정에 실패했습니다: {e}")
-        listed, decisions = decide(candidates, scored, list_slots, list_n, min_score)
+        listed, decisions = decide(candidates, scored, list_slots, list_n, min_score, top_slots=summary_slots)
 
         # 합계 순으로 목록에 기록하고, 앞에서부터 본문을 수집해 요약 대상을 채운다
         body_count = 0

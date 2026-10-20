@@ -197,6 +197,52 @@ def test_decide_applies_source_cap():
     assert listed == [0, 1, 2] and decisions[3] == "매체 상한"
 
 
+def test_decide_caps_one_field_in_summary_slots(monkeypatch):
+    monkeypatch.setattr(evaluate, "FIELD_CAP", {"max": 2, "exempt_impact": 9, "min_total": 70})
+    news_list = [news(n) for n in range(1, 9)]
+    totals = [95, 88, 86, 84, 82, 80, 75, 60]
+    fields = ["보안", "보안", "보안", "보안", "AI 모델", "신기술", "AI 모델", "AI 에이전트"]
+    scored = {index: {**scored_entry(total), "field": field} for index, (total, field) in enumerate(zip(totals, fields))}
+    # 면제는 합계가 아니라 파급력으로 정한다. 4번째 보안(84점)은 파급력 9라 면제, 95점이어도 파급력 5면 면제 아님
+    # (AI와 무관한 보안 사태는 관련성이 4까지라 파급력 9여도 합계 83.3)
+    scored[3]["impact"] = 9
+    listed, decisions = evaluate.decide(news_list, scored, list_slots=8, list_n=40, min_score=0, top_slots=5)
+    # 보안이 2건 차면 3번째 보안(86점)은 뒤로, 면제 기사는 넘어도 들어감. 70점 미만(60점)은 끌어올리지 않고
+    # 남은 자리는 상한 없이 합계 순으로 채운다
+    assert listed[:5] == [0, 1, 3, 4, 5]
+    assert listed[5:] == [2, 6, 7]
+    # 목록에 오르는 기사는 그대로
+    assert set(decisions.values()) == {"목록"}
+    # 요약 자리가 없거나 상한 설정이 없으면 합계 순 그대로
+    assert evaluate.decide(news_list, scored, list_slots=8, list_n=40, min_score=0)[0] == list(range(8))
+    monkeypatch.setattr(evaluate, "FIELD_CAP", {})
+    assert evaluate.decide(news_list, scored, list_slots=8, list_n=40, min_score=0, top_slots=5)[0] == list(range(8))
+
+
+def test_decide_fills_summary_slots_without_cap_below_min_total(monkeypatch):
+    monkeypatch.setattr(evaluate, "FIELD_CAP", {"max": 1, "exempt_impact": 9, "min_total": 70})
+    news_list = [news(n) for n in range(1, 5)]
+    scored = {index: {**scored_entry(total), "field": "보안"} for index, total in enumerate([85, 80, 78, 50])}
+    scored[3]["field"] = "AI 모델"
+    listed, _ = evaluate.decide(news_list, scored, list_slots=4, list_n=40, min_score=0, top_slots=3)
+    # 70점 이상인 다른 분야 기사가 없으면 상한에 걸린 기사로 합계 순으로 채운다 (50점 기사가 앞서지 않음)
+    assert listed == [0, 1, 2, 3]
+
+
+def test_score_articles_reads_field(monkeypatch):
+    response = score_response(score_item(1, field="보안"), score_item(2, field="정책"), score_item(3))
+    seen = {}
+
+    def fake(prompt, schema=None, max_retries=None):
+        seen["schema"] = schema
+        return response
+    monkeypatch.setattr(evaluate, "call_gemini", fake)
+    scored = evaluate.score_articles([news(1), news(2), news(3)])
+    # 정해진 분야가 아니거나 빠지면 기타
+    assert [scored[index]["field"] for index in range(3)] == ["보안", "기타", "기타"]
+    assert seen["schema"]["items"]["properties"]["field"]["enum"] == list(evaluate.FIELDS)
+
+
 def test_cut_at_sentence():
     text = "가나다. " * 1000
     cut = evaluate.cut_at_sentence(text, 4000)
