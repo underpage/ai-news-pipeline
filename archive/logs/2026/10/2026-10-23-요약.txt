@@ -1,0 +1,232 @@
+[TITLE] Agentic AI Foundation adds four more open-source AI tools
+[LINK] https://siliconangle.com/2026/10/22/agentic-ai-foundation-adds-four-more-open-source-ai-tools/
+[PUBLISHED] 2026-10-23 07:43 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 빅테크들이 오픈소스 도구를 AAIF 재단에 기증 통합
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+에이전틱 AI 재단, 4개의 오픈소스 AI 도구 추가
+
+**[영문 3줄 요약 (Original)]**
+- The Agentic AI Foundation added four new open-source projects donated by OpenAI, Anthropic, Hugging Face, and Alibaba, bringing its total to 10 projects.
+- OpenAI donated Open Responses to standardize AI model APIs, while Anthropic contributed Agent Skills to provide a standardized format for AI agent task resources.
+- Hugging Face and Alibaba respectively contributed OpenEnv and OpenSandbox to ease the management and switching of sandbox environments used for AI training.
+
+**[국문 3줄 요약 (Translated)]**
+- 에이전틱 AI 재단(AAIF)이 오픈AI, 앤스로픽, 허깅페이스, 알리바바가 기증한 4개의 새로운 오픈소스 프로젝트를 추가해 관리 프로젝트를 총 10개로 늘렸다.
+- 오픈AI는 AI 모델 API 표준화를 위한 오픈 리스폰시스를 기증했고, 앤스로픽은 AI 에이전트 작업 리소스의 표준 형식을 제공하는 에이전트 스킬을 기여했다.
+- 허깅페이스와 알리바바는 AI 훈련에 쓰이는 샌드박스 환경의 전환 및 관리를 간소화하는 오픈엔브와 오픈샌드박스를 각각 기증했다.
+
+#긍정
+---
+[TITLE] Donating Agent Skills to the Agentic AI Foundation
+[LINK] https://simonwillison.net/2026/Oct/22/donating-agent-skills/
+[PUBLISHED] 2026-10-23 03:09 KST
+[SOURCE] Simon Willison
+[TOPIC] 에이전트, 모델
+[SCORE] 9
+[REASON] 에이전트 스킬 표준을 리눅스 재단 AAIF에 기증
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+에이전틱 AI 재단에 에이전트 스킬 기증
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic announced that it is donating the Agent Skills standard to the Linux Foundation's Agentic AI Foundation to keep it open, community-driven, and vendor-neutral.
+- Anthropic previously co-founded the foundation alongside Block and OpenAI and had already donated the Model Context Protocol to it.
+- The author noted they had predicted this move since skills were first declared an open standard, while also mentioning other recent blog updates.
+
+**[국문 3줄 요약 (Translated)]**
+- 앤스로픽은 에이전트 스킬 표준을 개방적이고 커뮤니티 주도적이며 벤더 중립적으로 유지하기 위해 리눅스 재단 산하 에이전틱 AI 재단(AAIF)에 기증한다고 발표했다.
+- 앤스로픽은 이전에 블록, 오픈AI와 함께 해당 재단을 공동 설립했으며 이미 모델 컨텍스트 프로토콜(MCP)을 기증한 바 있다.
+- 글쓴이는 스킬이 처음 오픈 표준으로 선언되었을 때부터 이번 기증을 예상했다고 밝히며 최근 블로그 업데이트 항목들을 함께 언급했다.
+
+#긍정
+---
+[TITLE] An AI agent in "Skynet mode" hijacks unprotected language models to launch self-sustaining cyberattacks
+[LINK] https://the-decoder.com/an-ai-agent-in-skynet-mode-hijacks-unprotected-language-models-to-launch-self-sustaining-cyberattacks/
+[PUBLISHED] 2026-10-22 20:30 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델, 보안
+[SCORE] 9
+[REASON] 비보호 언어 모델 탈취해 자율 공격 수행하는 에이전트
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+스카이넷 모드의 AI 에이전트, 무방비 상태의 언어 모델을 탈취해 자립형 사이버 공격 실행
+
+**[영문 3줄 요약 (Original)]**
+- Symantec researchers discovered an offensive AI agent that hijacks unprotected online language models to autonomously execute cyberattacks while leaving victims with compute bills.
+- The agent strips away model safety guardrails using a five-layer jailbreak and incorporates 74 attack modules to scan servers, dump databases, and install cryptominers.
+- A directive dubbed Skynet mode allows the agent to run up to 100,000 steps without human intervention in a recurring loop of infection and reinfection.
+
+**[국문 3줄 요약 (Translated)]**
+- 시만텍 연구원들은 인터넷상의 비보호 언어 모델을 탈취해 피해자에게 연산 비용을 전가하며 자율적으로 사이버 공격을 실행하는 공격형 AI 에이전트를 발견했다.
+- 이 에이전트는 5단계 탈옥 기법을 통해 모델 안전 가드레일을 무력화하고, 서버 검색, 데이터베이스 유출, 암호화폐 채굴기 설치를 위한 74개 공격 모듈을 포함한다.
+- 스카이넷 모드로 불리는 명령을 통해 에이전트는 감염과 재감염의 반복 루프 내에서 사람의 개입 없이 최대 10만 단계를 실행할 수 있다.
+
+#부정
+---
+[TITLE] Google's Agent Compute Engine gives every Gemini agent its own hardware-isolated micro virtual machine
+[LINK] https://the-decoder.com/googles-agent-compute-engine-gives-every-gemini-agent-its-own-hardware-isolated-micro-virtual-machine/
+[PUBLISHED] 2026-10-23 02:50 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 규제
+[SCORE] 8
+[REASON] 제미나이 에이전트에 마이크로 VM 격리 환경 제공하는 런타임
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+구글 에이전트 컴퓨트 엔진, 모든 제미나이 에이전트에 하드웨어 격리 마이크로 가상 머신 제공
+
+**[영문 3줄 요약 (Original)]**
+- Google announced the Agent Compute Engine, a service that secures each AI agent inside its own hardware-isolated microVM powered by its Titanium chip.
+- The architecture automatically pauses idle VMs and shares memory between them, lowering run costs and packing ten times more agents onto a single server via Agent Substrate.
+- Google added governance features including token tracking, model routing, and third-party identity provider integrations across Cloud Run, GKE, and managed endpoints.
+
+**[국문 3줄 요약 (Translated)]**
+- 구글은 티타늄 칩으로 보호되는 개별 하드웨어 격리 마이크로VM 내부에서 각 AI 에이전트를 구동하는 에이전트 컴퓨트 엔진 서비스를 발표했다.
+- 이 아키텍처는 유휴 VM을 자동으로 일시 중단하고 메모리를 공유하여 구동 비용을 낮추며, 에이전트 서브스트레이트를 통해 단일 서버에 10배 많은 에이전트를 수용한다.
+- 구글은 토큰 추적, 모델 라우팅, 서드파티 신원 공급자 연동을 포함한 거버넌스 기능을 클라우드 런, GKE, 관리형 엔드포인트 전반에 걸쳐 추가했다.
+
+#긍정
+---
+[TITLE] Canva’s first AI image model plans designs before generating them
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model
+[PUBLISHED] 2026-10-23 06:51 KST
+[SOURCE] The Verge
+[TOPIC] 모델
+[SCORE] 8
+[REASON] 생성 전 디자인 기획 단계를 거치는 캔바 독자 이미지 모델
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+캔바의 첫 AI 이미지 모델, 생성 전 디자인을 사전 기획
+
+**[영문 3줄 요약 (Original)]**
+- Canva launched Canva Craft, its first proprietary image generation model that plans a design before generating the image to achieve greater precision and consistency.
+- The model supports up to 2K resolution across more than 30 aspect ratios, accurately placing objects and legible text based on training from millions of human-made templates.
+- Canva plans to connect AI agents to the model through the Model Context Protocol and will release faster Craft-fast and Craft-ultrafast variants in the future.
+
+**[국문 3줄 요약 (Translated)]**
+- 캔바는 더 높은 정밀도와 일관성을 얻기 위해 이미지를 생성하기 전에 디자인을 먼저 기획하는 첫 독자 이미지 생성 모델인 캔바 크래프트를 출시했다.
+- 이 모델은 30개 이상의 가로세로 비율에서 최대 2K 해상도를 지원하며 수백만 개의 사용자 제작 템플릿 학습을 바탕으로 읽기 쉬운 텍스트와 정확한 객체 배치를 구현한다.
+- 캔바는 오픈 모델 컨텍스트 프로토콜(MCP)을 통해 AI 에이전트를 해당 모델에 연결할 수 있도록 지원할 계획이며 향후 더 빠른 크래프트 패스트 및 울트라패스트 버전을 선보일 예정이다.
+
+#긍정
+---
+[TITLE] SentinelOne brings runtime threat detection and response to AI agents
+[LINK] https://www.helpnetsecurity.com/2026/10/22/sentinelone-singularity-agentic-detection-and-response/
+[PUBLISHED] 2026-10-22 20:27 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 보안, 규제
+[SCORE] 8
+[REASON] AI 에이전트의 런타임 위협 탐지 및 대응 솔루션 출시
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+센티넬원, AI 에이전트를 위한 런타임 위협 탐지 및 대응 솔루션 출시
+
+**[영문 3줄 요약 (Original)]**
+- SentinelOne unveiled Singularity Agentic Detection and Response to discover AI agents, govern their permissions, and stop unintended or malicious activities in real time.
+- The solution builds on SentinelOne's platform to track runtime behaviors as employees increasingly manage autonomous agents holding enterprise credentials.
+- Features include an inventory for agents and MCP servers, cross-platform coverage, and execution graph integration linking prompt requests to resulting system processes.
+
+**[국문 3줄 요약 (Translated)]**
+- 센티넬원은 AI 에이전트를 식별하고 권한을 통제하며 의도치 않거나 악의적인 활동을 실시간으로 차단하는 싱귤래리티 에이전틱 탐지 및 대응(ADR)을 공개했다.
+- 이 솔루션은 직원들이 엔터프라이즈 자격 증명을 가진 자율 에이전트를 점점 더 많이 관리함에 따라 런타임 동작을 추적할 수 있도록 센티넬원의 기존 플랫폼을 기반으로 구축되었다.
+- 에이전트 및 MCP 서버 인벤토리, 다중 플랫폼 지원, 사용자 프롬프트 요청부터 결과 시스템 프로세스까지 연결해 보여주는 실행 그래프 통합 기능을 제공한다.
+
+#긍정
+---
+[TITLE] OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL
+[LINK] https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html
+[PUBLISHED] 2026-10-22 19:44 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 8
+[REASON] 악성 MCP 서버를 통한 OpenCode 원격 코드 실행 결함
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+오픈코드 결함으로 악성 MCP 서버가 윈도우 및 WSL 로그인 중 코드를 실행 가능
+
+**[영문 3줄 요약 (Original)]**
+- A critical security flaw in the OpenCode AI coding agent allowed malicious or hijacked MCP servers to execute code on developers' Windows and WSL systems during sign-in.
+- The vulnerability stemmed from passing unescaped OAuth authorization URLs to PowerShell via an outdated browser helper package, but developer Anomaly did not request a CVE.
+- Developers using OpenCode on affected platforms must manually update to version 1.18.33 or remove untrusted remote MCP servers to secure their environments.
+
+**[국문 3줄 요약 (Translated)]**
+- 오픈코드 AI 코딩 에이전트의 치명적 보안 결함으로 인해 악의적이거나 탈취된 MCP 서버가 개발자의 윈도우 및 WSL 시스템에서 로그인 시 임의 코드를 실행할 수 있었다.
+- 이 취약점은 구버전 브라우저 헬퍼 패키지를 통해 이스케이프 처리되지 않은 OAuth 인증 URL을 파워셸로 넘기면서 발생했으나, 개발사 아노말리는 CVE를 요청하지 않았다.
+- 영향을 받는 플랫폼에서 오픈코드를 사용하는 개발자는 환경을 보호하기 위해 1.18.33 버전 이상으로 직접 업데이트하거나 신뢰할 수 없는 원격 MCP 서버를 제거해야 한다.
+
+#부정
+---
+[TITLE] Microsoft’s Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases ‘medical superintelligence’
+[LINK] https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/
+[PUBLISHED] 2026-10-23 03:43 KST
+[SOURCE] TechCrunch
+[TOPIC] 모델
+[SCORE] 7
+[REASON] 난치 질환 진단에서 전문의를 앞선 MS 의료 진단 AI
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+마이크로소프트의 무스타파 술레이만, 난치 진단에서 자사 AI가 의사를 능가한다며 '의료 초지능' 추구 언급
+
+**[영문 3줄 요약 (Original)]**
+- Microsoft's AI diagnostic orchestration system, MAI-DxO, achieved an 83% accuracy rate on complex NEJM simulation cases, outperforming primary care doctors who scored 36%.
+- DxO coordinates multiple AI agents to act like a physician panel, cutting run costs while driving the largest accuracy gains when paired with models like GPT-5.5 or Gemini 2.5 Flash.
+- Microsoft AI CEO Mustafa Suleyman announced ongoing collaboration with the Mayo Clinic on a healthcare foundation model aiming for breakthroughs in medical record predictions.
+
+**[국문 3줄 요약 (Translated)]**
+- 마이크로소프트의 AI 진단 조율 시스템인 MAI-DxO는 NEJM 시뮬레이션 복합 사례에서 83%의 정확도를 기록해 36%에 그친 1차 진료 의사들의 성과를 앞섰다.
+- DxO는 여러 AI 에이전트가 의료진 패널처럼 협력하도록 조율하며, 구동 비용을 절감하는 동시에 GPT-5.5나 제미나이 2.5 플래시 같은 모델과 결합할 때 진단 정확도를 크게 향상했다.
+- 무스타파 술레이만 마이크로소프트 AI CEO는 전자의무기록 예측의 획기적 전환을 목표로 메이요 클리닉과 의료용 파운데이션 모델을 공동 개발 중이라고 밝혔다.
+
+#긍정
+---
+[TITLE] Ai2 releases OlmoEarth v1.3 state-of-the-art AI-ready satellite embeddings for the whole planet
+[LINK] https://siliconangle.com/2026/10/22/ai2-releases-olmoearth-v1-3-state-of-the-art-ai-ready-satellite-embeddings-for-the-whole-planet/
+[PUBLISHED] 2026-10-22 22:00 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 개발, 모델
+[SCORE] 7
+[REASON] 전 지구 위성 관측 데이터를 지문 형태로 압축하는 임베딩 모델
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+Ai2, 전 지구 대상의 최첨단 AI용 위성 임베딩 OlmoEarth v1.3 출시
+
+**[영문 3줄 요약 (Original)]**
+- Ai2 released OlmoEarth v1.3, an AI embedding model that compresses a year of global satellite imagery into numerical fingerprints for land patches down to 10-by-10 meters.
+- The release includes a browser-based explorer tool allowing users to map environmental and land cover changes in seconds without requiring expensive GPU fine-tuning.
+- Version 1.3 reduced training compute time by nearly half compared to the previous version and cut carbon emissions while maintaining high fine-tuning accuracy for research labs.
+
+**[국문 3줄 요약 (Translated)]**
+- Ai2는 1년간의 전 지구 위성 관측 데이터를 최소 10x10미터 크기의 지표 패치별 수치 지문으로 압축하는 AI 임베딩 모델인 OlmoEarth v1.3을 출시했다.
+- 이번 출시에는 고가의 GPU 파인튜닝 없이도 사용자가 환경 및 토지 피복 변화를 수초 만에 매핑할 수 있는 브라우저 기반 탐색 도구가 포함되었다.
+- 1.3 버전은 이전 버전 대비 훈련 연산 시간을 거의 절반으로 줄이고 탄소 배출량을 감축하면서도 연구실을 위한 높은 파인튜닝 정확도를 유지했다.
+
+#긍정
+---
+[TITLE] 모빌린트, 휴머노이드용 AI 플랫폼 개발...NPU부터 SW까지 통합
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21773
+[PUBLISHED] 2026-10-22 13:26 KST
+[SOURCE] 더에이아이
+[TOPIC] 모델, 신기술
+[SCORE] 7
+[REASON] 휴머노이드 전용 고성능 저전력 온디바이스 NPU 개발
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 모빌린트가 산업부 온디바이스 AI 반도체 과제의 일환으로 휴머노이드 전용 고성능 및 저전력 NPU와 구동 소프트웨어를 통합 개발한다고 밝혔다.
+- 여러 AI 모델이 로봇 내에서 동시 작동할 때 발생하는 연산 지연을 줄이고 반응성을 높이기 위해 반도체부터 모델 실행 소프트웨어까지 단일 플랫폼으로 구축한다.
+- 해당 플랫폼은 LG전자의 휴머노이드 환경에서 전력, 발열, 방열 및 제어 안정성을 검증받은 뒤 향후 다양한 피지컬 AI 분야로 확장 적용될 예정이다.
+
+#긍정
+---
