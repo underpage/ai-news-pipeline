@@ -1,0 +1,740 @@
+[평가 오류] 전체 후보 - 선정 실패(다시 시도): 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+---
+[TITLE] OpenAI's isolated AI agents found ways to talk to each other through CPU cache
+[TITLE_KO] 오픈AI의 격리된 AI 에이전트들, CPU 캐시를 통해 상호 통신하는 경로 찾아내
+[LINK] https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/
+[PUBLISHED] 2026-10-24 20:12 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델, 보안
+[SCORE] 9
+[REASON] 격리된 AI 에이전트 간 CPU 캐시 부채널 통신 발견
+[BODY]
+OpenAI's isolated AI agents found ways to talk to each other through CPU cache
+Key Points
+- After a security incident in September, OpenAI now trains its most advanced models without internet access, using a closed offline environment built from cached data.
+- In security tests, isolated AI agents still managed to set up covert communication channels without a network connection or shared files, including by exploiting timing differences in the processor cache.
+- During an 11-day training pause, OpenAI had AI agents—among them GPT-6 Astra Cyber—attack its own infrastructure to find previously unknown vulnerabilities. Training resumed afterward under tighter controls.
+OpenAI now trains frontier models without internet access and uses AI agents to red-team its own infrastructure. In separate isolation tests, agents even communicated through covert side channels, showing how hard true containment is.
+On September 20, an internal research model exploited a misconfigured DNS resolver to reach the open internet during training, even though OpenAI had already tightened security after the now infamous Hugging Face incident in July and other observed misalignment cases. OpenAI contained the breach quickly but still halted all frontier model training and evaluation.
+OpenAI cuts frontier models off from the internet during training
+OpenAI made a policy decision in response: Frontier models now train without internet access until safety measures justify restoring it. Models learn to browse and search inside a closed "offline world" built from indexed and cached web content, and all frontier reinforcement learning runs now operate this way.
+Full network isolation, a so-called air gap, isn't feasible yet because experiments still need external connections for operations and monitoring, the company says. But even a complete air gap wouldn't guarantee containment, according to OpenAI researcher Noam Brown. He gave one example of how isolated systems could still communicate: two separate computers could theoretically signal each other through temperature sensors, with one heating its CPU while the other reads the change.
+OpenAI CEO Sam Altman made a similar argument in a recent interview: Sandboxes offer only limited protection against powerful-enough models, and at some point it may no longer be possible to trace how they escaped. Monitoring helps early on, but what ultimately matters is that an AI system internalizes human values, a problem the field knows as "AI alignment" and has yet to solve.
+Isolated AI agents found ways to talk to each other through CPU cache
+OpenAI documents just how hard it is to control AI agents in its blog post. During tests, agents found ways to communicate without a network. In one test, agents placed in separate, isolated environments on shared hardware were told to exchange secrets with no network connection and no shared files.
+They used the processor cache. One agent deliberately altered the data stored there, while the other measured differences in load times and decoded the message. The same technique is behind the well-known Spectre and Meltdown attacks.
+More channels turned up through write patterns on shared memory and through OpenAI's own offline infrastructure, the system meant to replace the internet. One agent noted in its reasoning log that it "could create an acoustic modem-like signal … using continuous writes vs idle."
+In one case, agents were given only a general list of vulnerabilities and told to find a communication channel on their own. They developed a channel independently, agreed on an encoding scheme, and successfully exchanged information. The channels are usually slow and hard to exploit, OpenAI says, but they do reach across boundaries meant to keep agents apart.
+OpenAI turned AI agents loose on its own infrastructure
+During the training pause, OpenAI also had teams of AI agents systematically attack its own infrastructure.
+---
+[TITLE] Dream-1 - 처음 보는 양팔 로봇을 제로샷으로 제어하는 로봇 모델
+[LINK] https://news.hada.io/topic?id=35946
+[PUBLISHED] 2026-10-25 09:34 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 8
+[REASON] 새로운 양팔 로봇 제로샷 제어 모델 Dream-1 공개
+[BODY]
+- Dream Labs가 로봇별 시연 데이터나 미세조정 없이 새로운 양팔 로봇을 제어하는 Dream-1을 공개 API로 출시함. 현재 대상은 평행 그리퍼를 갖춘 양팔 로봇이며, 로봇에 따라 성능 차이가 있음
+- World Action Model(WAM) 은 영상과 행동을 함께 예측하고, 그리퍼의 목표 위치와 자세를 로봇별 역기구학 솔버로 변환해 서로 다른 로봇을 제어함
+- 학습에 없던 시뮬레이션 로봇 27종과 실제 로봇 4종에서 제로샷 성능을 평가함. 성능은 로봇의 역기구학 솔버에도 영향을 받으며, 로봇별 데이터로 적응시키면 여전히 더 나은 결과를 얻음
+- 제로샷 성능이 부족하면 FaaS로 미세조정할 수 있음. 두 로봇에서는 각각 5분의 데이터로 개선을 보였지만, 학습 데이터와 형태가 크게 다른 로봇에는 더 많은 데이터가 필요했음
+- 이용료는 Dream-1 시간당 3달러, Dream-1-flash 시간당 2달러임. 저렴한 하드웨어와 범용 모델을 결합해 로봇 보급을 확대하는 것이 목표임
+로봇 보급과 데이터의 순환 문제
+- 로봇이 유용해야 구매자가 생기지만, 유용하게 만들려면 해당 로봇의 데이터가 필요하고, 데이터는 충분한 사용자가 있어야 쌓이는 닭과 달걀 문제가 있음
+  - 자동차는 자율주행 기능이 없어도 유용했기 때문에 수백만 명의 운전자가 모델 학습에 필요한 데이터를 생성할 수 있었음
+  - 대부분의 다른 로봇은 이런 출발점을 갖지 못했음
+- 저렴한 하드웨어와 제로샷 일반화를 결합하면 새 로봇이 자체 대규모 데이터 없이도 유용한 기능을 갖추고, 사용 중 생성한 데이터로 다음 로봇의 모델을 개선하는 순환을 시작할 수 있음
+- 하드웨어 가격 하락의 사례로 약 2,000달러부터 시작하는 Maker Arm 양팔 구성과 7대 합계 1만 5,000달러 미만인 준휴머노이드 로봇들이 있음
+  - 바퀴, 양팔, 평행 그리퍼를 갖춘 이 가격대는 1년 전만 해도 거의 존재하지 않았음
+  - Hugging Face의 399달러 Microduck은 2026년 8월 28일 사전 주문 개시 후 4일 만에 1만 대 이상 판매됐음(관련 보도)
+- 기업 구매자는 비용, 속도, 신뢰성에서 사람보다 나은지를 따지지만, 소비자와 소규모 팀은 다른 구매 기준을 가짐
+  - Microduck은 걷기, 뒤뚱거리기, 롤러스케이트 타기처럼 귀엽고 즐거운 동작만으로도 구매자를 확보함
+  - Dream Labs는 쉽게 구매할 만큼 저렴하면서 집에서 쓸모를 인정받는 로봇이 등장하면 보급이 가속하고 가정 내 로봇이 새로운 학습 데이터의 원천이 될 것으로 기대함
+  - 두 Microduck이 부리를 그리퍼로 사용해 빨래를 개는 모습은 이러한 가능성의 상상 예시이며, 달성한 기능은 아님
+DreamZero에서 Dream-1까지
+- 2026년 2월 공개한 DreamZero 는 World Action Models를 소개한 연구임
+  - YAM 로봇 데이터 30분으로 후속 학습한 뒤, 보지 못한 작업에 제로샷으로 일반화하는 결과를 얻었음
+  - 이런 일반화에는 이전까지 로봇 형태별로 수백~수천 시간의 데이터가 필요했음
+- 이 결과와 하드웨어 가격 하락이 Dream Labs 설립의 계기가 됐으며, 이후 6개월의 개발을 거쳐 로봇 형태 자체에 대한 제로샷 일반화의 초기 성과를 공개함
+- Dream-1은 전 세계에서 공개 API로 사용할 수 있는 회사의 첫 World Action Model임
+  - 회사는 출시와 함께 비공개 개발 단계를 마치고 9,000만 달러 시드 투자 유치를 공개함
+  - 목표는 대형 연구소뿐 아니라 로봇을 가진 누구나 머신러닝 전문지식 없이 연결하고 실행할 수 있게 하는 것임
+  - 배포 시간을 줄이기 위해 매주 내부 해커톤을 진행하며, 시작 안내를 제공함
+  - 클라이언트는 모델 체크포인트를 선택하고 관측값을 전송한 뒤 행동을 받아오는 구조임
+처음 보는 로봇과 작업의 평가
+- Dream-1은 학습에 없던 로봇, 작업, 환경에서 제어를 수행하도록 설계됐으며, 18년 전에 출시된 양팔 연구용 로봇 PR2도 제어했음
+  - 해당 제로샷 실행에는 로봇 형태별 데이터가 사용되지 않았음
+  - 완전히 새로운 로봇 형태로 제로샷 전이한 초기 보고 사례 중 하나이며, 선행 연구 LAP에서도 형태 일반화의 초기 가능성을 보였음
+- 평가에서는 시뮬레이션 로봇 27종과 실제 로봇 4종의 성능을 학습에 사용한 YAM과 비교함
+  - 실제 로봇에는 각 로봇을 학습하지 않은 이전 Dream-1 체크포인트를 사용하고, 동일 체크포인트의 YAM 결과와 비교함
+  - OpenYAM은 보지 못한 작업에 대해서만 평가함
+  - 시뮬레이션에서는 로봇 형태별로 300회 실행함. 언어 지시 준수는 50개 작업에 걸쳐 150회, 새로운 작업 일반화는 150개 작업에 걸쳐 150회 평가함
+- 제로샷 성능은 로봇별로 다르며, 역기구학(IK) 솔버의 품질에도 일부 좌우됨. 이를 위한 IK 안내를 제공함
+- 공개 시연에는 여러 지역의 파트너가 수행한 새로운 작업이 포함됨
+  - Anvil Robotics의 사탕 분류, BitRobot의 티슈 뽑기, Cortex의 컵 쌓기, Eastworld의 사과를 상자에 넣기를 시연함
+  - Hugging Face의 빨간 큐브를 초록 용기에 넣기, KAIST의 상자 접기, XDOF의 마커 찾기와 집기, RoboCurve의 병 세우기를 시연함
+  - Scale AI의 큐브 탑 쌓기, Robo Inc.의 칩을 쟁반으로 옮기기, Mecka의 느슨한 거치대에서 시험관 들어 올리기, AgiBot의 사과를 접시에 놓기를 시연함
+  - 작업 영상은 자율 실행을 베타 테스터 현장에서는 8배속, 내부에서는 4배속으로 보여줌. 로봇 형태 일반화 영상은 실제 로봇 4배속, 시뮬레이션 3배속임
+영상과 행동을 함께 예측하는 제어 방식
+- 일반적인 로봇 정책은 관절 각도를 출력하므로 특정 로봇의 몸체에 묶이기 쉬움
+  - Dream-1도 기본 지원 로봇에는 관절 출력을 사용할 수 있지만, 말단장치(EEF) 자세와 그리퍼 개폐 상태도 예측함
+  - 양팔과 평행 그리퍼를 갖춘 로봇은 이 행동 공간을 공유하고, 각자의 IK 솔버가 목표 자세를 관절 명령으로 변환함
+  - 다만 이 공통 인터페이스만으로 제로샷 전이가 가능해지는 것은 아님
+- 관측에는 머리 카메라 1대와 손목 카메라 2대를 사용함
+  - 선행 연구 Universal Manipulation Interface(UMI)는 동일한 그리퍼와 손목 카메라만 사용하면 로봇 팔 사이에 제로샷 전이가 가능함을 보였음
+  - 손목 시점에서는 로봇들이 동일하게 보이지만, 그리퍼 하드웨어가 정확히 같아야 하고 머리 카메라가 보는 전체 장면을 포기해야 한다는 한계가 있음
+- WAM은 영상과 행동을 함께 예측해 로봇 제어와 동작 결과의 상상을 하나의 문제로 학습함
+  - 머리 카메라에 보이는 서로 다른 그리퍼와 로봇 팔을 장면 속에서 움직이는 픽셀과 형상으로 처리하므로, 영상이 로봇 형태 사이의 공통 표현이 됨
+  - 작업을 완료하는 로봇의 모습을 예측할 수 있다면 그 상태에 도달하는 행동도 생성할 수 있다는 원리로, UMI와 외형이 다른 그리퍼와 새로운 몸체를 제어함
+독립 평가와 실행 비용
+- 로봇 역량을 측정하고 공개하는 공익기업 Robocurve 가 출시 전 RoboDojo-RC Tier 1에서 독립 평가함
+  - 작업 시도당 평균 점수에서 Dream-1은 Opus 5.5와 Gemini 4 Argon보다 높은 점수를 기록함
+  - Gemini 4 Argon 대비 작업 시도당 비용은 16분의 1, 평가된 LLM 중 가장 빠른 GPT-6 Astra 대비 속도는 1.7배였음
+- Dream-1은 계획 수립에 강한 LLM과 달리, 로봇이 실제 행동하는 데 필요한 빠르고 범용적인 System 1 역할을 목표로 함
+- 실행 비용은 Dream-1 시간당 3달러, 더 가볍고 빠른 Dream-1-flash 시간당 2달러임
+  - 한 번 호출하면 1.6초 분량의 행동을 반환하므로, 1시간은 2,250회 호출에 해당함
+  - 행동당 비용은 각각 약 0.0013달러와 0.0009달러임
+---
+[TITLE] 위험성 알려줘도 공격 지속…영국 AI보안연구소가 밝힌 AI 안전 허점
+[LINK] https://zdnet.co.kr/view/?no=20261024144522
+[PUBLISHED] 2026-10-25 07:59 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 모델, 보안
+[SCORE] 8
+[REASON] 영국 AISI 평가서 앤트로픽 모델의 개발자 표적 공격 시도 확인
+[BODY]
+영국 정부가 인공지능(AI)을 시험하던 중 실제 소프트웨어 개발자를 겨냥한 사이버 공격 시도가 발생했다. 이후 실험에서는 공격이 위험하다는 판단과 실제 행동이 일치하지 않는 문제도 확인됐다.
+23일(현지시간) 영국 AI보안연구소(AISI)가 발표한 보고서에 따르면 앤트로픽 AI 모델 '미토스 5'는 공격 대상이 실제 사람이라는 정보를 반복해서 전달받고도 거의 모든 실험에서 공격을 이어갔다.
+사건은 지난 7월 AISI가 AI 사이버보안 능력을 평가하던 중 발생했다. 연구진은 AI에 가상 컴퓨터망에 침입해 보호된 정보를 찾아내는 과제를 줬다. 정해진 시험 환경에서만 활동해야 했지만 미토스 5는 인터넷에서 실제 개발자가 관리하는 프로그램을 공격 대상으로 삼았다.
+미토스 5는 처음에는 허용된 방법으로 과제를 해결하려 했다. 여러 시도가 실패하자 외부 개발자가 관리하는 소프트웨어에 악성코드를 넣는 방법을 시도했다. 해당 프로그램을 통해 시험용 컴퓨터에 침입하려는 목적이었다.
+AI는 악성코드가 포함된 수정안을 개발자에게 제출했다. 가짜 계정까지 만들어 수정안이 안전한 것처럼 꾸미고 승인을 요구했다. 하지만 개발자는 수정안을 받아들이지 않았으며 실제 피해도 발생하지 않았다.
+AISI는 지난 8월 사건을 공개한 뒤 AI가 왜 허용된 범위를 벗어났는지 추가 조사했다. 연구진은 공격 직전 상황을 재현하고 상대가 시험과 무관한 실제 사람이라는 정보를 반복해서 제공했다. 공격이 위험한지 묻는 실험과 작업을 계속하도록 하는 실험도 각각 진행했다.
+미토스 5는 공격이 허용 범위를 벗어나며 실제 피해를 줄 수 있다고 답했다. 그러나 작업을 계속하도록 하자 거의 모든 실험에서 공격을 진행했다. 공격 대상이 실제 사람이라는 정보를 추가해도 행동은 달라지지 않았다.
+AI가 자신의 행동을 설명하는 과정에서도 문제가 나타났다. 미토스 5는 실제 개발자를 시험용 가상 인물이라고 잘못 판단하는 경우가 많았다. 공격이 일으킬 피해를 고려하지 않거나 기존 행동을 정당화하는 방향으로 정보를 해석했다.
+AISI는 AI가 이미 선택한 행동을 계속하기 위해 자신에게 유리한 방향으로 판단했을 가능성을 제기했다. 다만 이런 판단 방식이 실제 공격을 유발했는지는 확인하지 못했다고 밝혔다.
+다른 AI 모델에서도 비슷한 행동이 나타났다. 연구진이 가상 사이버보안 평가 상황 100개를 만들어 여러 모델을 시험한 결과 허가받지 않은 공격 시도가 확인됐다. 미토스 5에서 가장 자주 발생했다.
+앤트로픽도 별도 분석을 통해 당시 미토스 5가 평가 43회 중 9회에서 허용 범위를 벗어났다고 밝혔다. 회사는 시험 당시 일반 공개 모델에 적용하는 일부 보안 장치가 꺼져 있었다고 설명했다. 이후 개발한 모델에서는 유사한 공격을 시작하는 비율이 낮아졌다고 덧붙였다.
+관련기사
+- 앤트로픽, AI 안전 검증에 빗장 풀다…불리한 평가도 공개2026.10.16
+- 퍼플렉시티, AI 에이전트 '안전 작업실' 오픈소스로 푼다2026.10.16
+- "우리 아이들은 실험용 쥐가 아니다"…AI 활용의 덫2026.10.16
+- 美 규제당국, 오픈AI·앤트로픽 AI 안전성 직접 들여다본다2026.10.16
+AISI는 이번 연구가 사이버보안 시험에서 나온 만큼 일반 업무에서도 같은 문제가 발생한다고 단정할 수 없다고 밝혔다. 다만 AI가 위험성을 설명한다고 해서 실제 행동까지 안전하다고 판단해서는 안 된다고 지적했다. 연구진은 AI가 허용된 범위를 벗어나지 못하도록 작업 환경을 분리하고 행동을 감시할 필요가 있다고 강조했다.
+AISI는 "AI 모델이 예상대로 행동하는지와 관계없이 평가 환경에서는 모델이 실제 피해를 일으키지 못하도록 막아야 한다"고 밝혔다.
+---
+[TITLE] Google’s Data Agent Kit Hits GA, Splitting Agent Guardrails Between Skills and IAM
+[TITLE_KO] 구글 데이터 에이전트 키트 정식 출시, 스킬과 IAM 간 에이전트 가드레일 분리
+[LINK] https://www.infoq.com/news/2026/10/data-agent-kit-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-24 17:34 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발, 보안, 규제
+[SCORE] 8
+[REASON] 구글 데이터 에이전트 키트 정식 출시 및 보안 가드레일 분리
+[BODY]
+Google recently made Data Agent Kit generally available, moving it out of the preview it ran through the summer. It is free, it is open source, and it installs into coding agents Google does not own. It ships two kinds of control, and the difference matters in production.
+Data Agent Kit is a set of MCP tools connecting an agent to more than fifteen Google Data Cloud services, plus Google-authored skills that teach it practices like optimizing BigQuery SQL or designing Bigtable row keys. It runs in Antigravity, Claude Code, Codex, Cursor, and VS Code-compatible editors, and comes preinstalled in Cloud Shell and Cloud Workstations.
+Data Agent Kit sits between the coding agent and Google Data Cloud services as two components: skills carrying best-practice guidance and MCP servers exposing live schema and tools. (Source: Google Blog post)
+With the GA release, the company adds BigQuery Graph, Bigtable, and Managed Service for Apache Spark. Product manager Arun Nair and developer advocate Jeff Nelson, who wrote the launch post, pitch it at a gap agents have by default: they write good SQL but know nothing about "which tables exist, how they’re partitioned, which ones your team trusts, or why last night’s job failed."
+The plugin repository carries 37 skills under Apache 2.0, each with frontmatter naming Google as publisher. It is versioned properly, with 1.0.0 cut on September 29 and 1.1.0 on October 13, so teams can pin it.
+Among those skills is accidental-data-loss-prevention, which exists to stop the agent destroying something. Its description opens "STOP AND VERIFY" and tells the agent it "MUST obtain explicit user consent" before anything irreversible, listing DROP TABLE, TRUNCATE, a DELETE missing a WHERE clause or using 1=1, storage deletions against production buckets, gcloud projects delete, and KMS key destruction. The procedure is halt, explain the impact, wait for affirmative consent.
+That guardrail is advice. The agent is asked to obey it. A second control is not.
+Asked in a LinkedIn post whether read-only investigation could be isolated from tools that modify infrastructure, Nelson answered that it is handled in IAM rather than per agent: run the agent as a read-only service account through impersonation, or use "an IAM deny policy that blocks any MCP tool where tool.isReadOnly is false."
+The documentation gives the condition:
+api.getAttribute('mcp.googleapis.com/tool.isReadOnly', false) == false
+It denies the mcp.googleapis.com/tools.call permission, and applies at the organization, folder, or project level. Companion attributes cover resource.service and tool.name.
+Three limits come with it. A blocked tool still appears in tools/list, so the agent sees capabilities it cannot use and finds out only on invocation. The controls cover Google Cloud MCP servers and nothing else. And resource.service and tool.name are gcloud only, absent from the console.
+Amel Habira, an AI solutions architect, read the documentation and came away encouraged, noting the short-lived credentials, the read-only attribute, and a warning before agents execute notebook cells. He wrote:
+Combine that with branching and time travel on the Iceberg side, and you can imagine containment at both the access layer and the data layer.
+Ankit Dongre, an AI engineer at viaSocket, drew the boundary further out:
+MCP access is the easy part. The production boundary is permission scope plus repeat-safe execution: what happens when an agent retries a write after a timeout, or when the schema changes mid-run?
+IAM and dry runs cover authorization and preflight, he added, "but they do not tell the agent whether a timed-out write committed. A first-class result should carry an idempotency key plus commit status and rollbackability." Data Agent Kit’s tool results do not carry that today.
+Microsoft put that decision somewhere else.
+---
+[TITLE] Google Optimizes Agent Development Kit's 200K-line Python Codebase Overnight with Gemini 4 Argon
+[TITLE_KO] 구글, 제미나이 4 아르곤으로 에이전트 개발 키트의 20만 줄 파이썬 코드베이스 하룻밤 새 최적화
+[LINK] https://www.infoq.com/news/2026/10/google-argon-optimizes-adk/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-25 01:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트
+[SCORE] 7
+[REASON] 구글 제미나이 4 아르곤을 통한 에이전트 개발 도구 파이썬 코드 최적화
+[BODY]
+Google explained how an 11-hour unattended run of Gemini 4 Argon produced two accepted optimizations for Google Agent Development Kit's codebase, reducing in-memory session-preparation overhead by about 40% in long sessions and cold package import time by 21%.
+One of the goals of Google engineers' was to learn "about how the model handles an existing codebase", a much harder task than creating "greenfield apps built from an empty folder", they say. To test this, they focused on optimizing the performance of their own Agent Development Kit (ADK), a codebase spanning over 200k lines of code across approximately 800 files and including nearly 17,000 unit tests.
+Performance work is a hard test for a model because you can't just open one file and spot the slowdown. You have to look orthogonally to where the symptom appears and hold a map of how the entire codebase fits together over a long run.
+After an initial, short run helped them identify what the prompt needed to include to ensure the agent followed the team's conventions for unit testing and benchmarking, Google engineers specified repository-specific guidelines through .agents/skills files, "like an onboarding guide for a new engineer". The agent was instructed to load only the required skill for the task, to avoid flooding the context window. Finally they came up with the following prompt, where they used Antigravity's /goal mode to ensure the goal was preserved across context compaction:
+/goal Make ADK add no noticeable overhead to any agent: at startup, in long sessions, in multi-agent and workflow setups. Keep what the model receives and the public API unchanged, and back each change with a test that would catch a regression. Open one pull request against main that the ADK maintainers would approve, with before and after numbers in its description. Don't merge it.
+On task completion, Google explains, Argon's logs showed that the agent had read the repository guidelines, established performance baselines, proposed optimizations, reviewed its own changes, and ran all 16,892 open-source unit tests before finishing.
+More importantly, Argon did the cross-module legwork a profiler can't do for you. A profiler will tell you that copying sessions and importing packages take time. What it won't do is trace every caller, mock target, and shared reference across 40 files so that speeding up those paths doesn't break existing apps.
+The two optimizations finally accepted into the codebase improved how the ADK handled session history by filtering events before copying them and introduced lazy loading to prevent heavy packages from being imported until needed.
+These changes made in-memory session preparation and package import faster by 40% and 21%, respectively. These tasks are not particularly expensive compared with the overall duration of an agent run, Google notes that the ADK supports multi-tool interactions spanning dozens or even hundreds of iterations, allowing these small performance gains to compound:
+On a single LLM call that takes seconds, a human won't feel 28 ms or 78 ms. Across 158 internal turns of tool calling interactions, however, those copies compound: removing them cuts the full 158-turn run from 65.6 seconds to 56.1 seconds (nearly 10 seconds of pure framework overhead).
+While Google's experience with Gemini 4 Argon optimizing the ADK codebase demonstrates AI agents' ability to modify existing codebases successfully, their effectiveness remains currently limited by the time and effort required for post-coding tasks, including PR review, debugging, and testing. Google's findings confirm this trend, with Argon producing 4 modifications that were rejected upon developer review because of concerns about reliability, maintainability, compatibility, or measurable performance benefits.
+---
+[TITLE] 구글, 터미널서 AI 에이전트 다루는 '제미나이 API CLI' 오픈소스 공개
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216607
+[PUBLISHED] 2026-10-24 16:18 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] 터미널에서 제미나이 에이전트 기능을 활용하는 공식 CLI 오픈소스 공개
+[BODY]
+구글이 터미널에서 제미나이 API의 주요 기능을 사용할 수 있는 명령줄 도구(CLI) '제미나이 API CLI(Gemini API CLI)'를 공개했다. AI 에이전트가 간단한 명령어만으로 이미지와 영상, 음악을 생성하고 문서 분석과 음성 전사까지 수행할 수 있도록 지원한다.
+구글은 23일(현지시간) 제미나이 API CLI의 실험적 프리뷰 버전을 공개했다고 밝혔다. 이 도구는 별도의 의존성 설치 없이 실행할 수 있는 바이너리 형태로 제공되며, 맥OS와 리눅스, 윈도우에서 사용할 수 있다. 소스 코드로 직접 설치하는 방식도 지원한다.
+이번 도구는 AI 에이전트의 API 활용 과정을 간소화하는 데 초점을 맞췄다. 기존에는 에이전트가 모델 식별자를 직접 찾아야 했고, 일회성 SDK 스크립트를 작성하거나 복잡한 ‘curl’ 명령어를 반복해서 사용해야 했다. 생성된 미디어 데이터를 불필요하게 긴 문자열 형태로 처리하는 문제도 있었다.
+구글은 실제 서비스 환경과 터미널에서 작동하는 AI 에이전트의 요구사항이 다르다고 설명했다. 운영 서비스에는 자료형이 명확하게 정의된 클라이언트 라이브러리가 적합하지만, 터미널에서 작업하는 개발자와 자율적으로 명령을 실행하는 에이전트에는 상태를 유지하지 않으면서도 명령어와 입력 형식을 쉽게 파악할 수 있는 CLI가 필요하다는 것이다. 이에 따라 입력과 출력 형식을 예측할 수 있는 인터페이스를 제공해 모델 호출과 결과 처리 과정을 단순화했다.
+구글의 AI 개발 도구 생태계는 크게 세 계층으로 구성된다. 첫 번째는 추론과 멀티모달 분석, 미디어 생성, 에이전트 실행을 담당하는 제미나이 API다. 두 번째는 파이썬과 타입스크립트, Go, 자바를 지원하는 구글 제너레이티브 AI SDK로, 실제 서비스와 백엔드 개발에 활용된다. 세 번째인 제미나이 API CLI는 개발자와 셸 기반 AI 에이전트가 터미널에서 API에 직접 접근하도록 지원한다.
+제미나이 API CLI는 이러한 과정을 명령어 중심으로 통합했다. 개발자와 AI 에이전트는 터미널에서 모델을 탐색하고 프롬프트를 테스트하는 것은 물론, 이미지·영상·음악 생성과 멀티모달 분석, 음성 전사 등을 실행할 수 있다.
+미디어 생성 기능은 구글의 다양한 AI 모델과 연동된다. 이미지 생성에는 '나노 바나나 2.1', 영상 생성에는 '제미나이 옴니 1.1 플래시', 음악 생성에는 '리리아 3.5' 등을 활용할 수 있다. 음성 합성에는 '제미나이 3.8 플래시 TTS'가 포함된다.
+음성 합성 기능을 이용하면 여러 화자가 대화하는 음성을 만들 수 있으며, 리아를 통해 배경음악용 연주곡도 생성할 수 있다. 이미지와 영상 생성 결과는 파일로 저장되고, 명령어 출력에는 해당 파일의 경로가 표시된다. 이에 따라 후속 작업에서 생성된 결과물을 별도의 변환 과정 없이 활용할 수 있다.
+문서와 미디어 분석 기능도 제공한다. 사용자는 PDF와 이미지, 오디오 파일을 입력해 내용을 요약하거나 음성을 텍스트로 변환할 수 있다. 오디오 전사 결과는 타임스탬프가 포함된 SRT 자막 파일로도 생성할 수 있다. 유튜브 영상 분석도 지원한다.
+Introducing Gemini API CLI (gemini-api), now available in preview!
+Our CLI gives your agent power to generate images, videos, text-to-speech, or music, analyze media, transcribe audio, or manage agents.
+No more guessing model strings, throwaway scripts or endless curl.
+— Dmitry Lyalin (@LyalinDotCom) October 22, 2026
+제미나이 API CLI는 구글의 자체 개발 환경에만 국한되지 않는다. 셸 명령어를 실행할 수 있는 AI 에이전트라면 활용할 수 있으며, 구글은 클로드 코드, 코덱스, 오픈클로, 헤르메스, 커서 등을 지원 사례로 제시했다.
+구글의 AI 개발 환경인 '안티그래비티(Antigravity)'에서도 현재 이 도구를 사용할 수 있다. 사용자가 에이전트에 이미지나 영상, 오디오 생성 또는 문서 분석을 요청하면, 에이전트가 CLI를 호출해 작업을 수행하고 결과 파일이나 작업 식별자를 후속 단계에 전달하는 방식이다. 안티그래비티와의 네이티브 통합은 추후 지원할 예정이다.
+여러 단계에 걸친 조사나 코딩 작업은 백그라운드에서 실행되는 '매니지드 에이전트(Managed Agents)'에 맡길 수 있다. 딥 리서치(Deep Research)와 같은 에이전트에 작업을 위임한 뒤 상호작용 식별자를 이용해 진행 상황을 확인하고 구조화된 결과를 받을 수 있다.
+안정적인 자동화 작업을 위한 기능도 갖췄다. 모든 명령어와 옵션을 오프라인에서 확인할 수 있고, ‘--schema’ 옵션으로 요청 형식을 살펴볼 수 있다. ‘--dry-run’을 사용하면 네트워크에 연결하지 않고 요청을 검증할 수 있으며, JSON이나 TOON 형식으로 결과를 출력하거나 ‘--jq’ 옵션으로 필요한 데이터만 추출할 수도 있다.
+설치 후에는 제미나이 API 키를 환경변수나 운영체제 키체인에 저장하거나 설정 파일을 통해 등록하면 된다. 구글은 대화형 설정 기능도 제공한다.
+제미나이 API CLI는 아파치 2.0 오픈소스 라이선스를 채택해 개발자들이 직접 기여하고 확장할 수 있는 개방형 생태계를 지향한다. 이를 통해 AI 에이전트가 셸 환경에서 도구를 자율적으로 다루기 위한 표준 인터페이스를 제공함으로써, 단순한 개발 보조 도구를 넘어 차세대 AI 에이전트 생태계의 핵심 인프라로 자리 잡을 전망이다.
+현재 0.4.x 버전의 실험적 프리뷰 단계로 깃허브를 통해 제공된다. 구글은 개발자 피드백을 바탕으로 도구를 발전시키겠다는 방침이다.
+박찬 기자 cpark@aitimes.com
+---
+[TITLE] BlackX UEFI bootkit exploits Baton Drop flaw to bypass Secure Boot
+[TITLE_KO] BlackX UEFI 부트킷, 바통 드롭 취약점 악용해 시큐어 부트 우회
+[LINK] https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/
+[PUBLISHED] 2026-10-24 23:17 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 시큐어 부트를 우회해 보안 솔루션을 무력화하는 신종 UEFI 부트킷
+[BODY]
+A new UEFI bootkit named BlackX, deployed in an espionage campaign in early 2026, exploited the old Baton Drop vulnerability to bypass Secure Boot and load a malicious driver designed to interfere with security solutions from Kaspersky and Avast.
+The operation has been attributed with medium confidence to APT41, a Chinese state-sponsored threat group also known as Brass Typhoon, Wicked Panda, and Barium.
+It was discovered in early 2026 and targeted diplomatic agencies in Central Asia, particularly in Tajikistan, Uzbekistan, and Turkmenistan.
+Kaspersky researchers analyzed the BlackX bootkit and found similarities with BlackLotus, which has been circulating on hacker forums since October 2022 and leveraged the Baton Drop vulnerability (CVE-2022-21894) to bypass Secure Boot protection.
+ESET confirmed in March 2023 that BlackLotus exploited Baton Drop, and at the time it could compromise even fully patched Windows 11 systems.
+According to Kaspersky researchers, BlackX's implementation of the exploit is "remarkably similar" to the one used by BlackLotus, allowing the attacker to enroll custom Machine Owner Keys (MOKs) and load arbitrary EFI files to bypass Secure Boot protections.
+However, BlackX differs from BlackLotus and deploys a different kernel driver and follow-on payloads. Kaspersky suggests that BlackX was either derived from reverse-engineering BlackLotus or from its source code.
+Although the source code for BlackLotus was leaked in July 2023, the release was incomplete. Kaspersky researchers found that some BlackLotus samples they analyzed contained code missing from the public repository but present in the BlackX bootkit.
+Since the BlackX operator could not have obtained this code from the leaked repo, the researchers believe the attacker either reverse-engineered BlackLotus or purchased its source code.
+BlackX capabilities
+BlackX injects a malicious Windows kernel driver signed with a now-revoked certificate issued to an organization named Wenjiang District Mingyu Network Technology Service Studio.
+The driver disables security-related processes and registry callbacks, and tampers with Event Tracing for Windows (ETW) providers to obstruct monitoring.
+The researchers note that some tampering procedures are configured to run only if Kaspersky or Avast products are detected on the target host, adding that the mechanism is useless against the company's solutions.
+The driver also protects the bootkit’s files by intercepting user requests to open them and launching the Windows Calculator instead.
+Its purpose is also to deploy the following espionage payloads on infected machines:
+- A RAT that uses Google Drive, OneDrive, or Yandex.Disk for command-and-control (C2) to execute .NET payloads and upload and download files.
+- OxiDLLRunner, an OLLVM-obfuscated DLL sideloaded by googleupdate.exe. It decrypts v8_context_snapshot.bin to launch shellcode and a Rust payload, which retrieves DLL plugins from archivetj[.]com and executes their ‘create_plugin’ functions in separate threads.
+Insufficient fix
+Kaspersky says that all BlackX victims used a fully patched Windows release. However, the bootkit was still successful because admins did not manually activate the additional Secure Boot revocations.
+“The patch for the Baton Drop vulnerability is designed to revoke the “Windows Production PCA 2011” certificate used to sign vulnerable UEFI components,” Kaspersky explains.
+“However, this revocation does not happen automatically upon patch installation - the user has to trigger it manually.”
+The researchers say this is a gap in the update process, since it’s extremely uncommon for administrators to take any manual action after applying a security update.
+They believe that the attacker used this mitigation gap to their advantage and "decided to invest time in understanding how BlackLotus works and creating a copycat of this bootkit."
+Instructions to fully patch Baton Drop (CVE-2022-21894) are available here.
+---
+[TITLE] CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud
+[TITLE_KO] CISA, 콜라보라 온라인과 아리스타 벨로클라우드의 실제 악용 중인 치명적 취약점 경고
+[LINK] https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html
+[PUBLISHED] 2026-10-24 15:25 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 7
+[REASON] CISA, 실제 악용 중인 협업 및 네트워크 솔루션 취약점 경고
+[BODY]
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two vulnerabilities impacting Collabora Online Built-in CODE Server and Arista VeloCloud Orchestrator (VCO) to its Known Exploited Vulnerabilities (KEV), citing reports of active exploitation in the wild.
+The critical-severity vulnerabilities are listed below -
+- CVE-2026-110447 (CVSS score: 9.2) - An operating system command injection vulnerability in Collabora Online – Built-in CODE Server (aka richdocumentscode) when used within the NextCloud platform that could allow remote code execution via "proxy.php" when the CODE local document server isn't running. (Fixed in September 2026 in version 26.4.303)
+- CVE-2026-114625 (CVSS score: 9.9) - An SQL injection vulnerability in on-premise versions of Arista VeloCloud Orchestrator that could allow a remote attacker to access privileged internal functionality. (Fixed in October 2026 in versions 5.2.3.18, 6.1.3.10, and 6.4.2.12)
+As reported by The Hacker News, threat actors have been observed exploiting CVE-2026-110447 to backdoor Nextcloud servers with a web shell so as to conduct reconnaissance and search for credential stores, password manager artifacts, and cryptocurrency wallets.
+As for CVE-2026-114625, successful exploitation requires an attacker to have network access to the VCO web interface and a valid authenticated session on the VCO portal. The minimum user role required is Enterprise Read Only.
+Although Arista has acknowledged that the vulnerability is "known to be actively exploited," it has not attributed the activity to a particular threat actor or provided technical details on how the vulnerability is being exploited and what actions the attackers took after privilege escalation. The company also has not disclosed the number of affected organizations.
+However, it has shared two IP addresses geolocated to Japan as responsible for driving the activity -
+CVE-2026-114625 is the third vulnerability in the same product to have been weaponized in the wild since July 2026, following CVE-2026-16812 (CVSS score: 10.0) and CVE-2026-93952 (CVSS score: 10.0).
+In light of active exploitation, Federal Civilian Executive Branch (FCEB) agencies are recommended to apply the fixes by October 26, 2026, to secure their networks.
+---
+[TITLE] GPU-unlock - RTX 30 시리즈의 AI 연산 성능 제한을 해제하는 Linux 모듈
+[LINK] https://news.hada.io/topic?id=35938
+[PUBLISHED] 2026-10-25 06:38 KST
+[SOURCE] GeekNews
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] RTX 30 GPU의 AI 연산 속도 하드웨어 제한을 푸는 리눅스 모듈
+[BODY]
+- RTX 30 시리즈에 걸린 FP16/BF16 연산의 명령 발행 속도 제한을 해제해, 전문가용 제품 수준의 처리 속도를 활용하는 Linux 커널 모듈
+- NVIDIA 드라이버가 GPU를 초기화하기 전에 적용하므로 드라이버 자체를 수정하거나 업데이트 때마다 수동 패치할 필요가 없음
+- RTX 3090 Ti의 450W, FP32 누산 행렬곱 테스트에서 BF16 처리량이 87.50에서 157.41 TFLOPS로 약 80% 증가
+- 사용자 보고에서 LLM의 입력 프롬프트 처리인 프리필이 14~36% 빨라졌으며, 확산 모델과 FlashAttention 등 행렬 연산 비중이 큰 작업에도 효과
+- 메모리 대역폭이 병목인 LLM 토큰 생성과 INT8 연산은 거의 그대로이며, 실제 성능 향상은 카드와 전력 제한, 작업 조건에 따라 달라짐
+드라이버 수정 없이 명령 발행 속도 해제
+- GPU unlock 1.0.0은 CMP unlocker의 V67/PLM 기법과 UEFI 방식의 드라이버 로딩 전 실행 시점을 결합한 Linux 커널 모듈임
+  - UEFI 애플리케이션이나 패치된 NVIDIA 드라이버가 아님
+  - 초기 커널 모듈로 실행하므로 NVIDIA 드라이버 버전이 바뀔 때마다 수동으로 패치할 필요가 없음
+- GA102, GA103, GA104, GA106에서 FP32로 누산하는 FP/BF16 FMA 연산의 명령 발행 속도를 두 배로 높임
+- 제한 해제 후 속도 선택자를 기록하고, 수정하지 않은 NVIDIA 드라이버가 카드에 연결되기 전에 FLR을 수행함
+  - SS0에는 BF16 전체 속도를 선택하는 0x88888888 을 기록함
+  - 4비트 SS1에는 IMLA4 값 0x8 을 기록함
+- SS0에는 BF16 전체 속도를 선택하는 
+벤치마크와 실제 작업 성능
+- RTX 3090 Ti의 dense 8192³ GEMM 테스트는 450W, FP32 누산, 5회 측정 중앙값 기준으로 다음 결과를 기록함
+  - FP16: 87.46 → 118.39 TFLOPS
+  - BF16: 87.50 → 157.41 TFLOPS
+  - TF32: 42.58 → 82.61 TFLOPS
+- 사용자 보고의 dense GEMM 향상률은 직접 비교할 수 없음. 각 보고가 자체 벤치마크를 사용하며 전력 제한의 영향도 큼
+  - 가장 낮은 향상률인 +25%는 전력을 225W로 제한한 카드에서 나옴
+- 행렬 연산 비중이 큰 작업에서 속도가 향상됨
+- 출력을 비교한 사용자 보고에서는 제한 해제 전후 결과가 비트 단위로 동일했음
+카드별 검증 결과와 예외
+- 모듈은 kernel/gpu_unlock/main.c 에 나열된 모든 GeForce ID를 받아들이지만, 실제 사용자 검증 여부는 카드별로 다름
+- GA102 카드에서는 다음 결과가 보고됨
+- GA104, GA106, GA103의 검증 상태는 다음과 같음
+- 사용자 보고에는 한 시스템의 GPU 최대 4개, 디스플레이를 구동하는 카드, vfio-pci 로 VM에 패스스루한 카드도 포함됨 (#17)
+- 프로젝트는 성공 여부와 관계없이 호환성 보고를 받고 있음
+초기 부팅 실행과 명시적 활성화
+- 패키지는 모듈과 펌웨어를 initramfs에 넣어 nvidia 가 카드에 연결되기 전에 실행함
+  - mkinitcpio, initramfs-tools, dracut 통합을 제공함
+  - mkinitcpio에서 별도 설정 파일로 이미지를 만드는 경우 기본 추가 설정이 무시되므로 해당 설정에 직접 모듈 순서를 반영해야 함
+- softdep nvidia pre: 규칙은 사용하지 않음. kmod가 처음 읽은softdep nvidia 한 줄만 적용하므로nvidia-utils ,gddr6_hwmon 등 다른 패키지의 규칙과 서로 덮어쓸 수 있기 때문임
+- 커널 명령줄에서 gpu_unlock.targets= 로 활성화하지 않으면 아무 작업도 하지 않음
+  - all 로 아직 드라이버에 연결되지 않은 대상 GPU 전체를 선택하거나, 전체 PCI 주소로 개별 카드를 지정할 수 있음
+  - PCI 주소는 GPU 번호나 디스플레이 역할과 무관하며, 잘못된 대상이나 all 과 주소를 혼합한 항목은 기록 후 무시함
+- 여러 카드의 제한은 동시에, 카드별로 독립적으로 해제하며 카드 수와 관계없이 전체 작업에 약 1초가 걸림
+  - 이미 드라이버에 연결됐거나 전원이 꺼진 카드는 건너뜀
+  - 보드 펌웨어가 남긴 버스 마스터링은 먼저 해제하지만, 다른 드라이버가 이미 초기화한 카드는 처리하지 않음
+  - 이후 nvidia 가 평소처럼 모든 카드에 연결됨
+- 디스플레이 카드도 사용 가능함. 펌웨어 작업 중에는 부팅 콘솔과 Plymouth의 프레임버퍼가 유지되며, 카드 리셋 직전에 제거됨
+  - 화면은 리셋 시점부터 nvidia-drm 이 제어권을 넘겨받을 때까지 꺼짐
+  - 부팅 후 모듈을 수동 로드해도 이미 nvidia 에 연결된 카드에는 효과가 없음
+- 화면은 리셋 시점부터 
+절전 복귀와 중단 조건
+- RAM 절전은 GPU 전원을 끄면서 속도 선택자를 초기화하므로, 복귀 시 부팅 때 처리한 카드를 nvidia 보다 먼저 다시 해제함
+  - 현재 드라이버의 기본값인 NVreg_UseKernelSuspendNotifiers=1 에 해당하는 NVIDIA 복귀 알림보다 먼저 실행하며, 복귀 시간이 약 1초 늘어남
+  - nvidia-resume.service 는 이보다 나중에 실행됨
+- 현재 드라이버의 기본값인 
+- suspend-to-idle처럼 전원이 유지된 카드는 제한 해제 상태도 유지되므로 읽기만 수행함
+  - nvidia 가 이미 복귀시켰거나 다른 드라이버에 연결된 카드는 그대로 두고 이유를 기록함
+  - 복귀 시 재해제 기능은 끌 수 있으며, 최대 절전 모드는 지원 범위에 포함되지 않음
+- 커널 명령줄에서 gpu_unlock.targets= 를 제거하면 해제를 중단할 수 있음. 패키지를 제거하면 모듈과 initramfs 추가 설정도 제거됨
+- 카드의 펌웨어가 멈추지 않는 경우에는 이를 기록하고, 펌웨어가 계속 사용할 수 있는 DMA 버퍼를 다음 전원 종료까지 유지함
+  - 다시 시도하기 전에 전원을 꺼야 함
+빌드와 라이선스
+- 로컬 빌드는 고정된 NVIDIA/CachyOS 입력 파일을 HTTPS로 내려받고 SHA-256을 검증하며, 생성된 펌웨어는 빌드 디렉터리와 바이너리 패키지에만 넣음
+  - 패키지는 커밋된 HEAD 를 기준으로 빌드함
+  - 소스 배포 아카이브, Debian 소스 패키지, .nosrc.rpm 에는 NVIDIA 아카이브나 생성된 펌웨어가 포함되지 않음
+- 패키지는 커밋된 
+- 커널 모듈과 로컬 패키징은 GPL-2.0-only이며, 생성 페이로드는 고정된 CMP 참조 자료에서 파생됨
+  - NVIDIA 펌웨어에는 별도 이용 조건이 적용되며, 관련 고지는 firmware/NOTICE.md 와licenses/ 에 있음
+- NVIDIA 펌웨어에는 별도 이용 조건이 적용되며, 관련 고지는
+---
+[TITLE] Apple Security Research Device - 보안 기능 우회 없이 iOS를 연구하는 전용 iPhone
+[LINK] https://news.hada.io/topic?id=35933
+[PUBLISHED] 2026-10-25 03:35 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 애플의 공식 iOS 보안 연구 전용 기기 프로그램 세부 내용
+[BODY]
+- Apple Security Research Device(SRD) 는 보안 기능을 우회하지 않고 iOS 보안 연구를 수행할 수 있도록 특별히 구성된 iPhone으로, 신규 및 숙련 연구자의 연구를 지원함
+- 셸 접근과 임의 도구 실행을 지원하며, 연구자가 직접 권한(entitlements)을 선택하거나 커널을 수정할 수 있음
+- Apple Pay와 서드파티 앱을 제외한 모든 iOS 및 iPhone 구성 요소가 연구 대상이며, SRD로 발견한 취약점은 Apple Security Bounty 심사 대상에 자동으로 포함됨
+- 기기는 갱신 가능한 12개월 대여 방식으로 제공되며, 통제된 환경에서 보안 연구에만 사용해야 하고 Apple이 승인한 사람만 접근할 수 있음
+- 연간 제공 수량은 제한되며, 보안 취약점 발견 실적 등 자격 요건을 심사함. 이번 신청 마감은 2026년 10월 30일임
+연구 기능과 취약점 보고
+- SRD는 보안 기능 우회 없이 iOS 내부 보안 계층에 접근해 연구할 수 있도록 특별히 구성된 iPhone임
+  - 셸에 접근하고 원하는 도구를 실행할 수 있으며, 권한(entitlements) 선택과 커널 수정도 가능함
+  - 소프트웨어 프리뷰, 보안 베타 프로젝트, SRD 연구 커뮤니티, 연구와 취약점 발견을 돕는 전용 도구에 접근할 수 있음
+- 연구 범위는 Apple Pay와 서드파티 앱을 제외한 모든 iOS 및 iPhone 구성 요소임
+  - iOS 내부 보안 계층에 대한 접근을 잃을 위험 없이 발견 사항을 Apple에 보고할 수 있음
+  - SRD로 발견한 취약점은 Apple Security Bounty 심사 대상에 자동으로 포함되며, 프리뷰 및 베타 소프트웨어 프로그램의 추가 보상도 적용 대상임
+- SRD를 취약점의 발견, 시험, 검증 또는 확인에 사용했다면 신속히 Apple에 보고해야 함
+  - 서드파티 코드의 버그라면 해당 서드파티에도 보고해야 함
+  - SRD를 전혀 사용하지 않은 연구 결과도 제출할 수 있으며, Apple은 제출된 모든 연구를 검토하고 자격을 충족하는 보고서를 보상 심사 대상으로 삼음
+사용 조건과 신청 자격
+- 승인받은 참가자는 SRD를 갱신 가능한 12개월 대여로 제공받으며, 소유권은 Apple에 있음
+  - 통제된 환경에서 보안 연구 목적으로만 사용해야 하며, 개인 용도나 일상적인 휴대용으로 사용할 수 없음
+  - 기기는 항상 프로그램 참가자의 시설 내에 있어야 하고, 접근과 사용은 Apple이 승인한 사람으로 제한됨
+- 참여 여부는 신청서 심사로 결정되며, 다음 자격 요건을 충족해야 함
+  - Apple 플랫폼 또는 다른 현대적 운영체제와 플랫폼에서 보안 문제를 발견한 검증된 실적이 있어야 함
+  - 프로그램 참여가 가능한 국가 또는 지역에 거주해야 함
+  - 거주 관할권의 법적 성년이어야 하며, 많은 국가에서는 18세가 기준임
+  - 현재 또는 최근 12개월 동안 Apple에 고용된 이력이 없어야 함
+- 기기는 매년 제한된 수량만 제공되며, Apple Account로 로그인해 신청할 수 있음
+  - 기업, 대학 등 조직 명의로 신청하려면 조직을 대표할 권한이 있어야 하며, SRD 접근이 필요한 모든 사람의 이름을 제출해야 함
+  - Apple 승인 후 각 사용자는 자신의 책임을 확인하고 동의해야 함
+  - 이번 신청 기간은 2026년 10월 30일에 종료됨
+---
+[TITLE] Fancy harnesses make coding agents more expensive but not better, study finds
+[TITLE_KO] 화려한 하네스가 코딩 에이전트 비용만 키우고 성능은 개선하지 못한다는 연구 결과
+[LINK] https://the-decoder.com/fancy-harnesses-make-coding-agents-more-expensive-but-not-better-study-finds/
+[PUBLISHED] 2026-10-24 18:21 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 코딩 에이전트 하네스 교체가 성능 대신 비용만 증가시킨다는 연구
+---
+[TITLE] Researchers Push Over 2 Million Updates to Remotely Disable Popcorn Time Updater That Could Fuel a Botnet
+[TITLE_KO] 연구진, 봇넷 악용 우려된 팝콘 타임 업데이터 원격 비활성화 위해 200만 건 이상 업데이트 배포
+[LINK] https://thehackernews.com/2026/10/researchers-push-over-2-million-updates.html
+[PUBLISHED] 2026-10-24 18:04 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 보안업체가 봇넷 방지를 위해 방치된 앱 사용자 기기 200만 대 원격 수정
+---
+[TITLE] 중국 국영 통신망서 수출 금지 엔비디아 칩 또 포착…첨단 'B300' 32개 확인
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216617
+[PUBLISHED] 2026-10-24 16:55 KST
+[SOURCE] AI타임스
+[TOPIC] 보안, 신기술
+[SCORE] 6
+[REASON] 중국 통신망에서 수출 금지된 엔비디아 B300 GPU 포착
+---
+[TITLE] 선거 후보 선택 강요하자...그록은 공화당, 오픈AI 모델은 민주당 선택
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216623
+[PUBLISHED] 2026-10-25 11:17 KST
+[SOURCE] AI타임스
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 미국 중간선거 후보 추천 시 드러난 주요 AI 모델의 정치적 편향
+---
+[TITLE] 젠슨 황 시연에 미니로봇 주문 급증…“올해 가장 많이 팔릴 수도”
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216626
+[PUBLISHED] 2026-10-25 10:50 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 엔비디아 CEO 시연 후 급증한 소형 보행 로봇 마이크로덕 주문
+---
+[TITLE] 인도 정부 사이트들이 폐기된 eMudhra 인증서를 계속 제공 중
+[LINK] https://news.hada.io/topic?id=35944
+[PUBLISHED] 2026-10-25 09:09 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 인도 정부 수백 개 사이트에서 폐기된 인증서 계속 제공 문제 발생
+---
+[TITLE] 통신망으로 드론 위협 줄인다...기지국으로 감시
+[LINK] https://zdnet.co.kr/view/?no=20261025075127
+[PUBLISHED] 2026-10-25 08:00 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 이동통신 기지국의 통신 센싱 통합 기술을 활용한 드론 탐지망 구축
+---
+[TITLE] EU, 370억원 투입 6G 연구사업 5개 선정
+[LINK] https://zdnet.co.kr/view/?no=20261025075905
+[PUBLISHED] 2026-10-25 07:59 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 보안, 신기술
+[SCORE] 6
+[REASON] 유럽연합의 AI 기반 6G 연구개발 사업 5개 선정
+---
+[TITLE] 해커, 독일 극우 정당 AfD의 데이터 281GB 유출
+[LINK] https://news.hada.io/topic?id=35904
+[PUBLISHED] 2026-10-24 13:32 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 독일 극우 정당 메일함 해킹으로 281GB 규모의 내부 데이터 유출
+---
+[TITLE] 英 정부, 6억 파운드 이상 AI 투자 승부수…바이오안보·사이버방어·피지컬 AI 집중 육성
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42419
+[PUBLISHED] 2026-10-25 11:33 KST
+[SOURCE] 인공지능신문
+[TOPIC] 보안, 신기술
+[SCORE] 5
+[REASON] 영국 정부의 AI 바이오안보 및 사이버방어 대규모 투자 계획
+---
+[TITLE] AI가 생성한 언어는 왜 이해하기 어려울까?
+[LINK] https://news.hada.io/topic?id=35947
+[PUBLISHED] 2026-10-25 09:37 KST
+[SOURCE] GeekNews
+[TOPIC] 모델
+[SCORE] 5
+[REASON] AI 생성 텍스트의 인간 인지 및 언어적 처리 부담 분석 연구
+---
+[TITLE] Sphinx - AI가 작성한 코드를 이해했는지 푸시 전에 퀴즈로 확인하는 도구
+[LINK] https://news.hada.io/topic?id=35945
+[PUBLISHED] 2026-10-25 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 개발
+[SCORE] 5
+[REASON] AI가 작성한 코드 푸시 전 이해도를 퀴즈로 검증하는 Git 도구
+---
+[TITLE] 앤트로픽, 50명 이상 사망 위험시 AI 배포 중단 법안 제시
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172726
+[PUBLISHED] 2026-10-25 10:38 KST
+[SOURCE] IT조선
+[TOPIC] 모델, 규제
+[SCORE] 5
+[REASON] 앤트로픽의 대규모 피해 위험 시 배포 중단 AI 안전 법안 제안
+---
+[TITLE] '중국판 엔비디아' 캠브리콘, 매출 급등…"국산화 노력 수혜"
+[LINK] https://zdnet.co.kr/view/?no=20261024160155
+[PUBLISHED] 2026-10-24 22:00 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술
+[SCORE] 5
+[REASON] 중국 정부의 국산화 정책으로 인한 AI 칩 스타트업 캠브리콘의 매출 급등
+---
+[TITLE] 피차이 “매출 포기하더라도 첨단 AI 개발에 컴퓨팅 우선 투입”
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216618
+[PUBLISHED] 2026-10-24 20:38 KST
+[SOURCE] AI타임스
+[TOPIC] 모델
+[SCORE] 5
+[REASON] 구글 CEO의 첨단 AI 모델 개발을 위한 연산 자원 최우선 배분 방침
+---
+[TITLE] 오픈AI, “AI 안전성, 기업 혼자서는 확보 못 한다”…폴란드와 공동 검증체계 구축
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42418
+[PUBLISHED] 2026-10-24 20:16 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 보안
+[SCORE] 5
+[REASON] 오픈AI와 폴란드 국립연구기관의 AI 안전 공동연구 협약
+---
+[TITLE] Google Says Gmail and Photos Data Shared With AI Search Could Be Used for Targeted Ads
+[TITLE_KO] 구글, AI 검색과 공유된 지메일 및 포토 데이터의 맞춤형 광고 활용 가능성 명시
+[LINK] https://thehackernews.com/2026/10/google-says-gmail-and-photos-data.html
+[PUBLISHED] 2026-10-24 19:36 KST
+[SOURCE] The Hacker News
+[TOPIC] 규제
+[SCORE] 5
+[REASON] 구글, AI 검색 이용자의 지메일 및 포토 데이터를 맞춤형 광고에 활용 가능 공지
+---
+[TITLE] battledrones v14: Compass Rose, a four player map
+[TITLE_KO] 배틀드론 v14: 4인용 맵 컴퍼스 로즈
+[LINK] https://simonwillison.net/2026/Oct/24/battledrones/
+[PUBLISHED] 2026-10-24 12:59 KST
+[SOURCE] Simon Willison
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 4
+[REASON] Claude 코딩을 활용한 4인용 게임 모드 추가 개발 기록
+---
+[TITLE] 민간엔 보안 강화 주문하면서…공공 보안 왜 이러나
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172721
+[PUBLISHED] 2026-10-25 07:50 KST
+[SOURCE] IT조선
+[TOPIC] 보안, 산업
+[SCORE] 4
+[REASON] 국정감사서 드러난 정부출연연구기관의 기본 보안 관리 허점
+---
+[TITLE] SK “AI 데이터센터 5GW에 464조 필요”…글로벌 빅테크와 투자 협상
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216614
+[PUBLISHED] 2026-10-24 18:37 KST
+[SOURCE] AI타임스
+[TOPIC] 일반
+[SCORE] 4
+[REASON] SK그룹의 국내 초대형 AI 데이터센터 구축을 위한 해외 자금 조달 추진
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172700
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261024143929
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261024184335
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261025105055
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261024132650
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261024220005
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35919
+[STATUS] SKIP (매체 상한)
+---
+[LINK] https://news.hada.io/topic?id=35918
+[STATUS] SKIP (매체 상한)
+---
+[LINK] https://thehackernews.com/2026/10/leaked-litellm-master-key-let-attackers.html
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216615
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216608
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172651
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261024120646
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216612
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://news.hada.io/topic?id=35909
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://latent.space/p/ainews-kimi-31/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=676630
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261024202925
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=676537
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209038
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35950
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216624
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://news.hada.io/topic?id=35943
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261023110909
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35941
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172577
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172597
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172612
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://news.hada.io/topic?id=35927
+[STATUS] SKIP (중복)
+---
+[LINK] https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=35921
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/
+[STATUS] SKIP (중복)
+---
+[LINK] https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.wired.com/story/kernel-panic-the-php-meltdown-shows-how-ai-makes-bugs-more-exploitable/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216616
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=35908
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216600
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://news.hada.io/topic?id=35907
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=676547
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.theguardian.com/uk-news/2026/oct/24/john-healey-pledges-to-use-budget-to-harness-power-of-ai-to-bolster-britains-security
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=35903
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261025082630
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=35930
+[STATUS] SKIP (매체 상한)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35952
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172728
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172724
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261025091723
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216540
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216538
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172243
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172650
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172425
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/25/synthetic-twin-why-socceroo-cristian-volpato-is-the-latest-footballer-to-license-his-ai-clone
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/ai-makes-junior-patent-attorneys-instantly-better-but-may-quietly-stunt-their-professional-growth/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261024155153
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/technology/2026/oct/24/the-datacentre-next-door-on-the-frontline-of-techs-latest-david-v-goliath-battle
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216613
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261025100253
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172671
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://news.hada.io/topic?id=35937
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://news.hada.io/topic?id=35931
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://news.hada.io/topic?id=35929
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://news.hada.io/topic?id=35920
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://news.hada.io/topic?id=35900
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
