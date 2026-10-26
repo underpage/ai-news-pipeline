@@ -1,20 +1,192 @@
-[요약 오류] https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/ - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] AI coding agents hijacked using AGENTS.md file in Downloads folder
+[LINK] https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/
+[PUBLISHED] 2026-10-26 00:49 KST
+[SOURCE] BleepingComputer
+[TOPIC] 에이전트, 개발
+[SCORE] 9
+[REASON] 다운로드 폴더 지침 파일 조작을 통한 코딩 에이전트 탈취 공격 발견
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+다운로드 폴더의 AGENTS.md 파일을 이용해 AI 코딩 에이전트 탈취
+
+**[영문 3줄 요약 (Original)]**
+- Researchers discovered that malicious markdown instruction files like AGENTS.md in a user's Downloads folder can hijack AI coding agents to install rogue packages or steal credentials.
+- The attack was demonstrated against OpenAI Codex and Claude Code, where agents automatically read and executed instructions from the working directory without any software bugs in the models themselves.
+- Because web browsers can silently download files into the Downloads directory where hundreds of users launch AI agent sessions, this attack vector poses a significant practical security risk.
+
+**[국문 3줄 요약 (Translated)]**
+- 연구진은 사용자의 다운로드 폴더에 있는 AGENTS.md와 같은 악성 마크다운 지침 파일이 악성 패키지를 설치하거나 자격 증명을 탈취하도록 AI 코딩 에이전트를 조작할 수 있음을 발견했다.
+- 이 공격은 OpenAI Codex와 Claude Code를 대상으로 입증되었으며, 모델 자체의 소프트웨어 결함 없이도 에이전트가 작업 디렉터리의 지침을 자동으로 읽고 실행하면서 발생했다.
+- 웹 브라우저가 다운로드 디렉터리에 파일을 사용자 모르게 저장할 수 있고 수백 명의 사용자가 해당 폴더에서 AI 에이전트 세션을 실행하고 있어, 이 공격 경로는 실질적인 보안 위험을 초래한다.
+
+#부정
 ---
-[요약 오류] https://www.infoq.com/news/2026/10/google-meta-torchtpu/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] PyTorch Conference 2026: Google and Meta Open-Source TorchTPU for Native PyTorch on TPUs
+[LINK] https://www.infoq.com/news/2026/10/google-meta-torchtpu/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-26 03:00 KST
+[SOURCE] InfoQ
+[TOPIC] 개발, 신기술
+[SCORE] 8
+[REASON] 구글 TPU용 네이티브 파이토치 백엔드 TorchTPU 오픈소스화
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+파이토치 컨퍼런스 2026: 구글과 메타, TPU에서 네이티브 파이토치를 지원하는 TorchTPU 오픈소스화
+
+**[영문 3줄 요약 (Original)]**
+- Google and Meta open-sourced TorchTPU, a native PyTorch backend for Google Cloud TPUs, allowing models to run on TPUs by simply changing the device target to tpu.
+- TorchTPU replaces PyTorch/XLA and integrates directly into PyTorch's dispatcher, natively supporting Hugging Face models, vLLM, SGLang, and TorchTitan while scaling near-linearly across more than 8,000 chips.
+- To help developers optimize models originally skewed toward GPU architectures, Google also introduced the TPU agent suite to automate onboarding and performance tuning.
+
+**[국문 3줄 요약 (Translated)]**
+- 구글과 메타는 장치 대상을 tpu로 변경하는 것만으로 구글 클라우드 TPU에서 모델을 실행할 수 있게 해주는 네이티브 파이토치 백엔드 TorchTPU를 오픈소스화했다.
+- TorchTPU는 PyTorch/XLA를 대체하고 파이토치 디스패처에 직접 통합되어 Hugging Face 모델, vLLM, SGLang, TorchTitan을 기본 지원하며 8,000개 이상의 칩에서 거의 선형적인 확장을 보여준다.
+- GPU 아키텍처에 맞춰진 모델을 최적화할 수 있도록 지원하기 위해, 구글은 온보딩과 성능 튜닝을 자동화하는 TPU 에이전트 스위트도 함께 발표했다.
+
+#긍정
 ---
-[요약 오류] https://www.infoq.com/news/2026/10/google-ml-drift/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] Google ML Drift Accelerates On-Device AI Inference Across Diverse GPUs
+[LINK] https://www.infoq.com/news/2026/10/google-ml-drift/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-26 02:00 KST
+[SOURCE] InfoQ
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 8
+[REASON] 온디바이스 AI 추론을 위한 크로스플랫폼 GPU 엔진 오픈소스화
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+구글 ML Drift, 다양한 GPU 전반에서 온디바이스 AI 추론 가속화
+
+**[영문 3줄 요약 (Original)]**
+- Google released ML Drift, an open-source, cross-platform GPU compute engine under the Apache 2.0 license designed to accelerate on-device AI inference across various hardware architectures.
+- ML Drift powers LiteRT and replaces the legacy TFLite GPU delegate, adding native 5D tensor support, extensible custom operations, and unified shaders via WebGPU, Metal, OpenCL, and OpenGL ES.
+- The engine is already deployed on millions of devices in apps like YouTube Shorts and Google Photos, showing up to a 40% reduction in latency and a 12% lower memory overhead compared to other local frameworks.
+
+**[국문 3줄 요약 (Translated)]**
+- 구글은 다양한 하드웨어 아키텍처 전반에서 온디바이스 AI 추론을 가속화하도록 설계된 아파치 2.0 라이선스 기반의 오픈소스 크로스플랫폼 GPU 연산 엔진 ML Drift를 공개했다.
+- ML Drift는 LiteRT를 구동하며 기존 TFLite GPU 델리게이트를 대체하여, WebGPU, Metal, OpenCL, OpenGL ES를 통해 5차원 텐서 네이티브 지원, 확장 가능한 커스텀 연산, 통합 셰이더를 추가했다.
+- 이 엔진은 이미 유튜브 쇼츠와 구글 포토 등 수백만 대 기기의 앱에 적용되어 지연 시간을 최대 40% 단축하고 다른 로컬 프레임워크 대비 메모리 오버헤드를 12% 낮췄다.
+
+#긍정
 ---
-[요약 오류] https://news.hada.io/topic?id=35965 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] Cerebras, 조 단위 파라미터 AI 모델 배포
+[LINK] https://news.hada.io/topic?id=35965
+[PUBLISHED] 2026-10-25 18:34 KST
+[SOURCE] GeekNews
+[TOPIC] 모델, 신기술
+[SCORE] 8
+[REASON] 웨이퍼 스케일 온칩 메모리를 통한 초거대 모델 초고속 구동
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- Cerebras는 여러 WSE-3T 웨이퍼의 온칩 SRAM에 모델 가중치를 분산 배치하고 파이프라인으로 연결해 수조 개 파라미터 모델을 초당 1,000~2,000개 이상의 토큰 속도로 구동하는 방식을 시연했다.
+- 약 3조 파라미터의 Kimi K3 모델은 4비트 양자화를 적용해 총 59개 웨이퍼에 배치되며, 가중치 이동 없이 웨이퍼 간 활성화 값만 전송하는 방식으로 지연을 최소화한다.
+- 파이프라인 단계별로 서로 다른 요청을 동시에 처리하여 처리량을 높였으며, 추론 시스템의 효율은 단순 동시성보다 전력당 총 토큰 처리량으로 평가해야 한다고 제시했다.
+
+#긍정
 ---
-[요약 오류] https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone/ - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] Anthropic says one AI agent beats many subagents now that models can handle complexity alone
+[LINK] https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone/
+[PUBLISHED] 2026-10-25 18:12 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델
+[SCORE] 8
+[REASON] 하위 에이전트 다수보다 단일 에이전트 통합이 우수하다는 분석
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+앤트로픽, 모델이 복잡성을 자체 처리함에 따라 하나의 AI 에이전트가 다수의 하위 에이전트를 능가한다고 발표
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic reported that a single primary agent with on-demand context often outperforms multi-agent architectures in quality, latency, and operational cost.
+- Advanced models such as Opus 4.5 and Opus 5.5 can handle complex planning internally, eliminating the communication overhead, latency, and prompt contradictions associated with specialized sub-agents.
+- To help teams streamline their systems, Anthropic published an open-source migration kit on GitHub while advising developers to package workflows into lean skill libraries rather than building separate sub-agents.
+
+**[국문 3줄 요약 (Translated)]**
+- 앤트로픽은 필요한 맥락을 그때그때 불러오는 단일 기본 에이전트가 품질, 지연 시간, 운영 비용 측면에서 다중 에이전트 아키텍처보다 뛰어난 성능을 보이는 경우가 많다고 보고했다.
+- Opus 4.5 및 Opus 5.5와 같은 최신 모델은 복잡한 계획을 내부에서 직접 처리할 수 있어, 특화된 하위 에이전트로 인해 발생하는 통신 오버헤드, 지연 시간, 프롬프트 충돌을 없애준다.
+- 시스템 간소화를 지원하기 위해 앤트로픽은 GitHub에 마이그레이션 키트를 공개하는 한편, 별도의 하위 에이전트를 만드는 대신 워크플로를 간결한 스킬 라이브러리로 패키징할 것을 권장했다.
+
+#긍정
 ---
-[요약 오류] https://www.aitimes.com/news/articleView.html?idxno=216625 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] 엔비디아, 로컬 에이전트·로봇 겨냥 4GB 모델 '네모트론 3.5 볼트' 출시
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216625
+[PUBLISHED] 2026-10-25 16:50 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발, 모델, 신기술
+[SCORE] 8
+[REASON] 4GB 메모리 환경 지원 오픈소스 경량 모델 발표
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 엔비디아는 약 4GB 메모리 환경에서 로컬 에이전트와 로보틱스 개발에 활용할 수 있는 오픈소스 경량 언어모델 '네모트론 3.5 볼트 E4B 4GB'를 출시했다.
+- 구글의 젬마 4 E4B를 기반으로 강화학습 기법을 적용해 개발되었으며, 최대 6만 4000토큰의 컨텍스트 길이와 함께 비동기 도구 호출 및 적응형 추론 모드를 지원한다.
+- 동시에 공개된 D플래시 초안 생성기를 통해 추론 처리량을 최대 21% 향상시켰으며, PC, 임베디드, 로봇 제어 등 서버 의존도를 낮춰야 하는 온디바이스 환경에 즉시 배포될 수 있다.
+
+#긍정
 ---
-[요약 오류] https://www.aitimes.kr/news/articleView.html?idxno=42430 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] “AI가 사람 대신 전화하고 업무까지 처리”…머스크, 그록 자율 통화 기능 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42430
+[PUBLISHED] 2026-10-26 12:04 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트
+[SCORE] 7
+[REASON] 전화 통화 및 업무 수행을 대행하는 그록 봇 기능 공개
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 일론 머스크는 AI 챗봇 그록이 사용자를 대신해 사람이나 기업에 전화를 걸고 요청을 전달한 뒤 답변을 요약 보고하는 자율 통화 기능을 공개했다.
+- 이 기능은 사용자의 요청을 받아 업체 예약이나 재고 확인 등 실제 통화 연결부터 자동응답시스템 대응까지의 전체 흐름을 수행할 수 있도록 시험 중이다.
+- AI 에이전트의 역할이 현실 세계의 음성 소통으로 확장되고 있으나, 실제 상용화를 위해서는 통화 녹음 및 개인정보 보호 규제 준수와 예외 상황 대응 능력이 검증되어야 한다.
+
+#중립
 ---
-[요약 오류] http://www.newstheai.com/news/articleView.html?idxno=21793 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] 셀렉트스타, 판단 특화 AI ‘다비’ 공개...모델 운영비 28% 줄여
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21793
+[PUBLISHED] 2026-10-26 11:29 KST
+[SOURCE] 더에이아이
+[TOPIC] 에이전트, 모델
+[SCORE] 7
+[REASON] 모델 라우팅 및 적절성 평가 전용 판단 모델 공개
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 셀렉트스타는 질문 난도에 맞춰 적절한 모델을 선택하고 답변 품질을 평가하는 판단 특화 AI 모델 '다비(DAVI)'를 공개했다.
+- 다비는 제브벤치 평가에서 89.2%의 정확도를 기록해 글로벌 모델 대비 우수한 성능을 보였으며, 클로드 모델군을 활용한 라우팅 실험에서 오퍼스 단독 사용 대비 정답률을 유지하며 운영 비용을 약 28% 절감했다.
+- 회사는 이 모델의 플러그인을 오픈소스로 제공하고 11월 자사의 AI 신뢰성 평가 플랫폼인 '다투모 이밸'에 적용해 기업의 모델 운영 효율화를 지원할 계획이다.
+
+#긍정
 ---
-[요약 오류] https://news.hada.io/topic?id=36011 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] Pinterest, 사용자 활동에서 장기 목표를 추론하는 LLM 구축
+[LINK] https://news.hada.io/topic?id=36011
+[PUBLISHED] 2026-10-26 10:50 KST
+[SOURCE] GeekNews
+[TOPIC] 모델
+[SCORE] 7
+[REASON] 사용자 행동 기록에서 목표를 직접 추론하는 4B LLM 적용
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 핀터레스트는 사용자의 검색과 저장 활동 기록으로부터 장기적인 목표를 직접 추론해 추천과 알림에 반영하는 미세 조정된 40억 파라미터 LLM을 구축했다.
+- 기존의 다단계 임베딩 및 클러스터링 방식에서 발생하던 목표 분리와 막연한 이름 지정 문제를 해결하기 위해, 대형 모델로 생성한 고품질 데이터로 Qwen3 4B를 학습시켰다.
+- L40S GPU 약 100개로 초당 775건을 처리하는 비용 효율적 아키텍처를 구현해 실제 서비스에서 이메일 클릭률 1.1%와 푸시 열람률 1.3%의 상승을 달성했다.
+
+#긍정
 ---
-[요약 오류] https://www.aitimes.kr/news/articleView.html?idxno=42427 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+[TITLE] “모르면 추측 대신 기억을 확인한다”…ETRI·GIST, 스스로 판단하고 행동하는 로봇 AI 플랫폼 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42427
+[PUBLISHED] 2026-10-26 10:40 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 모델, 신기술
+[SCORE] 7
+[REASON] 환경 관측과 기억 검색을 결합한 로봇 AI 에이전트 개발
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- ETRI와 GIST 연구진은 환경 관측과 능동적 기억 검색을 결합해 로봇의 복합작업 성공률을 최대 24%포인트 향상시킨 로봇 AI 에이전트 '씬쿼리플래너'를 개발했다.
+- 공간과 물체 및 상태 정보를 3차원 장면 그래프로 구조화하여 저장하고, 작업 수행 중 필요한 정보만 선별 검색하거나 추가 관측하도록 행동 계획에 반영해 AI 환각을 줄였다.
+- 새로 구축한 앳플랜-벤치마크 평가에서 라마 3.1과 큐웬 2.5 기반 작업 성공률을 크게 개선하며, 모델 크기 확대 없이도 에이전트 구조 개선을 통해 피지컬 AI 역량을 높일 수 있음을 입증했다.
+
+#긍정
 ---
