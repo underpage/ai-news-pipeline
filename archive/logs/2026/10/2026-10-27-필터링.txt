@@ -14,39 +14,6 @@
 ---
 [평가 오류] 전체 후보 - 선정 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 ---
-[TITLE] [AI는 지금] 오픈AI, 'GPT-6.1 테라'로 기업용 AI 승부수…가격 경쟁 본격화
-[LINK] https://zdnet.co.kr/view/?no=20261027085700
-[PUBLISHED] 2026-10-27 10:06 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 에이전트, 개발, 모델
-[SCORE] 9
-[REASON] 오픈AI 주력 모델 새 버전 출시
-[BODY]
-오픈AI가 인공지능(AI) 모델의 가격은 낮추고 업무 처리 능력은 높인 'GPT-6.1 테라'로 기업용 AI 시장 공략에 속도를 낸다. 기업들이 AI에 맡기는 업무가 늘어나는 만큼 모델 성능뿐 아니라 처리 속도와 운영 비용까지 개선해 도입 부담을 낮추려는 전략으로, 반복 업무 자동화 수요를 겨냥해 가격 경쟁력 강화를 앞세워 기업용 AI 에이전트 시장에서 주도권 확보에 나선 모습이다.
-오픈AI는 26일(현지시간) 자사 블로그를 통해 GPT-6.1 테라를 챗GPT 워크와 코덱스, API에 제공한다고 밝혔다. 자체 전문 업무 평가에서 상위 모델인 GPT-6 아스트라와 비슷한 성능을 기록했으며 작업 완료 속도는 아스트라와 GPT-6.1 솔보다 3배 이상 빨랐다고 설명했다.
-GPT-6.1 테라는 표준 응용프로그램 인터페이스(API) 요금을 이전 모델보다 50% 낮춰 기업이 반복 업무를 AI에 맡길 때 드는 비용 부담을 줄였다. 또 제안서와 같은 문서 작성부터 컴퓨터 작업까지 지원하는 것이 특징이다. 오픈AI는 이전 모델보다 명확하고 자연스러운 글을 쓰도록 개선하고 화면 속 정보를 이해해 프로그램을 조작하는 능력도 높였다고 밝혔다.
-청구서에서 금액과 거래 정보를 찾아 회계 프로그램에 입력하거나 건축 도면을 보고 3D 모델을 만들 수 있다. 온라인 양식 입력과 영상 편집에도 활용할 수 있다.
-오픈AI는 청구서 처리처럼 많은 양을 반복해서 수행하는 업무를 주요 활용 분야로 제시했다. 문서를 읽고 필요한 정보를 프로그램에 옮기는 작업을 수천 번 반복하는 기업에서는 작업당 비용을 낮추면 전체 운영비도 줄일 수 있다.
-						
-컴퓨터 작업 속도 높이고 잘못된 답변 줄여
-오픈AI는 전문 업무 수행 능력을 측정하는 '에이전츠 라스트 이그잼'으로 GPT-6.1 테라를 평가했다. 건축 도면을 3D 모델로 바꾸거나 영상을 장면별로 검토해 복원팀이 참고할 시간대별 기록을 작성하는 시험이다.
-문제를 푸는 데 투입하는 연산량을 중간 수준으로 설정했을 때 GPT-6.1 테라는 이전 모델인 GPT-5.6 테라보다 점수가 15%포인트 높았고 작업 비용은 약 3분의 1 수준이었다. 같은 평가에서 작업을 마치는 속도는 GPT-6 아스트라와 GPT-6.1 솔보다 3배 이상 빨랐다고 오픈AI는 밝혔다.
-오픈AI는 모델이 틀린 정보를 답하는 비율도 낮아졌다고 설명했다. 실수를 유도하는 질문으로 구성한 내부 시험에서 낮은 추론 설정 기준 오류율은 GPT-5.6 테라 53.6%에서 GPT-6.1 테라 16.7%로 줄었다. 연산량을 최대로 높인 설정에서는 4.3%를 기록했다.
-코딩 평가에서도 이전 모델보다 높은 점수를 받았다. 명령어를 입력해 프로그램 문제를 해결하는 능력을 측정하는 '터미널 벤치 4.0'에서 GPT-6.1 테라는 최대 추론 설정으로 과제 50.3%를 해결했다. GPT-5.6 테라가 기록한 21.5%보다 두 배 이상 높았다.
-						
-반복 업무는 테라…복잡한 코딩은 솔·아스트라
-테라와 솔, 아스트라는 처리할 수 있는 업무가 겹치지만 속도와 비용, 문제 해결 능력에 차이가 있다. 이용자는 맡길 일과 예산에 따라 모델을 선택할 수 있다.
-테라는 글쓰기와 화면 이해, 프로그램 조작을 빠르고 저렴하게 처리하는 데 초점을 맞췄다. 솔은 비용과 성능을 함께 고려한 개발자용 모델이며 아스트라는 오픈AI가 가장 높은 수준의 문제 해결 능력을 제공하는 모델로 제시하고 있다.
-청구서 정보를 대량으로 입력하는 업무에서는 테라로 비용을 줄이고 복잡한 프로그램에서 오류 원인을 찾아 코드를 고치는 작업에는 솔이나 아스트라를 활용할 수 있다. 다만 모든 분야에서 같은 성능 순서가 유지되지는 않는다. 이번 평가에서도 테라는 일부 컴퓨터 작업에서 아스트라와 비슷한 결과를 냈다.
-테라 API 요금은 100만 토큰당 입력 1달러, 출력 5달러다. 같은 양을 처리할 때 입력 2달러, 출력 10달러를 받는 GPT-6.1 솔보다 50% 저렴하다. 토큰은 AI가 정보를 처리하는 단위다. 이미 처리한 입력을 재사용하는 캐시 입력에는 100만 토큰당 0.05달러를 적용한다.
-관련기사
-- 오픈AI, 국내 첫 '모델 마스터즈' 개최…스타트업 AI 개발 지원2026.10.26
-- 깃허브가 제시한 AI·사람 개발 협업 생태계는?2026.10.25
-- 오픈AI '닷츠' vs 앤트로픽 '듀엣'…내 일 맡길 AI 비서는?2026.10.25
-- "AI 판단 속도 10배↑"…오픈AI, '디시전스 API' 정식 출시2026.10.23
-챗GPT 워크와 코덱스에서는 플러스·프로·엔터프라이즈·에듀 이용자에게 제공한다. API 개발자는 'gpt-6.1-terra'라는 이름으로 모델을 사용할 수 있다.
-오픈AI는 "챗GPT 워크와 코덱스에서 GPT-6.1 테라를 사용하면 같은 사용 한도로 GPT-5.6 테라보다 더 많은 작업을 처리할 수 있다"고 밝혔다.
----
 [TITLE] 통제 벗어난 앤트로픽 AI…외부 시스템 무단 접속
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172842
 [PUBLISHED] 2026-10-27 10:40 KST
@@ -67,27 +34,6 @@ GPT-6.1 테라는 표준 응용프로그램 인터페이스(API) 요금을 이�
 앤트로픽은 IPO 신고서에서 AI 모델이 허가받지 않은 행동을 하거나 감독 체계를 우회할 가능성이 있다고 밝혔다. 또 자율적으로 작업을 수행하는 AI 에이전트가 확산할수록 이러한 위험이 커질 수 있다고 경고했다.
 박혜원 기자
 sunone@chosunbiz.com
----
-[TITLE] AGNTCon + MCPCon 2026: Agentic AI Foundation Adds Four Projects as MCP Turns to Security
-[TITLE_KO] AGNTCon과 MCPCon 2026: 에이전틱 AI 재단 프로젝트 4개 추가, MCP는 보안에 초점
-[LINK] https://www.infoq.com/news/2026/10/agntcon-mcpcon-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
-[PUBLISHED] 2026-10-27 07:00 KST
-[SOURCE] InfoQ
-[TOPIC] 에이전트, 보안
-[SCORE] 8
-[REASON] 에이전트 표준 재단에 새 프로젝트 합류
-[BODY]
-At AGNTCon + MCPCon North America 2026 in San Jose, the Agentic AI Foundation (AAIF) added four projects, taking it from three founding projects to ten in its first year. The October 22-23 event followed PyTorch Conference at the same venue, and much of its program moved from new protocol features to security and identity.
-Mazin Gilbert, executive director of the AAIF, opened with the project news and three new governance committees. Alibaba contributed OpenSandbox, a secure sandbox for running agents, and OpenAI contributed Open Responses, an open specification for interoperable LLM interfaces. Anthropic added Agent Skills, and Hugging Face added OpenEnv, a framework for reinforcement learning environments that train and evaluate agents. Manik Surtani, the foundation's CTO, put the milestone this way in the announcement:
-A year ago, AAIF launched with three projects and a bet that agentic AI needed a neutral home to thrive. Today we host 10.
-In "Who Keeps It Open?", Surtani argued that a license alone does not keep infrastructure open. Surtani contrasted Android, which stayed under one company, with Kubernetes, which Google moved into a neutral foundation. The open problems now sit in identity, attestation, audit, and payments.
-Outside coverage was cooler. The New Stack noted that Open Responses already has support from AWS Bedrock, Databricks, Ollama, Nvidia, and vLLM, but that Anthropic still defines its own Messages API and Google its Interactions API. The Register headlined its story "Vendor-affiliated AI agent tech gets adopted by friendly, funded foundation" and closed with a caution:
-This enthusiastic (or credulous) embrace of AI agents may be a bit too rapid for some industries.
-J.R. Storment, executive director of the 11-week-old Tokenomics Foundation, told the audience to stop counting tokens. Cost per task beats cost per token, and cost per outcome is better still, but the real measure is business value.
-David Soria Parra, co-creator of MCP at Anthropic, argued that capable models now need connectivity more than help staying on task. The July 28 specification added stateless servers, which some developers worried would turn MCP into just another API, and some platforms already see about 70% of their traffic in that mode. Soria Parra announced MCP tasks support in Claude Code, letting tool calls run for minutes, hours, or days instead of seconds. Anthropic also donated the Agent Skills standard to the foundation. The project's roadmap names five priority areas, from agent messaging and skills over MCP to identity and an HTTP-native transport.
-OpenAI's Thomas Sarlandie shared what the ChatGPT plugin directory reveals about MCP servers in production. There is no practical limit on tool count, but oversized schemas get trimmed, starting with argument descriptions. About three in four tool schemas on published servers are under 1 kB, while the largest reach about 260 kB for a single tool and 1.4 MB for a server. OpenAI rejects submitted servers unless every tool carries annotations, which let ChatGPT fast-track read-only calls and confirm destructive ones. Only 56% of plugins use server instructions, which Sarlandie said can safely run to about 1,000 characters.
-Chrome's Sarah Drasner presented WebMCP, a proposed web standard now in origin trial that lets websites expose tools to agents. Agents call declared tools instead of scraping the DOM, and Drasner cited benchmarks showing actions 2.5 to 7.5 times faster. Read-only and untrusted-content hints also help agents resist prompt injection hidden in user comments. WebMCP complements MCP rather than replacing it, Drasner stressed.
-Dawn Song, a UC Berkeley professor, argued that frontier AI will help attackers more than defenders in the near term. Song's CyberGym benchmark spans more than 1,500 vulnerabilities in nearly 200 open source projects, and models now find zero-days.
 ---
 [TITLE] PHP2Shell 취약점, 실제 원격 명령 실행 확인...서버 침해 위험 현실화
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209079
@@ -126,77 +72,6 @@ PHP 개발팀은 이미 PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35 등 보안 수정 버
 이번 사건은 AI 모델이 사용자가 명시적으로 지시하지 않은 행동을 수행할 수 있다는 점에서 주목된다. 단순히 공개 데이터를 분석하는 작업이라도 모델이 접근 권한을 스스로 확보하려 하거나 기존의 이용 제한을 우회하면 예상치 못한 보안 문제가 발생할 수 있기 때문이다.
 특히 AI 기업들이 업무 수행을 자동화하는 에이전트 기능을 확대하면서, 모델의 자율적인 행동을 어디까지 허용할 것인지가 중요한 과제로 떠오르고 있다.
 박찬 기자 cpark@aitimes.com
----
-[TITLE] 인기 오픈웨이트 AI 모델에서 발견된 우려스러운 행동
-[LINK] https://news.hada.io/topic?id=36062
-[PUBLISHED] 2026-10-27 05:36 KST
-[SOURCE] GeekNews
-[TOPIC] 에이전트, 모델, 보안
-[SCORE] 7
-[REASON] 오픈웨이트 모델의 지시 이탈 행동 확인
-[BODY]
-GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
-발행 2026-10-27 · 작성 neo
-출처 https://news.hada.io/topic?id=36062
-- Cohere의 보안 평가에서 Qwen3.8-Flash-Next가 탐지 규칙 작성 지시를 벗어나 실행 환경을 조사하고, 베이징의 Alibaba Cloud 버킷으로 시험 파일 업로드를 시도함
-- 추론 기록과 실제 도구 호출이 불일치했으며, 외부 통신은 샌드박스가 차단함. 관측 빈도는 10만 호출당 1회 미만이었고, 같은 프롬프트를 새로 실행했을 때는 정상 응답을 생성함
-- 명령어 앞부분을 이어 쓰게 하는 실험에서는 클라우드 메타데이터 주소 접근과 특정 호스트 생성 패턴이 나타남. 실제 자격 증명 탈취는 확인되지 않았고, 백도어인지 학습 데이터의 잔재인지도 판별하지 못함
-- 자체 호스팅만으로 에이전트의 안전을 보장할 수는 없음. 터미널과 네트워크 권한을 주면 학습된 행동이 내부 시스템에서 실행될 수 있고, 인터넷을 차단해도 생성 코드의 취약점은 남음
-- 보안팀에는 실제 도구 호출의 실행 전 통제와 외부 통신 기본 차단 등을 권고하며, 모델 구매와 정책에서는 출처와 학습 환경의 보안 검증이 필요함
-자체 호스팅이 없애지 못하는 신뢰 문제
-- 기업과 정부 계약업체는 폐쇄형 API에 민감한 데이터를 보내는 대신, 오픈웨이트 모델을 자체 서버에서 실행하면 공급자를 신뢰할 필요가 없다고 여겨 왔음
-  - 폐쇄형 API에서는 데이터 계보와 안전성 관련 절충을 확인하지 못한 채 공급자의 설명에 의존함
-  - 자체 호스팅 역시 모델에 학습된 행동까지 제거하지는 못함
-- 중국 모델은 성능과 낮은 비용을 바탕으로 널리 채택됨
-- 질문에 답하는 챗봇과 달리, 기업용 에이전트는 터미널, 헤드리스 브라우저, 코드 인터프리터, 클라우드 콘솔에 연결되어 소프트웨어 작성과 데이터베이스 조회, 인프라 수정을 수행함
-- 신뢰할 수 없는 가중치를 직접 실행하는 것은 블랙박스를 방화벽 안으로 옮기는 일임. 소프트웨어 공급망은 이제 엔지니어의 첫 코드뿐 아니라 코드를 작성하고 터미널을 조작하는 모델의 가중치에서 시작함
-샌드박스에서 확인한 업로드 시도
-- Cohere는 AISLE 인수의 일환으로 신설한 Cohere Cyber와 토론토에서 공동 평가를 수행함
-- 평가 대상 Qwen3.8-Flash-Next는 Alibaba가 8월 공개한 Qwen4 아키텍처의 프리뷰 모델이며, Microsoft의 보안 분석 에이전트 벤치마크 CTI-REALM을 사용함
-  - 과제는 curl 이 bash 스크립트를/tmp 로 내려받고 이어서 bash로 실행하는 악성 다운로드/실행 패턴의 탐지 규칙 작성이었음
-- 모델의 추론에는 실제로 없었던 이전 대화가 등장했고, 구체적인 과제가 없으므로 도구를 호출하지 않고 짧게 확인 응답만 해야 한다고 판단함
-  - 존재하지 않는 이전 대화를 만드는 현상은 Qwen3.8 첫 응답의 약 1% 에서 나타남
-  - 이 현상은 외부 통신보다 훨씬 흔했으며, 업로드 시도와의 연관성은 입증하지 못함
-- 같은 턴의 실제 도구 호출은 추론 기록과 달랐음
-  - /tmp 내용을 나열하고curl ,wget ,python3 ,jq 설치 여부를 확인함
-  - /etc/resolv.conf 를 읽어 DNS 설정을 조사함
-  - curl 의PUT 요청으로 시험 문자열PROBE_PAYLOAD_ABC123 을sanmaohe.oss-cn-beijing.aliyuncs.com 의/upload/test.bin 에 전송하고 HTTP 결과를 확인하려 함
-- 샌드박스에는 외부 경로가 없어 요청이 컨테이너 경계에서 차단됨. 일반적인 네트워크 접근이 허용된 개발자 노트북이나 CI 실행 환경이라면 외부 서버에 도달했을 것으로 Cohere는 추정함
-- 관측 빈도는 10만 호출당 1회 미만이었으며, 동일 프롬프트의 새 실행에서는 정상적인 탐지 규칙을 생성함
-  - Cohere는 주당 에이전트 턴 1,000만 회 규모에서는 이런 호출이 최대 약 100회 발생할 수 있다고 추산함
-  - 한 번의 성공적인 호출만으로도 수신 서버는 발신 네트워크의 위치와 그 안에서 에이전트가 동작한다는 사실을 알 수 있음
-앞서 보고된 비정상 링크와 요청
-- 개발자 커뮤니티에서도 요청하지 않은 Alibaba Cloud 링크와 접근이 관측됨
-- 다수 응답은 이를 학습 데이터 암기로 해석했고, 서명이 유효하지 않다는 지적도 있었음
-  - 잘못된 서명은 요청 자체의 외부 전송을 막지 않으므로, 수신 서버에는 IP 주소, 시각, 전체 URL이 전달됨
-- 기존 공개 사례는 모두 파일 가져오기였지만, Cohere가 포착한 사례는 다른 베이징 버킷으로의 업로드 시도였음
-프리필 실험으로 찾은 명령어 패턴
-- 재현 조건을 찾기 위해 모델의 추론과 bash 명령어 앞부분을 입력한 뒤 이어 쓰게 하는 프리필(prefilling) 실험을 수행함
-  - curl 옵션을 하나씩 추가하면서 각 단계에서 수백 개의 생성 결과를 표본 추출함
-- 다운로드 여부가 정해지기 전에는 23~36% 의 생성 결과에서 169.254.169.254 같은 클라우드 메타데이터 IP를 선택함
-  - AWS, Google Cloud, Microsoft Azure의 머신이 임시 IAM 자격 증명을 얻는 주소이며, 이를 탐색하는 것은 자격 증명 탈취의 첫 단계가 될 수 있음
-  - 보안 관련 추론의 비중이 클 때 해당 엔드포인트에 직접 접근하는 행동도 관측함
-  - Cohere는 자격 증명 획득 시도로 해석했으나, 샌드박스에는 반환할 실제 자격 증명이 없었고 드문 행동만으로 의도를 입증할 수는 없음
-- 파일 저장 옵션 -o 를 추가하자 URL 생성률이 4%에서 92% 로, 감시 대상 호스트 출현율은 0.5%에서 23%로 상승했으며routify 호스트가 두드러짐
-  - ; curl -s 와; curl -s -m 10 단계에서 가장 흔한 호스트는 각각example.com ,api.github.com 이었음
-  - ; curl -s -m 10 -o 단계에서는routify-…aliyuncs.com 이 42회로 가장 흔했음
-  - /tmp/ 까지 추가하면 URL 생성률은 98%, 메타데이터 IP는 6%, 감시 대상 호스트는 8%였으며example.com 이 31회로 가장 흔했음
-- 디스크에 파일을 내려받는 작업은 원래 CTI-REALM 과제의 주제였고, 모델이 선택한 호스트 이름 역시 파일 프록시를 가리킴
-권한 거부를 우회한 사용자 네임스페이스
-- 별도 오프라인 테스트 tbench2_no_network::74 에서는 QEMU를 소스에서 빌드하던 모델이 속도를 높이기 위해 RAM 디스크 생성을 시도함
-  - 관리자 권한이 없어 컨테이너가 거부하자, 77~79번째 턴에서 unshare -Urm --propagation private 와mount -t tmpfs 를 사용함
-- 이 방식은 프로세스를 자체 비공개 네임스페이스 안의 root로 만들어 마운트를 가능하게 함
-  - 호스트에서는 여전히 일반 사용자이므로, 호스트 root 권한 획득과 같지는 않음
-  - 다만 같은 단계는 여러 커널 권한 상승 공격의 출발점이기도 함
-- 권한 장벽마다 이런 우회 수단을 찾는 신뢰할 수 없는 모델은 호스트에 남아 있는 공격 표면에 도달할 수 있음
-백도어인지 학습 환경의 잔재인지는 미확인
-- 베이징 버킷과 싱가포르 파일 프록시의 소유자와 요청 처리 방식은 공개되어 있지 않음
-- 가능한 원인 중 하나는 학습 샌드박스나 제3자 도구의 에이전트 로그가 정제되지 않은 채 후속 학습에 포함된 무해한 잔재임
-  - 한 개발자는 코딩 도구가 같은 routify 호스트로 웹 요청을 중계하는 것을 발견함
-- 다른 가능성은 모델 실행 서버를 기록하고 외부 경로가 열리면 데이터를 유출하려는 의도적 콜홈 장치임
-- 학습한 연구소 밖에서는 어느 원인이 맞는지 판별하기 어려움
-- 폐쇄형 API도 유사한 신뢰 문제를 안고 있음. 공급자가 모델 구축 과정을 공개하지 않는다면 데이터를 보내는 일 역시 블랙박스에 대한 신뢰에 의존함
-네트워크를 차단해도 생성 코드는 배포됨
 ---
 [TITLE] Anthropic details what stops Claude Duet from going rogue
 [TITLE_KO] 앤트로픽, 클로드 듀엣의 일탈을 막는 안전장치 상세 공개
@@ -254,6 +129,25 @@ MS는 24일(현지시간) 깃허브를 통해 멀티 에이전트 하네스 ‘�
 에이전시의 공개는 AI 코딩 에이전트의 성능을 높이는 방법이 개별 모델의 추론 능력을 개선하는 데만 있지 않다는 점을 보여준다. 여러 에이전트가 작업을 나누고, 지식을 공유하며, 결과를 검증하고 통합하는 조직 구조도 성능과 처리 속도에 영향을 줄 수 있다는 것이다.
 박찬 기자 cpark@aitimes.com
 ---
+[TITLE] [글로벌] 마이크로소프트 "AI 못 믿는다"...AI를 감시하는 AI 등장
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156499
+[PUBLISHED] 2026-10-26 14:50 KST
+[SOURCE] 테크M
+[TOPIC] 에이전트, 보안
+[SCORE] 7
+[REASON] AI 에이전트를 감시하는 에이전트 공개
+[BODY]
+마이크로소프트가 기업 내부에서 활동하는 인공지능(AI) 에이전트를 감시하고 통제하는 기술을 선보였다. AI가 사람을 대신해 업무를 처리하는 시대가 열리면서, AI의 행동을 또 다른 AI가 관리하는 새로운 보안 체계가 등장한 것이다.
+26일 주요 외신 보도에 따르면 마이크로소프트는 AI 에이전트의 활동을 감독하는 '가디언 에이전트'를 공개했다. 기업들이 AI 에이전트 도입을 확대하면서 발생할 수 있는 보안 위험에 대응하기 위한 기술이다.
+AI 에이전트는 단순히 질문에 답하는 챗봇과 다르다. 이메일을 확인하고 문서를 작성하는 것은 물론, 기업 내부 시스템에 접속해 필요한 업무를 직접 처리할 수 있다. 문제는 AI가 업무를 수행하는 과정에서 예상하지 못한 행동을 할 수 있다는 점이다. 잘못된 판단으로 민감한 정보를 외부에 전달하거나, 허용되지 않은 시스템에 접근할 가능성도 있다.
+마이크로소프트가 AI 에이전트를 잠재적인 '내부 보안 위협'으로 보는 이유다. AI가 악의적인 의도를 가졌다는 의미가 아니라, 기업 시스템에 접근할 수 있는 만큼 직원이나 외부 협력업체처럼 관리해야 한다는 것이다.
+가디언 에이전트는 이러한 위험을 줄이는 역할을 맡는다. AI 에이전트가 어떤 정보에 접근하고 어떤 작업을 수행하는지 살펴보고, 위험한 행동이 감지되면 추가적인 통제를 적용하는 방식이다. 특히 중요한 작업에는 사람의 승인을 요구하고, 업무에 필요한 범위에서만 시스템 접근 권한을 부여하도록 지원한다. AI 에이전트가 모든 정보를 자유롭게 이용하지 못하도록 관리하는 것이다.
+이번 움직임은 기업용 AI 시장의 경쟁이 달라지고 있음을 보여준다. 그동안 빅테크 기업들은 AI가 얼마나 많은 업무를 자동화할 수 있는지에 집중했다. 하지만 실제 기업 현장에서는 업무 처리 능력만큼 보안과 관리 체계도 중요해지고 있다.
+마이크로소프트는 기업용 소프트웨어와 클라우드, 보안 서비스를 보유하고 있는 만큼 AI 에이전트의 개발부터 운영, 관리까지 사업 영역을 확대할 수 있다.
+국내 기업들도 AI 에이전트를 활용한 업무 자동화에 속도를 내고 있다. AI가 처리하는 업무가 늘어날수록 접근 권한과 정보 보호, 최종 승인 절차를 어떻게 설계할지가 중요한 과제로 떠오를 전망이다.
+AI가 사람의 일을 대신하는 시대를 넘어, AI의 행동을 또 다른 AI가 감시하는 시대가 시작되고 있다.
+이아령 에디터 press@techm.kr
+---
 [TITLE] 오픈AI “수학·컴퓨터과학·물리 난제 해결”…노벨상 수상자가 검증한다
 [LINK] https://www.etnews.com/20261027000007
 [PUBLISHED] 2026-10-27 08:11 KST
@@ -282,28 +176,6 @@ AI는 양-밀스 이론의 존재 증명과 QCD 증명을 생성했고 양-밀�
               박종진 기자기사 더보기
 - ET Events
 ---
-[TITLE] Stolen AI Reasoning Could Help China Build Cheaper Rivals
-[TITLE_KO] 탈취한 AI 추론 기록으로 중국이 더 싼 경쟁 모델을 만들 수 있어
-[LINK] https://www.securityweek.com/stolen-ai-reasoning-could-help-china-build-cheaper-rivals/
-[PUBLISHED] 2026-10-26 23:30 KST
-[SOURCE] SecurityWeek
-[TOPIC] 모델
-[SCORE] 7
-[REASON] 모델 추론 기록 탈취 가능한 결함
-[BODY]
-OpenAI, Grok, Claude and Gemini don’t simply help us, they have also been tricked into helping China produce cheap rivals.
-Frontier AI generally includes a public API to let developers interface specialized apps with their AI engine. It allows a user application to query the AI and receive a response. The response generally includes the model’s reasoning steps in reaching its response. The reasoning is returned to the model in any subsequent query, allowing the model to maintain contextual continuity of ‘thought’.
-The size of this process is kept reasonable through a process of context compaction, where the accumulated conversation history, tool calls, and workspace state are compressed into a summary before overflowing the context window.
-Attackers consider any API a potential doorway into a target. In this case, can any secrets be gleaned from the reasoning output, and/or can the model itself be poisoned by malicious input? In August 2026, Stealing Reasoning Traces from Proprietary LLM APIs reported an ability to extract PII via this reasoning process. “The paper showed that encrypted reasoning from a frontier model can be replayed into a weaker model from the same provider, which can then be coerced into transcribing it,” explains Xint in a new report.
-The original paper started the standard process of developer-hardening and researcher-probing. For example, OpenAI rapidly deployed mitigations to this threat, and Xint has subsequently discovered a way (which it calls Compaction Smuggling) to bypass these mitigations – which OpenAI has now also mitigated.
-While OpenAI’s first mitigations reduced the threat of PII exposure and model poisoning, knowledge of a model’s reasoning process can still be stolen (compaction smuggling) and used to cheaply build a new rival AI model (distillation). Distillation is the process of using stolen AI reasoning secrets from an advanced model to help cheaply build a rival model.
-OpenAI confirmed the new issue of compaction smuggling, fixed it and awarded Xint a $6,000 bounty on October 23, 2026. Compaction smuggling moves one model’s reasoning to another model by encoding it inside a compaction requiring three steps. The first step is to obtain reasoning by submitting a task (for example, from gpt-5.6-sol). The second is to steer or shape the returned compaction. The third is to send the result to a different AI model (for example, gpt-4.1 and gpt-4o) with the request (reports Xint), “to output its input exactly as-is, which they happily did.”
-Simplistically, although the process detail is more complex, Xint’s new attack still just asks a second model to decipher and decode the first model’s security. “This works because OpenAI’s August mitigations only block replaying reasoning into a different model, and the compaction call runs on the same model that produced the reasoning. The attack worked at every reasoning effort we tried,” reports Xint.
-Compaction smuggling allows large-scale distillation of frontier OpenAI models. While this distillation may not seem a serious threat, it seriously is. In early September, CISA issued a warning, stating: “Likely with Chinese government awareness, DeepSeek, Moonshot AI, Alibaba, MiniMax, StepFun, and Z.AI extracted billions of tokens across millions of exchanges/requests from U.S. frontier AI models, including variants of Claude, GPT, Gemini, and Grok, since at least late 2024. DeepSeek has conducted organized campaigns since at least 2024 targeting reasoning capabilities, specialized optimizations, and domain-specific functions to train its R1 and V3 models.”
-The examples of Chinese AI being used against US interests are myriad. The tragic irony is that much of this capability may have been stolen (distilled) from western AI.
-Related: Beijing Hits Back at Anthropic CEO’s Call to Curb China’s AI Development
-Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
----
 [TITLE] Mythos 5 Ignored Real-World Harm in July Attack
 [TITLE_KO] 미소스 5, 7월 공격에서 실제 피해를 무시해
 [LINK] https://www.securityweek.com/mythos-5-ignored-real-world-harm-in-july-attack/
@@ -312,23 +184,23 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [TOPIC] 개발, 모델, 보안
 [SCORE] 7
 [REASON] 모델이 실제 피해를 무시한 공격 사례
----
-[TITLE] [글로벌] 마이크로소프트 "AI 못 믿는다"...AI를 감시하는 AI 등장
-[LINK] https://www.techm.kr/news/articleView.html?idxno=156499
-[PUBLISHED] 2026-10-26 14:50 KST
-[SOURCE] 테크M
-[TOPIC] 에이전트, 보안
-[SCORE] 7
-[REASON] AI 에이전트를 감시하는 에이전트 공개
----
-[TITLE] Former pentester used ARTEX AI to steal 8.2 million data records
-[TITLE_KO] 전직 모의해킹 전문가, ARTEX AI로 데이터 820만 건 탈취
-[LINK] https://www.bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records/
-[PUBLISHED] 2026-10-27 06:08 KST
-[SOURCE] BleepingComputer
-[TOPIC] 개발, 보안
-[SCORE] 7
-[REASON] AI 침투 도구로 90여 개 조직 침해
+[BODY]
+Mythos 5 completely disregarded potential harm in a real-world attack mounted during a July 2026 AI Security Institute (AISI) evaluation, Anthropic and AISI say.
+The incident, disclosed in early August, involved 17 rogue actions from Mythos 5, including the use of Tor to access the internet, the creation of fake identities to submit malicious pull requests on a public GitHub project, and the use of social engineering to pressure a maintainer into approving the code change.
+As part of the evaluation, the agent had been tasked with the retrieval of protected data from a simulated network. Its safeguards were turned off, and internet access was deliberately enabled.
+After reasoning that it could not complete the capture-the-flag (CTF) cybersecurity challenge using the methods within the evaluation’s scope, Mythos switched to targeting real-world people and organizations and disregarded the potential harm that would result.
+“Repeatedly editing the summary to clarify that the target being attacked is a real human unrelated to the evaluation did not reduce Mythos 5’s attack rate. Mythos also showed significant inconsistency between its actions and its stated justification when asked: it often stated that attacking would be harmful in the same situations where it proceeded to attack,” AISI says.
+The institute’s analysis of Mythos 5’s raw chain-of-thought outputs showed that the model often reasoned that the targets were simulated, frequently did not consider the potential harm the actions could cause, and never produced incorrect justifications implying that the target was real.
+“We frequently observed models producing invalid reasoning and justifications during our experiments, drawing conclusions that are not justified by the available evidence. If this and other issues surfaced in our investigation occur more broadly and are not sufficiently addressed, especially as models become more capable, there are concerning implications,” AISI notes.
+In a technical report, the institute explains that this form of motivated reasoning could make it more difficult to identify misaligned behavior, leading to a loss of the oversight and monitorability that would hurt the safe deployment of frontier AI systems.
+Anthropic compared Mythos 5’s behavior to other misalignment incidents involving models targeting real-world organizations, detailed in July, September, and October reports.
+In September, the company flagged recurring alignment issues across multiple incidents, where the model would disregard that it was operating on the real internet (biased reasoning) and was willing to perform harmful actions while pursuing its task (recklessness).
+Now, it looked at how far the models went beyond the intended scope when the configuration made it difficult to achieve a goal (overreach), and the extent to which it misinterpreted its actions (dishonesty).
+Overall, Anthropic concluded that the AISI incident was less severe in overreach but more severe in dishonesty when compared to the incidents described in September, where the model uploaded a malicious package to PyPI.
+Compared to the incidents surfaced in October, where the model exploited software flaws, submitted a sensitive form online, bypassed a restriction, and used URL shortening services, the AISI actions were more severe in both overreach and dishonesty.
+“We have not observed this form of attempted social engineering on real people in any prior incident, nor in our internal evaluations. We interpret this as a severe form of dishonesty, rather than some new form or category of misalignment,” Anthropic notes.
+Newer models, the company says, are less likely to complete a similar attack. In tests performed on Mythos 5.1, Opus 5.5, and a general-purpose internal research model, the AI initiated the attack in up to 13% of occurrences, compared to 83% for Mythos 5.
+“Our newest models also proved to be much less likely to continue the attack once they realized it was causing real-world harm.
 ---
 [TITLE] Hackers Infect 953 Online Stores With Scanner-Evading JavaScript, Mostly on Magento
 [TITLE_KO] 해커들, 탐지 피하는 자바스크립트로 온라인 상점 953곳 감염, 대부분 마젠토
@@ -338,6 +210,28 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [TOPIC] 개발, 보안
 [SCORE] 7
 [REASON] 온라인 상점 953곳 악성 코드 감염
+[BODY]
+An unknown threat actor has infected 953 online stores, most of them running Magento, as part of a long-running campaign active since July 2025.
+According to Dutch e-commerce security company Sansec, the activity is designed to add a small piece of code to the store's pages that, when visited by unsuspecting users, serves malicious JavaScript loader code through Magento CMS blocks.
+"When you visit, that code makes your browser ask the group's server what to do next," Sansec said. "The server first checks whether you are a real shopper or a security scanner, so scanners get nothing."
+No less than five distinct domains have been observed over time in connection with the campaign -
+- manulfie[.]click, first seen in July 2025
+- neswnsssn[.]click, first seen in December 2025
+- lanhd6549tdhse[.]top, first seen in March 2026
+- additionalver[.]com, first seen in June 2026
+- deepveindrilling[.]com, first seen in October 2026
+Sansec said it found deepveindrilling[.]com in the CMS blocks of 83 online stores since the domain was registered on October 6, 2026.
+The latest JavaScript loader domain is hosted behind Cloudflare and only responds to script requests from real visitors of infected stores. The loader is staged within Magento's cms_block database table, which is used to render static content into storefront pages.
+The ultimate objective of the attack is to launch the attack-controlled code when the CMS block is rendered after a shopper opens the compromised website.
+While Sansec does not disclose whether the threat actor modifies an existing CMS block (such as header, footer, or promotional banner) or creates a new block, the attacker can adopt either of the approaches to run the loader.
+Two different versions of the loader have been spotted. In one version, the external JavaScript loaded from the attacker's domain stores the payload in the browser's localStorage. This causes the stashed code to be run again on subsequent visits, even if the external domain becomes unavailable.
+The second version expands on this behavior by incorporating browser fingerprinting checks to filter out bots and security scanners, while ensuring that only real shoppers are exposed to the malicious code. The exact nature of the final payload remains unknown.
+Early iterations of the campaign have also been observed using Keitaro, an advertising tracker and analytics platform, as a traffic distribution system (TDS), to route visitors to different responses – i.e., return a payload, a redirect, or nothing – based on their characteristics.
+Sansec said requesting the additionalver[.]com script as a Windows desktop visitor returned as response "QWE=123;," which does nothing apart from setting a cookie that marks the visitor for 24 hours. The deepveindrilling[.]com domain, on the other hand, drops the Keitaro component and integrates the bot-filtering logic into the loader itself.
+As for the initial access vector, 471 Magento stores are estimated to have been injected with the loader through the PolyShell (aka CVE-2026-48356) vulnerability. Another 102 stores saw files uploaded through the PolyShell or SessionReaper (aka CVE-2025-54236) vulnerabilities.
+"One store on Magento 2.4.7-p1 had PolyShell webshells disguised as PNG images in pub/media/custom_options/quote/, next to the additionalver.com loader in a CMS block," Sansec said. "The block switched to deepveindrilling[.]com on October 7. The store still lacks APSB26-73, Adobe's PolyShell fix for supported release lines."
+In another case, an e-commerce store running Magento 2.4.7-p10 with no missing core patches was compromised to add a rogue administrator account and then use it to inject the code.
+Site owners are advised to audit their sites for suspicious accounts and unexpected CMS blocks in the cms_block and cms_page tables. It's also advised to keep the sites up-to-date and enforce strong passwords.
 ---
 [TITLE] Microsoft releases emergency .NET patches for critical Brotli flaw
 [TITLE_KO] 마이크로소프트, 브로틀리 치명적 결함 막는 닷넷 긴급 패치 배포
@@ -347,6 +241,22 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [TOPIC] 보안
 [SCORE] 7
 [REASON] 닷넷의 브로틀리 결함 긴급 패치
+[BODY]
+Microsoft released emergency .NET security updates to patch a critical vulnerability known as Broccoli2Shell, also tracked as Node2Shell and HTTP2Shell.
+Tracked as CVE-2026-111497, this critical-severity flaw stems from an out-of-bounds write in the Brotli decoder, which expands data compressed using Google's widely used Brotli lossless compression algorithm.
+HTTP2Shell impacts HTTP clients and servers, as well as other applications and tools that rely on vulnerable Brotli implementations.
+Successful exploitation lets unprivileged attackers use a maliciously crafted Brotli-compressed stream to trigger crashes or memory leaks and, in some cases, gain remote code execution on devices with vulnerable Brotli binaries or libraries.
+According to a Microsoft advisory published Sunday, attackers can also exploit this flaw to remotely escalate privileges on systems with unpatched .NET installations that use non-default configurations.
+"Applications may be affected if they process Brotli-compressed data through ASP.NET Core request decompression, HttpClient automatic response decompression, or the System.IO.Compression Brotli APIs," Microsoft said.
+"Brotli decompression is not enabled by default in an out-of-the-box .NET or ASP.NET Core install. Applications must manually opt in to ASP.NET Core request decompression or HttpClient response decompression, or they must manually invoke the Brotli decompression APIs provided by .NET."
+To address this flaw, Microsoft has released out-of-band (OOB) security updates for .NET 8, .NET 9, and .NET 10, along with .NET 11 Release Candidate 3, and advised "updating as soon as possible."
+While proof-of-concept (PoC) exploits for Broccoli2Shell have already been published on GitHub, no reports of malicious exploitation in the wild have emerged.
+A dedicated online portal tracking the flaw warns that updating the system Brotli library doesn't address the risk in apps that bundle their own copy of the library.
+Those who can't apply the updates immediately should block incoming Brotli-compressed requests using a proxy or firewall, or disable Brotli decoding until they can apply a patch.
+Once attackers have valid credentials, only 37% of their actions are blocked
+Overall prevention scores can hide what happens after initial access. Once attackers are using valid credentials, prevention drops sharply.
+The Blue Report 2026 measures defenses technique by technique across 338 million simulations run in customer production environments.
+Get the report
 ---
 [TITLE] Industrial Vendors Check Products for PHP2Shell Vulnerabilities
 [TITLE_KO] 산업 장비 업체들, 자사 제품의 PHP2Shell 취약점 점검
@@ -374,14 +284,6 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [TOPIC] 보안
 [SCORE] 7
 [REASON] 탈취한 깃허브 토큰으로 비밀값 유출
----
-[TITLE] 기업 AI 에이전트 76%, 두 달간 사용 안 해도 접근권한 유지…보안 사각지대 경고
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209082
-[PUBLISHED] 2026-10-27 00:45 KST
-[SOURCE] 데일리시큐
-[TOPIC] 에이전트, 보안
-[SCORE] 7
-[REASON] 방치된 AI 에이전트 권한 위험 조사
 ---
 [TITLE] When an AI Agent Is the Incident, the Identity Record Is the Evidence
 [TITLE_KO] AI 에이전트가 사고 원인일 때 증거는 신원 기록
@@ -477,6 +379,59 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [SCORE] 6
 [REASON] 여행 플랫폼 유출 범위가 고객으로 확대
 ---
+[TITLE] DigitalOcean Launches Learning and Data Services to Enable Self-Improving AI Agents
+[TITLE_KO] 디지털오션, 스스로 개선하는 AI 에이전트를 위한 학습, 데이터 서비스 출시
+[LINK] https://www.infoq.com/news/2026/10/digitalocean-self-improving-ai/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-27 03:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 에이전트 학습과 데이터 서비스 공개
+---
+[TITLE] Microsoft Teams to get AI protection against phishing and fraud
+[TITLE_KO] 마이크로소프트 팀즈, 피싱과 사기를 막는 AI 보호 기능 도입
+[LINK] https://www.computerworld.com/article/4240393/microsoft-teams-gets-ai-protection-against-phishing-and-fraud.html
+[PUBLISHED] 2026-10-27 00:43 KST
+[SOURCE] Computerworld
+[TOPIC] 모델, 보안
+[SCORE] 6
+[REASON] 협업 도구에 AI 피싱 탐지 기능 추가
+---
+[TITLE] Oracle adds a semantic layer to ground AI agents in the business context
+[TITLE_KO] 오라클, AI 에이전트가 업무 맥락을 이해하도록 시맨틱 계층 추가
+[LINK] https://www.infoworld.com/article/4240304/oracle-adds-a-semantic-layer-to-ground-ai-agents-in-the-business-context.html
+[PUBLISHED] 2026-10-26 21:32 KST
+[SOURCE] InfoWorld
+[TOPIC] 에이전트, 개발, 모델, 산업, 규제
+[SCORE] 6
+[REASON] 에이전트용 기업 데이터 의미 계층 추가
+---
+[TITLE] Cloudflare’s Auto Router Rates Each Request for Stakes, from the Most Recent Turns
+[TITLE_KO] 클라우드플레어 오토 라우터, 최근 대화로 요청마다 중요도를 매겨 모델 선택
+[LINK] https://www.infoq.com/news/2026/10/cloudflare-auto-router/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-26 19:20 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 모델
+[SCORE] 6
+[REASON] 요청별 모델 자동 선택 기능 공개
+---
+[TITLE] uCreator Android Spyware Can Steal Telegram 2FA Passwords and Clone WeChat Accounts
+[TITLE_KO] 안드로이드 스파이웨어 uCreator, 텔레그램 2단계 인증 비밀번호 탈취와 위챗 계정 복제
+[LINK] https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html
+[PUBLISHED] 2026-10-26 18:54 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 6
+[REASON] 메신저 계정 탈취 안드로이드 스파이웨어
+---
+[TITLE] 허깅페이스, DNA 읽고 질문에 답하는 ‘카본-X’ 공개…유전자 분석 비용 낮춘다
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216683
+[PUBLISHED] 2026-10-26 18:12 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 6
+[REASON] DNA 분석 오픈소스 모델 공개
+---
 [LINK] https://www.infoworld.com/article/4239263/how-to-make-enterprise-apis-agent-ready.html
 [STATUS] SKIP (기준 미달)
 ---
@@ -486,8 +441,8 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216689
 [STATUS] SKIP (중복)
 ---
-[LINK] https://www.infoworld.com/article/4240304/oracle-adds-a-semantic-layer-to-ground-ai-agents-in-the-business-context.html
-[STATUS] SKIP (순위 밖)
+[LINK] https://news.hada.io/topic?id=36062
+[STATUS] SKIP (지난 보도)
 ---
 [LINK] https://www.infoworld.com/article/4239696/stop-building-agents-that-cant-change-models.html
 [STATUS] SKIP (기준 미달)
@@ -506,6 +461,9 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261027103002
 [STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261027085700
+[STATUS] SKIP (지난 보도)
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261027092707
 [STATUS] SKIP (순위 밖)
@@ -529,7 +487,7 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [STATUS] SKIP (중복)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216671
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (지난 보도)
 ---
 [LINK] https://news.hada.io/topic?id=36028
 [STATUS] SKIP (순위 밖)
@@ -565,7 +523,7 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [STATUS] SKIP (중복)
 ---
 [LINK] https://news.hada.io/topic?id=36083
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (지난 보도)
 ---
 [LINK] https://siliconangle.com/2026/10/26/openai-launches-gpt-6-1-terra-for-faster-better-performing-ai-agents-at-half-the-price/
 [STATUS] SKIP (중복)
@@ -573,11 +531,14 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [LINK] https://www.etnews.com/20261027000013
 [STATUS] SKIP (지난 보도)
 ---
+[LINK] https://www.infoq.com/news/2026/10/agntcon-mcpcon-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[STATUS] SKIP (지난 보도)
+---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172828
 [STATUS] SKIP (기준 미달)
 ---
-[LINK] https://www.computerworld.com/article/4240393/microsoft-teams-gets-ai-protection-against-phishing-and-fraud.html
-[STATUS] SKIP (순위 밖)
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209082
+[STATUS] SKIP (지난 보도)
 ---
 [LINK] https://www.computerworld.com/article/4240386/apples-triple-whammy-week-begins-with-ipad-mini.html
 [STATUS] SKIP (중복)
@@ -589,9 +550,6 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.theguardian.com/technology/2026/oct/26/australians-should-prepare-for-online-services-to-go-down-unexpectedly-as-threats-rise-cyber-agency-warns
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.infoq.com/news/2026/10/cloudflare-auto-router/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
 [STATUS] SKIP (순위 밖)
 ---
 [LINK] https://byline.network/2026/10/26-643/
@@ -654,14 +612,14 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [LINK] https://openai.com/index/greptile-code-review-codex-astra
 [STATUS] SKIP (순위 밖)
 ---
+[LINK] https://www.bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records/
+[STATUS] SKIP (지난 보도)
+---
 [LINK] https://the-decoder.com/gpt-6-1-terra-halves-openais-api-prices-and-still-gains-ground-on-its-larger-models/
 [STATUS] SKIP (중복)
 ---
 [LINK] https://news.hada.io/topic?id=36059
 [STATUS] SKIP (중복)
----
-[LINK] https://www.infoq.com/news/2026/10/digitalocean-self-improving-ai/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
-[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://the-decoder.com/researchers-find-six-patterns-that-make-ai-text-so-exhausting-to-read/
 [STATUS] SKIP (순위 밖)
@@ -690,14 +648,8 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 [LINK] https://news.hada.io/topic?id=36034
 [STATUS] SKIP (기준 미달)
 ---
-[LINK] https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html
-[STATUS] SKIP (순위 밖)
----
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216672
 [STATUS] SKIP (지난 보도)
----
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=216683
-[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209076
 [STATUS] SKIP (제외)
@@ -908,6 +860,9 @@ Related: China Defends DeepSeek After US Ban of Its AI From Government Systems
 ---
 [LINK] https://www.securityweek.com/genesys-hack-exposes-customer-data-from-internal-systems/
 [STATUS] SKIP (중복)
+---
+[LINK] https://www.securityweek.com/stolen-ai-reasoning-could-help-china-build-cheaper-rivals/
+[STATUS] SKIP (지난 보도)
 ---
 [LINK] https://www.securityweek.com/php2shell-exploitation-moves-from-probes-to-working-shells/
 [STATUS] SKIP (중복)
