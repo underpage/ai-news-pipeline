@@ -30,7 +30,7 @@ def test_error_lines_are_single_line_and_ignored_inside_blocks():
 
 def test_run_date_decides_log_path(monkeypatch):
     monkeypatch.setenv("RUN_DATE", "2026-12-31")
-    assert common.get_log_path("수집").endswith("logs/2026/12/2026-12-31-수집.txt")
+    assert common.get_log_path("수집").replace("\\", "/").endswith("logs/2026/12/2026-12-31-수집.txt")
 
 
 def test_fill_prompt_does_not_substitute_twice():
