@@ -58,7 +58,7 @@
 ├── .github/workflows/
 │   ├── ai-news-pipeline.yml  # 일일 실행 (매일 09:00)
 │   ├── weekly-summary.yml    # 주간 요약 (매주 월요일 10:00)
-│   ├── check-run.yml         # 실행 누락 확인 (매일 12:00)
+│   ├── check-run.yml         # 실행 확인, 실패한 날 자동 재실행 (매일 12:00, 16:00)
 │   └── test.yml              # 자동 테스트 (코드 변경 시)
 ├── config/
 │   ├── feeds.yml         # 뉴스 소스(RSS 피드) 목록. 매체 추가, 삭제는 이 파일만 수정

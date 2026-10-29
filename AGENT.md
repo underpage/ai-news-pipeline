@@ -191,7 +191,10 @@
 ## 워크플로우
 
 - 일일 실행과 주간 요약은 같은 `concurrency` 그룹 (커밋 충돌 방지)
-- 실행 누락 확인(`check-run.yml`): 그날 통계 줄이 없으면 실패 처리해 알림. 수집 0건인 날도 알림이 감 (허용)
+- 실행 확인과 자동 재실행(`check-run.yml`, 12:00과 16:00 KST, 실제로는 몇 시간 늦음): 그날 통계 줄이 없거나, 선정 성공 0(`rank_ok`), 요약 전부 실패(`summary_ok` 0), 요약 미처리(`summary_pending`)면 파이프라인을 `workflow_dispatch`로 다시 실행. Gemini 503 과부하는 몇 시간 뒤 풀리는 일이 많아서
+  - 다시 돌면 같은 날 실행으로 이어짐: 수집은 첫 실행 시각부터, 선정은 남은 목록 칸만, 요약은 아직 안 된 기사만
+  - 파이프라인이 실행 중이거나 대기 중이면 건너뜀. 하루 `workflow_dispatch` 실행이 `MAX_RERUNS`(2)번 이상이거나 23시(`LAST_HOUR`) 이후면 재실행 없이 실패 처리해 알림(수동 복구 필요). 수집 0건인 날도 다시 돎(허용)
+  - 요약 일부만 실패(`summary_failed`, 본문 문제 등)는 다시 돌리지 않음
 - 자동 테스트는 코드, 설정, 테스트, 의존성, 워크플로우가 바뀐 push에만
 - Job 간 전달은 `archive/logs/` artifact (`overwrite: true`는 실패한 Job만 재실행할 수 있게 하기 위함, Evaluate와 Summarize 업로드는 `if: always()`). Publish는 collect -> evaluate -> summarize 순으로 받아 덮어씀
 - 실행 날짜는 Collect가 정해 `RUN_DATE`로 전달 (자정 전후에도 같은 파일). `TZ=Asia/Seoul`

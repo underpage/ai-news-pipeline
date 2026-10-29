@@ -2,30 +2,82 @@ name: Check Daily Run
 
 on:
   schedule:
-    # 매일 12:00 KST (UTC 03:00). 09:00 실행이 남긴 오늘 자 통계 줄이 있는지 확인
+    # 매일 12:00, 16:00 KST (UTC 03:00, 07:00). 예약 실행은 몇 시간씩 늦게 시작하므로 실제로는 18시, 22시 무렵.
+    # 오늘 리포트가 실패했으면(Gemini 503 과부하 등) 파이프라인을 다시 실행한다. 과부하는 몇 시간 뒤면 풀리는 일이 많다
     - cron: '0 3 * * *'
+    - cron: '0 7 * * *'
   workflow_dispatch:
 
 permissions:
   contents: read
+  # 파이프라인 재실행(workflow_dispatch)과 실행 목록 조회
+  actions: write
+
+env:
+  # 하루에 자동으로 다시 실행하는 최대 횟수. 실패한 Gemini 호출도 하루 한도(모델당 20회)에 잡히므로 크게 두지 않는다
+  MAX_RERUNS: 2
+  # 이 시각(KST, 시) 이후에는 다시 실행하지 않는다. 실행이 자정을 넘기면 다음 날 날짜로 돌기 때문
+  LAST_HOUR: 23
 
 jobs:
   check:
-    name: 실행 누락 확인 (Check)
+    name: 실행 확인과 재실행 (Check)
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
-      - name: Check Today's Stats Row
+      - name: Check Today's Run
+        id: state
         shell: bash
         run: |
           today=$(TZ=Asia/Seoul date +%F)
           stats="archive/stats/${today:0:4}.csv"
-          if grep -q "^${today}," "$stats" 2>/dev/null; then
-            echo "오늘(${today}) 실행 기록 있음"
-            grep "^${today}," "$stats"
+          row=$(grep "^${today}," "$stats" 2>/dev/null | tail -n 1 || true)
+          if [ -z "$row" ]; then
+            reason="오늘 실행 기록 없음 (실행이 안 됐거나 수집 단계에서 멈춤)"
           else
-            # 실행이 안 됐거나, 수집 단계에서 멈췄거나, 수집 기사가 0건이었던 경우
-            echo "::error::오늘(${today}) 실행 기록이 ${stats}에 없습니다. Actions에서 AI News Pipeline 실행 여부를 확인하세요."
+            echo "오늘 기록: $row"
+            # 열 이름으로 값을 찾는다 (열 순서가 바뀌어도 되게)
+            value() { awk -F, -v name="$1" 'NR==1 { for (i = 1; i <= NF; i++) if ($i == name) col = i } NR==2 { print $col }' <(head -n 1 "$stats"; echo "$row"); }
+            rank_ok=$(value rank_ok); target=$(value summary_target); ok=$(value summary_ok); pending=$(value summary_pending)
+            if [ "${rank_ok:-0}" -eq 0 ]; then
+              reason="기사 선정 실패 (rank_ok 0)"
+            elif [ "${target:-0}" -gt 0 ] && [ "${ok:-0}" -eq 0 ]; then
+              reason="요약 전부 실패 (summary_ok 0 / ${target})"
+            elif [ "${pending:-0}" -gt 0 ]; then
+              reason="요약 미처리 ${pending}건"
+            fi
+          fi
+          if [ -z "$reason" ]; then
+            echo "오늘(${today}) 리포트 정상"
+          fi
+          echo "reason=$reason" >> "$GITHUB_OUTPUT"
+      - name: Rerun Pipeline
+        if: steps.state.outputs.reason != ''
+        shell: bash
+        env:
+          REASON: ${{ steps.state.outputs.reason }}
+        run: |
+          echo "::warning::오늘 리포트 문제: ${REASON}"
+          workflow=ai-news-pipeline.yml
+          busy=$(gh run list --workflow "$workflow" --limit 20 --json status --jq '[.[] | select(.status != "completed")] | length')
+          if [ "$busy" -gt 0 ]; then
+            echo "파이프라인이 이미 실행 중이거나 대기 중이라 다시 실행하지 않습니다."
+            exit 0
+          fi
+          hour=$(TZ=Asia/Seoul date +%-H)
+          if [ "$hour" -ge "$LAST_HOUR" ]; then
+            echo "::error::${LAST_HOUR}시가 넘어 다시 실행하지 않습니다. 수동 복구가 필요합니다 (${REASON})"
             exit 1
           fi
+          # 오늘(KST 0시 이후) 손으로 또는 자동으로 다시 실행한 횟수
+          since=$(date -u -d "$(TZ=Asia/Seoul date +%F)T00:00:00+09:00" +%FT%TZ)
+          reruns=$(gh run list --workflow "$workflow" --event workflow_dispatch --created ">=${since}" --limit 20 --json databaseId --jq 'length')
+          if [ "$reruns" -ge "$MAX_RERUNS" ]; then
+            echo "::error::오늘 이미 ${reruns}번 다시 실행했지만 여전히 실패입니다. 수동 복구가 필요합니다 (${REASON})"
+            exit 1
+          fi
+          gh workflow run "$workflow" --ref main
+          echo "::warning::파이프라인을 다시 실행했습니다 (오늘 $((reruns + 1))번째)"
