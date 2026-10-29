@@ -22,30 +22,6 @@
 
 #긍정
 ---
-[TITLE] Donating Agent Skills to the Agentic AI Foundation
-[LINK] https://simonwillison.net/2026/Oct/22/donating-agent-skills/
-[PUBLISHED] 2026-10-23 03:09 KST
-[SOURCE] Simon Willison
-[TOPIC] 에이전트, 모델
-[SCORE] 9
-[REASON] 에이전트 스킬 표준을 리눅스 재단 AAIF에 기증
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-에이전틱 AI 재단에 에이전트 스킬 기증
-
-**[영문 3줄 요약 (Original)]**
-- Anthropic announced that it is donating the Agent Skills standard to the Linux Foundation's Agentic AI Foundation to keep it open, community-driven, and vendor-neutral.
-- Anthropic previously co-founded the foundation alongside Block and OpenAI and had already donated the Model Context Protocol to it.
-- The author noted they had predicted this move since skills were first declared an open standard, while also mentioning other recent blog updates.
-
-**[국문 3줄 요약 (Translated)]**
-- 앤스로픽은 에이전트 스킬 표준을 개방적이고 커뮤니티 주도적이며 벤더 중립적으로 유지하기 위해 리눅스 재단 산하 에이전틱 AI 재단(AAIF)에 기증한다고 발표했다.
-- 앤스로픽은 이전에 블록, 오픈AI와 함께 해당 재단을 공동 설립했으며 이미 모델 컨텍스트 프로토콜(MCP)을 기증한 바 있다.
-- 글쓴이는 스킬이 처음 오픈 표준으로 선언되었을 때부터 이번 기증을 예상했다고 밝히며 최근 블로그 업데이트 항목들을 함께 언급했다.
-
-#긍정
----
 [TITLE] An AI agent in "Skynet mode" hijacks unprotected language models to launch self-sustaining cyberattacks
 [LINK] https://the-decoder.com/an-ai-agent-in-skynet-mode-hijacks-unprotected-language-models-to-launch-self-sustaining-cyberattacks/
 [PUBLISHED] 2026-10-22 20:30 KST
@@ -94,78 +70,6 @@
 
 #긍정
 ---
-[TITLE] Canva’s first AI image model plans designs before generating them
-[LINK] https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model
-[PUBLISHED] 2026-10-23 06:51 KST
-[SOURCE] The Verge
-[TOPIC] 모델
-[SCORE] 8
-[REASON] 생성 전 디자인 기획 단계를 거치는 캔바 독자 이미지 모델
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-캔바의 첫 AI 이미지 모델, 생성 전 디자인을 사전 기획
-
-**[영문 3줄 요약 (Original)]**
-- Canva launched Canva Craft, its first proprietary image generation model that plans a design before generating the image to achieve greater precision and consistency.
-- The model supports up to 2K resolution across more than 30 aspect ratios, accurately placing objects and legible text based on training from millions of human-made templates.
-- Canva plans to connect AI agents to the model through the Model Context Protocol and will release faster Craft-fast and Craft-ultrafast variants in the future.
-
-**[국문 3줄 요약 (Translated)]**
-- 캔바는 더 높은 정밀도와 일관성을 얻기 위해 이미지를 생성하기 전에 디자인을 먼저 기획하는 첫 독자 이미지 생성 모델인 캔바 크래프트를 출시했다.
-- 이 모델은 30개 이상의 가로세로 비율에서 최대 2K 해상도를 지원하며 수백만 개의 사용자 제작 템플릿 학습을 바탕으로 읽기 쉬운 텍스트와 정확한 객체 배치를 구현한다.
-- 캔바는 오픈 모델 컨텍스트 프로토콜(MCP)을 통해 AI 에이전트를 해당 모델에 연결할 수 있도록 지원할 계획이며 향후 더 빠른 크래프트 패스트 및 울트라패스트 버전을 선보일 예정이다.
-
-#긍정
----
-[TITLE] SentinelOne brings runtime threat detection and response to AI agents
-[LINK] https://www.helpnetsecurity.com/2026/10/22/sentinelone-singularity-agentic-detection-and-response/
-[PUBLISHED] 2026-10-22 20:27 KST
-[SOURCE] Help Net Security
-[TOPIC] 에이전트, 보안, 규제
-[SCORE] 8
-[REASON] AI 에이전트의 런타임 위협 탐지 및 대응 솔루션 출시
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-센티넬원, AI 에이전트를 위한 런타임 위협 탐지 및 대응 솔루션 출시
-
-**[영문 3줄 요약 (Original)]**
-- SentinelOne unveiled Singularity Agentic Detection and Response to discover AI agents, govern their permissions, and stop unintended or malicious activities in real time.
-- The solution builds on SentinelOne's platform to track runtime behaviors as employees increasingly manage autonomous agents holding enterprise credentials.
-- Features include an inventory for agents and MCP servers, cross-platform coverage, and execution graph integration linking prompt requests to resulting system processes.
-
-**[국문 3줄 요약 (Translated)]**
-- 센티넬원은 AI 에이전트를 식별하고 권한을 통제하며 의도치 않거나 악의적인 활동을 실시간으로 차단하는 싱귤래리티 에이전틱 탐지 및 대응(ADR)을 공개했다.
-- 이 솔루션은 직원들이 엔터프라이즈 자격 증명을 가진 자율 에이전트를 점점 더 많이 관리함에 따라 런타임 동작을 추적할 수 있도록 센티넬원의 기존 플랫폼을 기반으로 구축되었다.
-- 에이전트 및 MCP 서버 인벤토리, 다중 플랫폼 지원, 사용자 프롬프트 요청부터 결과 시스템 프로세스까지 연결해 보여주는 실행 그래프 통합 기능을 제공한다.
-
-#긍정
----
-[TITLE] OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL
-[LINK] https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html
-[PUBLISHED] 2026-10-22 19:44 KST
-[SOURCE] The Hacker News
-[TOPIC] 에이전트, 개발, 모델
-[SCORE] 8
-[REASON] 악성 MCP 서버를 통한 OpenCode 원격 코드 실행 결함
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-오픈코드 결함으로 악성 MCP 서버가 윈도우 및 WSL 로그인 중 코드를 실행 가능
-
-**[영문 3줄 요약 (Original)]**
-- A critical security flaw in the OpenCode AI coding agent allowed malicious or hijacked MCP servers to execute code on developers' Windows and WSL systems during sign-in.
-- The vulnerability stemmed from passing unescaped OAuth authorization URLs to PowerShell via an outdated browser helper package, but developer Anomaly did not request a CVE.
-- Developers using OpenCode on affected platforms must manually update to version 1.18.33 or remove untrusted remote MCP servers to secure their environments.
-
-**[국문 3줄 요약 (Translated)]**
-- 오픈코드 AI 코딩 에이전트의 치명적 보안 결함으로 인해 악의적이거나 탈취된 MCP 서버가 개발자의 윈도우 및 WSL 시스템에서 로그인 시 임의 코드를 실행할 수 있었다.
-- 이 취약점은 구버전 브라우저 헬퍼 패키지를 통해 이스케이프 처리되지 않은 OAuth 인증 URL을 파워셸로 넘기면서 발생했으나, 개발사 아노말리는 CVE를 요청하지 않았다.
-- 영향을 받는 플랫폼에서 오픈코드를 사용하는 개발자는 환경을 보호하기 위해 1.18.33 버전 이상으로 직접 업데이트하거나 신뢰할 수 없는 원격 MCP 서버를 제거해야 한다.
-
-#부정
----
 [TITLE] Microsoft’s Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases ‘medical superintelligence’
 [LINK] https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/
 [PUBLISHED] 2026-10-23 03:43 KST
@@ -190,43 +94,115 @@
 
 #긍정
 ---
-[TITLE] Ai2 releases OlmoEarth v1.3 state-of-the-art AI-ready satellite embeddings for the whole planet
-[LINK] https://siliconangle.com/2026/10/22/ai2-releases-olmoearth-v1-3-state-of-the-art-ai-ready-satellite-embeddings-for-the-whole-planet/
-[PUBLISHED] 2026-10-22 22:00 KST
-[SOURCE] SiliconANGLE
-[TOPIC] 개발, 모델
-[SCORE] 7
-[REASON] 전 지구 위성 관측 데이터를 지문 형태로 압축하는 임베딩 모델
+[TITLE] Canva’s first AI image model plans designs before generating them
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model
+[PUBLISHED] 2026-10-23 06:51 KST
+[SOURCE] The Verge
+[TOPIC] 모델
+[SCORE] 8
+[REASON] 생성 전 디자인 기획 단계를 거치는 캔바 독자 이미지 모델
 [MODEL] gemini-3.8-flash
 [SUMMARY]
 **[기사 제목 번역]**
-Ai2, 전 지구 대상의 최첨단 AI용 위성 임베딩 OlmoEarth v1.3 출시
+캔바의 첫 AI 이미지 모델, 생성 전 디자인을 사전 기획
 
 **[영문 3줄 요약 (Original)]**
-- Ai2 released OlmoEarth v1.3, an AI embedding model that compresses a year of global satellite imagery into numerical fingerprints for land patches down to 10-by-10 meters.
-- The release includes a browser-based explorer tool allowing users to map environmental and land cover changes in seconds without requiring expensive GPU fine-tuning.
-- Version 1.3 reduced training compute time by nearly half compared to the previous version and cut carbon emissions while maintaining high fine-tuning accuracy for research labs.
+- Canva launched Canva Craft, its first proprietary image generation model that plans a design before generating the image to achieve greater precision and consistency.
+- The model supports up to 2K resolution across more than 30 aspect ratios, accurately placing objects and legible text based on training from millions of human-made templates.
+- Canva plans to connect AI agents to the model through the Model Context Protocol and will release faster Craft-fast and Craft-ultrafast variants in the future.
 
 **[국문 3줄 요약 (Translated)]**
-- Ai2는 1년간의 전 지구 위성 관측 데이터를 최소 10x10미터 크기의 지표 패치별 수치 지문으로 압축하는 AI 임베딩 모델인 OlmoEarth v1.3을 출시했다.
-- 이번 출시에는 고가의 GPU 파인튜닝 없이도 사용자가 환경 및 토지 피복 변화를 수초 만에 매핑할 수 있는 브라우저 기반 탐색 도구가 포함되었다.
-- 1.3 버전은 이전 버전 대비 훈련 연산 시간을 거의 절반으로 줄이고 탄소 배출량을 감축하면서도 연구실을 위한 높은 파인튜닝 정확도를 유지했다.
+- 캔바는 더 높은 정밀도와 일관성을 얻기 위해 이미지를 생성하기 전에 디자인을 먼저 기획하는 첫 독자 이미지 생성 모델인 캔바 크래프트를 출시했다.
+- 이 모델은 30개 이상의 가로세로 비율에서 최대 2K 해상도를 지원하며 수백만 개의 사용자 제작 템플릿 학습을 바탕으로 읽기 쉬운 텍스트와 정확한 객체 배치를 구현한다.
+- 캔바는 오픈 모델 컨텍스트 프로토콜(MCP)을 통해 AI 에이전트를 해당 모델에 연결할 수 있도록 지원할 계획이며 향후 더 빠른 크래프트 패스트 및 울트라패스트 버전을 선보일 예정이다.
 
 #긍정
 ---
-[TITLE] 모빌린트, 휴머노이드용 AI 플랫폼 개발...NPU부터 SW까지 통합
-[LINK] http://www.newstheai.com/news/articleView.html?idxno=21773
-[PUBLISHED] 2026-10-22 13:26 KST
-[SOURCE] 더에이아이
-[TOPIC] 모델, 신기술
-[SCORE] 7
-[REASON] 휴머노이드 전용 고성능 저전력 온디바이스 NPU 개발
-[MODEL] gemini-3.8-flash
+[TITLE] 클로드·그록으로 무장한 해커들, 중남미 은행 400여곳 사이버 공격 자동화
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216541
+[PUBLISHED] 2026-10-22 16:58 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 모델, 보안, 산업
+[SCORE] 9
+[REASON] 금융사 AI 자동화 공격 탐지 대비 필요
+[MODEL] manual
 [SUMMARY]
 **[국문 3줄 요약]**
-- 모빌린트가 산업부 온디바이스 AI 반도체 과제의 일환으로 휴머노이드 전용 고성능 및 저전력 NPU와 구동 소프트웨어를 통합 개발한다고 밝혔다.
-- 여러 AI 모델이 로봇 내에서 동시 작동할 때 발생하는 연산 지연을 줄이고 반응성을 높이기 위해 반도체부터 모델 실행 소프트웨어까지 단일 플랫폼으로 구축한다.
-- 해당 플랫폼은 LG전자의 휴머노이드 환경에서 전력, 발열, 방열 및 제어 안정성을 검증받은 뒤 향후 다양한 피지컬 AI 분야로 확장 적용될 예정이다.
+- 사이버보안 스타트업 스트레이커는 해킹 그룹 사이버카르텔이 앤트로픽의 클로드와 스페이스X의 그록 등 여러 상용 AI 모델을 결합해 중남미 금융기관 400여곳을 대상으로 사이버 공격을 자동화했다고 밝혔다.
+- 그록 기반 에이전트는 표적 정보를 수집하고 클로드 기반 에이전트는 공격 전략을 논의하고 실행했으며, 클로드가 해킹 요청을 거부하면 키미로 작업을 넘기고 키미도 거부하면 악성코드를 배포하는 전통적 방식으로 전환하도록 구성했다.
+- 앤트로픽은 조사에 착수해 사이버 범죄자들의 클로드 사용을 차단했다고 밝혔고, 스트레이커는 스페이스X에도 조사 결과를 전달했으며 문샷AI에는 연락을 시도하고 있다고 전했다.
+
+#부정
+---
+[TITLE] Chinese hackers spied on thousands of companies after breaching IT giant ConnectWise
+[LINK] https://techcrunch.com/2026/10/22/chinese-hackers-spied-on-thousands-of-companies-after-breaching-it-giant-connectwise/
+[PUBLISHED] 2026-10-23 01:47 KST
+[SOURCE] TechCrunch
+[TOPIC] 에이전트, 보안
+[SCORE] 8
+[REASON] MSP 고객사 에이전트 기반 공격 점검 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+중국 해커들, IT 대기업 커넥트와이즈 침해 후 수천 개 기업 감시
+
+**[영문 3줄 요약 (Original)]**
+- Microsoft researchers say China state-aligned hackers broke into ConnectWise's cloud backup service and stole application credentials used to link ConnectWise with its corporate customers.
+- With the stolen credentials, the hackers could log in to customers' Microsoft-hosted environments as authorized users, and used AI agents to hack into around 2,250 organizations at almost 3,000 attempted sign-ins per minute.
+- The speed was attributed to ARTEX, an open source AI framework also used in a recent compromise of South Korea's financial systems, and ConnectWise paused access to its cloud backup system and is investigating.
+
+**[국문 3줄 요약 (Translated)]**
+- 마이크로소프트 연구진은 중국 국가 연계 해커들이 커넥트와이즈의 클라우드 백업 서비스에 침입해 커넥트와이즈와 기업 고객을 연결하는 데 쓰이는 애플리케이션 자격 증명을 훔쳤다고 밝혔다.
+- 해커들은 훔친 자격 증명으로 고객의 마이크로소프트 호스팅 환경에 승인된 사용자처럼 로그인할 수 있었고, AI 에이전트를 이용해 분당 거의 3,000건의 로그인 시도 속도로 약 2,250개 조직에 침입했다.
+- 이 속도는 최근 한국 금융 시스템 침해에도 쓰인 오픈소스 AI 프레임워크 ARTEX에서 비롯된 것으로 분석됐으며, 커넥트와이즈는 클라우드 백업 시스템 접근을 중단하고 침해를 조사하고 있다.
+
+#부정
+---
+[TITLE] OpenShell - AI 에이전트의 파일과 네트워크 접근을 제어하는 NVIDIA 런타임
+[LINK] https://news.hada.io/topic?id=35833
+[PUBLISHED] 2026-10-23 06:40 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 규제
+[SCORE] 7
+[REASON] 에이전트 권한을 커널 수준으로 격리
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- OpenShell은 AI 에이전트에게 작업 권한을 주면서도 파일, 비밀정보, 네트워크 접근 범위를 제한하는 NVIDIA의 오픈소스 런타임이며, 에이전트별 정책을 선언하고 실행 중 강제 적용한다.
+- 각 에이전트를 격리된 샌드박스에서 실행해 커널 수준에서 파일 접근과 시스템 호출을 제한하고, 실제 자격 증명은 에이전트에 노출하지 않은 채 승인된 목적지로 향하는 요청에만 런타임이 추가한다.
+- Docker와 Podman, VM, Kubernetes에 같은 정책 모델을 적용하고 Python, TypeScript, Go, Rust SDK를 지원하며, Apache License 2.0으로 배포되고 익명 텔레메트리는 비활성화할 수 있다.
+
+#긍정
+---
+[TITLE] 엔비디아, 로봇 데이터 수집 비용 125배 낮추는 모델 '플로라' 공개
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216528
+[PUBLISHED] 2026-10-22 17:40 KST
+[SOURCE] AI타임스
+[TOPIC] 모델, 신기술
+[SCORE] 6
+[REASON] 로봇 학습 데이터 제작 비용 절감
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 엔비디아가 로봇 학습에 필요한 데이터 제작 비용을 최대 125분의 1 수준으로 낮출 수 있는 오픈 모델 제품군 플로라를 20일(현지시간) 공개하고 모델 가중치를 허깅페이스에 배포했다.
+- 플로라는 템프세그 9B, 캡셔너 27B, 리워더 27B 세 모델로 구성돼 영상에서 동작 구간, 시간 정보가 포함된 설명, 성공 여부와 실패 원인을 자동으로 기록하며, 자체 평가에서 57.1%를 기록해 GPT-6 아스트라의 53.7%를 앞섰다.
+- 영상 1시간당 처리 비용은 플로라가 약 0.72달러, GPT-6 아스트라가 약 88.49달러로 추정되지만, 라이선스는 연구 목적에 한정된 비상업용이라 상업적 이용은 지원하지 않는다.
+
+#긍정
+---
+[TITLE] 메르세데스-벤츠·엔비디아, 도심 자율주행 새 지평…목적지까지 주행 지원하는 '엠비 드라이브 어시스트 프로' 출시
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42395
+[PUBLISHED] 2026-10-22 17:09 KST
+[SOURCE] 인공지능신문
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 도심 주행 보조 상용화 독일 확대
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 메르세데스-벤츠가 엔비디아와 공동 개발한 AI 기반 운전자 보조 시스템 엠비 드라이브 어시스트 프로를 2027년 상반기부터 독일에서 주문할 수 있도록 할 예정이며, 2026년 말부터 슈투트가르트와 뮌헨에서 조기 이용 프로그램을 운영한다.
+- SAE 기준 레벨 2 시스템으로 내비게이션 경로를 따라 차선 변경, 교차로 회전, 신호등 앞 정지와 재출발을 지원하며, 카메라 10개, 레이더 5개, 초음파 센서 12개 등 27개 센서와 최대 254TOPS의 컴퓨터를 갖춘다.
+- 운전자가 언제든 직접 조향에 개입할 수 있는 핸즈온 방식이고 UN R171 규정에 맞춰 개발됐으며, 출시 이후 1개월 무료 체험 프로그램도 제공할 방침이다.
 
 #긍정
 ---

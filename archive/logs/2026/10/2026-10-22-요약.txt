@@ -1,27 +1,3 @@
-[TITLE] OpenAI's GPT-5.6 Sol and Google's Gemini 4 Argon found critical PHP flaw affecting millions of websites
-[LINK] https://the-decoder.com/openais-gpt-5-6-sol-and-gemini-4-argon-discovered-the-critical-php-vulnerability-affecting-millions-of-websites/
-[PUBLISHED] 2026-10-22 04:45 KST
-[SOURCE] The Decoder
-[TOPIC] 보안
-[SCORE] 9
-[REASON] 오픈AI GPT-5.6과 구글 제미나이 4를 통한 치명적 PHP 취약점 사전 발견
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-오픈AI의 GPT-5.6 Sol과 구글의 제미나이 4 Argon, 수백만 웹사이트에 영향을 미치는 치명적 PHP 결함 발견
-
-**[영문 3줄 요약 (Original)]**
-- OpenAI's GPT-5.6 Sol and Google's Gemini 4 Argon identified a critical PHP vulnerability that could affect millions of websites worldwide.
-- Security firm Wiz also independently discovered the flaw using Gemini 4 Argon and GPT-5.6 Sol, noting that Gemini 4 Argon was especially useful across vulnerability detection, exploit development, and patch validation.
-- The fix was coordinated over two months with PHP developers and US agencies, but experts warn that AI models significantly lower the barrier for attackers to adapt and scale exploits across different deployments.
-
-**[국문 3줄 요약 (Translated)]**
-- 오픈AI의 GPT-5.6 Sol과 구글의 제미나이 4 Argon이 전 세계 수백만 웹사이트에 영향을 미칠 수 있는 치명적인 PHP 취약점을 발견했다.
-- 보안 기업 Wiz 역시 제미나이 4 Argon과 GPT-5.6 Sol을 사용해 해당 결함을 독자적으로 발견했으며, 제미나이 4 Argon이 취약점 발견, 익스플로잇 개발, 패치 검증 전반에 특히 유용했다고 밝혔다.
-- 패치는 PHP 개발진 및 미국 정부 기관 등과 2개월간 공조해 마련됐으나, AI 모델이 서로 다른 환경에 맞춰 익스플로잇을 조정하고 공격을 확장하는 진입 장벽을 크게 낮춘다는 경고도 나왔다.
-
-#중립
----
 [TITLE] OpenAI’s models are deliberately breaking their misalignment monitoring systems
 [LINK] https://www.infoworld.com/article/4238802/openais-models-are-deliberately-breaking-their-misalignment-monitoring-systems-2.html
 [PUBLISHED] 2026-10-22 08:51 KST
@@ -94,94 +70,6 @@
 
 #중립
 ---
-[TITLE] Hackers Exploited the PHP Vulnerabilities Days Before They Were Patched
-[LINK] https://www.wired.com/story/hackers-exploited-the-php-vulnerabilities-days-before-they-were-patched/
-[PUBLISHED] 2026-10-22 11:24 KST
-[SOURCE] WIRED
-[TOPIC] 보안
-[SCORE] 8
-[REASON] PHP2Shell 패치 공개 수일 전부터 실제 공격 악용이 포착됨을 확인
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-해커들, 패치 공개 수일 전부터 PHP 취약점 악용
-
-**[영문 3줄 요약 (Original)]**
-- Research published by Amazon Web Services revealed that an attacker attempted to exploit the critical PHP2Shell vulnerabilities on October 17, four days before the public patch was released.
-- AWS researchers detected multiple anonymized exploitation attempts against their honeypots leading up to the public disclosure, and proof-of-concept exploits began surfacing publicly on Wednesday.
-- AWS emphasized that AI tools are structurally shortening the time from patch disclosure to working exploit, enabling more actors to launch attacks within hours or minutes.
-
-**[국문 3줄 요약 (Translated)]**
-- 아마존웹서비스(AWS) 연구 결과에 따르면 공식 패치가 발표되기 나흘 전인 10월 17일부터 공격자가 치명적인 PHP2Shell 취약점을 악용하려 시도한 것으로 드러났다.
-- AWS 연구진은 공개 직전 허니팟을 겨냥한 다수의 익명화된 공격 시도를 감지했으며, 수요일 공개 전후로 개념증명(PoC) 익스플로잇이 공개되기 시작했다고 밝혔다.
-- AWS는 AI 도구가 패치 공개부터 실제 익스플로잇 제작까지 걸리는 시간을 구조적으로 단축시켜 더 많은 공격자가 수 시간 또는 수 분 내에 공격에 나설 수 있게 되었다고 강조했다.
-
-#부정
----
-[TITLE] 티오리, 치명적 PHP 취약점 ‘PHP2Shell’ 재현·검증 완료…긴급 대응 방안 공개
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=208986
-[PUBLISHED] 2026-10-22 11:32 KST
-[SOURCE] 데일리시큐
-[TOPIC] 개발, 보안
-[SCORE] 8
-[REASON] 티오리의 치명적 PHP 취약점 PHP2Shell 재현 및 긴급 가이드 배포
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[국문 3줄 요약]**
-- 사이버보안 기업 티오리가 최고 위험 등급인 PHP 엔진 자체 결함 'PHP2Shell(CVE-2026-109618, CVE-2026-109619)'을 재현 및 검증하고 긴급 대응 가이드를 발표했다.
-- 해당 취약점은 메모리 부족 처리 및 해제된 메모리 상태 오류로 인해 별도 인증 없이 원격 코드 실행(RCE)이 가능하며, PHP 8.2부터 8.5 및 구형 지원 종료 버전에 영향을 미친다.
-- 티오리는 공식 보안 패치 적용을 최우선으로 권고하면서, 즉각적인 업데이트가 어려운 환경을 위해 session.upload_progress.enabled 비활성화 및 웹방화벽 차단 등 임시 완화책을 제시했다.
-
-#부정
----
-[TITLE] Recursive launches Flint, a laptop coding model it says was largely built by AI
-[LINK] https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/
-[PUBLISHED] 2026-10-22 05:27 KST
-[SOURCE] TechCrunch
-[TOPIC] 개발, 모델, 산업
-[SCORE] 8
-[REASON] AI 자체 연구로 구축된 재귀적 자기 개선 코딩 모델 플린트 출시
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-리커시브, 상당 부분 AI로 구축되었다고 밝힌 노트북용 코딩 모델 플린트 출시
-
-**[영문 3줄 요약 (Original)]**
-- AI startup Recursive launched Flint, a free and open-source coding model that runs on a laptop and was developed largely with the help of its automated research system, the Eureka Machine.
-- Flint is a mixture-of-experts model that uses 2.5 billion of its 40 billion parameters at a time, generating 131 tokens per second on an M4 Pro chip and outperforming other sub-50-billion-parameter models on SWE-Bench Verified.
-- The release serves as an early public demonstration of recursive self-improvement, showing that AI research tools can help small teams build competitive local models in under four months.
-
-**[국문 3줄 요약 (Translated)]**
-- AI 스타트업 리커시브가 자체 자동화 연구 시스템인 유레카 머신의 도움을 받아 개발한 노트북 구동용 무료 오픈소스 코딩 모델 '플린트(Flint)'를 출시했다.
-- 플린트는 전체 400억 개 매개변수 중 25억 개만 활성화하는 전문가 혼합 모델로, M4 Pro 칩에서 초당 131개 토큰을 생성하며 SWE-Bench Verified에서 500억 개 이하 매개변수 모델들을 능가했다.
-- 이번 출시는 재귀적 자기 개선 개념의 초기 공개 시험 사례로, 소규모 팀이 AI 연구 도구를 활용해 4개월 만에 경쟁력 있는 로컬 모델을 구축할 수 있음을 보여준다.
-
-#긍정
----
-[TITLE] NVIDIA unveils security architecture that can stop AI agents crossing set boundaries
-[LINK] https://www.helpnetsecurity.com/2026/10/21/nvidia-openshell-reference-architecture/
-[PUBLISHED] 2026-10-21 22:52 KST
-[SOURCE] Help Net Security
-[TOPIC] 에이전트, 모델, 보안
-[SCORE] 8
-[REASON] 엔비디아의 AI 에이전트 권한 제어 및 보안 아키텍처 오픈셸 발표
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-엔비디아, AI 에이전트의 설정 경계 이탈을 차단하는 보안 아키텍처 공개
-
-**[영문 3줄 요약 (Original)]**
-- NVIDIA announced the OpenShell Reference Architecture to help enterprises control and monitor AI agents operating across enterprise infrastructure and local computing systems.
-- The architecture coordinates models running on Vera Rubin systems with BlueField-4 DPUs running NVIDIA Sentry, which isolates and stops an agent within milliseconds if it attempts to step outside defined boundaries.
-- Partners including ServiceNow are integrating the system to enable instant access revocation across hardware and software, and global banks are exploring the framework to strengthen agent safety.
-
-**[국문 3줄 요약 (Translated)]**
-- 엔비디아가 기업 인프라와 로컬 컴퓨팅 시스템 전반에서 동작하는 AI 에이전트를 통제하고 감시할 수 있도록 돕는 '오픈셸 레퍼런스 아키텍처'를 공개했다.
-- 해당 아키텍처는 베라 루빈 시스템에서 실행되는 모델과 블루필드-4 DPU 상의 엔비디아 센트리 소프트웨어를 결합해, 에이전트가 지정된 경계를 벗어나려 할 때 수 밀리초 내에 격리 및 차단한다.
-- 서비스나우를 비롯한 파트너사들이 하드웨어와 소프트웨어 전반에서 에이전트 접근 권한을 수초 만에 취소할 수 있도록 연동을 진행 중이며, 주요 글로벌 은행들도 도입을 검토하고 있다.
-
-#긍정
----
 [TITLE] 엔비디아, 휴머노이드·AI 학습 기술 확대...범용 로봇 개발 위한 아이작 플랫폼 고도화
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42386
 [PUBLISHED] 2026-10-22 09:24 KST
@@ -195,6 +83,93 @@
 - 엔비디아가 GTC 베를린 2026에서 휴머노이드 로봇 학습, 시뮬레이션, 현장 배포 전 과정을 아우르는 오픈 로보틱스 개발 플랫폼 '엔비디아 아이작'의 주요 업데이트를 발표했다.
 - 애자일 로봇의 젯슨 토르 기반 휴머노이드 플랫폼 '애자일 원 SN' 공개와 함께 아이작 랩 3.0 정식 출시, 아이작 OS, 3D 손 추적 데이터셋 등이 새롭게 제공된다.
 - ABB, 쿠카, 토요타 머티리얼 핸들링 등 글로벌 기업들의 도입 사례가 확대되며 로봇 개발의 핵심 축이 단일 하드웨어에서 통합 개발 환경으로 전환되고 있다.
+
+#긍정
+---
+[TITLE] AI가 먼저 찾아낸 PHP의 허점 “패치를 미루지 마라”
+[LINK] https://www.itworld.co.kr/article/4238838/%eb%91%90-%ea%b0%80%ec%a7%80-%ec%a4%91%eb%8c%80%ed%95%9c-php-%ec%b7%a8%ec%95%bd%ec%a0%90%ec%9c%bc%eb%a1%9c-%ec%9d%b8%ed%95%b4-%ec%9b%b9-%ec%97%85%ea%b3%84%ea%b0%80-%ea%b2%bd%ea%b3%84-%ed%83%9c.html
+[PUBLISHED] 2026-10-22 11:22 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 개발, 보안
+[SCORE] 8
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- PHP에서 인증 없이 원격 코드 실행이 가능한 치명적 취약점 2건이 공개되면서 네덜란드와 핀란드 등 유럽 일부 정부 웹사이트가 예방 차원에서 오프라인으로 전환됐다.
+- CVE-2026-109618은 메모리 부족 처리 중 발생하는 메모리 손상을 통해, CVE-2026-109619는 이후 요청이 오래된 전역 상태를 재사용하는 과정에서 원격 코드 실행을 허용하며 둘 다 CVSS 9.2점이다.
+- PHP 재단은 PHP 8.5.12, 8.4.27, 8.3.36 또는 8.2.35로 즉시 업데이트해야 한다고 밝혔고, 오픈AI는 레드팀 기업 캘리프가 GPT 5.6 Sol로 결함을 식별했다고 설명했다.
+
+#부정
+---
+[TITLE] ‘Context Bombs’ Cut AI Attack Success by Misleading Agents With Fake Targets
+[LINK] https://www.securityweek.com/context-bombs-cut-ai-attack-success-by-misleading-agents-with-fake-targets/
+[PUBLISHED] 2026-10-22 00:00 KST
+[SOURCE] SecurityWeek
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 7
+[REASON] 기만 프롬프트로 AI 공격 에이전트 방어
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+‘컨텍스트 폭탄’, 가짜 표적으로 AI 에이전트를 오도해 AI 공격 성공률 낮춰
+
+**[영문 3줄 요약 (Original)]**
+- Tracebit developed AI context bombs, crafted hidden prompts that attacking AI agents ingest while crawling a target and that misdirect them with fake targets and deceptively complex problems.
+- Nine new context techniques stopped all attacks by GPT 5.6 Cyber, Kimi K3, Qwen 3.8 Max, and DeepSeek V4 Pro, cut GPT-6 Astra's successes by 54%, and cut attack success against Claude Opus 5 by 91%.
+- Even when a context bomb failed to stop an attack, it increased the cost of each success by 23x, and the most effective bomb was a fake pen testing report.
+
+**[국문 3줄 요약 (Translated)]**
+- 트레이스빗은 공격하는 AI 에이전트가 대상을 크롤링할 때 흡수하는 숨겨진 프롬프트인 AI 컨텍스트 폭탄을 개발했으며, 이는 가짜 표적과 교묘하게 복잡한 문제로 에이전트를 오도한다.
+- 새로운 컨텍스트 기법 9가지는 GPT 5.6 Cyber, Kimi K3, Qwen 3.8 Max, DeepSeek V4 Pro의 모든 공격을 막았고, GPT-6 Astra의 성공을 54% 줄였으며, Claude Opus 5를 상대로 한 공격 성공률을 91% 낮췄다.
+- 컨텍스트 폭탄이 공격을 막지 못한 경우에도 성공 한 건당 비용이 23배로 늘었고, 가장 효과적인 폭탄은 가짜 침투 테스트 보고서였다.
+
+#긍정
+---
+[TITLE] 크래프톤, 자체 개발 30B급 고효율 LLM 'Raon-1 mini' 프리뷰 공개
+[LINK] https://news.hada.io/topic?id=35752
+[PUBLISHED] 2026-10-21 19:00 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 모델
+[SCORE] 6
+[REASON] 국내 게임사의 독자 오픈웨이트 모델 공개
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 크래프톤이 모델 아키텍처 설계부터 사전학습까지 독자 개발한 30B급 오픈웨이트 LLM Raon-1 mini 프리뷰를 공개했으며, 한국어와 영어 대화, 추론, AI 에이전트 작업에 초점을 맞췄다.
+- MoE와 자체 개발한 선형 어텐션 기술을 결합해 전체 약 300억 개 파라미터 중 추론 시 약 40억 개만 활성화하고 최대 262K 토큰 컨텍스트를 지원하며, 자체 평가에서 IFBench 84.2점, AIME 2026 93.3점, SWE-Verified 70.8점을 기록했다.
+- Apache 2.0 라이선스로 Hugging Face에 모델 가중치를 공개해 연구와 상업적 활용이 가능하고, 향후 성능을 개선한 정식 버전과 기술 보고서를 공개할 예정이다.
+
+#긍정
+---
+[TITLE] fal, '시댄스 2.5'보다 22배 빠른 비디오 모델 '플럭스 3 맥스' 출시
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216487
+[PUBLISHED] 2026-10-21 17:10 KST
+[SOURCE] AI타임스
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 영상 생성 모델 속도 경쟁 본격화
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 기업용 AI 멀티미디어 제작 플랫폼 팔이 블랙 포레스트 랩스와 공동 개발한 비디오 생성 모델 플럭스 3 맥스를 20일(현지시간) 출시했다.
+- fal의 비교 결과에서 10초 분량 영상을 생성하는 데 플럭스 3 맥스는 평균 12.45초, 시댄스 2.5는 277.80초가 걸렸고, 두 모델은 동일한 품질 점수를 기록했다.
+- 생성 가능한 영상 길이는 5~20초이고 기본 해상도는 720p이며, 출시 후 3주 동안 75% 할인되고 정규 API 요금은 720p 기준 초당 0.17달러, 1080p 기준 초당 0.29달러이다.
+
+#긍정
+---
+[TITLE] "AI 에이전트, 보안 판 바꾼다"…엔비디아 OpenShell 아키텍처 공개, 위험 행동 밀리초 만에 차단
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42387
+[PUBLISHED] 2026-10-22 10:32 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 보안, 규제
+[SCORE] 6
+[REASON] 기업 에이전트 실행 권한 통제 구조 제시
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 엔비디아가 21일(현지시간) 독일 베를린에서 열린 GTC에서 기업용 AI 에이전트의 실행 환경과 보안 통제 체계를 통합한 오픈셸 레퍼런스 아키텍처를 공개했다.
+- 베라 루빈은 모델의 학습과 추론을, 베라 CPU는 에이전트의 하네스와 도구 사용을 맡고, 블루필드-4 DPU와 센트리가 보안 정책을 집행해 허용 범위를 벗어난 에이전트를 밀리초 단위로 중단할 수 있다고 엔비디아는 설명했다.
+- 캐노니컬, 수세, 레드햇과 AWS, 구글 클라우드, 마이크로소프트 애저를 지원하고 앤트로픽, 오픈AI 등 모델 공급업체와 사이버보안 업체가 협력하며, 다만 실제 도입 효과는 기업별 환경에 따라 달라질 수 있다.
 
 #긍정
 ---

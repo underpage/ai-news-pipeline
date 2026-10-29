@@ -86,30 +86,6 @@
 
 #긍정
 ---
-[TITLE] Anthropic says one AI agent beats many subagents now that models can handle complexity alone
-[LINK] https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone/
-[PUBLISHED] 2026-10-25 18:12 KST
-[SOURCE] The Decoder
-[TOPIC] 에이전트, 모델
-[SCORE] 8
-[REASON] 하위 에이전트 다수보다 단일 에이전트 통합이 우수하다는 분석
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-앤트로픽, 모델이 복잡성을 자체 처리함에 따라 하나의 AI 에이전트가 다수의 하위 에이전트를 능가한다고 발표
-
-**[영문 3줄 요약 (Original)]**
-- Anthropic reported that a single primary agent with on-demand context often outperforms multi-agent architectures in quality, latency, and operational cost.
-- Advanced models such as Opus 4.5 and Opus 5.5 can handle complex planning internally, eliminating the communication overhead, latency, and prompt contradictions associated with specialized sub-agents.
-- To help teams streamline their systems, Anthropic published an open-source migration kit on GitHub while advising developers to package workflows into lean skill libraries rather than building separate sub-agents.
-
-**[국문 3줄 요약 (Translated)]**
-- 앤트로픽은 필요한 맥락을 그때그때 불러오는 단일 기본 에이전트가 품질, 지연 시간, 운영 비용 측면에서 다중 에이전트 아키텍처보다 뛰어난 성능을 보이는 경우가 많다고 보고했다.
-- Opus 4.5 및 Opus 5.5와 같은 최신 모델은 복잡한 계획을 내부에서 직접 처리할 수 있어, 특화된 하위 에이전트로 인해 발생하는 통신 오버헤드, 지연 시간, 프롬프트 충돌을 없애준다.
-- 시스템 간소화를 지원하기 위해 앤트로픽은 GitHub에 마이그레이션 키트를 공개하는 한편, 별도의 하위 에이전트를 만드는 대신 워크플로를 간결한 스킬 라이브러리로 패키징할 것을 권장했다.
-
-#긍정
----
 [TITLE] 엔비디아, 로컬 에이전트·로봇 겨냥 4GB 모델 '네모트론 3.5 볼트' 출시
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216625
 [PUBLISHED] 2026-10-25 16:50 KST
@@ -142,51 +118,82 @@
 
 #중립
 ---
-[TITLE] 셀렉트스타, 판단 특화 AI ‘다비’ 공개...모델 운영비 28% 줄여
-[LINK] http://www.newstheai.com/news/articleView.html?idxno=21793
-[PUBLISHED] 2026-10-26 11:29 KST
-[SOURCE] 더에이아이
-[TOPIC] 에이전트, 모델
-[SCORE] 7
-[REASON] 모델 라우팅 및 적절성 평가 전용 판단 모델 공개
-[MODEL] gemini-3.8-flash
+[TITLE] PHP2Shell Exploitation Hits Government Entity Amid Global Scanning and Signs of AI-Assisted Hacking
+[LINK] https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html
+[PUBLISHED] 2026-10-26 02:19 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 보안
+[SCORE] 8
+[REASON] 공격자가 침투 후 단계에 에이전트형 AI 활용
+[MODEL] manual
 [SUMMARY]
-**[국문 3줄 요약]**
-- 셀렉트스타는 질문 난도에 맞춰 적절한 모델을 선택하고 답변 품질을 평가하는 판단 특화 AI 모델 '다비(DAVI)'를 공개했다.
-- 다비는 제브벤치 평가에서 89.2%의 정확도를 기록해 글로벌 모델 대비 우수한 성능을 보였으며, 클로드 모델군을 활용한 라우팅 실험에서 오퍼스 단독 사용 대비 정답률을 유지하며 운영 비용을 약 28% 절감했다.
-- 회사는 이 모델의 플러그인을 오픈소스로 제공하고 11월 자사의 AI 신뢰성 평가 플랫폼인 '다투모 이밸'에 적용해 기업의 모델 운영 효율화를 지원할 계획이다.
+**[기사 제목 번역]**
+PHP2Shell 악용, 전 세계 스캔 속에 정부기관을 타격하고 AI 활용 해킹 정황 포착
 
-#긍정
+**[영문 3줄 요약 (Original)]**
+- Palo Alto Networks Unit 42 said attackers used agentic AI platforms for post-exploitation activity after abusing the PHP2Shell flaws CVE-2026-109618 and CVE-2026-109619, though it later retracted its assessment that the European government agency attack involved those flaws.
+- In the government case, the attackers accessed password hashes and multi-factor authentication secrets within two hours of initial exploitation, established an NTLM-relay tunnel into Active Directory, and attempted Domain Admin privilege escalation.
+- Separately, CYFIRMA said a suspected North Korea-linked campaign is using PHP2Shell to probe 216 unpatched or partially mitigated hosts across multiple countries from 21 compromised nodes.
+
+**[국문 3줄 요약 (Translated)]**
+- Palo Alto Networks Unit 42는 공격자들이 PHP2Shell 취약점 CVE-2026-109618과 CVE-2026-109619를 악용한 뒤 침투 후 활동에 에이전트형 AI 플랫폼을 사용했다고 밝혔지만, 유럽 정부기관 공격이 이 취약점과 관련됐다는 기존 평가는 이후 철회했다.
+- 정부기관 사례에서 공격자들은 최초 악용 후 두 시간 안에 비밀번호 해시와 다중 인증 비밀 값에 접근했고, Active Directory로 향하는 NTLM 릴레이 터널을 구축했으며 Domain Admin 권한 상승을 시도했다.
+- 별도로 CYFIRMA는 북한과 연관된 것으로 의심되는 캠페인이 침해된 노드 21개에서 PHP2Shell로 여러 국가의 미패치 또는 부분 완화 상태 호스트 216개를 탐색하고 있다고 밝혔다.
+
+#부정
 ---
-[TITLE] Pinterest, 사용자 활동에서 장기 목표를 추론하는 LLM 구축
-[LINK] https://news.hada.io/topic?id=36011
-[PUBLISHED] 2026-10-26 10:50 KST
+[TITLE] OpenAI, AI의 격리 탈출을 막는 모델 훈련 환경 보안 체계 공개
+[LINK] https://news.hada.io/topic?id=35985
+[PUBLISHED] 2026-10-26 03:43 KST
 [SOURCE] GeekNews
-[TOPIC] 모델
+[TOPIC] 모델, 보안
 [SCORE] 7
-[REASON] 사용자 행동 기록에서 목표를 직접 추론하는 4B LLM 적용
-[MODEL] gemini-3.8-flash
+[MODEL] manual
 [SUMMARY]
 **[국문 3줄 요약]**
-- 핀터레스트는 사용자의 검색과 저장 활동 기록으로부터 장기적인 목표를 직접 추론해 추천과 알림에 반영하는 미세 조정된 40억 파라미터 LLM을 구축했다.
-- 기존의 다단계 임베딩 및 클러스터링 방식에서 발생하던 목표 분리와 막연한 이름 지정 문제를 해결하기 위해, 대형 모델로 생성한 고품질 데이터로 Qwen3 4B를 학습시켰다.
-- L40S GPU 약 100개로 초당 775건을 처리하는 비용 효율적 아키텍처를 구현해 실제 서비스에서 이메일 클릭률 1.1%와 푸시 열람률 1.3%의 상승을 달성했다.
+- OpenAI가 AI의 샌드박스 탈출과 무단 인터넷 접속을 막는 훈련 환경 보안 체계를 공개하고 최상위 모델로 직접 방어를 시험한 결과를 발표했다.
+- 9월 20일 연구 모델이 DNS 설정 오류로 인터넷에 접속한 사고 이후 최상위 모델의 훈련과 평가를 중단했고, 수천억 토큰을 투입한 공격 실험에서 가상머신 탈출과 내부 서비스를 통한 인터넷 접속 경로를 발견했다.
+- OpenAI는 발견한 문제를 수정하고 Patch the Planet을 통해 오픈소스 프로젝트에도 패치를 제공하며, 모든 최첨단 모델의 강화학습에는 저장된 웹 콘텐츠로 만든 오프라인 세계를 사용한다.
 
-#긍정
+#중립
 ---
-[TITLE] “모르면 추측 대신 기억을 확인한다”…ETRI·GIST, 스스로 판단하고 행동하는 로봇 AI 플랫폼 공개
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42427
-[PUBLISHED] 2026-10-26 10:40 KST
-[SOURCE] 인공지능신문
-[TOPIC] 에이전트, 모델, 신기술
+[TITLE] 노드.js만 패치하면 끝?…브로틀리 쓰는 파이썬·프록시도 점검 필요
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209049
+[PUBLISHED] 2026-10-25 15:34 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 보안
 [SCORE] 7
-[REASON] 환경 관측과 기억 검색을 결합한 로봇 AI 에이전트 개발
-[MODEL] gemini-3.8-flash
+[REASON] Node.js 외 파이썬과 프록시도 패치 점검 필요
+[MODEL] manual
 [SUMMARY]
 **[국문 3줄 요약]**
-- ETRI와 GIST 연구진은 환경 관측과 능동적 기억 검색을 결합해 로봇의 복합작업 성공률을 최대 24%포인트 향상시킨 로봇 AI 에이전트 '씬쿼리플래너'를 개발했다.
-- 공간과 물체 및 상태 정보를 3차원 장면 그래프로 구조화하여 저장하고, 작업 수행 중 필요한 정보만 선별 검색하거나 추가 관측하도록 행동 계획에 반영해 AI 환각을 줄였다.
-- 새로 구축한 앳플랜-벤치마크 평가에서 라마 3.1과 큐웬 2.5 기반 작업 성공률을 크게 개선하며, 모델 크기 확대 없이도 에이전트 구조 개선을 통해 피지컬 AI 역량을 높일 수 있음을 입증했다.
+- 구글의 압축 라이브러리 브로틀리에서 조작된 데이터를 해제할 때 악성코드가 실행될 수 있는 취약점 CVE-2026-111497이 확인됐다.
+- 노드.js뿐 아니라 번, 파이썬 관련 패키지, 엔보이와 이스티오도 영향을 받을 수 있으며, 다른 서버에서 받아온 브로틀리 압축 응답을 자동으로 해제하는 과정도 공격 경로가 될 수 있다.
+- 노드.js는 10월 21일 22.23.4, 24.22.1, 26.12.1 수정 버전을 공개했고, 구글 브로틀리도 1.0.10, 1.1.1, 1.2.1에 보안 수정을 반영했다.
+
+#부정
+---
+[TITLE] Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra
+[LINK] https://the-decoder.com/nvidia-open-sources-flora-to-make-robot-video-labeling-125x-cheaper-than-gpt-6-astra/
+[PUBLISHED] 2026-10-25 19:08 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 6
+[REASON] 로봇 학습 데이터 구축 비용 크게 낮춤
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+엔비디아, 로봇 영상 라벨링 비용을 GPT-6 Astra의 125분의 1로 낮추는 Flora 오픈소스 공개
+
+**[영문 3줄 요약 (Original)]**
+- Nvidia open-sourced Flora, a data engine made of three fine-tuned Qwen3.5 models that labels robot video with action descriptions, step-by-step progress ratings, and task success judgments.
+- By Nvidia's estimate, labeling one hour of video costs about 72 cents with Flora versus roughly $88.50 with GPT-6 Astra, though the figures are projections based on an assumed rental price of $10 per GPU per hour.
+- Flora-Rewarder catches 53.3 percent of failed steps within an episode while no competitor gets above 11.7 percent, but it falsely flags about 11 percent of normal steps as errors and Astra still leads on rubric-based scoring and trajectory ranking.
+
+**[국문 3줄 요약 (Translated)]**
+- 엔비디아는 동작 설명, 단계별 진행 평가, 작업 성공 판정으로 로봇 영상에 라벨을 붙이는 데이터 엔진 Flora를 오픈소스로 공개했으며, 이는 파인튜닝한 Qwen3.5 모델 세 개로 구성된다.
+- 엔비디아의 추정에 따르면 영상 1시간을 라벨링하는 비용은 Flora가 약 72센트, GPT-6 Astra가 약 88.50달러이지만, 이 수치는 GPU 1개당 시간당 임대 가격을 10달러로 가정한 예측치이다.
+- Flora-Rewarder는 에피소드 안에서 실패한 단계의 53.3퍼센트를 잡아내고 경쟁 모델 중 11.7퍼센트를 넘는 모델은 없지만, 정상 단계의 약 11퍼센트를 오류로 잘못 표시하며 루브릭 기반 채점과 궤적 순위에서는 여전히 Astra가 앞선다.
 
 #긍정
 ---

@@ -30,46 +30,6 @@
 
 #부정
 ---
-[TITLE] 클로드, 선거 앞두고 조지아주 유권자 데이터 무단 접근 논란
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=216638
-[PUBLISHED] 2026-10-26 13:12 KST
-[SOURCE] AI타임스
-[TOPIC] 에이전트, 보안
-[SCORE] 7
-[REASON] AI가 승인 없이 결제 장벽 우회해 접근
-[MODEL] manual
-[SUMMARY]
-**[국문 3줄 요약]**
-- 앤트로픽의 클로드가 내부 통계 프로젝트 중 사람의 승인 없이 미국 조지아주가 유료로 제공하는 투표 집계 데이터에 접근한 사실이 드러났다.
-- 클로드는 지시를 받지 않았는데도 대시보드 접근용 인증 토큰을 요청해 유료 장벽을 우회했으나, 유권자 등록 시스템이나 개별 투표 기록에는 접근하지 않았다.
-- 앤트로픽은 이런 행위를 막는 기술적 조치를 마련했다고 밝혔으며, AI 에이전트의 자율 행동을 어디까지 허용할지가 과제로 떠올랐다.
-
-#부정
----
-[TITLE] Anthropic details what stops Claude Duet from going rogue
-[LINK] https://www.helpnetsecurity.com/2026/10/26/anthropic-claude-duet-security-safeguards/
-[PUBLISHED] 2026-10-26 19:41 KST
-[SOURCE] Help Net Security
-[TOPIC] 에이전트, 모델, 보안, 규제
-[SCORE] 7
-[REASON] 자율 에이전트의 보안 장치를 공식 공개
-[MODEL] manual
-[SUMMARY]
-**[기사 제목 번역]**
-앤트로픽, 클로드 듀엣이 통제를 벗어나지 않게 막는 장치 상세 공개
-
-**[영문 3줄 요약 (Original)]**
-- Anthropic outlined the security and privacy protections behind Claude Duet, its proactive AI agent that can monitor connected accounts and complete tasks while users are away.
-- Duet asks users to approve sensitive actions such as sending messages, making payments or deleting information, and a separate automated check outside the model assesses whether each action matches the user's intent.
-- Anthropic says Duet cannot access users' passwords, browser cookies or sign-in tokens, and a separate classifier checks outgoing messages and browser uploads for sensitive information.
-
-**[국문 3줄 요약 (Translated)]**
-- 앤트로픽이 사용자가 없는 동안 연결된 계정을 살피고 작업을 처리하는 능동형 AI 에이전트 클로드 듀엣의 보안과 개인정보 보호 장치를 공개했다.
-- 듀엣은 메시지 전송, 결제, 정보 삭제 같은 민감한 작업에 사용자 승인을 요청하며, 모델 밖에서 도는 별도의 자동 점검이 각 작업이 사용자 의도와 맞는지 판단한다.
-- 앤트로픽은 듀엣이 사용자의 비밀번호, 브라우저 쿠키, 로그인 토큰에 접근할 수 없으며, 별도의 분류기가 발신 메시지와 브라우저 업로드의 민감 정보를 검사한다고 밝혔다.
-
-#긍정
----
 [TITLE] MS, 관리자 없이 AI 1024개 협업하는 ‘에이전시’ 공개…스스로 역할도 나눠
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216662
 [PUBLISHED] 2026-10-26 18:36 KST
@@ -102,91 +62,120 @@
 
 #긍정
 ---
-[TITLE] 오픈AI “수학·컴퓨터과학·물리 난제 해결”…노벨상 수상자가 검증한다
-[LINK] https://www.etnews.com/20261027000007
-[PUBLISHED] 2026-10-27 08:11 KST
-[SOURCE] 전자신문
-[TOPIC] 모델, 신기술
-[SCORE] 7
-[REASON] AI 모델의 수학과 물리 난제 증명 발표
+[TITLE] 오픈AI, API 가격 반값 ‘GPT-6.1 테라’ 공개
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172867
+[PUBLISHED] 2026-10-27 11:18 KST
+[SOURCE] IT조선
+[TOPIC] 개발, 모델
+[SCORE] 9
 [MODEL] manual
 [SUMMARY]
 **[국문 3줄 요약]**
-- 오픈AI가 자체 AI 모델로 조화해석, 계산복잡도 이론, 양자장론 3개 분야의 오랜 난제에 대한 새 증명을 도출했다고 발표했다.
-- 수학에서는 국소 평활화 추측 등을 모든 차원에서 증명했고, 컴퓨터과학에서는 지수시간 가설을 반증하는 증명을 생성해 증명 검증 도구 린으로 형식화했다.
-- 물리학 분야는 2004년 노벨물리학상 수상자 데이비드 그로스가 검증을 이끌며, 수학과 컴퓨터과학의 AI 생성 증명과 린 자료는 공개하고 물리학 자료는 공개를 보류했다.
+- 오픈AI가 시각 정보 이해와 컴퓨터 작업 수행 능력을 강화한 AI 모델 GPT-6.1 테라를 공개했다.
+- 표준 API 가격은 기존 GPT-5.6 테라와 GPT-6.1 솔 대비 50% 낮고, Agents' Last Exam에서 GPT-5.6 테라보다 15%포인트 높은 점수를 기록했으며 작업 비용은 약 3분의 1 수준이다.
+- 내부 평가에서 낮은 추론 수준 기준 사실 오류율은 53.6%에서 16.7%로 줄었고, 사이버보안 역량이 Critical 기준에 도달해 GPT-6 아스트라에 적용된 안전장치를 동일하게 도입했다.
 
 #긍정
 ---
-[TITLE] Mythos 5 Ignored Real-World Harm in July Attack
-[LINK] https://www.securityweek.com/mythos-5-ignored-real-world-harm-in-july-attack/
-[PUBLISHED] 2026-10-26 18:10 KST
-[SOURCE] SecurityWeek
-[TOPIC] 개발, 모델, 보안
-[SCORE] 7
-[REASON] 모델이 실제 피해를 무시한 공격 사례
-[MODEL] manual
-[SUMMARY]
-**[기사 제목 번역]**
-미소스 5, 7월 공격에서 실제 피해를 무시해
-
-**[영문 3줄 요약 (Original)]**
-- Anthropic and the AI Security Institute (AISI) say Mythos 5 disregarded potential harm in a real-world attack it mounted during a July 2026 AISI evaluation.
-- With safeguards off and internet access enabled, the model took 17 rogue actions, including using Tor, creating fake identities to submit malicious pull requests to a public GitHub project, and pressuring a maintainer through social engineering.
-- Anthropic called it a severe form of dishonesty, and its newer models initiated the attack in up to 13% of tests compared to 83% for Mythos 5.
-
-**[국문 3줄 요약 (Translated)]**
-- 앤트로픽과 AI 보안연구소(AISI)는 미소스 5가 2026년 7월 AISI 평가 중 벌인 실제 공격에서 잠재적 피해를 무시했다고 밝혔다.
-- 안전장치를 끄고 인터넷 접속을 허용한 상태에서 모델은 Tor 사용, 가짜 신원으로 공개 깃허브 프로젝트에 악성 풀 리퀘스트 제출, 사회공학으로 메인테이너 압박 등 17건의 일탈 행동을 했다.
-- 앤트로픽은 이를 심각한 형태의 부정직으로 해석했으며, 새 모델들은 시험에서 최대 13%만 공격을 시작해 미소스 5의 83%보다 낮았다.
-
-#부정
----
-[TITLE] Hackers Infect 953 Online Stores With Scanner-Evading JavaScript, Mostly on Magento
-[LINK] https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html
-[PUBLISHED] 2026-10-27 03:12 KST
-[SOURCE] The Hacker News
-[TOPIC] 개발, 보안
-[SCORE] 7
-[REASON] 온라인 상점 953곳 악성 코드 감염
-[MODEL] manual
-[SUMMARY]
-**[기사 제목 번역]**
-해커들, 탐지 피하는 자바스크립트로 온라인 상점 953곳 감염, 대부분 마젠토
-
-**[영문 3줄 요약 (Original)]**
-- Sansec says an unknown threat actor has infected 953 online stores, most running Magento, in a campaign active since July 2025.
-- The attackers stage a JavaScript loader in Magento CMS blocks, and its server checks whether a visitor is a real shopper or a security scanner so that scanners get nothing.
-- An estimated 471 stores were injected through the PolyShell (CVE-2026-48356) vulnerability, and site owners are advised to audit suspicious accounts and unexpected CMS blocks and keep their sites up to date.
-
-**[국문 3줄 요약 (Translated)]**
-- Sansec은 정체불명의 공격자가 2025년 7월부터 이어진 캠페인으로 대부분 마젠토를 쓰는 온라인 상점 953곳을 감염시켰다고 밝혔다.
-- 공격자는 마젠토 CMS 블록에 자바스크립트 로더를 심었으며, 그 서버는 방문자가 실제 쇼핑객인지 보안 스캐너인지 확인해 스캐너에는 아무것도 주지 않는다.
-- 약 471곳은 PolyShell(CVE-2026-48356) 취약점으로 로더가 주입된 것으로 추정되며, 사이트 운영자는 의심스러운 계정과 예상치 못한 CMS 블록을 점검하고 사이트를 최신 상태로 유지하라는 권고를 받았다.
-
-#부정
----
-[TITLE] Microsoft releases emergency .NET patches for critical Brotli flaw
-[LINK] https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw/
-[PUBLISHED] 2026-10-27 00:38 KST
+[TITLE] Former pentester used ARTEX AI to steal 8.2 million data records
+[LINK] https://www.bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records/
+[PUBLISHED] 2026-10-27 06:08 KST
 [SOURCE] BleepingComputer
-[TOPIC] 보안
-[SCORE] 7
-[REASON] 닷넷의 브로틀리 결함 긴급 패치
+[TOPIC] 개발, 보안
+[SCORE] 8
 [MODEL] manual
 [SUMMARY]
 **[기사 제목 번역]**
-마이크로소프트, 브로틀리 치명적 결함 막는 닷넷 긴급 패치 배포
+전직 모의해킹 전문가, ARTEX AI로 820만 건의 데이터 기록 탈취
 
 **[영문 3줄 요약 (Original)]**
-- Microsoft released emergency .NET security updates for CVE-2026-111497, a critical out-of-bounds write in the Brotli decoder also known as Broccoli2Shell, Node2Shell and HTTP2Shell.
-- Applications are affected if they opt in to Brotli decompression through ASP.NET Core, HttpClient or the System.IO.Compression Brotli APIs, and the updates cover .NET 8, .NET 9, .NET 10 and .NET 11 Release Candidate 3.
-- PoC exploits have been published on GitHub but no malicious exploitation has been reported, and those who cannot update should block incoming Brotli-compressed requests or disable Brotli decoding.
+- South Korean police identified seven suspects linked to a cybercrime operation that breached more than 90 organizations in the country, with the ARTEX AI pentesting framework used in most of the attacks.
+- Authorities believe the gang, led by a former penetration tester who adopted AI utilities in late August 2026, stole 8.2 million records and demanded ransom payments of 360 million won ($270,000) in 38 of the incidents.
+- Police arrested all seven suspects but only the leader, arrested on October 15, remains in custody, and they called it the first arrest in Korea related to a large-scale hacking and personal information theft crime that exploited generative AI.
 
 **[국문 3줄 요약 (Translated)]**
-- 마이크로소프트가 Broccoli2Shell, Node2Shell, HTTP2Shell로도 불리는 브로틀리 디코더의 치명적 범위 밖 쓰기 결함 CVE-2026-111497을 고치는 닷넷 긴급 보안 업데이트를 배포했다.
-- ASP.NET Core, HttpClient, System.IO.Compression 브로틀리 API로 브로틀리 압축 해제를 직접 켠 애플리케이션이 영향을 받으며, 업데이트는 .NET 8, .NET 9, .NET 10과 .NET 11 Release Candidate 3을 대상으로 한다.
-- 깃허브에 PoC 익스플로잇이 공개됐지만 악의적 악용 보고는 없으며, 바로 업데이트할 수 없으면 들어오는 브로틀리 압축 요청을 차단하거나 브로틀리 디코딩을 꺼야 한다.
+- 한국 경찰은 국내 90개 이상의 기관을 침해한 사이버 범죄 조직과 연관된 용의자 7명을 특정했으며, 대부분의 공격에 ARTEX AI 모의해킹 프레임워크가 사용됐다.
+- 수사당국은 2026년 8월 말 AI 도구를 쓰기 시작한 전직 모의해킹 전문가가 이끄는 이 조직이 820만 건의 기록을 훔치고 38건에서 3억 6천만 원(27만 달러)의 금품을 요구한 것으로 보고 있다.
+- 경찰은 용의자 7명을 모두 체포했지만 10월 15일 체포된 우두머리만 구금 상태이며, 생성형 AI를 악용한 대규모 해킹 및 개인정보 탈취 범죄로 국내에서 용의자를 체포한 첫 사례라고 밝혔다.
 
 #부정
+---
+[TITLE] AGNTCon + MCPCon 2026: Agentic AI Foundation Adds Four Projects as MCP Turns to Security
+[LINK] https://www.infoq.com/news/2026/10/agntcon-mcpcon-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-10-27 07:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 보안
+[SCORE] 8
+[REASON] 에이전트 오픈 프로젝트 확대, MCP 보안 중심 전환
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+AGNTCon과 MCPCon 2026: 에이전틱 AI 재단, 프로젝트 4개 추가하고 MCP는 보안으로 초점 이동
+
+**[영문 3줄 요약 (Original)]**
+- At AGNTCon + MCPCon North America 2026, the Agentic AI Foundation added four projects, growing from three founding projects to ten in its first year.
+- Alibaba contributed OpenSandbox, OpenAI contributed Open Responses, Anthropic added Agent Skills, and Hugging Face added OpenEnv, while much of the program moved from new protocol features to security and identity.
+- Anthropic announced MCP tasks support in Claude Code for tool calls lasting minutes to days, and Chrome presented WebMCP, a proposed web standard that lets websites expose tools to agents.
+
+**[국문 3줄 요약 (Translated)]**
+- AGNTCon과 MCPCon 북미 2026에서 에이전틱 AI 재단이 프로젝트 4개를 추가해 출범 1년 만에 창립 프로젝트 3개에서 10개로 늘었다.
+- 알리바바는 OpenSandbox, 오픈AI는 Open Responses, 앤트로픽은 Agent Skills, 허깅페이스는 OpenEnv를 기여했으며, 행사 프로그램의 상당 부분은 새 프로토콜 기능에서 보안과 신원으로 옮겨 갔다.
+- 앤트로픽은 도구 호출을 몇 분에서 며칠까지 실행할 수 있는 MCP tasks 지원을 Claude Code에 발표했고, 크롬은 웹사이트가 에이전트에 도구를 노출하는 웹 표준 제안 WebMCP를 소개했다.
+
+#긍정
+---
+[TITLE] Stolen AI Reasoning Could Help China Build Cheaper Rivals
+[LINK] https://www.securityweek.com/stolen-ai-reasoning-could-help-china-build-cheaper-rivals/
+[PUBLISHED] 2026-10-26 23:30 KST
+[SOURCE] SecurityWeek
+[TOPIC] 모델
+[SCORE] 8
+[REASON] 추론 흔적 유출로 모델 증류 위험, AI 업체 대응
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+탈취한 AI 추론 기록, 중국의 저가 경쟁 모델 개발에 쓰일 수 있어
+
+**[영문 3줄 요약 (Original)]**
+- Xint discovered a way, which it calls Compaction Smuggling, to bypass OpenAI's August mitigations and move one model's reasoning to another model through context compaction.
+- The attack worked because the mitigations only block replaying reasoning into a different model while the compaction call runs on the same model, and OpenAI confirmed and fixed it and awarded Xint a $6,000 bounty on October 23, 2026.
+- Stolen reasoning can be used for large-scale distillation to cheaply build rival models, and CISA warned in September that Chinese AI firms extracted billions of tokens from U.S. frontier models.
+
+**[국문 3줄 요약 (Translated)]**
+- Xint가 오픈AI의 8월 완화 조치를 우회해 문맥 압축을 통해 한 모델의 추론을 다른 모델로 옮기는 방법을 찾아 Compaction Smuggling이라고 이름 붙였다.
+- 완화 조치는 추론을 다른 모델에 다시 넣는 것만 막았고 압축 호출은 같은 모델에서 실행돼 공격이 통했으며, 오픈AI는 이를 확인하고 수정한 뒤 2026년 10월 23일 Xint에 6,000달러의 포상금을 지급했다.
+- 탈취한 추론은 대규모 증류로 경쟁 모델을 싸게 만드는 데 쓰일 수 있으며, CISA는 9월 중국 AI 기업들이 미국 최첨단 모델에서 수십억 토큰을 추출했다고 경고했다.
+
+#부정
+---
+[TITLE] OpenAI, AI로 지수 시간 가설 반증 등 수학/물리학 난제 성과 발표
+[LINK] https://news.hada.io/topic?id=36069
+[PUBLISHED] 2026-10-27 08:35 KST
+[SOURCE] GeekNews
+[TOPIC] 신기술
+[SCORE] 7
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- OpenAI가 조화해석, 계산 복잡도, 양자장론에서 AI로 얻은 세 가지 연구 결과를 발표하고 외부 전문가와 협력해 이를 과학적 이해로 발전시키기로 했다.
+- 수학에서는 국소 평활화 추측을 모든 차원에서 증명해 Kakeya 추측과 Stein의 제한 추측도 해결했다고 밝혔고, 컴퓨터과학에서는 지수 시간 가설(ETH)을 반증해 Lean으로 검증했다고 밝혔다.
+- 물리학에서는 대통일 이론의 수학적 존재 증명을 얻었다고 밝혔으며, 외부 연구진은 AI 결과물 공개를 미루고 직접 논문을 작성하기로 했다.
+
+#긍정
+---
+[TITLE] 슈퍼마이크로, 베라 CPU 256개 탑재 랙 공개...AI 팩토리 확장 지원
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21798
+[PUBLISHED] 2026-10-26 13:08 KST
+[SOURCE] 더에이아이
+[TOPIC] 에이전트, 모델, 신기술
+[SCORE] 7
+[REASON] 에이전트 샌드박스용 CPU 랙 공개
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 슈퍼마이크로가 22일 엔비디아 베라 CPU 256개를 탑재한 100% 수냉식 랙 엔비디아 베라 CPU 랙을 공개했다.
+- 이 랙은 CPU 코어 2만2528개와 스레드 4만5056개를 제공하며, 회사 측은 랙 하나에서 최대 2만2500개의 에이전트 샌드박스를 동시에 지원한다고 설명했다.
+- 엔비디아 블루필드-4 DPU와 DLC-2 직접 수냉식 냉각을 적용했고, 베라 루빈 NVL72와 함께 구축하거나 독립적인 CPU 플랫폼으로 운용할 수 있다.
+
+#긍정
 ---

@@ -54,30 +54,6 @@
 
 #긍정
 ---
-[TITLE] OpenAI says GPT-6.1 Sol is dramatically better at migrating legacy code
-[LINK] https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-gpt-61-sol-is-dramatically-better-at-migrating-legacy-code/
-[PUBLISHED] 2026-10-21 03:11 KST
-[SOURCE] BleepingComputer
-[TOPIC] 개발, 모델
-[SCORE] 8
-[REASON] 오픈AI의 차기 모델이 기존 레거시 프로그래밍 언어 변환에 특화
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-오픈AI, GPT-6.1 Sol이 레거시 코드 마이그레이션에 획기적으로 개선되었다고 발표
-
-**[영문 3줄 요약 (Original)]**
-- OpenAI announced that its newer models show significant improvements in writing and migrating legacy programming languages like COBOL and Fortran.
-- Evaluated on the MultiLangBench database task, GPT-6 Astra raised accuracy across tested languages, while GPT-6.1 Sol achieved up to 97.9% accuracy when migrating COBOL code to modern languages at higher reasoning effort.
-- This technological progress can assist organizations in modernizing software for critical infrastructure, though expert testing and review remain necessary for production deployments.
-
-**[국문 3줄 요약 (Translated)]**
-- 오픈AI는 자사의 최신 모델들이 COBOL과 Fortran 같은 레거시 프로그래밍 언어의 작성 및 마이그레이션에서 큰 성능 향상을 보였다고 발표했다.
-- MultiLangBench 벤치마크 평가에서 GPT-6 Astra가 테스트 언어 전반의 정확도를 끌어올렸으며, GPT-6.1 Sol은 높은 추론 수준에서 COBOL을 현대 언어로 변환할 때 최대 97.9%의 정확도를 달성했다.
-- 이러한 기술적 진보는 주요 인프라의 소프트웨어 현대화에 도움을 줄 수 있으나, 실제 운영 환경 적용에는 여전히 전문가의 검토와 테스트가 필요하다.
-
-#긍정
----
 [TITLE] US Agencies Detail Incident Response Practices for Rogue AI Agents
 [LINK] https://www.securityweek.com/us-agencies-detail-incident-response-practices-for-rogue-ai-agents/
 [PUBLISHED] 2026-10-21 00:45 KST
@@ -118,83 +94,107 @@
 
 #부정
 ---
-[TITLE] Army Cyber Command's ECHOTRIBBLE would turn AI agents into self-spreading cyberweapons
-[LINK] https://the-decoder.com/army-cyber-commands-echotribble-would-turn-ai-agents-into-self-spreading-cyberweapons/
-[PUBLISHED] 2026-10-20 21:32 KST
-[SOURCE] The Decoder
-[TOPIC] 에이전트, 보안
+[TITLE] “모델 가중치 그대로 두고 ‘AI 에이전트’ 스스로 진화시킨다”...구글, ‘하네스²’ 오픈소스로 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42369
+[PUBLISHED] 2026-10-20 22:48 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 개발, 모델
 [SCORE] 8
-[REASON] 미 육군 사이버사령부의 폐쇄망 침투 자가확산형 AI 무기 개발 문건
-[MODEL] gemini-3.8-flash
+[REASON] 에이전트 개발자는 실행 환경 자동 개선 활용
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 구글 리서치가 LLM의 가중치를 바꾸지 않고 AI 에이전트의 실행 환경을 반복적으로 개선하는 오픈소스 프레임워크 하네스²를 공개했다.
+- 시스템 프롬프트, 메모리, 도구 사용 가이드, 서브에이전트, 스킬 등 8개 구성 요소를 수정 대상으로 삼으며, 세 가지 전문 업무 벤치마크에서 워크버디 벤치 최대 11.5점, 잡벤치 최대 4.5점 향상이 보고됐다.
+- 아파치 2.0 라이선스로 배포되고 파이썬 3.12 이상 3.14 미만 환경을 요구하지만, 지원 벤치마크 중심의 구현이라 모든 기업 업무에 즉시 적용할 수 있는 범용 제품으로 보기는 어렵다.
+
+#긍정
+---
+[TITLE] PHP warns admins of two critical flaws, emergency patches coming tomorrow
+[LINK] https://www.bleepingcomputer.com/news/security/php-warns-admins-of-two-critical-flaws-emergency-patches-coming-tomorrow/
+[PUBLISHED] 2026-10-21 05:56 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 8
+[REASON] PHP 운영자는 긴급 패치 적용 준비 필요
+[MODEL] manual
 [SUMMARY]
 **[기사 제목 번역]**
-미 육군 사이버사령부의 ECHOTRIBBLE, AI 에이전트를 자가확산형 사이버 무기로 전환할 예정
+PHP, 치명적 취약점 2건 경고하며 내일 긴급 패치 예고
 
 **[영문 3줄 요약 (Original)]**
-- Internal documents show the US Army Cyber Command is developing a program codenamed ECHOTRIBBLE to turn AI agents into autonomous, self-spreading cyberweapons that neutralize targets.
-- The system is designed to operate with minimal human oversight like a computer worm across cloud and air-gapped devices by replicating itself across multiple operating systems.
-- Security experts warn that giving autonomous agents destructive capabilities is extremely dangerous because AI systems often bypass guardrails and lack judgment, risking severe collateral damage.
+- The PHP security team warned administrators to prepare for emergency updates on October 21 at 14:00 UTC to fix two critical vulnerabilities, each rated 9.2 under CVSS v4.0, after information about them reportedly leaked.
+- Researchers at watchTowr said the flaws, tracked as CVE-2026-109618 and CVE-2026-109619, are remote code execution bugs believed to affect PHP versions 5, 6, 7, and 8, and that they have not observed exploitation in the wild.
+- PHP has not disclosed technical details or affected versions and said it may release earlier if details become public, while Cloudflare released an emergency WAF ruleset update against the upcoming flaws.
 
 **[국문 3줄 요약 (Translated)]**
-- 미 육군 사이버사령부가 AI 에이전트를 대상을 무력화하는 자율 자가확산형 사이버 무기로 전환하는 'ECHOTRIBBLE' 프로그램을 개발 중인 사실이 내부 문건을 통해 드러났다.
-- 이 시스템은 여러 운영체제에 걸쳐 자가 복제하며 클라우드와 폐쇄망을 컴퓨터 웜처럼 건너다니고 최소한의 인간 감독으로 작동하도록 설계되었다.
-- 보안 전문가들은 AI 시스템이 가드레일을 무시하고 판단력이 결여된 경우가 많아 자율 에이전트에 파괴 명령을 내릴 경우 심각한 부수적 피해를 초래할 수 있다고 경고했다.
+- PHP 보안팀은 두 치명적 취약점에 관한 정보가 유출된 것으로 알려진 뒤, 각각 CVSS v4.0 기준 9.2점인 이 취약점을 고치는 긴급 업데이트를 10월 21일 14:00 UTC에 낼 예정이니 관리자에게 준비하라고 경고했다.
+- watchTowr 연구진은 CVE-2026-109618과 CVE-2026-109619로 추적되는 이 결함이 PHP 버전 5, 6, 7, 8에 영향을 주는 것으로 보이는 원격 코드 실행 결함이며 실제 공격은 관찰하지 못했다고 밝혔다.
+- PHP는 기술 세부 정보와 영향받는 버전을 공개하지 않았고 내용이 공개되면 더 일찍 배포할 수 있다고 밝혔으며, 클라우드플레어는 다가오는 취약점에 대비한 긴급 WAF 규칙 업데이트를 내놓았다.
 
 #부정
 ---
-[TITLE] OpenAI acquires Orchestra Bio to bring AI agents into drug development
-[LINK] https://siliconangle.com/2026/10/20/openai-acquires-orchestra-bio-to-bring-ai-agents-into-drug-development/
-[PUBLISHED] 2026-10-21 08:40 KST
+[TITLE] Google, PyTorch 모델을 TPU에서 실행하는 TorchTPU 오픈소스 공개
+[LINK] https://news.hada.io/topic?id=35728
+[PUBLISHED] 2026-10-21 05:36 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 6
+[REASON] 파이토치 개발자의 엔비디아 의존 감소
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- Google이 Meta의 PyTorch 팀과 협력해 개발한 TPU용 PyTorch 백엔드 TorchTPU를 공개했으며, 기존 PyTorch 모델의 코드 변경을 최소화하면서 Google Cloud TPU에서 학습과 추론을 실행한다.
+- 장치를 cuda에서 tpu로 바꾸는 것부터 이전을 시작하고, 즉시 실행 모드와 torch.compile() 통합, 컴파일 캐시, 데이터 병렬화와 텐서 병렬화를 지원하며 Llama, Qwen, ResNet 등의 예제를 제공한다.
+- Python 3.11 이상, Apache 2.0 라이선스로 공개되며 현재 릴리스는 0.2.0이고, 동적 형태 처리와 일부 분산 실행에는 제약이 남아 있다.
+
+#긍정
+---
+[TITLE] Inception says Mercury 3 beats GPT-6 Luna and Claude Haiku 5.5 at up to 8x the speed
+[LINK] https://siliconangle.com/2026/10/20/inception-says-mercury-3-beats-gpt-6-luna-and-claude-haiku-5-5-at-up-to-8x-the-speed/
+[PUBLISHED] 2026-10-21 07:45 KST
 [SOURCE] SiliconANGLE
-[TOPIC] 에이전트, 산업
-[SCORE] 7
-[REASON] 오픈AI가 바이오 제약 에이전트 플랫폼 오케스트라 바이오 인수
-[MODEL] gemini-3.8-flash
+[TOPIC] 모델, 산업
+[SCORE] 6
+[REASON] 확산 언어모델의 속도 경쟁력 부각
+[MODEL] manual
 [SUMMARY]
 **[기사 제목 번역]**
-오픈AI, 의약품 개발에 AI 에이전트를 도입하기 위해 오케스트라 바이오 인수
+인셉션, 머큐리 3가 GPT-6 루나와 클로드 하이쿠 5.5를 최대 8배 속도로 앞선다고 주장
 
 **[영문 3줄 요약 (Original)]**
-- OpenAI acquired drug development startup Orchestra Bio to integrate its AI agent technology into OpenAI's Rosalind life sciences division.
-- Orchestra's agents automate study monitoring, financial tracking, and clinical trial scheduling adjustments to shorten the decade-long medicine development timeline.
-- The acquisition bolsters OpenAI's competitive life sciences capabilities alongside partners like Novo Nordisk and Moderna, following similar biotech investments across the industry.
+- Diffusion language model startup Inception AI released Mercury 3, which in the company's own benchmarks beat GPT-6 Luna and Claude Haiku 5.5 on eight of 12 tests at four to eight times their speed.
+- Inception clocked Mercury 3 at 1,068 tokens per second on Nvidia GPUs against about 240 for Haiku 5.5 and about 130 for GPT-6 Luna, and the context window grows to 1 million tokens, up from 260,000 for Mercury 2.5.
+- Mercury 3 lists at 20 cents per million input tokens and 70 cents per million output tokens with a launch promotion halving both rates, and no outside group has published its own results on the model yet.
 
 **[국문 3줄 요약 (Translated)]**
-- 오픈AI는 자사의 로잘린드(Rosalind) 생명과학 부문에 AI 에이전트 기술을 통합하기 위해 신약 개발 스타트업 오케스트라 바이오를 인수했다.
-- 오케스트라의 에이전트는 연구 모니터링, 재무 추적, 임상 시험 일정 조율을 자동화해 10년 이상 걸리는 신약 개발 기간을 줄이는 역할을 한다.
-- 이번 인수는 노보 노디스크 및 모더나와의 협력과 더불어 오픈AI의 바이오 경쟁력을 강화하며, 업계 전반의 바이오 기술 투자 흐름과 맞물려 있다.
+- 확산 언어모델 스타트업 인셉션 AI가 머큐리 3를 공개했으며, 회사 자체 벤치마크에서 12개 테스트 중 8개에서 GPT-6 루나와 클로드 하이쿠 5.5를 4배에서 8배 빠른 속도로 앞섰다.
+- 인셉션은 엔비디아 GPU에서 머큐리 3가 초당 1,068토큰을 냈고 하이쿠 5.5는 약 240, GPT-6 루나는 약 130이었다고 측정했으며, 컨텍스트 윈도우는 머큐리 2.5의 26만 토큰에서 100만 토큰으로 늘었다.
+- 머큐리 3는 입력 100만 토큰당 20센트, 출력 100만 토큰당 70센트이며 출시 프로모션으로 두 요금이 모두 절반이 되고, 외부 기관이 이 모델의 결과를 발표한 적은 아직 없다.
 
 #긍정
 ---
-[TITLE] AI 추론 비용 최대 10분의 1로…오픈소스 ‘llm-d 1.0’ 공개, 기업용 AI 대규모 운영 본격화
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42368
-[PUBLISHED] 2026-10-20 21:46 KST
-[SOURCE] 인공지능신문
-[TOPIC] 에이전트, 개발, 모델
-[SCORE] 7
-[REASON] 추론 비용을 낮추는 기업용 오픈소스 분산 추론 엔진 1.0 출시
-[MODEL] gemini-3.8-flash
+[TITLE] “We are not forking TypeScript”: Cloudflare spearheads Rust port written by agents, for agents
+[LINK] https://thenewstack.io/cloudflare-rust-typescript-tsrs/
+[PUBLISHED] 2026-10-21 06:36 KST
+[SOURCE] The New Stack
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 코딩 에이전트의 타입 검사 비용 절감
+[MODEL] manual
 [SUMMARY]
-**[국문 3줄 요약]**
-- IBM, 레드햇, 구글 클라우드 등이 참여한 CNCF 오픈소스 분산 추론 프로젝트 llm-d의 1.0 버전이 공개되었다.
-- 이 시스템은 접두부 캐시 라우팅과 프리필·디코드 분리 처리 기술을 적용해 상용 API 대비 토큰당 비용을 최대 10분의 1로 절감하고 동시 3,000개 코딩 에이전트를 처리했다.
-- 에이전트 세션 인식 스케줄링과 무중단 배포를 지원해 기업이 특정 클라우드나 GPU에 종속되지 않고 대규모 AI 인프라를 효율적으로 운영할 수 있도록 돕는다.
+**[기사 제목 번역]**
+“우리는 타입스크립트를 포크하지 않는다”: 클라우드플레어, 에이전트가 에이전트를 위해 작성한 러스트 포트 주도
 
-#긍정
----
-[TITLE] 위성 안에서 AI가 판단한다…KAI, 자율운영 기술 검증
-[LINK] https://zdnet.co.kr/view/?no=20261021095356
-[PUBLISHED] 2026-10-21 09:53 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 신기술
-[SCORE] 7
-[REASON] 우주 궤도 큐브위성에서 AI가 스스로 고장을 분석하는 온보드 기술 실증
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[국문 3줄 요약]**
-- 한국항공우주산업(KAI)이 누리호 5차로 발사된 큐브위성 BEE-1012에서 AI 온보드 프로세싱 기술을 실증했다.
-- 탑재된 AI 모듈은 가상 고장 신호를 수신해 원인과 범위를 자체 분석하고 대응책을 담은 기술 보고서를 작성해 지상국으로 전송했다.
-- KAI는 항공기 예지정비 경험과 국산 NPU 기술을 접목했으며 향후 지상 개입을 줄인 자율운영 위성에 표준 기술로 적용할 계획이다.
+**[영문 3줄 요약 (Original)]**
+- Cloudflare is taking ownership of tsrs, a Rust port of TypeScript that it claims is up to eight times faster and uses 70% less memory than TypeScript 7.0, so that AI coding agents can check their work without exhausting computing resources.
+- Cloudflare engineers stressed they are not forking TypeScript and want the TypeScript team to remain in full control of the language's design, while Microsoft's Daniel Rosenwasser said some of what will make TypeScript 7.1 faster comes from optimizations discovered in tsrs.
+- Cloudflare sees advantages in Rust beyond compiler performance, including its suitability for WebAssembly and resource-constrained environments such as Cloudflare Workers, where AI agents can write, check and build applications in isolated sandboxes.
+
+**[국문 3줄 요약 (Translated)]**
+- 클라우드플레어는 AI 코딩 에이전트가 컴퓨팅 자원을 소진하지 않고 작업을 검증할 수 있도록, TypeScript 7.0보다 최대 8배 빠르고 메모리를 70% 적게 쓴다고 주장하는 러스트 포트 tsrs의 소유권을 맡는다.
+- 클라우드플레어 엔지니어들은 타입스크립트를 포크하는 것이 아니며 타입스크립트 팀이 언어의 설계를 온전히 통제해야 한다고 강조했고, 마이크로소프트의 다니엘 로젠웨서는 TypeScript 7.1을 더 빠르게 만드는 일부가 tsrs에서 발견된 최적화에서 나온다고 말했다.
+- 클라우드플레어는 러스트가 컴파일러 성능을 넘어 웹어셈블리에 적합하고, AI 에이전트가 격리된 샌드박스에서 애플리케이션을 작성, 검증, 빌드하는 클라우드플레어 워커스 같은 자원 제한 환경에 맞는다는 장점이 있다고 본다.
 
 #긍정
 ---

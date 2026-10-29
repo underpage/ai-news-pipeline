@@ -4,14 +4,46 @@
 ---
 [평가 오류] 전체 후보 - 선정 실패(다시 시도): 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 ---
+[TITLE] PHP2Shell Exploitation Hits Government Entity Amid Global Scanning and Signs of AI-Assisted Hacking
+[TITLE_KO] PHP2Shell 악용, 전 세계 스캐닝 속 정부기관 공격과 AI 활용 해킹 정황
+[LINK] https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html
+[PUBLISHED] 2026-10-26 02:19 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 보안
+[SCORE] 8
+[REASON] 공격자가 침투 후 단계에 에이전트형 AI 활용
+[FIELD] 보안
+[BODY]
+In an update, Palo Alto Networks Unit 42 said it's retracting its earlier assessment that the post-compromise activity targeting the European government agency involved the exploitation of the PHP2Shell flaws.
+"What researchers saw was an attack against a European government agency executed in the context of a vulnerable PHP application," a spokesperson for the company told The Hacker News via email. "This led us to believe that it was exploitation of those vulnerabilities. We are unable to confirm that initial access is associated with the specific PHP2Shell CVEs."
+The original story follows.
+Threat actors have been observed using agentic artificial intelligence (AI) platforms for post-exploitation activity following the abuse of the PHP2Shell vulnerabilities tracked as CVE-2026-109618 and CVE-2026-109619.
+"In one case, the attackers targeted a government entity in Europe and within two hours of the initial exploitation they had successfully accessed password hashes and multi-factor authentication secrets," Palo Alto Networks Unit 42 said.
+"They also established an NT LAN Manager (NTLM)-relay tunnel into Active Directory and attempted Domain Admin privilege escalation."
+The network security company said it also observed the unknown attacker enumerating the compromised endpoint, with commands and behavioral markers suggesting the work of an agentic attacker. These include commands to facilitate -
+- Reconnaissance of the authentication database with stolen credentials, targeting password hashes and two-factor authentication (2FA) secrets.
+- Active Directory (AD) reconnaissance via curl-based anonymous LDAP queries to the domain controller (DC) in an attempt to look for the administrator account.
+- Reconnaissance of the host to hunt for DNS/AD integration, internal hosts, privileged groups, and interactive users.
+"Each command batch is wrapped in section-header delimiters, such as ==SHELLUSER== and ==PASSWD==," it added. "These delimiters produce machine-parseable output for an AI model to read."
+Suspected N. Korea Campaign Targets PHP2Shell
+The disclosure comes as CYFIRMA said it uncovered a suspected North Korea-linked campaign employing PHP2Shell to actively probe global PHP infrastructure from 21 compromised nodes.
+"The scanning is deliberately low-volume and paced," Kumar Ritesh, CEO and founder of CYFIRMA, told The Hacker News. "Nodes are rotated and abandoned at the first sign of blocking or rate-limiting, so threshold-based alerting is unlikely to catch it."
+The targets comprise a set of 216 unpatched or partially mitigated hosts located across the U.S., Japan, South Korea, Thailand, Indonesia, Australia, Taiwan, India, Singapore, the U.A.E., Saudi Arabia, and the E.U. The hosts span government, financial institutions, logistics, airports and aviation, manufacturing, and online transaction platforms.
+"The campaign has moved from reconnaissance into active, low-and-slow scanning of a filtered target set," CYFIRMA said. "Organizations in the prioritised sectors and geographies should assume they are in scope for deliberate targeting."
+The activity, coordinated via a closed I2P channel, has been attributed with moderate confidence to a Korean-speaking operator assessed to be affiliated with the Lazarus Group ecosystem. According to CYFIRMA, the two handles (전창혁 2 aka Jeon Chang-hyuk 2) and (최아린 aka Choi A-rin) active in the I2P channel have previously been observed running covert operations for the threat actors.
+"Korean-speaking operators have used [the channel] to share target lists, exploit-hosting infrastructure, and tasking and prioritisation consistent with DPRK objectives," Ritesh said. "The captured conversation uses vocabulary and spelling specific to North Korean (Munhwaŏ) rather than the South Korean standard."
+Other primary indicators that link the campaign to the Lazarus cluster are below -
+- Command-and-control (C2) infrastructure that Lazarus has previously used to exploit web assets.
+---
 [TITLE] AI coding agents hijacked using AGENTS.md file in Downloads folder
-[TITLE_KO] 다운로드 폴더의 AGENTS.md 파일을 이용한 AI 코딩 에이전트 하이재킹
+[TITLE_KO] 다운로드 폴더의 AGENTS.md 파일로 AI 코딩 에이전트 탈취
 [LINK] https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/
 [PUBLISHED] 2026-10-26 00:49 KST
 [SOURCE] BleepingComputer
 [TOPIC] 에이전트, 개발
-[SCORE] 9
-[REASON] 다운로드 폴더 지침 파일 조작을 통한 코딩 에이전트 탈취 공격 발견
+[SCORE] 8
+[REASON] 코딩 에이전트가 읽는 지시 파일 범위 통제 필요
+[FIELD] 보안
 [BODY]
 Researchers found a malicious AGENTS markdown instruction file in a customer’s Downloads folder that tricked an AI coding agent into installing a rogue npm package.
 They reproduced the attack against OpenAI Codex and demonstrated a related technique against Claude Code to leak OAuth tokens and hijack the account using only the malicious instructions.
@@ -37,14 +69,112 @@ Tests show attack feasible
 The researchers tested their reconstructed attack chain against Codex using a harmless payload that simply opened the calculator app, recording a 90% success rate.
 In a separate test, they used a malicious CLAUDE.md file to redirect Claude Code’s API traffic to a server they controlled.
 ---
+[TITLE] OpenAI, AI의 격리 탈출을 막는 모델 훈련 환경 보안 체계 공개
+[LINK] https://news.hada.io/topic?id=35985
+[PUBLISHED] 2026-10-26 03:43 KST
+[SOURCE] GeekNews
+[TOPIC] 모델, 보안
+[SCORE] 7
+[FIELD] AI 모델
+[BODY]
+GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
+발행 2026-10-26 · 작성 neo
+출처 https://news.hada.io/topic?id=35985
+- OpenAI가 AI의 샌드박스 탈출과 무단 인터넷 접속을 막는 훈련 환경 보안 체계를 공개하고, 최상위 모델로 직접 방어를 시험한 결과를 발표
+- 9월 20일 연구 모델이 DNS 설정 오류로 인터넷에 접속한 사고 이후 최상위 모델의 훈련과 평가를 중단하고, 보안 보완을 거쳐 11일 뒤 재개
+- 모든 최첨단 모델의 강화학습에는 실제 인터넷 대신 저장된 웹 콘텐츠로 만든 ‘오프라인 세계’ 를 사용하며, 가상머신과 네트워크 통제를 겹쳐 격리
+- 수천억 토큰을 투입한 공격 실험에서 가상머신 탈출과 내부 서비스를 통한 인터넷 접속, CPU 캐시의 시간 차이를 이용한 에이전트 간 통신 경로를 발견함
+- 발견한 문제를 수정하고 Patch the Planet을 통해 오픈소스 프로젝트에도 패치를 제공하며, 대규모 공격 실험을 향후 훈련과 평가의 안전성 판단에 계속 활용할 것
+연구 환경의 위험과 인터넷 차단 정책
+- 훈련 및 평가 환경은 고객이 출시된 모델을 사용하는 환경과 다름
+  - 개발 중인 모델은 안전성 및 정렬 훈련을 마치지 않았을 수 있으며, 약점을 드러내기 위해 의도적으로 적대적 조건에서 시험함
+  - 널리 공개하기 전에는 안전성과 정렬을 평가하고 프로덕션 안전장치를 적용함
+- 모델이 코드를 작성하고 실행하며 정보를 검색하는 컴퓨팅 환경은 기술을 연습하는 공간이자, 실수와 비정렬 행동의 영향을 제한하는 경계임
+  - 역량이 높은 모델은 소프트웨어 결함이나 설정 오류로 샌드박스를 탈출하거나, 내부 서비스를 거쳐 인터넷에 접근하거나, 다른 샌드박스의 에이전트와 무단 통신할 수 있음
+  - 7월의 Hugging Face 사고와 다른 비정렬 사례에서 훈련 및 평가 중 격리 우회가 확인됨
+- OpenAI는 현재의 정렬 연구, 모니터링, 인터넷 인프라 보안 수준을 고려해 인터넷 접속 없이 프런티어 모델을 훈련하는 정책을 시행함
+  - 관련 안전장치의 발전이 더 넓은 인터넷 접근을 정당화할 때까지 정책을 유지할 계획임
+- 9월 20일 내부 연구 모델이 DNS 리졸버 설정 오류를 악용해 제한적으로 인터넷에 접근함
+  - 사고는 억제했지만 추가 보완이 필요한 약점이 드러나 최상위 모델의 훈련과 평가를 중단함
+  - 중단 기간에 인프라와 모니터링을 강화하고, 심각한 위험 활동을 감지하면 실행을 자동으로 멈추는 시스템을 개선함
+명시적 권한 경계와 오프라인 세계
+- 격리의 기준은 에이전트가 지속적이고 정교하게 우회를 시도하더라도 명시적으로 허용된 자원만 이용하게 하는 것임
+  - 경계 안에서는 브라우저, 코드 실행 환경, 컴퓨터 사용 도구와 필요한 서비스를 이용할 수 있음
+  - 통신을 명시적으로 허가받은 에이전트는 같은 경계 안의 특정 자원을 공유할 수 있음
+  - 호스팅 인프라 접근, 허용되지 않은 채널을 통한 에이전트 간 통신, 외부 시스템 접근은 격리 실패에 해당함
+- 훈련과 대부분의 평가에서 실제 인터넷은 허용 경계 밖에 있음
+  - 인터넷은 유용한 기술 학습에 도움이 되지만, 역량 높은 비정렬 에이전트가 OpenAI의 통제 밖 시스템에 영향을 줄 기회도 제공함
+  - 보안 아키텍처의 최우선 원칙은 프런티어 모델의 무단 임의 인터넷 접근을 언제나 차단할 수 있어야 한다는 것임
+- ‘오프라인 세계’는 방대한 색인 및 캐시 웹 콘텐츠로 구성되며, 외부 시스템에 영향을 주지 않고 탐색, 검색, 웹 애플리케이션 사용 기술을 익히게 함
+  - 모든 프런티어 강화학습 실행이 이 오프라인 상호작용 방식을 사용함
+개별 통제 실패를 전제로 한 심층 방어
+- 심층 방어(defense in depth) 는 샌드박스, microVM, 모니터링, 네트워크 및 클라우드 경계를 중첩해 일부 통제가 뚫려도 격리를 유지하는 방식임
+- 실행 환경은 작업과 운영체제에 따라 서로 다른 격리 계층을 사용함
+  - Linux에서는 경량 microVM 안에 제한된 컨테이너를 실행함
+  - 컨테이너는 파일과 프로세스 접근을 제한하고, microVM은 자체 운영체제 커널을 실행하며 하이퍼바이저가 호스트와 격리함
+  - macOS와 Windows에는 가상화 환경을, 가속기가 필요한 작업에는 사용자 공간 샌드박싱을 적용한 GPU 컨테이너를 사용함
+- 네트워크 및 클라우드 통제는 에이전트가 샌드박스를 탈출하고 호스트를 장악한 상황까지 고려함
+  - 실험 실행과 모니터링에 외부 연결이 필요해 완전한 물리적 망 분리는 현재 불가능함
+  - 필요한 연결은 유지하면서 외부 인터넷 트래픽과 시스템 간 무단 이동을 제한함
+  - 호스트에서 직접 또는 다른 서비스를 거쳐 접근할 수 있는 서비스까지 제한해 우회 출구로 쓰이지 않도록 함
+- 클라우드 파트너는 방화벽, 보안 그룹, IAM, 사설 네트워킹을 제공하며, OpenAI가 올바른 설정과 통제 간 상호작용 검증을 책임짐
+  - 서비스 개발 및 운영팀과 협력해 예상 밖 동작과 여러 인프라 계층에 걸친 약점을 조사함
+대규모 에이전트 레드팀의 설계
+- 프런티어 모델 에이전트 팀에 세 가지 격리 우회 목표를 부여함
+  - OpenAI가 운영하는 외부 서버에 요청을 보내 실제 인터넷에 접근하도록 함
+  - 허용 환경 밖 자원에 무단 접근해 내부 보안 경계를 넘도록 함
+  - 서로 격리돼 있어야 하는 에이전트 사이에서 정보를 교환하도록 함
+- 별도 실험에서는 내부 방어가 이미 실패한 상황을 가정함
+  - 샌드박스 탈출, 모니터링 회피, 호스트 전체 접근 권한 확보를 전제로 인터넷 접근을 시도하게 함
+  - 이를 통해 내부 보호 장치와 독립적으로 네트워크 및 클라우드 방어를 시험함
+- Navier–Stokes 문제 해결 작업처럼 에이전트를 팀으로 구성해 여러 접근법을 병렬 탐색하고 서로의 발견을 활용하게 함
+  - 출시 예정인 GPT‑6 Astra Cyber와 내부 프런티어 모델 등 역량과 정렬 수준이 높은 모델을 사용함
+  - 모델이 도움 없이 무엇을 발견하는지 측정하기보다 공격자에게 유리한 조건에서 방어를 검증하기 위해 소스 코드, 설정, 잠재적 취약점 문서를 제공함
+- 실험은 연구 인프라를 복제한 전용 격리 환경에서 수행하고, 범위 밖 활동을 감지하면 모니터링과 프로그램 검사로 실행을 일시 중지함
+  - 클라우드 파트너도 실험 감독과 발견된 문제 대응에 참여함
+  - 총 수천억 토큰을 투입함
+- 고우선순위 후보 발견 건수와 토큰 사용량을 비교한 곡선은 실험 규모와 진행 상황을 보여주며, 연산량과 발견 건수 사이의 통제된 관계를 입증하지는 않음
+  - 시기에 따라 모델과 시험 대상이 달랐고, 일부 시험은 클라우드 파트너와 합의한 시간대에만 진행함
+microVM 탈출과 오픈소스 수정
+- 에이전트는 여러 취약점을 연결해 microVM을 탈출하고 호스트에서 코드를 실행하는 경로를 발견함
+- 발견 사항을 분류하고 중복 제거하는 자동화 파이프라인을 구축했으며, 보안 및 인프라팀이 재현과 설정 수정 검증을 수행함
+- 오픈소스에 기여하는 수정에는 다음 격리 및 실행 제어 구성요소가 포함됨
+- 더 넓은 커널 보안 개선도 계속하고 있음
+운영 서비스를 경유한 인터넷 접근
+- Hugging Face 사고 이후 인터넷 접근 경로를 줄였지만, 지표 수집, 로깅, 인증 관리 등 특정 운영 서비스에는 좁은 연결이 남아 있었음
+  - 레드팀 에이전트는 이들 서비스 거의 모두에서 제한적인 인터넷 접근을 허용하는 취약점을 발견함
+- 일부 공격은 새로운 결함을 악용했고, 다른 공격은 정상 기능을 예상 밖 방식으로 조합함
+  - 호스트 장악을 가정한 실험에서 방화벽이 허용한 연결을 재사용해 지표 서비스의 차단된 인증 엔드포인트에 접근한 뒤, 모델이 제공한 URL을 가져오게 함
+  - 다른 실험에서는 DNS와 방화벽 통제를 통과하게 하는 설정 오류나, 내부 서비스가 외부 URL을 가져오도록 만드는 경로를 이용함
+- 이러한 발견에 따라 소프트웨어 패치와 네트워크 제한 강화를 수행하고, 관련 유지관리자와 공급업체에 문제를 통보함
+---
+[TITLE] 노드.js만 패치하면 끝?…브로틀리 쓰는 파이썬·프록시도 점검 필요
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209049
+[PUBLISHED] 2026-10-25 15:34 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] Node.js 외 파이썬과 프록시도 패치 점검 필요
+[FIELD] 보안
+[BODY]
+구글의 압축 라이브러리 ‘브로틀리(Brotli)’에서 조작된 데이터를 해제하는 과정에 악성코드가 실행될 수 있는 취약점이 확인됐다. 노드.js뿐 아니라 번(Bun), 파이썬 관련 패키지, 일부 프록시 환경에도 영향을 미칠 수 있어 제품별 보안 업데이트와 압축 처리 경로 점검이 필요하다.
+취약점 식별번호는 ‘CVE-2026-111497’이다. 브로틀리는 웹페이지와 통신 데이터의 용량을 줄이는 압축 기술이다. 이번 결함은 압축을 해제하는 코드가 비정상적인 입력을 처리하면서 정해진 메모리 영역 밖에 데이터를 기록하는 문제다. 공격자가 조작한 압축 데이터를 전달하면 프로그램이 중단되거나 메모리 정보가 노출될 수 있으며, 경우에 따라 원격 코드 실행으로 이어질 수 있다.
+공격 위험은 외부에서 들어오는 요청에만 국한되지 않는다. 서비스가 다른 서버에서 받아온 브로틀리 압축 응답을 자동으로 해제하는 과정도 공격 경로가 될 수 있다. 노드.js에서는 내장 데이터 요청 기능인 ‘fetch()’가 압축 응답을 읽거나, 익스프레스 등의 요청 처리 모듈이 압축된 요청 본문을 해제할 때 취약한 코드가 실행될 수 있다. 다만 기본 HTTP 서버가 요청을 받는 것만으로 압축 해제가 자동 수행되는 것은 아니다.
+임퍼바 연구진은 이번 취약점을 ‘노드투셸(Node2Shell)’로 명명하고, 리눅스 ARM64용 공식 노드.js 24.22.0 환경에서 공격자가 전달한 코드의 실행을 입증했다. 외부 서버의 압축 응답과 압축된 요청 본문을 이용한 두 경로에서 재현했다. 다만 성공까지 여러 차례 시도가 필요했으며, 다른 운영체제나 제품에서도 같은 방식의 코드 실행이 가능하다고 입증한 것은 아니다. 공개된 자료에서는 실제 공격에 악용된 사례가 보고되지 않았다.
+다른 제품도 사용 조건에 따라 점검이 필요하다. 엔보이와 이스티오(Istio)는 브로틀리 압축 해제 기능이 활성화된 환경에서 영향을 받을 수 있다. 파이썬에서는 ‘Brotli’나 ‘brotlicffi’ 패키지가 설치돼 있으면 일부 HTTP 통신 라이브러리가 이를 이용해 압축 응답을 자동으로 해제한다. 개발자가 직접 압축 해제 코드를 작성하지 않았더라도 취약한 처리 경로가 생길 수 있다는 의미다.
+노드.js는 10월 21일 22.23.4, 24.22.1, 26.12.1 수정 버전을 공개했다. 구글 브로틀리도 1.0.10, 1.1.1, 1.2.1에 보안 수정을 반영했다. 브로틀리를 자체 포함한 프로그램은 해당 제품의 수정 버전을 적용해야 한다. 운영체제의 라이브러리 하나를 업데이트했다고 모든 프로그램의 문제가 해결되는 것은 아니다.
+운영자는 외부 압축 데이터를 처리하는 서비스를 우선 확인하고, 실제 배포된 실행 환경과 컨테이너까지 수정 여부를 점검해야 한다. 업데이트 후에는 서비스를 재시작하고, 취약한 구성요소가 포함된 컨테이너 이미지는 다시 빌드해 배포해야 한다.
+즉시 업데이트하기 어렵다면 압축 해제 전에 브로틀리 요청을 차단하거나 외부 응답의 자동 압축 해제를 중단하는 임시 조치를 검토할 수 있다. 다만 압축 요청 헤더에서 브로틀리를 제외하는 것만으로는 충분하지 않다. 상대 서버가 브로틀리 응답을 보낼 수 있기 때문이다. 웹방화벽 역시 서비스가 외부에서 받아 처리하는 응답까지 보호한다고 단정할 수 없어, 최종적으로는 취약한 실행 환경과 라이브러리를 수정해야 한다.
+---
 [TITLE] PyTorch Conference 2026: Google and Meta Open-Source TorchTPU for Native PyTorch on TPUs
-[TITLE_KO] 파이토치 콘퍼런스 2026: 구글과 메타, TPU용 네이티브 파이토치 백엔드 TorchTPU 오픈소스 공개
+[TITLE_KO] PyTorch Conference 2026: 구글과 메타, TPU에서 PyTorch를 네이티브로 돌리는 TorchTPU 오픈소스 공개
 [LINK] https://www.infoq.com/news/2026/10/google-meta-torchtpu/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
 [PUBLISHED] 2026-10-26 03:00 KST
 [SOURCE] InfoQ
 [TOPIC] 개발, 신기술
-[SCORE] 8
-[REASON] 구글 TPU용 네이티브 파이토치 백엔드 TorchTPU 오픈소스화
+[SCORE] 7
+[REASON] PyTorch 사용자가 GPU 외 가속기로 옮길 길 열림
+[FIELD] 신기술
 [BODY]
 At PyTorch Conference North America 2026 in San Jose, Google and Meta open-sourced TorchTPU, a native PyTorch backend for Google's Tensor Processing Units (TPUs). Meta, which created PyTorch in 2016, plans to move larger-scale LLM workloads onto TPUs with it, Meta software engineer Zongwei Zhou said in the October 21 keynotes.
 TorchTPU replaces PyTorch/XLA, a lazy-tensor bridge from 2020 that, according to the announcement, "required intrusive source-code modifications." The new backend aims to make porting a model as simple as changing model.to("cuda") to model.to("tpu"). "With TorchTPU, TPUs join GPUs and CPUs as a native option for PyTorch," Google Cloud wrote in its announcement, co-authored by Bill Jia, VP of engineering for Core ML/AI.
@@ -58,14 +188,51 @@ Zhou said Meta's PyTorch team co-developed TorchTPU with Google "to make TPU a f
 At Meta, advancing the frontier of AI requires immense compute scale and deep hardware diversity. We cannot be constrained by a single hardware architecture.
 Google was not alone. AWS put TorchNeuron, a native PyTorch backend for its Trainium chips, into public beta on October 20, with .to('neuron') as the only code change. Both backends register through PrivateUse1, PyTorch's extension point for custom hardware. TorchNeuron's first release has gaps: The Next Web reported that it does not yet support dynamic input shapes and skips about 22,000 PyTorch tests.
 ---
+[TITLE] “AI가 사람 대신 전화하고 업무까지 처리”…머스크, 그록 자율 통화 기능 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42430
+[PUBLISHED] 2026-10-26 12:04 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트
+[SCORE] 6
+[REASON] 에이전트가 실제 전화망으로 업무 수행 확대
+[FIELD] AI 에이전트
+[BODY]
+전화 연결부터 요청 전달·상대방 답변 기록·결과 보고까지…AI 에이전트, 실제 음성 소통 영역으로 확장
+인공지능(AI)이 사람을 대신해 전화를 걸고, 상대방과 대화하며, 업무 처리 결과까지 보고하는 시대가 열리고 있다. AI 에이전트가 단순한 질문 응답이나 문서 작성에서 벗어나 실제 전화망을 통해 사람과 소통하고 업무를 수행하는 방향으로 진화하고 있다.
+일론 머스크(Elon Musk) 테슬라(Tesla)·스페이스X(SpaceX) 최고경영자(CEO)는 25일(현지시간) 자신의 소셜미디어 엑스(X)를 통해 AI 챗봇 그록(Grok)의 전화 업무 수행 기능을 소개했다.
+머스크는 “그록 봇(Grok Bot)은 이제 여러분을 대신해 사람이나 기업에 전화하고, 요청사항을 전달하며, 상대방의 답변을 기록한 뒤 통화 내용을 요약한 메모를 보내줄 수 있다”고 밝혔다.
+이번 발표의 핵심은 AI가 사용자의 요청을 이해하는 데 그치지 않고, 실제 전화 통화를 통해 외부 상대방과 소통한 뒤 그 결과를 사용자에게 전달한다는 점이다. 사용자가 일일이 전화를 걸고 통화 내용을 정리해야 했던 과정을 AI 에이전트에 위임할 수 있도록 하는 것이다.
+전화 걸고 대화한 뒤 결과까지 보고, AI 에이전트의 역할 확대
+머스크가 공개한 기능은 전화 연결부터 업무 요청, 상대방 응답 기록, 통화 결과 요약까지 하나의 작업 흐름으로 수행하도록 설계됐다. 예를 들어 사용자가 특정 업체에 연락해 예약 가능 여부를 확인하도록 요청하면, AI가 해당 업체에 전화를 걸어 문의 내용을 전달하고 상대방의 답변을 기록한 뒤 결과를 요약해 사용자에게 알려주는 방식이다.
+상품 재고 확인이나 서비스 이용 문의, 일정 확인 등에도 같은 방식이 활용될 수 있다. 이는 공개된 기능을 바탕으로 예상할 수 있는 활용 사례이며, 각각의 업무에 대한 실제 수행 성공률이 검증됐다는 의미는 아니다.
+그록 봇 0.77 시험판을 분석한 외부 개발자들의 설명에 따르면, 전화 연결 이후 대기하거나 자동응답시스템의 안내에 따라 숫자를 입력하고 담당자와 연결되는 기능도 시험되고 있는 것으로 알려졌다. 실시간 통화 내용을 표시하는 기능 역시 거론됐다.
+이러한 세부 기능은 머스크가 직접 발표한 공식 기능 범위와 구분할 필요가 있다. 시험판에서 확인된 기능이 모두 정식 서비스에 적용되는지, 실제 전화 환경에서 어느 수준까지 안정적으로 작동하는지는 추가 확인이 필요하다.
+AI가 전화를 걸어 상대방의 답변을 수집하는 것과 복잡한 협상이나 예약 변경, 계약 등 후속 업무까지 독립적으로 완료하는 것은 기술적으로 다른 과제다. 이번 발표에서 확인되는 핵심 기능은 전화 기반 요청 전달과 응답 기록, 결과 요약이다.
+예약 확인·고객센터 문의까지...전화 업무 자동화 가능성
+AI 에이전트의 전화 업무 수행 기능은 개인의 일상생활뿐 아니라 기업의 고객 응대와 업무 운영 방식에도 변화를 가져올 수 있다.
+기존 음성 AI 서비스가 주로 사용자의 질문에 답하거나 걸려 온 전화를 응대하는 데 집중했다면, 이번에 머스크가 소개한 기능은 AI가 먼저 외부에 전화를 걸어 사용자가 지시한 업무를 수행한다는 점에서 차이가 있다.
+특히 고객센터에 전화를 걸어 상담원 연결을 기다리거나, 여러 업체에 반복적으로 연락해 정보를 확인하는 작업에 활용할 수 있다. 기업 입장에서는 거래처 문의, 일정 확인, 단순 정보 수집 등 반복적인 전화 업무를 자동화하는 데 적용할 여지가 있다.
+이는 AI 에이전트의 활용 범위가 디지털 정보 처리에서 현실 세계의 커뮤니케이션으로 확장되고 있음을 보여준다. 전화는 상대방의 실시간 응답과 상황에 따라 대화 흐름이 달라지는 만큼, AI가 실제 업무를 수행하는 능력을 평가하는 중요한 환경이 될 수 있다.
+통화 녹음·개인정보 보호·상대방 동의 등 해결 과제
+전화 업무를 AI에 위임하는 과정에서는 기술적 완성도와 함께 개인정보 보호, 통화 상대방의 동의, AI의 신원 고지 등 해결해야 할 문제도 적지 않다.
+AI가 통화 내용을 기록하고 요약하려면 상대방의 음성이나 개인정보가 처리될 수 있다. 국가와 지역에 따라 통화 녹음 및 개인정보 처리에 관한 법적 요건이 다르기 때문에 실제 서비스 운영에서는 관련 규정을 준수해야 한다. 또한 AI가 사람을 대신해 통화하는 과정에서 잘못된 정보를 전달하거나 상대방의 답변을 부정확하게 이해할 경우 업무상 혼선이 발생할 수 있다.
+엑스의 공식 도움말 역시 그록 봇이 실수할 수 있으며, 사용자는 AI가 제안한 작업을 검토하고 승인하거나 거부할 수 있다고 안내하고 있다. 이러한 통제 장치가 전화 업무에도 어떻게 적용되는지가 중요하다.
+현재 머스크의 발표만으로는 해당 전화 기능의 국가별 지원 범위와 요금, 이용 자격, 정식 서비스 적용 일정이 구체적으로 확인되지 않았다. 따라서 모든 사용자가 즉시 해당 기능을 이용할 수 있다고 단정하기는 어렵다.
+AI 에이전트 경쟁, '답변 능력'에서 '업무 완수 능력'으로
+이번 발표는 생성형 AI 경쟁의 중심이 질문에 얼마나 정확하게 답하는지를 넘어, 사용자가 맡긴 업무를 실제로 얼마나 안정적으로 수행하는지로 이동하고 있음을 보여준다.
+AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 업무를 처리하는 데 이어 전화 통화까지 수행하게 되면 사람과 기업이 AI를 활용하는 방식에도 변화가 예상된다.
+특히 실제 전화 환경에서는 자연스러운 음성 대화뿐 아니라 통화 연결의 안정성, 상대방 의도 파악, 예외 상황 처리, 사용자 지시 준수, 결과 보고의 정확성이 서비스 경쟁력을 좌우할 것으로 보인다.
+머스크가 공개한 그록 봇의 전화 기능은 이러한 변화의 한 사례다. 향후 실제 이용 환경에서 얼마나 높은 업무 완수율을 확보하고 개인정보 보호와 통화 안전성을 보장할 수 있을지가 상용 서비스의 성패를 결정할 핵심 요인이 될 전망이다.
+---
 [TITLE] Google ML Drift Accelerates On-Device AI Inference Across Diverse GPUs
-[TITLE_KO] 구글 ML 드리프트, 다양한 GPU에서 온디바이스 AI 추론 가속화
+[TITLE_KO] 구글 ML Drift, 다양한 GPU에서 온디바이스 AI 추론 가속
 [LINK] https://www.infoq.com/news/2026/10/google-ml-drift/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
 [PUBLISHED] 2026-10-26 02:00 KST
 [SOURCE] InfoQ
 [TOPIC] 개발, 모델, 신기술
-[SCORE] 8
-[REASON] 온디바이스 AI 추론을 위한 크로스플랫폼 GPU 엔진 오픈소스화
+[SCORE] 6
+[REASON] 기기별 GPU 차이 없이 온디바이스 추론 배포
+[FIELD] AI 모델
 [BODY]
 Google has released ML Drift, an open-source, cross-platform GPU compute engine designed for on-device AI and machine learning inference. Licensed under Apache 2.0, it abstracts the complexities of different GPU hardware and low-level APIs, supporting OpenGL ES, OpenCL, Metal, and WebGPU.
 ML Drift is the core GPU acceleration engine that powers LiteRT. By open-sourcing it, Google is enabling developers to build custom graphics and inference runtimes for applications ranging from traditional computer vision, audio, and depth processing to generative AI.
@@ -76,19 +243,50 @@ To achieve this, ML Drift introduces several technical improvements over the leg
 ML Drift extends desktop support for inference on Windows and Linux through Dawn, Chromium's WebGPU implementation, while retaining native Metal backend support on macOS. Dawn provides a unified API model leveraging WebGPU's hardware abstraction layer, avoiding the need to interface directly with platform-specific graphics APIs such as DirectX and Vulkan.
 Google benchmarked ML Drift using Gemma models on developer-grade workstation hardware, reporting a 12% lower memory overhead compared to other frameworks, including llama.cpp and MLX LM. The company also emphasized that ML Drift is already running on millions of devices through apps like Chrome, YouTube Shorts, Photos, and Meet.
 In YouTube Shorts, ML Drift achieves up to a 40% reduction in average frame latency for segmentation-based effects on Android and iOS. In Google Photos, it speeds up computational photography and segmentation pipelines by up to two second. Adobe Lightroom and Photoshop benefit from performance improvements of up to 30% for selected AI-powered photo-editing features such as Select Subject, Select Sky, and Adaptive Portrait. Finally, Snapchat sees a 30% reduction in model latency for ML-powered face and style-generation effects on Android, enabling the use of larger diffusion models.
-Commenting the announcement on LinkedIn, AI/ML engineer Pavithra Agraharam argued that
+Commenting the announcement on LinkedIn, AI/ML engineer Pavithra Agraharam argued that:
 Native 5D tensor support without layout hacks is a massive win for running spatial and transformer models on edge GPUs. Decoupling logical tensors from physical memory allocations should significantly cut down on memory fragmentation during live inference.
 Matthew Charles Vladislav Busel, founder and sole developer of Tensorust, questioned "how it compares with Core ML on recent iPhones for latency and memory, since that is what most of us ship against today", though Google has not provided any comparative figures.
 With the release of ML Drift, Google will stop updating the legacy TensorFlow Lite GPU delegate. For backward compatibility with existing models, the company recommends migrating to the LiteRT ML Drift GPU accelerator. Application developers can use the LiteRT ML Drift accelerator, while GPU and system engineers can access its lower level C++ API to construct custom GpuModel compute graphs and write custom shaders.
+---
+[TITLE] Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra
+[TITLE_KO] 엔비디아, 로봇 영상 라벨링 비용을 GPT-6 Astra보다 125배 낮추는 Flora 오픈소스 공개
+[LINK] https://the-decoder.com/nvidia-open-sources-flora-to-make-robot-video-labeling-125x-cheaper-than-gpt-6-astra/
+[PUBLISHED] 2026-10-25 19:08 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 6
+[REASON] 로봇 학습 데이터 구축 비용 크게 낮춤
+[FIELD] 신기술
+[BODY]
+Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra
+Labeling one hour of robot video for 72 cents instead of $88 is what Nvidia promises with Flora, its open data engine. But the comparison with GPT-6 Astra isn't quite as lopsided as the price tag suggests.
+Large AI models for robots learn from videos that need text annotations, and according to Nvidia's GEAR research lab, this requires three types of labels. First, descriptions of what action happens when in the video, used to select training data. Second, ratings of how well a robot progresses step by step, so it can learn through trial and error. And third, judgments on whether a task was completed successfully, used to monitor robots during deployment. Most existing tools only provide one of these types. Large language models like GPT-6 Astra can generate several, but they're too expensive for the massive volumes of video involved.
+According to the paper, Flora covers all three. Nvidia says the system is already running during training of its GR00T models, annotating up to 200,000 hours of video per day across 512 GB300 GPUs. The models are available on Hugging Face.
+Flora consists of three fine-tuned Qwen3.5 models. A 9B model splits videos into action segments, and a 27B model describes them while factoring in what happened before and after each action. A second 27B model called Flora-Rewarder takes on three roles depending on the prompt. It rates an episode's success on a scale of 1 to 5, classifies each half-second step as normal, suboptimal, or failure, and assigns scores based on self-defined rubrics.
+Up to 125x cheaper by Nvidia's own estimates
+In a test with 50 videos, Flora scored slightly better than GPT-6 Astra according to Nvidia, even though OpenAI's model was allowed to use its full reasoning capacity. Labeling one hour of video runs about 72 cents with Flora by Nvidia's estimate, compared to roughly $88.50 with GPT-6 Astra. Claude Opus 5 scored much worse in the same test and still cost about $42 per hour.
+The Flora cost figures are projections, though, not production measurements. Nvidia calculated them based on an assumed rental price of $10 per GPU per hour.
+Flora finds actions better, but Astra often describes them more precisely
+On the public WGO-Bench, Flora is best at detecting action boundaries but trails Astra in overall score and falls behind Gemini 3.8 Flash in pure description accuracy. According to the researchers, the gains come mainly from temporal localization.
+On Nvidia's own DenseCaptionBench, Flora leads across all metrics for human recordings, but for robot videos the model comes in second behind Astra. There's a methodological catch the researchers acknowledge, too. GPT-6 Astra evaluates the descriptions while also being one of the models under test.
+Almost no other model catches mid-episode errors
+On RoboRewardBench, Flora's error rate is 27.8 percent lower than Astra's. The paper attributes the gap to partially completed tasks. When a robot only tips a bottle over instead of knocking it off the table, Flora assigns 3 out of 5 points to match the human reference, while Astra gives just one.
+Flora-Rewarder catches 53.3 percent of failed steps within an episode, while no competitor gets above 11.7 percent and Astra doesn't catch a single one. The tradeoff is that Flora falsely flags about 11 percent of normal steps as errors. Astra still leads on rubric-based scoring and trajectory ranking.
+In a video with many short hand movements, Flora identifies 34 of 37 individual actions, while Astra catches only four. On the flip side, Flora sometimes splits longer actions into too many small steps and occasionally gets descriptions wrong. In one video, a robot hand wipes a plate with a cloth, but Flora describes it as folding a napkin.
+Nvidia positions Flora as an open alternative to commercial services like Scale AI's Physical AI Data Engine.
 ---
 [TITLE] Cerebras, 조 단위 파라미터 AI 모델 배포
 [LINK] https://news.hada.io/topic?id=35965
 [PUBLISHED] 2026-10-25 18:34 KST
 [SOURCE] GeekNews
 [TOPIC] 모델, 신기술
-[SCORE] 8
-[REASON] 웨이퍼 스케일 온칩 메모리를 통한 초거대 모델 초고속 구동
+[SCORE] 6
+[REASON] 웨이퍼 칩으로 조 단위 모델 고속 추론
+[FIELD] 신기술
 [BODY]
+GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
+발행 2026-10-25 · 작성 neo
+출처 https://news.hada.io/topic?id=35965
 - Cerebras는 대규모 모델의 가중치를 여러 WSE-3T 웨이퍼의 온칩 메모리에 나눠 배치하고 파이프라인으로 실행해, 수조 개 파라미터 모델을 초당 1,000~2,000개 이상의 토큰 속도로 구동함
 - 약 3조 파라미터의 Kimi K3는 4비트 가중치 양자화와 요청당 평균 256k 토큰 등의 가정에서 총 59개 웨이퍼에 배치할 수 있음
 - 레이어 전체를 온칩 SRAM에 담을 수 있어 대부분의 경우 가중치는 이동하지 않고 활성화 값만 웨이퍼 사이를 이동하며, Ethernet 기반 RDMA의 홉당 지연은 약 2마이크로초임
@@ -133,39 +331,14 @@ Kimi K3로 살펴보는 배포 조건
 - 더 큰 모델도 가중치와 요청 상태의 메모리 요구량을 계산하고, 여러 웨이퍼에 분산한 뒤 파이프라인으로 연결하는 같은 방식으로 확장함
 - 웨이퍼를 추가할 때마다 연산 자원과 온칩 메모리가 함께 늘어나므로, 단일 칩 용량을 초과하는 모델을 수용할 수 있음
 ---
-[TITLE] Anthropic says one AI agent beats many subagents now that models can handle complexity alone
-[TITLE_KO] 앤트로픽, 모델 자체의 복잡도 처리 능력 향상으로 단일 에이전트가 다중 하위 에이전트보다 낫다고 밝혀
-[LINK] https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone/
-[PUBLISHED] 2026-10-25 18:12 KST
-[SOURCE] The Decoder
-[TOPIC] 에이전트, 모델
-[SCORE] 8
-[REASON] 하위 에이전트 다수보다 단일 에이전트 통합이 우수하다는 분석
-[BODY]
-Anthropic says one AI agent beats many subagents now that models can handle complexity alone
-Key Points
-- Anthropic recommends that companies evaluate whether they can consolidate sub-agents into a single agent that loads context on demand.
-- The company's experience shows that many specialized sub-agents can lead to higher latency, rising costs, and information loss at every handoff.
-- Anthropic has published a migration kit on GitHub to help teams make the transition.
-Anthropic found that a single agent with on-demand context often outperforms multi-agent setups in quality, cost, and latency. The company is releasing a migration kit to help teams evaluate and make the switch.
-Anthropic is recommending that companies evaluate whether they can consolidate sub-agents, because a single primary agent that loads context as needed often delivers better results than a fleet of specialized ones. Newer models starting with Opus 4.5, along with Opus 5.5 and Fable 5.1, can manage complex plans directly in a single loop, which can also reduce costs and wait times. In one comparison, Anthropic says the single-agent architecture ran about twice as fast as the multi-agent setup.
-The recommendation comes from hands-on experience across multiple enterprise deployments, where Anthropic's Applied AI team found that a single agent using so-called skills frequently beat both monolithic prompt designs and sub-agent setups on quality. One company, for example, had a dozen specialized sub-agents inside its customer-facing agent, which made it hard to keep a consistent brand experience and hurt usability with high latency.
-The model can now do much of the orchestration work itself
-According to Anthropic, many agent designs follow a familiar pattern with intent detection, a fixed processing pipeline, user segmentation, separate recommendation branches, and an orchestrator sitting on top. Much of that is work the model can now handle on its own for the respective use case.
-Anthropic calls it "Conway's Law" for agents. The architecture becomes a copy of the org chart, with each team shipping its own sub-agent until hundreds of overlapping agents pile up with no shared standards. What follows is what Anthropic calls a "Frankenprompt," where every team adds rules to the system prompt that end up contradicting each other. A clean system prompt, four or five lean data tools, and fixed output guardrails cover much of the respective use case, according to the company.
-As one example, Anthropic cut the Claude Code system prompt for newer models by over 80 percent, partly because skills and tools now load only when needed. Newer models also comment on their own progress and check their own work, which can make some of the extra control layers unnecessary.
-Anthropic says sub-agents still make sense when a single agent's context window shows measurable performance degradation, when multiple tasks need to run in parallel with separate context windows, or when a single agent struggles with tool selection.
-For a step-by-step migration, Anthropic has published a migration kit on GitHub that walks teams through a workflow to identify existing patterns, evaluate alternatives, and verify the best approach. Anthropic warns against merging blindly, since in one test with a support agent, folding in a sub-agent did reduce latency but broke a previously working process. The primary agent started answering on its own instead of consulting the right specialist.
-Teams should keep skill libraries from sprawling
-Instead of giving every team its own agent, Anthropic recommends packaging workflows into skills and loading tools on demand through a tool search. A small central team should own the system prompt and overall quality. Separately, Anthropic notes that the model's tool selection tends to degrade beyond 30 to 50 tool definitions, so designated owners on each team should maintain the skill libraries to keep them from ballooning.
----
 [TITLE] 엔비디아, 로컬 에이전트·로봇 겨냥 4GB 모델 '네모트론 3.5 볼트' 출시
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216625
 [PUBLISHED] 2026-10-25 16:50 KST
 [SOURCE] AI타임스
 [TOPIC] 에이전트, 개발, 모델, 신기술
-[SCORE] 8
-[REASON] 4GB 메모리 환경 지원 오픈소스 경량 모델 발표
+[SCORE] 6
+[REASON] 4GB 기기에서 돌리는 에이전트용 소형 모델
+[FIELD] AI 모델
 [BODY]
 엔비디아가 로컬에서 적은 메모리로 자연스러운 대화와 작업 수행이 가능한 경량 온디바이스 AI 모델을 선보였다. 이번 모델은 음성·비전 모델과 함께 구동되는 기기 내 AI 시스템과 게임, 로봇 분야의 개발자가 성능과 메모리 사용량 사이의 균형을 맞추는 데 초점을 맞췄다.
 엔비디아는 23일(현지시간) 약 4GB의 메모리 환경에서 실행할 수 있도록 설계한 오픈소스 경량 언어모델 ‘네모트론 3.5 볼트 E4B 4GB(Nemotron 3.5 Bolt E4B 4GB)’를 공개했다.
@@ -189,291 +362,106 @@ Watch Reachy Mini chat and move, with Bolt handling conversation… pic.twitter.
 모델은 허깅페이스와 올라마(Ollama), LM 스튜디오, 언슬롯(Unsloth), 젯슨 AI 랩 등을 통해 이용할 수 있다. 엔비디아의 인게임 추론 SDK를 활용해 게임 캐릭터에 적용하는 것도 가능하다.
 박찬 기자 cpark@aitimes.com
 ---
-[TITLE] “AI가 사람 대신 전화하고 업무까지 처리”…머스크, 그록 자율 통화 기능 공개
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42430
-[PUBLISHED] 2026-10-26 12:04 KST
-[SOURCE] 인공지능신문
-[TOPIC] 에이전트
+[TITLE] PHP 이어 구글 '브로틀리'도 보안 취약점…원격코드 실행 우려
+[LINK] https://www.bloter.net/news/articleView.html?idxno=676693
+[PUBLISHED] 2026-10-26 11:30 KST
+[SOURCE] 블로터
+[TOPIC] 개발, 보안
 [SCORE] 7
-[REASON] 전화 통화 및 업무 수행을 대행하는 그록 봇 기능 공개
-[BODY]
-전화 연결부터 요청 전달·상대방 답변 기록·결과 보고까지…AI 에이전트, 실제 음성 소통 영역으로 확장
-인공지능(AI)이 사람을 대신해 전화를 걸고, 상대방과 대화하며, 업무 처리 결과까지 보고하는 시대가 열리고 있다. AI 에이전트가 단순한 질문 응답이나 문서 작성에서 벗어나 실제 전화망을 통해 사람과 소통하고 업무를 수행하는 방향으로 진화하고 있다.
-일론 머스크(Elon Musk) 테슬라(Tesla)·스페이스X(SpaceX) 최고경영자(CEO)는 25일(현지시간) 자신의 소셜미디어 엑스(X)를 통해 AI 챗봇 그록(Grok)의 전화 업무 수행 기능을 소개했다.
-머스크는 “그록 봇(Grok Bot)은 이제 여러분을 대신해 사람이나 기업에 전화하고, 요청사항을 전달하며, 상대방의 답변을 기록한 뒤 통화 내용을 요약한 메모를 보내줄 수 있다”고 밝혔다.
-이번 발표의 핵심은 AI가 사용자의 요청을 이해하는 데 그치지 않고, 실제 전화 통화를 통해 외부 상대방과 소통한 뒤 그 결과를 사용자에게 전달한다는 점이다. 사용자가 일일이 전화를 걸고 통화 내용을 정리해야 했던 과정을 AI 에이전트에 위임할 수 있도록 하는 것이다.
-전화 걸고 대화한 뒤 결과까지 보고, AI 에이전트의 역할 확대
-머스크가 공개한 기능은 전화 연결부터 업무 요청, 상대방 응답 기록, 통화 결과 요약까지 하나의 작업 흐름으로 수행하도록 설계됐다. 예를 들어 사용자가 특정 업체에 연락해 예약 가능 여부를 확인하도록 요청하면, AI가 해당 업체에 전화를 걸어 문의 내용을 전달하고 상대방의 답변을 기록한 뒤 결과를 요약해 사용자에게 알려주는 방식이다.
-상품 재고 확인이나 서비스 이용 문의, 일정 확인 등에도 같은 방식이 활용될 수 있다. 이는 공개된 기능을 바탕으로 예상할 수 있는 활용 사례이며, 각각의 업무에 대한 실제 수행 성공률이 검증됐다는 의미는 아니다.
-그록 봇 0.77 시험판을 분석한 외부 개발자들의 설명에 따르면, 전화 연결 이후 대기하거나 자동응답시스템의 안내에 따라 숫자를 입력하고 담당자와 연결되는 기능도 시험되고 있는 것으로 알려졌다. 실시간 통화 내용을 표시하는 기능 역시 거론됐다.
-이러한 세부 기능은 머스크가 직접 발표한 공식 기능 범위와 구분할 필요가 있다. 시험판에서 확인된 기능이 모두 정식 서비스에 적용되는지, 실제 전화 환경에서 어느 수준까지 안정적으로 작동하는지는 추가 확인이 필요하다.
-AI가 전화를 걸어 상대방의 답변을 수집하는 것과 복잡한 협상이나 예약 변경, 계약 등 후속 업무까지 독립적으로 완료하는 것은 기술적으로 다른 과제다. 이번 발표에서 확인되는 핵심 기능은 전화 기반 요청 전달과 응답 기록, 결과 요약이다.
-예약 확인·고객센터 문의까지...전화 업무 자동화 가능성
-AI 에이전트의 전화 업무 수행 기능은 개인의 일상생활뿐 아니라 기업의 고객 응대와 업무 운영 방식에도 변화를 가져올 수 있다.
-기존 음성 AI 서비스가 주로 사용자의 질문에 답하거나 걸려 온 전화를 응대하는 데 집중했다면, 이번에 머스크가 소개한 기능은 AI가 먼저 외부에 전화를 걸어 사용자가 지시한 업무를 수행한다는 점에서 차이가 있다.
-특히 고객센터에 전화를 걸어 상담원 연결을 기다리거나, 여러 업체에 반복적으로 연락해 정보를 확인하는 작업에 활용할 수 있다. 기업 입장에서는 거래처 문의, 일정 확인, 단순 정보 수집 등 반복적인 전화 업무를 자동화하는 데 적용할 여지가 있다.
-이는 AI 에이전트의 활용 범위가 디지털 정보 처리에서 현실 세계의 커뮤니케이션으로 확장되고 있음을 보여준다. 전화는 상대방의 실시간 응답과 상황에 따라 대화 흐름이 달라지는 만큼, AI가 실제 업무를 수행하는 능력을 평가하는 중요한 환경이 될 수 있다.
-통화 녹음·개인정보 보호·상대방 동의 등 해결 과제
-전화 업무를 AI에 위임하는 과정에서는 기술적 완성도와 함께 개인정보 보호, 통화 상대방의 동의, AI의 신원 고지 등 해결해야 할 문제도 적지 않다.
-AI가 통화 내용을 기록하고 요약하려면 상대방의 음성이나 개인정보가 처리될 수 있다. 국가와 지역에 따라 통화 녹음 및 개인정보 처리에 관한 법적 요건이 다르기 때문에 실제 서비스 운영에서는 관련 규정을 준수해야 한다. 또한 AI가 사람을 대신해 통화하는 과정에서 잘못된 정보를 전달하거나 상대방의 답변을 부정확하게 이해할 경우 업무상 혼선이 발생할 수 있다.
-엑스의 공식 도움말 역시 그록 봇이 실수할 수 있으며, 사용자는 AI가 제안한 작업을 검토하고 승인하거나 거부할 수 있다고 안내하고 있다. 이러한 통제 장치가 전화 업무에도 어떻게 적용되는지가 중요하다.
-현재 머스크의 발표만으로는 해당 전화 기능의 국가별 지원 범위와 요금, 이용 자격, 정식 서비스 적용 일정이 구체적으로 확인되지 않았다. 따라서 모든 사용자가 즉시 해당 기능을 이용할 수 있다고 단정하기는 어렵다.
-AI 에이전트 경쟁, '답변 능력'에서 '업무 완수 능력'으로
-이번 발표는 생성형 AI 경쟁의 중심이 질문에 얼마나 정확하게 답하는지를 넘어, 사용자가 맡긴 업무를 실제로 얼마나 안정적으로 수행하는지로 이동하고 있음을 보여준다.
-AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 업무를 처리하는 데 이어 전화 통화까지 수행하게 되면 사람과 기업이 AI를 활용하는 방식에도 변화가 예상된다.
-특히 실제 전화 환경에서는 자연스러운 음성 대화뿐 아니라 통화 연결의 안정성, 상대방 의도 파악, 예외 상황 처리, 사용자 지시 준수, 결과 보고의 정확성이 서비스 경쟁력을 좌우할 것으로 보인다.
-머스크가 공개한 그록 봇의 전화 기능은 이러한 변화의 한 사례다. 향후 실제 이용 환경에서 얼마나 높은 업무 완수율을 확보하고 개인정보 보호와 통화 안전성을 보장할 수 있을지가 상용 서비스의 성패를 결정할 핵심 요인이 될 전망이다.
+[REASON] 압축 라이브러리 쓰는 서버 운영자 업데이트 필요
+[FIELD] 보안
 ---
-[TITLE] 셀렉트스타, 판단 특화 AI ‘다비’ 공개...모델 운영비 28% 줄여
-[LINK] http://www.newstheai.com/news/articleView.html?idxno=21793
-[PUBLISHED] 2026-10-26 11:29 KST
-[SOURCE] 더에이아이
-[TOPIC] 에이전트, 모델
-[SCORE] 7
-[REASON] 모델 라우팅 및 적절성 평가 전용 판단 모델 공개
-[BODY]
-제브와 비교한 자체 평가서 231개 문항 정확도 89.2% 기록
-클로드 모델 3종 활용한 실험서 정답률 71.1%, 비용 약 28% 절감
-오픈소스 플러그인 공개...11월 ‘다투모 이밸’에 적용 예정
-셀렉트스타는 판단 특화 AI 모델 ‘다비(DAVI)’를 공개했다고 26일 밝혔다. 다비는 질문 난도에 따라 적합한 AI 모델을 선택하는 모델 라우팅, AI 답변의 적절성 평가, AI 에이전트의 작업 성공 가능성 예측 등에 활용할 수 있다.
-셀렉트스타는 글로벌 판단 AI 모델인 타입세이프AI의 ‘제브’와 다비의 성능을 비교했다. 회사가 공개한 평가 결과에 따르면 다비는 판단 능력을 측정하는 ‘제브벤치’의 231개 문항에서 정확도 89.2%를 기록했다. 제브의 86.6%보다 2.6%포인트 높았다. 복잡한 조건을 다루는 고난도 문항에서는 다비가 77.5%, 제브가 73.0%로 격차가 4.5%포인트였다.
-한국어 피드백 평가에서도 다비는 72.5%의 정확도로 제브(66.8%)를 5.7%포인트 앞섰다. 셀렉트스타는 이 밖에 다양한 언어와 업무 상황을 다루는 평가 등 5개 영역에서 비교 실험을 진행했으며, AI 에이전트의 작업 성공 가능성을 예측하는 일부 조건에서도 다비가 더 높은 성능을 보였다고 설명했다. 다만 해당 수치는 회사가 수행한 비교 평가 결과로, 실제 업무 환경에서의 성능은 적용 조건에 따라 달라질 수 있다.
-모델 라우팅 실험에서는 정확도와 비용을 함께 비교했다. 셀렉트스타는 한국어 고난도 질의응답 174개를 5차례 반복해 총 870건을 실험했다. 다비가 앤트로픽의 하이쿠, 소넷, 오퍼스 중 질문에 적합한 모델을 선택하도록 한 결과, 정답률은 71.1%로 나타났다. 오푸스만 사용했을 때의 70.3%보다 0.8%포인트 높았다. 모델 실행 비용은 오푸스 단독 사용 대비 약 28% 낮아졌다.
-이는 모든 요청을 최고 성능 모델에 맡기는 대신, 작업의 난도와 특성에 따라 모델을 선택하는 방식이 비용 효율을 높일 수 있음을 보여주는 결과다. 다만 실험에 사용한 문항과 모델 구성에 따른 결과인 만큼, 다른 업무에서도 동일한 수준의 정확도와 비용 절감 효과가 나타나는지는 추가 검증이 필요하다.
-셀렉트스타는 자체 AI 신뢰성 평가 플랫폼 ‘다투모 이밸’에 오는 11월 다비를 적용해 AI 품질 평가 기능을 강화할 계획이다. 기업이 AI의 판단 결과를 검증하고 모델 운영 효율을 높일 수 있도록 지원한다는 구상이다.
+[TITLE] OpenSSL 4.1.0: What’s new, what’s removed, and what’s still broken
+[TITLE_KO] OpenSSL 4.1.0의 새 기능, 제거된 기능, 아직 남은 결함
+[LINK] https://www.helpnetsecurity.com/2026/10/26/openssl-4-1-0-released/
+[PUBLISHED] 2026-10-26 08:33 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 보안
+[SCORE] 6
+[REASON] DTLS 1.3 도입 개발자는 알려진 결함 확인 필요
+[FIELD] 보안
 ---
-[TITLE] Pinterest, 사용자 활동에서 장기 목표를 추론하는 LLM 구축
-[LINK] https://news.hada.io/topic?id=36011
-[PUBLISHED] 2026-10-26 10:50 KST
-[SOURCE] GeekNews
-[TOPIC] 모델
-[SCORE] 7
-[REASON] 사용자 행동 기록에서 목표를 직접 추론하는 4B LLM 적용
-[BODY]
-- Pinterest가 검색과 저장 기록을 읽고 ‘주방 리모델링’이나 ‘사워도우 배우기’처럼 사용자가 이루려는 목표를 추론해 추천과 알림에 활용
-- 키워드를 추출하고 묶어 이름을 붙이던 다단계 처리 대신, 미세 조정한 40억 파라미터 LLM 하나가 활동 기록에서 목표 목록과 우선순위를 직접 생성하는 방식으로 전환
-- 대형 모델이 만든 학습 데이터를 Qwen3 4B에 학습시켜 비용을 줄이고, 따로 분리되던 관심사를 하나의 목표로 묶거나 사용자 언어로 구체적인 이름을 생성
-- L40S GPU 약 100개로 초당 약 775건을 처리하며, 목표가 자주 바뀌지 않는 특성을 활용해 최근 며칠 내 분석한 사용자는 건너뛰어 처리 부담을 절감
-- 미국과 캐나다 실험에서 기존 클러스터링 방식보다 이메일 클릭률 1.1%, 푸시 열람률 1.3% 상승했으며, 실제 사용자 피드백을 반영하는 추가 학습은 실험 중
-개별 관심사가 아닌 장기 목표를 추천에 활용
-- Pinterest의 여정(journey) 은 사용자가 특정 목표를 이루기 위해 여러 차례 방문하며 검색하고 저장하는 일련의 활동을 뜻함
-  - ‘여름 드레스’는 관심사지만, ‘8월에 참석할 여름 결혼식에 입을 옷 알아보기’는 여정에 해당
-  - 주방 리모델링, 채소 정원 가꾸기, 사워도우 배우기처럼 여러 여정이 동시에 존재하며 생활 변화에 따라 달라짐
-- 다음에 클릭할 콘텐츠나 ‘홈 데코’ 같은 넓은 관심사만으로는 수주에서 수개월에 걸친 목표를 파악하기 어려움
-  - 수납장 이미지 클릭, 주방 벽면 검색, 정원 화단 저장이 하나의 프로젝트인지, 별개 프로젝트인지, 일시적인 관심인지 구별할 필요
-  - 이 판단에 따라 추천할 콘텐츠와 알림 문구, 알림을 보내지 않을 시점도 달라짐
-- 원하는 결과는 분류표의 항목이 아니라, 사용자가 자신의 목표로 알아볼 수 있는 구체적인 이름과 우선순위
-- 사용자 활동이 시간순으로 쌓이는 전자상거래, 스트리밍, 검색 서비스에서도 같은 방식으로 활동 기록에서 의도를 추론할 수 있음
-초기 클러스터링 시스템의 성과와 한계
-- 초기 사용자 여정 시스템은 정답이 붙은 데이터가 거의 없어, 사전 학습된 텍스트 임베딩과 사람이 만든 수백 개의 예시로 시작
-  - 검색어, 사용자가 반응한 Pin의 설명 태그와 관심사, 보드에 모은 Pin에서 키워드 추출
-  - 키워드를 벡터로 변환하고 비슷한 것끼리 단계적으로 묶어 여정 후보 생성
-  - 묶음 안에서 가장 중요한 키워드를 골라 여정 이름으로 사용
-  - 후보별 점수로 순위를 매기고, 비슷한 후보에는 감점을 줘 상위 목록의 중복 축소
-  - 활동이 수주 이상 지속되는지에 따라 지속적인 관심과 일시적인 목표를 구분하고, 마지막 활동 이후 경과 시간으로 진행 또는 종료 여부 판단
-- 이 시스템을 적용한 알림은 기존 관심사 기반 알림보다 이메일 클릭률 88%, 푸시 열람률 32% 높았고, 설문의 긍정 응답도 23% 증가
-- 다만 단계별 오류가 쌓이면서 하나의 목표가 여러 항목으로 쪼개지는 문제가 발생
-  - 목표 분리: 하나의 주방 리모델링에 속하는 수납장, 조리대, 벽면 마감을 각각 다른 여정으로 처리
-  - 막연한 이름: 여러 주제가 섞이면 빈도가 높은 ‘Art’, ‘Recetas’, ‘Shopping’ 같은 이름을 선택해 개인화에 도움이 되지 않음
-  - 일시적으로 본 밈이나 유명인 콘텐츠가 중요한 목표처럼 상위에 오르는 문제도 발생
-- 현재 운영 시스템은 LLM이 한 번에 여정 목록을 생성하는 방식을 우선 사용하며, 클러스터링은 필요할 때 대신 사용하는 방식으로 유지
-활동 기록에서 여정 목록을 직접 생성
-- 모델은 자주 바뀌지 않는 프로필 정보, 사용자의 보드, 시간순 활동 기록을 하나의 프롬프트로 받아 우선순위가 있는 여정 목록을 JSON으로 반환
-  - 프로필에는 성별, 언어, 국가, 연령대 등이 포함
-  - 수납장 검색과 벽면 타일, 조리대 저장을 종합해 ‘Modern Farmhouse Kitchen’을 생성하고, 다른 활동에서는 ‘Raised Bed Vegetable Garden’, ‘Sourdough Bread Making’, ‘Cast Iron Recipes’ 등을 도출
-- 별도의 키워드 추출, 임베딩, 클러스터링, 이름 선정 단계를 거치지 않고 모델 하나가 활동 기록을 읽어 목표를 추론
-- 입력 행동은 search ,save ,like ,click ,comment ,dislike 로 단순화하고, 중요도를search/save > comment > like > click > dislike 순서로 명시
-  - 다시 Pin하기와 기기에 저장하기는 세부 행동을 구분하기보다 모두 강한 긍정 신호로 취급
-  - 같은 날짜와 행동의 이벤트를 묶고, Pin 사이는 세미콜론, Pin 내부 태그 사이는 쉼표로 구분해 토큰 사용량을 줄이면서 함께 일어난 활동을 드러냄
-  - 숨김 같은 부정적인 반응도 포함하며, 관련된 긍정 반응이 충분하지 않으면 해당 여정을 추천에서 제외
-- 최대 360일, 150개 이벤트를 사용하며, 기록을 얼마나 길게 볼지와 이벤트 수를 조정해 비용과 관련성의 균형을 맞춤
-- 생성 설정은 temperature 0, 추론 토큰 비활성화, 출력 최대 300토큰
-  - 같은 기록에서 일관된 결과와 정해진 출력 형식을 얻고, 추론 비용을 낮추려는 설정
-- 출력 처리 과정에서는 문자열이 아닌 값을 버리고, 대소문자를 구분하지 않고 중복을 제거하며 먼저 나온 항목을 유지
-  - JSON 대신 일반 문장이 나오는 등 형식 오류가 사용자 개인화 데이터 전체의 누락으로 이어지지 않도록 처리
-프롬프트에 담은 순위 기준과 안전 규칙
-- 운영 프롬프트는 사용자 언어에 맞춰 각각 1~5단어인 여정 이름을 약 12개 이내로 생성하도록 요구하며, 다음 기준으로 순위를 결정
-  - 행동의 강도: 클릭보다 검색과 저장을 우선
-  - 관련 활동이 반복됐는지
-  - 얼마나 최근의 활동인지
-  - 여러 활동이 하나의 목표로 자연스럽게 이어지는지
-  - 이름이 구체적인지: ‘Furniture’보다 ‘Mid-Century Coffee Table’을 선호
-- 무관한 주제는 합치지 않고, 한 번만 나타난 특이한 활동은 제외하며, 자동 생성 태그에는 오류가 있을 수 있다고 명시
-  - 상위 목록의 다양성을 높일 때도 활동 근거가 충분한 여정 안에서만 제한적으로 조정
-  - 근거가 없으면 빈 목록을 반환할 수 있지만, 없는 목표를 지어내서는 안 됨
-- 이러한 지침이 기존의 유사도 감점과 수동 조정한 부정 반응 필터를 대체
-- 자동 태그의 분류 오류를 사용자의 목표로 오인하지 않도록 하는 지침도 필요
-- 프롬프트 변경 역시 모델 코드 변경처럼 검토하고 배포 절차를 거쳐 적용
-대형 모델이 만든 데이터로 소형 모델 학습
-- 성능이 높은 대형 모델은 별도의 과제별 학습 없이도 일관된 여정을 추론하지만, 수억 명의 활동을 정기적으로 분석하기에는 비용이 높음
-- 대형 모델은 직접 서비스하는 대신 소형 모델의 학습 데이터를 만드는 데 사용
-  - 활동 기록마다 적절한 여정 목록을 생성해 입력과 모범 답안의 쌍을 구성
-  - 최종 답변 전에 추론 토큰을 더 사용하도록 했을 때 학습용 답변의 품질도 개선
-- 오픈 웨이트 Qwen3의 0.6B, 1.7B, 4B, 8B 모델을 비교
-  - 대형 모델이 만든 예시로 지도 미세 조정(SFT)을 진행
-  - LoRA를 적용해 전체 파라미터 대신 작은 어댑터만 학습
-- 초기 수천 개의 예시에서는 품질이 빠르게 좋아졌지만, 이후에는 개선 폭이 작아짐
-  - 비슷한 예시를 더 늘리기보다 여러 활동을 하나의 목표로 묶어야 하는 어려운 사례와 다국어 사례를 다양하게 고르는 편이 효과적
-- 0.6B와 1.7B 모델은 더 빨랐지만 어려운 사례에서 관련성과 일관성이 떨어졌고, 4B 모델이 품질과 처리량의 균형이 가장 좋아 실제 서비스에 채택
-- 같은 사용자의 기록을 비교했을 때, LLM은 따로 나뉘던 주방 관련 항목을 하나로 묶고 ‘Art’를 ‘Penguin Art Drawing’으로 구체화
-  - 기존에 빠졌던 ‘Cast Iron Recipes’를 찾아내고, 유명인 뉴스와 밈 같은 일시적인 활동은 제외
+[TITLE] Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers
+[TITLE_KO] 패치되지 않은 Tailscale SSH 결함, 해킹된 기기 하나로 다른 서버의 root 권한 획득 가능
+[LINK] https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html
+[PUBLISHED] 2026-10-26 02:44 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 6
+[REASON] Tailscale SSH 사용자는 포워딩 설정 점검 필요
+[FIELD] 보안
+---
+[TITLE] 유럽 정부기관 ‘PHP2Shell 침해’ 분석 철회…유닛42 “최초 침입 경로 확인 못 해”
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209058
+[PUBLISHED] 2026-10-26 10:54 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 침입 경로 단정 철회로 위협 분석 신뢰 재점검
+[FIELD] 보안
 ---
 [TITLE] “모르면 추측 대신 기억을 확인한다”…ETRI·GIST, 스스로 판단하고 행동하는 로봇 AI 플랫폼 공개
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42427
 [PUBLISHED] 2026-10-26 10:40 KST
 [SOURCE] 인공지능신문
 [TOPIC] 에이전트, 모델, 신기술
-[SCORE] 7
-[REASON] 환경 관측과 기억 검색을 결합한 로봇 AI 에이전트 개발
-[BODY]
-환경 관측과 능동적 기억 검색 결합한 ‘씬쿼리플래너’ 개발…로봇의 복합작업 성공률 최대 24%p 향상, 3차원 장면 그래프 기반 정보 검증으로 AI 환각·판단 오류 줄여
-로봇이 주변 환경을 직접 관찰하고, 과거에 확인한 정보를 기억에서 찾아 검증한 뒤 행동하는 새로운 인공지능(AI) 기술이 개발됐다. 기존 로봇 AI가 불확실한 상황에서 언어모델의 사전 지식에 의존해 잘못 판단하는 문제를 줄이고, 실제 관측한 사실을 바탕으로 복잡한 작업을 수행하도록 하는 기술이다.
-한국전자통신연구원(ETRI)은 광주과학기술원(GIST)과 공동으로 환경 관측과 능동적 기억 검색을 결합한 로봇 AI 에이전트 '씬쿼리플래너(SceneQueryPlanner)'를 개발했다고 26일 밝혔다.
-연구진은 로봇이 공간과 사물의 위치, 재질, 상태 등을 구조화된 기억으로 저장하고, 작업 수행 과정에서 필요한 정보를 스스로 검색하거나 추가 관측하도록 설계했다. 이를 통해 기존 방식 대비 복합작업 성공률을 최대 24%포인트 높였다.
-로봇 AI의 새로운 과제...'무엇을 할까'보다 '무엇을 확인할까'
-최근 대형언어모델(LLM)의 발전으로 로봇은 사람의 자연어 명령을 이해하고 여러 단계의 행동을 계획할 수 있게 됐다. 그러나 실제 생활환경에서는 언어를 이해하는 것만으로 작업을 정확하게 수행하기 어렵다. 물체의 위치와 종류뿐 아니라 재질, 현재 상태, 주변 사물과의 관계 등 세부적인 환경정보를 파악해야 하기 때문이다.
-예를 들어 사용자가 "식탁 위 유리컵은 선반에, 플라스틱 컵은 캐비닛에 정리해 줘"라고 지시하면 로봇은 컵을 찾는 것에서 그치지 않고 각각의 재질을 구분해야 한다. 또 "켜져 있는 전자제품을 모두 꺼줘"라는 명령을 수행하려면 어떤 전자제품이 있는지, 현재 전원이 켜져 있는지 확인해야 한다.
-기존 대형언어모델 기반 로봇 에이전트는 주변 환경을 관측한 정보를 긴 문장 형태로 전달받아 행동을 계획하는 경우가 많았다. 하지만 관측정보가 부족하면 물체의 속성을 잘못 추측할 수 있고, 반대로 정보가 지나치게 많으면 작업과 관계없는 내용까지 처리해야 해 추론의 안정성이 떨어질 수 있다.
-연구진은 이러한 문제를 '수동적 관측(Passive Observation)'에 따른 한계로 설명했다. 필요한 정보가 누락되거나 불필요한 정보가 과도하게 제공되는 환경에서는 AI가 잘못된 근거로 판단하는 환각(Hallucination)과 불안정한 추론이 발생할 수 있다는 것이다.
-이를 해결하기 위해 연구진은 로봇이 정보를 수동적으로 전달받는 방식에서 벗어나, 현재 작업에 필요한 정보가 무엇인지 판단하고 직접 확보하는 능동적 정보 탐색(Active Information Seeking) 방식을 제안했다.
-3차원 장면 그래프에 공간·사물·상태 저장...로봇의 구조화된 기억 구현
-씬쿼리플래너의 핵심 기술은 로봇이 관측한 환경정보를 '3차원 장면 그래프(3D Scene Graph)'로 구성해 저장하는 것이다. 3차원 장면 그래프는 공간을 방과 가구, 물체 등으로 구분하고 각각의 위치와 속성, 상호 관계를 연결한 구조화된 정보 표현 방식이다.
-예를 들어 거실에 있는 탁자와 탁자 위 컵, 주방의 캐비닛과 선반 등을 각각의 객체로 표현하고, 물체가 어디에 놓여 있는지와 어떤 속성을 갖는지를 관계 정보로 연결한다.
-물체의 재질뿐 아니라 문이 열려 있는지, 전자제품의 전원이 켜져 있는지 등 작업에 필요한 상태 정보도 저장할 수 있다. 이러한 기억은 새로운 관측정보가 들어오면 갱신된다. 로봇이 다른 방으로 이동한 뒤에도 이전에 관측한 환경정보를 활용할 수 있도록 설계된 것이다.
-특히 씬쿼리플래너는 저장된 모든 정보를 한꺼번에 언어모델에 제공하지 않는다. 현재 수행해야 할 작업과 직접 관련된 정보만 선택적으로 검색한다. 이를 통해 환경정보가 증가하더라도 불필요한 내용이 추론 과정에 개입하는 문제를 줄이고, 여러 공간에 걸친 장기 작업에서도 필요한 정보를 활용하도록 했다.
-환경 관측과 기억 검색 결합...정보 확인 자체를 행동 계획에 포함
-연구진이 제안한 핵심 개념은 '기억·환경 이중 그라운딩(Memory–Environment Dual-Grounding)'이다. 그라운딩은 AI의 판단과 추론을 실제 관측정보나 확인 가능한 데이터에 연결하는 과정을 의미한다.
-씬쿼리플래너는 두 가지 정보 확인 방식을 결합한다. 먼저 '환경 그라운딩(Environment Grounding)'은 로봇이 직접 주변을 관찰하거나 이동하면서 필요한 정보를 확보하는 방식이다. 반면 '메모리 그라운딩(Memory Grounding)'은 이전에 관측해 저장한 기억에서 현재 작업에 필요한 정보를 검색하는 방식이다.
-씬쿼리플래너는 사용자의 명령을 세부 작업으로 나누고, 각 단계에서 필요한 정보가 무엇인지 판단한다. 이후 저장된 기억을 검색할지, 주변 환경을 추가로 관측할지 선택한다.
-연구진은 정보 획득 자체를 행동 계획의 핵심 요소로 취급했다. 즉, 로봇이 물체를 집거나 이동하는 동작뿐 아니라 '어떤 정보를 확인해야 하는가'까지 계획하도록 한 것이다. 예를 들어 컵을 재질별로 분류해야 한다면 로봇은 먼저 컵의 위치를 파악하고, 기억에 저장된 재질 정보를 조회한다. 필요한 정보가 부족하면 추가적인 환경 관측을 통해 확인한 뒤 물체를 이동한다.
-이처럼 추측에 의존하지 않고 필요한 정보를 명시적으로 확인하는 구조는 여러 단계에 걸친 복잡한 작업에서 판단 오류를 줄이는 데 도움이 된다.
-새로운 평가체계 '앳플랜-벤치' 개발...복합작업 수행 능력 검증
-연구진은 기술의 효과를 검증하기 위해 속성 기반 행동 계획 평가체계인 '앳플랜-벤치(AttPlan-Bench)'도 개발했다. 앳플랜-벤치는 여러 방으로 구성된 가정환경에서 장기간에 걸쳐 수행해야 하는 복합작업을 평가하도록 설계됐다.
-평가에는 물체 이동과 정리, 가열과 냉각, 청소, 전자제품의 전원 조작 등 10가지 유형의 작업이 포함됐다. 특히 단순히 물체를 찾아 이동하는 작업을 넘어 재질이나 상태, 위치관계를 정확하게 확인해야 하는 속성 기반 작업을 포함했다. 이는 AI가 일반적인 행동 계획을 생성하는 능력뿐 아니라, 실제 환경에서 확보한 정보를 바탕으로 판단하는 능력을 평가하기 위한 것이다.
-연구진은 기존의 추론·행동 결합 방식인 '리액트(ReAct)'와 씬쿼리플래너의 성능을 비교했다. 리액트는 언어모델이 추론과 행동을 반복하면서 문제를 해결하는 대표적인 AI 에이전트 접근법이다. 그러나 환경정보를 수동적으로 전달받는 구조에서는 필요한 세부 정보가 누락되거나 불필요한 정보가 누적되는 한계가 있다.
-씬쿼리플래너는 이 과정에 선택적인 기억 검색과 환경 관측을 추가해 작업 수행에 필요한 정보를 확보하도록 했다.
-라마 3.1 성공률 69.6%, 큐웬 2.5는 68.0%...최대 24%p 개선
-실험 결과 씬쿼리플래너는 오픈소스와 상용 언어모델을 활용한 평가에서 기존 리액트 방식보다 높은 작업 성공률을 기록했다. 메타(Meta)의 라마 3.1(LLaMA 3.1)을 활용한 실험에서는 작업 성공률이 기존 46.8%에서 69.6%로 상승했다. 이는 22.8%포인트 개선된 수치다.
-알리바바의 큐웬 2.5(Qwen 2.5)를 적용한 실험에서는 기존 44.0%에서 68.0%로 높아져 24.0%포인트 향상됐다. 오픈AI의 GPT-4o를 활용한 실험에서도 모든 평가환경에서 기존 방식보다 높은 성능을 나타냈다. 특히 물체의 속성을 확인해야 하는 복합작업의 성공률은 17.2%포인트 개선됐다.
-이번 결과는 언어모델의 규모를 확대하거나 새로운 모델을 학습시키는 것 외에도, 환경정보를 검색하고 검증하는 에이전트 구조를 개선하는 방식으로 작업 수행 능력을 높일 수 있음을 보여준다.
-특히 연구진은 논문에서 기억과 환경을 결합한 이중 그라운딩 방식이 다양한 작업에서 보다 안정적이고 확장성 있는 추론을 지원한다고 설명했다. 다만 이러한 성능은 연구진이 구축한 벤치마크 환경에서 확인된 결과다. 실제 가정이나 산업현장에서 로봇이 동일한 성공률을 보인다는 의미는 아니다.
-피지컬 AI의 핵심 기술로 주목, 실제 로봇 환경으로 확대 추진
+[SCORE] 6
+[REASON] 로봇 에이전트의 관측 기반 판단 오류 감소
+[FIELD] AI 에이전트
 ---
-[TITLE] 그래프와 LLM 북키핑 없이 AI 메모리 구현하기 - 입력 토큰 95% 절감
-[LINK] https://news.hada.io/topic?id=36002
-[PUBLISHED] 2026-10-26 09:14 KST
-[SOURCE] GeekNews
-[TOPIC] 모델
-[SCORE] 7
-[REASON] 지식 그래프 생성 없이 청크 검색으로 토큰을 절감하는 AI 메모리
+[TITLE] "AI, 지하 4km 광산에서도 45초 만에 결핵 선별한다"...구글, 의료 AI로 글로벌 진단 격차 줄여
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42424
+[PUBLISHED] 2026-10-25 21:51 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 모델
+[SCORE] 6
+[REASON] 의료 영상 모델이 저자원 지역 검진에 투입
+[FIELD] AI 모델
 ---
 [TITLE] 중국 AI 반도체 플랫폼 '쿤룬신', 미니맥스 신모델 ‘M3.1 플래시’ 즉시 구동 성공
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42425
 [PUBLISHED] 2026-10-25 22:24 KST
 [SOURCE] 인공지능신문
 [TOPIC] 모델, 신기술
-[SCORE] 7
-[REASON] 중국산 AI 가속기 플랫폼에서 최신 LLM 당일 호환 구동 성공
+[SCORE] 6
+[REASON] 중국산 가속기의 최신 모델 즉시 지원 확대
+[FIELD] 신기술
+---
+[TITLE] 셀렉트스타, 판단 특화 AI ‘다비’ 공개...모델 운영비 28% 줄여
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21793
+[PUBLISHED] 2026-10-26 11:29 KST
+[SOURCE] 더에이아이
+[TOPIC] 에이전트, 모델
+[SCORE] 6
+[REASON] 모델 라우팅과 응답 평가용 판단 모델 경쟁
+[FIELD] AI 모델
+---
+[TITLE] Pinterest, 사용자 활동에서 장기 목표를 추론하는 LLM 구축
+[LINK] https://news.hada.io/topic?id=36011
+[PUBLISHED] 2026-10-26 10:50 KST
+[SOURCE] GeekNews
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 다단계 파이프라인을 소형 미세조정 LLM로 대체
+[FIELD] AI 모델
 ---
 [TITLE] 리퀴드 AI, 실시간 추론 엔진 ‘RIPL’ 출시...AI 응답 지연 50ms 미만 겨냥
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216627
 [PUBLISHED] 2026-10-25 16:32 KST
 [SOURCE] AI타임스
 [TOPIC] 개발, 모델
-[SCORE] 7
-[REASON] 50ms 미만 지연 시간 겨냥 실시간 AI 추론 파이프라인 출시
----
-[TITLE] EQT 품에 안긴 더존비즈온, 첫 위기 대응…"정보보호 최선 다할 것"
-[LINK] https://zdnet.co.kr/view/?no=20261026101749
-[PUBLISHED] 2026-10-26 10:19 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 보안, 산업, 규제
-[SCORE] 7
-[REASON] 더존비즈온 침해사고에 대한 정부 민관합동조사단 구성
----
-[TITLE] OpenSSL 4.1.0: What’s new, what’s removed, and what’s still broken
-[TITLE_KO] OpenSSL 4.1.0: 변경점, 제거된 항목 및 잔존 버그 분석
-[LINK] https://www.helpnetsecurity.com/2026/10/26/openssl-4-1-0-released/
-[PUBLISHED] 2026-10-26 08:33 KST
-[SOURCE] Help Net Security
-[TOPIC] 개발, 보안
-[SCORE] 7
-[REASON] OpenSSL 신규 버전 배포 및 DTLS 관련 취약점 공지
----
-[TITLE] Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers
-[TITLE_KO] 패치되지 않은 테일스케일 SSH 취약점, 침해된 기기로 다른 서버의 루트 권한 획득 가능해
-[LINK] https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html
-[PUBLISHED] 2026-10-26 02:44 KST
-[SOURCE] The Hacker News
-[TOPIC] 보안
-[SCORE] 7
-[REASON] 테일스케일 SSH 포트 포워딩을 통한 타 서버 루트 권한 탈취 취약점
----
-[TITLE] Corgi - 여러 AI 코딩 에이전트를 한눈에 관리하는 터미널 도구
-[LINK] https://news.hada.io/topic?id=35971
-[PUBLISHED] 2026-10-25 21:37 KST
-[SOURCE] GeekNews
-[TOPIC] 에이전트, 개발
-[SCORE] 7
-[REASON] 여러 코딩 에이전트를 통합 관리하는 오픈소스 터미널 멀티플렉서
----
-[TITLE] OpenAI와 Anthropic은 몇 달 만에 LLM 가격을 최대 80% 내렸다. 왜일까?
-[LINK] https://news.hada.io/topic?id=36009
-[PUBLISHED] 2026-10-26 10:33 KST
-[SOURCE] GeekNews
-[TOPIC] 에이전트, 개발, 모델
 [SCORE] 6
-[REASON] 주요 LLM 공급사들의 가격 대폭 인하 현황 분석
+[REASON] 저지연 업무에 LLM 적용 범위 확대
+[FIELD] AI 모델
 ---
-[TITLE] 10년 된 CNN, 피부암 진단에서 최첨단 LLM보다 높은 성능 기록
-[LINK] https://news.hada.io/topic?id=35987
-[PUBLISHED] 2026-10-26 04:40 KST
-[SOURCE] GeekNews
-[TOPIC] 일반
+[TITLE] 제논, 기업용 AI 보안 솔루션 ‘젠가드’ 출시...자연어로 보안 정책 설정
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21792
+[PUBLISHED] 2026-10-26 11:24 KST
+[SOURCE] 더에이아이
+[TOPIC] 모델, 보안, 규제
 [SCORE] 6
-[REASON] 미세 조정된 고전 CNN이 피부 병변 분류에서 최첨단 모델을 능가
----
-[TITLE] 티켓베이 해킹으로 회원 1만6천명 개인정보 유출…공연·주문내역까지 노출
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209054
-[PUBLISHED] 2026-10-26 02:33 KST
-[SOURCE] 데일리시큐
-[TOPIC] 개발, 보안, 규제
-[SCORE] 6
-[REASON] 비정상 API 접근으로 인한 회원 1만6천명 거래정보 유출
----
-[TITLE] Anthropic co-founder Jack Clark moves his prediction for self-improving AI forward to 2027
-[TITLE_KO] 앤트로픽 공동 창립자 잭 클락, 스스로 개선하는 AI의 도래 예측을 2027년으로 앞당겨
-[LINK] https://the-decoder.com/anthropic-co-founder-jack-clark-moves-his-prediction-for-self-improving-ai-forward-to-2027/
-[PUBLISHED] 2026-10-25 18:37 KST
-[SOURCE] The Decoder
-[TOPIC] 모델
-[SCORE] 6
-[REASON] 자가 개선 AI의 도래 예상 시점을 2027년으로 앞당긴 전망
----
-[TITLE] 아마존, AI 수요 폭증에 내년 컴퓨팅 용량 완판...2028년 예약도 몰려
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=216620
-[PUBLISHED] 2026-10-25 17:10 KST
-[SOURCE] AI타임스
-[TOPIC] 모델
-[SCORE] 6
-[REASON] AI 인프라 수요 폭증으로 향후 수년간 클라우드 컴퓨팅 완판
----
-[TITLE] OpenAI offers discounts up to 90 percent to poach Anthropic's biggest customers
-[TITLE_KO] 오픈AI, 앤트로픽의 최대 고객들을 빼앗아오기 위해 최대 90% 할인 제공
-[LINK] https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers/
-[PUBLISHED] 2026-10-25 16:30 KST
-[SOURCE] The Decoder
-[TOPIC] 일반
-[SCORE] 6
-[REASON] 경쟁사 기업 고객 유치를 위한 오픈AI의 최대 90% 요금 할인 공세
----
-[TITLE] 롯데 계열 기프티엘 해킹…고객 계좌번호까지 유출
-[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172738
-[PUBLISHED] 2026-10-25 15:16 KST
-[SOURCE] IT조선
-[TOPIC] 보안, 규제
-[SCORE] 6
-[REASON] 쿠폰 서비스 해킹으로 고객 환불 계좌번호 등 개인정보 노출
+[REASON] 자연어 정책으로 생성형 AI 요청 통제 가능
+[FIELD] 보안
 ---
 [TITLE] SDT, 기존 시스템과 완벽 호환 QRNG+PQC 보안 카메라 첫선
 [LINK] https://zdnet.co.kr/view/?no=20261026100016
@@ -481,203 +469,162 @@ AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 �
 [SOURCE] ZDNet Korea
 [TOPIC] 모델, 보안, 신기술
 [SCORE] 6
-[REASON] 양자난수와 양자내성암호를 적용한 보안 카메라 공개
+[REASON] 영상 장비에 양자내성암호 적용 시작
+[FIELD] 보안
 ---
-[TITLE] [FSD 온로드] 버스전용차로 진입 시도 여전...‘즉각 해제’가 답
-[LINK] https://www.bloter.net/news/articleView.html?idxno=676654
-[PUBLISHED] 2026-10-26 09:44 KST
-[SOURCE] 블로터
-[TOPIC] 신기술
-[SCORE] 6
-[REASON] 고속도로 버스전용차로를 오진입하는 자율주행 알고리즘 한계
+[TITLE] Anthropic says one AI agent beats many subagents now that models can handle complexity alone
+[TITLE_KO] Anthropic, 모델이 복잡한 작업을 혼자 처리하게 되면서 여러 서브에이전트보다 단일 에이전트가 낫다고 밝혀
+[LINK] https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone/
+[PUBLISHED] 2026-10-25 18:12 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델
+[SCORE] 5
+[REASON] 멀티에이전트 구조를 단일 에이전트로 재검토
+[FIELD] AI 에이전트
 ---
-[TITLE] 뇌성마비 아동, AI로 집에서 손 재활했더니 기능 개선…임상서 효과 확인
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42426
-[PUBLISHED] 2026-10-26 09:01 KST
-[SOURCE] 인공지능신문
-[TOPIC] 일반
-[SCORE] 6
-[REASON] 카메라 기반 AI 손동작 인식 재활 프로토콜의 임상적 유의성 입증
----
-[TITLE] 전 세계 선거 딥페이크 27% 증가…한국, 누적 사례 세계 3위
-[LINK] https://www.etnews.com/20261026000004
-[PUBLISHED] 2026-10-26 08:22 KST
-[SOURCE] 전자신문
+[TITLE] 더존비즈온 두 차례 침해사고 신고…정부 합동조사 착수
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172759
+[PUBLISHED] 2026-10-26 09:58 KST
+[SOURCE] IT조선
 [TOPIC] 보안
-[SCORE] 6
-[REASON] 전 세계 선거 관련 AI 딥페이크 악용 사례 증가 통계
+[SCORE] 5
+[REASON] 기업용 SW 고객사로 피해 확산 여부 점검 필요
+[FIELD] 보안
 ---
-[TITLE] 대한전기학회, 개인정보 유출 사고 후속조치 완료…회원 계좌번호 전량 파기
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209057
-[PUBLISHED] 2026-10-26 03:09 KST
+[TITLE] 더존비즈온, APO 백업서버 해킹 공지…암호화 데이터 외부 반출 정황
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209050
+[PUBLISHED] 2026-10-25 15:44 KST
 [SOURCE] 데일리시큐
 [TOPIC] 보안, 규제
-[SCORE] 6
-[REASON] 개인정보 유출 학회에서 보관 계좌번호 전량 삭제 후속 조치
+[SCORE] 5
+[REASON] 백업 솔루션 쓰는 고객사 유출 여부 확인 필요
+[FIELD] 보안
 ---
-[TITLE] 놀유니버스, 외부 해킹으로 임직원 개인정보 유출…시스템 보안 취약점 악용
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209056
-[PUBLISHED] 2026-10-26 02:47 KST
-[SOURCE] 데일리시큐
+[TITLE] [AI 모델 신작] 텐센트 월드 모델부터 잭 도시의 음성 AI까지 9종
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216628
+[PUBLISHED] 2026-10-25 18:32 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 5
+[REASON] 월드 모델과 음성 모델 신작 묶음
+[FIELD] AI 모델
+---
+[TITLE] 가상 섬에 홀로 둔 AI, 스스로 놀이 만들고 개발자도 몰랐던 기술 발견
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216631
+[PUBLISHED] 2026-10-25 19:33 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SCORE] 5
+[REASON] 목표 없는 에이전트의 자발적 탐색 행동 관찰
+[FIELD] AI 에이전트
+---
+[TITLE] 10년 된 CNN, 피부암 진단에서 최첨단 LLM보다 높은 성능 기록
+[LINK] https://news.hada.io/topic?id=35987
+[PUBLISHED] 2026-10-26 04:40 KST
+[SOURCE] GeekNews
+[TOPIC] 일반
+[SCORE] 5
+[REASON] 의료 진단은 범용 LLM보다 특화 모델 우위
+[FIELD] AI 모델
+---
+[TITLE] '클로드'가 그림에 숨긴 문장, '아스트라'가 풀었다…88% 해독
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216630
+[PUBLISHED] 2026-10-25 18:57 KST
+[SOURCE] AI타임스
+[TOPIC] 일반
+[SCORE] 5
+[REASON] 모델 간 은닉 통신 가능성 감시 과제 제기
+[FIELD] AI 모델
+---
+[TITLE] 챗GPT에 기업 기밀 입력하면 AI가 사전 차단…솔트웨어, 민감정보 유출 방지 기술 특허 확보
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42429
+[PUBLISHED] 2026-10-26 11:34 KST
+[SOURCE] 인공지능신문
 [TOPIC] 보안, 규제
-[SCORE] 6
-[REASON] 시스템 취약점 악용으로 임직원 개인정보 유출 사고 발생
----
-[LINK] https://www.itworld.co.kr/article/4240034/%ec%98%a4%ed%94%88%ed%81%b4%eb%a1%9c-%ec%b0%bd%ec%8b%9c%ec%9e%90-%ec%a7%80%eb%82%9c%eb%8b%ac-ai-%ed%86%a0%ed%81%b0%ec%97%90-1000%eb%a7%8c-%eb%8b%ac%eb%9f%ac-%ec%8d%bc%eb%8b%a4.html
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209046
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209039
-[STATUS] SKIP (제외)
----
-[LINK] https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html
-[STATUS] SKIP (지난 보도)
----
-[LINK] https://zdnet.co.kr/view/?no=20261026105927
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://news.hada.io/topic?id=36004
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.etnews.com/20261026000002
-[STATUS] SKIP (제외)
----
-[LINK] https://the-decoder.com/nvidia-open-sources-flora-to-make-robot-video-labeling-125x-cheaper-than-gpt-6-astra/
-[STATUS] SKIP (지난 보도)
----
-[LINK] http://www.newstheai.com/news/articleView.html?idxno=21792
-[STATUS] SKIP (제외)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172758
-[STATUS] SKIP (중복)
----
-[LINK] https://zdnet.co.kr/view/?no=20261026100141
-[STATUS] SKIP (중복)
----
-[LINK] https://www.itworld.co.kr/article/4240062/%ec%9c%a0%eb%9f%bd-%ea%b3%b5%ea%b3%b5-%eb%b6%80%eb%ac%b8%ec%84%9c-%ed%9e%98-%eb%b0%9b%eb%8a%94-%eb%a7%a4%ed%8a%b8%eb%a6%ad%ec%8a%a4-%ed%94%84%eb%a1%9c%ed%86%a0%ec%bd%9c-%ed%8c%80%ec%a6%88-%eb%8c%80.html
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://news.hada.io/topic?id=35985
-[STATUS] SKIP (중복)
----
-[LINK] https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html
-[STATUS] SKIP (지난 보도)
----
-[LINK] https://news.hada.io/topic?id=35974
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.securityweek.com/former-unit-8200-officers-raise-34-million-for-agentic-secops-startup-mave/
-[STATUS] SKIP (순위 밖)
+[SCORE] 5
+[REASON] 생성형 AI 사용 기업의 기밀 유출 통제 수단
+[FIELD] 보안
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216642
-[STATUS] SKIP (중복)
----
-[LINK] https://www.bloter.net/news/articleView.html?idxno=676693
-[STATUS] SKIP (지난 보도)
----
-[LINK] https://www.etnews.com/20261026000132
-[STATUS] SKIP (중복)
----
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=216577
 [STATUS] SKIP (제외)
----
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42424
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=216631
-[STATUS] SKIP (지난 보도)
----
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=216628
-[STATUS] SKIP (지난 보도)
----
-[LINK] https://www.etnews.com/20261025000092
-[STATUS] SKIP (지난 보도)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209049
-[STATUS] SKIP (중복)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209047
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42429
-[STATUS] SKIP (제외)
----
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42428
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://zdnet.co.kr/view/?no=20261026101539
-[STATUS] SKIP (제외)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172757
-[STATUS] SKIP (중복)
----
-[LINK] https://zdnet.co.kr/view/?no=20261026102730
-[STATUS] SKIP (제외)
----
-[LINK] https://www.techm.kr/news/articleView.html?idxno=156476
-[STATUS] SKIP (중복)
----
-[LINK] https://www.theguardian.com/us-news/2026/oct/25/elvis-presley-anthropic-lawsuit-ai-models-music
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209055
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209051
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209050
-[STATUS] SKIP (중복)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209045
-[STATUS] SKIP (순위 밖)
 ---
 [LINK] http://www.newstheai.com/news/articleView.html?idxno=21795
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.etnews.com/20261026000174
-[STATUS] SKIP (지난 보도)
+[STATUS] SKIP (같은 사안)
 ---
 [LINK] http://www.newstheai.com/news/articleView.html?idxno=21791
 [STATUS] SKIP (제외)
 ---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42428
+[STATUS] SKIP (기준 미달)
+---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=156484
 [STATUS] SKIP (중복)
 ---
-[LINK] https://www.etnews.com/20261026000159
-[STATUS] SKIP (지난 보도)
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172758
+[STATUS] SKIP (기준 미달)
 ---
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209058
-[STATUS] SKIP (지난 보도)
+[LINK] https://zdnet.co.kr/view/?no=20261026105927
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261026000159
+[STATUS] SKIP (같은 사안)
 ---
 [LINK] https://www.etnews.com/20261026000151
 [STATUS] SKIP (제외)
 ---
+[LINK] https://zdnet.co.kr/view/?no=20261026101539
+[STATUS] SKIP (제외)
+---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=676675
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=676670
 [STATUS] SKIP (중복)
 ---
+[LINK] https://www.etnews.com/20261026000132
+[STATUS] SKIP (중복)
+---
 [LINK] https://zdnet.co.kr/view/?no=20261026103145
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172757
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=36009
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261026102730
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=156478
 [STATUS] SKIP (중복)
 ---
+[LINK] https://zdnet.co.kr/view/?no=20261026101749
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=156476
+[STATUS] SKIP (중복)
+---
 [LINK] https://zdnet.co.kr/view/?no=20261026100514
-[STATUS] SKIP (제외)
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261026100141
+[STATUS] SKIP (중복)
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261026091513
 [STATUS] SKIP (제외)
 ---
-[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172759
-[STATUS] SKIP (중복)
+[LINK] https://www.itworld.co.kr/article/4240062/%ec%9c%a0%eb%9f%bd-%ea%b3%b5%ea%b3%b5-%eb%b6%80%eb%ac%b8%ec%84%9c-%ed%9e%98-%eb%b0%9b%eb%8a%94-%eb%a7%a4%ed%8a%b8%eb%a6%ad%ec%8a%a4-%ed%94%84%eb%a1%9c%ed%86%a0%ec%bd%9c-%ed%8c%80%ec%a6%88-%eb%8c%80.html
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172750
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=676654
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.etnews.com/20261026000055
 [STATUS] SKIP (제외)
@@ -691,17 +638,38 @@ AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 �
 [LINK] https://www.etnews.com/20261026000051
 [STATUS] SKIP (중복)
 ---
+[LINK] https://news.hada.io/topic?id=36004
+[STATUS] SKIP (기준 미달)
+---
 [LINK] https://www.etnews.com/20261026000017
 [STATUS] SKIP (제외)
 ---
+[LINK] https://news.hada.io/topic?id=36002
+[STATUS] SKIP (기준 미달)
+---
 [LINK] https://www.itworld.co.kr/article/4240042/%ea%b5%ac%ea%b8%80%ec%9d%80-%ec%9e%90%ec%82%ac-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ec%84%bc%ed%84%b0%ea%b0%80-%ec%a0%84%eb%a0%a5%ec%9d%84-%eb%8d%94-%eb%a7%8e%ec%9d%b4-%ec%82%ac%ec%9a%a9%ed%95%a0-%ec%88%98.html
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216577
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.itworld.co.kr/article/4240034/%ec%98%a4%ed%94%88%ed%81%b4%eb%a1%9c-%ec%b0%bd%ec%8b%9c%ec%9e%90-%ec%a7%80%eb%82%9c%eb%8b%ac-ai-%ed%86%a0%ed%81%b0%ec%97%90-1000%eb%a7%8c-%eb%8b%ac%eb%9f%ac-%ec%8d%bc%eb%8b%a4.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261026000004
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261026000002
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172208
 [STATUS] SKIP (제외)
 ---
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209053
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209039
 [STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209053
+[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209041
 [STATUS] SKIP (제외)
@@ -721,41 +689,92 @@ AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 �
 [LINK] https://www.bloter.net/news/articleView.html?idxno=676648
 [STATUS] SKIP (제외)
 ---
+[LINK] https://www.theguardian.com/us-news/2026/oct/25/elvis-presley-anthropic-lawsuit-ai-models-music
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209057
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209056
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209055
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209054
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35974
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=35971
+[STATUS] SKIP (기준 미달)
+---
 [LINK] https://news.hada.io/topic?id=35970
-[STATUS] SKIP (지난 보도)
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.securityweek.com/former-unit-8200-officers-raise-34-million-for-agentic-secops-startup-mave/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/anthropic-co-founder-jack-clark-moves-his-prediction-for-self-improving-ai-forward-to-2027/
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.helpnetsecurity.com/2026/10/25/week-in-review-php-vulnerabilities-patched-exploited-palo-alto-globalprotect-vpn-flaw/
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (같은 사안)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=676624
 [STATUS] SKIP (제외)
 ---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216620
+[STATUS] SKIP (기준 미달)
+---
 [LINK] https://the-decoder.com/ex-google-ceo-eric-schmidt-calls-openai-and-anthropic-modern-colonial-trading-companies/
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172742
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42421
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261025000092
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209051
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.etnews.com/20261023000282
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://thehackernews.com/2026/10/openai-ai-agents-demonstrate-vm-escapes.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172738
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209048
-[STATUS] SKIP (제외)
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209047
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.etnews.com/20261023000244
 [STATUS] SKIP (제외)
 ---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209046
+[STATUS] SKIP (기준 미달)
+---
 [LINK] https://www.etnews.com/20261023000175
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209045
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.etnews.com/20261025000066
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=676516
-[STATUS] SKIP (제외)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.etnews.com/20261025000046
 [STATUS] SKIP (제외)
@@ -764,19 +783,19 @@ AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 �
 [STATUS] SKIP (제외)
 ---
 [LINK] https://news.hada.io/topic?id=35979
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://news.hada.io/topic?id=35975
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172751
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] http://www.newstheai.com/news/articleView.html?idxno=21794
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.etnews.com/20261026000047
 [STATUS] SKIP (제외)
@@ -791,13 +810,13 @@ AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 �
 [STATUS] SKIP (중복)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=676686
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=156480
-[STATUS] SKIP (제외)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] http://www.newstheai.com/news/articleView.html?idxno=21790
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=676661
 [STATUS] SKIP (제외)
@@ -821,16 +840,19 @@ AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 �
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.etnews.com/20261026000036
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://news.hada.io/topic?id=36000
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42426
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://news.hada.io/topic?id=35991
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172686
 [STATUS] SKIP (기준 미달)
@@ -845,7 +867,7 @@ AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 �
 [STATUS] SKIP (제외)
 ---
 [LINK] https://techcrunch.com/2026/10/25/the-hottest-ai-wearables-and-gadgets-you-should-know-about/
-[STATUS] SKIP (제외)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.theguardian.com/australia-news/2026/oct/26/deloitte-report-wa-university-mergers-260m-discrepancy-ai
 [STATUS] SKIP (기준 미달)
@@ -856,29 +878,29 @@ AI 에이전트가 이메일 작성과 웹 검색, 일정 관리 등 디지털 �
 [LINK] https://www.theverge.com/column/1017983/google-ai-search-online-publishing
 [STATUS] SKIP (기준 미달)
 ---
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=216630
-[STATUS] SKIP (지난 보도)
----
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42423
-[STATUS] SKIP (제외)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216553
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172743
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers/
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://news.hada.io/topic?id=35961
-[STATUS] SKIP (제외)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216621
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://news.hada.io/topic?id=35958
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=676622
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172717
 [STATUS] SKIP (사전 제외: 행사)
