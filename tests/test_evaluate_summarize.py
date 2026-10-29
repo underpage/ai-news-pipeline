@@ -38,10 +38,19 @@ def test_total_score_scale():
     assert evaluate.total_score(no_penalty) == 0
     # 파급력만 최고점이면 파급력 가중치만큼. 새로움, 근거는 합계에 더하지 않는다
     assert evaluate.total_score({**no_penalty, "impact": 10}) == evaluate.CRITERIA_WEIGHTS["impact"] * 100
-    # 새로움, 근거가 1점이면 감점하고, 합계는 0 아래로 내려가지 않는다
-    penalty = evaluate.PENALTIES["novelty"] + evaluate.PENALTIES["certainty"]
+    # 새로움, 근거가 penalties의 단계면 감점하고, 합계는 0 아래로 내려가지 않는다
+    penalty = evaluate.PENALTIES["novelty"][1] + evaluate.PENALTIES["certainty"][1]
     assert evaluate.total_score({**highest, "novelty": 1, "certainty": 1}) == 100 - penalty
     assert evaluate.total_score({"impact": 1, "relevance": 1, "novelty": 1, "certainty": 1}) == 0
+    # 새로움 2(후속 보도)도 감점
+    assert evaluate.total_score({**highest, "novelty": 2}) == 100 - evaluate.PENALTIES["novelty"][2]
+
+
+def test_load_penalties_reads_old_and_staged_format():
+    assert evaluate.load_penalties({"novelty": 10}) == {"novelty": {1: 10}}
+    assert evaluate.load_penalties({"novelty": {1: 10, "2": 5}}) == {"novelty": {1: 10, 2: 5}}
+    with pytest.raises(ValueError):
+        evaluate.load_penalties({"impact": 10})
 
 
 def test_exclude_reason_accepts_only_defined_reasons():
@@ -139,11 +148,13 @@ def test_prefilter_drops_patterns_and_caps(monkeypatch):
     ]
     kept, dropped = evaluate.prefilter(news_list, limit=3)
 
-    # 주제 가중치 합이 큰 기사부터, 같으면 최근 기사부터
-    assert [item["link"] for item in kept] == ["l3", "l6", "l5"]
+    # 주제 가중치(태그 중 가장 큰 값)가 큰 기사부터, 같으면 최근 기사부터. 태그가 여러 개라고 앞서지 않는다
+    # (3번 "에이전트, 보안"과 4~6번 "에이전트"는 같은 3이라 최신순)
+    assert [item["link"] for item in kept] == ["l6", "l5", "l3"]
     assert dict((item["link"], reason) for item, reason in dropped) == {
         "l1": "사전 제외: 행사", "l7": "사전 제외: 수상", "l4": "사전 제외: 매체 상한", "l2": "사전 제외: 후보 상한",
     }
+    # 가중치 0인 주제만 있으면 뒤로 (2번 "일반"이 가장 최근이어도 후보 상한으로 빠짐)
 
 
 def scored_entry(total, impact=5, dup_of=None, exclude=""):
@@ -237,6 +248,82 @@ def test_decide_fills_summary_slots_without_cap_below_min_total(monkeypatch):
     listed, _ = evaluate.decide(news_list, scored, list_slots=4, list_n=40, min_score=0, top_slots=3)
     # 70점 이상인 다른 분야 기사가 없으면 상한에 걸린 기사로 합계 순으로 채운다 (50점 기사가 앞서지 않음)
     assert listed == [0, 1, 2, 3]
+
+
+def test_score_articles_reads_story_marks(monkeypatch):
+    previous = [{"title": "지난 사안", "link": "p1"}]
+    response = score_response(score_item(1), score_item(2, story_of=1, story_prev=1), score_item(3, story_of=3),
+                              score_item(4, story_of="x", story_prev=9))
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: response)
+    scored = evaluate.score_articles([news(n) for n in range(1, 5)], previous)
+    # 자기 자신, 범위 밖, 숫자가 아닌 값은 무시한다. 필드가 없으면(지난 응답) 해당 없음
+    assert [scored[index]["story_of"] for index in range(4)] == [None, 0, None, None]
+    assert [scored[index]["story_prev"] for index in range(4)] == [None, 0, None, None]
+
+
+def story_entry(total, field="보안", story_of=None, impact=5, **extra):
+    return {**scored_entry(total, impact=impact), "field": field, "story_of": story_of, "novelty": 3, "certainty": 3,
+            "relevance": 4, **extra}
+
+
+def test_decide_caps_one_story_in_list_and_summary(monkeypatch):
+    monkeypatch.setattr(evaluate, "FIELD_CAP", {"max": 3, "exempt_impact": 9, "min_total": 70})
+    monkeypatch.setattr(evaluate, "STORY_CAP", {"summary": 1, "list": 2})
+    news_list = [news(n) for n in range(1, 6)]
+    # 0~3번은 같은 사안(2, 3번은 1번을 거쳐 이어짐), 4번은 다른 사안
+    scored = {0: story_entry(90), 1: story_entry(85, story_of=0), 2: story_entry(80, story_of=1),
+              3: story_entry(75, story_of=0), 4: story_entry(72, field="AI 모델")}
+    listed, decisions = evaluate.decide(news_list, scored, list_slots=5, list_n=40, min_score=0, top_slots=2)
+    # 목록에는 같은 사안 2건까지, 요약 자리에는 1건까지 (남은 자리는 다른 사안이 먼저)
+    assert listed == [0, 4, 1]
+    assert decisions[2] == decisions[3] == "같은 사안"
+    assert scored[0]["story_size"] == 4
+
+
+def test_decide_lowers_novelty_of_reported_story():
+    news_list = [news(n) for n in range(1, 4)]
+    # 0번은 지난 리포트 사안의 후속(story_prev), 1번은 같은 사안 무리. 2번은 새 사안
+    scored = {0: {**story_entry(70, story_prev=0), "impact": 8}, 1: {**story_entry(70, story_of=0), "impact": 8},
+              2: {**story_entry(70), "impact": 8}}
+    for info in scored.values():
+        info["total"] = evaluate.total_score({name: info[name] for name in evaluate.CRITERIA})
+    listed, _ = evaluate.decide(news_list, scored, list_slots=3, list_n=40, min_score=0)
+    # 후속 무리는 새로움 3을 2로 보고 감점해서 새 사안 뒤로 간다
+    assert scored[0]["novelty"] == scored[1]["novelty"] == 2 and scored[2]["novelty"] == 3
+    assert listed[0] == 2 and scored[0]["total"] == scored[2]["total"] - evaluate.PENALTIES["novelty"][2]
+
+
+def test_decide_caps_one_field_in_list_above_threshold(monkeypatch):
+    monkeypatch.setattr(evaluate, "FIELD_CAP", {"max": 3, "exempt_impact": 9, "min_total": 70, "list_max": 2,
+                                                "list_min_total": 63})
+    news_list = [news(n) for n in range(1, 7)]
+    totals = [90, 85, 80, 75, 66, 50]
+    fields = ["보안", "보안", "보안", "보안", "AI 모델", "신기술"]
+    scored = {index: story_entry(total, field=field) for index, (total, field) in enumerate(zip(totals, fields))}
+    scored[3]["impact"] = 9
+    listed, decisions = evaluate.decide(news_list, scored, list_slots=5, list_n=40, min_score=0)
+    # 63점 이상 구간에서 보안은 2건까지(파급력 9는 예외). 구간이 끝나면 상한에 걸린 80점 기사가 50점보다 먼저
+    assert listed == [0, 1, 3, 4, 2]
+    assert decisions[5] == "순위 밖"
+
+
+def test_decide_prefers_less_picked_field_on_ties():
+    news_list = [news(n) for n in range(1, 5)]
+    scored = {0: story_entry(80), 1: story_entry(70), 2: story_entry(70), 3: story_entry(70, field="신기술")}
+    listed, _ = evaluate.decide(news_list, scored, list_slots=3, list_n=40, min_score=0)
+    # 같은 70점 중 아직 뽑히지 않은 분야(신기술)가 먼저. 합계가 다른 기사끼리는 순서 그대로
+    assert listed == [0, 3, 1]
+
+
+def test_order_top_puts_one_per_field_first(monkeypatch):
+    monkeypatch.setattr(evaluate, "FIELD_CAP", {"max": 3, "exempt_impact": 9, "min_total": 70, "floor_total": 66.7})
+    news_list = [news(n) for n in range(1, 8)]
+    totals = [90, 88, 86, 84, 80, 70, 60]
+    fields = ["보안", "보안", "보안", "AI 모델", "AI 모델", "신기술", "AI 에이전트"]
+    scored = {index: story_entry(total, field=field) for index, (total, field) in enumerate(zip(totals, fields))}
+    listed, _ = evaluate.decide(news_list, scored, list_slots=7, list_n=40, min_score=0, top_slots=4)
+    # 분야별 최고 기사(66.7점 이상)가 먼저 자리를 얻고(에이전트 60점은 아님), 고른 기사는 합계 순으로 놓는다
+    assert listed[:4] == [0, 1, 3, 5]
 
 
 def test_score_articles_reads_field(monkeypatch):

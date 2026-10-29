@@ -84,19 +84,21 @@ def render_report(report_date, news_list, listed_news):
             "summary_source": "manual" if item.get("model") == "manual" else "gemini",
         })
 
-    # "더 읽어볼 기사" 목록에는 위에서 다룬 요약 기사(요약 실패 포함)를 빼고 나머지만 싣는다. 순위는 전체 목록 기준
+    # "더 읽어볼 기사" 목록에는 위에서 다룬 요약 기사(요약 실패 포함)를 빼고 나머지만 싣는다. 번호는 위 요약 번호에 이어서
+    # (전체 목록 순위로 매기면 요약 자리가 분야 균형으로 바뀐 날 위 번호와 겹치고 빈 번호가 생겼다, 10-28)
     covered_links = {item["link"] for item in news_list}
     listed = []
-    for rank, item in enumerate(listed_news, start=1):
+    for item in listed_news:
         if item["link"] in covered_links:
             continue
         listed.append({
-            "rank": rank,
+            "rank": len(articles) + len(listed) + 1,
             # 대괄호는 마크다운 링크 표기와 겹치므로 바꿔 쓴다
             "title": item["title"].replace("[", "(").replace("]", ")"),
             "title_ko": item.get("title_ko", "").replace("[", "(").replace("]", ")"),
             "link": item["link"],
-            "topic": (item.get("topic") or "").split(",")[0].strip(),
+            # 선정 단계의 대표 분야. 없으면(지난 로그) 키워드 태그의 첫 단어
+            "topic": item.get("field") or (item.get("topic") or "").split(",")[0].strip(),
             "source": item.get("source", ""),
             "published": item.get("published", ""),
             "score": item.get("score", ""),

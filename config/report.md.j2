@@ -21,7 +21,9 @@
                          / pending(요약을 시도하지 못함)
       .summary_source    gemini / manual(manual_summary.py로 채운 요약)
     listed               목록으로 선정했지만 위에서 요약하지 않은 기사 (중요도 순)
-      .rank, .title, .link, .topic, .source, .published, .score
+      .rank              번호 (위 요약 기사 번호에 이어서)
+      .topic             선정 단계의 대표 분야 (지난 로그처럼 없으면 키워드 주제의 첫 단어)
+      .title, .link, .source, .published, .score
       .title_ko          번역 제목 (국문 기사는 빈 값). 있으면 원문 제목 대신 이 제목을 싣는다
 
   서식 규칙
