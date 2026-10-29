@@ -1,0 +1,208 @@
+[TITLE] Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity
+[LINK] https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier
+[PUBLISHED] 2026-10-29 05:03 KST
+[SOURCE] The Verge
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 9
+[REASON] 구글의 보안 특화 최상위 AI 모델 제미나이 4 카본 출시
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+구글, 사이버 보안에서 '중대한 도약' 이룬 제미나이 4 카본 출시
+
+**[영문 3줄 요약 (Original)]**
+- Google released its latest frontier model, Gemini 4 Carbon, offering significant gains in coding, agentic tasks, and cybersecurity.
+- The new model outperforms competing top models on benchmarks like SEC-bench Pro and ExploitGym, and can run for days to solve complex engineering tasks while resisting prompt injection attacks.
+- Currently available to select cybersecurity defense companies and Fairwind Program partners, it launches at $2 per million input tokens and $10 per million output tokens.
+
+**[국문 3줄 요약 (Translated)]**
+- 구글은 코딩, 에이전트 작업, 사이버 보안에서 중대한 향상을 제공하는 최신 프론티어 모델 제미나이 4 카본을 출시했다.
+- 새 모델은 SEC-bench Pro 및 ExploitGym과 같은 벤치마크에서 경쟁 최상위 모델들을 앞서며, 프롬프트 주입 공격에 저항하면서 복잡한 엔지니어링 작업을 해결하기 위해 며칠 동안 실행될 수 있다.
+- 현재 일부 사이버 보안 방어 기업 및 페어윈드 프로그램 파트너에게 제공되며, 입력 토큰 백만 개당 2달러, 출력 토큰 백만 개당 10달러에 출시된다.
+
+#긍정
+---
+[TITLE] 구글 크롬 보안 취약점 52건 긴급 수정… 앤트로픽 클로드 활용해 심각한 취약점 발견
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209156
+[PUBLISHED] 2026-10-29 12:24 KST
+[SOURCE] 데일리시큐
+[TOPIC] 모델, 보안
+[SCORE] 9
+[REASON] 클로드 AI로 발견한 치명적 결함을 포함한 구글 크롬 52건 패치
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 구글이 웹브라우저 크롬에서 발견된 보안 취약점 52건을 수정하는 긴급 보안 업데이트를 공개했다.
+- 이번 업데이트에는 앤트로픽의 클로드와 오픈AI의 코덱스 시큐리티의 지원을 받아 발견한 치명적 위험등급의 메모리 손상 및 입력값 검증 오류 취약점들이 포함됐다.
+- 구글은 실제 공격 악용 사례는 확인되지 않았으나 치명적 취약점이 포함된 만큼 크롬 156 최신 버전으로 신속히 업데이트할 것을 권고했다.
+
+#부정
+---
+[TITLE] Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits
+[LINK] https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html
+[PUBLISHED] 2026-10-28 17:15 KST
+[SOURCE] The Hacker News
+[TOPIC] 모델, 보안
+[SCORE] 9
+[REASON] 앤트로픽 미공개 모델이 주요 OS 및 브라우저 익스플로잇 연쇄 개발
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+앤트로픽의 미공개 AI 모델, 결함을 연계해 작동하는 크롬, 사파리, 윈도우, 리눅스 익스플로잇 개발
+
+**[영문 3줄 요약 (Original)]**
+- An unreleased Anthropic AI model discovered security flaws in Chrome, Safari, Android, Windows, and Linux and chained them into working proof-of-concept exploits.
+- In one demonstration, the model chained four separate flaws in Chrome to escape the sandbox and execute code, and it also built exploits that bypassed Safari's same-origin policy or ran root commands over the network in Linux.
+- Anthropic reported all flaws to the respective vendors before publication, and the issues have been patched in updates including Chrome 156 and iOS 26.5.2.
+
+**[국문 3줄 요약 (Translated)]**
+- 앤트로픽의 미공개 AI 모델이 크롬, 사파리, 안드로이드, 윈도우, 리눅스에서 보안 결함을 발견하고 이를 작동하는 개념 증명 익스플로잇으로 연계했다.
+- 한 시연에서 해당 모델은 크롬의 네 가지 개별 결함을 연계하여 샌드박스를 탈출하고 코드를 실행했으며, 사파리의 동일 출처 정책을 우회하거나 리눅스에서 네트워크를 통해 루트 명령을 실행하는 익스플로잇도 구축했다.
+- 앤트로픽은 발표 전에 모든 결함을 해당 벤더에 보고했으며, 크롬 156 및 iOS 26.5.2를 포함한 업데이트에서 문제가 수정되었다.
+
+#부정
+---
+[TITLE] Google just handed its rivals the keys to Android
+[LINK] https://thenewstack.io/android-agents-build-debug/
+[PUBLISHED] 2026-10-29 02:43 KST
+[SOURCE] The New Stack
+[TOPIC] 에이전트, 개발
+[SCORE] 8
+[REASON] 구글이 타사 코딩 에이전트에 안드로이드 개발 툴 접근을 전면 개방
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+구글, 경쟁사들에 안드로이드의 열쇠를 넘겨주다
+
+**[영문 3줄 요약 (Original)]**
+- Google is giving third-party coding agents such as Anthropic's Claude Code and OpenAI's Codex deeper access to its Android development tools across Android Studio and the Android CLI.
+- The Bring Your Own Agent feature now supports more than 40 coding agents using the Agent Client Protocol, allowing developers to switch agents seamlessly while leveraging tools like Change Review and terminal Compose previews.
+- Google reported that agents using the new terminal preview completed UI tasks 77% faster with fewer tokens, and tooling integrations helped models trace and fix memory leaks nearly twice as fast.
+
+**[국문 3줄 요약 (Translated)]**
+- 구글은 안드로이드 스튜디오와 안드로이드 CLI 전반에서 안드로이드 개발 툴에 대한 심층적인 접근 권한을 앤트로픽의 클로드 코드와 오픈AI의 코덱스 같은 타사 코딩 에이전트에 부여하고 있다.
+- 'Bring Your Own Agent' 기능은 이제 에이전트 클라이언트 프로토콜을 사용하는 40개 이상의 코딩 에이전트를 지원하여 개발자가 변경 검토 및 터미널 컴포즈 미리보기 같은 도구를 활용하면서 원활하게 에이전트를 전환할 수 있게 한다.
+- 구글은 새로운 터미널 미리보기를 사용하는 에이전트가 더 적은 토큰으로 UI 작업을 77% 더 빠르게 완료했으며, 도구 통합을 통해 모델이 메모리 누수를 거의 두 배 빠르게 추적하고 수정할 수 있었다고 보고했다.
+
+#긍정
+---
+[TITLE] Nvidia releases all-in-one adaptable Nemotron 3.5 audio transcription and translation model
+[LINK] https://siliconangle.com/2026/10/28/nvidia-releases-all-in-one-adaptable-nemotron-3-5-audio-transcription-and-translation-model/
+[PUBLISHED] 2026-10-29 00:00 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 개발, 모델
+[SCORE] 8
+[REASON] 엔비디아의 음성 인식·화자 분리·번역 통합 모델 네모트론 3.5 출시
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+엔비디아, 올인원 적응형 네모트론 3.5 음성 전사 및 번역 모델 출시
+
+**[영문 3줄 요약 (Original)]**
+- Nvidia released Nemotron 3.5 Transcribe, an open-weight 30-billion parameter mixture-of-experts model for multilingual audio transcription and translation, alongside an open data pipeline for fine-tuning.
+- The model performs speech detection, transcription, speaker labeling for up to eight speakers, and question answering across 40 languages in a single model pass from edge devices to data center GPUs.
+- Combined with the expanded Granary v2 public dataset, developers can fine-tune the model to significantly reduce word error rates for specialized domain tasks.
+
+**[국문 3줄 요약 (Translated)]**
+- 엔비디아는 미세조정을 위한 오픈 데이터 파이프라인과 함께 다국어 음성 전사 및 번역을 위한 300억 파라미터 오픈 가중치 전문가 혼합 모델인 네모트론 3.5 트랜스크라이브(Transcribe)를 출시했다.
+- 이 모델은 엣지 장치부터 데이터센터 GPU에 이르기까지 단일 모델 패스로 40개 언어에 걸쳐 음성 감지, 전사, 최대 8명의 화자 분리, 질문 응답을 수행한다.
+- 확장된 Granary v2 공개 데이터셋과 결합하여 개발자는 특화된 도메인 작업에 맞춰 단어 오류율을 크게 줄이도록 모델을 미세조정할 수 있다.
+
+#긍정
+---
+[TITLE] AI 에이전트가 스스로 작업 승인한다…AWS, 위험한 행동만 사람에게 확인 받는다
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42484
+[PUBLISHED] 2026-10-29 13:17 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 보안
+[SCORE] 8
+[REASON] AWS의 고위험 작업만 사람에게 보고하는 에이전트 자동 승인 기술
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- AWS는 기업용 AI 업무 플랫폼 아마존 퀵에 AI 에이전트의 작업을 자동으로 검토하고 승인하는 '스마트 승인' 기능을 도입했다.
+- 별도의 분류기 AI 모델이 일상적인 업무는 자동 승인하고, 외부 정보 전송, 시스템 접근 권한 변경, 콘텐츠 삭제, 결제 등 영향이 큰 작업만 사용자 검토로 넘긴다.
+- 이를 통해 반복적인 확인 요청으로 인한 승인 피로를 해소하면서도 기존 보안 정책과 통제권, AWS 클라우드트레일 기반의 감사 기록을 안전하게 유지한다.
+
+#긍정
+---
+[TITLE] After Passkeys, FIDO Turns to Digital Identity and AI Transaction Authentication
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092173017
+[PUBLISHED] 2026-10-29 07:28 KST
+[SOURCE] IT조선
+[TOPIC] 에이전트
+[SCORE] 8
+[REASON] FIDO 얼라이언스의 차세대 표준으로 AI 에이전트 결제 및 거래 인증 추진
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+패스키 이후, FIDO는 디지털 신원과 AI 거래 인증으로 전환한다
+
+**[영문 3줄 요약 (Original)]**
+- The FIDO Alliance announced that digital identity verification and authorization for AI agent transactions are its next major priorities following the widespread adoption of passkeys.
+- Mastercard and industry partners highlighted solutions like Digital Payment Credentials and Verifiable Intent to link user identity, purchase instructions, and autonomous actions taken by AI agents.
+- Industry bodies including FIDO and EMVCo are actively collaborating on common standards to ensure accountability and verify that agent actions strictly adhere to user intentions.
+
+**[국문 3줄 요약 (Translated)]**
+- FIDO 얼라이언스는 패스키의 광범위한 채택에 이어 디지털 신원 확인과 AI 에이전트 거래에 대한 인가를 차기 주요 우선순위로 발표했다.
+- 마스터카드와 업계 파트너들은 사용자 신원, 구매 지침, AI 에이전트가 취한 자율적 조치를 연결하기 위해 디지털 결제 자격증명(DPC)과 검증 가능한 의도(Verifiable Intent) 같은 솔루션을 강조했다.
+- FIDO와 EMVCo를 포함한 업계 단체들은 책임성을 보장하고 에이전트 조치가 사용자 의도에 엄격히 부합하는지 검증하기 위해 공통 표준에 대해 적극적으로 협력하고 있다.
+
+#중립
+---
+[TITLE] AI 활용 신종 랜섬웨어 조직 ‘n0n’, 14개국 23개 조직 공격 정황…몸값 요구액 4천억원 육박
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209146
+[PUBLISHED] 2026-10-28 20:11 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] AI 코딩 도구로 수백 개 스크립트를 제작해 다국적 공격을 감행한 랜섬웨어
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 사이버위협 인텔리전스 기업 소크레이더는 신종 랜섬웨어 조직 n0n이 AI 코딩 도구로 800개 이상의 공격 스크립트를 제작해 다국적 공격을 수행한 실태를 공개했다.
+- 공격자들은 7,216달러 이상의 AI 모델 사용료를 지출하며 침투 및 데이터 탈취 작업을 자동화했고, 취약점 악용보다는 VPN 장비와 탈취된 정상 인증정보를 통해 내부망에 침투했다.
+- 이번 조사는 AI 기반 공격 도구 제작의 확산을 보여주며, 외부 원격접속에 대한 다중인증(MFA) 적용과 관리자 권한 감시 및 불변 백업 유지의 중요성을 시사한다.
+
+#부정
+---
+[TITLE] MS, 비용 효율 20% 높인 차세대 보안 모델 'MAI 사이버 1.1 플래시' 출시
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216757
+[PUBLISHED] 2026-10-28 17:21 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 8
+[REASON] MS의 다중 에이전트용 저비용 차세대 보안 AI 모델 공개
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 마이크로소프트는 기존 모델과 유사한 취약점 탐지 성능을 유지하면서 스캔 당 비용을 18% 줄인 보안용 AI 모델 'MAI 사이버 1.1 플래시'를 공개했다.
+- 이 모델은 다중 에이전트 취약점 탐지·복구 프레임워크인 MDASH에 통합되어 전체 보안 작업의 약 90%를 전담하고 토큰 효율성을 20% 향상했다.
+- 고난도 작업에는 상위 모델을 병용하는 멀티모델 구조를 적용해 대규모 보안 점검 시스템 전체의 비용 효율성과 운영 성능을 동시에 높였다.
+
+#긍정
+---
+[TITLE] Introducing the Microsoft Copilot harness in Foundry Agent Service
+[LINK] https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/
+[PUBLISHED] 2026-10-29 01:45 KST
+[SOURCE] Microsoft Foundry
+[TOPIC] 에이전트, 모델
+[SCORE] 8
+[REASON] MS의 통합 에이전트 제어 프레임워크 코파일럿 하네스 출시
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+파운드리 에이전트 서비스의 마이크로소프트 코파일럿 하네스 소개
+
+**[영문 3줄 요약 (Original)]**
+- Microsoft introduced the Copilot harness in Foundry Agent Service in public preview, providing a fully managed execution foundation for building complex, long-running AI agents.
+- The harness incorporates reusable skills, connected Model Context Protocol tools, subagent execution and delegation, and source-controlled agent definitions within defined policy boundaries.
+- By offloading the management of agent loops, sandboxes, and orchestration to Microsoft, developers can build reliable agents faster and focus on application logic.
+
+**[국문 3줄 요약 (Translated)]**
+- 마이크로소프트는 복잡하고 오래 실행되는 AI 에이전트를 구축하기 위한 완전 관리형 실행 기반을 제공하는 파운드리 에이전트 서비스의 코파일럿 하네스를 공개 프리뷰로 발표했다.
+- 이 하네스는 정의된 정책 경계 내에서 재사용 가능한 기술, 연결된 모델 컨텍스트 프로토콜(MCP) 도구, 하위 에이전트 실행 및 위임, 소스 제어 에이전트 정의를 결합한다.
+- 에이전트 루프, 샌드박스, 오케스트레이션 관리를 마이크로소프트에 위임함으로써 개발자는 신뢰할 수 있는 에이전트를 더 빠르게 구축하고 애플리케이션 로직에 집중할 수 있다.
+
+#긍정
+---
