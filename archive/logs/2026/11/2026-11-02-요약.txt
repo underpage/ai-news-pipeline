@@ -1,0 +1,168 @@
+[TITLE] AI 플랫폼 베타9에 CVSS 9.9 취약점 3건…다른 고객 데이터 접근 위험
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209245
+[PUBLISHED] 2026-11-02 10:29 KST
+[SOURCE] 데일리시큐
+[TOPIC] 모델, 보안
+[SCORE] 9
+[REASON] AI 플랫폼 운영팀은 격리 우회 취약점 샌드박스 보안 조치 시급
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- AI 모델 및 서버리스 작업 실행 플랫폼 베타9에서 사용자 격리를 우회해 다른 고객의 데이터에 접근할 수 있는 CVSS 9.9 취약점 3건이 공개됐다.
+- 경로 검증 미흡 및 컨테이너 빌드 환경 격리 부족으로 인해 쿠버네티스 관리자 권한 탈취나 파일시스템 변조로 이어질 수 있는 구조적 문제가 발견됐다.
+- 개발팀은 파일 접근 제한과 이미지 격리 등을 강화한 패치를 배포했으므로 운영자는 수정 버전 적용과 과도한 권한 설정을 점검해야 한다.
+
+#부정
+---
+[TITLE] 국내 최대 고성능 GPU 8,496개 갖춘 슈퍼컴퓨터 6호기 '가동'
+[LINK] https://zdnet.co.kr/view/?no=20261102111935
+[PUBLISHED] 2026-11-02 11:19 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술, 규제
+[SCORE] 8
+[REASON] 고성능 연산 연구진은 국가 슈퍼컴 6호기 자원 신청 계획 수립 필요
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 과학기술정보통신부와 KISTI는 최신 GPU 8,496개와 CPU 9,936개를 탑재한 국가 슈퍼컴퓨터 6호기 '한강' 가동식을 개최했다.
+- 한강은 이론연산성능 614페타플롭스로 기존 5호기보다 24배 강화되어 전통적 계산과학뿐만 아니라 AI 기반 과학연구까지 지원할 수 있다.
+- 현재 시범서비스를 운영 중이며 오는 12월 16일 공식 서비스를 개시해 국가전략 R&D와 산·학·연 연구를 중점 뒷받침할 계획이다.
+
+#긍정
+---
+[TITLE] 딥시크, 코딩 '슈퍼 에이전트' 공개…6개월 만에 추격 기반 구축
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216865
+[PUBLISHED] 2026-11-01 20:11 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SCORE] 8
+[REASON] 개발 도구 팀은 딥시크의 복수 작업 관리 코딩 슈퍼 에이전트 아키텍처 분석 필요
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 딥시크가 복수의 코딩 작업을 자동으로 관리하는 'DSH 슈퍼에이전트'의 기술 문서와 소스 코드를 오픈소스로 공개했다.
+- 이 시스템은 작업을 배분하는 라우터와 병렬 실행을 맡는 워커를 분리해 다중 작업 처리 시간을 기존 단일 세션 방식 대비 약 47% 단축했다.
+- 다만 이번 코드는 연구용 프로토타입으로 실제 성능과 안정성 검증이 필요하지만 코딩 에이전트 생태계 확장을 시도한다는 점에서 의미가 있다.
+
+#중립
+---
+[TITLE] 크래프톤, 사회적 지능 갖춘 로봇 AI ‘루디 0.2’ 공개..팔로알토 연구소 개소
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216886
+[PUBLISHED] 2026-11-02 11:55 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 7
+[REASON] 로봇 연구진은 인간 의도 추론용 사회적 지능 모델 검토 필요
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 크래프톤의 로보틱스 연구법인 루도 로보틱스가 사람의 의도를 파악하고 협력하는 로봇용 AI 시스템 '루디 0.2'를 공개했다.
+- 루디 0.2는 기존 VLM 기반에 사람의 제스처와 사회적 신호 인식, 기억 및 추론 능력, 유연한 물리적 움직임 연계 기능을 고도화했다.
+- 루도 로보틱스는 통합 파운데이션 모델 개발을 목표로 하며 미국 팔로알토에 본사 연구거점을 개소해 연구를 가속화하고 있다.
+
+#긍정
+---
+[TITLE] OpenQodex - 코딩 에이전트의 변경을 별도 에이전트가 검증하는 코드 리뷰 도구
+[LINK] https://news.hada.io/topic?id=36426&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-02 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] 소프트웨어 엔지니어는 코딩 에이전트 생성 코드의 독립 검증 도구 도입 가능
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 코딩 에이전트의 코드 변경 사항을 별도의 Claude Code 또는 Codex 프로세스로 독립 검증하는 도구인 OpenQodex가 공개됐다.
+- 22개 내장 스캐너로 보안 취약점과 설정을 검사하며, 문제 발견과 검증 세션을 분리하고 호출 관계를 파악하는 코드 그래프를 제공한다.
+- 푸시 전 심각도별 차단과 다양한 형식의 결과 리포트를 지원하여 에이전트가 생성한 코드의 품질과 보안을 체계적으로 점검할 수 있다.
+
+#긍정
+---
+[TITLE] Adobe is testing how well AI agents can use editing tools like a Photoshop professional would
+[LINK] https://the-decoder.com/adobe-is-testing-how-well-ai-agents-can-use-editing-tools-like-a-photoshop-professional-would/
+[PUBLISHED] 2026-11-01 23:56 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델
+[SCORE] 7
+[REASON] 이미지 소프트웨어 개발팀은 포토샵 전문 도구 선택형 멀티 에이전트 구조 검토 필요
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+어도비, AI 에이전트가 포토샵 전문가처럼 편집 도구를 사용하는 성능 시험 중
+
+**[영문 3줄 요약 (Original)]**
+- Adobe Research and UC San Diego built EditAgent, an AI system that pairs a general-purpose editor with specialized tools for image editing tasks.
+- A standard language model evaluates parallel variants using measured statistics and close-up crops, outperforming fine-tuned models on usability choices.
+- EditAgent produces more accurate results than existing agents, and its outputs can be leveraged to train faster image editing models despite requiring higher compute.
+
+**[국문 3줄 요약 (Translated)]**
+- 어도비 리서치와 UC 샌디에이고는 이미지 편집 작업을 위해 범용 편집기와 전문 도구를 결합한 AI 시스템인 EditAgent를 구축했다.
+- 표준 언어 모델이 측정 통계와 근접 크롭 이미지를 사용해 병렬 생성된 변형본들을 평가함으로써 사용성 판별에서 파인튜닝된 모델들을 능가했다.
+- EditAgent는 기존 에이전트보다 정확한 결과를 생성하며, 더 많은 연산량이 필요하지만 그 검증된 결과물은 더 빠른 편집 모델을 훈련하는 데 활용될 수 있다.
+
+#긍정
+---
+[TITLE] PHP 취약점, 웹서버 넘어 방화벽·NAS·기업용 SW까지 영향 확대
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092173194
+[PUBLISHED] 2026-11-02 06:00 KST
+[SOURCE] IT조선
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 보안 인프라 담당자는 PHP 취약점의 방화벽 및 NAS 확산에 따른 점검 필수
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- PHP의 원격 코드 실행 취약점인 PHP투셸이 웹서버를 넘어 방화벽, NAS, 백업 소프트웨어 등 주요 기업용 장비로 확산되고 있다.
+- 팔로알토네트웍스 방화벽 관리 인터페이스를 향한 실제 공격과 권한 탈취 사례가 보고되었으며, 시스코와 시놀로지 등 다수 벤더 장비도 영향을 받았다.
+- 내부망 관리형 장비 다수가 취약한 구버전 PHP를 구동 중이므로 웹 점검을 넘어 내부 자산 전수 식별과 신속한 패치 및 격리 조치가 필요하다.
+
+#부정
+---
+[TITLE] 위험한 AI를 누가 멈출 것인가, 앤트로픽과 오픈AI의 서로 다른 해법
+[LINK] https://www.itworld.co.kr/article/4243085/%ec%95%88%ed%8a%b8%eb%a1%9c%ed%94%bd%ea%b3%bc-%ec%98%a4%ed%94%88ai%eb%8a%94-%ec%9c%84%ed%97%98%ed%95%9c-ai%ec%9d%98-%ea%b0%80%eb%8f%99%ec%9d%84-%ec%a4%91%eb%8b%a8%ed%95%b4%ec%95%bc-%ed%95%a0-%ec%a3%bc.html
+[PUBLISHED] 2026-11-02 11:32 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 모델, 규제
+[SCORE] 7
+[REASON] AI 규제 대응팀은 셧다운 통제권 등 프런티어 안전 정책 점검 필요
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 앤트로픽과 오픈AI는 캘리포니아 행정명령 의견서에서 프런티어 AI 감독 강화에 동의했으나 위험 모델의 중단 권한 주체에서는 이견을 보였다.
+- 앤트로픽은 독립 평가 결과를 토대로 법무장관이 청구하는 법원 중단 명령을 제안했고, 오픈AI는 개발사 자체의 셧다운 제어 의무화를 주장했다.
+- 두 회사는 단일 스위치 대신 환경별 맞춤 통제와 독립 평가의 필요성을 강조했으며 기업도 실제 통제 수단에 맞춘 대응 체계를 점검해야 한다.
+
+#중립
+---
+[TITLE] 오픈소스 코드 저장소 관리 플랫폼 기티아, 관리자 계정 탈취 가능한 취약점 주의
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209247
+[PUBLISHED] 2026-11-02 10:48 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 깃 저장소 관리자는 OAuth2 계정 탈취 취약점 최신 패치 적용 필요
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 오픈소스 코드 저장소 플랫폼 기티아에서 비밀번호 없이 타인의 계정을 탈취할 수 있는 취약점이 발견되어 최신 패치가 공개됐다.
+- OAuth2 계정 연결 과정의 신원 검증 오류로 인해 발생하며, 외부 계정 자동 연결 설정과 신규 가입이 허용된 환경에서 관리자 계정 탈취로 이어질 수 있다.
+- 기티아 자체 운영 기업은 즉시 28.3.0 버전으로 업데이트하고 계정 연동 설정 및 자동화 토큰의 접근 권한을 점검해야 한다.
+
+#부정
+---
+[TITLE] 같은 질문인데 요금은 몇 배…AI 모델의 언어별 비용 격차
+[LINK] https://www.itworld.co.kr/article/4243015/%eb%8d%9c-%ed%9d%94%ed%95%9c-%ec%96%b8%ec%96%b4%ec%9d%98-%ea%b2%bd%ec%9a%b0-ai-%eb%aa%a8%eb%8d%b8-%eb%b9%84%ec%9a%a9%ec%9d%b4-%ed%9b%a8%ec%94%ac-%eb%8d%94-%eb%b9%84%ec%8b%b8%eb%8b%a4.html
+[PUBLISHED] 2026-11-02 10:03 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 개발, 모델
+[SCORE] 6
+[REASON] 다국어 AI 서비스 설계사는 비영어권 토큰 과다 소모 비용 대책 수립 필요
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- AI 모델 토크나이저의 비효율로 인해 비영어권 소수 언어 사용자가 동일한 작업에 최대 17배 많은 토큰을 소모한다는 연구 결과가 나왔다.
+- 이로 인해 대규모 인구가 사용하는 언어권 사용자들도 더 긴 응답 시간과 높은 API 비용을 감수하는 일명 '토큰 세금'을 부담하고 있다.
+- 다국어 토크나이저에서도 이러한 불평등과 성능 저하 격차가 지속되고 있어 다국어 AI 서비스 설계 시 비용과 처리 지연에 대한 대책이 요구된다.
+
+#부정
+---
