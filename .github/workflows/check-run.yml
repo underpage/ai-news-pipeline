@@ -2,7 +2,8 @@ name: Check Daily Run
 
 on:
   schedule:
-    # 매일 12:00, 16:00 KST (UTC 03:00, 07:00). 예약 실행은 몇 시간씩 늦게 시작하므로 실제로는 18시, 22시 무렵.
+    # 매일 12:00, 16:00 KST (UTC 03:00, 07:00). 예약 실행은 몇 시간씩 늦게 시작하므로 실제로는 18시, 22시 무렵이고
+    # 다음 날 새벽까지 밀리기도 한다. 그때는 FIRST_HOUR 조건으로 건너뛴다.
     # 오늘 리포트가 실패했으면(Gemini 503 과부하 등) 파이프라인을 다시 실행한다. 과부하는 몇 시간 뒤면 풀리는 일이 많다
     - cron: '0 3 * * *'
     - cron: '0 7 * * *'
@@ -16,6 +17,9 @@ permissions:
 env:
   # 하루에 자동으로 다시 실행하는 최대 횟수. 실패한 Gemini 호출도 하루 한도(모델당 20회)에 잡히므로 크게 두지 않는다
   MAX_RERUNS: 2
+  # 이 시각(KST, 시) 전에는 확인하지 않는다. 예약 파이프라인(보통 13~14시 시작)이 아직 안 돈 시각에 확인하면
+  # 오늘 기록이 없다고 보고 다시 실행해 버린다 (11-02 16시 확인이 11-03 01:54에 시작해 새벽에 파이프라인을 돌림)
+  FIRST_HOUR: 15
   # 이 시각(KST, 시) 이후에는 다시 실행하지 않는다. 실행이 자정을 넘기면 다음 날 날짜로 돌기 때문
   LAST_HOUR: 23
 
@@ -33,6 +37,12 @@ jobs:
         shell: bash
         run: |
           today=$(TZ=Asia/Seoul date +%F)
+          hour=$(TZ=Asia/Seoul date +%-H)
+          if [ "$hour" -lt "$FIRST_HOUR" ]; then
+            echo "${hour}시(KST)는 ${FIRST_HOUR}시 전이라 확인하지 않습니다. 오늘(${today}) 예약 실행이 아직 안 돌았을 수 있습니다."
+            echo "reason=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           stats="archive/stats/${today:0:4}.csv"
           row=$(grep "^${today}," "$stats" 2>/dev/null | tail -n 1 || true)
           if [ -z "$row" ]; then
