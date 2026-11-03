@@ -326,6 +326,19 @@ def test_order_top_puts_one_per_field_first(monkeypatch):
     assert listed[:4] == [0, 1, 3, 5]
 
 
+def test_order_top_keeps_previous_story_out_of_summary(monkeypatch):
+    monkeypatch.setattr(evaluate, "FIELD_CAP", {"max": 3, "exempt_impact": 9, "min_total": 60})
+    monkeypatch.setattr(evaluate, "STORY_CAP", {"summary": 1, "list": 2, "prev_summary": 0})
+    news_list = [news(n) for n in range(1, 5)]
+    scored = {index: story_entry(total) for index, total in enumerate([90, 80, 70, 65])}
+    # 후속은 합계를 항목 점수로 다시 계산하므로 항목 점수를 높게 (100점 - 새로움 2 감점 5 = 95점)
+    scored[0] = story_entry(90, impact=10, relevance=5, story_prev=0)
+    listed, _ = evaluate.decide(news_list, scored, list_slots=4, list_n=40, min_score=0, top_slots=2)
+    assert scored[0]["total"] > scored[1]["total"]
+    # 지난 리포트 사안의 후속은 합계 1위여도 목록에만 오르고 요약 자리 2건은 다른 기사가 차지한다
+    assert listed[:2] == [1, 2] and 0 in listed
+
+
 def test_score_articles_reads_field(monkeypatch):
     response = score_response(score_item(1, field="보안"), score_item(2, field="정책"), score_item(3))
     seen = {}

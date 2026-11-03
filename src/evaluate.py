@@ -289,6 +289,12 @@ def sort_key(scored, index):
     return (-info["total"], -info["impact"], -info.get("novelty", 3), -info.get("certainty", 3), -info.get("coverage", 1))
 
 
+def summary_prev_ok(info, prev_used):
+    """지난 리포트 사안의 후속(story_prev_group)을 요약 자리에 더 넣을 수 있는지. prev_used는 이미 넣은 후속 건수"""
+    prev_max = STORY_CAP.get("prev_summary")
+    return prev_max is None or not info.get("story_prev_group") or prev_used < prev_max
+
+
 def order_top(listed, scored, top_slots):
     """목록 위쪽 top_slots건(요약 자리)을 분야 균형과 같은 사안 상한에 맞게 고른다. 목록에 오르는 기사는 그대로.
 
@@ -296,7 +302,8 @@ def order_top(listed, scored, top_slots):
     2. 합계 순으로 보며 분야 상한(max) 안이거나 파급력이 exempt_impact 이상인 기사를 넣는다. 면제는 같은 사안에서 한 번,
        지난 리포트에 실린 사안의 후속(story_prev)은 면제 없음. 합계가 min_total 미만이면 상한 때문에 끌어올리지 않는다
     3. 남은 자리는 상한 없이 합계 순으로 채운다
-    어느 단계에서든 같은 사안은 story_cap.summary건까지. 고른 기사는 합계 순으로 다시 놓는다 (리포트 번호가 합계 순).
+    어느 단계에서든 같은 사안은 story_cap.summary건까지, 지난 리포트에 실린 사안의 후속은 모두 합쳐 story_cap.prev_summary건까지
+    (summary_prev_ok). 고른 기사는 합계 순으로 다시 놓는다 (리포트 번호가 합계 순).
     점수 기준만 고쳐서는 한 분야가 하루 상위 10건 중 9건을 차지한 날이 있었음 (2026-10-20 보안). 면제를 합계가 아니라
     파급력으로 정하는 이유: AI와 무관한 보안은 관련성이 4까지라 파급력 9여도 합계 83.3
     """
@@ -312,7 +319,8 @@ def order_top(listed, scored, top_slots):
         return scored[index].get("story", index)
 
     def story_ok(index):
-        return not story_max or stories.get(story(index), 0) < story_max
+        return ((not story_max or stories.get(story(index), 0) < story_max)
+                and summary_prev_ok(scored[index], sum(1 for chosen in top if scored[chosen].get("story_prev_group"))))
 
     def add(index):
         top.append(index)
@@ -609,11 +617,12 @@ def main():
         listed, decisions = decide(candidates, scored, list_slots, list_n, min_score, top_slots=summary_slots)
 
         # 합계 순으로 목록에 기록하고, 앞에서부터 본문을 수집해 요약 대상을 채운다
-        body_count = 0
+        # 본문 실패로 다음 순위가 요약 자리를 이어받을 때도 지난 사안 후속 상한(summary_prev_ok)을 지킨다
+        body_count, prev_used = 0, 0
         for index in listed:
             news, info = candidates[index], scored[index]
             body_text = ""
-            if body_count < summary_slots:
+            if body_count < summary_slots and summary_prev_ok(info, prev_used):
                 print(f"\n[요약 후보 / 합계 {info['total']}점] {news['title']}")
                 body_text = scrape_body(news['link'])
                 if len(body_text) < BODY_MIN_LENGTH:
@@ -622,6 +631,7 @@ def main():
                     body_text = ""
                 else:
                     body_count += 1
+                    prev_used += bool(info.get("story_prev_group"))
                     decisions[index] = "요약"
             append_record("필터링", [
                 ("TITLE", news['title']),
