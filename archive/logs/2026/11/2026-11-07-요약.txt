@@ -1,0 +1,191 @@
+[TITLE] CPython flaw exposes AI inference servers to sandbox escape attacks
+[LINK] https://www.infoworld.com/article/4245631/cpython-flaw-exposes-ai-inference-servers-to-sandbox-escape-attacks-2.html
+[PUBLISHED] 2026-11-06 20:21 KST
+[SOURCE] InfoWorld
+[TOPIC] 개발, 모델, 보안, 규제
+[SCORE] 9
+[REASON] CPython 결함으로 악성 모델 템플릿의 추론 서버 탈출 가능
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+CPython 결함으로 AI 추론 서버가 샌드박스 탈출 공격에 노출되다
+
+**[영문 3줄 요약 (Original)]**
+- Security researchers at RunSybil demonstrated that a memory-safety flaw in CPython allows malicious AI model templates to escape code sandboxes and execute arbitrary code on inference servers.
+- The attack exploits CPython's generic type handling to bypass Jinja template protections, which was verified using a modified Qwen2.5-0.5B-Instruct model in a vLLM serving environment.
+- While researchers warned of supply chain risks for inference providers supporting BYOM features, the Python Security Response Team disputed the issue, stating that sandbox escapes fall outside CPython's security threat model.
+
+**[국문 3줄 요약 (Translated)]**
+- 런시빌의 보안 연구원들은 CPython의 메모리 안전 결함으로 인해 악성 AI 모델 템플릿이 코드 샌드박스를 탈출해 추론 서버에서 임의 코드를 실행할 수 있음을 입증했다.
+- 이 공격은 CPython의 제네릭 타입 처리 방식을 악용해 진자 템플릿 보호 조치를 우회하며, vLLM 서빙 환경에서 변조된 Qwen2.5-0.5B-Instruct 모델을 사용해 검증되었다.
+- 연구진은 외부 모델 반입 기능을 지원하는 추론 제공업체의 공급망 위험을 경고했으나, 파이썬 보안 대응팀은 샌드박스 탈출이 CPython의 보안 위협 모델 밖이라며 취약점 지정을 반박했다.
+
+#부정
+---
+[TITLE] "TSMC, 메모리 진출 검토…엔비디아 요청" 디인포메이션
+[LINK] https://zdnet.co.kr/view/?no=20261107132711
+[PUBLISHED] 2026-11-07 14:15 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술, 규제
+[SCORE] 9
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 세계 최대 파운드리 업체 TSMC가 최대 고객사인 엔비디아의 요청으로 차세대 반도체인 3D D램 시장 진출을 검토하고 있다.
+- TSMC는 메모리 전용 신규 공장을 짓거나 기존 공장을 개조하는 방안을 고려 중이며, 첨단 패키징을 총괄하는 쉬궈진 부사장이 프로젝트를 이끌고 있다.
+- 이번 행보는 AI 수요 급증으로 인한 메모리 공급난 속에서 엔비디아 등 팹리스 기업들이 공급망 다변화를 적극 추진한 데 따른 결과로 분석된다.
+
+#긍정
+---
+[TITLE] 씽킹 머신스, 성능 대폭 높인 '잉클링 2' 공개…중국 오픈 모델에 도전
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217132
+[PUBLISHED] 2026-11-07 17:45 KST
+[SOURCE] AI타임스
+[TOPIC] 모델
+[SCORE] 8
+[REASON] 고성능 오픈 가중치 2세대 MoE 모델 공개
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 미라 무라티가 이끄는 씽킹 머신스 랩이 성능을 크게 향상한 2세대 오픈웨이트 MoE 모델 '잉클링 2 스몰'을 공개했다.
+- 이 모델은 종합 지능 지수 31점을 받아 중국의 주요 오픈 모델들과 경쟁 가능한 성능을 보였으며, 장시간 코딩 및 기업 업무용 AI 에이전트 평가에서 높은 경쟁력을 나타냈다.
+- 처리 속도가 비교군보다 두 배 이상 느린 한계가 확인되었으나, 안전성 개선 조치를 거친 뒤 다음 주 아파치 2.0 라이선스로 가중치를 공개할 계획이다.
+
+#긍정
+---
+[TITLE] 삼성 첫 AI 안경 출시 임박…젠틀몬스터·워비파커, 12일 예약 시작
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217133
+[PUBLISHED] 2026-11-07 18:14 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 8
+[REASON] 안드로이드 XR 탑재 첫 AI 안경 예약 판매 시작
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 삼성전자와 구글이 협력하고 패션 브랜드 젠틀몬스터와 워비파커가 디자인한 첫 AI 안경이 12일 예약 판매를 시작해 12월 출시된다.
+- 이 제품은 안드로이드 XR 플랫폼 기반으로 구글 제미나이를 탑재하여, 디스플레이 화면 없이 카메라와 음성을 중심으로 실시간 번역, 길 안내, 정보 검색 등을 지원한다.
+- 스마트폰과 연결해 작동하는 이 기기를 통해 삼성전자와 구글은 메타의 스마트 안경에 맞서 일상용 AI 하드웨어 생태계 진출을 본격화한다.
+
+#긍정
+---
+[TITLE] 바이두, 딥시크 앞선 '어니 5.5' 베이스 모델 공개…한국·유럽 사용 제한
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217131
+[PUBLISHED] 2026-11-07 17:08 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 8
+[REASON] 바이두의 MoE 베이스 모델 공개와 지역 제한 정책
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 중국 바이두가 자체 벤치마크 30개 중 24개에서 딥시크 등 경쟁사를 앞섰다고 밝힌 2800억 개 매개변수 규모의 '어니 5.5 플래시 베이스' 모델 가중치를 공개했다.
+- 기업과 개발자가 특정 산업용 AI 에이전트를 구축할 수 있도록 후속 조정을 거치지 않은 사전학습 상태로 제공되며, 최대 100만 토큰의 문맥 길이를 처리할 수 있다.
+- 그러나 자체 라이선스를 통해 한국, EU, 영국을 사용 허가 지역에서 제외하고 일정 매출 이상에 승인을 요구하는 등 활용에 상당한 제약을 두었다.
+
+#중립
+---
+[TITLE] Malicious Browser Extensions Could Use Claude Dispatch to Run Code on Users' Computers
+[LINK] https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html
+[PUBLISHED] 2026-11-06 21:06 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 클로드 디스패치 경유 로컬 컴퓨터 임의 코드 실행 위험
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+악성 브라우저 확장 프로그램이 클로드 디스패치를 악용하여 사용자 컴퓨터에서 코드를 실행할 수 있다
+
+**[영문 3줄 요약 (Original)]**
+- Researchers at Forever Security demonstrated that a malicious browser extension running on claude.ai could abuse the Dispatch feature to execute unauthorized code on Claude Desktop.
+- The attack sent automated prompts to Claude to install an npm package and automatically clicked web-based approval buttons without requiring any browser exploit.
+- Although Anthropic acknowledged the report and intends to retire Dispatch, researchers warned that other features using the same design, such as Claude Code Remote Control, remain susceptible.
+
+**[국문 3줄 요약 (Translated)]**
+- 포에버 시큐리티의 연구원들은 claude.ai에서 실행되는 악성 브라우저 확장 프로그램이 디스패치 기능을 악용해 클로드 데스크톱에서 무단 코드를 실행할 수 있음을 입증했다.
+- 이 공격은 클로드에게 npm 패키지를 설치하도록 자동 프롬프트를 전송했으며, 브라우저 익스플로잇 없이도 웹 기반 승인 버튼을 자동으로 클릭했다.
+- 앤스로픽은 해당 보고를 인정하고 디스패치 기능을 단계적으로 폐지할 예정이지만, 연구진은 동일한 설계를 공유하는 클로드 코드 리모트 컨트롤 등의 기능도 여전히 취약하다고 경고했다.
+
+#부정
+---
+[TITLE] SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks
+[LINK] https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/
+[PUBLISHED] 2026-11-07 09:00 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 8
+[REASON] 소닉월 SSL-VPN 실제 악용 중인 MFA 우회 취약점 패치
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+소닉월, 공격에 악용된 새로운 SSL-VPN MFA 우회 취약점 경고
+
+**[영문 3줄 요약 (Original)]**
+- SonicWall has released security updates to patch seven vulnerabilities in SonicOS, including an SSL-VPN authentication bypass flaw tracked as CVE-2026-19868 that is being actively exploited in the wild.
+- The flaw affects SSL-VPN services configured with SAML, allowing attackers with valid alternate credentials to bypass SAML controls including multi-factor authentication.
+- CISA confirmed the real-world exploitation by adding the vulnerability to its Known Exploited Vulnerabilities catalog and ordered federal agencies to secure systems by November 20, 2026.
+
+**[국문 3줄 요약 (Translated)]**
+- 소닉월은 실제 공격에 적극 악용되고 있는 CVE-2026-19868로 추적되는 SSL-VPN 인증 우회 결함을 포함해 SonicOS의 취약점 7개를 수정하는 보안 업데이트를 발표했다.
+- 이 결함은 SAML로 구성된 SSL-VPN 서비스에 영향을 미치며, 유효한 대체 자격 증명을 가진 공격자가 다중 요소 인증을 포함한 SAML 제어를 우회할 수 있게 한다.
+- CISA는 해당 취약점을 알려진 악용 취약점 목록에 추가하여 실제 공격을 확인하고 연방 기관에 2026년 11월 20일까지 시스템 보안을 확보하라고 명령했다.
+
+#부정
+---
+[TITLE] 메타, AI로 맞춤형 앱 만드는 '뮤즈 스페이스' 출시
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217128
+[PUBLISHED] 2026-11-07 15:39 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트
+[SCORE] 7
+[REASON] 자연어 기반 맞춤 앱 생성 및 백그라운드 갱신 에이전트
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 메타가 사용자가 자연어로 요구사항을 입력하면 일정표나 쇼핑 도구 등 맞춤형 앱 공간을 생성해 주는 '뮤즈 스페이스' 기능을 출시했다.
+- 지메일이나 노션 등 외부 서비스와 연동되어 백그라운드에서 실시간 데이터를 갱신하며, 생성된 작업 공간 내에서 항목 수정과 관리가 가능하다.
+- 또한 액티브 메모리와 액티브 포커스 기술을 적용해 작업 중단 시 대처 능력을 높이고 핵심 정보 망각률을 크게 줄인 특화 모델을 함께 도입했다.
+
+#긍정
+---
+[TITLE] “Most apps never make it off localhost”: Cursor takes on Lovable and Replit with fully managed app deployment
+[LINK] https://thenewstack.io/cursor-ai-app-deployment/
+[PUBLISHED] 2026-11-07 00:15 KST
+[SOURCE] The New Stack
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] 커서가 앱 배포 환경까지 통합 관리하는 클라우드 기능 제공
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+“대부분의 앱은 로컬호스트를 벗어나지 못한다”: 커서, 완전 관리형 앱 배포로 러버블과 레플릿에 맞서다
+
+**[영문 3줄 요약 (Original)]**
+- Cursor introduced a new building and deployment feature that uses cloud agents to take AI-generated applications directly from code creation to a live, shareable URL.
+- The functionality manages the entire deployment infrastructure without requiring users to connect external hosting services, supporting builds from scratch on Cursor Origin or from existing GitHub repositories.
+- This release aims to solve the hurdle where AI-coded applications remain stuck on local machines, allowing non-developers and employees to easily deploy internal business tools.
+
+**[국문 3줄 요약 (Translated)]**
+- 커서는 AI가 생성한 애플리케이션을 코드 작성 단계에서 즉시 공유 가능한 라이브 URL 배포까지 연결하는 클라우드 에이전트 기반의 신규 기능을 출시했다.
+- 이 기능은 사용자가 외부 호스팅 서비스를 연동할 필요 없이 배포 인프라 전체를 관리하며, 커서 오리진 기반의 신규 프로젝트 생성이나 기존 깃허브 저장소를 통한 배포를 지원한다.
+- 이번 출시는 AI로 작성된 앱이 로컬 컴퓨터에 머무르는 한계를 해결해 비개발자와 직원이 사내 업무용 도구를 쉽게 배포할 수 있도록 돕는 것을 목표로 한다.
+
+#긍정
+---
+[TITLE] 로보터블, 내년 초 휴머노이드 '스킬 이식' 소프트웨어 출시
+[LINK] https://zdnet.co.kr/view/?no=20261106211924
+[PUBLISHED] 2026-11-07 09:29 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술
+[SCORE] 7
+[REASON] 휴머노이드 로봇 간 동작 제어 명령을 번역하는 소프트웨어
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 피지컬 AI 전문 기업 로보터블이 특정 휴머노이드 로봇에서 학습한 작업 능력을 다른 제조사의 로봇 하드웨어로 옮겨주는 '아이소모션'을 내년 초 출시한다.
+- 이 소프트웨어는 로봇의 동작 명령을 표준 데이터로 변환한 뒤 각 기종의 관절 구조와 센서 규격에 맞게 실시간 번역하여 다른 하드웨어에서도 같은 동작을 재현한다.
+- 전시회에서 오이 썰기 동작 이식을 시연한 이 솔루션은 F&B 등 여러 제조사 로봇을 통합 운용해야 하는 산업 환경에서 작업 재학습 비용을 절감할 것으로 기대된다.
+
+#긍정
+---
