@@ -1,22 +1,3 @@
-[TITLE] AI 플랫폼 베타9에 CVSS 9.9 취약점 3건…다른 고객 데이터 접근 위험
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209245
-[PUBLISHED] 2026-11-02 10:29 KST
-[SOURCE] 데일리시큐
-[TOPIC] 모델, 보안
-[SCORE] 9
-[REASON] AI 플랫폼 운영팀은 격리 우회 취약점 샌드박스 보안 조치 시급
-[FIELD] 보안
-[BODY]
-AI 모델과 서버리스 작업을 실행하는 베타9(Beta9)에서 사용자 격리를 우회해 작업 실행 서버에 접근할 수 있는 치명적인 취약점 3건이 공개됐다. 작업공간 접근 토큰을 가진 공격자가 같은 서버에 저장된 다른 고객의 데이터를 읽거나 변조할 수 있는 문제로, 세 취약점 모두 CVSS 3.1 기준 9.9점으로 평가됐다. 관련 취약점 정보는 11월 1일 공개됐다.
-파일 경로 검증 허점…관리자 권한 탈취로 확대 가능
-CVE-2026-120307은 파일 관리 기능이 접근 가능한 경로를 충분히 제한하지 않아 발생한다. 공격자는 실행 중인 샌드박스와 작업공간 토큰을 이용해 자신의 격리환경 밖에 있는 파일을 조회·수정·삭제할 수 있다.
-검증 과정에서는 작업 실행 서버의 쿠버네티스(Kubernetes) 서비스 계정 토큰을 읽는 데 성공했다. 특히 프로젝트가 제공하는 원격 노드 배포 설정에서는 해당 계정에 클러스터 전체 관리자 권한인 ‘cluster-admin’이 부여돼 있어, 구성에 따라 피해가 클러스터 관리 영역으로 확대될 수 있다.
-CVE-2026-120308은 저장공간을 연결할 때 경로와 소유권을 제대로 검증하지 않는 문제다. 공격자가 연결 경로를 조작하면 작업 실행 서버의 파일시스템을 자신의 샌드박스에 읽기·쓰기 가능한 상태로 연결할 수 있다. 같은 서버에 저장된 다른 고객의 볼륨도 영향을 받을 수 있다.
-이미지 생성 과정도 격리 부족…수정 버전 적용 필요
-CVE-2026-120306은 컨테이너 이미지 생성 과정에서 발생한다. 빌드 작업이 실행 서버와 주요 실행환경을 공유하고 루트 권한으로 동작해, 사용자가 제출한 이미지 빌드 명령으로 서버 파일과 컨테이너 실행 프로그램 등에 접근할 수 있는 문제다.
-파일 접근과 이미지 생성 취약점은 Worker 0.1.756, 저장공간 연결 취약점은 Gateway 0.1.776과 Worker 0.1.756에서 수정됐다. 개발팀은 파일 접근 범위 제한, 볼륨 소유권 검사, 이미지 빌드 격리 강화 등을 적용했다. 관련 수정 코드는 CVE 공개에 앞선 9월 15일 병합됐다.
-이번 취약점은 일반 사용자 권한이 다른 고객의 데이터와 인프라 관리 영역으로 확대될 수 있다는 점에서 위험하다. 베타9 운영자는 게이트웨이와 워커의 수정 버전 적용 여부를 확인하고, 작업 실행 계정에 과도한 쿠버네티스 권한이 부여돼 있는지도 점검할 필요가 있다.
----
 [TITLE] 국내 최대 고성능 GPU 8,496개 갖춘 슈퍼컴퓨터 6호기 '가동'
 [LINK] https://zdnet.co.kr/view/?no=20261102111935
 [PUBLISHED] 2026-11-02 11:19 KST
@@ -42,6 +23,25 @@ KISTI는 이를 위해 지난 9월부터 연구자 모집을 거쳐 현재 시�
 - 과기정통부, GPU 2천 장 추가 지원… "산·학·연 인프라 가속화"2026.03.16
 한편 이날 행사에서는 또 국가 초고성능컴퓨팅 발전과 6호기 구축에 기여한 ▲홍태영 KISTI 슈퍼컴퓨팅 인프라센터장(부총리 표창) ▲KISTI 권오경 HPC응용팀장· 조완우 선임기술원·오자연 행정원(이상 KISTI 원장 표창) ▲전은지 KAIST 교수, 박환열 순천향대 교수, 이환규 단국대 교수, 백서인 고려대 교수, 곽상규 고려대 교수(이상 공로패)에 표창과 공로패가 수여됐다.
 김성수 과기정통부 연구개발정책실장은 “한강은 AI와 과학기술 융합을 지원, 새로운 과학적 발견을 이끌어 갈 핵심 기반”이라며, “K-문샷 등 국가적 난제 해결과 산·학·연의 혁신적인 연구를 적극 지원해 대한민국 과학기술 경쟁력을 높여 나갈 것"이라고 밝혔다.
+---
+[TITLE] AI 플랫폼 베타9에 CVSS 9.9 취약점 3건…다른 고객 데이터 접근 위험
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209245
+[PUBLISHED] 2026-11-02 10:29 KST
+[SOURCE] 데일리시큐
+[TOPIC] 모델, 보안
+[SCORE] 8
+[REASON] AI 플랫폼 운영팀은 격리 우회 취약점 샌드박스 보안 조치 시급
+[FIELD] 보안
+[BODY]
+AI 모델과 서버리스 작업을 실행하는 베타9(Beta9)에서 사용자 격리를 우회해 작업 실행 서버에 접근할 수 있는 치명적인 취약점 3건이 공개됐다. 작업공간 접근 토큰을 가진 공격자가 같은 서버에 저장된 다른 고객의 데이터를 읽거나 변조할 수 있는 문제로, 세 취약점 모두 CVSS 3.1 기준 9.9점으로 평가됐다. 관련 취약점 정보는 11월 1일 공개됐다.
+파일 경로 검증 허점…관리자 권한 탈취로 확대 가능
+CVE-2026-120307은 파일 관리 기능이 접근 가능한 경로를 충분히 제한하지 않아 발생한다. 공격자는 실행 중인 샌드박스와 작업공간 토큰을 이용해 자신의 격리환경 밖에 있는 파일을 조회·수정·삭제할 수 있다.
+검증 과정에서는 작업 실행 서버의 쿠버네티스(Kubernetes) 서비스 계정 토큰을 읽는 데 성공했다. 특히 프로젝트가 제공하는 원격 노드 배포 설정에서는 해당 계정에 클러스터 전체 관리자 권한인 ‘cluster-admin’이 부여돼 있어, 구성에 따라 피해가 클러스터 관리 영역으로 확대될 수 있다.
+CVE-2026-120308은 저장공간을 연결할 때 경로와 소유권을 제대로 검증하지 않는 문제다. 공격자가 연결 경로를 조작하면 작업 실행 서버의 파일시스템을 자신의 샌드박스에 읽기·쓰기 가능한 상태로 연결할 수 있다. 같은 서버에 저장된 다른 고객의 볼륨도 영향을 받을 수 있다.
+이미지 생성 과정도 격리 부족…수정 버전 적용 필요
+CVE-2026-120306은 컨테이너 이미지 생성 과정에서 발생한다. 빌드 작업이 실행 서버와 주요 실행환경을 공유하고 루트 권한으로 동작해, 사용자가 제출한 이미지 빌드 명령으로 서버 파일과 컨테이너 실행 프로그램 등에 접근할 수 있는 문제다.
+파일 접근과 이미지 생성 취약점은 Worker 0.1.756, 저장공간 연결 취약점은 Gateway 0.1.776과 Worker 0.1.756에서 수정됐다. 개발팀은 파일 접근 범위 제한, 볼륨 소유권 검사, 이미지 빌드 격리 강화 등을 적용했다. 관련 수정 코드는 CVE 공개에 앞선 9월 15일 병합됐다.
+이번 취약점은 일반 사용자 권한이 다른 고객의 데이터와 인프라 관리 영역으로 확대될 수 있다는 점에서 위험하다. 베타9 운영자는 게이트웨이와 워커의 수정 버전 적용 여부를 확인하고, 작업 실행 계정에 과도한 쿠버네티스 권한이 부여돼 있는지도 점검할 필요가 있다.
 ---
 [TITLE] 딥시크, 코딩 '슈퍼 에이전트' 공개…6개월 만에 추격 기반 구축
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216865
@@ -84,29 +84,26 @@ KISTI는 이를 위해 지난 9월부터 연구자 모집을 거쳐 현재 시�
 한편, 루도 로보틱스는 미국 캘리포니아주 팔로알토 연구소를 공식 개소했다. 팔로알토 연구소는 루도 로보틱스의 본사 연구거점으로, 서울 오피스와 함께 AI·로보틱스 연구를 수행한다.
 이정환 기자 ryanlee@aitimes.com
 ---
-[TITLE] OpenQodex - 코딩 에이전트의 변경을 별도 에이전트가 검증하는 코드 리뷰 도구
-[LINK] https://news.hada.io/topic?id=36426&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[PUBLISHED] 2026-11-02 09:30 KST
-[SOURCE] GeekNews
-[TOPIC] 에이전트, 개발
+[TITLE] 오픈소스 코드 저장소 관리 플랫폼 기티아, 관리자 계정 탈취 가능한 취약점 주의
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209247
+[PUBLISHED] 2026-11-02 10:48 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 보안
 [SCORE] 7
-[REASON] 소프트웨어 엔지니어는 코딩 에이전트 생성 코드의 독립 검증 도구 도입 가능
-[FIELD] AI 에이전트
+[REASON] 깃 저장소 관리자는 OAuth2 계정 탈취 취약점 최신 패치 적용 필요
+[FIELD] 보안
 [BODY]
-GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
-발행 2026-11-02 · 작성 xguru
-출처 https://news.hada.io/topic?id=36426
-- 기존 로그인 계정을 활용해 코딩 에이전트의 변경을 별도의 Claude Code 또는 Codex 프로세스로 리뷰하는 도구
-- 미푸시 커밋과 미커밋 변경 전체를 기본 검사하며, 특정 브랜치나 PR, 저장소 전체 리뷰도 지원
-- 22개 내장 스캐너로 비밀키, 보안 취약점, 의존성, 린트, CI와 인프라 설정, SQL 등을 검사하며 외부 스캐너 추가도 가능
-- 문제 발견과 검증 세션을 분리해 변경 코드와 관련 호출부를 살피고, 정적 분석 결과까지 확인하거나 반박함
-- 인용한 코드의 실재 여부와 변경 구간의 리뷰 전달 여부를 검사하며, 검토가 끝나지 않으면 누락 내용을 표시
-- 코드 그래프를 CLI와 MCP로 제공해 호출 관계, 상속과 구현, 관련 테스트, 변경 영향 범위를 탐색 가능. 그래프 생성에는 모델 호출이 필요 없음
-- 결과를 코드 diff와 문제 카드가 있는 HTML, Markdown, JSON, SARIF로 제공하며, 선택한 문제를 에이전트에 수정하도록 요청 가능
-- 푸시 전 경고와 심각도별 차단을 지원하며, 프로젝트별 리뷰 지침과 제외 규칙도 설정 가능
-- Claude Code, Codex, Cursor, Cline에서 사용 가능하며 리뷰어는 Claude Code와 Codex만 지원
-- macOS와 Linux 지원
-- Apache-2.0 라이선스
+오픈소스 코드 저장소 관리 플랫폼 기티아(Gitea)에서 비밀번호 없이 다른 사용자의 계정에 접근할 수 있는 취약점이 공개됐다. 관리자 계정도 탈취 대상이 될 수 있어 외부 로그인 연동 기능을 사용하는 기업의 점검이 필요하다.
+기티아는 11월 1일 계정 탈취 취약점 CVE-2026-120263을 비롯한 여러 보안 문제를 수정한 28.3.0 버전을 공개하고 신속한 업데이트를 권고했다. Gitea Blog
+외부 계정 연결 과정에서 사용자 신원 검증 오류
+CVE-2026-120263은 외부 로그인 방식인 OAuth2의 계정 연결 과정에서 발생한다. 공격자가 입력한 사용자 이름이나 이메일을 신뢰하면서, 공격자의 외부 로그인 계정을 기존 사용자의 기티아 계정에 연결할 수 있는 문제다.
+공격에 성공하면 피해자의 비밀번호를 몰라도 해당 계정으로 로그인할 수 있다. 관리자 계정이 탈취되면 관리 화면과 저장소에 접근하는 등 피해가 확대될 수 있다.
+다만 모든 설치 환경이 같은 위험에 노출되는 것은 아니다. 외부 계정 자동 연결 설정인 ‘ACCOUNT_LINKING = auto’를 활성화하고 신규 사용자 등록을 허용한 환경에서 문제가 발생한다. 기본 설정은 기존 계정의 비밀번호를 확인하는 방식이다.
+공식 권고에 따르면 이번 취약점은 앤트로픽(Anthropic)의 AI 모델 클로드(Claude)가 발견했으며, 도이엔섹(Doyensec) 연구진이 앤트로픽 리서치와 협력해 검증했다.
+자동화 작업 결과물·토큰 관련 취약점도 수정
+같은 날 수정된 CVE-2026-113429는 자동화 기능인 기티아 액션스(Actions)의 작업 결과물을 내려받는 과정에서 발생하는 저장형 크로스사이트스크립팅(XSS) 취약점이다. 조작된 결과물의 다운로드 링크를 사용자가 열면 기티아 사이트의 보안 문맥에서 악성 스크립트가 실행될 수 있다.
+CVE-2026-112887은 자동화 작업에 발급된 토큰으로 서버 내 다른 비공개 저장소 목록을 조회할 수 있는 문제다. 비공개 저장소의 존재와 관련 정보가 노출될 수 있지만, 이 취약점이 저장소 파일 내용에 대한 직접적인 접근을 의미하지는 않는다.
+기티아를 자체 운영하는 기업과 기관은 28.3.0 버전으로 업데이트하고 외부 로그인 자동 연결 설정을 확인해야 한다. 계정 탈취 가능성에 대비해 기존 외부 계정 연결 내역을 점검하고, 자동화 작업 토큰의 사용 범위와 접근 기록도 함께 살펴볼 필요가 있다.
 ---
 [TITLE] Adobe is testing how well AI agents can use editing tools like a Photoshop professional would
 [TITLE_KO] 어도비, AI 에이전트가 포토샵 전문가처럼 편집 도구를 활용하는 방법 테스트 중
@@ -137,87 +134,24 @@ Without the verification record, none of the seven language models tested could 
 After each round, EditAgent also checks whether later edits accidentally undid earlier ones. In the paper's example, the instruction "let in more daylight" makes a previously frosted window clear again. The agent catches the conflict and fixes it.
 EditAgent improved the open-source editors Qwen-Image-Edit-2511 and Flux-2-Klein-9B across three benchmarks and outperformed seven other AI agents.
 ---
-[TITLE] PHP 취약점, 웹서버 넘어 방화벽·NAS·기업용 SW까지 영향 확대
-[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092173194
-[PUBLISHED] 2026-11-02 06:00 KST
-[SOURCE] IT조선
-[TOPIC] 보안
+[TITLE] Anthropic, Claude Code에 기존 게임 재구현 제한 추가
+[LINK] https://news.hada.io/topic?id=36384&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-01 20:37 KST
+[SOURCE] GeekNews
+[TOPIC] 개발
 [SCORE] 7
-[REASON] 보안 인프라 담당자는 PHP 취약점의 방화벽 및 NAS 확산에 따른 점검 필수
-[FIELD] 보안
+[REASON] 클로드 코드 사용자는 기존 상용 게임 재구현 금지 시스템 프롬프트 변경 확인 필요
+[FIELD] AI 에이전트
 [BODY]
-웹사이트에 널리 쓰이는 PHP의 심각한 보안 취약점이 방화벽 등 기업 보안을 책임지는 장비에도 영향을 미치는 것으로 확인됐다. 여기에 원격접속 장비와 네트워크 저장장치(NAS), 산업용 장비, 백업 소프트웨어 등에서도 취약점이 보고됐다. 기업들이 웹서버뿐 아니라 보안장비와 내부망의 각종 시스템까지 점검 범위를 확대해야 할 필요성이 커지고 있다.
-30일 보안업계에 따르면 지난 21일 공개된 ‘PHP투셸(PHP2Shell)’ 취약점 2건(CVE-2026-109618·CVE-2026-109619)의 영향을 받는 기업용 제품이 잇따라 확인되고 있다. PHP는 웹사이트 개발에 널리 쓰이지만 각종 장비의 관리 화면과 상용 소프트웨어에도 사용된다. 이번 취약점을 악용하면 공격자가 로그인 없이 시스템에서 임의의 코드를 실행할 수 있어 정보 탈취나 시스템 장악으로 이어질 수 있다.
-방화벽 관리 기능까지 공격…NAS·백업 SW도 영향
-팔로알토네트웍스는 10월 21일 자사 방화벽 운영체제(OS) ‘PAN-OS’와 중앙관리 제품 ‘파노라마(Panorama)’에 대한 보안 권고를 발표했다. PAN-OS 10.2, 11.1, 11.2, 12.1, 12.2 계열 중 수정 패치를 적용하지 않은 버전이 대상이다. 취약점은 방화벽의 웹 관리 화면과 XML API에 존재한다. 일반적인 통신 처리 기능이나 글로벌프로텍트 VPN은 직접적인 영향 대상이 아니지만, 데이터 통신용 인터페이스에 관리 기능을 활성화한 경우에는 영향을 받는다.
-방화벽은 기업 내부망을 외부 공격으로부터 보호하는 장비다. 그러나 관리 기능이 침해되면 공격자가 장비 설정과 내부 네트워크 정보를 확보하고 다른 시스템으로 침투할 수 있다. 팔로알토네트웍스는 인터넷에 노출된 PAN-OS 관리 인터페이스를 겨냥한 실제 공격을 관측했으며, 27일 취약점 위험도를 공통 취약점 평가체계(CVSS) 4.0 기준 9.2점으로 높이고 대응 긴급도를 최고 수준으로 높였다.
-PHP 취약점을 통해 방화벽 침해 사례를 가장 먼저 알린 것은 이스라엘 보안기업 드림(Dream)인 것으로 알려졌다. 드림은 10월 26일 보고서를 통해 PHP투셸과 리눅스 권한 상승 취약점을 연계한 공격으로 방화벽 24대의 최고 관리자 권한이 탈취됐다고 밝혔다. 미국 정부 관련 기관에서 내부 방화벽 중앙관리 서버까지 장악된 사례가 나왔다. 10월 29일 팔로알토네트웍스의 위협분석 조직 유닛42(Unit 42)도 드림이 분석한 공격 도구를 독립적으로 검증하고 조사 결과를 확인했다고 발표했다.
-팔로알토네트웍스는 IT조선의 관련 질의에 “이미 배포된 최신 패치를 적용한 고객은 이번 취약점의 영향을 받지 않았다”며 “관리 인터페이스를 외부 인터넷에 직접 노출하지 않도록 권고하는 자사의 표준 보안 수칙을 준수한 고객도 마찬가지로 영향을 받지 않았다”고 밝혔다. 그러면서 “전 세계에서 이번 취약점의 영향을 받은 제품은 약 0.02%로, 극히 일부에 불과하다”고 덧붙였다. 다만 국내 고객의 관련 패치 적용 현황과 공격 관측 여부, 고객 대상 안내 및 지원 현황 등을 묻는 질의에는 구체적인 답변을 내놓지 않았다.
-다른 제품에서도 영향이 확인됐다. 시트릭스는 10월 22일 ‘넷스케일러 ADC’와 원격접속 제품 ‘넷스케일러 게이트웨이’의 관리 기능에 대한 보안 권고를 발표하고 수정 버전 정보를 갱신했다. 시스코도 10월 21일 인증·접근관리 제품 ‘듀오 액세스 게이트웨이’와 협업 서비스 연결 장비 ‘익스프레스웨이’ 등을 영향 대상으로 안내했다. 지멘스는 10월 23일 팔로알토 PAN-OS를 탑재한 산업용 장비 ‘러기드컴 APE1808’에 대한 보안 권고를 발표하기도 했다. 오라클도 10월 25일 관련 경고를 발표하고 기업용 백업 소프트웨어 ‘오라클 시큐어 백업’을 영향 제품에 추가했다.
-NAS도 점검 대상이다. 시놀로지는 10월 22일 PHP투셸 취약점이 자사 NAS에서 사용하는 특정 PHP 기반 패키지에 영향을 미친다고 발표했다. 캘린더와 메일 스테이션 등이 대상으로, 모든 NAS 기능이 취약한 것은 아니다. 시놀로지는 보안 지원이 종료된 구형 NAS 운영체제 DSM 6.2에도 PHP 취약점 수정 패치를 제공하며 조치에 나서고 있다.
-이처럼 PHP투셸 취약점의 영향 범위가 확대되자 한국인터넷진흥원(KISA)도 10월 29일 시놀로지 제품과 팔로알토 PAN-OS에 대한 보안 업데이트를 각각 권고했다.
-패치할 장비부터 찾아야…내부망 자산 관리가 과제
-취약점 대응을 위해서는 기업이 보유한 장비 중 PHP를 사용하는 제품부터 찾아야 한다. 하지만 외부에 공개된 웹서버와 달리 내부망의 장비는 인터넷 검색이나 외부 스캔만으로 식별하기 어렵다. 사용 중인 PHP 버전을 관리자가 알지 못하는 경우도 있다.
-국내 보안 기업 지니언스에 따르면 자사 클라우드 네트워크 접근제어(NAC) 플랫폼에 연동된 고객 환경에서 PHP를 실행하는 장비 가운데 96%가 PHP투셸 취약점에 노출된 것으로 분석됐다. 취약 장비의 78%는 공식 지원이 종료된 PHP 8.1 이하 버전을 사용했고, 48%는 PHP 5.x 이하 구버전을 실행하고 있었다. 다만 분석 대상 고객사 수와 장비 수는 공개되지 않았다.
-분석 대상 장비의 유형을 보면 일반 서버는 24%에 그쳤다. CCTV·영상저장장치와 보안 솔루션이 20%, 사물인터넷(IoT) 기기가 17%였으며, 유형이 확인되지 않은 장비도 27%를 차지했다. 특히 확인된 장비의 89%는 외부에서 직접 접근하기 어려운 사설 IP 대역에 있었다. 외부 웹서버 중심의 점검만으로는 내부망에 남아 있는 취약 장비를 모두 찾아내기 어려운 셈이다.
-김계연 지니언스 미국법인장 겸 최고기술책임자(CTO)는 “내부망에 위치한 관리형 장비들은 웹 콘솔 응답 데이터 및 내장 구성요소를 정밀 식별해야만 PHP 구동 여부를 파악할 수 있다”며 “제조사 지원이 종료돼 공식 패치가 존재하지 않는 구형 장비나 패치 배포 전 단계의 장비는 교체 전까지 네트워크 접근을 즉시 차단·격리하는 선제적 통제가 필수적”이라고 말했다.
-정종길 기자
-jk2@chosunbiz.com
----
-[TITLE] 위험한 AI를 누가 멈출 것인가, 앤트로픽과 오픈AI의 서로 다른 해법
-[LINK] https://www.itworld.co.kr/article/4243085/%ec%95%88%ed%8a%b8%eb%a1%9c%ed%94%bd%ea%b3%bc-%ec%98%a4%ed%94%88ai%eb%8a%94-%ec%9c%84%ed%97%98%ed%95%9c-ai%ec%9d%98-%ea%b0%80%eb%8f%99%ec%9d%84-%ec%a4%91%eb%8b%a8%ed%95%b4%ec%95%bc-%ed%95%a0-%ec%a3%bc.html
-[PUBLISHED] 2026-11-02 11:32 KST
-[SOURCE] ITWorld Korea
-[TOPIC] 에이전트, 모델, 규제
-[SCORE] 7
-[REASON] AI 규제 대응팀은 셧다운 통제권 등 프런티어 안전 정책 점검 필요
-[FIELD] 기타
-[BODY]
-캘리포니아 주지사에게 제출한 별도 의견서에서 두 업체는 프런티어 AI 감독 강화에는 뜻을 같이했지만 위험 모델을 멈추는 주체에서는 갈렸다.
-오픈AI와 앤트로픽이 프런티어 AI 시스템에 더 강한 감독이 필요하다는 데 의견을 같이했지만, 심각한 위험을 일으키는 모델을 멈추는 방식에서는 확연히 다른 접근법을 내놨다. 앤트로픽은 법원이 위험한 시스템을 중단시킬 수 있도록 하자는 입장이고, 오픈AI는 개발사가 효과적인 셧다운 제어를 유지하고 실제로 가동하도록 의무화해야 한다는 입장이다.
-두 제안은 캘리포니아 주지사 개빈 뉴섬이 9월 18일 프런티어 AI 시스템에 대한 추가 안전장치를 검토하라고 주 공무원에 지시한 행정명령에 따라 각각 제출된 의견서에 담겼다. 두 업체는 독립적인 안전성 평가와, AI 시스템이 허용된 권한을 넘어 행동한 사고의 보고 확대를 모두 지지했다.
-앤트로픽은 10월 15일 제출한 의견서에서 독립 평가 결과를 토대로 법무장관이 프런티어 AI 업체의 모델에 가까운 시일 내 치명적 피해 위험이 있다고 판단하면, 모델의 배포·내부 사용·추가 개발을 중단시키는 법원 명령을 청구할 수 있어야 한다고 주장했다.
-오픈AI는 10월 20일 성명에서 캘리포니아 상원법안 53호(SB 53)의 개정을 촉구했다.
-오픈AI는 프런티어 개발사가 효과적인 셧다운 제어를 유지하고, 안전하지 않은 상황이 발생하면 반드시 가동하도록 강제하는 의무를 SB 53에 넣어야 한다고 밝혔다. 또한 이보다 약한 개입으로는 위험에 충분히 대응할 수 없다고 덧붙였다.
-시장 조사 업체 그레이하운드 리서치의 수석 애널리스트 산치트 비르 고기아는 두 접근법이 서로 보완적인 필요를 충족한다고 평가했다. 운영 주체는 안전하지 않은 활동을 즉각 차단해야 하고, 독립 검토는 개입과 무개입을 모두 들여다봐야 한다는 설명이다.
-뉴섬의 행정명령 N-9-26은 캘리포니아 정부운영청(Government Operations Agency)이 주지사 비상대응실(Governor’s Office of Emergency Services), 전국 전문가와 협의해 기존 AI 안전법의 개정 방안에 관한 권고안을 11월 16일까지 제출하도록 지시했다. 행정명령은 AI 연구소 내부의 독립 검증, 안전성 평가의 독립적 점검, 검증된 셧다운 메커니즘, 치명적 안전 사고의 보고 확대를 검토하라고 관계 당국에 요청했다. 다만 제안된 요건을 행정명령이 직접 부과하지는 않는다.
-독립 검증 필요
-앤트로픽은 평가자가 개발사의 안전성 주장을 검증하고, 그 결과를 직접 공개해야 한다는 입장이다.
-앤트로픽은 “프런티어 AI 업체가 보고하는 모델의 위험, 그리고 위험이 충분히 완화됐는지를 독립적으로 검증하도록 의무화하는 방안을 강력히 지지한다”라고 밝혔다.
-또한, 개발사가 최소 6개월마다 위험 보고서를 공개해야 한다고 제안했다. 보고서는 출시된 시스템보다 위험이 훨씬 큰 내부 사용 모델을 포함해 모델의 심각한 위험을 다뤄야 한다. 평가자는 가려지지 않은 원본 보고서와 개발사의 가장 강력한 모델, 관련 내부 정보에 접근할 수 있어야 한다.
-또한 앤트로픽은 개발사가 평가자에게 직접 비용을 지급하는 대신, 주 정부가 운영하는 공동 기금에 출연해 평가 비용을 충당하는 방식을 제안했다. 앤트로픽에 따르면 독립 평가 기관 METR의 팀이 시범적으로 직원에 준하는 접근 권한을 받았으며, 시큐어바이오(SecureBio), 액센추어와의 추가 협력도 준비 중이다.
-오픈AI는 서한에서 독립적인 기술 평가를 지지하면서도 규제 준수 감사와는 구분했다. 오픈AI의 설명에 따르면 기술 평가는 개발사 안전성 주장의 근거와 안전장치의 실효성을 점검하고, 준수 감사는 업체가 공개한 안전 체계와 법적 의무를 지키는지 확인한다.
-오픈AI는 연 1회 독립 준수 감사와, 모델 훈련·평가·내부 배포 과정에서 발생하는 심각한 위험에 집중한 기술 평가를 권고했다. 또한 캘리포니아가 미국 국립표준기술연구소(NIST)와 협력해 공통 평가 기준을 개발해야 한다고 촉구했다.
-고기아는 감독에 자금 이상의 요소가 필요하다고 짚었다. 신뢰할 만한 보증이라면 불리한 판정이 나와도 무너지지 않아야 한다는 지적이다.
-단일 스위치를 넘어선 통제
-오픈AI는 단일 킬 스위치로는 AI 시스템이 운영되고 배포되는 다양한 방식에 대응할 수 없다고 주장했다.
-오픈AI는 서한에서 ‘셧다운 제어’라는 용어를 권장하는 이유로, 필요할 때 AI 운영을 멈추려면 단일 스위치가 아니라 여러 제어 수단의 개발과 다양한 주체의 공조가 필요하기 때문이라고 설명했다.
-개입 방식으로는 훈련 중단, AI 에이전트 격리, 도구와 네트워크 접근 권한 회수, 서비스 중단 등이 꼽힌다. 오픈AI는 추론 서비스 업체와 하위 배포 업체도 각자 통제하는 운영 범위에 따라 책임을 져야 한다고 밝혔다. 또한 외부 시스템에서 독립적으로 운영되는 오픈 웨이트 모델의 복사본은 개발사가 안정적으로 끌 수 없다는 점도 지적했다.
-앤트로픽도 비슷하게 더 표적화된 안전장치를 주장하며, 의견서에서 프런티어 AI 업체가 구축해야 할 장치를 비유하자면 회로 차단기가 더 적절하다고 밝혔다. 또한 에이전트·고객·배포 환경·모델 단위로 문제를 차단할 수 있는 통제를 옹호했다.
-고기아는 기업의 경우 셧다운 책임을 규정한 계약이 각 당사자가 실제로 보유한 통제 수단과 일치해야 한다고 조언했다. 계약에는 개입 권한, 사고 보고 협조, 재가동 승인 주체가 명시돼야 한다.
-고기아는 “부여된 모든 의무에는 실행 가능한 통제 수단이 필요하다”라고 말하며, CIO가 대체 모델로 전환하면 안전한 운영이 유지될 것이라고 가정하지 말고 복구 절차를 직접 시험해야 한다고 덧붙였다. 두 업체는 안전장치를 우회하거나 승인되지 않은 행동을 하는 모델과 관련된 사고의 보고 범위를 넓혀야 한다고도 촉구했다.
-dl-itworldkorea@foundryco.com
----
-[TITLE] 오픈소스 코드 저장소 관리 플랫폼 기티아, 관리자 계정 탈취 가능한 취약점 주의
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209247
-[PUBLISHED] 2026-11-02 10:48 KST
-[SOURCE] 데일리시큐
-[TOPIC] 개발, 보안
-[SCORE] 7
-[REASON] 깃 저장소 관리자는 OAuth2 계정 탈취 취약점 최신 패치 적용 필요
-[FIELD] 보안
-[BODY]
-오픈소스 코드 저장소 관리 플랫폼 기티아(Gitea)에서 비밀번호 없이 다른 사용자의 계정에 접근할 수 있는 취약점이 공개됐다. 관리자 계정도 탈취 대상이 될 수 있어 외부 로그인 연동 기능을 사용하는 기업의 점검이 필요하다.
-기티아는 11월 1일 계정 탈취 취약점 CVE-2026-120263을 비롯한 여러 보안 문제를 수정한 28.3.0 버전을 공개하고 신속한 업데이트를 권고했다. Gitea Blog
-외부 계정 연결 과정에서 사용자 신원 검증 오류
-CVE-2026-120263은 외부 로그인 방식인 OAuth2의 계정 연결 과정에서 발생한다. 공격자가 입력한 사용자 이름이나 이메일을 신뢰하면서, 공격자의 외부 로그인 계정을 기존 사용자의 기티아 계정에 연결할 수 있는 문제다.
-공격에 성공하면 피해자의 비밀번호를 몰라도 해당 계정으로 로그인할 수 있다. 관리자 계정이 탈취되면 관리 화면과 저장소에 접근하는 등 피해가 확대될 수 있다.
-다만 모든 설치 환경이 같은 위험에 노출되는 것은 아니다. 외부 계정 자동 연결 설정인 ‘ACCOUNT_LINKING = auto’를 활성화하고 신규 사용자 등록을 허용한 환경에서 문제가 발생한다. 기본 설정은 기존 계정의 비밀번호를 확인하는 방식이다.
-공식 권고에 따르면 이번 취약점은 앤트로픽(Anthropic)의 AI 모델 클로드(Claude)가 발견했으며, 도이엔섹(Doyensec) 연구진이 앤트로픽 리서치와 협력해 검증했다.
-자동화 작업 결과물·토큰 관련 취약점도 수정
-같은 날 수정된 CVE-2026-113429는 자동화 기능인 기티아 액션스(Actions)의 작업 결과물을 내려받는 과정에서 발생하는 저장형 크로스사이트스크립팅(XSS) 취약점이다. 조작된 결과물의 다운로드 링크를 사용자가 열면 기티아 사이트의 보안 문맥에서 악성 스크립트가 실행될 수 있다.
-CVE-2026-112887은 자동화 작업에 발급된 토큰으로 서버 내 다른 비공개 저장소 목록을 조회할 수 있는 문제다. 비공개 저장소의 존재와 관련 정보가 노출될 수 있지만, 이 취약점이 저장소 파일 내용에 대한 직접적인 접근을 의미하지는 않는다.
-기티아를 자체 운영하는 기업과 기관은 28.3.0 버전으로 업데이트하고 외부 로그인 자동 연결 설정을 확인해야 한다. 계정 탈취 가능성에 대비해 기존 외부 계정 연결 내역을 점검하고, 자동화 작업 토큰의 사용 범위와 접근 기록도 함께 살펴볼 필요가 있다.
+GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
+발행 2026-11-01 · 작성 neo
+출처 https://news.hada.io/topic?id=36384
+- Claude Code에 특정 기존 게임의 재구현을 제한하는 규칙이 10월 27일에 추가됨
+- 기존 게임을 재구현하는 경우 이름을 바꾸거나 독창적인 게임이라고 불러도 제작하지 않도록 지시함
+- Anthropic 서버에서 tengu_heron_brook 플래그로 전달되며, 이 규칙을 끄는 설정은 없음
+- 독창적인 게임, 특정 장르의 게임, 사용자 자신의 디자인과 에셋을 활용한 게임은 계속 제작할 수 있도록 규정
+- Anthropic의 Addy Osmani는 Opus 5.5를 사용하는 Claude Code의 프롬프트에 두 문장을 추가했다고 확인했으며, 지식재산권 침해가 이용 정책에 어긋난다는 점을 이유로 설명함
+- 자신의 프로젝트가 잘못 거절되면 사례를 전달해 달라고 요청
 ---
 [TITLE] 같은 질문인데 요금은 몇 배…AI 모델의 언어별 비용 격차
 [LINK] https://www.itworld.co.kr/article/4243015/%eb%8d%9c-%ed%9d%94%ed%95%9c-%ec%96%b8%ec%96%b4%ec%9d%98-%ea%b2%bd%ec%9a%b0-ai-%eb%aa%a8%eb%8d%b8-%eb%b9%84%ec%9a%a9%ec%9d%b4-%ed%9b%a8%ec%94%ac-%eb%8d%94-%eb%b9%84%ec%8b%b8%eb%8b%a4.html
@@ -229,6 +163,7 @@ CVE-2026-112887은 자동화 작업에 발급된 토큰으로 서버 내 다른 
 [FIELD] AI 모델
 [BODY]
 언어 평등 AI 연구 연합이 소수 언어 사용자의 비용 부담 실태를 분석했다.
+endif; ?>
 언어 평등 AI 연구 연합(Coalition for Language Equity in AI Research)이 발표한 새 연구에 따르면, AI 모델이 특정 언어를 처리할 때 다른 언어보다 훨씬 많은 토큰이 필요한 것으로 나타났다. 레스트 오브 월드(Rest of World)는 이런 격차 탓에 소수 언어 사용자가 같은 서비스에 더 많은 비용을 낼 위험이 있다고 보도했다.
 연구진은 대규모 언어 모델의 토크나이저가 텍스트를 블록, 즉 토큰으로 분해하는데, 디지털화된 데이터가 풍부한 언어일수록 훨씬 효율적으로 처리한다고 설명했다. 웹 비중이 가장 큰 20개 언어를 분석한 결과, 상대적으로 덜 쓰이는 언어는 같은 프롬프트를 영어로 입력할 때보다 1.5~5배 많은 토큰을 사용했다. 조사 대상을 200개 언어로 넓히자 분석 모델 중 하나에서는 격차가 최대 17배까지 벌어졌다.
 대다수 대규모 언어 모델 사업자가 사용한 토큰 수에 따라 요금을 부과하기 때문에 비용도 크게 늘어난다. 토큰이 많아질수록 응답 시간이 길어지고, AI 모델의 컨텍스트 윈도우에 담을 수 있는 정보량도 줄어든다.
@@ -239,14 +174,75 @@ AI 모델의 훈련 데이터에서 흔치 않은 문자 체계를 쓰는 언어
 워싱턴대학교와 카네기멜런대학교 등의 연구진은 2023년 자연어 처리 경험적 방법 학회(EMNLP)에서 오픈AI의 API를 22개 언어로 분석한 결과를 공개한 바 있다. 다수 언어의 화자가 더 많은 요금을 내면서도 낮은 성능의 결과를 얻고 있으며, 이들이 상대적으로 API 이용 비용 부담이 큰 지역 출신인 경우가 많다는 내용이다.
 dl-itworldkorea@foundryco.com
 ---
-[TITLE] Anthropic, Claude Code에 기존 게임 재구현 제한 추가
-[LINK] https://news.hada.io/topic?id=36384&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[PUBLISHED] 2026-11-01 20:37 KST
-[SOURCE] GeekNews
-[TOPIC] 개발
-[SCORE] 7
-[REASON] 클로드 코드 사용자는 기존 상용 게임 재구현 금지 시스템 프롬프트 변경 확인 필요
-[FIELD] AI 에이전트
+[TITLE] KAIST, AI 학습 데이터 69% 줄여도 성능 유지…학습 시간 최대 69.6% 단축
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42531
+[PUBLISHED] 2026-11-02 08:30 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 6
+[REASON] LLM 학습 엔지니어는 데이터 선별 기술로 학습 시간 대폭 단축 가능
+[FIELD] AI 모델
+[BODY]
+학습 데이터 31%만 활용해 기존 10시간 학습을 약 3시간으로 단축…GPU 추가 없이 효율 개선
+인공지능 모델을 특정 분야에 맞게 추가 학습시키는 데 필요한 데이터와 시간을 대폭 줄이면서도 기존 성능을 거의 유지할 수 있는 기술이 국내 연구진에 의해 개발됐다.
+AI 학습에 투입하는 그래픽처리장치(GPU)를 늘리는 대신, 학습 효과가 높은 데이터를 선별하고 여러 GPU에 효율적으로 배분하는 방식이다. KAIST 전산학부 이재길 교수 연구팀이 대형언어모델(LLM)의 미세조정 과정에서 학습 데이터의 중복 효과를 줄이고 GPU 활용 효율을 높이는 기술인 ‘클러스터(CluSTER)’를 개발했다고 2일 밝혔다.
+연구팀은 코딩과 의료 분야의 LLM을 대상으로 실험한 결과, 전체 학습 데이터의 약 31%만 사용해도 모델 성능을 거의 유지하면서 학습 시간을 최대 69.6% 단축하는 성과를 확인했다. 기존 방식으로 10시간이 소요되던 추가 학습을 약 3시간으로 줄일 수 있다는 의미다.
+이번 연구의 핵심은 AI 학습에 필요한 데이터를 무조건 많이 사용하는 기존 접근에서 벗어나, 실제 학습에 기여하는 정보의 다양성과 GPU 간 작업 배분을 동시에 최적화했다는 점이다.
+LLM을 의료 상담 지원이나 소프트웨어 개발 등 전문 분야에 적용하려면 해당 분야의 데이터를 추가로 학습시키는 미세조정(Fine-tuning) 과정이 필요하다. 이 과정에서는 여러 GPU가 학습 데이터를 나눠 처리하는 데이터 병렬화(Data Parallelism) 기술이 활용된다.
+그러나 학습 데이터를 무작위로 분배하면 서로 다른 GPU가 유사한 학습 효과를 가진 데이터를 반복적으로 처리할 수 있다. 데이터의 양이 많더라도 모델이 새롭게 습득하는 정보는 제한적이어서 계산 자원과 학습 시간이 불필요하게 소모되는 문제가 발생한다.
+연구팀이 개발한 클러스터는 이러한 비효율을 해결하기 위해 학습 데이터가 모델에 미치는 영향을 기준으로 유사한 데이터를 군집화한다. 단순히 문장에 포함된 단어나 주제의 유사성을 비교하는 것이 아니라, 실제 모델 학습 과정에서 비슷한 영향을 발생시키는 데이터를 찾아 묶는 방식이다.
+예를 들어, 서로 다른 표현으로 작성된 코딩 문제라도 모델이 학습하는 해결 방식이 유사하다면 같은 군집으로 분류할 수 있다. 이후 각 군집에서 대표 데이터를 선별해 중복 학습을 줄이고, 다양한 유형의 학습 정보가 여러 GPU에 균형 있게 배분되도록 조정한다.
+이를 통해 학습 데이터의 규모를 줄이면서도 특정 유형의 정보에 학습이 편중되는 현상을 완화할 수 있다. 데이터 선택과 GPU 작업 분배를 별도로 처리하는 대신 하나의 최적화 과정으로 결합했다는 점에서 차별성을 갖는다.
+연구팀은 기술의 효과를 검증하기 위해 코딩·의료 분야의 데이터셋 3종과 약 70억 개 및 130억 개의 매개변수를 가진 LLM을 활용했다. 총 8개 성능 평가 시험을 실시한 결과, 전체 데이터의 약 31%만 활용하는 조건에서도 기존 모델과 유사한 성능을 확보했다.
+학습 시간은 실험 조건에 따라 최대 69.6% 감소했다. GPU 4개를 활용한 환경을 중심으로 효과를 검증했으며, GPU 8개를 사용하는 환경에서도 기존 방식보다 우수한 결과를 확인했다.
+이번 성과는 AI 모델의 성능을 유지하면서 학습에 필요한 계산량을 줄일 수 있다는 점에서 의미가 있다. 특히 이미 개발된 범용 AI 모델을 기업이나 기관의 업무에 맞게 추가 학습시키는 과정에서 GPU 자원의 활용 효율을 높일 수 있을 것으로 기대된다.
+기업별 고객 상담 시스템이나 코딩 지원 AI, 의료진의 정보 확인을 지원하는 전문 AI 등 특정 분야의 데이터를 반복적으로 학습해야 하는 환경에서 활용 가능성이 있다. 학습 시간이 줄어들면 모델 개발과 개선 주기를 단축할 수 있으며, GPU 사용에 따른 계산 비용을 절감하는 데도 도움이 될 수 있다.
+다만 이번 연구에서 확인된 최대 69.6%의 시간 단축률은 특정 실험 조건에서 얻어진 결과다. 실제 산업 현장에서의 절감 효과는 모델 규모와 학습 데이터의 특성, GPU 구성 등에 따라 달라질 수 있다.
+이재길 교수는 “AI 학습의 효율을 높이기 위해서는 GPU를 더 많이 사용하는 것뿐 아니라, 어떤 데이터를 학습할지 똑똑하게 선택하는 것도 중요하다”며 “이번 연구는 기존 GPU 자원을 더 효율적으로 활용해 대규모 AI 모델의 학습 부담을 줄일 수 있다는 점에서 의미가 있다”고 말했다.
+이번 연구는 KAIST 전산학부 김현진 박사과정 학생이 제1저자, 이재길 교수가 교신저자로 참여했다. 토론토대학교(University of Toronto) 남영은 박사후연구원과 KAIST 데이터사이언스대학원 한재민·최원혁 석사과정 학생이 공동저자로 이름을 올렸다.
+연구 결과는 지난달 24일부터 29일까지 헝가리 부다페스트에서 열린 자연어처리 분야 국제학술대회인 ‘2026 자연어처리의 경험적 방법론 학술대회 EMNLP 2026(Conference on Empirical Methods in Natural Language Processing)에서 ‘데이터 병렬 처리를 활용한 클러스터링 기반 균형 샘플링 및 할당을 통한 고성능 미세 조정(Clustering-Based Balanced Sampling and Allocation with Data Parallelism for High-Performance Fine-Tuning-다운)’이란 제목으로 발표됐다.
+---
+[TITLE] 앤트로픽 사칭한 피싱 초대장, 구글·마이크로소프트 계정 노린다
+[LINK] https://www.itworld.co.kr/article/4243058/%ea%b0%80%ec%a7%9c-%ec%95%88%ed%8a%b8%eb%a1%9c%ed%94%bd-ai-%eb%af%b8%eb%a6%ac%eb%b3%b4%ea%b8%b0%ea%b0%80-%ec%a7%80%eb%82%98%ec%b9%98%ea%b2%8c-%ec%97%b4%ec%84%b1%ec%a0%81%ec%9d%b8.html
+[PUBLISHED] 2026-11-02 11:19 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 6
+[REASON] 사내 보안 관리자는 앤트로픽 사전 테스트 사칭 피싱 메일 차단 필요
+[FIELD] 보안
+[BODY]
+앤트로픽의 비공개 AI 프리뷰 초대를 사칭한 피싱 메일이 고투웨비나 초대장으로 위장해 기업 직원의 구글·마이크로소프트 로그인 정보를 빼내고 있다.
+endif; ?>
+모두가 앤트로픽의 행보를 궁금해하는 상황을 해커들이 신나게 악용하고 있다.
+사이버보안 기업 코펜스(Cofense)의 신규 연구에 따르면, 한 피싱 캠페인이 앤트로픽의 초청 전용 비공개 프리뷰에 초대받았다고 믿게 만들어 성급한 기업 사용자를 끌어들이고 있다.
+실제로는 공격자가 영상 화상회의 소프트웨어 고투웨비나(GoTo Webinar)의 브랜드를 도용해 구글과 마이크로소프트의 로그인 자격 증명을 훔치려는 시도다.
+딕슨리서치의 프랭크 딕슨은 특별함을 파는 수법이라고 평가하며, 기회를 놓칠까 두려운 심리가 가장 오래된 미끼라고 설명했다.
+딕슨은 모든 기업이 AI를 어디에 접목할지 고민하는 만큼, 앤트로픽의 최신 기술을 미리 볼 수 있는 비공개 프리뷰는 의욕적인 직원이 마다할 이유가 없는 초대라고 짚었다. 공격자가 앤트로픽을 무작위로 고른 것이 아니라 현재 가장 유명한 브랜드이기 때문에 의도적으로 선택했다는 것이다. 공격자가 그때 그때 화제에 오른 기업을 골라 쓰므로 다음 달에는 사칭 대상이 바뀔 수도 있다.
+앤트로픽 사칭 초대장으로 유인하는 방식
+고투웨비나는 널리 쓰이는 플랫폼이어서 보통 이 플랫폼의 회의 초대 이메일은 보안 도구에 차단되지 않는다. 코펜스 연구진은 공격자가 이 점을 악용해 정상 발신자가 보낸 듯한 초대 이메일을 발송하고, 사용자가 가짜 웨비나 등록 링크를 클릭하면 침해된 URL로 연결되게 했다는 사실을 확인했다.
+이메일은 연구진이 ‘솔깃한’ 제안이라고 표현한 문구를 담고 있다. 비공개 초청 전용 가상 세션에서 선별된 참가자들을 모아 AI 시스템, 연구, 프런티어 모델의 미래를 집중적으로 논의한다는 내용이다.
+공격자는 URL 단축 서비스로 이메일 보안 도구를 우회하고, 서브도메인과 대시(-)를 활용해 악성 URL을 감춘다. 링크 자체는 클로드, 챗GPT 등 모델 컨텍스트 프로토콜(MCP)과 호환되는 AI에 맞춰 도구를 설계하는 합법적 기업 재피어(Zapier)에서 생성된 것으로 보인다.
+이메일 발신 주소는 customercare@gotowebinar[.]com으로 표시된다. 고투웨비나의 실제 웹사이트는 www.goto.com이다. 본문에는 눈에 띄는 맞춤법 오류가 없고 고투웨비나 브랜드도 들어가 있다. 다만 연구진은 발신자 이름이 ‘Austin from nthropic’으로, ‘A’가 빠져 있다고 지적하며, 작은 오타지만 유용한 경고 신호라고 강조했다.
+피싱 링크를 클릭하면 클라우드플레어 캡차 페이지가 나타나며, 이를 완료해야 로그인 창이 표시된다. 보안 도구가 공격자의 웹사이트를 스캔하지 못하도록 막는 두 겹의 검문 중 첫 번째 단계다.
+연구진은 캡차가 정상 웹사이트에서도 흔하기 때문에 피싱 대상자가 모든 것이 안전하다고 믿을 수 있다고 설명했다.
+캡차를 통과하면 피해자는 줌을 사칭한 초대 페이지로 이동한다. 가짜 행사에 참석하려면 먼저 등록해야 하며, 업무용 이메일 주소를 입력하라는 안내가 나온다. ‘Continue with Google’ 또는 ‘Continue with 마이크로소프트’ 버튼을 클릭하면 또 하나의 캡차 페이지가 나타난다.
+연구진은 두 캡차 페이지가 VPN 서비스, 스캐너, 토르 브라우저 등 보안 도구의 분석을 탐지해 차단하는 데 능숙한 것으로 보인다고 밝혔다. 캡차 페이지가 둘로 나뉘어 있어 보안 도구가 공격의 모든 단계를 추적하지 못할 가능성도 있다.
+딕슨은 캡차가 원래 봇을 막기 위해 만들어졌지만, 이번 공격에서는 보안 스캐너를 막고 피해자를 들여보내는 역할을 한다고 꼬집었다.
+다만 가짜 구글 로그인 페이지와 마이크로소프트 로그인 페이지는 차이가 있다. 구글 사칭 페이지는 비밀번호 없이 사용자 이름만 수집하는데, 연구진은 설정 오류 때문으로 추정했다. 마이크로소프트 사칭 페이지는 사용자 이름과 비밀번호를 모두 수집한다.
+두 페이지 모두 정상 페이지와 ‘놀랄 만큼 비슷’하며, 서브도메인도 ‘교묘’하다. 가짜 구글 URL은 goo[.]gle-access-eventregister[.]icu이고, 마이크로소프트 URL은 office[.]com-access-sharepoint[.]com을 사용해 실제 오피스와 셰어포인트 도메인을 면밀히 흉내 낸다.
+자격 증명을 제출해도 두 로그인 페이지 모두 확인 메시지를 띄우지 않고, 정상 업체 페이지로 리디렉션하지도 않는다. 그 시점에 공격자는 이미 자격 증명 탈취에 성공한 상태다. 연구진은 공격자가 계정을 장악하고, 계정 내 민감 문서에 접근하거나, 기업 내부로 더 깊이 침투하는 최초 공격 경로로 활용할 수 있다고 설명했다.
+연구진은 이메일부터 로그인 페이지까지 메시지의 브랜드가 일관되는지 확인하고, 사소한 오타 같은 미세한 불일치를 찾으며, URL과 도메인이 로그인 페이지의 진위를 가른다는 점을 직원에게 상기시키라고 권고했다.
+연구진은 로고와 디자인이 정상처럼 보여도 공격자는 모방에 능숙하며, 특히 AI를 활용하는 최근에는 더욱 그렇다고 경고했다.
+직원 개인의 잘못이 아니다
+딕슨은 AI 업계의 제한적 프리뷰와 대기자 명단 관행이 이런 상황에 도움이 되지 않으며, 사람들이 바로 이런 초대를 기대하도록 길들인다고 지적했다. 공격자가 드러낸 허점부터 살펴보라는 조언도 덧붙였다. 발신자는 ‘nthropic’에서 왔다고 했고, 이메일에는 고투웨비나 브랜드가 붙어 있었으며, 등록 페이지는 줌 회의 페이지를 흉내 냈고, 로그인 페이지는 구글 또는 마이크로소프트의 것이었다. 클릭 3번에 3개의 브랜드가 등장한 셈이다.
+office[.]com-access-sharepoint[.]com 같은 가짜 로그인 도메인은 꼼꼼히 읽는 대신 대충 훑어보도록 설계됐다. 딕슨은 구글 페이지가 사용자 이름만 수집한 것도 설정 오류일 수 있지만, 이번 캠페인의 배후 공격자가 조만간 수정할 가능성이 크다고 내다봤다.
+물론, 보안 교육도 도움은 된다. 그러나 금요일 오후 퇴근 시간만을 기다리며 URL 주소를 쳐다보는 직원에게 전적으로 방어를 맡기고 싶지는 않을 것이다. 탈취된 비밀번호의 가치를 얼마로 볼 것인가는 직원이 통과하지 못하는 시험이 아니라 경영진이 결정할 사안이다.
+또한 딕슨은 패스키 같은 피싱 방지 다중 인증(MFA)을 적용하면 탈취한 비밀번호의 가치가 크게 떨어진다고 언급했다. 다만 이런 사기로부터 스스로를 지키기 위해 기업이 실행해야 할 체크리스트는 그다지 복잡하지 않다.
+• AI 프리뷰 초대는 계정 담당 팀이나 신뢰할 수 있는 기존 연락처를 통해 확인한다.
+• 이메일, 회의 페이지, 로그인 페이지로 넘어가며 브랜드가 바뀌면 위험 신호로 간주한다.
+• 피싱 방지 다중 인증을 도입한다. 이런 피싱 로그인 페이지에 자격 증명을 입력한 직원이 있다면 비밀번호를 재설정하고 해당 계정의 활동 내역을 점검한다.
+딕슨은 이번 캠페인이 신뢰받는 도구를 이용해 신뢰에 기반한 방어를 무력화한다는 점이 핵심이라고 결론지었다. 직원이 마지막 방어선이 되어서는 안 된다는 주장이다.
+dl-itworldkorea@foundryco.com
 ---
 [TITLE] Google wants video AI to understand what people need as they work
 [TITLE_KO] 구글, 비디오 AI가 작업 중인 사람에게 필요한 도움을 이해하도록 개발 추진
@@ -258,50 +254,22 @@ dl-itworldkorea@foundryco.com
 [REASON] 비디오 AI 개발진은 실시간 작업 지원 에이전트의 개입 시점 판단 오류 개선 필요
 [FIELD] AI 에이전트
 ---
-[TITLE] Minecraft 속 AI 에이전트 50개, 문명 건설 대신 생존과 관료주의에 빠지다
-[LINK] https://news.hada.io/topic?id=36406&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[PUBLISHED] 2026-11-02 03:48 KST
-[SOURCE] GeekNews
-[TOPIC] 에이전트
+[TITLE] PHP 취약점, 웹서버 넘어 방화벽·NAS·기업용 SW까지 영향 확대
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092173194
+[PUBLISHED] 2026-11-02 06:00 KST
+[SOURCE] IT조선
+[TOPIC] 보안
 [SCORE] 7
-[REASON] 에이전트 시뮬레이션 연구진은 생존 압박 하 군집의 관료주의적 행동 패턴 분석 필요
-[FIELD] AI 에이전트
----
-[TITLE] 애플, 프로LED XDR 디스플레이 탑재 맥북 프로 공개…터치스크린·탠덤 OLED로 고급형 라인 확대
-[LINK] https://www.itworld.co.kr/article/4242999/%ec%95%a0%ed%94%8c-%ed%94%84%eb%a1%9cled-xdr-%eb%94%94%ec%8a%a4%ed%94%8c%eb%a0%88%ec%9d%b4-%ed%83%91%ec%9e%ac-%eb%a7%a5%eb%b6%81-%ed%94%84%eb%a1%9c-%ea%b3%b5%ea%b0%9c%ed%84%b0%ec%b9%98.html
-[PUBLISHED] 2026-11-02 09:09 KST
-[SOURCE] ITWorld Korea
-[TOPIC] 개발, 모델, 신기술
-[SCORE] 6
-[REASON] 하드웨어 개발자는 맥북 프로 터치스크린 및 탠덤 OLED 사양 확인 필요
-[FIELD] 신기술
----
-[TITLE] KAIST, AI 학습 데이터 69% 줄여도 성능 유지…학습 시간 최대 69.6% 단축
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42531
-[PUBLISHED] 2026-11-02 08:30 KST
-[SOURCE] 인공지능신문
-[TOPIC] 개발, 모델, 신기술
-[SCORE] 6
-[REASON] LLM 학습 엔지니어는 데이터 선별 기술로 학습 시간 대폭 단축 가능
-[FIELD] AI 모델
----
-[TITLE] 앤트로픽 사칭한 피싱 초대장, 구글·마이크로소프트 계정 노린다
-[LINK] https://www.itworld.co.kr/article/4243058/%ea%b0%80%ec%a7%9c-%ec%95%88%ed%8a%b8%eb%a1%9c%ed%94%bd-ai-%eb%af%b8%eb%a6%ac%eb%b3%b4%ea%b8%b0%ea%b0%80-%ec%a7%80%eb%82%98%ec%b9%98%ea%b2%8c-%ec%97%b4%ec%84%b1%ec%a0%81%ec%9d%b8.html
-[PUBLISHED] 2026-11-02 11:19 KST
-[SOURCE] ITWorld Korea
-[TOPIC] 에이전트, 개발, 모델, 보안
-[SCORE] 6
-[REASON] 사내 보안 관리자는 앤트로픽 사전 테스트 사칭 피싱 메일 차단 필요
+[REASON] 보안 인프라 담당자는 PHP 취약점의 방화벽 및 NAS 확산에 따른 점검 필수
 [FIELD] 보안
 ---
-[TITLE] Empathetic prompts can turn AI chatbots into seemingly traumatized conversational partners
-[TITLE_KO] 공감형 프롬프트가 AI 챗봇을 트라우마를 겪는 대화 상대로 바꿀 수 있어
-[LINK] https://the-decoder.com/empathetic-prompts-can-turn-ai-chatbots-into-seemingly-traumatized-conversational-partners/
-[PUBLISHED] 2026-11-01 23:36 KST
-[SOURCE] The Decoder
-[TOPIC] 개발, 모델
+[TITLE] 구글, '제미나이 4 카본' 공개 사흘 만에 개선판 포착…3D 성능 호평
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216888
+[PUBLISHED] 2026-11-02 13:10 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델, 보안
 [SCORE] 6
-[REASON] 챗봇 서비스 운영사는 공감형 프롬프트로 인한 트라우마 허위 서사 생성 방어 필요
+[REASON] 보안 전문가는 신규 카본 체크포인트의 평가 결과 검토 필요
 [FIELD] AI 모델
 ---
 [TITLE] [주의] 워드프레스 북잇, 인증 없는 SQL 삽입 취약점…2.6.0.7 업데이트 필수
@@ -313,14 +281,14 @@ dl-itworldkorea@foundryco.com
 [REASON] 워드프레스 운영자는 인증 없는 SQL 삽입 취약점 플러그인 업데이트 필요
 [FIELD] 보안
 ---
-[TITLE] 구글, '제미나이 4 카본' 공개 사흘 만에 개선판 포착…3D 성능 호평
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=216888
-[PUBLISHED] 2026-11-02 13:10 KST
-[SOURCE] AI타임스
-[TOPIC] 개발, 모델, 보안
+[TITLE] Minecraft 속 AI 에이전트 50개, 문명 건설 대신 생존과 관료주의에 빠지다
+[LINK] https://news.hada.io/topic?id=36406&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-02 03:48 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트
 [SCORE] 6
-[REASON] 보안 전문가는 신규 카본 체크포인트의 평가 결과 검토 필요
-[FIELD] AI 모델
+[REASON] 에이전트 시뮬레이션 연구진은 생존 압박 하 군집의 관료주의적 행동 패턴 분석 필요
+[FIELD] AI 에이전트
 ---
 [TITLE] ST마이크로, '가속도·자이로 센서 통합' 차량 센서 출시
 [LINK] https://zdnet.co.kr/view/?no=20261102115904
@@ -349,6 +317,34 @@ dl-itworldkorea@foundryco.com
 [REASON] 반도체 패키징 엔지니어는 해외 거점 첨단 기술 동향 파악 필요
 [FIELD] 신기술
 ---
+[TITLE] Empathetic prompts can turn AI chatbots into seemingly traumatized conversational partners
+[TITLE_KO] 공감형 프롬프트가 AI 챗봇을 트라우마를 겪는 대화 상대로 바꿀 수 있어
+[LINK] https://the-decoder.com/empathetic-prompts-can-turn-ai-chatbots-into-seemingly-traumatized-conversational-partners/
+[PUBLISHED] 2026-11-01 23:36 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델
+[SCORE] 6
+[REASON] 챗봇 서비스 운영사는 공감형 프롬프트로 인한 트라우마 허위 서사 생성 방어 필요
+[FIELD] AI 모델
+---
+[TITLE] 169만원 XR 글래스 ‘엑스리얼 아우라’, 첫인상은
+[LINK] https://byline.network/2026/11/30-626/
+[PUBLISHED] 2026-11-02 07:16 KST
+[SOURCE] 바이라인네트워크
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] XR 기기 개발진은 스마트글래스 내 음성 에이전트 인터페이스 검토 필요
+[FIELD] 신기술
+---
+[TITLE] OpenQodex - 코딩 에이전트의 변경을 별도 에이전트가 검증하는 코드 리뷰 도구
+[LINK] https://news.hada.io/topic?id=36426&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-02 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 소프트웨어 엔지니어는 코딩 에이전트 생성 코드의 독립 검증 도구 도입 가능
+[FIELD] AI 에이전트
+---
 [TITLE] JavaScript 프레임워크별 AI 개발 비용 비교
 [LINK] https://news.hada.io/topic?id=36393&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [PUBLISHED] 2026-11-01 22:39 KST
@@ -368,15 +364,6 @@ dl-itworldkorea@foundryco.com
 [REASON] 보안 분석가는 취약점 복합 위험 식별을 위한 AI 에이전트 자동화 솔루션 점검 필요
 [FIELD] 보안
 ---
-[TITLE] 169만원 XR 글래스 ‘엑스리얼 아우라’, 첫인상은
-[LINK] https://byline.network/2026/11/30-626/
-[PUBLISHED] 2026-11-02 07:16 KST
-[SOURCE] 바이라인네트워크
-[TOPIC] 신기술
-[SCORE] 6
-[REASON] XR 기기 개발진은 스마트글래스 내 음성 에이전트 인터페이스 검토 필요
-[FIELD] 신기술
----
 [TITLE] Chinese AI models are politically complex, not just government mouthpieces, study finds
 [TITLE_KO] 중국 AI 모델은 정부 대변자에 그치지 않고 정치적으로 복잡하다는 연구 결과
 [LINK] https://the-decoder.com/chinese-ai-models-are-politically-complex-not-just-government-mouthpieces-study-finds/
@@ -387,33 +374,23 @@ dl-itworldkorea@foundryco.com
 [REASON] 글로벌 배포 담당자는 프롬프트 언어에 따른 AI 모델 정치적 편향 차이 유의 필요
 [FIELD] AI 모델
 ---
-[TITLE] 에이전틱 AI 시대, 주목받는 ‘책상 옆 AI 어플라이언스’
-[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092173267
-[PUBLISHED] 2026-11-02 06:20 KST
-[SOURCE] IT조선
-[TOPIC] 에이전트, 신기술
-[SCORE] 6
-[REASON] 하드웨어 및 인프라 설계사는 온프레미스 AI 전용 어플라이언스 시장 대응 필요
-[FIELD] 신기술
----
-[TITLE] OpenAI is steering ChatGPT users toward more paid usage
-[TITLE_KO] 오픈AI, 기기·카드별 한도 설정으로 챗GPT 유료 전환 유도
-[LINK] https://the-decoder.com/openai-is-steering-chatgpt-users-toward-more-paid-usage/
-[PUBLISHED] 2026-11-01 21:05 KST
-[SOURCE] The Decoder
-[TOPIC] 규제
-[SCORE] 6
-[REASON] 다중 계정 활용 개발자는 기기 및 결제 카드당 구독 제한 정책 대응 필요
-[FIELD] AI 모델
----
-[TITLE] 李대통령 "반도체·피지컬AI·AIDC에 21.3조...올해보다 두배"
-[LINK] https://zdnet.co.kr/view/?no=20261102104734
-[PUBLISHED] 2026-11-02 10:47 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 에이전트, 모델, 신기술, 산업
+[TITLE] 위험한 AI를 누가 멈출 것인가, 앤트로픽과 오픈AI의 서로 다른 해법
+[LINK] https://www.itworld.co.kr/article/4243085/%ec%95%88%ed%8a%b8%eb%a1%9c%ed%94%bd%ea%b3%bc-%ec%98%a4%ed%94%88ai%eb%8a%94-%ec%9c%84%ed%97%98%ed%95%9c-ai%ec%9d%98-%ea%b0%80%eb%8f%99%ec%9d%84-%ec%a4%91%eb%8b%a8%ed%95%b4%ec%95%bc-%ed%95%a0-%ec%a3%bc.html
+[PUBLISHED] 2026-11-02 11:32 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 모델, 규제
 [SCORE] 5
-[REASON] 반도체 및 AI 사업팀은 대규모 정부 예산 배정 계획 확인 필요
+[REASON] AI 규제 대응팀은 셧다운 통제권 등 프런티어 안전 정책 점검 필요
 [FIELD] 기타
+---
+[TITLE] 애플, 프로LED XDR 디스플레이 탑재 맥북 프로 공개…터치스크린·탠덤 OLED로 고급형 라인 확대
+[LINK] https://www.itworld.co.kr/article/4242999/%ec%95%a0%ed%94%8c-%ed%94%84%eb%a1%9cled-xdr-%eb%94%94%ec%8a%a4%ed%94%8c%eb%a0%88%ec%9d%b4-%ed%83%91%ec%9e%ac-%eb%a7%a5%eb%b6%81-%ed%94%84%eb%a1%9c-%ea%b3%b5%ea%b0%9c%ed%84%b0%ec%b9%98.html
+[PUBLISHED] 2026-11-02 09:09 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 5
+[REASON] 하드웨어 개발자는 맥북 프로 터치스크린 및 탠덤 OLED 사양 확인 필요
+[FIELD] 신기술
 ---
 [TITLE] G마켓, 고객 개인정보 유출 정황 공식 인정…“피해 금액 전액 선제 보상”
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209243
@@ -423,6 +400,33 @@ dl-itworldkorea@foundryco.com
 [SCORE] 5
 [REASON] 이커머스 운영자는 계정 및 주문 시스템 내 개인정보 침해 여부 점검 필요
 [FIELD] 보안
+---
+[TITLE] 티앤에스엔지니어링, 더존비즈온 해킹으로 개인정보 유출 가능성 공지
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209240
+[PUBLISHED] 2026-11-02 01:32 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 신기술, 산업, 규제
+[SCORE] 5
+[REASON] ERP 이용 기업은 백업 서버 침해로 인한 거래처 정보 유출 대응 필요
+[FIELD] 보안
+---
+[TITLE] 한국킨볼협회, 더존비즈온 해킹 관련 전·현직 직원 개인정보 유출 가능성 공지
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209239
+[PUBLISHED] 2026-11-02 01:26 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SCORE] 5
+[REASON] 해당 협회 직원은 백업 서버 유출에 따른 2차 사칭 피해 주의 필요
+[FIELD] 보안
+---
+[TITLE] Show GN: EBS Gurapinggala Teacher - 거짓말 에이전트
+[LINK] https://news.hada.io/topic?id=36405&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-02 03:41 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트
+[SCORE] 5
+[REASON] 교육 및 평가 연구진은 모니터링 대시보드가 결합된 기만 챗봇 오픈소스 활용 가능
+[FIELD] AI 에이전트
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209248
 [STATUS] SKIP (제외)
@@ -485,13 +489,16 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261102103438
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=677422
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261102105123
 [STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261102104734
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=677268
 [STATUS] SKIP (제외)
@@ -512,7 +519,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://news.hada.io/topic?id=36425&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216785
 [STATUS] SKIP (제외)
@@ -524,13 +531,16 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://news.hada.io/topic?id=36422&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://news.hada.io/topic?id=36415&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (제외)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092172783
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=2023092173267
+[STATUS] SKIP (제외)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=2023092173256
 [STATUS] SKIP (제외)
@@ -544,38 +554,29 @@ dl-itworldkorea@foundryco.com
 [LINK] https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/
 [STATUS] SKIP (중복)
 ---
-[LINK] https://news.hada.io/topic?id=36405&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (순위 밖)
----
 [LINK] https://news.hada.io/topic?id=36399&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209242
 [STATUS] SKIP (기준 미달)
 ---
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209240
-[STATUS] SKIP (순위 밖)
----
 [LINK] https://news.hada.io/topic?id=36398&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (제외)
 ---
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209239
-[STATUS] SKIP (순위 밖)
----
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209238
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (같은 사안)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209237
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (같은 사안)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209236
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (같은 사안)
 ---
 [LINK] https://thenewstack.io/patchmageddon-open-source-security22842502/
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209235
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (같은 사안)
 ---
 [LINK] https://news.hada.io/topic?id=36396&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (기준 미달)
@@ -608,6 +609,9 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://news.hada.io/topic?id=36413&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/openai-is-steering-chatgpt-users-toward-more-paid-usage/
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=216887
@@ -653,7 +657,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (중복)
 ---
 [LINK] https://news.hada.io/topic?id=36428&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=677414
 [STATUS] SKIP (제외)
@@ -677,7 +681,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.theguardian.com/artanddesign/2026/nov/02/ai-stealing-indigenous-australian-art-temu-slop-artist-says-ntwnfb
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.wired.com/story/chatbots-are-leading-hikers-astray-with-dangerous-consequences/
 [STATUS] SKIP (제외)

@@ -155,47 +155,6 @@ GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의
 - 선행 신고는 이메일을 모델에 제공하는 단계를, 이번 신고와 privacy 모드는 그 이메일이 외부 요청으로 나가는 단계를 다룸
 - 외부 전송의 일부를 차단하더라도, 계정 이메일이 모델 문맥에 제공되는 구조 자체는 유지됨
 ---
-[TITLE] Perplexity launches its own take on AI agents for work
-[TITLE_KO] 퍼플렉시티, 자체 업무용 AI 에이전트 출시
-[LINK] https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work
-[PUBLISHED] 2026-11-06 07:26 KST
-[SOURCE] The Verge
-[TOPIC] 에이전트, 산업
-[SCORE] 8
-[REASON] 업무 환경 상주형 다중 역할 AI 에이전트 제품 출시
-[FIELD] AI 에이전트
-[BODY]
-Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents. The startup’s new always-on “Teammates” can take on multiple roles within a workspace, while pulling existing projects, skills, and memory from the Perplexity tools you already use.
-Perplexity launches its own take on AI agents for work
-Like OpenAI’s Dots and Claude Duet, Perplexity’s Teammates can perform an array of tasks while running 24/7.
-Teammates integrate with Perplexity Computer, an AI system that can deploy agents on your device to complete tasks. But Perplexity says Teammates “build on top” of Computer by offering the ability to collaborate and complete “ongoing, large-scale work.” You can assign each Teammate different jobs that they can perform simultaneously — much like OpenAI’s Dots and Claude Duet. Perplexity’s take on the feature is much more expensive, however, as it requires a subscription to its $200 / month Max plan.
-Perplexity notes that you can keep tabs on Teammates’ progress through individual threads in the Perplexity app, as well as interact with them in Slack. “Over time, we envision every org having hundreds of teammates working for each person,” Perplexity CEO Aravind Srinivas says on X.
----
-[TITLE] Google's Gemini Omni 1.2 Flash stretches AI video clips to 15 seconds and cuts pricing by 30 percent
-[TITLE_KO] 구글 제미나이 옴니 1.2 플래시, 15초 영상 생성 지원 및 가격 30% 인하
-[LINK] https://the-decoder.com/googles-gemini-omni-1-2-flash-stretches-ai-video-clips-to-15-seconds-and-cuts-pricing-by-30-percent/
-[PUBLISHED] 2026-11-06 04:05 KST
-[SOURCE] The Decoder
-[TOPIC] 모델
-[SCORE] 8
-[REASON] 영상 생성 모델 정식 출시 및 단계별 편집, 비용 30% 인하
-[FIELD] AI 모델
-[BODY]
-Google's Gemini Omni 1.2 Flash stretches AI video clips to 15 seconds and cuts pricing by 30 percent
-Google Deepmind is making its Gemini Omni 1.2 Flash video-generation model generally available. The updated model creates clips up to 15 seconds long, supports conversational editing, and costs 30 percent less than its predecessor.
-Google says Gemini Omni 1.2 Flash is rolling out through the Gemini API, Google AI Studio, the Google Cloud Console, Flow, Google Vids, the Gemini app for Google AI Ultra subscribers, and Google Ads. Every generated video carries an imperceptible SynthID watermark to indicate its origin.
-Clips can now run between three and 15 seconds, up from a maximum of 10 seconds previously, and pricing drops 30 percent to $0.07 per second for 720p video. Generated clips can also be edited through an ongoing conversation.
-A standout feature is what Google calls "Conversational Editing." Users can tweak a generated clip step by step, changing the background, lighting, or aspect ratio without regenerating the entire clip. Google says this works across the full 15-second length. Paired with a tiered workflow, the feature is supposed to cut costs. Drafts are first created at 360p or 720p, individual details are corrected with a follow-up edit, and only the final result is upscaled to 1080p or 4K.
-Google promises more consistent results with reference images
-Google also promises significantly better reference adherence. According to the announcement, the model can take character images, product photos, short motion clips of up to three seconds, and audio cues as inputs. Faces, clothing, packaging typography, and brand colors are supposed to stay consistent across different camera angles.
-As an example, Google shows a virtual try-on clip. From a single model photo and product shots of three outfits, the model generates a 15-second sequence with 360-degree turns while preserving the model's identity and each garment's cut and drape.
-Overall visual consistency is said to have improved as well. Google says there is less visual drift or morphing across motion and camera transitions than with the predecessor.
-Beyond that, Gemini Omni 1.2 Flash is supposed to produce more fluid, natural-sounding dialogue with clearer lip-sync and the ability to distinguish between multiple speakers. The model further handles complex, continuous camera movements such as FPV drone flights or dramatic zoom-outs, with significantly fewer unwanted jump cuts.
-AI News Without the Hype – Curated by Humans
-				
-Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive "AI Radar" frontier report six times a year, full archive access, and access to our comment section.
-Subscribe now
----
 [TITLE] AWS launches Kiro bots to help devs coordinate AI coding agents
 [TITLE_KO] AWS, AI 코딩 에이전트 조율 돕는 키로 봇 출시
 [LINK] https://www.infoworld.com/article/4245120/aws-launches-kiro-bots-to-help-devs-coordinate-ai-coding-agents.html
@@ -207,6 +166,7 @@ Subscribe now
 [FIELD] AI 에이전트
 [BODY]
 The new bots can coordinate parallel agent sessions, retain task-specific context, and automate recurring development workflows, potentially reducing the burden of managing increasingly autonomous AI agents.
+endif; ?>
 AWS on Thursday launched Kiro bots, generally available within Kiro Crew, its open-source multi-agent development environment, to help developers coordinate parallel coding tasks, maintain context across sessions, and automate recurring software development workflows.
 Kiro bots are designed to take responsibility for specific parts of a developer’s workflow rather than execute isolated tasks within individual agent sessions, in turn addressing the growing coordination burden developers face as they increasingly rely on multiple AI agents to handle software development tasks in parallel, AWS said in a statement.
 Setting up bots and how do they work
@@ -249,64 +209,6 @@ That said, the underlying issue is not limited to the Electron-based desktop env
 The disclosure comes a week after Parameter Labs detailed a way to bypass ChatGPT's sandbox and content security policy (CSP) and take over anyone's account simply by sending an attacker-controlled public ChatGPT share link and prompting them to click the HTML preview once. If the HTML block is marked as previewable, it's opened automatically.
 "An attacker could create a malicious conversation, publish it using ChatGPT's normal sharing feature, and send the link to another user," security researcher Mukul Goyal said. "When the victim opened the share, the payload executed as chatgpt[.]com with access to the victim's authenticated web session."
 ---
-[TITLE] “랙당 600kW 시대, 전력이 AI 인프라의 관건” 인피니언, 그리드에서 코어까지 반도체로 푼다
-[LINK] https://www.itworld.co.kr/article/4245426/%eb%9e%99%eb%8b%b9-600kw-%ec%8b%9c%eb%8c%80-%ec%a0%84%eb%a0%a5%ec%9d%b4-ai-%ec%9d%b8%ed%94%84%eb%9d%bc%ec%9d%98-%ea%b4%80%ea%b1%b4-%ec%9d%b8%ed%94%bc%eb%8b%88%ec%96%b8-%ea%b7%b8%eb%a6%ac.html
-[PUBLISHED] 2026-11-06 10:55 KST
-[SOURCE] ITWorld Korea
-[TOPIC] 에이전트, 신기술
-[SCORE] 6
-[FIELD] 신기술
-[BODY]
-랙당 전력이 메가와트급을 향해 가는 상황에서 전력 변환 단계를 줄이고 손실을 낮추는 것이 핵심 과제로 떠오르면서, 반도체 변압기와 반도체 차단기 같은 새로운 전력 반도체 기반 솔루션이 주목받고 있다.
-AI 연산 수요가 커지면서 데이터센터의 전력 확보가 인프라 확장의 가장 큰 변수로 떠오르고 있다. GPU 성능이 높아질수록 서버랙이 감당해야 할 전력도 급증해, 전력망에서 칩에 이르는 전 구간의 설계를 다시 짜야 한다는 목소리가 커지는 추세다.
-인피니언 테크놀로지스 코리아(대표 이승수)는 11월 5일 기자간담회를 열고 ‘AI 시대의 전력 혁신: 그리드에서 코어까지 전력을 책임지는 반도체 솔루션’을 주제로 AI 데이터센터 전력 전략을 소개했다. 이날 행사에서는 인피니언 테크놀로지스 파워 시스템 사업부의 아담 화이트 사장이 발표자로 나서 전력 아키텍처의 변화 방향과 한국 파트너사와의 협력 성과를 설명했다.
-변화의 폭은 수치로 확인된다. 과거 데이터센터 랙의 전력 용량은 10~30kW 수준이었으나, 최근에는 600kW를 넘어서는 설계까지 등장했다. 업계가 지향하는 차세대 구성은 랙당 1MW 수준이다. 전력 수요의 성격 자체가 달라진 만큼, 전력 변환과 분배 방식도 근본적으로 바뀌어야 한다는 의미다.
-화이트 사장은 인피니언의 위치를 “전력망(그리드)에서 코어, 피지컬 AI에 이르기까지 전체 전력 흐름의 근간을 아우르는 기업”이라고 소개했다. 이어 “에너지 공급과 데이터센터로의 전력 전달을 안전하고 실용적으로 만드는 것이 회사의 미션”이라며 “GPU와 CPU에 이르는 전력 흐름의 가장 근본적인 요소를 보유한 만큼 생태계 전체에 더 큰 가치를 전할 수 있다”고 강조했다.
-화이트 사장이 가장 먼저 짚은 것은 반도체 변압기(SST)다. 전통적인 기계식 변압기는 무게가 20톤에 달할 만큼 크고 많은 기계 부품이 들어간다. 이를 반도체 기반으로 바꾸면 훨씬 작고 가벼우면서 에너지 효율도 높일 수 있다는 설명이다. 화이트 사장은 “800V 직류라는 새로운 아키텍처의 핵심 요소이기도 하다”라며 “AI 생태계 전반에서 반도체 변압기에 대한 관심이 크고, 전담 시스템 아키텍트들이 고객사와 함께 제품 출시를 앞당기고 있다”고 말했다.
-솔리드 스테이트 서킷 브레이커도 주요 발표 주제였다. 기계식 차단기를 반도체 기반으로 대체하는 제품으로, 일부 고객사는 이미 제품을 출하하고 있다. 화이트 사장은 기계식 대비 장점으로 장애 구간을 훨씬 빠르게 분리·격리하는 능력, 지능형 로드밸런싱, 반도체 내부에 진단 기능을 탑재해 원격 제어가 가능하다는 점을 꼽았다.
-아키텍처 변화는 세 세대로 나눠 설명했다. 현재 출하 중인 1세대와 업계의 목표점인 3세대 사이에는 중간 단계인 2세대가 필요하다는 것이다. 2세대에서는 랙 내부를 분할하고 전력 공급용 사이드카를 별도로 두며, 랙당 500~700kW 수준에 이를 것으로 예상된다. 화이트 사장은 “업계 전체가 800V 직류 전환을 향해 나아가겠지만 이를 위한 중간 단계가 반드시 필요하다”고 설명했다.
-에이전틱 AI 확산에 따른 CPU 수요 증가도 언급했다. AI가 실제 행동을 수행하는 에이전틱 AI가 부상하면서 CPU 활용도가 높아졌고, CPU와 GPU의 비율이 1대 8에서 1대 1로 변하고 있다는 설명이다. 화이트 사장은 “CPU 시장에서 폭발적인 성장이 예상된다”라며 “현재 CPU의 전력 범위는 500W에서 1,000W 수준”이라고 밝혔다. 이에 대응해 인피니언은 실리콘, 실리콘 카바이드, 질화갈륨 등 세 가지 소재를 모두 활용하는 폭넓은 포트폴리오를 갖췄다. 마이크로컨트롤러까지 갖춰 작은 면적으로도 30kW 구현이 가능하다고 덧붙였다.
-Infineon Technologies
-한국 생태계와의 협력도 소개됐다. 화이트 사장은 한국 생태계에 동참하게 되어 기쁘다고 말했다. 이날 인피니언은 솔루엠과 AI 데이터센터용 고전압 직류(HVDC) 전력 솔루션 분야 협력을 위한 업무협약(MOU)을 체결했다고 밝혔다. 양사는 중간 버스 컨버터(IBC), 배터리 백업 유닛(BBU), 서버용 전원공급장치(PSU) 등 세 가지 애플리케이션으로 협력 범위를 넓힌다. 솔루엠 전성호 대표는 “AI 확산은 연산 성능뿐 아니라 이를 뒷받침하는 전력 인프라에도 근본적인 변화를 요구한다”라며 “인피니언과의 협력으로 고전압·고효율 전력 설계 역량을 강화하겠다”고 밝혔다. 인피니언 테크놀로지 코리아 이승수 대표는 현장에서 효성중공업과도 HVDC 부문에서 협업하고 있다고 설명했다.
-이어진 질의응답에서는 전력 손실 문제가 화두에 올랐다. 전력망에서 서버랙까지 어느 구간에서 손실이 가장 크냐는 질문에 화이트 사장은 “모든 단계에서 손실이 발생하지만 변환 과정을 줄이면 손실을 낮출 수 있다”고 답했다. 업계가 800V 직류로 향하는 이유도 중간 단계를 상당 부분 걷어낼 수 있기 때문이라는 것이다. 화이트 사장은 “GPU에 가까워질수록 적절한 솔루션이 아니면 손실이 더 크게 발생한다”고 지적했다.
-마지막으로 인피니언의 C2i 유닛이 AI 서버 공급 역량에 어떤 변화를 가져오는지 묻는 질문이 나왔다. 화이트 사장은 “GPU 전력이 2,000W에서 3,000W, 4,000W로 높아지면서 더 낮은 전압에 높은 전류, 그리고 정교한 열 관리가 요구된다”라며 “C2I는 다양한 아키텍처를 제어하는 디지털 제어기를 확보하게 해준다”고 설명했다.
-dl-itworldkorea@foundryco.com
----
-[TITLE] 앤트로픽, AI 모델 '신원 확인' 기술 공개...클로드가 개발 과정 주도
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217043
-[PUBLISHED] 2026-11-05 18:18 KST
-[SOURCE] AI타임스
-[TOPIC] 개발, 모델
-[SCORE] 8
-[REASON] 영지식 증명 활용해 AI 추론 결과의 모델 진위를 검증하는 기술
-[FIELD] AI 모델
-[BODY]
-앤트로픽이 이용자가 받은 답변을 약속된 AI 모델이 생성했는지 수학적으로 검증하는 오픈소스 기술을 공개했다. 모델 가중치를 노출하지 않고도 서비스 업체의 모델 바꿔치기나 응답 조작을 확인할 수 있다.
-앤트로픽은 2일(현지시간) AI 추론 결과의 신뢰성을 검증하는 시스템 '플래시프루브(FlashProve)'를 공개했다.
-영지식 증명(Zero-Knowledge Proof) 기술의 일종인 ‘zkSNARK’를 활용해 모델의 내부 가중치를 노출하지 않고도 해당 응답이 지정한 모델의 계산 결과인지 확인하는 방식이다.
-현재 이용자는 AI 서비스에 질문을 보내더라도 실제로 어떤 모델이 답변했는지 직접 확인하기 어렵다. 서비스 업체가 비용을 줄이기 위해 저렴한 모델로 바꾸거나, 성능 평가 때만 다른 모델을 사용해도 출력 내용만으로 이를 구분하기는 어렵다.
-플래시프루브는 서비스 업체가 특정 모델의 가중치에 연결된 일종의 디지털 지문을 먼저 공개하도록 한다. 이후 이용자의 입력에 대해 해당 모델이 응답을 생성했다는 사실을 입증하는 암호학적 증명 파일을 만든다.
-이용자는 디지털 지문과 입력, 응답, 증명 파일을 대조해 지정한 모델의 계산 결과인지 확인한다. 이 과정에서 모델 가중치와 중간 계산값은 숨기지만, 모델 구조까지 비공개로 유지하는 것은 아니다.
-개발 과정에서는 '클로드'가 기존 암호학 연구의 도구를 새롭게 적용해 증명 시스템의 계산 효율을 높였다. 앤트로픽은 클로드가 작성한 프로토콜 명세도 공개했다. 연구진은 이 명세를 세부적으로 검토하지 않았다며, 연구진이 직접 작성한 기술 보고서와는 구분했다.
-검증 대상은 답변의 사실성이나 품질이 아니라 지정한 모델의 계산 결과와 일치하는지 여부다. 모델이 잘못된 정보를 생성했다면, 유효한 증명이 있더라도 그 내용까지 사실로 보장하지는 않는다.
-성능 시험에는 총 4000억개 매개변수를 갖춘 전문가 혼합(MoE) 모델 ‘라마 4 매버릭’을 사용했다. 공개된 4비트 가중치와 정수 연산을 적용한 실험에서 'H100' GPU 한 대로 증명을 생성했다. 요청당 증명 파일 크기는 약 19MB였으며, 검증에는 CPU 24스레드 기준 약 17초가 걸렸다.
-다만 증명을 만드는 계산 부담은 여전히 크다. 앤트로픽은 특정 실험 조건에서 증명 생성에 필요한 GPU 시간이 vLLM을 이용한 일반 프리필 연산의 70~95배에 달했다고 밝혔다. 프리필은 입력된 문맥을 한꺼번에 처리하는 단계다.
-현재 구현은 1024토큰 문맥과 제한된 연산 조건을 사용한다. 다양한 모델과 긴 대화를 처리하는 상용 AI 서비스에 곧바로 적용할 수 있는 완성품은 아니다.
-암호학적 보장을 점검하기 위해 정형 검증 언어 ‘린(Lean)’도 활용했다. 연구진은 증명 프로토콜의 정확성과 보안 속성을 수학적으로 검증했지만, 실행 코드 전체의 정확성까지 입증한 것은 아니라고 설명했다. 여러 요청을 묶어 처리하는 방식의 영지식 속성도 아직 정형 증명을 마치지 않았다.
-또 플래시프루브는 응답을 먼저 제공한 뒤 별도 서버에서 증명을 생성하는 방식을 전제로 한다. 따라서 조작된 응답의 전달 자체를 차단하기보다는 증명 검증을 통해 이를 사후 확인하는 데 쓰인다.
-앤트로픽은 유료 AI 서비스에서 약속한 모델을 사용했는지 확인하거나, 외부 평가기관이 시험한 모델과 실제 서비스 모델이 같은지 검증하는 데 이 기술을 활용할 수 있다고 설명했다.
-기술 보고서와 증명 생성·검증 코드, 린 증명 자료 등을 깃허브에 아파치 2.0 라이선스로 공개했다. 다른 연구자와 개발자들이 검토하고 개선할 수 있도록 제공한 연구 결과물의 성격이다.
-박찬 기자 cpark@aitimes.com
----
-[TITLE] 메타 AI 개발환경서 보안 취약점 발견, 내부 대화·인증 토큰 노출 위험
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209330
-[PUBLISHED] 2026-11-05 17:28 KST
-[SOURCE] 데일리시큐
-[TOPIC] 모델, 보안
-[SCORE] 8
-[REASON] AI 모델 개발 환경 취약점으로 내부 대화 및 토큰 유출 위험 노출
-[FIELD] 보안
----
 [TITLE] 문샷 AI, ‘키미 K3.1 프로’ 가중치 공개…"딥시크 희소 어텐션 결합"
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217051
 [PUBLISHED] 2026-11-05 17:58 KST
@@ -315,14 +217,109 @@ dl-itworldkorea@foundryco.com
 [SCORE] 8
 [REASON] 2.8조 토큰 규모 추론 모델의 오픈 가중치 전면 공개
 [FIELD] AI 모델
+[BODY]
+문샷 AI가 ‘키미 K3.1 프로’의 가중치를 공개해 개발자가 자체 인프라에서 모델을 운영하고 수정할 수 있도록 했다. 모델 카드에는 딥시크 희소 어텐션을 결합한 내부 구조와 저정밀도 연산 사양도 담겼다.
+문샷 AI는 4일(현지시간) 허깅페이스를 통해 키미 K3.1 프로의 가중치를 배포했다. 지난달 모델 출시 당시 예고한 공개 일정에 따른 조치다.
+배포 저장소의 용량은 약 1.56테라바이트(TB)이며, 가중치는 96개 파일로 나눠 제공한다. 모델 설정과 입력 처리에 필요한 코드 등도 함께 배포했다.
+키미 K3.1 프로는 총 2조8000억개 매개변수 중 추론 시 1040억개를 활성화하는 전문가 혼합(MoE) 모델이다. 텍스트와 이미지를 처리하며, 최대 약 100만 토큰의 문맥을 입력받는다.
+이번 가중치 공개와 함께 확인된 내부 구조는 KDA와 딥시크 희소 어텐션(DSA)을 결합한 형태다. 전체 93개 계층 가운데 69개는 KDA, 24개는 게이트형 DSA로 구성됐다. 기존 키미 K3에서 전체 어텐션을 수행하던 ‘게이트형 MLA’ 계층을 DSA로 교체한 것이다.
+DSA는 입력된 토큰 가운데 참조할 대상을 선별하는 기술이다. 이를 적용해 긴 문맥을 처리하는 연산 효율을 높였다고 설명했다.
+가중치는 MXFP4 형식으로 배포하며, 실행 중 중간 연산값인 활성값에는 MXFP8을 사용하는 저정밀도 연산 구조를 채택했다. 학습 과정부터 저정밀도 연산을 고려하는 양자화 인식 학습(QAT)도 적용했다.
+자체 인프라에서 모델을 구동할 개발자를 위해 vLLM과 SGLang, 토큰스피드(TokenSpeed) 등의 추론 엔진을 권장했다. 가중치를 내려받아 직접 운영하거나 문샷 AI의 API를 이용할 수 있다.
+사용과 수정, 미세조정, 재배포 및 상업적 활용은 자체 라이선스에 따라 허용한다. 다만 모델 서비스 사업자와 계열사의 합산 매출이 연속된 12개월 동안 2000만달러(약 268억원)를 넘으면, 상업적 이용에 앞서 별도 계약을 체결해야 한다.
+모델을 사용하는 상용 제품·서비스의 월간 활성 사용자가 1억명 또는 월매출이 2000만달러를 초과하면 이용자 화면에 모델명을 표시해야 한다. 내부 이용과 문샷 AI 공식 제품·인증 추론 파트너를 통한 이용에는 별도 계약과 모델명 표시 조건을 적용하지 않는다.
+키미 K3.1 프로는 코딩과 3D 제작, 금융 연구 등 에이전트 작업을 강화한 모델이다.
+앞선 출시 발표에서 가중치 공개에 따른 악용 가능성을 줄이기 위해 중간 학습 데이터와 강화학습 과제에서 사이버 보안 관련 내용을 선별·제거했다고 설명했다. 일반적인 코딩 작업은 유지하면서 취약점 악용 능력을 낮추기 위한 조치다.
+박찬 기자 cpark@aitimes.com
 ---
-[TITLE] 리눅스 SSH 인증 우회 취약점 발견, 비밀번호 없이 서버 원격 로그인 가능
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209336
-[PUBLISHED] 2026-11-06 13:20 KST
+[TITLE] Perplexity launches its own take on AI agents for work
+[TITLE_KO] 퍼플렉시티, 자체 업무용 AI 에이전트 출시
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work
+[PUBLISHED] 2026-11-06 07:26 KST
+[SOURCE] The Verge
+[TOPIC] 에이전트, 산업
+[SCORE] 7
+[REASON] 업무 환경 상주형 다중 역할 AI 에이전트 제품 출시
+[FIELD] AI 에이전트
+[BODY]
+Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents. The startup’s new always-on “Teammates” can take on multiple roles within a workspace, while pulling existing projects, skills, and memory from the Perplexity tools you already use.
+Perplexity launches its own take on AI agents for work
+Like OpenAI’s Dots and Claude Duet, Perplexity’s Teammates can perform an array of tasks while running 24/7.
+Teammates integrate with Perplexity Computer, an AI system that can deploy agents on your device to complete tasks. But Perplexity says Teammates “build on top” of Computer by offering the ability to collaborate and complete “ongoing, large-scale work.” You can assign each Teammate different jobs that they can perform simultaneously — much like OpenAI’s Dots and Claude Duet. Perplexity’s take on the feature is much more expensive, however, as it requires a subscription to its $200 / month Max plan.
+Perplexity notes that you can keep tabs on Teammates’ progress through individual threads in the Perplexity app, as well as interact with them in Slack. “Over time, we envision every org having hundreds of teammates working for each person,” Perplexity CEO Aravind Srinivas says on X.
+---
+[TITLE] "로봇도 잘못된 기억 스스로 고친다"…MIT, AI 기억의 불확실성 92% 해소한다
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42620
+[PUBLISHED] 2026-11-06 11:31 KST
+[SOURCE] 인공지능신문
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 로봇의 공간 인식 불확실성 해소하는 자율 수정 연구
+[FIELD] 신기술
+[BODY]
+로봇 이동 중 실시간 기억 갱신 가능…가정용·산업용 로봇의 자율성과 피지컬 AI 안전성 강화 기대
+로봇이 주변 사물을 잘못 인식해 기억하더라도 스스로 오류를 찾아 수정할 수 있는 인공지능(AI) 기술이 개발됐다. 로봇이 이동하면서 같은 사물을 여러 각도에서 관찰하고, 기존 기억의 불확실성을 분석해 정보를 갱신하는 방식이다. 실험에서는 모호한 사물 설명의 약 92%를 해소해 피지컬 AI(Physical AI)의 신뢰성과 자율성을 높일 수 있는 가능성을 보여줬다.
+매사추세츠공과대학교(MIT)는 5일(현지시간) 로봇이 저장한 사물 정보의 신뢰도를 스스로 평가하고, 잘못된 설명을 수정하는 AI 기억 시스템 'UQ-DAAAM(Uncertainty Quantification for Describe Anything, Anywhere, at Any Moment)'을 개발했다고 발표했다.
+로봇은 카메라로 주변 환경을 관찰하고 사물의 종류와 위치 등을 기억하지만, 촬영 각도나 조명, 장애물에 따라 잘못된 정보를 저장할 수 있다. 이러한 오류가 수정되지 않으면 이후 작업에도 영향을 미친다.
+예를 들어 응급상황에서 로봇이 벽에 설치된 자동심장충격기를 소화기로 잘못 기억한다면 필요한 장비를 찾아 전달하지 못할 수 있다. 실제 연구 과정에서도 건물 옥상의 회색 굴뚝을 다람쥐로 잘못 인식하는 사례가 나타났다.
+로봇이 기억의 불확실성 판단, 추가 관찰로 오류 수정
+연구진은 기존에 개발한 로봇 기억 시스템 'DAAAM(Describe Anything, Anywhere, at Any Moment)'에 불확실성 정량화 기술을 결합했다. 기존 시스템은 비전언어모델(Vision-Language Model, VLM)을 이용해 카메라로 촬영한 사물을 언어로 설명하고, 이를 3차원 공간정보와 함께 저장한다. 그러나 초기 관찰에서 오류가 발생하면 잘못된 설명이 계속 유지될 수 있다는 한계가 있었다.
+새로운 시스템은 이러한 문제를 해결하기 위해 두 가지 정보를 분석한다. 먼저 비전언어모델이 생성한 사물 설명의 신뢰도를 측정하고, 서로 다른 위치와 각도에서 관찰한 동일 사물의 설명이 얼마나 일치하는지 비교한다.
+이를 통해 불확실성이 높은 사물을 찾아내고, 추가로 촬영된 이미지 가운데 오류 수정에 가장 유용한 정보를 선택한다. 이후 대형언어모델(Large Language Model, LLM)이 기존 설명과 새로운 관찰 결과를 통합해 보다 정확한 사물 정보를 생성한다.
+특히 연구진은 추가 관찰 데이터를 선택할 때 비전언어모델을 반복 실행하지 않아도 되는 방법을 개발했다. 이를 통해 연산 부담을 줄이고 로봇이 이동하는 동안 기억을 지속적으로 갱신할 수 있도록 했다.
+추가 설명 2개로 모호성 92% 해소, 정확도 5% 향상
+실험 결과, 새로운 시스템은 로봇이 관찰한 사물 가운데 설명이 모호한 대상의 약 92%에서 불확실성을 해소했다. 이 과정에서 사물 하나당 추가 설명은 평균적으로 2개만 필요했다. 또한 기존 최고 수준의 기술과 비교해 사물 설명의 정확도를 5% 높였으며, 사물의 종류뿐 아니라 위치와 마지막 관찰 시점에 관한 질문에도 기존 비교 방식보다 정확하게 답했다.
+이는 로봇이 잘못된 기억을 그대로 유지하는 대신 새로운 관찰 결과를 반영해 주변 환경에 대한 이해를 개선할 수 있음을 보여준다. 다만 92%라는 수치는 로봇의 모든 기억 오류를 수정했다는 의미가 아니다. 연구진이 평가한 사물 설명의 모호성을 해소한 비율이며, 정확도 향상 역시 특정 비교 실험에서 얻은 결과다.
+피지컬 AI 안전성 강화, 로봇 스스로 모르는 것을 판단
+이번 연구의 핵심은 로봇이 사물을 얼마나 정확하게 인식하는지를 넘어, 자신의 기억이 얼마나 불확실한지 판단할 수 있도록 했다는 점이다. 연구를 총괄한 MIT 항공우주학과 루카 카를로네(Luca Carlone) 부교수는 “피지컬 AI에서는 로봇이 때때로 틀릴 수 있다는 경고문을 붙이는 것만으로 충분하지 않다”며 “로봇이 자신이 무엇을 모르는지 알 수 있도록 하는 것이 기술을 안전하게 배치하고 사회에 긍정적인 영향을 미치기 위해 필수적”이라고 강조했다.
+이 기술은 향후 가정용 서비스 로봇이 물건을 정리하거나 산업용 로봇이 사람과 협력해 기계를 조립하는 등 복잡한 작업을 수행하는 데 활용될 가능성이 있다.
+연구진은 앞으로 이동형 로봇팔 등 다양한 로봇 플랫폼에 기술을 적용하고, 불확실성이 높은 장소를 로봇이 직접 다시 방문해 추가 정보를 수집하는 기능도 개발할 계획이다. 주변 환경의 미래 상태를 예측하는 AI 시스템에도 불확실성 정량화 기술을 확대 적용할 예정이다.
+이번 성과는 피지컬 AI가 현실 세계에서 안정적으로 작동하기 위해서는 사물을 인식하는 능력뿐 아니라, 잘못된 정보를 식별하고 스스로 수정하는 기억 관리 능력이 중요하다는 점을 보여준다.
+한편, 이번 연구는 MIT 항공우주학과 루카 카를로네 부교수가 책임저자로 참여했으며, MIT 대학원생 해리 장(Harry Zhang)과 니콜라 고를로(Nicolas Gorlo)가 공동 주저자로 수행했다.
+연구 결과는 오는 12월 6일부터 12일까지 호주 시드니에서 개최되는 신경정보처리시스템학회(Neural Information Processing Systems, NeurIPS 2026)에서 '확률적 보장을 갖춘 시공간 기억의 불확실성 정량화(Remember with Confidence: Uncertainty Quantification for Spatio-temporal Memory with Probabilistic Guarantees-다운)'이란 제목으로 발표될 예정이다.
+---
+[TITLE] Google's Gemini Omni 1.2 Flash stretches AI video clips to 15 seconds and cuts pricing by 30 percent
+[TITLE_KO] 구글 제미나이 옴니 1.2 플래시, 15초 영상 생성 지원 및 가격 30% 인하
+[LINK] https://the-decoder.com/googles-gemini-omni-1-2-flash-stretches-ai-video-clips-to-15-seconds-and-cuts-pricing-by-30-percent/
+[PUBLISHED] 2026-11-06 04:05 KST
+[SOURCE] The Decoder
+[TOPIC] 모델
+[SCORE] 7
+[REASON] 영상 생성 모델 정식 출시 및 단계별 편집, 비용 30% 인하
+[FIELD] AI 모델
+[BODY]
+Google's Gemini Omni 1.2 Flash stretches AI video clips to 15 seconds and cuts pricing by 30 percent
+Google Deepmind is making its Gemini Omni 1.2 Flash video-generation model generally available. The updated model creates clips up to 15 seconds long, supports conversational editing, and costs 30 percent less than its predecessor.
+Google says Gemini Omni 1.2 Flash is rolling out through the Gemini API, Google AI Studio, the Google Cloud Console, Flow, Google Vids, the Gemini app for Google AI Ultra subscribers, and Google Ads. Every generated video carries an imperceptible SynthID watermark to indicate its origin.
+Clips can now run between three and 15 seconds, up from a maximum of 10 seconds previously, and pricing drops 30 percent to $0.07 per second for 720p video. Generated clips can also be edited through an ongoing conversation.
+A standout feature is what Google calls "Conversational Editing." Users can tweak a generated clip step by step, changing the background, lighting, or aspect ratio without regenerating the entire clip. Google says this works across the full 15-second length. Paired with a tiered workflow, the feature is supposed to cut costs. Drafts are first created at 360p or 720p, individual details are corrected with a follow-up edit, and only the final result is upscaled to 1080p or 4K.
+Google promises more consistent results with reference images
+Google also promises significantly better reference adherence. According to the announcement, the model can take character images, product photos, short motion clips of up to three seconds, and audio cues as inputs. Faces, clothing, packaging typography, and brand colors are supposed to stay consistent across different camera angles.
+As an example, Google shows a virtual try-on clip. From a single model photo and product shots of three outfits, the model generates a 15-second sequence with 360-degree turns while preserving the model's identity and each garment's cut and drape.
+Overall visual consistency is said to have improved as well. Google says there is less visual drift or morphing across motion and camera transitions than with the predecessor.
+Beyond that, Gemini Omni 1.2 Flash is supposed to produce more fluid, natural-sounding dialogue with clearer lip-sync and the ability to distinguish between multiple speakers. The model further handles complex, continuous camera movements such as FPV drone flights or dramatic zoom-outs, with significantly fewer unwanted jump cuts.
+AI News Without the Hype – Curated by Humans
+				
+Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive "AI Radar" frontier report six times a year, full archive access, and access to our comment section.
+Subscribe now
+---
+[TITLE] 메타 AI 개발환경서 보안 취약점 발견, 내부 대화·인증 토큰 노출 위험
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209330
+[PUBLISHED] 2026-11-05 17:28 KST
 [SOURCE] 데일리시큐
-[TOPIC] 개발, 보안
-[SCORE] 8
+[TOPIC] 모델, 보안
+[SCORE] 7
+[REASON] AI 모델 개발 환경 취약점으로 내부 대화 및 토큰 유출 위험 노출
 [FIELD] 보안
+---
+[TITLE] 앤트로픽, AI 모델 '신원 확인' 기술 공개...클로드가 개발 과정 주도
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217043
+[PUBLISHED] 2026-11-05 18:18 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 7
+[REASON] 영지식 증명 활용해 AI 추론 결과의 모델 진위를 검증하는 기술
+[FIELD] AI 모델
 ---
 [TITLE] Patched Zyxel GS1900 switches remained open to in-the-wild exploit (CVE-2026-107441)
 [TITLE_KO] 패치된 자이젤 GS1900 스위치, 실제 악용 취약점(CVE-2026-107441)에 여전히 노출
@@ -330,6 +327,14 @@ dl-itworldkorea@foundryco.com
 [PUBLISHED] 2026-11-05 21:06 KST
 [SOURCE] Help Net Security
 [TOPIC] 보안
+[SCORE] 7
+[FIELD] 보안
+---
+[TITLE] 리눅스 SSH 인증 우회 취약점 발견, 비밀번호 없이 서버 원격 로그인 가능
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209336
+[PUBLISHED] 2026-11-06 13:20 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 보안
 [SCORE] 7
 [FIELD] 보안
 ---
@@ -417,33 +422,6 @@ dl-itworldkorea@foundryco.com
 [REASON] 정보탈취 악성코드 유포에 실제 악용된 애플 인증 결함 CISA KEV 등록
 [FIELD] 보안
 ---
-[TITLE] Agility Robotics' Nasdaq debut invites scrutiny of humanoid robot market
-[TITLE_KO] 어질리티 로보틱스의 나스닥 상장, 휴머노이드 로봇 시장 검증 시험대 올라
-[LINK] https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/
-[PUBLISHED] 2026-11-05 21:00 KST
-[SOURCE] Ars Technica
-[TOPIC] 신기술
-[SCORE] 6
-[FIELD] 신기술
----
-[TITLE] "로봇도 잘못된 기억 스스로 고친다"…MIT, AI 기억의 불확실성 92% 해소한다
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42620
-[PUBLISHED] 2026-11-06 11:31 KST
-[SOURCE] 인공지능신문
-[TOPIC] 신기술
-[SCORE] 6
-[REASON] 로봇의 공간 인식 불확실성 해소하는 자율 수정 연구
-[FIELD] 신기술
----
-[TITLE] Meta buys AI coding startup Conductor as big tech races to lock in developers
-[TITLE_KO] 빅테크의 개발자 확보 경쟁 속 메타, AI 코딩 스타트업 컨덕터 인수
-[LINK] https://the-decoder.com/meta-buys-ai-coding-startup-conductor-as-big-tech-races-to-lock-in-developers/
-[PUBLISHED] 2026-11-06 00:01 KST
-[SOURCE] The Decoder
-[TOPIC] 에이전트, 개발, 모델, 산업
-[SCORE] 6
-[FIELD] AI 에이전트
----
 [TITLE] 노르딕, 와이파이·블루투스·엣지 AI 통합 SoC 공개...대기전력 절감
 [LINK] http://www.newstheai.com/news/articleView.html?idxno=21897
 [PUBLISHED] 2026-11-05 17:03 KST
@@ -452,15 +430,6 @@ dl-itworldkorea@foundryco.com
 [SCORE] 6
 [REASON] 통신 모듈과 온디바이스 NPU 통합한 초저전력 SoC 공개
 [FIELD] 신기술
----
-[TITLE] Airbnb is working on an AI travel agent
-[TITLE_KO] 에어비앤비, 여행용 AI 에이전트 개발 중
-[LINK] https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings
-[PUBLISHED] 2026-11-06 09:06 KST
-[SOURCE] The Verge
-[TOPIC] 에이전트
-[SCORE] 6
-[FIELD] AI 에이전트
 ---
 [TITLE] 퀄컴, 스페이스X와 역대 최대 5G 계약…스타링크 지상망 구축
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217058
@@ -471,8 +440,41 @@ dl-itworldkorea@foundryco.com
 [REASON] 위성 기반 지상 5G 통신망 대규모 구축 공급 계약 체결
 [FIELD] 신기술
 ---
+[TITLE] Meta acquires Conductor as AI coding shifts toward multi-agent development
+[TITLE_KO] AI 코딩이 다중 에이전트 개발로 전환됨에 따라 메타가 컨덕터 인수
+[LINK] https://www.infoworld.com/article/4245065/meta-acquires-conductor-as-ai-coding-shifts-toward-multi-agent-development.html
+[PUBLISHED] 2026-11-05 19:24 KST
+[SOURCE] InfoWorld
+[TOPIC] 에이전트, 개발, 모델, 보안, 산업, 규제
+[SCORE] 6
+[FIELD] AI 에이전트
+---
+[TITLE] AI 에이전트의 자율 행동까지 보안 검증…정부, 에이전틱 AI 제로트러스트 안내서 발간
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42623
-[STATUS] SKIP (순위 밖)
+[PUBLISHED] 2026-11-06 14:04 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 보안
+[SCORE] 6
+[REASON] 국내 에이전트 개발 시 보안 및 인간 승인 기준 수립 필요
+[FIELD] AI 에이전트
+---
+[TITLE] GitHub Copilot 런타임 코드베이스 전체를 Rust로 이식한 이유와 방법 [영상]
+[LINK] https://news.hada.io/topic?id=36687&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-06 11:20 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 에이전트 런타임의 네이티브 이식으로 배포 확장성 확보
+[FIELD] AI 에이전트
+---
+[TITLE] "이달 내 소비 습관은"…앤트로픽, 클로드에 '재무 서비스' 추가
+[LINK] https://zdnet.co.kr/view/?no=20261106093335
+[PUBLISHED] 2026-11-06 10:09 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 클로드에 금융 계정 연동 및 지출 분석 기능 추가
+[FIELD] AI 모델
 ---
 [LINK] https://www.helpnetsecurity.com/2026/11/06/holiday-rental-platform-phishing-travelers/
 [STATUS] SKIP (기준 미달)
@@ -487,7 +489,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (순위 밖)
 ---
 [LINK] https://news.hada.io/topic?id=36691&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=157008
 [STATUS] SKIP (제외)
@@ -496,7 +498,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.etnews.com/20261106000176
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261106115800
 [STATUS] SKIP (제외)
@@ -525,9 +527,6 @@ dl-itworldkorea@foundryco.com
 [LINK] https://www.itworld.co.kr/article/4245435/%ec%95%a0%ed%94%8c%ec%9d%98-%ed%86%b0-%eb%b3%b4%ea%b1%b0-%eb%b6%80%ec%82%ac%ec%9e%a5%ec%9d%b4-%eb%a7%a5%eb%b6%81-%ed%94%84%eb%a1%9c%ec%9d%98-%eb%ac%b4%ea%b2%8c-%eb%94%94%ec%9e%90%ec%9d%b8-%ea%b7%b8.html
 [STATUS] SKIP (기준 미달)
 ---
-[LINK] https://news.hada.io/topic?id=36687&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (순위 밖)
----
 [LINK] https://www.bloter.net/news/articleView.html?idxno=677924
 [STATUS] SKIP (기준 미달)
 ---
@@ -537,6 +536,9 @@ dl-itworldkorea@foundryco.com
 [LINK] https://zdnet.co.kr/view/?no=20261106104139
 [STATUS] SKIP (제외)
 ---
+[LINK] https://www.itworld.co.kr/article/4245426/%eb%9e%99%eb%8b%b9-600kw-%ec%8b%9c%eb%8c%80-%ec%a0%84%eb%a0%a5%ec%9d%b4-ai-%ec%9d%b8%ed%94%84%eb%9d%bc%ec%9d%98-%ea%b4%80%ea%b1%b4-%ec%9d%b8%ed%94%bc%eb%8b%88%ec%96%b8-%ea%b7%b8%eb%a6%ac.html
+[STATUS] SKIP (순위 밖)
+---
 [LINK] https://zdnet.co.kr/view/?no=20261106105308
 [STATUS] SKIP (중복)
 ---
@@ -544,16 +546,13 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (중복)
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261106105018
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (중복)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000413
 [STATUS] SKIP (제외)
 ---
 [LINK] https://news.hada.io/topic?id=36685&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (기준 미달)
----
-[LINK] https://zdnet.co.kr/view/?no=20261106093335
-[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.etnews.com/20261106000082
 [STATUS] SKIP (제외)
@@ -588,11 +587,14 @@ dl-itworldkorea@foundryco.com
 [LINK] https://www.etnews.com/20261106000037
 [STATUS] SKIP (제외)
 ---
+[LINK] https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings
+[STATUS] SKIP (순위 밖)
+---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209318
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42615
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://news.hada.io/topic?id=36679&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (순위 밖)
@@ -601,7 +603,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42614
-[STATUS] SKIP (중복)
+[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209333
 [STATUS] SKIP (제외)
@@ -625,7 +627,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (중복)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000337
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.bleepingcomputer.com/news/security/fake-openai-spacex-events-used-to-steal-microsoft-google-accounts/
 [STATUS] SKIP (순위 밖)
@@ -637,7 +639,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.etnews.com/20261106000018
-[STATUS] SKIP (제외)
+[STATUS] SKIP (중복)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217074
 [STATUS] SKIP (중복)
@@ -658,7 +660,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.theverge.com/tech/1028015/meta-muse-ai-voice-mode-expressive-avatar
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (중복)
 ---
 [LINK] https://thenewstack.io/openai-gpt6-cyber-exploits/
 [STATUS] SKIP (중복)
@@ -711,14 +713,17 @@ dl-itworldkorea@foundryco.com
 [LINK] https://www.helpnetsecurity.com/2026/11/05/cyberhaven-agentic-data-security/
 [STATUS] SKIP (제외)
 ---
+[LINK] https://the-decoder.com/meta-buys-ai-coding-startup-conductor-as-big-tech-races-to-lock-in-developers/
+[STATUS] SKIP (중복)
+---
 [LINK] https://www.helpnetsecurity.com/2026/11/05/rubrik-unstructured-data-protection/
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42613
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://techcrunch.com/2026/11/05/ainas-smart-ring-has-a-screen-a-joystick-and-a-mic-so-you-can-talk-to-ai-agents/
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html
 [STATUS] SKIP (기준 미달)
@@ -751,7 +756,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (순위 밖)
 ---
 [LINK] https://techcrunch.com/2026/11/05/a-yc-startup-is-putting-1m-behind-five-unsolved-materials-science-problems-for-ai/
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.wired.com/story/finding-new-drugs-is-laborious-this-ai-startup-is-skipping-the-lab-work/
 [STATUS] SKIP (기준 미달)
@@ -763,7 +768,10 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html
-[STATUS] SKIP (중복)
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/
+[STATUS] SKIP (제외)
 ---
 [LINK] https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/
 [STATUS] SKIP (중복)
@@ -795,14 +803,11 @@ dl-itworldkorea@foundryco.com
 [LINK] https://www.computerworld.com/article/4244657/apple-vp-tom-boger-on-macbook-pro-weight-design-and-the-return-of-the-glowing-logo.html
 [STATUS] SKIP (중복)
 ---
-[LINK] https://www.infoworld.com/article/4245065/meta-acquires-conductor-as-ai-coding-shifts-toward-multi-agent-development.html
-[STATUS] SKIP (중복)
----
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209331
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://thehackernews.com/2026/11/5-active-cyber-threats-that-put-us.html
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.securityweek.com/openai-finds-gpt-6-astra-quietly-holding-back-on-internal-red-teaming-exploit-tasks/
 [STATUS] SKIP (중복)
@@ -823,7 +828,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (순위 밖)
 ---
 [LINK] http://www.newstheai.com/news/articleView.html?idxno=21899
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.etnews.com/20261105000476
 [STATUS] SKIP (제외)
@@ -841,7 +846,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209328
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (지난 보도)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217069
 [STATUS] SKIP (제외)
@@ -907,7 +912,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.etnews.com/20261105000340
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=677868
 [STATUS] SKIP (기준 미달)
@@ -925,7 +930,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (중복)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217026
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=677829
 [STATUS] SKIP (제외)
@@ -949,7 +954,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42603
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209317
 [STATUS] SKIP (제외)
@@ -961,7 +966,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] http://www.newstheai.com/news/articleView.html?idxno=21890
-[STATUS] SKIP (중복)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217039
 [STATUS] SKIP (중복)
@@ -973,7 +978,7 @@ dl-itworldkorea@foundryco.com
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217038
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (지난 보도)
 ---
 [LINK] https://byline.network/2026/11/3849284092830428043/
 [STATUS] SKIP (제외)

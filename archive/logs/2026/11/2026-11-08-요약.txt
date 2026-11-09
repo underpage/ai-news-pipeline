@@ -142,38 +142,6 @@ AI 감사 도구는 에이전트의 오작동 대부분을 잡아내지만 검�
 
 #부정
 ---
-[TITLE] 테슬라, '판매부진' 사이버트럭 생산 중단키로…로보택시로 방향 전환
-[LINK] https://zdnet.co.kr/view/?no=20261108104852
-[PUBLISHED] 2026-11-08 11:17 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 모델, 신기술
-[SCORE] 6
-[REASON] 테슬라 로보택시 전용 라인 전환 추진
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[국문 3줄 요약]**
-- 테슬라가 판매 부진을 겪어온 전기 픽업트럭 사이버트럭의 생산을 내년 중반 중단하고 전용 라인을 철거하기로 했다.
-- 확보된 시설은 자율주행 로보택시인 사이버캡의 생산 설비 확충에 활용될 예정이다.
-- 이번 결정은 테슬라의 사업 무게중심이 전통적인 완성차 제조에서 AI 및 자율주행 모빌리티 분야로 본격 전환되고 있음을 보여준다.
-
-#중립
----
-[TITLE] 모든 Windows 11 앱은 Electron을 버려야 한다, Discord가 그 이유를 보여줬다
-[LINK] https://news.hada.io/topic?id=36778&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[PUBLISHED] 2026-11-08 07:35 KST
-[SOURCE] GeekNews
-[TOPIC] 모델, 신기술
-[SCORE] 6
-[REASON] 데스크톱 앱 일렉트론 탈피 및 러스트 네이티브 전환
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[국문 3줄 요약]**
-- 디스코드가 데스크톱 앱 아키텍처를 일렉트론에서 Rust 및 GPU 가속 UI 프레임워크인 GPUI 기반으로 재구축하고 있다.
-- 새 클라이언트는 내장 브라우저 대신 직접 렌더링 방식을 채택해 시작 지연을 대폭 줄이고 메모리 사용량을 기존 대비 약 70% 절감했다.
-- 주요 데스크톱 애플리케이션이 네이티브 성능과 메모리 효율을 위해 일렉트론을 탈피하는 기술적 전환 추세를 보여준다.
-
-#긍정
----
 [TITLE] 앤트로픽, 클로드로 40년 미스터리 단백질 연구 돌파구…3D 구조 첫 규명
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217145
 [PUBLISHED] 2026-11-08 12:08 KST
@@ -187,6 +155,46 @@ AI 감사 도구는 에이전트의 오작동 대부분을 잡아내지만 검�
 - 앤트로픽 연구팀이 AI 모델 클로드를 활용해 40년 동안 기능이 규명되지 않던 볼트 입자의 새로운 형태를 발견하고 3D 구조를 규명했다.
 - 클로드는 유전체 서열 탐색, DNA 설계, 전자현미경 데이터 처리에 참여해 몇 주 이상 걸리던 모델링 작업을 34시간 만에 단축했다.
 - 전문 연구 경험이 부족한 팀에서도 AI가 실험 설계와 분석을 주도적으로 보완해 과학적 발견을 가속할 수 있음을 입증했다.
+
+#긍정
+---
+[TITLE] 보안 패치 나와도 기업 설치 늦어…MS "공격 노출 기간 줄여야"
+[LINK] https://zdnet.co.kr/view/?no=20261108113814
+[PUBLISHED] 2026-11-08 11:50 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 모델, 보안, 산업
+[SCORE] 6
+[REASON] AI 기반 빠른 공격에 패치 적용 지연 경고
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 마이크로소프트는 AI로 취약점을 악용하는 공격 코드 개발이 빨라졌다며, 기업이 보안 업데이트 적용을 서둘러야 한다고 공식 블로그를 통해 8일 밝혔다.
+- 2026년 8월 진단 데이터에서 윈도 기업용 기기 중 업데이트 공개 후 2주 안에 설치를 마친 기기는 절반에 못 미쳤고, 4주가 지난 뒤에도 약 4대 중 1대는 설치하지 않았다.
+- 마이크로소프트는 인터넷에 노출된 시스템과 사용자 인증 인프라 같은 핵심 자산을 먼저 업데이트하라고 강조하고, 코드 스캐너 엠대시와 윈도 오토패치, 핫패치 같은 수단을 제시했다.
+
+#부정
+---
+[TITLE] Google's AI detects high blood pressure from a regular smartwatch without a cuff
+[LINK] https://the-decoder.com/googles-ai-detects-high-blood-pressure-from-a-regular-smartwatch-without-a-cuff/
+[PUBLISHED] 2026-11-07 18:54 KST
+[SOURCE] The Decoder
+[TOPIC] 일반
+[SCORE] 6
+[REASON] 커프 없이 스마트워치 센서만으로 고혈압 감지
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+구글 AI, 커프 없이 일반 스마트워치로 고혈압 감지
+
+**[영문 3줄 요약 (Original)]**
+- A Google Research AI can detect signs of high blood pressure using a regular smartwatch with no cuff needed for calibration, relying on a pulse sensor and a motion sensor, and the study was published in Nature.
+- In a study of 196 people across five US research sites, the watch identified 65.8 percent of those with high blood pressure compared to 55.3 percent for the standard in-office measurement.
+- Google says the findings have been folded into the blood pressure trends feature in the Google Health app, but the method is still a research project and does not replace a diagnosis.
+
+**[국문 3줄 요약 (Translated)]**
+- 구글 리서치의 AI는 보정용 커프 없이 맥박 센서와 동작 센서만으로 일반 스마트워치에서 고혈압 징후를 감지할 수 있으며, 이 연구는 Nature에 게재됐다.
+- 미국 연구 기관 5곳의 196명을 대상으로 한 연구에서 워치는 고혈압 환자의 65.8퍼센트를 식별해 표준 진료실 측정의 55.3퍼센트를 앞섰다.
+- 구글은 이 결과가 구글 헬스 앱의 혈압 추이 기능에 반영됐지만 이 방법은 아직 연구 단계이며 진단을 대체하지 않는다고 밝혔다.
 
 #긍정
 ---

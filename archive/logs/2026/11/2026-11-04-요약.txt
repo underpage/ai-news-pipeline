@@ -1,0 +1,215 @@
+[TITLE] Google’s first AI data center in space is up and running
+[LINK] https://www.computerworld.com/article/4244229/googles-first-data-center-in-space-is-up-and-running.html
+[PUBLISHED] 2026-11-03 20:08 KST
+[SOURCE] Computerworld
+[TOPIC] 모델, 신기술
+[SCORE] 8
+[REASON] 우주에서 TPU 4개를 단 구글 실험 위성이 지구와 통신 시작
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+구글의 첫 우주 AI 데이터센터 위성 가동
+
+**[영문 3줄 요약 (Original)]**
+- Google's first experimental data center satellite in the Suncatcher project is now operational and has begun communicating with Earth.
+- It carries four TPUs and can generate up to one kilowatt of electricity, enough to keep an AI chip active for about 20 minutes.
+- Google will test how the chip handles temperatures and radiation in space, and plans to launch two more satellites in 2027 if the tests go well.
+
+**[국문 3줄 요약 (Translated)]**
+- 구글 선케처 프로젝트의 첫 실험용 데이터센터 위성이 가동되어 지구와 통신을 시작했다.
+- 위성에는 TPU 4개가 실려 있고 최대 1킬로와트의 전력을 생산할 수 있어 AI 칩을 약 20분간 작동시킬 수 있다.
+- 구글은 우주의 온도와 방사선에서 칩이 어떻게 작동하는지 시험할 예정이며, 시험이 잘 되면 2027년에 위성 두 기를 더 발사할 계획이다.
+
+#긍정
+---
+[TITLE] Binance says fake job interview led to $6.3 billion crypto heist
+[LINK] https://www.bleepingcomputer.com/news/security/binance-says-fake-job-interview-led-to-63-billion-crypto-heist/
+[PUBLISHED] 2026-11-04 05:05 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안, 산업
+[SCORE] 8
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+바이낸스, 가짜 채용 면접이 63억 달러 암호화폐 탈취로 이어졌다고 밝혀
+
+**[영문 3줄 요약 (Original)]**
+- Binance says North Korean hackers used a fake job interview to trick an employee into installing malware, which let them steal about $6.34 billion in digital assets on October 29.
+- The malware was previously unseen custom code that antivirus software did not detect, and the attackers used the engineer's computer and an internal AI tool to compromise two more employees and obtain credentials and a container deployment token.
+- As of November 3, about $2.85 billion in stolen assets had been frozen or intercepted, and Binance says it has rebuilt affected systems, replaced compromised devices, and revoked stolen credentials.
+
+**[국문 3줄 요약 (Translated)]**
+- 바이낸스는 북한 해커가 가짜 채용 면접으로 직원을 속여 악성코드를 설치하게 했고, 이를 통해 10월 29일 약 63억 4천만 달러 상당의 디지털 자산을 탈취했다고 밝혔다.
+- 악성코드는 이전에 알려지지 않은 맞춤형 코드여서 백신이 탐지하지 못했고, 공격자는 해당 엔지니어의 컴퓨터와 내부 AI 도구를 이용해 직원 두 명을 더 침해하여 자격 증명과 컨테이너 배포 토큰을 얻었다.
+- 11월 3일 기준 탈취 자산 약 28억 5천만 달러가 동결되거나 차단되었으며, 바이낸스는 영향받은 시스템을 재구축하고 침해된 기기를 교체했으며 탈취된 자격 증명을 폐기했다고 밝혔다.
+
+#부정
+---
+[TITLE] Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction
+[LINK] https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html
+[PUBLISHED] 2026-11-04 16:46 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 안드로이드 14~17 사용자 개입 없는 원격 코드 실행 결함 패치
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+구글, 사용자 개입 없이 원격 코드 실행이 가능한 안드로이드 치명적 결함 패치
+
+**[영문 3줄 요약 (Original)]**
+- Google's November security bulletin fixes CVE-2026-58868, a critical Android flaw affecting Android 14 through 17 that could allow remote code execution without any user action.
+- The flaw is a possible out-of-bounds write caused by a heap buffer overflow in the onOutputReceived function of FrameDecoder.cpp, and the fix arrives with security patch level 2026-11-01 or later.
+- As of November 4, the bulletin did not report any attacks exploiting its flaws, and it lists 216 vulnerabilities, 23 of them rated Critical.
+
+**[국문 3줄 요약 (Translated)]**
+- 구글은 11월 보안 공지에서 안드로이드 14부터 17까지에 영향을 주며 사용자 조작 없이 원격 코드 실행을 허용할 수 있는 치명적 결함 CVE-2026-58868을 패치했다.
+- 이 결함은 FrameDecoder.cpp의 onOutputReceived 함수에서 힙 버퍼 오버플로로 발생하는 범위 밖 쓰기 가능성이며, 보안 패치 수준 2026-11-01 이상에서 수정된다.
+- 11월 4일 기준 공지에는 이 결함들을 악용한 공격이 보고되지 않았으며, 공지에는 취약점 216개가 올라 있고 그중 23개가 치명적 등급이다.
+
+#부정
+---
+[TITLE] Attackers exploit critical Node-RED flaw to deploy Linux bot and backdoors (CVE-2026-58115)
+[LINK] https://www.helpnetsecurity.com/2026/11/03/node-red-cve-2026-58115-exploitation/
+[PUBLISHED] 2026-11-03 21:59 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] Node-RED 인증 결함 실제 악용, 산업 제품 사용자 패치 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+공격자들, Node-RED 치명적 결함을 악용해 리눅스 봇과 백도어 설치 (CVE-2026-58115)
+
+**[영문 3줄 요약 (Original)]**
+- Attackers are exploiting the authentication flaw CVE-2026-58115 in Node-RED to install a Linux bot and backdoors on unprotected servers, VulnCheck has found.
+- Siemens disclosed the flaw in August with a CVSS score of 10.0, and it affects products such as the SIMATIC IoT2050 Advanced running Industrial OS with Node-RED in versions before V4.3.4.1.
+- VulnCheck says Node-RED instances without adminAuth are being found and exploited automatically, and urges users to check whether instances are reachable from outside their network and apply updates.
+
+**[국문 3줄 요약 (Translated)]**
+- VulnCheck은 공격자들이 Node-RED의 인증 결함 CVE-2026-58115를 악용해 보호되지 않은 서버에 리눅스 봇과 백도어를 설치하고 있다고 밝혔다.
+- 지멘스가 8월에 CVSS 10.0으로 공개한 이 결함은 Node-RED가 설치된 Industrial OS의 V4.3.4.1 이전 버전을 쓰는 SIMATIC IoT2050 Advanced 같은 제품에 영향을 준다.
+- VulnCheck은 adminAuth가 없는 Node-RED 인스턴스가 자동으로 발견되어 악용되고 있다며, 외부에서 접근 가능한지 확인하고 업데이트를 적용하라고 당부했다.
+
+#부정
+---
+[TITLE] CISA Confirms Hackers Exploiting WordPress Core Flaw During Software Upgrades
+[LINK] https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html
+[PUBLISHED] 2026-11-04 14:43 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 워드프레스 코어 결함 실제 악용 확인, 사이트 운영자 패치 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+CISA, 워드프레스 코어 결함이 업그레이드 중 악용되고 있음을 확인
+
+**[영문 3줄 요약 (Original)]**
+- CISA added a WordPress Core flaw, CVE-2026-119977 (CVSS score: 8.1), to the Known Exploited Vulnerabilities catalog, citing evidence of active exploitation.
+- It is a TOCTOU race condition that could let unauthenticated attackers execute code on the server during a full-package core upgrade, and patches were released late last month.
+- Wordfence recorded more than 18,500 requests targeting staged setup-config.php installer paths in the first 21 hours after disclosure, and federal agencies have until November 6, 2026, to apply the fixes.
+
+**[국문 3줄 요약 (Translated)]**
+- CISA는 활발한 악용 증거를 근거로 워드프레스 코어 결함 CVE-2026-119977(CVSS 8.1)을 알려진 악용 취약점(KEV) 목록에 추가했다.
+- 이 결함은 TOCTOU 경쟁 조건으로, 전체 패키지 코어 업그레이드 중에 인증 없는 공격자가 서버에서 코드를 실행할 수 있으며 패치는 지난달 말에 나왔다.
+- Wordfence는 공개 후 21시간 동안 단계별 setup-config.php 설치 경로를 노린 요청 1만 8,500건 이상을 기록했고, 연방 기관은 2026년 11월 6일까지 수정을 적용해야 한다.
+
+#부정
+---
+[TITLE] 스노우플레이크 엑스페디션 2026 개막 “맡길 수 있는 AI, 조건은 데이터”
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21885
+[PUBLISHED] 2026-11-04 18:09 KST
+[SOURCE] 더에이아이
+[TOPIC] 에이전트, 개발, 모델, 산업
+[SCORE] 6
+[REASON] 기업 데이터 기반 자율 에이전트 신기능 공개, 기업 도입 담당 확인 필요
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 스노우플레이크가 4일 개막한 엑스페디션 2026에서 코딩 에이전트 코코와 업무용 에이전트 코워크의 확장, 비즈니스 온톨로지, 코텍스 AI 게이트웨이, 자율형 데이터 엔지니어링을 공개했다.
+- 코텍스 AI 게이트웨이는 모든 에이전트가 거치는 단일 통로로 도구 호출마다 사람과 같은 접근 정책과 권한을 적용하고 승인되지 않은 호출을 차단한다.
+- 코코 클라우드 에이전트는 스노우플레이크가 관리하는 격리 컨테이너에서 돌며, 엔지니어는 프로덕션 반영 여부만 결정하는 구조다.
+
+#긍정
+---
+[TITLE] "AI가 다른 AI의 가중치 직접 수정"…재학습 없이 수학 평가 점수 6배 상승
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=216971
+[PUBLISHED] 2026-11-04 12:40 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 6
+[REASON] AI가 다른 모델 가중치 직접 수정해 성능 향상
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- MIT 연구진이 AI가 다른 AI의 신경망 가중치를 직접 분석하고 수정하는 가중치공간 프로그래밍 연구 결과를 2일 공개했다.
+- GPT-6 아스트라가 큐원3.5-0.8B의 가중치 13만1072개(전체의 0.016%)를 수정해 MATH-500 점수가 7.9%에서 48.1%로 올랐지만, 이는 반복 출력 결함을 제거한 결과이며 수학 추론 능력 자체가 6배 높아졌다는 의미는 아니다.
+- 구글의 젬마 3 270M에서는 뚜렷한 성과가 없었고, 기존 미세조정보다 시간이나 비용이 적게 든다는 사실도 입증하지 못한 초기 성과이다.
+
+#중립
+---
+[TITLE] 연세대, 차세대 양자컴퓨터 가동…회로 처리량 25배↑
+[LINK] https://zdnet.co.kr/view/?no=20261104110101
+[PUBLISHED] 2026-11-04 11:38 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술, 산업
+[SCORE] 6
+[REASON] 대학 자체 시설에 IBM 양자프로세서 첫 구축
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 연세대학교가 IBM 퀀텀 나이트호크 r2를 도입해 4일 인천 송도 국제캠퍼스에서 가동식을 열었으며, IBM 퀀텀 네트워크 참여 기관 중 자체 시설에 구축한 세계 첫 사례이다.
+- 나이트호크 r2는 프로그래머블 큐비트 120개를 탑재했고 초당 10만개 이상 회로를 실행해 헤론 대비 회로 처리량이 25배 높다.
+- 연세대는 이를 슈퍼컴퓨터와 연계해 질병 기전 규명과 신약 개발 등 양자, AI, 바이오 융합 연구에 활용할 계획이다.
+
+#긍정
+---
+[TITLE] Anthropic's Message Threads cut time to first token by 35 percent for long conversations
+[LINK] https://the-decoder.com/anthropics-message-threads-cut-time-to-first-token-by-35-percent-for-long-conversations/
+[PUBLISHED] 2026-11-03 21:35 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 긴 대화에서 변경분만 전송해 첫 토큰 시간 35퍼센트 단축
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+앤스로픽의 메시지 스레드, 긴 대화에서 첫 토큰까지의 시간을 35퍼센트 단축
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic released Message Threads as a public beta on its Claude platform, which transmits only what changed since the last message instead of resending the entire conversation history.
+- It cuts time to first token by about 35 percent for requests between 500,000 and one million tokens, according to Anthropic, and the thread stays encrypted in memory and expires after five minutes of inactivity.
+- Token usage doesn't change since Claude still reads the full conversation history, and the feature works on the Claude platform and through AWS, Microsoft Foundry, and Google Cloud.
+
+**[국문 3줄 요약 (Translated)]**
+- 앤스로픽이 Claude 플랫폼에서 메시지 스레드를 공개 베타로 출시했으며, 대화 기록 전체를 다시 보내는 대신 마지막 메시지 이후 바뀐 부분만 전송한다.
+- 앤스로픽에 따르면 50만에서 100만 토큰 사이의 요청에서 첫 토큰까지의 시간이 약 35퍼센트 줄고, 스레드는 메모리에서 암호화된 상태로 유지되다가 5분간 활동이 없으면 만료된다.
+- Claude가 여전히 전체 대화 기록을 읽기 때문에 토큰 사용량은 달라지지 않으며, 이 기능은 Claude 플랫폼과 AWS, Microsoft Foundry, Google Cloud에서 쓸 수 있다.
+
+#긍정
+---
+[TITLE] Barracuda Flaws Could Be Chained to Bypass Authorization and Gain Root Access
+[LINK] https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html
+[PUBLISHED] 2026-11-04 00:59 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 배라쿠다 제품 두 결함 연쇄로 인증 우회와 루트 권한, 사용자 패치 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+배라쿠다 결함들을 연쇄하면 인증을 우회하고 루트 권한을 얻을 수 있어
+
+**[영문 3줄 요약 (Original)]**
+- Barracuda disclosed two vulnerabilities that, if chained together, could allow an attacker to bypass authorization controls and gain root access to a susceptible device.
+- They are CVE-2026-116606 (CVSS score: 9.3), a pre-authentication authorization bypass affecting only Email Security Gateway, and CVE-2026-111560 (CVSS score: 8.6), a command injection affecting six Barracuda products.
+- Exploitation requires access to the administrative interface, so Barracuda urges customers to restrict that access to trusted internal networks and verify they are running the latest firmware.
+
+**[국문 3줄 요약 (Translated)]**
+- 배라쿠다는 두 취약점을 연쇄하면 공격자가 인증 통제를 우회하고 취약한 장비의 루트 권한을 얻을 수 있다고 공개했다.
+- 두 취약점은 Email Security Gateway에만 영향을 주는 사전 인증 우회 CVE-2026-116606(CVSS 9.3)과 배라쿠다 제품 여섯 종에 영향을 주는 명령 주입 CVE-2026-111560(CVSS 8.6)이다.
+- 악용하려면 관리 인터페이스에 접근해야 하므로 배라쿠다는 접근을 신뢰할 수 있는 내부 네트워크로 제한하고 최신 펌웨어를 쓰는지 확인하라고 권고했다.
+
+#부정
+---

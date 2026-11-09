@@ -1,26 +1,33 @@
-[TITLE] LG, 소버린 AI 생태계 강화...K-AI 개방·K-보이스 엔진 개발
-[LINK] https://www.techm.kr/news/articleView.html?idxno=157085
-[PUBLISHED] 2026-11-09 11:55 KST
-[SOURCE] 테크M
+[TITLE] LG AI연구원, ‘K-엑사원 2.5’ API 전격 무료 개방…8주 만에 AI 성능 70%↑, 글로벌 프런티어 AI 정조준
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42636
+[PUBLISHED] 2026-11-09 10:00 KST
+[SOURCE] 인공지능신문
 [TOPIC] 에이전트, 개발, 모델
 [SCORE] 8
+[REASON] LG 독자 파운데이션 모델 무료 API 개방
 [FIELD] AI 모델
 [BODY]
-LG AI연구원, K-엑사원 2.5 API 무료 제공
-LG유플러스, 'K-보이스 AI 얼라이언스' 출범
-	
-	
-LG가 인공지능(AI) 지배력 강화에 나섰다. '독자 AI 파운데이션 모델(독파모)'을 개방했다. 한국어 특화 음성 엔진도 개발한다.
-9일 LG AI연구원은 'K-엑사원 2.5' 애플리케이션프로그래밍환경(API)을 무료 개방한다고 밝혔다.
-K-엑사원 2,5는 지난 8월 선보인 독파모 2차 모델 기반이다. 추가 학습을 적용한 기술 검증 모델이다.
-에이전틱(자율) AI 영역에서 프런티어급 글로벌 오픈웨이트 AI 모델과 경쟁 가능한 성능을 보였다. ▲딥시크 V4.1 플래시 ▲GLM 5.3(맥스)와 비교했다. ▲오토메이션 벤치 74.6점(딥시크 74.9점/GLM 71.6점) ▲클로-이벨 77.3점(딥시크 75.8점/GLM 77.6점) ▲브라우즈컴프 78.0점(딥시크 75.8점/GLM 79.0점) ▲'SWE-벤치 프로 59.2점(딥시크 58.4점/GLM 64.0점)을 기록했다.
-김이른 LG AI연구원 엑사원랩장은 "내부 분석 결과 24개 평가 지표를 종합한 성능은 8월 공개 모델 대비 70% 이상 향상된 것을 확인했다"라고 안내했다.
-LG AI연구원은 독파모 3차수 K-엑사원에 엔비디아 '다이나모' 도입을 검토 중이다.
-임우형 LG AI연구원 공동 연구원장은 "현재 3차수 모델 개발에 역량을 모으고 있으며 이번 API 공개로 더 많은 개발자와 기업이 달라진 성능을 직접 체감하길 기대한다"고 소개했다.
-LG유플러스는 'K-보이스 엔진' 개발에 나섰다. ▲서울대학교 ▲연세대 ▲카이스트와 손을 잡았다. 'K-보이스 AI 얼라이언스'를 출범했다.
-음성은 사람과 AI가 소통하는 주요 수단이다. 기존 음성 AI는 사람이 말을 하면 문자로 변환해 답변을 생성하고 다시 음성으로 전달했다. K-보이스 AI 얼라이언스는 음성을 이해하고 음성으로 답하는 음성 대 음성(V2V: Voice-to-Voice) 기술을 공동 연구한다. 해외 기술 의존도를 낮추고 한국어 대화 환경에 최적화할 계획이다. 한국어 음성 AI 평가 기준 등도 확보할 방침이다. LG유플러스는 이를 통해 흡수한 기술을 다양한 서비스에 도입할 예정이다.
-이상엽 LG유플러스 최고기술책임자(CTO)는 "음성은 누구나 쉽고 자연스럽게 AI를 이용할 수 있게 하는 중요한 수단"이라며 "이번 산학 협력을 통해 한국인과 한국어에 특화된 K-V보이스 AI 기술을 확보하고 고객에게 새로운 음성 AI 경험을 제공하고 이를 통해 노년층 등 AI 시대에 소외되는 계층이 줄어들 수 있도록 기술 경쟁력을 강화해 나가겠다"고 말했다.
-윤상호 기자 crow@techm.kr
+에이전틱 AI 평가서 딥시크·GLM과 경쟁…업무 자동화·웹 탐색·코딩 등 4개 핵심 지표 성능 공개
+LG AI연구원이 독자 개발한 인공지능(AI) 파운데이션 모델의 종합 성능을 단 8주 만에 70% 이상 끌어올리며 글로벌 프런티어 AI 경쟁에 속도를 내고 있다.
+특히, AI가 스스로 계획을 수립하고 외부 도구를 활용해 업무를 수행하는 에이전틱 AI 분야에서 중국의 딥시크와 GLM 등 글로벌 오픈 웨이트 모델에 근접하거나 일부 성능을 앞서는 결과를 확보했다. LG AI연구원은 개선된 모델의 응용프로그램 인터페이스(API)를 전면 무료로 개방해 실제 서비스 환경에서 기술 검증을 확대한다.
+LG AI연구원은 9일, 성능을 개선한 ‘K-엑사원 2.5(K-EXAONE 2.5)’를 전격 공개하고, 개발자와 기업, 연구기관 등이 무료로 활용할 수 있도록 API 서비스를 제공한다고 밝혔다. K-엑사원 2.5는 지난 8월 공개한 독자 AI 파운데이션 모델 2차수 버전에 추가 학습을 적용한 기술 검증 모델이다.
+LG AI연구원은 새로운 3차수 모델 개발에 앞서 기존 모델의 학습 방법론을 고도화하고, 이를 통해 성능을 얼마나 개선할 수 있는지 확인하는 데 집중했다. 그 결과 자체 측정한 24개 평가 지표의 종합 성능이 8월 공개 모델보다 70% 이상 향상된 것으로 나타났다. 이번 성과는 데이터 품질과 학습 방법론의 개선을 통해 기존 모델의 성능을 단기간에 끌어올릴 수 있다는 가능성을 확인했다는 점에서 의미가 있다.
+특히 에이전틱 AI의 실제 업무 수행 능력을 평가하는 주요 벤치마크에서 중국의 딥시크(DeepSeek) V4.1 Flash와 지엘엠(GLM) 5.3(max) 등 글로벌 프런티어급 오픈 웨이트 모델과 경쟁 가능한 결과를 기록했다.
+LG AI연구원이 공개한 평가 결과에 따르면, 서비스형 소프트웨어(SaaS) 도구를 이용한 업무 자동화 능력을 측정하는 ‘오토메이션 벤치(AutomationBench)’에서 K-엑사원 2.5는 74.6점을 기록했다. 딥시크의 74.9점과 거의 비슷한 수준이며, GLM의 71.6점보다 3.0점 높았다.
+업무 환경에서 AI 에이전트의 문제 해결 능력을 평가하는 ‘클로 이밸(Claw-Eval)’에서는 77.3점을 얻었다. 딥시크의 75.8점보다 1.5점 높았으며, GLM의 77.6점과는 0.3점 차이를 보였다.
+웹을 탐색해 필요한 정보를 찾아내는 능력을 측정하는 ‘브라우즈컴프(BrowseComp)’에서는 78.0점을 기록했다. 딥시크의 75.8점을 2.2점 앞섰으며, GLM의 79.0점과는 1.0점 차이를 나타냈다. 소프트웨어 개발과 코드 수정 능력을 평가하는 ‘SWE-벤치 프로(SWE-Bench Pro)’에서는 59.2점을 기록해 딥시크의 58.4점보다 0.8점 높았지만, GLM의 64.0점에는 미치지 못했다.
+공개된 네 가지 지표를 종합하면 K-엑사원 2.5는 딥시크보다 세 개 항목에서 높은 점수를 기록했으며, GLM과 비교해서는 한 개 항목에서 앞섰다. 이는 특정 에이전틱 AI 작업에서 글로벌 모델과 경쟁할 수 있는 성능을 확보했음을 보여준다.
+다만 이번 결과는 LG AI연구원이 오픈 데이터셋을 활용해 자체 측정한 수치로, 독립적인 제3자 평가 결과는 아니다. 또한 70% 이상의 성능 향상은 24개 평가 지표를 종합한 내부 분석 결과이며, 공개된 네 가지 벤치마크에서 각각 70% 이상 개선됐다는 의미는 아니다.
+김이른 LG AI연구원 엑사원랩장은 “내부 분석 결과 24개 평가 지표를 종합한 성능은 8월 공개 모델 대비 70% 이상 향상된 것을 확인했다”며 “이번 기술 검증 모델을 통해 빠르게 변하는 글로벌 벤치마크 환경에 대응할 핵심 학습 기술을 자체 확보했고, 프런티어급 성능을 구현할 기반을 마련했다”고 설명했다.
+LG AI연구원은 이번 성능 개선을 실제 서비스 환경에서도 검증하기 위해 K-엑사원 2.5 API를 전면 무료로 개방했다. 개발자와 스타트업, 기업, 연구기관 등 누구나 공식 개발자 플랫폼에서 API 키를 발급받으면 별도 이용 비용 없이 모델을 서비스 개발과 연구에 활용할 수 있다.
+공식 API 문서와 이용 안내는 엑사원 개발자 플랫폼(다운)에서 확인할 수 있다. 이번 무료 개방은 자체 벤치마크에서 확인한 성능을 실제 개발 환경으로 확장한다는 점에서 주목된다. 다양한 개발자와 기업이 모델을 직접 활용하면 업무 자동화와 정보 검색, 소프트웨어 개발 등 실제 응용 분야에서 모델의 활용 가능성과 개선 과제를 확인할 수 있기 때문이다.
+AI 추론 인프라의 효율성과 서비스 확장성을 높이기 위한 엔비디아(NVIDIA)와의 기술 협력도 추진한다. LG AI연구원은 엔비디아의 AI 추론 인프라 최적화 기술인 ‘다이나모(Dynamo)’ 적용을 검토하고 있다. 엔비디아는 앞서 K-엑사원에 맞춘 다이나모 활용 가이드를 공개한 바 있다.
+다이나모는 대규모 AI 모델의 추론 요청을 효율적으로 처리하기 위한 기술로, AI 서비스 운영 과정에서 연산 자원 활용과 처리 효율을 개선하는 데 활용할 수 있다. LG AI연구원은 이를 통해 향후 모델의 실제 서비스 적용과 운영 규모 확대에 필요한 기술적 기반을 강화한다는 구상이다.
+LG AI연구원은 이번 기술 검증 결과를 차기 독자 AI 파운데이션 모델 개발에도 반영할 계획이다. 데이터 품질 개선과 사후 학습, 강화 학습 등 K-엑사원 2.5에서 검증한 독자 학습 기술을 3차수 모델에 적용하고, 2027년 1월까지 글로벌 프런티어급 성능을 갖춘 엑사원 모델을 완성한다는 목표다.
+임우형 LG AI연구원 공동 연구원장은 “현재 3차수 모델 개발에 역량을 모으고 있으며, 이번 API 공개로 더 많은 개발자와 기업이 달라진 성능을 직접 체감하길 기대한다”며 “내년 1월까지 프런티어급 성능의 엑사원 모델을 완성하는 데 집중하겠다”고 강조했다.
+이번 발표는 국내 AI 파운데이션 모델 개발 경쟁이 단순한 모델 공개를 넘어 학습 효율 개선과 실사용 성능 검증으로 확대되고 있음을 보여준다. 특히 에이전틱 AI가 기업의 업무 자동화와 소프트웨어 개발 등으로 확산되면서 모델의 지식 처리 능력뿐 아니라 도구 활용과 복합 작업 수행 능력이 중요한 평가 기준으로 부상하고 있다.
+LG AI연구원이 제시한 8주간의 성능 개선 성과 역시 이러한 기술 경쟁의 변화를 반영한다. 앞으로 외부 평가와 실제 서비스 환경에서 성능 개선 효과가 얼마나 재현되는지가 중요한 검증 과제가 될 전망이다.
+특히 K-엑사원 2.5의 무료 API 개방은 국내 개발자와 기업이 국산 AI 모델을 직접 평가하고 응용 서비스를 개발할 수 있는 기회를 확대한다는 점에서 의미가 있다. 향후 실제 이용 과정에서 확인되는 성능과 차기 모델의 기술적 완성도가 국내 AI 생태계의 경쟁력 강화로 이어질 수 있을지 주목된다.
 ---
 [TITLE] 딥시크 하네스, 일일 사용자 154만명…미국 주도 AI 에이전트 시장 도전
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217158
@@ -28,7 +35,6 @@ LG유플러스는 'K-보이스 엔진' 개발에 나섰다. ▲서울대학교 �
 [SOURCE] AI타임스
 [TOPIC] 에이전트, 개발
 [SCORE] 8
-[REASON] 딥시크 에이전트 생태계 급성장 확인
 [FIELD] AI 에이전트
 [BODY]
 딥시크의 AI 에이전트 플랫폼 '딥시크 하네스(DeepSeek Harness)'가 출시 3개월 만에 일일 사용자 154만명을 돌파했다. 외부 개발자가 제작한 플러그인도 3만5000개에 달하면서, 딥시크는 공식 마켓플레이스를 구축하고 개발자 지원에 나서기로 했다.
@@ -103,64 +109,6 @@ Ling-3.2-flash coordinates specialist agents using shared context to turn Q2 fin
 현재 링 3.2 플래시는 API와 온라인 채팅 서비스로 이용할 수 있다. 앤트그룹은 앞서 링 시리즈의 모델 가중치를 공개해 왔지만, 이번 모델의 가중치 공개 계획은 아직 발표하지 않았다.
 임대준 기자 ydj@aitimes.com
 ---
-[TITLE] 유아이패스, 기업 업무 지식 AI가 실행하는 ‘업무 지도’로 전환…‘카토그래퍼’ 출시
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42647
-[PUBLISHED] 2026-11-09 10:59 KST
-[SOURCE] 인공지능신문
-[TOPIC] 에이전트
-[SCORE] 7
-[REASON] 사내 업무 지식 에이전트 변환 도구 출시
-[FIELD] AI 에이전트
-[BODY]
-문서·직원 경험에 흩어진 업무 규칙과 예외 처리 과정 통합…에이전틱 AI 자동화 설계에 활용
-기업 내부에 흩어져 있는 업무 규칙과 직원들의 경험, 예외 처리 방식 등을 인공지능(AI) 에이전트가 활용할 수 있는 구조화된 업무 지도로 전환하는 기술이 등장했다. 단순히 업무 절차를 시각화하는 것을 넘어 실제 업무 수행 과정에서 발생하는 판단과 예외 상황까지 기록하고, 이를 AI 에이전트와 자동화 시스템의 설계·운영에 활용하는 방식이다.
-기업 자동화 전문기업 유아이패스(UiPath)는 기업의 운영 지식을 통합해 실행 가능한 업무 지도를 구축하는 ‘유아이패스 카토그래퍼(UiPath Cartographer)’를 출시했다고 9일 밝혔다. 이 신제품의 핵심은 기업의 업무가 실제로 수행되는 방식을 체계적으로 정리한 ‘맵 오브 워크(Map of Work)’를 구축하는 것이다. 기업이 보유한 문서와 업무 규칙, 담당자의 판단, 예외 처리 경험 등을 연결해 AI 자동화에 필요한 운영 맥락을 확보하도록 설계됐다.
-그동안 기업들은 고객과 계약, 청구서, 거래 내역 등 업무 데이터를 디지털화하고 관리하는 데 집중해 왔다. 그러나 실제 업무가 어떤 규칙에 따라 진행되고, 예상하지 못한 상황이 발생했을 때 담당자가 어떤 판단을 내리는지에 관한 지식은 충분히 체계화하지 못했다.
-이러한 운영 지식은 직원 개인의 경험이나 부서별 문서, 스프레드시트, 메신저 대화 등에 분산돼 있는 경우가 많다. 새로운 자동화 프로젝트를 추진할 때마다 담당자 인터뷰와 자료 수집을 반복해야 하는 이유다.
-카토그래퍼는 이처럼 분산된 정보를 통합해 업무의 실제 수행 구조를 파악하고, 자동화 시스템 구축에 필요한 설계 문서와 사양으로 연결한다.
-비즈니스 분석가는 가이드형 대화를 통해 업무 절차와 규칙, 예외 상황을 정리할 수 있다. 시스템은 수집한 정보를 바탕으로 해당 기업의 업무 목표와 운영 환경에 맞는 업무 지도를 구성하고, 개선이 필요한 프로세스를 파악하도록 지원한다.
-특히 업무 지도가 단순한 일회성 문서에 머물지 않도록 변경 관리 기능을 적용했다. 실제 업무 수행 과정에서 새롭게 확인된 판단이나 규칙은 변경 제안으로 기록되며, 지정된 담당자가 이를 승인하거나 거부할 수 있다.
-승인되지 않은 변경 사항이 자동으로 적용되지 않도록 설계해 AI 자동화의 유연성과 기업의 통제 요구를 함께 반영했다. 이 과정에서 활용되는 ‘디시전 레저(Decision Ledger)’는 업무 전반에서 어떤 결정이 내려졌으며 그 이유가 무엇인지 기록하고 관리하는 기능이다. 기록된 의사결정은 검토와 승인 과정을 거쳐 새로운 업무 규칙이나 운영 지식으로 반영될 수 있다.
-이를 통해 기업은 업무 프로세스가 변경되더라도 이전의 판단 근거와 적용 규칙을 추적하고, 다음 자동화 개선 과정에 활용할 수 있다.
-카토그래퍼는 기업의 업무 특성에 따라 세 가지 방식으로 활용할 수 있다. 먼저 ‘사전 구축 맵(Prebuilt Maps)’은 대출 실행과 의료보험 청구 심사, 구매부터 대금 지급까지의 업무 등 주요 산업에서 반복적으로 수행되는 프로세스를 미리 설계한 형태로 제공한다.
-‘프로세스 아틀라스(Process Atlas)’는 여러 산업의 복잡한 업무 절차를 정리한 라이브러리다. 업무별 핵심성과지표(KPI)와 벤치마크, 표준 정책, 규칙, 케이스 플랜 등을 포함해 기업이 자동화 설계에 필요한 정보를 참고할 수 있도록 한다.
-기업 고유의 복잡한 업무나 엄격한 관리 기준이 적용되는 프로세스는 ‘직접 구축(Build Your Own)’ 기능을 활용할 수 있다. 카토그래퍼가 해당 조직의 업무 특성을 파악하고 이를 바탕으로 자동화 시스템 구축에 필요한 청사진을 제공한다. 이렇게 구축된 업무 지도는 유아이패스 플랫폼의 AI 에이전트와 워크플로우, 자동화 기능을 설계하는 데 활용된다.
-기업은 카토그래퍼를 통해 정리한 업무 구조를 기반으로 AI 에이전트와 자동화 시스템을 구축하고, ‘유아이패스 마에스트로(UiPath Maestro)’를 통해 여러 업무의 실행을 통합적으로 조율할 수 있다.
-카토그래퍼는 기존 유아이패스 플랫폼에서 사용되는 신원 관리와 보안, 거버넌스 체계를 공유한다. 이를 통해 업무 지도와 자동화 시스템을 별도로 관리하는 데 따른 복잡성을 줄이고, 기업이 정의한 접근 권한과 관리 정책을 적용할 수 있도록 했다.
-이번 제품은 기업의 AI 도입 과정에서 중요한 과제로 떠오른 업무 맥락의 체계화에 초점을 맞췄다는 점에서 주목된다. AI 에이전트가 실제 기업 업무를 수행하려면 단순히 데이터에 접근하거나 정해진 명령을 실행하는 것만으로는 충분하지 않다. 업무가 진행되는 순서와 판단 기준, 예외 상황에 대한 대응 방식, 담당자의 승인 권한 등을 이해할 수 있어야 한다.
-특히 여러 AI 에이전트와 자동화 시스템이 하나의 업무에 참여하는 에이전틱 AI 환경에서는 각 시스템이 동일한 업무 규칙과 운영 지식을 기반으로 작동하도록 관리하는 것이 중요하다.
-카토그래퍼는 이러한 운영 지식을 기업이 직접 정의하고 소유하도록 설계됐다. 업무 수행 과정에서 발생한 새로운 판단과 변경 사항을 지속적으로 반영하면서도, 실제 규칙 변경에는 담당자의 승인을 요구하는 구조다.
-다니엘 디네스(Daniel Dines) 유아이패스 창업자 겸 최고경영자(CEO)는 “기업들은 수년간 데이터를 디지털화해 왔지만, 그 데이터가 실제로 어떻게 활용되는지에 대한 기업 맥락은 포착하지 못했다”고 말했다.
-이어 “프로세스 맵이 업무가 어떻게 운영되도록 설계됐는지를 보여준다면, 카토그래퍼는 모든 예외 상황과 판단을 포함해 업무가 실제로 어떻게 운영되는지에 대한 운영 지식을 밝혀낸다”며 “두 요소를 모두 포착하고 일관되게 유지하도록 지원하는 유아이패스 최초의 제품”이라고 설명했다.
-이번 출시는 기업용 AI 자동화의 경쟁력이 개별 작업의 실행 속도나 자동화 범위를 넘어, 업무 수행에 필요한 조직의 지식과 의사결정 구조를 얼마나 정확하게 반영하고 관리할 수 있는지로 확대되고 있음을 보여준다.
-향후 실제 도입 효과는 기업 내부에 분산된 운영 지식을 얼마나 정확하게 수집하고 구조화할 수 있는지, 변화하는 업무 규칙을 얼마나 신속하게 반영할 수 있는지, 그리고 AI 에이전트의 실행 과정에서 일관성과 통제 가능성을 유지할 수 있는지에 따라 평가될 전망이다.
----
-[TITLE] Show GN: Aptly - 작업에 맞는 Claude Code·Codex 서브에이전트 모델과 effort를 추천
-[LINK] https://news.hada.io/topic?id=36852&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[PUBLISHED] 2026-11-09 09:16 KST
-[SOURCE] GeekNews
-[TOPIC] 에이전트, 개발, 모델
-[SCORE] 7
-[REASON] 에이전트 작업별 최적 모델 자동 추천 도구
-[FIELD] AI 에이전트
-[BODY]
-Aptly는 OpenAI Decisions API를 이용해 설정된 모델 후보 목록에서 서브에이전트의 모델과 추론 프로필을 추천하는 로컬 MCP 서버입니다.
-작업에 맞는 실행 프로필을 선택해 불필요한 토큰 사용과 비용을 줄이는 것이 목적입니다.
-주요 기능은 다음과 같습니다.
-- Codex와 Claude Code 지원
-- PreToolUse Hook을 통한 지원 대상 서브에이전트 호출의 기본 모델 자동 선택
-- 사용자가 명시한 모델과 추론 강도 보존
-- 모델 후보 설정 및 MCP·CLI를 통한 직접 추천
-분류에는 최소한의 작업 요약을 Decisions API로 전달합니다. 실제 실행과 권한 결정은 기존 Codex 또는 Claude Code가 담당합니다.
-소규모 README 번역 검토 시험에서는 서브에이전트 검토와 분류 비용을 합친 API 환산 비용이 약 52~58% 감소했습니다.
-Node.js 24 이상과 OpenAI API 키가 필요합니다.
-npm install -g aptly@latest --allow-scripts=aptly  
-aptly set default  
-aptly set env OPENAI_API_KEY  
-aptly --version  
-설정 후 Codex 또는 Claude Code를 재시작 하십시오. Codex에서는 /hooks에서 Hooks을 검토하고 승인해야 합니다.
-저장소와 설치 안내: https://github.com/abruption/aptly
----
 [TITLE] 전 세계 대부분 지역에서 X 브랜드의 어떤 차량이든 잠금 해제하기
 [LINK] https://news.hada.io/topic?id=36867&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [PUBLISHED] 2026-11-09 12:32 KST
@@ -229,33 +177,86 @@ WAF와 OpenIDM 라우팅을 함께 우회
 - 미국, 캐나다, 유럽의 OpenIDM 환경에는 더 많은 보안 조치가 적용돼 있었으며, 별도의 더 복잡한 공격 경로는 Sam Curry의 연구에 공개됨
 - 두 연구를 합쳐 최종적으로 확인한 원격 제어 범위는 호주, 미국, 캐나다이며, 잠금 해제와 엔진 시동 등이 가능했음
 ---
-[TITLE] 카카오모빌리티, 엔비디아와 레벨4 자율주행 기술 협력…기아 PBV에 적용
-[LINK] https://zdnet.co.kr/view/?no=20261109111048
-[PUBLISHED] 2026-11-09 11:19 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 모델, 신기술
-[SCORE] 6
-[FIELD] 신기술
+[TITLE] [AI 리뷰] 메타, AI 에이전트가 직접 활용하는 디자인 시스템 ‘아스트릭스’ 오픈소스 공개…1만 3,000개 앱에 적용한 기술 개방
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42651
+[PUBLISHED] 2026-11-09 12:39 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] 에이전트용 디자인 시스템 오픈소스 공개
+[FIELD] AI 에이전트
 [BODY]
-카카오모빌리티가 엔비디아와 손잡고 레벨4 자율주행 기술 개발에 나선다. 자체 개발한 자율주행 인공지능(AI)에 엔비디아의 고성능 컴퓨팅·센서·안전 기술을 결합하고, 기아의 목적기반차량(PBV)에 우선 적용해 무인 자율주행 서비스 상용화를 추진한다.
-카카오모빌리티는 9일 서울 강남구 웨스틴 서울 파르나스에서 엔비디아와 자율주행 기술 협력을 위한 업무협약(MOU)을 체결한다고 밝혔다.
-협약식에는 김진규 카카오모빌리티 피지컬 AI 부문 부사장과 가우라브 아가왈 엔비디아 자동차 사업부문 수석 디렉터 등 양사 관계자들이 참석한다.
-이번 협약에 따라 양사는 카카오모빌리티의 독자적인 자율주행 AI 모델에 엔비디아의 컴퓨팅 인프라와 센싱 기술, 안전 시스템을 결합해 레벨4 자율주행 시스템을 개발한다.
-레벨4는 정해진 운행 조건과 구역 내에서 운전자의 개입 없이 차량이 스스로 주행할 수 있는 자율주행 단계다.
-카카오모빌리티는 강남 도심에서 자율주행 기술을 실증해 온 경험을 바탕으로 인지부터 판단까지 하나의 AI 모델로 처리하는 엔드투엔드(E2E) 자율주행 기술을 고도화하고 있다.
-이번 협력을 통해 엔비디아의 자율주행 컴퓨팅 플랫폼 '드라이브 AGX 토르(NVIDIA DRIVE AGX Thor)' 2개를 탑재한 고성능 자율주행 컴퓨팅 유닛(ADCU)을 도입할 계획이다. 이를 통해 대규모 AI 연산을 실시간으로 처리하는 성능을 강화한다.
-또한 엔비디아의 센서·컴퓨팅 레퍼런스 아키텍처인 '하이페리온(Hyperion)'을 활용해 차량과 센서, 컴퓨팅 장치 간 호환성과 시스템 안정성을 높일 예정이다.
-자율주행 소프트웨어 개발과 검증 과정에는 엔비디아의 통합 안전 시스템 '헤일로스(NVIDIA Halos)'를 적용한다. 개발부터 실제 서비스 적용까지 안전성을 검증할 수 있는 체계를 마련한다는 구상이다.
-양사는 기아의 PBV를 기반으로 통합 기술 개발을 우선 추진한다.
-카카오모빌리티는 지난 7월 기아와 자율주행 서비스용 PBV 개발을 위한 파트너십을 체결한 바 있다. 이번 엔비디아와의 협력을 통해 자체 자율주행 소프트웨어와 엔비디아의 AI 컴퓨팅·안전 기술을 기아 PBV에 통합해 레벨4 자율주행 서비스용 차량 개발과 공급을 추진할 계획이다.
-카카오모빌리티는 국내에서 자율주행 기술을 검증하고 상용화 기반을 마련한 뒤 중장기적으로 글로벌 시장 진출 가능성도 모색할 방침이다.
-관련기사
-- CJ올리브영, 美 샌디에이고 첫 진출…내년 상반기까지 7개 매장 운영2026.11.09
-- 메디팔, ASLS KOREA 2026서 병원 운영 자동화 AI 전략 공개2026.11.09
-- KT알파쇼핑, KT소닉붐 프로농구 경기장서 브랜드데이 개최2026.11.09
-- 후카후카스튜디오, '유오코'로 브랜드 통합…캐릭터 IP 사업 확대2026.11.09
-류긍선 카카오모빌리티 대표는 "독자적 자율주행 기술과 모빌리티 플랫폼, 기술협력 생태계를 바탕으로 레벨4 기술을 내재화해 왔다"며 "엔비디아와의 협력으로 E2E 자율주행 기술 고도화에 속도를 내고 소프트웨어·부품·완성차를 연결하는 글로벌 기술 생태계를 구축하겠다"고 말했다.
-리시 달 엔비디아 자동차 부문 부사장은 "엔비디아 하이페리온은 레벨4 자율주행 구현에 필요한 센서와 컴퓨팅 기술 기반을 제공하고, 헤일로스는 개발부터 실제 서비스 적용까지 안전 체계를 지원한다"며 "이번 협력을 통해 한국에서 안전하고 확장 가능한 자율주행 서비스 개발이 가속화되기를 기대한다"고 밝혔다.
+8년간 내부에서 개발한 UI 설계 기술 공개…150개 이상 컴포넌트·템플릿·디자인 규칙 제공
+인공지능이 소프트웨어 코드를 작성하는 수준을 넘어 기업의 디자인 규칙을 이해하고, 이를 활용해 사용자 인터페이스(UI)를 구현하는 개발 환경이 확산되고 있다.
+메타(Meta)가 공개한 오픈소스 디자인 시스템 ‘아스트릭스(Astryx)’는 이러한 변화를 보여주는 사례다. AI 에이전트가 사전에 정의된 UI 구성요소와 개발 명령어를 직접 활용하도록 설계해, 생성형 AI가 화면을 임의로 구성하는 과정에서 발생할 수 있는 오류와 디자인 불일치를 줄이는 데 초점을 맞췄다.
+메타는 지난 6월 내부에서 약 8년간 개발해 온 아스트릭스를 오픈소스로 공개했다. 회사의 공식 깃허브(GitHub)에 따르면 아스트릭스는 메타 내부에서 가장 널리 사용되는 디자인 시스템으로 발전했으며, 1만 3,000개 이상의 애플리케이션에 적용됐다.
+아스트릭스는 버튼과 입력창, 메뉴, 대화상자 등 150개 이상의 재사용 가능한 UI 컴포넌트를 비롯해 화면 구성 템플릿, 브랜드별 디자인 테마, 다크 모드, 접근성 지원 기능을 제공한다. 웹 애플리케이션 개발에 사용되는 리액트(React) 19 이상과 메타의 스타일링 기술인 스타일엑스(StyleX)를 기반으로 구축됐으며, 현재 베타 버전으로 제공되고 있다.
+기존 디자인 시스템이 개발자와 디자이너의 생산성을 높이는 데 집중했다면, 아스트릭스는 AI 코딩 에이전트도 동일한 설계 체계를 활용하도록 설계됐다는 점에서 차별화된다.
+일반적으로 AI에게 웹사이트나 기업용 대시보드 제작을 요청하면 모델은 학습한 코드 패턴과 사용자의 지시를 바탕으로 버튼, 메뉴, 표, 입력 양식 등을 생성한다. 이 과정에서 실제 존재하지 않는 컴포넌트 속성을 사용하거나 화면마다 서로 다른 디자인 규칙을 적용하는 문제가 발생할 수 있다.
+아스트릭스는 이러한 문제를 줄이기 위해 UI 컴포넌트의 사용 방법과 속성, 화면 구성 규칙을 개발 도구와 연결했다. AI 에이전트는 필요한 구성요소를 검색하고 관련 문서를 확인한 뒤, 사전에 정의된 템플릿과 코드를 활용해 화면을 구현할 수 있다.
+핵심 도구는 명령줄 인터페이스(CLI)다. 개발자나 AI 에이전트는 명령어를 통해 특정 컴포넌트의 사용법을 조회하거나 대시보드와 입력 양식 등의 템플릿을 불러올 수 있다. 특히 명령어와 인수, 옵션, 응답 형식 등을 구조화된 제이슨(JSON) 데이터로 제공하는 기능은 AI가 개발 도구의 사용법을 추측하지 않고 정해진 규격에 따라 활용하도록 지원한다.
+모델 컨텍스트 프로토콜(MCP) 연동도 주목할 부분이다. MCP는 AI 모델이 외부 도구와 데이터에 접근할 수 있도록 지원하는 표준 프로토콜이다. 아스트릭스는 이러한 연결 방식을 통해 AI 코딩 에이전트가 디자인 시스템의 구성요소와 템플릿 정보를 활용할 수 있도록 한다.
+예를 들어 개발자가 AI 에이전트에게 고객관리 시스템의 대시보드를 제작하도록 지시하면, AI는 화면 구성에 필요한 표와 검색창, 필터, 버튼 등의 컴포넌트를 조회하고 해당 디자인 시스템의 규칙에 맞춰 코드를 작성할 수 있다. 매번 새로운 UI 요소를 처음부터 생성하는 대신 기존 구성요소를 재사용하는 방식이다.
+아스트릭스는 디자인의 일관성을 유지하면서도 기업별 맞춤형 화면을 구현할 수 있도록 설계됐다. 색상과 글꼴, 간격 등의 시각적 속성을 CSS 변수로 관리하기 때문에 핵심 컴포넌트 코드를 수정하지 않고도 브랜드에 맞는 디자인을 적용할 수 있다.
+또한 개발자가 특정 컴포넌트를 세부적으로 수정해야 할 경우에는 ‘스위즐(swizzle)’ 기능을 통해 해당 컴포넌트의 소스코드를 프로젝트로 가져와 직접 변경할 수 있다. 기존 디자인 시스템을 사용하면서도 필요한 부분에서는 독자적인 기능과 디자인을 구현할 수 있도록 한 것이다.
+기술적으로는 스타일엑스를 활용해 스타일을 빌드 과정에서 정적 CSS로 생성한다. 개발자가 아스트릭스를 사용하는 경우 미리 생성된 CSS를 불러오는 방식이므로 별도의 스타일엑스 빌드 플러그인을 반드시 구성할 필요는 없다. 이를 통해 기존 웹 개발 환경과의 통합 부담을 줄이도록 했다.
+메타는 아스트릭스의 설계 원칙으로 개발자와 AI가 하나의 시스템을 공유하는 방식을 제시하고 있다. API와 컴포넌트 명명 규칙, 문서, CLI를 일관되게 구성해 사람이 익힌 개발 방식과 AI가 활용하는 도구의 구조를 최대한 일치시키는 것이다.
+이러한 접근은 AI 코딩 도구가 확산되는 상황에서 의미가 있다. AI가 코드를 빠르게 생성하더라도 기업이 사용하는 디자인 규칙과 실제 컴포넌트 구조를 정확히 이해하지 못하면 결과물을 수정하고 검증하는 데 추가적인 비용이 발생하기 때문이다.
+아스트릭스와 같은 구조화된 디자인 시스템은 AI가 사용할 수 있는 기술적 기준을 명확히 제공함으로써 코드 생성 과정의 불확실성을 줄일 가능성이 있다. 특히 여러 개발팀이 동일한 제품을 관리하거나 다양한 브랜드의 서비스를 운영하는 기업에서는 UI의 일관성과 유지보수 효율을 높이는 데 활용할 수 있다.
+다만 아스트릭스가 AI가 생성하는 UI의 정확성이나 품질을 자동으로 보장하는 것은 아니다. 실제 개발에서는 컴포넌트의 적절한 선택과 업무 요구사항 반영, 접근성 검증, 기능 테스트 등이 여전히 필요하다. 현재 공개 버전도 베타 단계로, 일부 실험적 구성요소는 안정적인 정식 패키지로 제공되지 않고 있다.
+메타는 아스트릭스를 MIT 라이선스로 공개(다운)해 외부 개발자와 기업이 자유롭게 사용하고 수정할 수 있도록 했다. 공식 깃허브 저장소에서는 소스코드와 설치 방법, 개발 문서를 제공하고 있으며, 별도의 공식 문서 사이트에서 컴포넌트와 화면 구성 사례를 확인할 수 있다.
+이번 공개의 의미는 메타가 축적한 UI 개발 기술을 외부에 제공했다는 사실에만 있지 않다. 사람이 읽고 사용하는 데 최적화됐던 소프트웨어 개발 도구를 AI 에이전트도 직접 이해하고 활용할 수 있는 구조로 전환했다는 점이 중요하다.
+생성형 AI가 소프트웨어 개발에 본격적으로 활용되면서 앞으로는 모델의 코드 작성 능력뿐 아니라, 기업의 개발 규칙과 설계 자산을 얼마나 정확하게 이해하고 재사용할 수 있는지가 경쟁력을 좌우할 가능성이 높다.
+아스트릭스는 이러한 변화 속에서 디자인 시스템이 단순한 UI 구성요소 모음을 넘어, 사람과 AI 에이전트가 함께 소프트웨어를 개발하는 공통 기반으로 발전하고 있음을 보여준다.
+---
+[TITLE] 유아이패스, 기업 업무 지식 AI가 실행하는 ‘업무 지도’로 전환…‘카토그래퍼’ 출시
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42647
+[PUBLISHED] 2026-11-09 10:59 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트
+[SCORE] 6
+[REASON] 사내 업무 지식 에이전트 변환 도구 출시
+[FIELD] AI 에이전트
+[BODY]
+문서·직원 경험에 흩어진 업무 규칙과 예외 처리 과정 통합…에이전틱 AI 자동화 설계에 활용
+기업 내부에 흩어져 있는 업무 규칙과 직원들의 경험, 예외 처리 방식 등을 인공지능(AI) 에이전트가 활용할 수 있는 구조화된 업무 지도로 전환하는 기술이 등장했다. 단순히 업무 절차를 시각화하는 것을 넘어 실제 업무 수행 과정에서 발생하는 판단과 예외 상황까지 기록하고, 이를 AI 에이전트와 자동화 시스템의 설계·운영에 활용하는 방식이다.
+기업 자동화 전문기업 유아이패스(UiPath)는 기업의 운영 지식을 통합해 실행 가능한 업무 지도를 구축하는 ‘유아이패스 카토그래퍼(UiPath Cartographer)’를 출시했다고 9일 밝혔다. 이 신제품의 핵심은 기업의 업무가 실제로 수행되는 방식을 체계적으로 정리한 ‘맵 오브 워크(Map of Work)’를 구축하는 것이다. 기업이 보유한 문서와 업무 규칙, 담당자의 판단, 예외 처리 경험 등을 연결해 AI 자동화에 필요한 운영 맥락을 확보하도록 설계됐다.
+그동안 기업들은 고객과 계약, 청구서, 거래 내역 등 업무 데이터를 디지털화하고 관리하는 데 집중해 왔다. 그러나 실제 업무가 어떤 규칙에 따라 진행되고, 예상하지 못한 상황이 발생했을 때 담당자가 어떤 판단을 내리는지에 관한 지식은 충분히 체계화하지 못했다.
+이러한 운영 지식은 직원 개인의 경험이나 부서별 문서, 스프레드시트, 메신저 대화 등에 분산돼 있는 경우가 많다. 새로운 자동화 프로젝트를 추진할 때마다 담당자 인터뷰와 자료 수집을 반복해야 하는 이유다.
+카토그래퍼는 이처럼 분산된 정보를 통합해 업무의 실제 수행 구조를 파악하고, 자동화 시스템 구축에 필요한 설계 문서와 사양으로 연결한다.
+비즈니스 분석가는 가이드형 대화를 통해 업무 절차와 규칙, 예외 상황을 정리할 수 있다. 시스템은 수집한 정보를 바탕으로 해당 기업의 업무 목표와 운영 환경에 맞는 업무 지도를 구성하고, 개선이 필요한 프로세스를 파악하도록 지원한다.
+특히 업무 지도가 단순한 일회성 문서에 머물지 않도록 변경 관리 기능을 적용했다. 실제 업무 수행 과정에서 새롭게 확인된 판단이나 규칙은 변경 제안으로 기록되며, 지정된 담당자가 이를 승인하거나 거부할 수 있다.
+승인되지 않은 변경 사항이 자동으로 적용되지 않도록 설계해 AI 자동화의 유연성과 기업의 통제 요구를 함께 반영했다. 이 과정에서 활용되는 ‘디시전 레저(Decision Ledger)’는 업무 전반에서 어떤 결정이 내려졌으며 그 이유가 무엇인지 기록하고 관리하는 기능이다. 기록된 의사결정은 검토와 승인 과정을 거쳐 새로운 업무 규칙이나 운영 지식으로 반영될 수 있다.
+이를 통해 기업은 업무 프로세스가 변경되더라도 이전의 판단 근거와 적용 규칙을 추적하고, 다음 자동화 개선 과정에 활용할 수 있다.
+카토그래퍼는 기업의 업무 특성에 따라 세 가지 방식으로 활용할 수 있다. 먼저 ‘사전 구축 맵(Prebuilt Maps)’은 대출 실행과 의료보험 청구 심사, 구매부터 대금 지급까지의 업무 등 주요 산업에서 반복적으로 수행되는 프로세스를 미리 설계한 형태로 제공한다.
+‘프로세스 아틀라스(Process Atlas)’는 여러 산업의 복잡한 업무 절차를 정리한 라이브러리다. 업무별 핵심성과지표(KPI)와 벤치마크, 표준 정책, 규칙, 케이스 플랜 등을 포함해 기업이 자동화 설계에 필요한 정보를 참고할 수 있도록 한다.
+기업 고유의 복잡한 업무나 엄격한 관리 기준이 적용되는 프로세스는 ‘직접 구축(Build Your Own)’ 기능을 활용할 수 있다. 카토그래퍼가 해당 조직의 업무 특성을 파악하고 이를 바탕으로 자동화 시스템 구축에 필요한 청사진을 제공한다. 이렇게 구축된 업무 지도는 유아이패스 플랫폼의 AI 에이전트와 워크플로우, 자동화 기능을 설계하는 데 활용된다.
+기업은 카토그래퍼를 통해 정리한 업무 구조를 기반으로 AI 에이전트와 자동화 시스템을 구축하고, ‘유아이패스 마에스트로(UiPath Maestro)’를 통해 여러 업무의 실행을 통합적으로 조율할 수 있다.
+카토그래퍼는 기존 유아이패스 플랫폼에서 사용되는 신원 관리와 보안, 거버넌스 체계를 공유한다. 이를 통해 업무 지도와 자동화 시스템을 별도로 관리하는 데 따른 복잡성을 줄이고, 기업이 정의한 접근 권한과 관리 정책을 적용할 수 있도록 했다.
+이번 제품은 기업의 AI 도입 과정에서 중요한 과제로 떠오른 업무 맥락의 체계화에 초점을 맞췄다는 점에서 주목된다. AI 에이전트가 실제 기업 업무를 수행하려면 단순히 데이터에 접근하거나 정해진 명령을 실행하는 것만으로는 충분하지 않다. 업무가 진행되는 순서와 판단 기준, 예외 상황에 대한 대응 방식, 담당자의 승인 권한 등을 이해할 수 있어야 한다.
+특히 여러 AI 에이전트와 자동화 시스템이 하나의 업무에 참여하는 에이전틱 AI 환경에서는 각 시스템이 동일한 업무 규칙과 운영 지식을 기반으로 작동하도록 관리하는 것이 중요하다.
+카토그래퍼는 이러한 운영 지식을 기업이 직접 정의하고 소유하도록 설계됐다. 업무 수행 과정에서 발생한 새로운 판단과 변경 사항을 지속적으로 반영하면서도, 실제 규칙 변경에는 담당자의 승인을 요구하는 구조다.
+다니엘 디네스(Daniel Dines) 유아이패스 창업자 겸 최고경영자(CEO)는 “기업들은 수년간 데이터를 디지털화해 왔지만, 그 데이터가 실제로 어떻게 활용되는지에 대한 기업 맥락은 포착하지 못했다”고 말했다.
+이어 “프로세스 맵이 업무가 어떻게 운영되도록 설계됐는지를 보여준다면, 카토그래퍼는 모든 예외 상황과 판단을 포함해 업무가 실제로 어떻게 운영되는지에 대한 운영 지식을 밝혀낸다”며 “두 요소를 모두 포착하고 일관되게 유지하도록 지원하는 유아이패스 최초의 제품”이라고 설명했다.
+이번 출시는 기업용 AI 자동화의 경쟁력이 개별 작업의 실행 속도나 자동화 범위를 넘어, 업무 수행에 필요한 조직의 지식과 의사결정 구조를 얼마나 정확하게 반영하고 관리할 수 있는지로 확대되고 있음을 보여준다.
+향후 실제 도입 효과는 기업 내부에 분산된 운영 지식을 얼마나 정확하게 수집하고 구조화할 수 있는지, 변화하는 업무 규칙을 얼마나 신속하게 반영할 수 있는지, 그리고 AI 에이전트의 실행 과정에서 일관성과 통제 가능성을 유지할 수 있는지에 따라 평가될 전망이다.
+---
+[TITLE] 금융보안원, 보이스피싱 대응 플랫폼 'ASAP'에 AI 탐지 모델 탑재
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209397
+[PUBLISHED] 2026-11-09 12:42 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 모델, 보안
+[SCORE] 6
+[REASON] 금융 피싱 탐지에 연합학습 AI 적용
+[FIELD] 보안
+[BODY]
+금융보안원이 금융권 보이스피싱 대응 강화를 위해 의심정보 공유 플랫폼인 ASAP에 인공지능(AI) 기반 이상금융거래 탐지 모델을 탑재하고 'AI 피싱지수' 조회 API 서비스를 제공한다고 9일 밝혔다.
+ASAP은 금융, 통신, 수사 분야의 의심정보를 공유하고 분석해 보이스피싱 예방을 지원하는 플랫폼이다. 이번에 적용된 AI 피싱지수는 보이스피싱 의심 거래의 실제 사기 가능성을 인공지능이 평가해 점수화한 지표다.
+해당 모델은 인터넷은행 3사인 카카오뱅크, 토스뱅크, 케이뱅크의 사기 탐지 역량을 모아 연합학습 기술로 개발됐다. 데이터 공유 없이 프라이버시를 유지하며 공동 학습한 모델로, 3개 인터넷은행이 지난 7월부터 이상금융거래탐지시스템(FDS)에서 활용 중인 모델과 동일하다. 이번 조치는 금융당국이 지난 5일 발표한 금융권 보안관리 강화 방안 중 보이스피싱 탐지·대응체계 고도화의 일환으로 추진됐다.
+AI 모델과 구동 인프라는 금융보안원이 직접 운영한다. 금융회사는 자체 AI 인프라를 구축하거나 모델을 직접 운용하지 않아도 정해진 한도 내에서 API를 연계해 탐지 기능을 활용할 수 있다. 인프라 구축 여력이 부족한 중소형 금융회사의 보안 역량 향상에 초점을 맞췄다.
+금융회사는 AI 피싱지수 조회 API를 통해 피싱 위험 점수뿐 아니라 지수 산정에 영향을 준 주요 요인과 항목별 기여도를 함께 제공받는다. 각 사는 이를 바탕으로 어떤 항목이 위험도를 높였는지 파악하고 보이스피싱 의심 사유를 상세히 분석할 수 있다. 제공받은 지표와 요인을 거대언어모델(LLM)과 연계해 세부 발생 원인을 추가 추정하는 방식으로도 활용 가능하다.
+금융보안원은 11월 9일부터 13일까지 ASAP 참여기관을 대상으로 서비스 이용 안내 영상을 공유한다. 이후 일정 기간 모니터링을 진행하며 이용 한도를 조정하고 개선 사항을 점검해 금융회사의 원활한 활용을 지원할 계획이다.
+박상원 금융보안원장은 "금융회사들이 인프라 구축과 모델 운영 부담 없이 AI 모델을 보이스피싱 대응 업무에 활용할 수 있도록 서비스를 마련했다"며 "ASAP을 통해 금융권 전반의 대응력을 지원하고 중소형 금융회사의 보이스피싱 대응 역량 강화에 기여하겠다"고 말했다.
 ---
 [TITLE] ETRI, 비전문가도 AI 모델 개발 가능한 탱고2 깃허브 공개
 [LINK] https://zdnet.co.kr/view/?no=20261109112034
@@ -292,43 +293,35 @@ ETRI는 지난 2021년부터 5년간 탱고 기술을 개발해 왔다. 영상�
 ETRI는 국제전기통신연합(ITU-T)에서 노코드 LLMOps 기술의 국제표준화를 추진 중이다. 목표는 오는 2027년 5월 최종 승인이다.
 정보통신기획평가원(IITP) 김태호 SW PM은 "탱고는 국내 공개 소프트웨어 연구개발의 대표적인 성과로, AI 개발도구 분야의 기술 자립과 국내 소프트웨어 산업 경쟁력 강화에 크게 기여하고 있다"고 평가했다.
 ---
-[TITLE] Iris Ohyama data cloud breach exposes info of 7.7 million customers
-[TITLE_KO] 아이리스 오야마 데이터 클라우드 침해로 770만 명 정보 노출
-[LINK] https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/
-[PUBLISHED] 2026-11-09 00:43 KST
-[SOURCE] BleepingComputer
-[TOPIC] 보안
+[TITLE] 서울아산병원, AI로 귀 질환 진단 정확도 최대 32.2%p 향상…전공의와 전문의 격차 크게 줄였다
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42638
+[PUBLISHED] 2026-11-09 09:27 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
 [SCORE] 6
-[REASON] 클라우드 침해로 770만 명 고객정보 유출
-[FIELD] 보안
+[REASON] 의료 영상 진단 보조 AI 효과 임상 확인
+[FIELD] AI 모델
 [BODY]
-Japanese manufacturer Iris Ohyama, the operator of the Iris Plaza shopping platform, disclosed that personal information belonging to about 7.7 million people may have been exposed after unauthorized access to a third-party cloud service the company used.
-The company discovered the incident late last month and publicly disclosed it with limited details, along with an announcement that the site would be temporarily suspended.
-In an update earlier this week, the company said it had discovered a suspicious file in an external cloud service used by the Iris Plaza online store.
-“We immediately suspended Iris Plaza and related systems and began an investigation. We confirmed unauthorized access by a third party and disclosed it in our first notice on October 29,” [machine translated] the company said.
-The investigation has confirmed that customer data stored in the compromised external cloud service may have been accessed by unauthorized actors.
-While the company is still trying to determine the number of records exposed and how many people are impacted, it notes that the impact extends to up to 5.8 million registered members and former members, and 1.9 million non-members.
-Iris Plaza is the online storefront for the Iris Ohyama Group, a major Japanese manufacturer of household products ranging from storage units and LED lighting to home appliances and garden accessories.
-According to the company's notification, the following information may have been exposed:
-- Full names
-- Physical addresses
-- Phone numbers
-- Email addresses
-- Gender
-- Dates of birth
-- Account passwords
-The exposed data types vary per individual. For example, no passwords are stored for former members.
-Iris Plaza said it stores passwords for active registered members in encrypted form, though it did not specify which encryption scheme it uses.
-The company also said that credit card information was not stored in the affected cloud service.
-As of November 5, Iris Plaza had received no reports of misuse of the exposed information or financial loss tied to the incident.
-In response to the incident, the company’s online store (SIMPLE STYLE) and related systems were suspended on October 28.
-The same applies to websites for Iris Tech Service Co., Ltd. services, including home appliance subscriptions and furniture and appliance delivery and installation.
-Japan’s Personal Information Protection Commission and police were notified on October 29, 2026.
-BleepingComputer has contacted Iris Plaza to learn more about the attack and whether a ransom payment has been demanded. A spokesperson told us that they received no direct communications from the attacker and have not identified the perpetrators.
-Uncover email threats your existing defenses may miss.
-Adaptive Security's AI agents analyze email intent, context, and behavior to uncover phishing, business email compromise, and invoice fraud.
-See what's getting through with a 14-day read-only scan of Microsoft 365 or Google Workspace, with no MX changes.
-Start your free email security scan.
+귀 내시경 영상 7,335장 학습한 딥러닝 모델 개발…저연차 전공의 진단 정확도 54.4%에서 86.6%로 상승
+인공지능이 귀 내시경 영상을 분석해 의료진의 진단을 보조하면 중이염 등 귀 질환의 진단 정확도를 크게 높일 수 있다는 연구 결과가 나왔다. 특히 임상 경험이 적은 저연차 전공의의 진단 정확도가 32.2%포인트 상승하면서, AI가 의료진의 숙련도에 따른 진단 격차를 줄이는 데 기여할 수 있다는 가능성이 확인됐다.
+서울아산병원 이비인후과 안중호 교수와 융합의학과 권지훈 교수 공동 연구팀은 귀 내시경 영상 7,335장을 학습한 딥러닝 기반 AI 모델을 개발하고, 전문의와 전공의 등 의료진 13명을 대상으로 진단 보조 효과를 분석한 결과 이 같은 성과를 확인했다고 밝혔다.
+이번 연구에서 가장 두드러진 변화는 저연차 전공의의 진단 정확도였다. AI의 도움 없이 귀 내시경 영상을 판독했을 때 54.4%였던 정확도는 AI가 제시한 진단 결과를 참고한 이후 86.6%로 높아졌다. 같은 조건에서 귀 질환 전문 교수 그룹과 저연차 전공의 사이의 정확도 격차도 24.3%포인트에서 3.1%포인트로 줄었다.
+이는 AI가 의료진을 대체하기보다는 영상 판독에 필요한 정보를 제공해 진단 판단을 지원하는 보조 도구로 활용될 수 있음을 보여준다.
+중이질환은 고막 안쪽의 중이 공간에 발생하는 질환으로, 만성 중이염과 삼출성 중이염 등이 대표적이다. 의료진은 귀 내시경으로 고막의 형태와 염증 상태 등을 관찰해 질환을 구분하지만, 질환별 영상 소견이 유사하거나 변화가 미세한 경우에는 판독 경험에 따라 진단 결과가 달라질 수 있다.
+연구팀은 이러한 문제를 개선하기 위해 2018년부터 2020년까지 서울아산병원에서 확보한 귀 내시경 영상 7,435장을 분석했다. 이 가운데 7,335장은 AI 모델 개발에 활용하고, 나머지 100장은 의료진의 진단 정확도를 평가하기 위한 별도 영상으로 구성했다.
+개발된 AI는 만성 중이염과 삼출성 중이염, 두 질환에 해당하지 않는 경우를 구분하도록 설계됐다. 여기에 고막 위쪽이 안으로 함몰되는 상고실 함몰, 고막염, 이진균증, 고막 환기관 삽입 여부 등 추가적인 질환과 고막 상태를 동시에 판별하는 기능도 적용했다.
+모델 성능 평가에서는 개발용 영상에 대한 교차검증에서 주요 진단 항목의 정확도가 94.8%를 기록했다. 별도로 구성한 영상 100장에 대한 평가에서도 95%의 정확도를 나타냈다. 다만 이는 연구팀이 구성한 영상 데이터에서 확인된 결과다.
+연구팀은 AI 모델 자체의 성능뿐 아니라 실제 의료진의 판단에 어떤 영향을 미치는지도 평가했다. 실험에는 귀 질환 전문 교수 3명과 고연차 전공의 5명, 저연차 전공의 5명 등 총 13명이 참여했다. 의료진은 먼저 AI의 도움 없이 귀 내시경 영상 100장을 판독했으며, 3개월 뒤 동일한 영상을 AI의 진단 결과와 함께 다시 평가했다.
+그 결과 모든 의료진 그룹에서 주요 진단 항목의 정확도가 통계적으로 유의하게 개선됐다. 저연차 전공의는 54.4%에서 86.6%로 32.2%포인트 상승해 가장 큰 개선 폭을 보였다. 고연차 전공의 역시 65.0%에서 93.8%로 28.8%포인트 높아졌다. 교수 그룹은 78.7%에서 89.7%로 11.0%포인트 향상됐다.
+특히 AI 활용 이전에는 교수 그룹이 저연차 전공의보다 24.3%포인트 높은 정확도를 보였지만, 활용 이후에는 두 그룹의 차이가 3.1%포인트로 축소됐다. 이는 경험이 적은 의료진에게 AI 진단 보조의 효과가 상대적으로 크게 나타났다는 점을 보여준다.
+세부 질환별 평가에서도 개선 효과가 확인됐다. 저연차 전공의의 고막염 진단 정확도는 75.4%에서 88.4%로 13.0%포인트 높아졌으며, 상고실 함몰 진단 정확도는 94.2%에서 98.4%로 4.2%포인트 상승했다.
+이번 연구에서 주목할 부분은 AI가 의료진의 잘못된 판단을 수정하도록 돕는 동시에, 일부 정확했던 판단에는 부정적인 영향을 미쳤다는 점이다. 의료진 13명이 영상 100장을 각각 판독한 총 1,300건의 진단 결과를 비교한 결과, AI 활용 이전에 잘못 판단했던 진단이 AI를 참고한 이후 올바르게 수정된 경우는 384건으로 전체의 29.5%였다.
+반면 처음에는 정확했던 진단이 AI 활용 이후 잘못된 진단으로 바뀐 경우도 46건으로 전체의 3.5%를 차지했다. AI가 전반적인 진단 정확도를 높이는 데 기여했지만, 의료진이 AI의 판단을 참고하는 과정에서 새로운 오류가 발생할 가능성도 있음을 보여준다. 따라서 AI가 제시하는 결과를 의료진의 임상적 판단과 함께 검토하는 과정이 중요하다.
+연구 설계 측면에서도 동일한 영상 100장을 3개월 간격으로 다시 평가한 만큼, 실제 처음 접하는 환자를 진료하는 상황과는 차이가 있다. 다양한 환자군과 의료기관을 대상으로 한 추가 검증이 필요한 이유다.
+안중호 서울아산병원 이비인후과 교수는 “이번 연구는 AI가 의료진의 진단을 보조하는 역할을 할 때, 특히 경험이 적은 의료진의 진단 정확도를 높이는 데 도움이 될 수 있음을 보여준다”며 “향후 다양한 환자와 진료 상황을 대상으로 추가 검증을 진행한다면 중이질환 진단과 의료진 교육에 유용하게 활용할 수 있을 것으로 기대한다”고 말했다.
+이번 연구는 의료 AI의 성능을 평가하는 데 있어 알고리즘 자체의 정확도뿐 아니라 실제 의료진의 판단이 얼마나 개선되는지를 함께 검증했다는 점에서 의미가 있다. 특히 숙련도에 따른 진단 격차가 큰 의료영상 판독 분야에서 AI가 임상 경험을 보완하는 교육·진단 지원 도구로 활용될 가능성을 제시했다.
+향후 실제 진료 현장에서 AI가 의료진의 진단 정확도를 지속적으로 높일 수 있는지, AI의 잘못된 제안으로 발생하는 오류를 어떻게 줄일 수 있는지가 임상 적용의 주요 과제가 될 전망이다.
+한편, 이번 연구는 서울아산병원·울산대학교 의과대학 연구진이 수행했으며, 이세은 연구원이 제1저자로 채지혜, 박근우, 최연주, 권지훈 교수, 안중호 교수가 공동저자로 참여했으며, 연구 결과는 ‘귀 내시경 영상에서 의료진의 경험 수준에 따른 딥러닝 보조 중이질환 진단(Deep Learning–Assisted Diagnosis of Middle Ear Diseases in Otoendoscopy Across Clinician Experience Levels: Retrospective Reader Study-다운)’이란 제목으로 국제학술지 JMIR Medical Informatics에 지난달 30일 게재됐다.
 ---
 [TITLE] 앤트로픽, AI가 잘못된 기억 스스로 수정하는 '드리밍' 기술 효과 입증
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217161
@@ -339,69 +332,6 @@ Start your free email security scan.
 [REASON] 에이전트 장기 기억 오류 수정 기법 입증
 [FIELD] AI 에이전트
 ---
-[TITLE] [AI 리뷰] 메타, AI 에이전트가 직접 활용하는 디자인 시스템 ‘아스트릭스’ 오픈소스 공개…1만 3,000개 앱에 적용한 기술 개방
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42651
-[PUBLISHED] 2026-11-09 12:39 KST
-[SOURCE] 인공지능신문
-[TOPIC] 에이전트, 개발
-[SCORE] 7
-[REASON] 에이전트용 디자인 시스템 오픈소스 공개
-[FIELD] AI 에이전트
----
-[TITLE] 모델만 옮기고 작업은 못 옮기면?…AI 에이전트 구입 전 출구 테스트 해야
-[LINK] https://www.itworld.co.kr/article/4246138/%eb%aa%a8%eb%8d%b8%eb%a7%8c-%ec%98%ae%ea%b8%b0%ea%b3%a0-%ec%9e%91%ec%97%85%ec%9d%80-%eb%aa%bb-%ec%98%ae%ea%b8%b0%eb%a9%b4ai-%ec%97%90%ec%9d%b4%ec%a0%84%ed%8a%b8-%ea%b5%ac%ec%9e%85-%ec%a0%84.html
-[PUBLISHED] 2026-11-09 10:54 KST
-[SOURCE] ITWorld Korea
-[TOPIC] 에이전트, 개발, 모델, 산업, 규제
-[SCORE] 6
-[REASON] 에이전트 플랫폼 전환 시 종속 문제 분석
-[FIELD] AI 에이전트
----
-[TITLE] Week in review: Refrigeration cyberattacks hit European retailers again, Patch Tuesday forecast
-[TITLE_KO] 주간 보안 동향: 유럽 유통사 노린 냉동기 공격 재발 및 패치 화요일 전망
-[LINK] https://www.helpnetsecurity.com/2026/11/08/week-in-review-refrigeration-cyberattacks-hit-european-retailers-again-patch-tuesday-forecast/
-[PUBLISHED] 2026-11-08 18:00 KST
-[SOURCE] Help Net Security
-[TOPIC] 에이전트, 개발, 보안, 규제
-[SCORE] 6
-[REASON] 냉동기 공격 지속 및 에이전트 권한 정책 논의
-[FIELD] 보안
----
-[TITLE] 플렉토리, 밀리웨이브와 피지컬 AI용 5G·60GHz 통합망 개발
-[LINK] https://zdnet.co.kr/view/?no=20261109113155
-[PUBLISHED] 2026-11-09 11:31 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 보안, 신기술, 규제
-[SCORE] 6
-[REASON] 피지컬 AI 전용 통합 무선망 공동 개발
-[FIELD] 신기술
----
-[TITLE] 이스트시큐리티, AI 보안 연합 '프로젝트 캐노피' 합류
-[LINK] https://www.etnews.com/20261109000073
-[PUBLISHED] 2026-11-09 09:31 KST
-[SOURCE] 전자신문
-[TOPIC] 개발, 보안, 규제
-[SCORE] 6
-[FIELD] 보안
----
-[TITLE] 서울아산병원, AI로 귀 질환 진단 정확도 최대 32.2%p 향상…전공의와 전문의 격차 크게 줄였다
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42638
-[PUBLISHED] 2026-11-09 09:27 KST
-[SOURCE] 인공지능신문
-[TOPIC] 모델
-[SCORE] 6
-[REASON] 의료 영상 진단 보조 AI 효과 임상 확인
-[FIELD] AI 모델
----
-[TITLE] 금융보안원, 보이스피싱 대응 플랫폼 'ASAP'에 AI 탐지 모델 탑재
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209397
-[PUBLISHED] 2026-11-09 12:42 KST
-[SOURCE] 데일리시큐
-[TOPIC] 개발, 모델, 보안
-[SCORE] 6
-[REASON] 금융 피싱 탐지에 연합학습 AI 적용
-[FIELD] 보안
----
 [TITLE] LGU+, 대학 3곳과 ‘K-보이스’ 개발
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000508
 [PUBLISHED] 2026-11-09 09:00 KST
@@ -410,6 +340,14 @@ Start your free email security scan.
 [SCORE] 6
 [REASON] 한국어 특화 장기 기억 음성 AI 엔진 개발
 [FIELD] AI 모델
+---
+[TITLE] "말로 설명하면 영상 완성"…딥브레인AI, 에이전트 탑재 AI스튜디오 5.0 공개
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217165
+[PUBLISHED] 2026-11-09 12:21 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 산업
+[SCORE] 6
+[FIELD] AI 에이전트
 ---
 [TITLE] The inventor of the bitter lesson has a bitter lesson for LLM scaling enthusiasts
 [TITLE_KO] ‘쓴 교훈’ 제안자, LLM 확장론자들에게 쓴소리 전해
@@ -421,6 +359,15 @@ Start your free email security scan.
 [REASON] 단순 연산량 확대의 한계 및 새 학습법 지적
 [FIELD] AI 모델
 ---
+[TITLE] Show GN: Aptly - 작업에 맞는 Claude Code·Codex 서브에이전트 모델과 effort를 추천
+[LINK] https://news.hada.io/topic?id=36852&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 09:16 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 6
+[REASON] 에이전트 작업별 최적 모델 자동 추천 도구
+[FIELD] AI 에이전트
+---
 [TITLE] AI 추천이 다시 AI 학습 데이터로…UNIST, 반복 추천 속 편향 증폭 위험 확인
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42634
 [PUBLISHED] 2026-11-08 18:39 KST
@@ -430,15 +377,6 @@ Start your free email security scan.
 [REASON] 추천 결과 재학습 시 편향 증폭 위험 규명
 [FIELD] AI 모델
 ---
-[TITLE] "말로 설명하면 영상 완성"…딥브레인AI, 에이전트 탑재 AI스튜디오 5.0 공개
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217165
-[PUBLISHED] 2026-11-09 12:21 KST
-[SOURCE] AI타임스
-[TOPIC] 에이전트, 산업
-[SCORE] 6
-[REASON] 대화형 영상 제작 에이전트 플랫폼 출시
-[FIELD] AI 에이전트
----
 [TITLE] 과학자들은 AI를 어떻게 쓸까…앤트로픽 "데이터 분석 1위, 가설 생성 4%"
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217147
 [PUBLISHED] 2026-11-08 18:14 KST
@@ -447,6 +385,15 @@ Start your free email security scan.
 [SCORE] 6
 [REASON] 과학 연구 세션 기반 클로드 활용 실태 분석
 [FIELD] AI 모델
+---
+[TITLE] 모델만 옮기고 작업은 못 옮기면?…AI 에이전트 구입 전 출구 테스트 해야
+[LINK] https://www.itworld.co.kr/article/4246138/%eb%aa%a8%eb%8d%b8%eb%a7%8c-%ec%98%ae%ea%b8%b0%ea%b3%a0-%ec%9e%91%ec%97%85%ec%9d%80-%eb%aa%bb-%ec%98%ae%ea%b8%b0%eb%a9%b4ai-%ec%97%90%ec%9d%b4%ec%a0%84%ed%8a%b8-%ea%b5%ac%ec%9e%85-%ec%a0%84.html
+[PUBLISHED] 2026-11-09 10:54 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 개발, 모델, 산업, 규제
+[SCORE] 6
+[REASON] 에이전트 플랫폼 전환 시 종속 문제 분석
+[FIELD] AI 에이전트
 ---
 [TITLE] "회사 안에 AI가 너무 많아지고 있다... 이제 ‘AI 직원’을 관리해야 한다"
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42639
@@ -466,23 +413,6 @@ Start your free email security scan.
 [REASON] 에이전트 연동 문서 및 스프레드시트 SDK
 [FIELD] AI 에이전트
 ---
-[TITLE] 앤트로픽, AI 전력 직접 확보…4조원대 발전기 계약 인수
-[LINK] https://zdnet.co.kr/view/?no=20261109085731
-[PUBLISHED] 2026-11-09 12:03 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 산업, 규제
-[SCORE] 5
-[FIELD] 신기술
----
-[TITLE] 구글, 사업 차질 빚은 크루소 AI 데이터센터 인수…170억달러 투자
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217148
-[PUBLISHED] 2026-11-09 11:30 KST
-[SOURCE] AI타임스
-[TOPIC] 산업
-[SCORE] 5
-[REASON] 구글 크루소 AI 데이터센터 부지 인수 및 직접 투자
-[FIELD] 신기술
----
 [TITLE] “로봇 기술 못 내준다”… 中 제동에 손정의 ‘피지컬 AI 제국’ 흔들
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000502
 [PUBLISHED] 2026-11-08 16:26 KST
@@ -501,6 +431,16 @@ Start your free email security scan.
 [REASON] 엔터사 업무망 침해로 주민번호 및 계약서 유출
 [FIELD] 보안
 ---
+[TITLE] Iris Ohyama data cloud breach exposes info of 7.7 million customers
+[TITLE_KO] 아이리스 오야마 데이터 클라우드 침해로 770만 명 정보 노출
+[LINK] https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/
+[PUBLISHED] 2026-11-09 00:43 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 5
+[REASON] 클라우드 침해로 770만 명 고객정보 유출
+[FIELD] 보안
+---
 [TITLE] 디지털자산 운용사 '하이퍼리즘' 해킹…주민등록번호·은행 계좌정보까지 유출
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209388
 [PUBLISHED] 2026-11-08 16:52 KST
@@ -510,11 +450,64 @@ Start your free email security scan.
 [REASON] 디지털자산 운용사 계좌 및 주민번호 유출
 [FIELD] 보안
 ---
+[TITLE] Week in review: Refrigeration cyberattacks hit European retailers again, Patch Tuesday forecast
+[TITLE_KO] 주간 보안 동향: 유럽 유통사 노린 냉동기 공격 재발 및 패치 화요일 전망
+[LINK] https://www.helpnetsecurity.com/2026/11/08/week-in-review-refrigeration-cyberattacks-hit-european-retailers-again-patch-tuesday-forecast/
+[PUBLISHED] 2026-11-08 18:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 개발, 보안, 규제
+[SCORE] 5
+[REASON] 냉동기 공격 지속 및 에이전트 권한 정책 논의
+[FIELD] 보안
+---
+[TITLE] 이스트시큐리티, AI 보안 연합 '프로젝트 캐노피' 합류
+[LINK] https://www.etnews.com/20261109000073
+[PUBLISHED] 2026-11-09 09:31 KST
+[SOURCE] 전자신문
+[TOPIC] 개발, 보안, 규제
+[SCORE] 5
+[FIELD] 보안
+---
+[TITLE] "클로드는 어떻게 컴퓨터 화면을 하나의 언어처럼 읽는가"...김용덕 변리사, 앤트로픽의 화면 이해 특허 분석
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42649
+[PUBLISHED] 2026-11-09 11:23 KST
+[SOURCE] 인공지능신문
+[TOPIC] 일반
+[SCORE] 5
+[REASON] 앤트로픽 컴퓨터 조작 기술 특허 분석
+[FIELD] AI 모델
+---
+[TITLE] Andrej Karpathy built a curated video platform in a weekend using Claude and 20 years of Hacker News
+[TITLE_KO] 안드레이 카파시, 클로드와 해커뉴스 데이터로 맞춤형 영상 플랫폼 구축
+[LINK] https://the-decoder.com/andrej-karpathy-built-a-curated-video-platform-in-a-weekend-using-claude-and-20-years-of-hacker-news/
+[PUBLISHED] 2026-11-08 23:23 KST
+[SOURCE] The Decoder
+[TOPIC] 보안
+[SCORE] 5
+[REASON] 클로드 모델을 활용한 비디오 추천 플랫폼 구축
+[FIELD] AI 모델
+---
+[TITLE] Hide your slop PR descriptions behind
+[TITLE_KO] AI 생성 PR 설명을 접이식 태그 뒤로 숨기기
+[LINK] https://simonwillison.net/2026/Nov/9/details-summary/
+[PUBLISHED] 2026-11-09 13:25 KST
+[SOURCE] Simon Willison
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 5
+[REASON] 코딩 에이전트 생성 PR 요약 관리 팁 제시
+[FIELD] AI 에이전트
+---
+[TITLE] AI에 회사 맥락을 제공하고 ‘회사 두뇌’를 구축하는 방법
+[LINK] https://news.hada.io/topic?id=36856&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 09:40 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 규제
+[SCORE] 5
+[REASON] 에이전트 공유 지식 베이스 구축 가이드
+[FIELD] AI 에이전트
+---
 [LINK] https://simonwillison.net/2026/Nov/9/hn-50421091/
 [STATUS] SKIP (제외)
----
-[LINK] https://simonwillison.net/2026/Nov/9/details-summary/
-[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209398
 [STATUS] SKIP (제외)
@@ -532,7 +525,7 @@ Start your free email security scan.
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261108073035
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261109083329
 [STATUS] SKIP (중복)
@@ -561,6 +554,9 @@ Start your free email security scan.
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000531
 [STATUS] SKIP (기준 미달)
 ---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157085
+[STATUS] SKIP (중복)
+---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000515
 [STATUS] SKIP (중복)
 ---
@@ -568,6 +564,9 @@ Start your free email security scan.
 [STATUS] SKIP (중복)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217163
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109113155
 [STATUS] SKIP (제외)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000512
@@ -578,6 +577,9 @@ Start your free email security scan.
 ---
 [LINK] https://www.etnews.com/20261109000184
 [STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109111048
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261109111511
 [STATUS] SKIP (제외)
@@ -595,7 +597,7 @@ Start your free email security scan.
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=678068
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=678081
 [STATUS] SKIP (기준 미달)
@@ -609,14 +611,11 @@ Start your free email security scan.
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42645
 [STATUS] SKIP (중복)
 ---
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42636
-[STATUS] SKIP (중복)
----
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42641
 [STATUS] SKIP (중복)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=678069
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42640
 [STATUS] SKIP (중복)
@@ -626,9 +625,6 @@ Start your free email security scan.
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=678067
 [STATUS] SKIP (기준 미달)
----
-[LINK] https://news.hada.io/topic?id=36856&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=157071
 [STATUS] SKIP (중복)
@@ -693,9 +689,6 @@ Start your free email security scan.
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209393
 [STATUS] SKIP (지난 보도)
 ---
-[LINK] https://the-decoder.com/andrej-karpathy-built-a-curated-video-platform-in-a-weekend-using-claude-and-20-years-of-hacker-news/
-[STATUS] SKIP (순위 밖)
----
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209392
 [STATUS] SKIP (지난 보도)
 ---
@@ -703,7 +696,7 @@ Start your free email security scan.
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.wired.com/story/world-models-will-soon-be-inescapable-what-you-need-to-know/
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42633
 [STATUS] SKIP (제외)
@@ -712,10 +705,10 @@ Start your free email security scan.
 [STATUS] SKIP (중복)
 ---
 [LINK] https://www.etnews.com/20261106000180
-[STATUS] SKIP (순위 밖)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=678059
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.etnews.com/20261106000280
 [STATUS] SKIP (기준 미달)
@@ -753,8 +746,11 @@ Start your free email security scan.
 [LINK] https://zdnet.co.kr/view/?no=20261109121004
 [STATUS] SKIP (제외)
 ---
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000532
+[LINK] https://zdnet.co.kr/view/?no=20261109085731
 [STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000532
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.itworld.co.kr/article/4246120/ai%eb%a1%9c-%eb%82%a0%ea%b0%9c-%eb%8b%ac-%ec%a4%84-%ec%95%8c%ec%95%98%eb%8d%98-%ea%b5%ac%ea%b8%80-ai%ec%97%90-%eb%b0%9c%eb%aa%a9-%ec%9e%a1%ed%98%94%eb%8b%a4.html
 [STATUS] SKIP (제외)
@@ -777,8 +773,8 @@ Start your free email security scan.
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000507
 [STATUS] SKIP (제외)
 ---
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42649
-[STATUS] SKIP (순위 밖)
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217148
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42648
 [STATUS] SKIP (제외)
@@ -832,7 +828,7 @@ Start your free email security scan.
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=157065
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.theguardian.com/technology/2026/nov/08/ai-clog-public-bodies-local-authorities-onslaught-chatbot-generated-correspondence
 [STATUS] SKIP (기준 미달)
@@ -841,7 +837,7 @@ Start your free email security scan.
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=678032
-[STATUS] SKIP (기준 미달)
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.theguardian.com/news/ng-interactive/2026/nov/08/hot-fridges-a-fake-nuclear-alert-and-a-6bn-heist-are-we-in-the-foothills-of-a-hacking-epidemic
 [STATUS] SKIP (기준 미달)

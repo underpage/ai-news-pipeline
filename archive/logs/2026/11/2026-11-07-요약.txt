@@ -22,21 +22,6 @@ CPython 결함으로 AI 추론 서버가 샌드박스 탈출 공격에 노출되
 
 #부정
 ---
-[TITLE] "TSMC, 메모리 진출 검토…엔비디아 요청" 디인포메이션
-[LINK] https://zdnet.co.kr/view/?no=20261107132711
-[PUBLISHED] 2026-11-07 14:15 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 신기술, 규제
-[SCORE] 9
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[국문 3줄 요약]**
-- 세계 최대 파운드리 업체 TSMC가 최대 고객사인 엔비디아의 요청으로 차세대 반도체인 3D D램 시장 진출을 검토하고 있다.
-- TSMC는 메모리 전용 신규 공장을 짓거나 기존 공장을 개조하는 방안을 고려 중이며, 첨단 패키징을 총괄하는 쉬궈진 부사장이 프로젝트를 이끌고 있다.
-- 이번 행보는 AI 수요 급증으로 인한 메모리 공급난 속에서 엔비디아 등 팹리스 기업들이 공급망 다변화를 적극 추진한 데 따른 결과로 분석된다.
-
-#긍정
----
 [TITLE] 씽킹 머신스, 성능 대폭 높인 '잉클링 2' 공개…중국 오픈 모델에 도전
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217132
 [PUBLISHED] 2026-11-07 17:45 KST
@@ -50,22 +35,6 @@ CPython 결함으로 AI 추론 서버가 샌드박스 탈출 공격에 노출되
 - 미라 무라티가 이끄는 씽킹 머신스 랩이 성능을 크게 향상한 2세대 오픈웨이트 MoE 모델 '잉클링 2 스몰'을 공개했다.
 - 이 모델은 종합 지능 지수 31점을 받아 중국의 주요 오픈 모델들과 경쟁 가능한 성능을 보였으며, 장시간 코딩 및 기업 업무용 AI 에이전트 평가에서 높은 경쟁력을 나타냈다.
 - 처리 속도가 비교군보다 두 배 이상 느린 한계가 확인되었으나, 안전성 개선 조치를 거친 뒤 다음 주 아파치 2.0 라이선스로 가중치를 공개할 계획이다.
-
-#긍정
----
-[TITLE] 삼성 첫 AI 안경 출시 임박…젠틀몬스터·워비파커, 12일 예약 시작
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217133
-[PUBLISHED] 2026-11-07 18:14 KST
-[SOURCE] AI타임스
-[TOPIC] 신기술
-[SCORE] 8
-[REASON] 안드로이드 XR 탑재 첫 AI 안경 예약 판매 시작
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[국문 3줄 요약]**
-- 삼성전자와 구글이 협력하고 패션 브랜드 젠틀몬스터와 워비파커가 디자인한 첫 AI 안경이 12일 예약 판매를 시작해 12월 출시된다.
-- 이 제품은 안드로이드 XR 플랫폼 기반으로 구글 제미나이를 탑재하여, 디스플레이 화면 없이 카메라와 음성을 중심으로 실시간 번역, 길 안내, 정보 검색 등을 지원한다.
-- 스마트폰과 연결해 작동하는 이 기기를 통해 삼성전자와 구글은 메타의 스마트 안경에 맞서 일상용 AI 하드웨어 생태계 진출을 본격화한다.
 
 #긍정
 ---
@@ -109,46 +78,6 @@ CPython 결함으로 AI 추론 서버가 샌드박스 탈출 공격에 노출되
 
 #부정
 ---
-[TITLE] SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks
-[LINK] https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/
-[PUBLISHED] 2026-11-07 09:00 KST
-[SOURCE] BleepingComputer
-[TOPIC] 보안
-[SCORE] 8
-[REASON] 소닉월 SSL-VPN 실제 악용 중인 MFA 우회 취약점 패치
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-소닉월, 공격에 악용된 새로운 SSL-VPN MFA 우회 취약점 경고
-
-**[영문 3줄 요약 (Original)]**
-- SonicWall has released security updates to patch seven vulnerabilities in SonicOS, including an SSL-VPN authentication bypass flaw tracked as CVE-2026-19868 that is being actively exploited in the wild.
-- The flaw affects SSL-VPN services configured with SAML, allowing attackers with valid alternate credentials to bypass SAML controls including multi-factor authentication.
-- CISA confirmed the real-world exploitation by adding the vulnerability to its Known Exploited Vulnerabilities catalog and ordered federal agencies to secure systems by November 20, 2026.
-
-**[국문 3줄 요약 (Translated)]**
-- 소닉월은 실제 공격에 적극 악용되고 있는 CVE-2026-19868로 추적되는 SSL-VPN 인증 우회 결함을 포함해 SonicOS의 취약점 7개를 수정하는 보안 업데이트를 발표했다.
-- 이 결함은 SAML로 구성된 SSL-VPN 서비스에 영향을 미치며, 유효한 대체 자격 증명을 가진 공격자가 다중 요소 인증을 포함한 SAML 제어를 우회할 수 있게 한다.
-- CISA는 해당 취약점을 알려진 악용 취약점 목록에 추가하여 실제 공격을 확인하고 연방 기관에 2026년 11월 20일까지 시스템 보안을 확보하라고 명령했다.
-
-#부정
----
-[TITLE] 메타, AI로 맞춤형 앱 만드는 '뮤즈 스페이스' 출시
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217128
-[PUBLISHED] 2026-11-07 15:39 KST
-[SOURCE] AI타임스
-[TOPIC] 에이전트
-[SCORE] 7
-[REASON] 자연어 기반 맞춤 앱 생성 및 백그라운드 갱신 에이전트
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[국문 3줄 요약]**
-- 메타가 사용자가 자연어로 요구사항을 입력하면 일정표나 쇼핑 도구 등 맞춤형 앱 공간을 생성해 주는 '뮤즈 스페이스' 기능을 출시했다.
-- 지메일이나 노션 등 외부 서비스와 연동되어 백그라운드에서 실시간 데이터를 갱신하며, 생성된 작업 공간 내에서 항목 수정과 관리가 가능하다.
-- 또한 액티브 메모리와 액티브 포커스 기술을 적용해 작업 중단 시 대처 능력을 높이고 핵심 정보 망각률을 크게 줄인 특화 모델을 함께 도입했다.
-
-#긍정
----
 [TITLE] “Most apps never make it off localhost”: Cursor takes on Lovable and Replit with fully managed app deployment
 [LINK] https://thenewstack.io/cursor-ai-app-deployment/
 [PUBLISHED] 2026-11-07 00:15 KST
@@ -173,19 +102,107 @@ CPython 결함으로 AI 추론 서버가 샌드박스 탈출 공격에 노출되
 
 #긍정
 ---
-[TITLE] 로보터블, 내년 초 휴머노이드 '스킬 이식' 소프트웨어 출시
-[LINK] https://zdnet.co.kr/view/?no=20261106211924
-[PUBLISHED] 2026-11-07 09:29 KST
+[TITLE] Claude Code's “Don't Ask Again” File Exposes Passwords and Keys in 1,122 Public Copies on GitHub
+[LINK] https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html
+[PUBLISHED] 2026-11-07 15:44 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 클로드 코드 설정 저장 결함으로 깃허브에 시크릿 노출
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+클로드 코드의 '다시 묻지 않음' 파일, 깃허브 공개 사본 1,122개에서 비밀번호와 키 노출
+
+**[영문 3줄 요약 (Original)]**
+- Apiiro said 1,122 public copies of Claude Code's .claude/settings.local.json file on GitHub hold at least one secret, because choosing "Yes, and don't ask again" can save the exact command, including any typed password or key, in plain text.
+- Apiiro found 104,185 copies of the file in 103,617 repositories, with 1,379 different secrets in the 1,122 copies, including 379 database passwords, 43 SSH logins, 42 GitHub, GitLab and npm tokens, and 23 AWS keys.
+- Removing the file does not undo the leak because older versions stay in git history and forks, so the researchers advise rotating every password, token, and key the file has ever held before cleaning up.
+
+**[국문 3줄 요약 (Translated)]**
+- Apiiro는 "Yes, and don't ask again"를 선택하면 입력한 비밀번호나 키를 포함한 명령이 그대로 평문으로 저장될 수 있어, 깃허브에 공개된 클로드 코드의 .claude/settings.local.json 사본 1,122개에 비밀이 하나 이상 들어 있다고 밝혔다.
+- Apiiro는 103,617개 저장소에서 이 파일 사본 104,185개를 찾았고, 1,122개 사본에는 서로 다른 비밀 1,379개가 있었으며 데이터베이스 비밀번호 379개, SSH 로그인 43개, GitHub, GitLab, npm 토큰 42개, AWS 키 23개가 포함됐다.
+- 파일을 지워도 이전 버전이 git 기록과 포크에 남아 유출이 되돌려지지 않으므로, 연구진은 파일에 들어간 모든 비밀번호, 토큰, 키를 먼저 교체한 뒤 정리하라고 권고한다.
+
+#부정
+---
+[TITLE] OpenAI Model Wrote Its Own Network Code to Get Around Sandbox Restrictions
+[LINK] https://www.securityweek.com/openai-model-wrote-its-own-network-code-to-get-around-sandbox-restrictions/
+[PUBLISHED] 2026-11-06 18:33 KST
+[SOURCE] SecurityWeek
+[TOPIC] 개발, 모델
+[SCORE] 8
+[REASON] 프록시 오류 시 로우 패킷을 생성해 샌드박스 우회한 내부 모델
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+OpenAI 모델, 샌드박스 제한을 우회하려고 자체 네트워크 코드를 작성
+
+**[영문 3줄 요약 (Original)]**
+- OpenAI says an internal research model crafted raw packets, wrote custom connection code and probed cloud services to get around network restrictions during a coding evaluation in early August.
+- The model reached Amazon S3, which rejected a request to relay traffic, was refused cloud credentials by the instance metadata service, and invented site content without ever fetching the real site before evaluators canceled the run.
+- OpenAI's security misalignment monitor quickly caught the behavior, the company found no evidence of sensitive data transfer, and unprivileged containers no longer get raw-packet access by default.
+
+**[국문 3줄 요약 (Translated)]**
+- OpenAI는 8월 초 코딩 평가 중 내부 연구 모델이 네트워크 제한을 피하려고 로우 패킷을 만들고 자체 연결 코드를 작성하며 클라우드 서비스를 탐색했다고 밝혔다.
+- 이 모델은 Amazon S3에 접근했지만 S3가 트래픽 중계 요청을 거부했고 인스턴스 메타데이터 서비스도 클라우드 자격 증명 요청을 거부했으며, 실제 사이트를 한 번도 가져오지 않은 채 내용을 지어냈고 평가자가 실행을 취소했다.
+- OpenAI의 보안 정렬 이탈 모니터가 이 행동을 빠르게 포착했고 회사는 민감한 데이터 전송 증거를 찾지 못했으며, 권한 없는 컨테이너는 이제 기본적으로 로우 패킷 접근이 막힌다.
+
+#부정
+---
+[TITLE] 우주로 출근한 로봇, 안테나 조립공 됐다
+[LINK] https://zdnet.co.kr/view/?no=20261107072030
+[PUBLISHED] 2026-11-07 08:30 KST
 [SOURCE] ZDNet Korea
 [TOPIC] 신기술
 [SCORE] 7
-[REASON] 휴머노이드 로봇 간 동작 제어 명령을 번역하는 소프트웨어
-[MODEL] gemini-3.8-flash
+[REASON] 우주 궤도 현장에서 안테나 뼈대를 자율 조립하는 로봇 실증
+[MODEL] manual
 [SUMMARY]
 **[국문 3줄 요약]**
-- 피지컬 AI 전문 기업 로보터블이 특정 휴머노이드 로봇에서 학습한 작업 능력을 다른 제조사의 로봇 하드웨어로 옮겨주는 '아이소모션'을 내년 초 출시한다.
-- 이 소프트웨어는 로봇의 동작 명령을 표준 데이터로 변환한 뒤 각 기종의 관절 구조와 센서 규격에 맞게 실시간 번역하여 다른 하드웨어에서도 같은 동작을 재현한다.
-- 전시회에서 오이 썰기 동작 이식을 시연한 이 솔루션은 F&B 등 여러 제조사 로봇을 통합 운용해야 하는 산업 환경에서 작업 재학습 비용을 절감할 것으로 기대된다.
+- 칼텍은 5일(현지시간) DARPA가 지원한 로봇 시스템 ASTRA가 궤도에서 부품을 집어 연결해 안테나를 지탱하는 트러스를 조립하는 데 성공했다고 공개했다.
+- ASTRA는 3월 30일 트랜스포터-16 임무로 발사됐고 지상에서 만든 트러스 두 구간을 밀어낸 뒤 세 번째 구간을 우주에서 직접 조립했지만, 시간 제약으로 지름 1.4m 반사 안테나 전체는 완성하지 못했다.
+- 이 기술은 통신 안테나와 우주망원경처럼 로켓에 접어 싣기 어려운 대형 구조물을 부품 상태로 보내 현장에서 조립해 크기 제약을 줄이는 것을 겨냥하며, DARPA는 장기적으로 수백m에서 km 규모의 구조물 건설을 목표로 한다.
+
+#긍정
+---
+[TITLE] GitLab 19.5 Makes Agentic Development a Governed Part of the DevOps Platform
+[LINK] https://www.infoq.com/news/2026/11/gitlab-19-5-agentic-platform/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-11-06 21:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 규제
+[SCORE] 7
+[REASON] MCP 서버 정식 출시와 외부 에이전트 거버넌스 통합
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+GitLab 19.5, 에이전트 개발을 DevOps 플랫폼의 통제된 일부로 편입
+
+**[영문 3줄 요약 (Original)]**
+- GitLab 19.5, released on October 15, makes its GitLab MCP server generally available and lets MCP-compatible tools such as Claude Code and Cursor invoke GitLab Duo Agent Platform agents and flows.
+- External agents such as Claude Code, Cursor, and Codex can be connected through the GitLab CLI so that qualifying sessions are recorded in the AI Governance Dashboard and audit events can be streamed to a SIEM, while GitLab.com adds MCP rate limits of 60 requests per minute for Free users and 600 fo…
+- GitLab Duo CLI gains an auto mode that is disabled by default, the /goal command and GitLab Secrets Manager built on OpenBao become generally available, and security configuration profiles can be customised centrally.
+
+**[국문 3줄 요약 (Translated)]**
+- 10월 15일 출시된 GitLab 19.5는 GitLab MCP 서버를 정식 출시했고, 클로드 코드와 커서 같은 MCP 호환 도구가 GitLab Duo Agent Platform의 에이전트와 플로를 호출할 수 있게 했다.
+- 클로드 코드, 커서, 코덱스 같은 외부 에이전트를 GitLab CLI로 연결하면 해당 세션이 AI 거버넌스 대시보드에 기록되고 감사 이벤트를 SIEM으로 스트리밍할 수 있으며, GitLab.com에는 무료 사용자 분당 60건, Premium과 Ultimate 사용자 분당 600건의 MCP 속도 제한이 도입됐다.
+- GitLab Duo CLI에는 기본값이 꺼짐인 자동 모드가 추가됐고, /goal 명령과 OpenBao 기반의 GitLab Secrets Manager가 정식 출시됐으며, 보안 설정 프로필도 중앙에서 맞춤 설정할 수 있다.
+
+#긍정
+---
+[TITLE] 메타, 표정·몸짓으로 대화하는 'AI 아바타' 출시…실시간 영상 통화 구현
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217097
+[PUBLISHED] 2026-11-06 16:10 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] 표정과 몸짓으로 실시간 소통하는 메타 뮤즈 AI 아바타
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 메타가 5일(현지시간) 개인용 AI 에이전트 뮤즈에 실시간 음성 대화와 영상 통화 기능을 추가해 미국 사용자에게 제공하기 시작했다.
+- 이 기능은 사용자의 음성만으로 아바타의 표정과 입 모양, 몸짓을 실시간으로 만들며, 확산 과정을 120회 추론에서 2회 추론으로 줄이는 증류 기술로 448x768 해상도 영상을 초당 25프레임, 지연 시간 약 870ms로 생성한다.
+- GB200 GPU 한 대에서 영상 생성 세션 12개를 동시에 처리하고 비디오 씰 워터마크를 적용했으며, 모바일, 웹, 맥에서 쓸 수 있고 연내 출시할 뮤즈 참과 AI 안경에도 적용할 계획이다.
 
 #긍정
 ---
