@@ -409,8 +409,11 @@ def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0):
     for members in groups.values():
         for index in members:
             scored[index]["coverage"] = len(members)
-        # 홍보 기사가 합계로 대표가 되면 같은 사건의 정상 기사까지 빠지므로 제외 표시가 없는 기사를 먼저 남긴다
-        keeper = min(members, key=lambda index: (bool(scored[index]["exclude"]), -scored[index]["total"], index))
+        # 홍보 기사가 합계로 대표가 되면 같은 사건의 정상 기사까지 빠지므로 제외 표시가 없는 기사를 먼저 남긴다.
+        # 합계가 같으면 모델이 기준으로 정한 기사(dup_of 없음)를 남긴다. 더 구체적인 기사이고 선정 이유도 이 기사에만 있다
+        # (순번만 보면 포괄적인 기사가 대표가 되고 리포트 중요도 줄에 이유가 빠졌음, 2026-11-09 LG 엑사원)
+        keeper = min(members, key=lambda index: (bool(scored[index]["exclude"]), -scored[index]["total"],
+                                                 scored[index].get("dup_of") is not None, index))
         for index in members:
             if index != keeper:
                 decisions[index] = "중복"

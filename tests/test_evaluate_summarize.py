@@ -326,6 +326,15 @@ def test_order_top_puts_one_per_field_first(monkeypatch):
     assert listed[:4] == [0, 1, 3, 5]
 
 
+def test_decide_keeps_base_article_of_same_event_on_tie():
+    news_list = [news(n) for n in range(1, 4)]
+    # 0번과 1번은 2번(기준 기사)과 같은 사건이고 합계가 같다
+    scored = {0: story_entry(80, dup_of=2), 1: story_entry(80, dup_of=2), 2: story_entry(80)}
+    listed, decisions = evaluate.decide(news_list, scored, list_slots=3, list_n=40, min_score=0)
+    # 순번이 앞선 기사가 아니라 모델이 기준으로 정한 기사가 남는다
+    assert listed == [2] and decisions[0] == decisions[1] == "중복"
+
+
 def test_order_top_keeps_previous_story_out_of_summary(monkeypatch):
     monkeypatch.setattr(evaluate, "FIELD_CAP", {"max": 3, "exempt_impact": 9, "min_total": 60})
     monkeypatch.setattr(evaluate, "STORY_CAP", {"summary": 1, "list": 2, "prev_summary": 0})
