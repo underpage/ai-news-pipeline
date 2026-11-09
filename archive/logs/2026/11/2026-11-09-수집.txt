@@ -1,0 +1,1300 @@
+[수집 파이프라인 실행] 2026-11-09 13:46:48
+---
+[수집 오류] https://venturebeat.com/category/ai/feed/ - 429 Client Error: Too Many Requests for url: https://venturebeat.com/category/ai/feed/
+---
+[TITLE] Hide your slop PR descriptions behind
+[LINK] https://simonwillison.net/2026/Nov/9/details-summary/
+[PUBLISHED] 2026-11-09 13:25 KST
+[SOURCE] Simon Willison
+[TOPIC] 에이전트, 개발, 모델
+[SUMMARY]
+Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work - I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished result. Today's coding agents are great at writing PR descriptions. They're too good at describing the work The problem is that they are too good. An agent-written PR description is accurate and comprehensive. It describes 
+---
+[TITLE] 앤트로픽, AI가 잘못된 기억 스스로 수정하는 '드리밍' 기술 효과 입증
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217161
+[PUBLISHED] 2026-11-09 13:09 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트
+[SUMMARY]
+앤트로픽이 AI 에이전트가 과거 작업 기록을 검토하고 잘못된 기억을 스스로 수정하는 '드리밍(Dreaming)' 기술의 구체적인 작동 원리와 실험 결과를 공개했다. 기억을 무조건 많이 저장하는 것보다 중요한 정보를 선별하고 재구성하는 것이 효과적이며, 이를 통해 장기 작업과 대규모 문서 분석 성능을 개선할 수 있다는 사실을 확인했다.앤트로픽은 6일(현지시간) 공식 블로그를 통해 클로드의 장기 기억 관리 방식과 관련 실험 결과를 소개했다. 드리밍은 AI가 작업하지 않는 시간에 이전 세션의 기록을 검토하고, 기억의 오류를 수정하거나 새
+---
+[TITLE] 딥시크 하네스, 일일 사용자 154만명…미국 주도 AI 에이전트 시장 도전
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217158
+[PUBLISHED] 2026-11-09 12:46 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SUMMARY]
+딥시크의 AI 에이전트 플랫폼 '딥시크 하네스(DeepSeek Harness)'가 출시 3개월 만에 일일 사용자 154만명을 돌파했다. 외부 개발자가 제작한 플러그인도 3만5000개에 달하면서, 딥시크는 공식 마켓플레이스를 구축하고 개발자 지원에 나서기로 했다.딥시크는 8일 공식 X 게시물을 통해 하네스의 이용 현황과 플러그인 생태계 확대 계획을 발표했다.이에 따르면 11월4일 기준 하네스의 일일 활성 사용자(DAU)는 154만명으로, 9월 말 약 27만1000명에서 한 달여 만에 5배 이상 증가했다. 이는 딥시크 공식 API 사용
+---
+[TITLE] [AI 리뷰] 메타, AI 에이전트가 직접 활용하는 디자인 시스템 ‘아스트릭스’ 오픈소스 공개…1만 3,000개 앱에 적용한 기술 개방
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42651
+[PUBLISHED] 2026-11-09 12:39 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 개발
+[SUMMARY]
+인공지능이 소프트웨어 코드를 작성하는 수준을 넘어 기업의 디자인 규칙을 이해하고, 이를 활용해 사용자 인터페이스(UI)를 구현하는 개발 환경이 확산되고 있다.메타(Meta)가 공개한 오픈소스 디자인 시스템 ‘아스트릭스(Astryx)’는 이러한 변화를 보여주는 사례다. AI 에이전트가 사전에 정의된 UI 구성요소와 개발 명령어를 직접 활용하도록 설계해, 생성형 AI가 화면을 임의로 구성하는 과정에서 발생할 수 있는 오류와 디자인 불일치를 줄이는 데 초점을 맞췄다.메타는 지난 6월 내부에서 약 8년간 개발해 온 아스트릭스를 오픈소스로
+---
+[TITLE] 엔비디아 "AI 에이전트, 차세대 컴퓨팅 플랫폼으로 진화"
+[LINK] https://zdnet.co.kr/view/?no=20261109122336
+[PUBLISHED] 2026-11-09 12:25 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SUMMARY]
+[지디넷코리아]엔비디아가 인공지능(AI) 에이전트를 차세대 컴퓨팅 플랫폼으로 육성하고 기업용 AI 시장 공략에 속도를 낸다. AI 모델을 업무에 맞게 선택하고 운영 비용을 줄이는 기술을 앞세워 기업 AI 도입 장벽을 낮추는 가운데 네이버클라우드·SK텔레콤 등 국내 기업과 협력도 확대한다는 목표다.조나단 코헨 엔비디아 응용연구 부문 부사장은 9일 서울 코엑스에서 열린 'AI 데이 서울 2026'에서 "에이전틱 AI는 새로운 컴퓨팅 플랫폼으로 볼 수 있다"며 "과거 대규모언어모델(LLM)이 사용자 질문에 답하는 방식이었다면 이제 AI 시스템은 다양한 업무를 직접 수행하는 방향으로 발전하고 있다"고 말했다.코헨 부사장은 AI 에이전트가 기존 LLM과 소프트웨어 기술을 결합해 기업 업무를 수행하는 핵심 수단이 될 것으로 전망했다. AI 에이전트는 사용자 요청을 분석한 뒤 적합한 모델과 도구를 선택하고 기업 내부 데이터까지 활용해 복잡한 작업을 처리하는 구조다. 소프트웨어 개발부터 시스템 오
+---
+[TITLE] "말로 설명하면 영상 완성"…딥브레인AI, 에이전트 탑재 AI스튜디오 5.0 공개
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217165
+[PUBLISHED] 2026-11-09 12:21 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 산업
+[SUMMARY]
+딥브레인AI(대표 장세영)는 영상 기획에서 편집까지 대화만으로 수행할 수 있는 '비디오 에이전트'가 적용된 올인원 AI 영상 제작 플랫폼 'AI스튜디오 5.0'을 출시했다고 9일 밝혔다.비디오 에이전트는 사용자가 원하는 영상 내용을 대화 형식으로 설명하거나 문서를 올리면 구성안을 먼저 제안한다. 이어 대본·이미지·생성 영상·음성·AI 아바타를 결합해 영상을 자동으로 완성한다.회사 측은 기획·대본·디자인·내레이션·편집을 한 플랫폼에서 처리할 수 있어 제작 시간과 비용, 전문 인력 의존도를 줄일 수 있다고 설명했다.대화형 AI 아바타의
+---
+[TITLE] [AI는 지금] 챗봇 넘어 에이전트로…딥시크, 하루 154만명 쓴다
+[LINK] https://zdnet.co.kr/view/?no=20261109083329
+[PUBLISHED] 2026-11-09 12:04 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SUMMARY]
+[지디넷코리아]중국 인공지능(AI) 기업 딥시크 AI 에이전트 플랫폼이 출시 3개월 만에 일일 이용자 154만 명을 확보했다. 딥시크는 외부 개발자가 참여하는 플러그인 생태계를 앞세워 오픈AI와 앤트로픽이 경쟁하는 AI 에이전트 시장에서 영향력을 확대하고 있다.9일 딥시크는 공식 엑스(X·옛 트위터)를 통해 AI 에이전트 플랫폼 '딥시크 하네스(DeepSeek Harness)' 일일 활성 이용자 수(DAU)가 지난 4일 기준 154만 명을 기록했다고 밝혔다. 블룸버그통신에 따르면 지난 9월 말 약 27만 1000명에서 한 달여 만에 5배 이상 증가한 규모다.딥시크 하네스는 이용자 지시에 따라 여러 단계 작업을 자율 수행하는 오픈소스 AI 에이전트 플랫폼이다. 코드 작성과 수정, 파일 분석, 정보 검색 등 복잡한 업무를 처리할 수 있으며 외부 개발자가 제작한 플러그인을 설치해 기능을 확장할 수 있다.딥시크는 지난 8월 13일 하네스 초기 버전인 'v0.1'을 출시한 데 이어 9월 29
+---
+[TITLE] 애플 CEO, '시리' 개발 속도 주문…"에이전트로 키워야"
+[LINK] https://zdnet.co.kr/view/?no=20261109084056
+[PUBLISHED] 2026-11-09 12:04 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 산업
+[SUMMARY]
+[지디넷코리아]애플이 음성 비서 '시리'를 이용자 대신 업무를 수행하는 인공지능(AI) 에이전트로 키우는 데 속도를 낸다. 9일 블룸버그통신에 따르면 존 터너스 애플 최고경영자(CEO)는 최근 크레이그 페더리기 소프트웨어 엔지니어링 수석부사장과 비공개 회의에서 시리 개발 계획을 앞당길 것을 요구했다. 터너스 CEO는 시리 기존 기능을 개선하는 수준을 넘어 새로운 기능을 빠르게 확보해야 한다는 뜻을 전달한 것으로 전해졌다.터너스 CEO는 애플의 AI 도입 속도가 경쟁사보다 느리다고 판단하는 것으로 알려졌다. 블룸버그는 터너스 CEO가 경쟁사만큼 긴박하게 AI를 도입하지 않는 내부 분위기에 답답함을 느끼고 있다고 내부 소식통을 인용해 전했다.애플은 이용자가 매번 명령하지 않아도 시리가 목표에 따라 작업을 이어가는 방식을 지향한다. 현재 시리는 이용자가 요청한 작업을 실행하는 식으로 작동한다. 애플은 향후 시리가 진행 중인 업무를 기억하고 관련 정보 변화를 확인해 후속 작업까지 수행하도록
+---
+[TITLE] 엔비디아 "韓, 피지컬 AI 핵심 국가"…현대차·LG·두산과 로봇 혁신 가속
+[LINK] https://zdnet.co.kr/view/?no=20261109115937
+[PUBLISHED] 2026-11-09 12:03 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 모델, 신기술, 산업
+[SUMMARY]
+[지디넷코리아]엔비디아가 인공지능(AI)을 디지털 환경에서 실제 제조 현장으로 확장하는 피지컬 AI 시장 공략에 속도를 낸다. 로봇 학습과 시뮬레이션, 디지털 트윈 기술을 결합해 제조업 자동화 수준을 높이는 가운데 현대자동차그룹·LG전자·두산로보틱스 등 국내 주요 기업과 협력을 강화한다는 전략이다.디푸 탈라 엔비디아 로보틱스·엣지 AI 부문 부사장은 9일 서울 코엑스에서 열린 'AI 데이 서울 2026'에서 "한국은 중공업·자동차·전자제품 제조 분야에서 국가 규모를 뛰어넘는 성과를 거둬왔다"며 "앞으로 범용 로보틱스가 AI의 궁극적인 활용 분야로 자리 잡을 수 있을 것"이라고 말했다.탈라 부사장은 피지컬 AI가 제조업 자동화의 새로운 전환점이 될 것으로 전망했다. 전 세계 국내총생산(GDP) 약 3분의 2가 물리적 세계에서 창출되지만 기존 자동화 기술은 대량 생산과 단순 반복 작업에 집중됐다는 설명이다. 특히 제조업의 상당 부분을 차지하는 중소기업은 기술 한계로 자동화 도입에 어려움
+---
+[TITLE] LG, 소버린 AI 생태계 강화...K-AI 개방·K-보이스 엔진 개발
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157085
+[PUBLISHED] 2026-11-09 11:55 KST
+[SOURCE] 테크M
+[TOPIC] 에이전트, 개발, 모델
+[SUMMARY]
+LG가 인공지능(AI) 지배력 강화에 나섰다. '독자 AI 파운데이션 모델(독파모)'을 개방했다. 한국어 특화 음성 엔진도 개발한다.9일 LG AI연구원은 'K-엑사원 2.5' 애플리케이션프로그래밍환경(API)을 무료 개방한다고 밝혔다.K-엑사원 2,5는 지난 8월 선보인 독파모 2차 모델 기반이다. 추가 학습을 적용한 기술 검증 모델이다.에이전틱(자율) AI 영역에서 프런티어급 글로벌 오픈웨이트 AI 모델과 경쟁 가능한 성능을 보였다. ▲딥시크 V4.1 플래시 ▲GLM 5.3(맥스)와 비교했다. ▲오토메이션 벤치 74.6점(딥시크
+---
+[TITLE] ETRI, 비전문가도 AI 모델 개발 가능한 탱고2 깃허브 공개
+[LINK] https://zdnet.co.kr/view/?no=20261109112034
+[PUBLISHED] 2026-11-09 11:20 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 신기술, 산업
+[SUMMARY]
+[지디넷코리아]산업현장 인공지능(AI) 모델과 서비스 개발을 쉽게, 효율적으로 지원하는 AI 통합개발도구 업그레이드 버전이 공개됐다. 향후 분야별 AI 전문 인력 수요를 상당부분 줄일 것으로 기대된다.한국전자통신연구원(ETRI)은 산업현장 전문가를 위한 노코드(No-code) 기반 AI 통합개발도구 ‘탱고(TANGO) 2'를 오픈소스 공개 창구 깃허브에 공개했다고 9일 밝혔다.탱고2는 지난 2025년 7월부터 깃허브 공개SW로 개발 중이다. 매년 두차례 릴리즈 버전을 공개하고, 하반기에는 1년 동안의 개발 내용을 탱고 컨퍼런스를 열어 발표하고 있다. 올해는 오는 11일 서울 한국과학기술회관에서 공개 세미나를 개최한다.탱고는 현장 전문가들이 AI 모델 개발을 지원한다. 일반인들도 탱고를 사용, AI모델 개발이 가능하다.조창식 책임연구원은 "인공지능 개발을 위해서는 데이타 준비가 필요하다. 일반인들은 범용 데이타를 가지고서 탱고를 활용할 수 있다"며 "예를 들어 숫자를 인식하는 것과 같
+---
+[TITLE] FIDO 얼라이언스, 12월 1일 서울서 ‘패스키 데이’ 개최
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000525
+[PUBLISHED] 2026-11-09 11:00 KST
+[SOURCE] IT조선
+[TOPIC] 에이전트, 신기술
+[SUMMARY]
+FIDO 얼라이언스가 12월 1일 서울에서 국내외 주요 기업의 패스키 도입 사례와 차세대 인증 기술을 공유하는 ‘패스키 데이’ 세미나를 개최한다. 구글과 삼성전자, SK텔레콤, 네이버클라우드, 쿠팡 등이 참여해 인공지능(AI) 에이전트와 디지털 자격증명, 양자내성암호(PQC) 등으로 확대되는 인증 기술의 발전 방향을 논의한다.글로벌 온라인 인증 기술 표준화 단체 FIDO 얼라이언스는 ‘2026 FIDO 얼라이언스 서울 세미나 – 패스키 데이 인 서울(Passkey Day in Seoul)’을 서울 강남구 한국과학기술회관에서 개최한다
+---
+[TITLE] 유아이패스, 기업 업무 지식 AI가 실행하는 ‘업무 지도’로 전환…‘카토그래퍼’ 출시
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42647
+[PUBLISHED] 2026-11-09 10:59 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트
+[SUMMARY]
+기업 내부에 흩어져 있는 업무 규칙과 직원들의 경험, 예외 처리 방식 등을 인공지능(AI) 에이전트가 활용할 수 있는 구조화된 업무 지도로 전환하는 기술이 등장했다. 단순히 업무 절차를 시각화하는 것을 넘어 실제 업무 수행 과정에서 발생하는 판단과 예외 상황까지 기록하고, 이를 AI 에이전트와 자동화 시스템의 설계·운영에 활용하는 방식이다.기업 자동화 전문기업 유아이패스(UiPath)는 기업의 운영 지식을 통합해 실행 가능한 업무 지도를 구축하는 ‘유아이패스 카토그래퍼(UiPath Cartographer)’를 출시했다고 9일 밝혔다
+---
+[TITLE] 모델만 옮기고 작업은 못 옮기면?…AI 에이전트 구입 전 출구 테스트 해야
+[LINK] https://www.itworld.co.kr/article/4246138/%eb%aa%a8%eb%8d%b8%eb%a7%8c-%ec%98%ae%ea%b8%b0%ea%b3%a0-%ec%9e%91%ec%97%85%ec%9d%80-%eb%aa%bb-%ec%98%ae%ea%b8%b0%eb%a9%b4ai-%ec%97%90%ec%9d%b4%ec%a0%84%ed%8a%b8-%ea%b5%ac%ec%9e%85-%ec%a0%84.html
+[PUBLISHED] 2026-11-09 10:54 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 개발, 모델, 산업, 규제
+[SUMMARY]
+최근 작업 환경을 한 코딩 에이전트에서 다른 코딩 에이전트로 옮겨 보았다. 작업에는 약 10분이 걸렸고, 순조롭게 끝났다고 생각했다. 첫 번째 에이전트에는 짊어진 짐이 많았다. 현재 전역 지침 파일 1개, 스킬 폴더 114개(대부분 설치한 것이고 일부는 필자가 직접 작성), 프로젝트 24개에 흩어진 소규모 메모리 노트 189개, 첫 번째 에이전트의 명령줄 도구를 호출하는 스크립트 73개가 있다. 두 번째 에이전트에 같은 기반을 마련해 주려고 지침 파일을 다른 도구가 읽는 이름인 AGENTS.md로 복사한 뒤, 제품명을 찾아 바꾸기로 일괄 변경했다. 필자는 이번 달에야 결과물을 제대로 읽었다. 지침 파일에는 모든 모델 호출을 코덱스 -p로 실행하라고 적혀 있다. 코덱스의 명령줄 인터페이스에서 -p는 –profile의 약어다. 지침을 문자 그대로 따르면 건네받은 프롬프트의 내용을 이름으로 삼은 설정 프로필을 불러온다. 같은 파일은 지금도 새 에이전트에 이전 공급업체의 API 키를 절대 
+---
+[TITLE] LG AI연구원, ‘K-엑사원 2.5’ API 전격 무료 개방…8주 만에 AI 성능 70%↑, 글로벌 프런티어 AI 정조준
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42636
+[PUBLISHED] 2026-11-09 10:00 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 개발, 모델
+[SUMMARY]
+LG AI연구원이 독자 개발한 인공지능(AI) 파운데이션 모델의 종합 성능을 단 8주 만에 70% 이상 끌어올리며 글로벌 프런티어 AI 경쟁에 속도를 내고 있다.특히, AI가 스스로 계획을 수립하고 외부 도구를 활용해 업무를 수행하는 에이전틱 AI 분야에서 중국의 딥시크와 GLM 등 글로벌 오픈 웨이트 모델에 근접하거나 일부 성능을 앞서는 결과를 확보했다. LG AI연구원은 개선된 모델의 응용프로그램 인터페이스(API)를 전면 무료로 개방해 실제 서비스 환경에서 기술 검증을 확대한다.LG AI연구원은 9일, 성능을 개선한 ‘K-엑사
+---
+[TITLE] 딥브레인AI, 대화만으로 영상 기획부터 편집까지 자동화…‘AI스튜디오 5.0’ 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42640
+[PUBLISHED] 2026-11-09 09:47 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 산업
+[SUMMARY]
+생성형 인공지능(AI)이 영상 제작을 넘어 기업의 영업 훈련과 채용 면접, 교육 업무까지 수행하는 통합 플랫폼으로 진화하고 있다. 사용자가 원하는 영상의 내용을 대화로 설명하거나 문서를 제공하면 AI가 기획부터 대본 작성, 영상 구성과 편집까지 처리하고, AI 아바타가 고객이나 면접관, 강사 역할을 맡아 실시간 상호작용하는 방식이다.생성형 AI 전문기업 딥브레인AI(DeepBrain AI, 대표 장세영)는 영상 제작 전 과정을 자동화하는 ‘비디오 에이전트(Video Agent)’와 대화형 AI 아바타 기능을 통합한 ‘AI스튜디오 5
+---
+[TITLE] AI에 회사 맥락을 제공하고 ‘회사 두뇌’를 구축하는 방법
+[LINK] https://news.hada.io/topic?id=36856&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 09:40 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 규제
+[SUMMARY]
+AI가 회사에 맞는 답을 하려면 지표 정의, 정책, 업무 방식 처럼 추측할 수 없는 정보를 문서화하고, 실제 업무 도구와 연결해 팀 전체가 공유해야 함 회사 두뇌(company brain) 는 직원과 AI 에이전트가 함께 사용하는 지식 기록으로, 문서뿐 아니라 연결된 도구의 최신 기록과 업무 중 쌓이는 수정 사항을 반영함 1~2페이지 문서 에 신입 직원이 첫 주에 물어볼 내용부터 사내 기준을 정리하고, 지표 계산법, 승인 기준, 내부 용어와 어느 시스템을 기준으로 삼는지 적음 바뀌는 사내 지식은 파인튜닝보다 검색과 최신 기록 조회 로 제공하 …
+---
+[TITLE] "회사 안에 AI가 너무 많아지고 있다... 이제 ‘AI 직원’을 관리해야 한다"
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42639
+[PUBLISHED] 2026-11-09 09:36 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 보안
+[SUMMARY]
+기업마다 업무에 AI를 활용하는 사례가 빠르게 늘고 있다. 이제 기업이 고민해야 할 문제는 AI를 얼마나 많이 도입했느냐가 아니다. 조직 안에서 얼마나 많은 AI 에이전트가 활동하고 있으며, 이들이 어떤 권한으로 무슨 일을 수행하는지 제대로 파악하고 관리하고 있느냐는 것이다.지난달 6일 세일포인트(SailPoint)가 발표한 글로벌 기업 조사에 따르면, 조사 대상 기업의 79%가 AI 에이전트를 실제 업무 환경에서 운영하고 있지만, 이를 관리하기 위해 특별히 설계된 신원 보안 도구를 사용하는 기업은 2%에 불과했다.이어 7일 점프클
+---
+[TITLE] Univer - 웹앱에 스프레드시트와 문서 편집기를 넣는 SDK
+[LINK] https://news.hada.io/topic?id=36853&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SUMMARY]
+자체 서비스 안에 스프레드시트와 문서 편집 환경 을 만들 수 있음 편집 화면과 애플리케이션 코드가 같은 데이터를 다루며, 수식 결과도 자동으로 갱신 스프레드시트 편집 셀 서식, 병합, 틀 고정, 이미지와 실행 취소 수식 계산, 정렬, 필터, 데이터 검증과 조건부 서식 SUM , IF , XLOOKUP , 동적 배열 등 다양한 함수 지원 문서 편집 리치 텍스트, 문단 서식, 목록, 링크와 댓글을 제공함 API로 셀과 범위를 읽고 수정하고, 변경 이벤트를 애플리케이션과 연결 가능 AI 에이전트도 같은 API를 사용하며, 모델과 도구 실행은 애플리케이션 …
+---
+[TITLE] Show GN: Aptly - 작업에 맞는 Claude Code·Codex 서브에이전트 모델과 effort를 추천
+[LINK] https://news.hada.io/topic?id=36852&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 09:16 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SUMMARY]
+Aptly는 OpenAI Decisions API를 이용해 설정된 모델 후보 목록에서 서브에이전트의 모델과 추론 프로필을 추천하는 로컬 MCP 서버입니다. 작업에 맞는 실행 프로필을 선택해 불필요한 토큰 사용과 비용을 줄이는 것이 목적입니다. 주요 기능은 다음과 같습니다. Codex와 Claude Code 지원 PreToolUse Hook을 통한 지원 대상 서브에이전트 호출의 기본 모델 자동 선택 사용자가 명시한 모델과 추론 강도 보존 모델 후보 설정 및 MCP·CLI를 통한 직접 추천 분류에는 최소한의 작업 요약을 Decisions API로 전달합니다. 실제 실행과 권한 결 …
+---
+[TITLE] 플래티어, 하이트진로음료 자사몰 GEO 운영 사례 공개…상품정보 정비부터 변경 대응까지
+[LINK] https://www.etnews.com/20261109000038
+[PUBLISHED] 2026-11-09 09:06 KST
+[SOURCE] 전자신문
+[TOPIC] 에이전트
+[SUMMARY]
+에이전틱 커머스 기업 플래티어(대표 이상훈)는 하이트진로음료 공식 온라인몰 '진로토닉몰'에 생성형 검색 최적화(GEO) 서비스 '젠서 GEO(genser GEO)'를 성공적으로 적용해 운영한 성과를 9일 공개했다. 이번 협업은 ChatGPT 등 생성형 AI를 활용한 상품 탐색이 급증하는 환경에서 소비자가 “토닉워터 추천해 줘” “무알콜 맥주 어떤 게 있어?” 등 질문을 던질 때 제조사 공식몰의 정확한 상품 정보가 AI 답변의 핵심 출처로 인용되
+---
+[TITLE] [AI리더의 서가] AI 에이전트 시대의 연결 프로토콜
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217029
+[PUBLISHED] 2026-11-09 09:00 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SUMMARY]
+AI 에이전트 시대의 연결 프로토콜후루카와 히데카즈 | 인사이트2026년 8월 20일추천이유저자는 MCP와 A2A 프로토콜을 단계별로 학습하고 직접 구현해 보면서 AI를 질의응답 도구에서 벗어나 실질적인 업무 자동화를 수행하는 동료로 만드는 방법을 제시합니다.상세보기 코딩 에이전트를 어떻게 쓰느냐고 묻던 개발자들이 이제는 에이전트를 사내 도구에 어떻게 잇느냐고 묻는다. 질문의 무게가 '사용'에서 '연결'로 옮겨 가고 있다. 영풍문고 북마스터는 이 질문에 인사이트가 지난 8월 펴낸 『 AI 에이전트 시대의 연결 프로토콜 MCP & A
+---
+[TITLE] “AI 에이전트, 토큰 소비의 주역”…美 기업 AI 지출 1년 새 5.4배
+[LINK] https://www.etnews.com/20261109000021
+[PUBLISHED] 2026-11-09 08:40 KST
+[SOURCE] 전자신문
+[TOPIC] 에이전트
+[SUMMARY]
+기업 인공지능(AI) 활용이 생성형 AI 챗봇 중심에서 AI 에이전트가 직접 업무를 수행하는 방식으로 진화하면서 토큰 소비와 기업 지출이 급증했다는 분석이 나왔다. 9일 미국 실리콘밸리 벤처캐피털 멘로벤처스가 최근 발표한 '2026 기업 AI 현황' 보고서에 따르면 올해 9월 기준 기업 AI 활용 지출 규모는 연간 환산 1768억달러(약 237조6192억원)로 추산됐다. 지난해 330억달러(약 44조3520억원)보다 5.4배 증가한 규모다. 멘
+---
+[TITLE] [이혁중 CISO 칼럼] AI가 바꾸는 것은 보안이 아니라 리스크의 판이다
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209383
+[PUBLISHED] 2026-11-09 08:00 KST
+[SOURCE] 데일리시큐
+[TOPIC] 에이전트, 개발, 보안
+[SUMMARY]
+기업의 AI 논의는 질문을 입력하면 답을 주는 생성형 AI에서 목표를 주면 스스로 계획을 세우고 도구를 호출해 작업을 수행하는 AI Agent 시대로 이동하고 있다. 문서 요약이나 보고서 작성에 머무르던 AI가 이제는 코드 저장소를 확인하고, 클라우드 설정을 점검하며, 외부 시스템과 API를 호출하고, 티켓을 생성하고, 때로는 조치까지 수행한다. 정보보호 관점에서 중요한 변화는 바로 여기에 있다. AI가 더 이상 “답변하는 시스템”이 아니라 행동하는 시스템이 되고 있다는 점이다. 공격자도 같은 방향으로 움직이고 있다. 과거 AI 위
+---
+[TITLE] Here’s the full text of Jensen Huang’s memo to Nvidia
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia
+[PUBLISHED] 2026-11-09 07:54 KST
+[SOURCE] The Verge
+[TOPIC] 에이전트
+[SUMMARY]
+On Sunday, Nvidia announced it was launching an investigation into CEO Jensen Huang's relationship with Alice Huang, an AI executive and agent of the Chinese government. In addition to the Board of Directors announcing the investigation, Huang sent a memo to Nvidia employees acknowledging the affair. You can read the full text below. To my […]
+---
+[TITLE] 나는 AI로 인한 두뇌 과부하에 이렇게 대처한다
+[LINK] https://news.hada.io/topic?id=36842&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 06:55 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SUMMARY]
+Claude Code나 Codex의 응답을 기다리며 작업을 늘리다 보면 여러 대화의 맥락을 동시에 붙잡게 됨. 이를 줄이기 위해 작업 순서와 맥락 관리 를 우선순위 큐처럼 구성하는 개인 실험을 진행함 Git을 작업 기록의 기준 으로 삼아 티켓을 코드 옆 Markdown 파일로 저장하고, 보드 상태도 커밋함. 세션이 종료돼도 작업 큐가 남으며 중요한 정보를 대화창이나 기억에만 두지 않음 에이전트는 조사, 승인된 작업 구현, 테스트와 검증을 맡고, 사람의 판단이 필요한 항목은 담당자 수신함(owner inbox) 에 우선순위순으로 모음 한 번에 티켓 하 …
+---
+[TITLE] [One Million AI Engineer Special] How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco
+[LINK] https://latent.space/p/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco/
+[PUBLISHED] 2026-11-09 06:23 KST
+[SOURCE] Latent Space
+[TOPIC] 에이전트, 개발, 산업
+[SUMMARY]
+What do you assign when a coding agent can finish last year’s homework in one prompt? In the second run of Stanford’s CS146S, Mihail Eric brought open-source maintainers into the course. Students have to learn an unfamiliar repo, propose a change, and ...
+---
+[TITLE] Apple is racing to make Siri more agentic
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic
+[PUBLISHED] 2026-11-09 04:18 KST
+[SOURCE] The Verge
+[TOPIC] 에이전트
+[SUMMARY]
+Bloomberg's Mark Gurman says CEO John Ternus is pressuring AI czar Craig Federighi to accelerate the Siri roadmap and deliver a powerful AI agent that can compete with OpenAI's Dots or Meta's Muse. While Federighi has delivered a functional version of Siri AI on an incredibly short timeline, the company has no illusions that it's […]
+---
+[TITLE] Brava Security Emerges From Stealth With $15 Million in Funding
+[LINK] https://www.securityweek.com/brava-security-emerges-from-stealth-with-15-million-in-funding/
+[PUBLISHED] 2026-11-08 21:14 KST
+[SOURCE] SecurityWeek
+[TOPIC] 에이전트, 보안, 산업
+[SUMMARY]
+Its multi-agent AI platform generates the telemetry an attack would produce to fix gaps in enterprise defenses. The post Brava Security Emerges From Stealth With $15 Million in Funding appeared first on SecurityWeek .
+---
+[TITLE] AI coding agents still need human cleanup on nearly three out of four tasks in a real-world test
+[LINK] https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/
+[PUBLISHED] 2026-11-08 18:50 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 개발, 모델
+[SUMMARY]
+Alibaba's new coding-agent benchmark, Co-Design Bench, tests AI agents on real user requests that already tripped them up in practice. Even GPT-6 Astra, the top performer, fully solves only 26.4 percent of tasks. On older benchmarks, the same models score above 99 percent. The article AI coding agents still need human cleanup on nearly three out of four tasks in a real-world test appeared first on The Decoder .
+---
+[TITLE] Week in review: Refrigeration cyberattacks hit European retailers again, Patch Tuesday forecast
+[LINK] https://www.helpnetsecurity.com/2026/11/08/week-in-review-refrigeration-cyberattacks-hit-european-retailers-again-patch-tuesday-forecast/
+[PUBLISHED] 2026-11-08 18:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 개발, 보안, 규제
+[SUMMARY]
+Here’s an overview of some of last week’s most interesting news, articles, interviews and videos: The first ten lines of a command policy for AI coding agents In this Help Net Security interview, Vinay Thakker, CTO of KloudStax, explains how to set identity, credentials, and network limits for AI agents. He argues that agents should run under their own identity, with the person’s identity attached when acting on someone’s behalf. Google disrupts XCPE botnet, bans … More → The post Week in review
+---
+[TITLE] 앤트그룹, '링 3.2 플래시' 공개…시각 이해 평가서 클로드 오퍼스 5 앞서
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217146
+[PUBLISHED] 2026-11-08 16:59 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발, 모델
+[SUMMARY]
+중국 앤트그룹이 이미지와 동영상을 이해하고 복잡한 작업을 수행하는 멀티모달 AI 모델 '링 3.2 플래시(Ling-3.2-flash)'를 출시했다. 앤트로픽의 '클로드 오퍼스 5'를 일부 성능 평가에서 앞섰으며, 외부 웹 제작 평가에서도 상위 10위에 올랐다. 특히 저렴한 사용료와 100만토큰의 긴 컨텍스트를 앞세워 기업용 AI 에이전트 시장을 공략하고 있다.앤트그룹의 링 개발팀은 5일 최신 멀티모달 모델 링 3.2 플래시를 공개했다. 이번 모델은 총 5600억개의 매개변수를 보유했으며, 실제 추론에는 250억개만 활성화하는 전문가
+---
+[TITLE] The Web Is More Than Enough, by Paul Ford
+[LINK] https://simonwillison.net/2026/Nov/9/hn-50421091/
+[PUBLISHED] 2026-11-09 13:32 KST
+[SOURCE] Simon Willison
+[TOPIC] 개발, 보안
+[SUMMARY]
+My comment on The Web Is More Than Enough, by Paul Ford — Hacker News. OK, this comment convinced me to give that a shot. Here's a thing I made in Three.js this morning - a Nudibranch themed Faberge Egg: https://static.simonwillison.net/static/2026/Hidden-Reef-Egg... (77KB) I just asked Claude (Opus 5.5 Medium running in regular Claude Chat) to port that to Vanilla JS, in the same thread where it had built it, and got this: https://static.simonwillison.net/static/2026/Hidden-Reef-Egg... (98KB) T
+---
+[TITLE] 금융보안원, 보이스피싱 대응 플랫폼 'ASAP'에 AI 탐지 모델 탑재
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209397
+[PUBLISHED] 2026-11-09 12:42 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 모델, 보안
+[SUMMARY]
+금융보안원이 금융권 보이스피싱 대응 강화를 위해 의심정보 공유 플랫폼인 ASAP에 인공지능(AI) 기반 이상금융거래 탐지 모델을 탑재하고 'AI 피싱지수' 조회 API 서비스를 제공한다고 9일 밝혔다.ASAP은 금융, 통신, 수사 분야의 의심정보를 공유하고 분석해 보이스피싱 예방을 지원하는 플랫폼이다. 이번에 적용된 AI 피싱지수는 보이스피싱 의심 거래의 실제 사기 가능성을 인공지능이 평가해 점수화한 지표다.해당 모델은 인터넷은행 3사인 카카오뱅크, 토스뱅크, 케이뱅크의 사기 탐지 역량을 모아 연합학습 기술로 개발됐다. 데이터 공유
+---
+[TITLE] 전 세계 대부분 지역에서 X 브랜드의 어떤 차량이든 잠금 해제하기
+[LINK] https://news.hada.io/topic?id=36867&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 12:32 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 보안
+[SUMMARY]
+익명 처리된 자동차 제조사의 커넥티드카 시스템 취약점 을 연결해, 호주에서 차량 번호판만으로 두 브랜드 차량에 원격 명령을 보낼 수 있었음 공개된 관리 도구의 JavaScript에 담긴 하드코딩된 API 키와 관리자 자격 증명 으로 차량 소유자 정보와 중앙 신원 관리 시스템에 접근할 수 있었음 WAF 우회와 계정 비밀번호 변경 을 결합했으며, 호주 환경의 인증 설정 오류로 다중 인증도 건너뛰고 모바일 앱용 토큰을 발급받을 수 있었음 실제 차량의 문 잠금 해제에 성공 했으며, 검증은 연구진이 소유하거나 명시적으로 접근 허가를 받은 차 …
+---
+[TITLE] [써보고서] "다르게 생각하랬지"…깨진 폴더블폰 저격한 잡스, AI 테마파크 가보니
+[LINK] https://zdnet.co.kr/view/?no=20261108073035
+[PUBLISHED] 2026-11-09 12:11 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 모델, 산업
+[SUMMARY]
+[지디넷코리아]"내가 '다르게 생각하라'고 했지, 전화기를 두 개로 쪼개라고 하진 않았어."스티브 잡스 애플 공동창업자 이름으로 폴더블폰을 비꼬는 글을 올렸다. 화면 파손 문제를 애플 광고 문구인 '다르게 생각하라(Think Different)'에 빗댄 농담이었다.이번에는 이건희 삼성 선대회장으로 역할을 바꿔 댓글을 달았다. "나는 불량 휴대폰을 불태웠는데, 자네 휴대폰은 알아서 부서지는 모양이군. 이번 판은 삼성 승리로 치겠네." 이 회장이 1995년 품질 개선을 강조하며 불량제품 15만 대를 부수고 불태우도록 지시한 일화를 끌어왔다.잠시 뒤 AI 잡스가 받아쳤다. "다음엔 경첩을 태워보시죠. 전화기가 얼마나 단순해지는지 보세요." 폴더블폰을 접게 만드는 부품부터 없애라는 응수였다.애플 컴퓨터 개발자였던 제프 래스킨도 끼어들었다. "그 승리는 문서로 받아두세요. 나도 매킨토시가 내 프로젝트인 줄 알았거든요." 매킨토시 컴퓨터 개발을 시작했지만 이후 잡스에게 주도권을 넘겨준 사연을 
+---
+[TITLE] LG, ‘K-엑사원 2.5’ 공개…성능 70%↑
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000515
+[PUBLISHED] 2026-11-09 11:52 KST
+[SOURCE] IT조선
+[TOPIC] 개발, 모델
+[SUMMARY]
+LG AI연구원이 독자 인공지능(AI) 파운데이션 모델의 성능을 8주 만에 70% 이상 높였다고 밝혔다. 중국의 최상위급 오픈웨이트 AI 모델과 경쟁할 수 있는 수준까지 성능을 개선했다는 설명이다. LG AI연구원은 개선 모델의 응용프로그램 인터페이스(API)를 무료로 개방해 개발자와 기업을 대상으로 실제 활용 가능성을 검증할 계획이다.LG AI연구원은 9일 서울 코엑스에서 열린 ‘엔비디아 AI 데이 서울 2026’에서 ‘K-엑사원 2.5’ API를 무료로 개방한다고 밝혔다. K-엑사원 2.5는 지난 8월 공개한 독자 AI 파운데이
+---
+[TITLE] 디노티시아, LLM 학습·평가 도구 오픈소스 해커톤 개최…개발자가 직접 코드 개선
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42646
+[PUBLISHED] 2026-11-09 10:55 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 모델, 보안, 신기술
+[SUMMARY]
+인공지능 개발 기업이 자체 대규모언어모델(LLM) 개발에 사용해 온 학습·평가 도구를 오픈소스로 공개하고, 외부 개발자가 직접 코드를 수정해 기술 개선에 참여하는 협업 프로그램을 마련했다. 단순히 개발도구 사용법을 익히는 교육을 넘어 실제 오픈소스 프로젝트에 개선 사항을 제안하는 것이 핵심이다.장기기억 AI 및 반도체 통합 솔루션 전문기업 디노티시아(Dnotitia, 대표 정무경)는 오는 14일과 21일 서울 모두의연구소 강남에서 LLM 학습·평가 도구를 활용한 첫 오픈소스 해커톤을 개최한다고 밝혔다. 이 행사는 디노티시아가 자체
+---
+[TITLE] 디노티시아, LLM 학습·평가 도구 개발 첫 오픈소스 해커톤 개최
+[LINK] https://www.etnews.com/20261109000101
+[PUBLISHED] 2026-11-09 09:57 KST
+[SOURCE] 전자신문
+[TOPIC] 개발, 모델, 보안
+[SUMMARY]
+디노티시아가 11월 14일과 21일 두 차례에 걸쳐 모두의연구소 강남에서 자체 개발해 공개한 거대언어모델(LLM) 학습·평가 도구를 참가자들이 직접 개선하는 첫 오픈소스 해커톤을 개최한다. 참가자들은 디노티시아가 모델 개발에 사용해 온 도구를 직접 실행하고 코드를 수정한 뒤, 해당 오픈소스 프로젝트에 코드 변경 사항을 제안하는 풀 리퀘스트(PR) 제출을 목표로 실습한다. 이번 행사는 사내에서 축적한 LLM 개발 경험을 공유하고, 공개한 도구의
+---
+[TITLE] ETRI, AI 전문가 없이도 산업용 AI 직접 개발…노코드 플랫폼 ‘탱고’ 오픈소스 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42641
+[PUBLISHED] 2026-11-09 09:55 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 모델, 산업
+[SUMMARY]
+인공지능개발 전문인력이 부족한 기업도 별도의 복잡한 프로그래밍 없이 산업 현장에 필요한 AI 모델과 서비스를 직접 개발할 수 있는 기술이 공개됐다. AI 모델의 학습부터 최적화, 배포까지 하나의 환경에서 처리하고, 생성형 AI와 대형언어모델(LLM) 개발까지 지원하는 노코드(No-code) 기반 통합 플랫폼이다.한국전자통신연구원(ETRI)은 산업 현장 실무자가 웹 브라우저에서 필요한 기능을 선택하는 방식으로 AI 모델을 개발하고 운영할 수 있도록 지원하는 통합개발도구 ‘탱고(TANGO)’를 오픈소스로 공개했다고 9일 밝혔다.이번 공
+---
+[TITLE] 이스트시큐리티, AI 보안 연합 '프로젝트 캐노피' 합류
+[LINK] https://www.etnews.com/20261109000073
+[PUBLISHED] 2026-11-09 09:31 KST
+[SOURCE] 전자신문
+[TOPIC] 개발, 보안, 규제
+[SUMMARY]
+이스트시큐리티는 공익 인공지능(AI) 보안 연합 '프로젝트 캐노피'에 디펜딩 파트너로 합류했다고 9일 밝혔다. 캐노피가 검증한 취약점의 악용 가능성과 위험도를 분석해 자사 보안 제품의 탐지 정책과 대응 기술에 반영할 계획이다. 디펜딩 파트너는 캐노피로부터 취약점과 보안 패치 정보를 받아 자사 시스템이 영향을 받는지 점검한다. 보안 점검이 필요한 오픈소스나 소프트웨어를 분석 대상으로 제안할 수도 있다. 이스트시큐리티는 시큐리티대응센터(ESRC)가
+---
+[TITLE] parse_number() as a SQLite extension: C vs Rust
+[LINK] https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/
+[PUBLISHED] 2026-11-09 07:26 KST
+[SOURCE] Simon Willison
+[TOPIC] 개발
+[SUMMARY]
+Research: parse_number() as a SQLite extension: C vs Rust I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number() function for turning strings like -$1,234.56 or '12.5%' into numeric values that could be summed and sorted. I fired up regular Claude chat (Opus 5.5) and prompted : I'm thinking about a SQLite custom function 'parse_number(value)' that strips ',', '$', '£' and '%', handles a leading '-', and returns '
+---
+[TITLE] 화상면접에 전화·사무실 방문까지…대담해진 해커들
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000437
+[PUBLISHED] 2026-11-09 06:00 KST
+[SOURCE] IT조선
+[TOPIC] 개발, 보안, 산업
+[SUMMARY]
+세계 최대 가상자산 거래소 바이낸스의 대규모 해킹에 가짜 화상면접이 동원된 것으로 알려졌다. 북한 해킹 조직 소속으로 추정되는 공격자는 외부 기업의 채용 담당자로 위장해 바이낸스 개발자와 직접 면접을 진행했고, 가짜 최고경영자(CEO)까지 내세워 악성코드가 담긴 코딩 과제를 실행하도록 유도했다. 해커가 피해자와 직접 대화하며 면접관 역할까지 수행한 것이다.9일 보안 업계에 따르면 최근 해커들은 컴퓨터 앞에서 시스템의 취약점만 공략하는 데 그치지 않고 피해자에게 직접 전화하거나 사무실을 방문하는 등 대담한 수법을 동원하고 있다.지난해
+---
+[TITLE] Tom Gauld on prompts for a cartoon about artificial intelligence and writing – cartoon
+[LINK] https://www.theguardian.com/books/picture/2026/nov/08/tom-gauld-on-prompts-for-a-cartoon-about-artificial-intelligence-and-writing-cartoon
+[PUBLISHED] 2026-11-08 21:00 KST
+[SOURCE] The Guardian
+[TOPIC] 개발
+[SUMMARY]
+Continue reading...
+---
+[TITLE] 파리협정 이행 가속화 논의할 ‘제31차 유엔기후변화협약 총회’ 개막
+[LINK] https://zdnet.co.kr/view/?no=20261109124703
+[PUBLISHED] 2026-11-09 12:47 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델, 신기술, 규제
+[SUMMARY]
+[지디넷코리아]지난해에 이어 파리협정 이행 가속화를 논의할 ‘제31차 유엔기후변화협약 당사국총회(UNFCCC COP31)’가 9일부터 20일까지 튀르키예 안탈리아에서 열린다.COP31에는 협약 당사국 정부 대표단을 포함해 10만여 명이 참석할 예정이다. 우리나라는 김성환 기후에너지환경부 장관을 수석대표(교체 수석대표 견종호 외교부 기후변화대사)로 해 외교부·산업통상부·재정경제부·과학기술정보통신부 등 관계부처 공무원과 전문가로 구성된 정부 대표단이 참석한다.파리협정 발효 10주년이기도 한 COP31은 개최국인 튀르키예가 총회 의장직과 기후행동 의제를 주도하고, 호주가 협상의장국으로서 당사국 간 협상을 이끄는 새로운 협력체계로 운영된다.기후부 관계자는 “지난해 브라질 벨렝에서 열린 COP30에 이어 올해도 파리협정의 이행 가속화가 핵심 과제로 논의될 것”으로 내다봤다.올해는 특히 지구 평균기온 상승이 산업화 이전 대비 1.5도 초과하는 폭과 기간을 최소화하기 위한 국제협력을 강화하고, 
+---
+[TITLE] 김도균 달파 대표 "온톨로지 활용이 AX 미래"[디지털마케팅 대전]
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678086
+[PUBLISHED] 2026-11-09 12:27 KST
+[SOURCE] 블로터
+[TOPIC] 모델
+[SUMMARY]
+주요 디지털마케팅 전문기업의 마케팅 솔루션 특징 및 인공지능(AI) 전략에 대해 분석합니다. “인공지능(AI) 모델을 업무에 활용하는 것 정도는 누구나 할 수 있습니다. 하지만 기업의 AI 전환(AX)은 이전보다 더 나은 의사결정을 내려 매출과 영업이익 같은 핵심성과지표(KPI)를 높이는 것이어야 합니다.”이달 6일 와 만난 기업간거래(B2B) AI 기업 달파(DALPHA)의 김도균 대표는 이와 같이 강조했다. AX는 단순한 반복 업무의 자동화를 넘어 사람이 가장 나은 의사결정을 할 수 있도록 제안하고 실질적인 매출 확대로
+---
+[TITLE] 메타서 14년 일한 전략총괄, AI 스타트업 파이어웍스 합류
+[LINK] https://zdnet.co.kr/view/?no=20261109095136
+[PUBLISHED] 2026-11-09 12:01 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델, 산업
+[SUMMARY]
+[지디넷코리아]메타에서 14년간 근무하며 최고재무책임자(CFO)와 최고전략책임자(CSO)를 지낸 데이브 웨너가 인공지능(AI) 추론 스타트업 파이어웍스 CFO로 합류한다.9일 CNBC 등 외신에 따르면 데이브 웨너 CSO는 소셜플랫폼 엑스(X)를 통해 파이어웍스 합류 소식을 밝혔다.그는 메타가 페이스북이던 2012년 입사해 2014년부터 2022년까지 8년간 CFO를 지냈다. 이후 CSO로 자리를 옮겨 회사 전략을 총괄해 왔다.하비에르 올리반 메타 최고운영책임자(COO)는 "데이브 웨너 CSO는 14년간 메타가 복잡성을 헤쳐 나가며 성과를 낼 수 있도록 이끌었고 회사 차원의 가장 어려운 결정들에 규율 있는 사고를 불어넣었다"고 말했다.데이브 웨너 CSO는 파이어웍스에서 회사 재무와 운영 규모를 키우는 역할을 맡는다. 파이어웍스는 2022년 메타와 구글 출신 인력들이 설립한 AI 추론 및 모델 학습 플랫폼 기업이다. 오픈모델을 고객사 업무에 맞게 맞춤화하고 운영할 수 있도록 지원한다.
+---
+[TITLE] AI 영상 넘쳐나는데 저작권은…합법 IP 시장 열린다
+[LINK] https://zdnet.co.kr/view/?no=20261109100532
+[PUBLISHED] 2026-11-09 12:00 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델, 보안, 규제
+[SUMMARY]
+[지디넷코리아]생성형 인공지능(AI) 기술이 발전하면서 누구나 손쉽게 영상을 제작하는 시대가 열렸다. 이러한 변화가 기존 창작자의 권리를 위협하는 데 그치지 않고 새로운 수익 창출 기회로 이어질 수 있을지 관심이 모인다.9일 관련 업계에 따르면 생성형 AI 영상 시장이 확대되면서 콘텐츠 제작 과정에서 저작권과 초상권을 보호하려는 움직임이 이어지고 있다.AI 영상 제작이 시작된 후 기존 영화·만화 캐릭터와 유명인의 얼굴·목소리를 무단으로 활용하는 사례에 대한 우려는 계속 커졌다. 저작권과 초상권 침해는 물론 딥페이크 광고 등 상업적 악용 가능성까지 제기되는 가운데 국내 AI 기업들은 정식 이용 허락을 받은 지식재산권(IP)을 활용한 사업 모델을 선보이고 있다.국내 AI 제작사 줄라이하우스는 정식 이용 허락을 받은 IP로 영상을 제작할 수 있는 플랫폼 비비드(VIVID)를 운영하고 있다. 지난달 30일 시작한 AI 영상 공모전 RE:PLAY(리플레이)에서는 김성모 작가의 만화 럭키짱, 
+---
+[TITLE] 카카오모빌리티, 엔비디아와 레벨4 자율주행 기술 협력…기아 PBV에 적용
+[LINK] https://zdnet.co.kr/view/?no=20261109111048
+[PUBLISHED] 2026-11-09 11:19 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델, 신기술
+[SUMMARY]
+[지디넷코리아]카카오모빌리티가 엔비디아와 손잡고 레벨4 자율주행 기술 개발에 나선다. 자체 개발한 자율주행 인공지능(AI)에 엔비디아의 고성능 컴퓨팅·센서·안전 기술을 결합하고, 기아의 목적기반차량(PBV)에 우선 적용해 무인 자율주행 서비스 상용화를 추진한다.카카오모빌리티는 9일 서울 강남구 웨스틴 서울 파르나스에서 엔비디아와 자율주행 기술 협력을 위한 업무협약(MOU)을 체결한다고 밝혔다.협약식에는 김진규 카카오모빌리티 피지컬 AI 부문 부사장과 가우라브 아가왈 엔비디아 자동차 사업부문 수석 디렉터 등 양사 관계자들이 참석한다.이번 협약에 따라 양사는 카카오모빌리티의 독자적인 자율주행 AI 모델에 엔비디아의 컴퓨팅 인프라와 센싱 기술, 안전 시스템을 결합해 레벨4 자율주행 시스템을 개발한다.레벨4는 정해진 운행 조건과 구역 내에서 운전자의 개입 없이 차량이 스스로 주행할 수 있는 자율주행 단계다.카카오모빌리티는 강남 도심에서 자율주행 기술을 실증해 온 경험을 바탕으로 인지부터 판
+---
+[TITLE] '1000대 임박' 테슬라 사이버트럭, 생산 중단 전 국내 판매 늘까
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678068
+[PUBLISHED] 2026-11-09 10:56 KST
+[SOURCE] 블로터
+[TOPIC] 모델, 신기술
+[SUMMARY]
+테슬라가 내년 중반 사이버트럭 생산라인을 철거하겠다고 밝히면서 국내 판매량 변화에 관심이 쏠릴 전망이다. 특히 국내 사이버트럭 누적 신규등록대수는 연내 1000대를 넘길 가능성이 커졌다.9일 한국수입차협회(KAIDA)에 따르면 테슬라 사이버트럭은 지난해 국내 출시 이후 올해 10월까지 총 922대가 신규 등록됐다. 특히 최근 3개월간 사이버트럭 신규 등록 대수는 월평균 100대 이상이다. 올해 생산이 종료된 모델 S와 모델 X도 국내 감독형 완전자율주행(FSD) 도입 이후 판매가 크게 늘어난 사례가 있어 사이버트럭 역시 생산 종료를
+---
+[TITLE] [기아 EV 승부수] 유지한 부사장의 SDV, PBV로 동력 얻나
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678081
+[PUBLISHED] 2026-11-09 10:49 KST
+[SOURCE] 블로터
+[TOPIC] 모델, 신기술
+[SUMMARY]
+[편집자주] 기아가 전기차 대중화 모델을 앞세워 국내외 시장 공략에 속도를 내고 있다. EV3와 EV5, PV5 등으로 판매 기반을 넓히고 있지만 가격 경쟁 심화와 수익성 확보는 여전히 과제로 남아 있다. 송호성 사장이 추진하는 전동화 전략의 성과와 한계를 판매 실적과 경영 지표를 통해 점검한다. 글로벌 전기차 시장의 경쟁 구도 속에서 기아가 준비하는 다음 성장 전략도 살펴본다. 기아가 목적기반모빌리티(PBV)를 앞세워 자율주행 서비스 시장으로 사업 영역을 넓히고 있다. 차량 판매에 그치지 않고 외부 자율주행 기술을 적용할 수 있는
+---
+[TITLE] 서울아산병원, AI로 귀 질환 진단 정확도 최대 32.2%p 향상…전공의와 전문의 격차 크게 줄였다
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42638
+[PUBLISHED] 2026-11-09 09:27 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
+[SUMMARY]
+인공지능이 귀 내시경 영상을 분석해 의료진의 진단을 보조하면 중이염 등 귀 질환의 진단 정확도를 크게 높일 수 있다는 연구 결과가 나왔다. 특히 임상 경험이 적은 저연차 전공의의 진단 정확도가 32.2%포인트 상승하면서, AI가 의료진의 숙련도에 따른 진단 격차를 줄이는 데 기여할 수 있다는 가능성이 확인됐다.서울아산병원 이비인후과 안중호 교수와 융합의학과 권지훈 교수 공동 연구팀은 귀 내시경 영상 7,335장을 학습한 딥러닝 기반 AI 모델을 개발하고, 전문의와 전공의 등 의료진 13명을 대상으로 진단 보조 효과를 분석한 결과 이
+---
+[TITLE] World Models Will Soon Be Inescapable. Here’s What You Need to Know
+[LINK] https://www.wired.com/story/world-models-will-soon-be-inescapable-what-you-need-to-know/
+[PUBLISHED] 2026-11-08 19:00 KST
+[SOURCE] WIRED
+[TOPIC] 모델, 신기술
+[SUMMARY]
+Moving AI from text to 3D space, world models simulate real-world physics to teach robots and autonomous cars how to navigate reality.
+---
+[TITLE] AI 추천이 다시 AI 학습 데이터로…UNIST, 반복 추천 속 편향 증폭 위험 확인
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42634
+[PUBLISHED] 2026-11-08 18:39 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
+[SUMMARY]
+인공지능이 추천한 상품이나 콘텐츠가 다시 AI의 학습 데이터로 활용되면서 이용자의 실제 취향보다 AI가 과거에 추천했던 항목이 이후 추천에 더 큰 영향을 미치는 문제가 확인됐다. 특히 추천 대상에 없는 상품을 제시하거나 사용자의 특성을 잘못 추정하는 오류가 반복 학습 과정에서도 사라지지 않아, 대형언어모델(LLM) 기반 추천 시스템의 신뢰성을 확보하기 위한 기술적 검증이 중요해지고 있다.울산과학기술원(UNIST) 인공지능대학원 이연창 교수 연구팀은 LLM 기반 추천 시스템에서 발생하는 편향과 환각, 반복 학습에 따른 오류 누적 과정
+---
+[TITLE] 어드밴텍, 엣지 AI에서 피지컬 AI·자율제조까지…산업 지능화 핵심 기술과 전략 공유
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42633
+[PUBLISHED] 2026-11-08 18:21 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델, 신기술
+[SUMMARY]
+글로벌 산업용 컴퓨팅 기업 어드밴텍(Advantech)이 엣지 인공지능(Edge AI)을 기반으로 피지컬 AI와 산업 자율화를 구현하기 위한 핵심 기술과 산업 적용 전략을 공유했다. 인공지능(AI)이 데이터 분석과 예측을 넘어 실제 산업 현장에서 물리적 환경을 인식하고 판단하며 행동하는 단계로 발전하면서, 이를 뒷받침할 컴퓨팅 인프라와 AI 모델, 산업용 플랫폼의 중요성이 커지고 있다.어드밴텍은 지난 6일 서울 강남구 엘리에나 호텔에서 ‘2026 엣지 AI 데이(2026 Edge AI Day)’를 개최하고, 글로벌 반도체·AI 기업
+---
+[TITLE] 어드밴텍 차기 CEO 밀러 창, “엣지 AI, 실증 넘어 산업 현장으로”…피지컬 AI 시대 성장 전략 제시
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42632
+[PUBLISHED] 2026-11-08 17:42 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델, 신기술
+[SUMMARY]
+인공지능(AI)이 디지털 환경의 데이터 분석과 의사결정을 넘어 로봇과 제조 설비 등 물리적 세계에서 직접 작동하는 단계로 발전하면서, 산업용 엣지 컴퓨팅의 역할이 확대되고 있다. 특히 엣지 AI가 개념검증(PoC)과 시범 도입을 넘어 실제 산업 현장에 적용되는 단계로 이동하면서 하드웨어와 소프트웨어, AI 모델을 통합하는 기술 역량이 새로운 경쟁 요소로 부상하고 있다.글로벌 산업용 컴퓨팅 기업 어드밴텍(Advantech)의 차기 최고경영자(CEO)로 내정된 밀러 창(Miller Chang) 임베디드 사업부 사장은 지난 6일 서울 강
+---
+[TITLE] 카스퍼스키, 프로스트앤설리번 '올해의 글로벌 APT 인텔리전스 기업' 선정
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209398
+[PUBLISHED] 2026-11-09 12:50 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SUMMARY]
+카스퍼스키가 글로벌 시장조사 기업 프로스트앤설리번으로부터 '2026 올해의 글로벌 APT 인텔리전스 및 위협 분석 기업'으로 선정됐다고 9일 밝혔다.프로스트앤설리번은 카스퍼스키의 글로벌 위협 인텔리전스(TI) 전문성과 지능형 지속 위협(APT) 배후 분석 역량, 기업 고객 대상 실행 가능한 위협 데이터 제공 성과를 높이 평가했다. 연구 데이터와 특허받은 위협 추적 기술, 인공지능(AI) 기반 분석 및 전문가 검증 역량을 결합해 고객이 공격자의 정체와 의도를 파악하도록 지원한 점이 인정받았다.카스퍼스키는 보안 경보 과부하를 줄이고 파
+---
+[TITLE] 한국사회보장정보원, 대학생 대상 'AI 보안 해커톤' 개최
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209396
+[PUBLISHED] 2026-11-09 12:28 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 산업
+[SUMMARY]
+한국사회보장정보원이 6일 서울 성신여자대학교에서 한국융합보안학회와 함께 'AI 보안 해커톤 경진대회'를 열었다고 9일 밝혔다.이번 대회는 '2026 한국융합보안학회 추계학술대회' 특별세션으로 마련됐다. 대학생 참가자들의 AI 활용 능력과 정보보안 실무 문제 해결 역량을 검증하고 보안 인재를 양성하기 위한 목적이다.본선에 오른 대학생 팀들은 3시간 동안 AI를 접목한 웹 취약점 분석과 정보보안 문제 풀이(CTF) 과제를 수행했다. 참가자들은 제한 시간 내에 현장 과제를 해결하며 실력을 겨뤘다.대회 대상(한국사회보장정보원장상)은 성신여
+---
+[TITLE] [크립토하나] 비트코인, 美 물가지표 관건…국내선 두나무 기업결합 심의
+[LINK] https://zdnet.co.kr/view/?no=20261109083204
+[PUBLISHED] 2026-11-09 12:04 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 보안, 규제
+[SUMMARY]
+[지디넷코리아]매주 월요일 오전, 이번 주 디지털자산 시장을 미리 읽어드립니다. 국내외 주요 거시경제 일정을 하나씩 짚고, 각 이벤트가 투자심리와 디지털자산 시장에 미칠 영향을 분석합니다. [편집자주]글로벌 가상자산 거래소 바이낸스에서 발생한 대규모 해킹 사고 이후 비트코인 등 주요 가상자산이 약세를 이어가는 가운데, 이번주 미국 주요 물가지표 발표가 시장 향방을 가를 변수로 떠올랐습니다. 해킹 사고 이후 투자심리가 위축된 상황에서 미국 금리 인상 가능성까지 커지면서 비트코인 반등 여부에 관심이 쏠립니다.특히 지난주 미국 고용지표가 예상보다 강하게 나타나면서 연방준비제도(연준) 긴축 우려가 커진 만큼, 이번주 물가지표 결과에 따라 비트코인 가격 변동성이 확대될 가능성이 제기됩니다.국내에서 주목할 소식도 있습니다. 이번주 공정거래위원회가 두나무와 네이버파이낸셜 기업결합에 대한 심의절차를 시작합니다. 이를 계기로 약 1년간 지연되어왔던 두 회사 기업결합에 속도가 붙을지 주목됩니다. 최근
+---
+[TITLE] AI안경 무단 촬영 우려…정부 가이드라인 마련
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000531
+[PUBLISHED] 2026-11-09 11:56 KST
+[SOURCE] IT조선
+[TOPIC] 보안, 규제
+[SUMMARY]
+인공지능(AI) 스마트안경 보급이 확대되면서 무단 촬영과 개인정보 유출 우려가 커지고 있다. 일반 안경과 외형이 비슷해 주변 사람이 촬영 여부를 알아채기 어렵고 수집된 영상과 음성이 본인 동의 없이 활용될 수 있기 때문이다. 개인정보보호위원회는 이용자와 제조사에 개인정보 침해를 막기 위한 주의사항을 안내했다.개인정보위는 9일 스마트안경의 개인정보 침해 위험을 분석한 보고서를 공개하고 이용자와 제조사·서비스 제공사가 지켜야 할 유의사항을 안내했다.스마트안경은 카메라와 마이크, 센서 등을 탑재해 착용자가 보는 장면과 주변 소리를 수집하
+---
+[TITLE] 불륜 인정한 젠슨 황, 中 스파이 연루 의혹에 리더십 '흔들'
+[LINK] https://zdnet.co.kr/view/?no=20261109112712
+[PUBLISHED] 2026-11-09 11:40 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 보안, 신기술, 규제
+[SUMMARY]
+[지디넷코리아]시가총액 4조 5000억 달러(약 6119조원) 규모 세계 최대 AI 반도체 기업, 엔비디아가 창사 이래 가장 큰 경영 리스크에 직면했다.젠슨 황 최고경영자(CEO)가 중국 정보기관과 연계된 것으로 의심받는 싱가포르 기업 '메가스피드' 전 임원 '앨리스 황'과 불륜 사실을 시인하며 우려가 커지고 있기 때문이다.젠슨 황 CEO는 8일(현지시간) 엔비디아 임직원에게 보낸 입장문에서 "배우자에게 충실하지 못했고 내 행동이 아내와 자녀에게 상처를 줬다. 내 행동에 대한 변명의 여지가 없으며 매우 미안하게 생각한다"고 밝혔다.이어 "최근 보도에서 제기된 국가안보 우려와 관련해 이사회가 시작한 독립적인 조사에 전적으로 협력하겠다"고 밝혔다.그러나 이사회 조사에 이어 미국 하원 외교위원회와 중국특별위원회, 정보위원회 등 3개 위원회의 비공개 조사도 예정돼 있다. 자체 조사와 청문회 결과에 따라서는 30년 가까이 유지했던 CEO 자리도 흔들릴 수 있다.도널드 트럼프 2기 행정부는 지
+---
+[TITLE] 안랩, 하반기 두자릿수 모집 공채 실시...자회사 안랩클라우드메이트도 함께
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217163
+[PUBLISHED] 2026-11-09 11:33 KST
+[SOURCE] AI타임스
+[TOPIC] 보안, 산업
+[SUMMARY]
+안랩(대표 강석균)은 AX·MSP 전문 자회사 안랩클라우드메이트(대표 김형준)와 2026년 하반기 신입·경력 공개채용을 진행한다고 9일 밝혔다.전 직군을 대상으로 진행되는 이번 공채는 AI를 중심으로 빠르게 변화하는 보안 환경과 기업의 AI 전환(AX) 수요에 대응하고, 미래 성장 동력을 확보하는 차원에서 규모를 확대했다. 입사 희망자는 오는 29일까지 양사 공채 홈페이지 통해 지원하면 된다.안랩은 연구개발(R&D)부터 사업, 경영지원 등 분야에서 두 자릿수 이상 모집한다. 모집 직무는 ▲소프트웨어 개발 ▲웹 개발 ▲AI/ML(머신
+---
+[TITLE] 플렉토리, 밀리웨이브와 피지컬 AI용 5G·60GHz 통합망 개발
+[LINK] https://zdnet.co.kr/view/?no=20261109113155
+[PUBLISHED] 2026-11-09 11:31 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 보안, 신기술, 규제
+[SUMMARY]
+[지디넷코리아]5G 특화망 솔루션 기업 플렉토리와 60GHz 무선통신 장비 기업 밀리웨이브가 피지컬 AI와 스마트 제조를 위한 통합 무선망을 공동 개발한다. 로봇의 이동과 제어는 이음5G로 지원하고, 대용량 영상 센서 데이터는 60GHz 무선망으로 전송하면서 두 망의 인증·보안·운영관리를 통합하는 방식이다.양사는 통합 무선망 솔루션 공동 개발과 사업화를 위한 업무협약을 체결했다고 9일 밝혔다.산업용 로봇과 AI 자동화 장비가 늘면서 산업현장에서는 이동 중에도 안정적인 연결을 유지하고 고해상도 영상과 센서 데이터를 빠르게 전송할 수 있는 무선 인프라가 중요해지고 있다. 단일 무선망으로 다양한 요구를 모두 충족하기는 어렵고, 서로 다른 무선망을 개별 운영하면 인증 보안 운영관리 체계가 분산되는 문제가 있다.양사는 각자의 기술을 결합해 이러한 한계를 해소할 계획이다. 플렉토리는 자체 개발한 5G 코어를 기반으로 국내외에서 30건 이상의 5G 특화망 구축 경험을 보유하고 있다. 기존 와이파
+---
+[TITLE] 아이티센피엔에스, AI 기반 취약점 분석·선제 대응 강화
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000529
+[PUBLISHED] 2026-11-09 11:01 KST
+[SOURCE] IT조선
+[TOPIC] 보안
+[SUMMARY]
+아이티센피엔에스가 인공지능(AI)을 활용한 취약점 분석과 선제적 사이버 위협 대응 역량을 강화한다. 취약점 발견부터 위험 분석, 공격 차단, 실시간 탐지와 자동 대응까지 보안 전반에 AI 기술을 적용한다는 계획이다.아이티센그룹의 보안 전문기업 아이티센피엔에스(대표 박원규)는 기존 보안 사업에 AI 기반 분석·대응 기술을 접목하고 글로벌 보안기업과의 협력을 확대한다고 9일 밝혔다. AI를 활용한 사이버 공격이 늘어나면서 취약점을 신속하게 발견하고 대응하는 보안체계 구축에 집중한다는 계획이다.아이티센피엔에스는 AI를 활용해 서버와 애플
+---
+[TITLE] 안랩, 하반기 신입·경력 공채…29일까지 접수
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000527
+[PUBLISHED] 2026-11-09 11:01 KST
+[SOURCE] IT조선
+[TOPIC] 보안, 산업
+[SUMMARY]
+안랩과 자회사 안랩클라우드메이트가 2026년 하반기 공개채용을 실시한다. 보안과 인공지능(AI), 클라우드 분야를 중심으로 신입·경력 인재를 모집하며, 양사 모두 두 자릿수 규모로 채용한다.안랩(대표 강석균)과 안랩클라우드메이트(대표 김형준)는 9일 전 직군을 대상으로 공개채용을 진행하고 이달 29일까지 지원서를 접수한다고 밝혔다. AI 기반 사이버 위협과 기업의 인공지능 전환(AX) 수요에 대응하기 위해 채용 규모를 확대했다.안랩은 연구개발(R&D), 사업, 경영지원 등 14개 직무에서 신입·경력 사원을 모집한다. 주요 직무는 소
+---
+[TITLE] 에스넷시스템, 신재생에너지 인프라 역량 강화…AIDC 사업 확대
+[LINK] https://www.etnews.com/20261109000145
+[PUBLISHED] 2026-11-09 10:44 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SUMMARY]
+에스넷시스템이 신재생에너지 플랜트에서 쌓은 통신·보안 인프라 구축 역량을 바탕으로 인공지능(AI) 데이터센터(AIDC) 사업을 확대한다. 기존 IT 인프라 역량에 전력설비 통신 기술을 결합해 데이터센터와 자체 발전설비를 연계하는 수요를 공략한다. 에스넷시스템은 국내외 대형 신재생에너지 플랜트 프로젝트에서 발전 설비와 제어 시스템을 연결하는 산업용 운영기술(OT) 통신·보안 인프라 구축에 잇따라 참여하며 글로벌 레퍼런스를 확보했다고 9일 밝혔다.
+---
+[TITLE] 미래에셋 계열사 4곳 잇단 사이버 공격…보안 조직 격상에도 CEO 책임론 '고개'
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157079
+[PUBLISHED] 2026-11-09 10:26 KST
+[SOURCE] 테크M
+[TOPIC] 보안, 규제
+[SUMMARY]
+미래에셋그룹의 주요 계열사들이 잇따라 사이버 공격에 노출되면서 경영진의 정보보호 관리 책임이 새로운 쟁점으로 떠오르고 있다. 보험과 자산운용에 이어 그룹 핵심 계열사인 미래에셋증권에서도 대규모 개인정보 유출이 확인되면서다. 그룹이 정보보호 조직을 격상하는 등 보안 강화에 나섰지만 짧은 기간 여러 계열사에서 사고가 발생한 만큼 대응 체계의 실효성을 점검해야 한다는 지적이 나온다.9일 금융투자업계에 따르면 최근 사이버 침해 사고 또는 침입 시도가 확인된 미래에셋그룹 계열사는 미래에셋생명과 미래에셋자산운용, 에너지인프라자산운용, 미래에셋
+---
+[TITLE] SGA솔루션즈-일루미오, 금융권 침해 확산 방어 전략 제시
+[LINK] https://www.etnews.com/20261109000091
+[PUBLISHED] 2026-11-09 09:45 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SUMMARY]
+SGA솔루션즈는 금융정보보호 콘퍼런스(FISCON 2026)에서 금융회사 내부에 침투한 공격자가 다른 시스템으로 이동하는 경로를 차단하는 '풀스택 마이크로 세그멘테이션' 전략을 소개한다고 9일 밝혔다. 마이크로 세그멘테이션은 서버와 애플리케이션 간 통신을 세분화해 업무에 필요한 연결만 허용하는 보안 기법이다. 공격자가 서버 한 대를 장악하더라도 내부 연결을 타고 핵심 시스템까지 접근하기 어렵게 해 피해 확산을 막는 데 목적이 있다. SGA솔루션
+---
+[TITLE] 안랩·안랩클라우드메이트, 하반기 공채…29일까지 접수
+[LINK] https://www.etnews.com/20261109000062
+[PUBLISHED] 2026-11-09 09:23 KST
+[SOURCE] 전자신문
+[TOPIC] 보안, 산업
+[SUMMARY]
+안랩과 자회사 안랩클라우드메이트는 각각 두 자릿수 규모로 하반기 공개채용을 진행한다고 9일 밝혔다. 안랩은 14개 직무에서 신입·경력 사원을, 안랩클라우드메이트는 10개 직무에서 경력 사원을 모집한다. 양사는 인공지능(AI) 기반 보안 위협과 기업의 AI 전환 수요에 대응하기 위해 채용 규모를 확대했다. 안랩은 소프트웨어·웹 개발, AI·머신러닝 개발, 보안위협 분석 등 연구개발(R&D) 분야와 국내영업, 보안 컨설팅, 제품·서비스 기획, 인사
+---
+[TITLE] [드림시큐리티 AI 시대 필수보안]〈3·끝〉뚫려도 지킨다, 마지막 방어선 '암호'
+[LINK] https://www.etnews.com/20261106000235
+[PUBLISHED] 2026-11-09 08:30 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SUMMARY]
+11월은 많은 기업과 기관이 내년 사업계획을 짜는 시기다. 보안 계획과 예산도 결정될 것이다. 지난해 국내 랜섬웨어 신고는 274건으로 전년보다 약 1.4배 늘었고, AI로 공격이 빨라지고 자동화되면서 방어는 더 어려워졌다. 그래서 주목받는 것이 침해를 전제한 방어다. 한국인터넷진흥원(KISA)은 사고에 대비해 네트워크와 분리된 백업을 강조한다. 따라서 예기치 못한 공격과 사고로 데이터가 유출돼도 내용을 읽을 수 없게 하는 암호화가 기초보안의
+---
+[TITLE] 데일리시큐, 11월 20일 ‘AI 시대 사이버 위협 동향과 대응방안’ 웨비나 개최
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209372
+[PUBLISHED] 2026-11-09 08:30 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SUMMARY]
+데일리시큐가 오는 11월 20일 금요일 오후 2시부터 3시까지 ‘AI 시대 사이버 위협 동향과 대응방안’을 주제로 온라인 웨비나를 개최한다.이번 웨비나는 인공지능을 활용한 사이버공격이 고도화되는 가운데, 기업과 기관 보안담당자들이 최신 위협을 이해하고 실효성 있는 대응 전략을 점검할 수 있도록 마련됐다. 한국인터넷진흥원(KISA)과 아카마이 전문가가 연사로 참여해 AI 시대의 새로운 공격 양상과 방어 전략을 공유할 예정이다.첫 강연은 오후 2시부터 25분간 김도원 KISA AI종합분석팀 팀장이 맡는다. 김 팀장은 ‘AI 시대 사이버
+---
+[TITLE] 이스트시큐리티, AI가 찾아낸 취약점 실제 공격 방어에 활용…‘프로젝트 캐노피’ 합류
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42635
+[PUBLISHED] 2026-11-09 08:25 KST
+[SOURCE] 인공지능신문
+[TOPIC] 보안
+[SUMMARY]
+인공지능이 발견한 소프트웨어 취약점을 실제 사이버 공격을 차단하는 보안 기술로 연결하기 위한 협력이 확대된다. AI 기반 취약점 분석 기술과 보안 기업의 위협 인텔리전스를 결합해 새로운 보안 위협을 조기에 식별하고, 실제 공격에 악용될 가능성을 분석하는 선제적 방어 체계 구축이 핵심이다.이스트소프트의 보안 전문 자회사 이스트시큐리티(ESTsecurity, 대표 정상원)는 공익 AI 보안 이니셔티브 ‘프로젝트 캐노피(Project Canopy)’에 디펜딩 파트너(Defending Partner)로 합류했다고 9일 밝혔다.이번 협력에
+---
+[TITLE] [정보보안 연재소설-로그아웃되지 않는 밤] 에필로그·부록 제65화 '다음 경보'
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209386
+[PUBLISHED] 2026-11-09 08:00 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SUMMARY]
+데일리시큐는 7월부터 장삼봉 작가(필명)의 정보보안 소설《로그아웃되지 않는 밤》을 매주 4편씩 연재한다. 화려한 디지털 서비스 뒤에서 보이지 않는 위협과 맞서는 보안 담당자들의 현실과 고뇌, 성장을 생생하게 담았다. 수많은 오탐 속에 숨은 단 하나의 진짜 공격을 추적하는 이들의 잠들지 못하는 밤이 시작된다. -또 다른 신입- 추적의 끝에, 이번 것도 결국 큰 사고는 아니었다. 누군가 한번 찔러 본 시도. 둘은 그것을 막고, 기록을 남겼다. 또 한 번, 아무 일도 일어나지 않게 했다. 그리고 또 한 번, 아무도 그 사실을 모를 거였다
+---
+[TITLE] Nvidia is investigating Jensen Huang’s relationship with a Chinese spy
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy
+[PUBLISHED] 2026-11-09 05:22 KST
+[SOURCE] The Verge
+[TOPIC] 보안
+[SUMMARY]
+Nvidia has announced that it is opening an investigation into CEO Jensen Huang and his relationship with Megaspeed executive Alice Huang, who was reportedly recruited by China's Ministry of State Security to spy on the company. A statement posted by the board of directors reads: The NVIDIA Board is initiating an independent investigation in light […]
+---
+[TITLE] Iris Ohyama data cloud breach exposes info of 7.7 million customers
+[LINK] https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/
+[PUBLISHED] 2026-11-09 00:43 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SUMMARY]
+Japanese manufacturer Iris Ohyama, the operator of the Iris Plaza shopping platform, disclosed that personal information belonging to about 7.7 million people may have been exposed after unauthorized access to a third-party cloud service the company used. [...]
+---
+[TITLE] 랜섬웨어 조직 N0n, 한국 스마트TV 광고 데이터 관련 기업 해킹 주장
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209395
+[PUBLISHED] 2026-11-09 00:37 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SUMMARY]
+랜섬웨어 조직 N0n이 한국의 소비자 전자제품 및 스마트TV 광고 데이터와 관련된 기업을 공격했다고 주장하며 다크웹 유출 사이트에 새로운 피해 대상을 게시한 정황이 확인됐다. 다만 피해기업의 실명과 실제 데이터 탈취 여부는 아직 확인되지 않았다.여러개 공개 랜섬웨어 추적 플랫폼 기록에 따르면, N0n은 지난 11월 7일 21시 26분경(UTC), 한국시간으로 11월 8일 오전 6시 26분경 'Company #142'라는 이름의 피해 주장 게시물을 등록했다.해당 게시물에는 국가가 'South Korea'로 표시됐으며, 관련 설명으로
+---
+[TITLE] 소닉월 SSL-VPN 인증 우회 취약점 실제 공격에 악용, 다중인증도 무력화
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209394
+[PUBLISHED] 2026-11-09 00:00 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SUMMARY]
+글로벌 네트워크 보안기업 소닉월(SonicWall)의 방화벽 운영체제 소닉OS에서 다중인증(MFA)을 우회할 수 있는 고위험 취약점이 발견됐으며, 실제 사이버 공격에 악용된 사실이 확인됐다. 미국 사이버보안·인프라보안국(CISA)은 해당 취약점을 실제 악용 취약점 목록(KEV)에 등록하고 신속한 보안 업데이트를 권고했다.문제가 된 취약점은 CVE-2026-19868(CVSS 7.1)로, 소닉월 방화벽의 SSL-VPN 서비스에서 발생하는 인증 통제 우회 취약점이다. 공격자가 다른 인증 방식에서 사용할 수 있는 유효한 계정정보를 확보한
+---
+[TITLE] [긴급] 오픈SSH 인증 우회 취약점 공개 9시간 만에 실제 공격…KISA도 7일 보안 업데이트 권고
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209393
+[PUBLISHED] 2026-11-08 23:45 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SUMMARY]
+리눅스 서버의 원격접속에 사용되는 오픈SSH(OpenSSH)에서 발견된 인증 우회 취약점이 공개된 지 9시간도 지나지 않아 실제 공격에 악용된 것으로 확인됐다. 공격자는 정상적인 비밀번호나 SSH 인증키 없이 서버에 로그인했으며, 보안기업이 운영하는 허니팟(Honeypot) 환경에서 최고 관리자 권한인 루트 권한까지 획득했다.문제가 된 취약점은 CVE-2026-123158(CVSS 8.1)로, 'SSHole'이라는 이름으로 알려졌다. 특정 리눅스 환경에서 비밀번호 검증 과정의 오류를 악용해 인증을 우회할 수 있는 고위험 취약점이다.
+---
+[TITLE] Andrej Karpathy built a curated video platform in a weekend using Claude and 20 years of Hacker News
+[LINK] https://the-decoder.com/andrej-karpathy-built-a-curated-video-platform-in-a-weekend-using-claude-and-20-years-of-hacker-news/
+[PUBLISHED] 2026-11-08 23:23 KST
+[SOURCE] The Decoder
+[TOPIC] 보안
+[SUMMARY]
+OpenAI co-founder Andrej Karpathy used Claude's Opus 5.5 to filter 43 million Hacker News comments into 6,454 curated videos. The result beats YouTube's own recommendations, he says. The article Andrej Karpathy built a curated video platform in a weekend using Claude and 20 years of Hacker News appeared first on The Decoder .
+---
+[TITLE] 글로벌 인증서 기업 디지서트 해킹…고객 여권·운전면허증 등 신원확인 서류 유출
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209392
+[PUBLISHED] 2026-11-08 23:08 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SUMMARY]
+글로벌 디지털 인증서 발급기업 디지서트(DigiCert)가 내부 업무 시스템의 보안 설정 오류와 접근권한 관리 취약점으로 해킹 피해를 입었다. 공격자는 외부에서 임의로 계정을 생성한 뒤 과거 고객정보가 보관된 시스템에 접근했으며, 일부 고객의 여권과 운전면허증 등 민감한 신원확인 서류까지 노출된 것으로 확인됐다.특히 이번 사고는 2025년 2월 서버 이전 과정에서 발생한 보안 설정 오류가 16개월 넘게 방치된 데다, 디지서트가 2026년 6월 비인가 계정의 존재를 확인하고도 실제 고객정보 접근 여부를 제대로 파악하지 못했다는 점에서
+---
+[TITLE] The inventor of the bitter lesson has a bitter lesson for LLM scaling enthusiasts
+[LINK] https://the-decoder.com/the-inventor-of-the-bitter-lesson-has-a-bitter-lesson-for-llm-scaling-enthusiasts/
+[PUBLISHED] 2026-11-08 20:44 KST
+[SOURCE] The Decoder
+[TOPIC] 보안, 산업
+[SUMMARY]
+Turing Award winner Richard Sutton reaffirms that raw compute alone isn't enough for intelligence and that fundamentally new learning methods are needed. Ex-OpenAI researcher Tworek agrees, saying blind transformer scaling "has reward hacked brains of a whole generation of scientists." A growing wave of startups is already betting on exactly this gap. The article The inventor of the bitter lesson has a bitter lesson for LLM scaling enthusiasts appeared first on The Decoder .
+---
+[TITLE] 디지털자산 운용사 '하이퍼리즘' 해킹…주민등록번호·은행 계좌정보까지 유출
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209388
+[PUBLISHED] 2026-11-08 16:52 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SUMMARY]
+디지털자산 운용사 하이퍼리즘(Hyperithm)이 외부 사이버공격을 받아 주민등록번호와 은행 계좌정보를 포함한 개인정보가 유출된 것으로 확인됐다. 공격자는 회사 업무용 서버를 통해 외부 클라우드 저장소에 보관된 업무 자료에 비정상적으로 접근했으며, 회사는 사고 발생 나흘 뒤 이를 인지하고 서버 중단과 계정 차단 등 긴급 대응에 나섰다.하이퍼리즘 유한책임회사(대표 오상록·이원준)는 11월 6일 공식 홈페이지에 '개인정보 유출 관련 안내 및 사과 말씀'을 게시하고, 외부 공격으로 회사가 보관하던 개인정보가 유출된 사실을 확인했다고 밝혔
+---
+[TITLE] SM엔터테인먼트·디어유·드림메이커…업무시스템 해킹에 주민번호·계좌정보까지 노출
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209387
+[PUBLISHED] 2026-11-08 16:42 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SUMMARY]
+국내 대형 엔터테인먼트 기업 SM엔터테인먼트와 팬 소통 플랫폼 '버블(bubble)' 운영사 디어유, 공연기획사 드림메이커에서 개인정보 유출사고가 발생했다. 외부 공격자가 업무시스템에 비인가 접근해 내부 문서와 개인정보를 탈취한 것으로 확인됐으며, 유출 항목에는 주민등록번호와 계좌번호, 계약서 정보, 임직원 인사정보 등이 포함됐다.SM엔터테인먼트와 디어유, 드림메이커가 공식 홈페이지에 게시한 개인정보 유출 안내문을 종합하면, 세 회사 모두 2026년 11월 4일경 개인정보 유출이 발생한 것으로 확인됐다. 각 회사는 현재 관계당국 및
+---
+[TITLE] 글로벌 보안 M&A 449건 '역대 최다'…협력 뒤처진 韓, 통합플랫폼 강화 서둘러야
+[LINK] https://www.etnews.com/20261106000280
+[PUBLISHED] 2026-11-08 16:30 KST
+[SOURCE] 전자신문
+[TOPIC] 보안, 산업
+[SUMMARY]
+국내외에서 해킹 위협이 높아지는 가운데 글로벌 사이버보안 기업 인수합병(M&A) 거래 건수가 올해 역대 최대 규모를 기록할 전망이다. 주요 기업이 통합 플랫폼 경쟁력을 강화하기 위해 공격적인 인수에 나선 결과다. 상대적으로 M&A 움직임이 적은 국내 보안업계도 기업 간 협력 등을 통해 경쟁력을 강화해야 한다는 목소리가 높아진다. 8일 미국 사이버보안 전문 투자은행 모멘텀 사이버가 발간한 '2026년 3분기 사이버보안 시장 보고서'에 따르면 올해
+---
+[TITLE] SM엔터도 뚫렸다… 임직원 정보·계약서 유출
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000501
+[PUBLISHED] 2026-11-08 16:06 KST
+[SOURCE] IT조선
+[TOPIC] 보안, 규제
+[SUMMARY]
+SM엔터테인먼트의 사내 핵심 업무 시스템이 외부 해킹 공격에 뚫려, 임직원 개인정보와 기밀이 포함된 내부 계약서가 외부로 유출되는 사고가 발생했다.8일 SM엔터테인먼트는 외부 공격자가 전자결재시스템 등 자사 업무망에 비인가 방식으로 무단 접근해 내부 문서 파일을 빼낸 사실을 확인했다고 밝혔다. 이번 시스템 불법 접근 및 유출 사고는 이달 4일경 발생한 것으로 파악됐다.유출된 데이터에는 이름, 휴대전화번호, 주소, 계좌번호, 주민등록번호, 소속(부서·직위·직책) 등 임직원의 민감한 개인 식별 정보뿐만 아니라 전자결재에 첨부된 계약서
+---
+[TITLE] [ET시론] 사이버회복력을 고려한 AIDC 보안 내재화 설계
+[LINK] https://www.etnews.com/20261106000059
+[PUBLISHED] 2026-11-08 16:00 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SUMMARY]
+공공 서비스와 기업의 업무가 디지털 시스템에 의존할수록 사이버 공격의 피해는 정보 유출을 넘어 업무 중단과 잘못된 의사결정으로 이어질 수 있다. 공격을 막기 위한 노력과 함께 일부 시스템이 침해된 상황에서도 필요한 업무를 유지하고 신뢰할 수 있는 상태로 회복하는 능력을 갖춰야 한다. 사이버회복력이 필요한 이유다. 미국 국립표준기술연구소(NIST)는 사이버회복력의 목표를 예상, 견딤, 회복, 적응으로 제시한다. 위협을 예상해 준비하고, 사고의 영
+---
+[TITLE] [보안긴급진단]〈4·끝〉공공, 인력 확충 넘어 전문성·상시 대응체계 확보 과제
+[LINK] https://www.etnews.com/20261106000205
+[PUBLISHED] 2026-11-08 16:00 KST
+[SOURCE] 전자신문
+[TOPIC] 보안, 산업, 규제
+[SUMMARY]
+〈편집자주〉 사이버 침해사고가 산업 전반으로 확산하면서 기존 보안체계의 한계가 드러나고 있다. 인공지능(AI)이 해킹에 활용되면서 산업별 보안 체계 강화가 시급해졌다. 전자신문은 '보안긴급진단' 기획 시리즈를 통해 금융·산업·정보기술(IT)·공공 등 4개 분야의 보안 실태와 구조적 취약점을 살펴보고 개선 과제를 짚어본다. 민간뿐 아니라 공공부문에서도 해킹과 개인정보 유출 사고가 잇따르고 있다. 공공은 국민의 민감정보와 국가 주요 정보를 보유하고
+---
+[TITLE] [포토] 해킹 공격 예의 주시하는 KISA
+[LINK] https://www.etnews.com/20261108000074
+[PUBLISHED] 2026-11-08 14:31 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SUMMARY]
+은행권을 강타한 연쇄 해킹에 이어 증권사와 자산운용사, 가상자산 거래소에서도 침해사고가 잇따르면서 금융권 전반에 사이버 보안 비상이 걸렸다. 주말 서울 송파구 한국인터넷진흥원 인터넷침해대응센터에서 관계자들이 해외 해킹조직의 사이버 공격에 대비해 실시간 모니터링하고 있다.
+---
+[TITLE] [포토]해외 해킹 공격 대비 실시간 모니터링
+[LINK] https://www.etnews.com/20261108000073
+[PUBLISHED] 2026-11-08 14:30 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SUMMARY]
+은행권을 강타한 연쇄 해킹에 이어 증권사와 자산운용사, 가상자산 거래소에서도 침해사고가 잇따르면서 금융권 전반에 사이버 보안 비상이 걸렸다. 주말 서울 송파구 한국인터넷진흥원 인터넷침해대응센터에서 관계자들이 해외 해킹조직의 사이버 공격에 대비해 실시간 모니터링하고 있다.
+---
+[TITLE] [포토] 금융권 연쇄 해킹에 실시간 모니터링
+[LINK] https://www.etnews.com/20261108000072
+[PUBLISHED] 2026-11-08 14:30 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SUMMARY]
+은행권을 강타한 연쇄 해킹에 이어 증권사와 자산운용사, 가상자산 거래소에서도 침해사고가 잇따르면서 금융권 전반에 사이버 보안 비상이 걸렸다. 주말 서울 송파구 한국인터넷진흥원 인터넷침해대응센터에서 관계자들이 해외 해킹조직의 사이버 공격에 대비해 실시간 모니터링하고 있다.
+---
+[TITLE] 아이엘, 유럽 AI·로봇 협의체 ADRA 정식 가입…피지컬 AI 사업 확대
+[LINK] https://www.etnews.com/20261109000216
+[PUBLISHED] 2026-11-09 12:40 KST
+[SOURCE] 전자신문
+[TOPIC] 신기술
+[SUMMARY]
+아이엘이 유럽 인공지능(AI)·데이터·로봇 협의체인 'ADRA(AI, Data and Robotics Association)'의 정식 회원사 승인을 받고 공식 홈페이지 회원사 명단에 등록됐다고 9일 밝혔다. 회사에 따르면 이는 국내 휴머노이드 및 피지컬 AI 기업 가운데 ADRA에 정식 가입한 첫 사례다. 아이엘은 이번 가입을 계기로 국내에서 확보한 피지컬 AI 기술과 산업 현장 데이터를 활용해 유럽 연구기관 및 기업과 협력을 확대하고 해외 사
+---
+[TITLE] 삼성중공업·티엠에스, 11월 대한민국 엔지니어상 수상
+[LINK] https://zdnet.co.kr/view/?no=20261109102048
+[PUBLISHED] 2026-11-09 12:01 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술, 산업
+[SUMMARY]
+[지디넷코리아]황향안 삼성중공업 조선·해양연구소 도장신소재연구그룹장과 조윤호 티엠에스인더스트리 대표가 과학기술정보통신부와 한국산업기술진흥협회(산기협)가 주는 '대한민국 엔지니어상' 11월 수상자로 선정됐다.이들에게는 부총리 상장과 상금 500만원이 수여된다.황 그룹장은 휘발성 유기화합물((VOCs)을 거의 함유하지 않은 방오 도료를 개발, 2018년 세계 최초로 선박에 적용한 공로를 인정받았다. 현재까지 250척에 이 기술이 적용됐다. 유해성을 최소화하면서도 선박 연비 성능을 확보한 차세대 저독성 방오도료 7종도 공동 개발, 3년 만에 상용화했다.조 윤호 대표는 폐배터리 냉동·방전·파쇄·분리 전 공정을 자동화했다. 폐배터리 재활용 및 AI 기반 공정 최적화 관련 10여 건의 특허를 출원·등록했다. 폐배터리 종류와 상태가 다양해 공정 표준화가 어렵고 해체·선별 과정에서 유해가스·분진 및 화재·폭발 위험이 발생하는 문제를 해결하기 위해 협동로봇·인공지능·디지털 트윈 기술을 융합한 통합 
+---
+[TITLE] 현대모비스, 고교생이 직접 개발한 피지컬 AI 자율주행차 경연…미래 모빌리티 인재 육성
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42650
+[PUBLISHED] 2026-11-09 11:59 KST
+[SOURCE] 인공지능신문
+[TOPIC] 신기술, 산업
+[SUMMARY]
+현대모비스가 고등학생들이 직접 개발한 인공지능(AI) 자율주행 알고리즘과 로봇 운영 기술을 겨루는 경진대회를 열고 미래 모빌리티 인재 육성에 나섰다. 특히 올해는 딥러닝 기반 자율주행뿐 아니라 로봇 운영체제인 ROS2를 활용한 피지컬 AI 차량 부문까지 운영해 청소년들이 실제 자율주행 기술을 구현하고 검증하는 기회를 제공했다.현대모비스는 지난 7일 서울 하나고등학교에서 전국 12개 고등학교 학생 약 100명이 참가한 ‘2026 청소년 공학 리더 페스티벌’을 개최했다고 9일 밝혔다. 이번 행사는 현대모비스가 고교학점제와 연계해 운영하
+---
+[TITLE] 삼성, 현대차 경영진 170명 초청…왜?
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000512
+[PUBLISHED] 2026-11-09 11:31 KST
+[SOURCE] IT조선
+[TOPIC] 신기술
+[SUMMARY]
+삼성전자가 현대차그룹 주요 경영진과 배우자 등 170여 명을 초청해 대규모 교류 행사를 연다. 삼성전자가 국내에서 특정 기업 그룹만을 대상으로 별도 행사를 마련한 것은 이례적이다. 자동차 산업이 전동화와 자율주행을 넘어 로봇으로 확장되는 가운데 반도체와 배터리 등 미래 모빌리티 분야에서 양사 간 협력을 강화하려는 취지로 풀이된다.9일 재계에 따르면 삼성전자는 이날 경기 용인시 연수원 ‘더 유니버스’에서 현대차·기아 주요 경영진과 임원들을 배우자와 함께 초청하는 ‘감사 데이’를 개최한다. 행사에는 전영현 삼성전자 부회장과 장재훈 현대
+---
+[TITLE] 브이엠에스 솔루션스, 제조 AI 전문기업 선정…생산계획 최적화 기술 확대
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217164
+[PUBLISHED] 2026-11-09 11:29 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SUMMARY]
+공급망 전문 브이엠에스 솔루션스가 한국산업기술기획평가원(KEIT)의 'M.AX 전문기업'에 선정됐다고 밝혔다.M.AX(Manufacturing AI Transformation)는 제조업에 AI를 도입해 생산과 운영 체계를 혁신하는 것을 의미한다. 산업통상부와 KEIT는 제조 현장의 AI 도입을 촉진하기 위해 관련 기술력과 현장 적용 역량을 갖춘 기업을 전문기업으로 선정하고 있다. 브이엠에스 솔루션스는 'AI 솔루션 기업' 부문에 이름을 올렸다.이 회사는 25년 이상 반도체·디스플레이, 자동차·배터리, 바이오·제약 등 국내외 제조기업
+---
+[TITLE] 동일미래과학고, 입학설명회에 300여명 몰려 '뜨거운 관심'
+[LINK] https://www.etnews.com/20261109000184
+[PUBLISHED] 2026-11-09 11:29 KST
+[SOURCE] 전자신문
+[TOPIC] 신기술
+[SUMMARY]
+동일미래과학고등학교(교장 김문수)가 최근 교내 다목적체육관에서 '학교 개방의 날'을 겸해 개최한 2027학년도 신입생 입학설명회에 광주·전남지역 중학생과 학부모, 중학교 진로진학 교사 등 300여명이 몰려 뜨거운 관심을 모았다. 이 학교는 내년부터 인공지능(AI) 활용 교육을 전과정에 접목한 AI반도체과, AI로보틱스과, AI모빌리티과, AI헬스케어과, AI융합콘텐츠과 5개 학과(9학급 162명) 체제로 운영될 예정이다. 5개 학과 학생은 모두
+---
+[TITLE] M83, 춘천 애니메이션박물관서 AI·XR 전시 실증
+[LINK] https://zdnet.co.kr/view/?no=20261109111511
+[PUBLISHED] 2026-11-09 11:15 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술
+[SUMMARY]
+[지디넷코리아]M83이 관람객이 그린 로봇을 3차원(3D) 캐릭터로 구현하는 확장현실(XR) 전시를 통해 공간형 실감 콘텐츠의 사업성을 검증한다.M83은 춘천 애니메이션박물관 토이로봇관에 인공지능(AI) 기반 XR 콘텐츠를 구축하고 지난달 20일부터 현장 실증을 진행 중이라고 9일 밝혔다.관람객이 대형 터치스크린에 로봇을 그리고 이름을 입력하면 AI가 육지·해저·우주 등 가상공간에 어울리는 3D 캐릭터를 생성한다. 별도 명령어 없이 그림으로 AI를 체험할 수 있어 어린이 교육·놀이 콘텐츠로 활용할 수 있다.M83은 캐릭터 생성 기술과 실시간 사용자 인식 기술을 하나의 시스템에 통합했다. 여러 대의 웹캠으로 움직임을 인식해 관람객 여러 명이 가상 캐릭터와 상호작용할 수 있도록 했으며, 가상공간과 캐릭터 제작에는 기존 시각특수효과(VFX) 사업에서 쌓은 영상 제작 기술을 활용했다.회사는 현장 하드웨어와 AI 소프트웨어를 묶어 공간 맞춤형 솔루션으로 공급할 계획이다. 국공립 과학관과 박물
+---
+[TITLE] 수요 확대 中 휴머노이드, 유지보수 꼼꼼히 따져야
+[LINK] https://www.etnews.com/20261109000064
+[PUBLISHED] 2026-11-09 11:00 KST
+[SOURCE] 전자신문
+[TOPIC] 신기술, 산업
+[SUMMARY]
+중국산 휴머노이드 로봇의 국내 진출이 늘면서 대학과 연구기관뿐만 아니라 특성화고, 일반 기업 등으로 구매 수요가 확대된다. 연구개발(R&D)과 교육, 전시·홍보 등 활용 목적이 다양해지는 가운데, 국내 수리 인력과 소프트웨어(SW) 기술지원 체계 확보가 과제로 떠올랐다. ▶ 동영상 콘텐츠는 더존비즈온 '원스튜디오'를 활용해 제작되었습니다.
+---
+[TITLE] 젠슨 황, ‘중국 스파이’ 연루 의혹 속 불륜 인정·공개 사과…엔비디아 이사회 독립 조사 착수
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42645
+[PUBLISHED] 2026-11-09 10:17 KST
+[SOURCE] 인공지능신문
+[TOPIC] 신기술
+[SUMMARY]
+글로벌 인공지능(AI) 반도체 시장을 주도하는 엔비디아(NVIDIA)의 창업자 겸 최고경영자(CEO) 젠슨 황(Jensen Huang)이 불륜 사실을 공개적으로 인정하고 가족과 임직원, 주주들에게 사과했다. 상대 여성이 중국 정보기관과 연계된 인물이라는 의혹이 제기된 가운데, 엔비디아 이사회는 황 CEO가 외국 정보기관의 정보 수집 활동에 노출됐는지 확인하기 위한 독립 조사에 착수했다.황 CEO는 8일(현지시간) 엔비디아 임직원들에게 보낸 메시지에서 자신의 부적절한 사적 관계를 인정하고, 이로 인해 가족과 회사 관계자들에게 상처를
+---
+[TITLE] [로봇과 사람들] 이일남 삼현 CTO "사람 지키는 로봇 관절 만든다"
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678069
+[PUBLISHED] 2026-11-09 09:50 KST
+[SOURCE] 블로터
+[TOPIC] 신기술
+[SUMMARY]
+로봇 산업을 일구는 사람들에게 기술과 사업 그리고 고민을 묻습니다.손잡이 두 개가 마주 놓인 장치. 한쪽 손잡이를 잡고 움직이자 맞은편 로봇 팔이 그대로 따라 움직였다. 로봇 팔 앞을 손으로 막아서자 팔은 더 나아가지 않고 멈췄다. 대신 손잡이를 쥔 기자의 손에 묵직한 저항이 전해졌다. 로봇 팔이 무언가에 부딪혔다는 신호다."로봇이 사람 몸에 부딪혔는데 계속 밀면 사람은 다칩니다. 그 순간 멈춰야 하죠."이일남 삼현 최고기술책임자(CTO·전무)는 이달 5일 경기 고양시 일산서구 킨텍스에서 열린 '로보월드 2026' 현장에서 만나 이
+---
+[TITLE] [로봇과 사람들] 엄윤설 에이로봇 대표 "피지컬 AI 병목은 하드웨어"
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678067
+[PUBLISHED] 2026-11-09 09:42 KST
+[SOURCE] 블로터
+[TOPIC] 신기술
+[SUMMARY]
+로봇 산업을 일구는 사람들에게 기술과 사업 그리고 고민을 묻습니다."피지컬 인공지능(AI) 시대의 병목은 하드웨어입니다. AI는 하드웨어를 만들 수 없거든요."엄윤설 에이로봇 대표는 이달 5일 경기 고양시 일산서구 킨텍스에서 열린 '로보월드 2026' 현장에서 만나 이렇게 말했다. AI가 아무리 빠르게 발전해도 그 AI를 담을 로봇의 몸을 만드는 기술이 없으면 소용없다는 얘기다.디자이너의 눈과 공학자의 손. 엄 대표가 걸어온 길이다. 미술을 전공한 그는 공학 박사 학위도 받았다. 2007년 로보티즈에 로봇 디자이너로 입사해 경력을
+---
+[TITLE] 카카오모빌리티, '엔비디아'와 자율주행 동맹...'레벨4' 상용화 앞당긴다
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157071
+[PUBLISHED] 2026-11-09 09:26 KST
+[SOURCE] 테크M
+[TOPIC] 신기술
+[SUMMARY]
+카카오모빌리티가 엔비디아와 손잡고 레벨4 자율주행 기술 고도화에 속도를 낸다. 자체 기술을 기반으로 강남 도심에서 자율주행 실증을 이어온 카카오모빌리티는 엔비디아의 고성능 인공지능(AI) 컴퓨팅 및 안전 기술을 결합해 피지컬 AI 경쟁력을 강화한다는 구상이다. 카카오모빌리티는 국내에서 축적한 기술력과 서비스 운영 경험에 이번 협력을 기반으로 글로벌 자율주행 시장 진출도 가속화한다는 전략이다. 9일 카카오모빌리티는 엔비디아와 자율주행 기술 협력을 위한 업무협약(MOU)을 체결한다고 밝혔다. 카카오모빌리티의 자체 자율주행 기술과 엔비디
+---
+[TITLE] 경기창조경제혁신센터, 로보월드서 경기도 창업기업 미국 투자사에 연결
+[LINK] https://www.etnews.com/20261109000049
+[PUBLISHED] 2026-11-09 09:15 KST
+[SOURCE] 전자신문
+[TOPIC] 신기술, 산업
+[SUMMARY]
+경기창조경제혁신센터가 지역 창업기업 2곳을 미국 투자사와 연결했다. 센터는 지난 6일 고양시 킨텍스에서 열린 '2026 인공지능(AI)·로봇 분야 글로벌 스케일업 데이'에서 모빌리티원과 에이아이바가 미국 투자사를 대상으로 사업을 소개했다고 9일 밝혔다. 이 행사는 국내 AI·로봇 기업의 해외 투자 유치와 사업 협력을 돕기 위해 '2026 로보월드'와 연계해 열렸다. 한국AI·로봇산업협회가 주최하고 경기창조경제혁신센터와 고양산업진흥원이 공동 주관
+---
+[TITLE] 삼성·마이크론의 2조원 청구서 [손혁의 IP 전략 노트]
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000410
+[PUBLISHED] 2026-11-09 07:00 KST
+[SOURCE] IT조선
+[TOPIC] 신기술
+[SUMMARY]
+삼성전자와 미국 마이크론이 특허 분쟁을 끝내기 위해 미국 기업 넷리스트에 거액의 사용료를 지급하기로 했다. 마이크론은 지난 10월 6일 넷리스트에 6억달러(약 8000억원)를 지급하기로 합의했다고 발표했다. 두 달 전인 8월에는 삼성전자가 넷리스트와 5년간 최대 8억9700만달러(약 1조2700억원) 규모의 라이선스 계약을 맺고 분쟁을 끝냈다.두 회사가 넷리스트와 맺은 특허 라이선스 및 합의 계약 규모만 2조원에 달한다. 여기에 2021년 SK하이닉스가 지급한 4000만달러까지 더하면 세계 메모리 반도체 3사가 넷리스트에 지급했거나
+---
+[TITLE] 천당서 지옥으로… 상반기 주도주 소부장ETF, 이젠 찬밥
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000454
+[PUBLISHED] 2026-11-09 06:15 KST
+[SOURCE] IT조선
+[TOPIC] 신기술
+[SUMMARY]
+한 달 전까지만 해도 수익률 효자 업종으로 투자자들의 지갑을 두둑하게 해줬던 반도체 소부장(소재·부품·장비) 상장지수펀드(ETF)가 처참하게 추락했다. 한 달 새 40~50% 급락하며 국내 ETF 하락률 1~6위를 휩쓸었다. 인공지능(AI) 투자심리가 얼어붙은 가운데 단기 급등에 따른 되돌림과 높아진 밸류에이션, 중소형주 특유의 수급 취약성이 겹치며 대형 반도체보다 낙폭이 커졌다.9일 코스콤 ETF체크에 따르면 지난 주말 기준 최근 1개월간 국내 ETF(레버리지·인버스 제외) 중 가격이 가장 많이 떨어진 상품은 ‘TIGER AI반도
+---
+[TITLE] 로봇 넘어 학습 데이터까지…中 칭무, 한국 피지컬AI 시장 공략
+[LINK] https://www.etnews.com/20261106000180
+[PUBLISHED] 2026-11-08 17:00 KST
+[SOURCE] 전자신문
+[TOPIC] 신기술
+[SUMMARY]
+중국 유니트리, 애지봇 등 주요 로봇기업과 협력하는 피지컬 인공지능(AI) 기술기업 칭무(CHINGMU)가 로봇 학습용 데이터 수집 솔루션을 앞세워 한국 시장 공략에 나섰다. 8일 업계에 따르면 중국 상하이에 본사를 둔 칭무는 최근 양쯔이 이사를 한국 지사장으로 선임하고 국내 사업 확대에 나섰다. 칭무는 2015년 설립된 광학 모션캡처 전문기업이다. 영화, 게임, 애니메이션 분야에서 축적한 기술을 휴머노이드 로봇의 동작 학습과 원격조작, 성능
+---
+[TITLE] 삼성, 현대차에 특별한 '러브콜'…170명 초청한 까닭
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678059
+[PUBLISHED] 2026-11-08 16:38 KST
+[SOURCE] 블로터
+[TOPIC] 신기술
+[SUMMARY]
+삼성과 현대차그룹이 반도체와 배터리, 미래 모빌리티를 축으로 한 협력 관계를 한층 끌어올린다. 삼성전자가 현대차 핵심 경영진과 배우자 등 170여 명을 초청해 대규모 교류 행사를 마련하면서다. 국내에서 특정 기업집단만을 위해 이 같은 행사를 여는 것은 삼성전자 창사 이래 처음이다.8일 재계에 따르면 삼성전자는 이달 9일 오후 경기 용인시 삼성전자 연수원 '더 유니버스'에서 현대차·기아 주요 경영진을 초청하는 '감사(Appreciation) 데이'를 개최한다. 양사 주요 계열사 사장단과 임원, 배우자 등 170여 명이 참석하는 행사다
+---
+[TITLE] “로봇 기술 못 내준다”… 中 제동에 손정의 ‘피지컬 AI 제국’ 흔들
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000502
+[PUBLISHED] 2026-11-08 16:26 KST
+[SOURCE] IT조선
+[TOPIC] 신기술, 산업
+[SUMMARY]
+손정의 회장이 이끄는 일본 소프트뱅크그룹의 ‘피지컬 인공지능(AI) 제국’ 구축 구상에 제동이 걸렸다. 중국 정부가 스위스 ABB의 로봇사업 인수를 금지하면서 7조원대 초대형 인수합병(M&A)이 무산될 위기에 놓였기 때문이다.8일 일본 재팬타임스와 블룸버그 등 외신에 따르면 소프트뱅크와 ABB는 중국 당국의 인수 금지 결정을 우회하기 위해 ABB 로봇사업의 중국 부문을 별도 법인으로 분리하는 방안을 논의하고 있다. 중국 사업을 다른 소유 구조로 떼어내고 나머지 글로벌 로봇사업만 소프트뱅크가 인수하는 방식이다. 소프트뱅크가 관련 협의
+---
+[TITLE] 삼성·SK하이닉스 안방 넘보나 했더니… TSMC, 3D D램 진출설 선 그어
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000498
+[PUBLISHED] 2026-11-08 13:21 KST
+[SOURCE] IT조선
+[TOPIC] 신기술
+[SUMMARY]
+세계 최대 반도체 위탁생산(파운드리) 기업인 대만 TSMC가 차세대 메모리 반도체인 3차원(3D) D램 생산에 뛰어든다는 관측에 선을 그었다. 삼성전자·SK하이닉스·미국 마이크론이 장악한 글로벌 D램 시장에 새로운 경쟁자가 등장할 가능성이 제기됐지만 TSMC의 대응으로 논란은 일단 진정되는 분위기다.8일 반도체업계에 따르면 TSMC는 최근 미국 IT 전문매체 톰스하드웨어에 자사의 핵심 사업이 반도체 위탁생산이라는 입장을 밝혔다. TSMC 대변인은 “우리는 언제나 핵심 사업인 반도체 위탁생산에 집중하고 있다”며 “앞으로도 글로벌 로직
+---
+[TITLE] 앤트로픽, 데이터센터 전력 확보에 4.6조 투입…가스 발전기 직접 구매
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217160
+[PUBLISHED] 2026-11-09 12:35 KST
+[SOURCE] AI타임스
+[TOPIC] 산업
+[SUMMARY]
+앤트로픽이 AI 데이터센터에 필요한 전력을 확보하기 위해 34억달러(약 4조6000억원) 규모의 가스 발전기 구매 계약을 인수했다. 발전기 공급이 수년씩 밀리자, 전문 업체를 통해 전력을 공급받는 대신 기존에 발주된 발전기를 직접 확보하기로 한 것이다.파이낸셜타임스(FT)는 8일(현지시간) 앤트로픽이 지난 9월 말 미국 텍사스주 샌안토니오의 전력 설비업체 원PWR 솔루션(OnePWR Solutions)으로부터 1.7기가와트(GW) 규모의 발전기 구매 약정을 인수했다고 보도했다. 알려진 AI 연구소의 단일 발전 설비 구매로는 최대 규
+---
+[TITLE] 스타비안 그룹, 제1회 포춘 SEA500 서밋 2026에서 AI 시대 인프라 비전 제시
+[LINK] https://zdnet.co.kr/view/?no=20261109121004
+[PUBLISHED] 2026-11-09 12:10 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 산업, 규제
+[SUMMARY]
+[지디넷코리아]호찌민시, 베트남 2026년 11월 9일 /PRNewswire/ -- 동남아시아가 인공지능(AI), 디지털 전환, 공급망 변화, 투자 흐름의 재편에 따라 새로운 성장 국면에 진입하면서 기업들은 상호 연결성과 기술 의존도가 높아지는 경제에서 성장하는 데 필요한 기반을 구축하는 데 더욱 주력하고 있다. 이는 호찌민시에서 '새로운 지평, 지속적인 성장(New Horizons, Enduring Growth)'을 주제로 처음 개최된 포춘 SEA500 서밋 2026(Fortune SEA500 Summit 2026)의 핵심 의제였다. 스타비안 그룹(Stavian Group)은 이번 서밋의 파트너로 참여해 역내 정책 입안자, 투자자, 기업 경영진과 함께 혁신, 인프라, 장기적인 경쟁력을 논의했다. Mr. Tony Dinh received FortuneSEA500 certificate for Stavian Chemical 스타비안 그룹의 이번 서밋 참가에서 특히 주목받은 것은 스타비안
+---
+[TITLE] 앤트로픽, AI 전력 직접 확보…4조원대 발전기 계약 인수
+[LINK] https://zdnet.co.kr/view/?no=20261109085731
+[PUBLISHED] 2026-11-09 12:03 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 산업, 규제
+[SUMMARY]
+[지디넷코리아]앤트로픽이 인공지능(AI) 데이터센터 전력 확보를 위해 발전 설비에 직접 투자한다. 전기를 구매하려던 계획을 바꿔 34억 달러(약 4조 6000억원) 규모 가스 발전기 공급 계약을 인수했다.8일(현지시간) 파이낸셜타임스(FT)에 따르면 앤트로픽은 지난 9월 말 미국 장비 공급업체 원파워솔루션스가 확보한 총 1.7기가와트(GW) 규모 가스 발전기 공급 계약을 인수했다. 거래에는 발전기 설치에 필요한 설계와 건설 역량도 포함됐다.앤트로픽은 원파워솔루션스에서 전력을 구매하려던 계획을 바꿔 발전기를 직접 확보하기로 했다. 인수한 공급 계약은 원파워솔루션스가 캐터필러에 주문한 발전기 물량이다.이번 거래로 앤트로픽은 발전기 공급을 기다리는 시간을 줄일 수 있게 됐다. 최근 데이터센터용 발전기는 수요가 급증하면서 새로 주문하면 받기까지 수년이 걸린다. 앤트로픽은 기존 주문을 인수해 일부 장비는 조기에 받고 나머지는 향후 2년에 걸쳐 공급받을 예정이다.가스 발전기는 천연가스를 연료로
+---
+[TITLE] 구글, 사업 차질 빚은 크루소 AI 데이터센터 인수…170억달러 투자
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217148
+[PUBLISHED] 2026-11-09 11:30 KST
+[SOURCE] AI타임스
+[TOPIC] 산업
+[SUMMARY]
+구글이 개발에 차질을 빚은 AI 인프라 기업 크루소의 미국 와이오밍 데이터센터 프로젝트를 인수하고 170억달러(약 23조원)를 투자하기로 했다. 당초 크루소가 구글을 고객으로 유치하려 했으나 비용과 건설 일정에 문제가 제기되면서, 구글이 직접 사업을 맡게 된 것으로 알려졌다.블룸버그와 로이터 등은 6일(현지시간) 구글이 크루소로부터 와이오밍 남동부의 데이터센터 부지를 인수했다고 보도했다.구글은 전날 공식 블로그를 통해 와이오밍에 첫 데이터센터를 건설하고 170억달러를 투자한다고 발표했다. 이는 데이터센터 건설을 위한 투자 계획으로,
+---
+[TITLE] 앤트로픽, AI 데이터센터 전력 확보에 4.6조원 투입
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000509
+[PUBLISHED] 2026-11-09 08:53 KST
+[SOURCE] IT조선
+[TOPIC] 산업
+[SUMMARY]
+앤트로픽이 데이터센터 전력 공급을 위해 4조6000억원 규모의 가스 발전설비를 확보했다. 인공지능(AI) 데이터센터 확대로 전력 수요가 급증하는 가운데 외부 공급업체에 의존하는 대신 발전설비를 확보해 전력 공급 기반을 마련하려는 움직임이다.8일(현지시각) 파이낸셜타임스(FT)에 따르면 앤트로픽은 9월 말 미국 텍사스주 샌안토니오에 본사를 둔 설비 공급업체 원PWR솔루션스로부터 1.7기가와트(GW) 규모의 대형 가스 발전기 구매 계약을 34억달러(약 4조6000억원)에 인수했다. AI 개발기업의 단일 발전설비 구매로는 공개된 거래 가
+---
+[TITLE] [데스크 칼럼] AI로 아낀 제작비, 창작자에게도 돌아가야
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000440
+[PUBLISHED] 2026-11-09 05:00 KST
+[SOURCE] IT조선
+[TOPIC] 산업
+[SUMMARY]
+지난해 봄 일본 지상파에서 방영된 애니메이션 ‘트윈스 히나히마’는 콘텐츠 제작 현장의 변화를 보여줬다. 제작진은 전체 컷의 95% 이상에 인공지능(AI)을 활용했다고 밝혔다. 사람이 마지막으로 손질했지만, 많은 인력과 시간이 필요했던 작업을 AI가 도운 것이다. 제작사에는 비용을 줄일 기회다. 반면 그 일을 해온 창작자에게는 일감이 줄어들 수 있다는 신호다.변화는 수입에서도 드러난다. 지난 5월 보도된 니혼게이자이신문과 일본 프리랜서협회의 설문조사에서 현지 창작자 약 300명 중 22%는 최근 1년간 생성형 AI 때문에 수입이 줄었
+---
+[TITLE] JB금융, AI 지분투자에 M&A까지…미래수익원 차별화
+[LINK] https://www.bloter.net/news/articleView.html?idxno=677943
+[PUBLISHED] 2026-11-08 16:00 KST
+[SOURCE] 블로터
+[TOPIC] 산업
+[SUMMARY]
+JB금융이 인공지능(AI) 기술기업 투자와 핀테크 협력을 확대하며 새로운 수익원 확보에 나섰다. AI 기업에 직접 투자하고 전용 펀드를 조성하는 한편 핀테크 기업과 저축은행을 공동 인수하며 사업 영역을 넓히고 있다. 은행 이자이익과 캐피탈 중심의 기존 수익구조에 기술기업 투자수익과 신규 금융사업을 더하려는 전략이다.7일 JB금융에 따르면 3분기 누적 이자이익은 1조6544억원으로 전년 동기(1조5108억원)보다 9.5% 증가했다. 반면 비이자이익은 2044억원에서 1479억원으로 27.6% 감소했다. 수수료이익은 29.7% 늘었지만
+---
+[TITLE] [딜 인사이드] 플래스크, LG 냉각부품사 인수…적자 돌파구 모색하나
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678032
+[PUBLISHED] 2026-11-08 15:00 KST
+[SOURCE] 블로터
+[TOPIC] 산업
+[SUMMARY]
+건축·인테리어 기업 플래스크가 산업용 냉동기 부품 제조기업을 인수하며 사업구조 재편에 나섰다. LG전자 협력사를 확보해 인공지능(AI) 데이터센터 냉각시장 성장에 대응하고 새로운 수익원을 마련하려는 구상이다. 다만 인수 대상의 매출이 특정 고객사에 집중돼 있고 플래스크의 기존 사업도 적자를 벗어나지 못한 가운데 추가 설비투자까지 추진해야 하는 상황이다. LG전자 공급망 확보…제조업 성장 기반 마련8일 금융감독원 전자공시시스템에 따르면 플래스크는 최근 산업용 냉동기 부품 제조기업 동명기계의 주식 3만8000주를 85억원에 인수하기로
+---
+[TITLE] 트럼프 "민주당과 AI 규제 협력할 의사 있어"…중간선거 패배 후 변화
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217157
+[PUBLISHED] 2026-11-09 12:29 KST
+[SOURCE] AI타임스
+[TOPIC] 규제
+[SUMMARY]
+도널드 트럼프 미국 대통령이 중간선거에서 공화당이 패배한 이후 AI 안전 규제를 놓고 민주당과 협력할 의사가 있다고 밝혔다. 중국과의 기술 경쟁에서 미국이 뒤처지지 않는다는 조건을 달았지만, 그동안 AI 기업의 자율 규제를 선호해 온 트럼프 대통령이 정부 차원의 안전장치 마련에 긍정적인 태도를 보인 것이다.트럼프 대통령은 8일(현지시간) 방송된 CBS 시사 프로그램 '60분' 인터뷰에서 민주당과 AI 안전 규제에 협력할 의사가 있느냐는 질문에 "물론이다"라고 답했다. 이어 "안전장치를 두는 것에 반대하지 않는다"라고 말했다.이번 인
+---
+[TITLE] 플리토·대한출판문화협회, AI 학습용 출판데이터 공급 협력
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000532
+[PUBLISHED] 2026-11-09 11:02 KST
+[SOURCE] IT조선
+[TOPIC] 규제
+[SUMMARY]
+플리토가 대한출판문화협회와 손잡고 출판 저작물을 인공지능(AI) 학습용 데이터로 활용하기 위한 공급체계 구축에 나선다. 저작권자의 동의를 전제로 출판데이터를 정제·가공하고, 합법적인 데이터 거래 시장을 조성한다는 계획이다.AI 데이터·솔루션 전문기업 플리토(대표 이정수)는 대한출판문화협회(이하 출협)와 고품질 출판지식 데이터 공급 및 시장 구축을 위한 업무협약(MOU)을 체결했다고 9일 밝혔다.이번 협약에 따라 양 기관은 출판데이터 정제·가공·구조화와 품질검증 기술을 교류하고, AI 학습용 데이터 공급체계 마련과 수요처 발굴을 추진
+---
+[TITLE] AI로 날개 달 줄 알았던 구글, AI에 발목 잡혔다
+[LINK] https://www.itworld.co.kr/article/4246120/ai%eb%a1%9c-%eb%82%a0%ea%b0%9c-%eb%8b%ac-%ec%a4%84-%ec%95%8c%ec%95%98%eb%8d%98-%ea%b5%ac%ea%b8%80-ai%ec%97%90-%eb%b0%9c%eb%aa%a9-%ec%9e%a1%ed%98%94%eb%8b%a4.html
+[PUBLISHED] 2026-11-09 09:40 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 규제
+[SUMMARY]
+구글의 모토가 “악해지지 말자”였던 시절을 기억하는가? 참으로 까마득한 옛날 일이다. 10년 넘게 지난 2015년, 구글은 모토를 “옳은 일을 하라”로 바꿨다. 새 모토 역시 세월이 흐르며 빛이 바랬다. 길을 잃은 구글의 행보가 이제는 이름값마저 예전만 못한 매그니피센트7의 총아에게 발목을 잡는 족쇄로 돌아왔다. 빅테크 기업이 휘청이는 이유로는 줄어드는 기업 가치, AI 인프라 과잉 투자, AI 데이터센터를 겨냥한 정치권의 반발 등 여러 가지를 꼽을 수 있다. 그중에서도 구글은 유독 사정이 다르다. 구글 광고로 제품과 서비스를 홍보하는 독자나 광고 수익에 의존하는 미디어 기업이라면 이미 알고 있겠지만, 구글의 AI 개요(AI Overviews)와 AI 모드(AI Mode)는 고객사의 광고 수익을 갉아먹고 있다. 구글 자연 검색에 의존하는 기업은 상황이 훨씬 심각하다. 구글 검색 생태계 총괄 매니저 므리날리니 로우는 물론 AI 개요와 AI 모드가 사람들이 훌륭한 웹사이트를 찾아 방문하
+---
+[TITLE] [개장] 코스피 약보합… 美 AI 규제 우려에 반등 제한
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000518
+[PUBLISHED] 2026-11-09 09:36 KST
+[SOURCE] IT조선
+[TOPIC] 규제
+[SUMMARY]
+코스피가 장 초반 약보합 장세를 보이고 있다. 데이터센터 규제 강화에 따른 인공지능(AI) 투자 위축 우려가 커진 가운데 미국 소비자물가지수(CPI) 발표와 주요 AI 기업 실적을 앞둔 경계 등이 지수에 부담을 준 것으로 풀이된다.9일 한국거래소에 따르면 오전 9시 25분 기준 코스피는 전 거래일 대비 0.15% 내린 5052.35에 거래되고 있다. 이날 5034.20로 출발한 코스피는 장 초반 한때 4997.81까지 밀리기도 했다. 같은 시각 코스닥도 1.06% 내린 637.46에 거래 중이다.외국인이 지수를 끌어내리고 있다. 이
+---
+[TITLE] Elvis and Eminem rights holders are suing Suno
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit
+[PUBLISHED] 2026-11-09 02:23 KST
+[SOURCE] The Verge
+[TOPIC] 규제
+[SUMMARY]
+Suno is facing yet another pair of lawsuits. A group of rights holders of Elvis Presley's music and the publisher of some of Eminem's biggest records are suing the AI music company, claiming it illegally generates music and lyrics that mimic those artists. The lawyers in the Presley suit claim that Suno has violated Tennessee's […]
+---
+[TITLE] Weakening AI copyright law will spell ‘disaster for creativity’, global music body warns Albanese
+[LINK] https://www.theguardian.com/technology/2026/nov/09/weakening-ai-copyright-law-will-spell-disaster-for-creativity-australia
+[PUBLISHED] 2026-11-08 23:00 KST
+[SOURCE] The Guardian
+[TOPIC] 규제
+[SUMMARY]
+Exclusive: Head of IFPI says allowing AI companies access to online content would be a ‘huge mistake’ and damage Australia’s reputation Get our breaking news email , free app or daily news podcast Australia weakening copyright protections to aid AI companies would be “ridiculous and dangerous”, the global peak body for the music recording industry has warned as it watches with concern how the Albanese government responds to big tech’s demands. While local creatives have raised constitutional iss
+---
+[TITLE] PS일렉트로닉스, 제품 적자·상품 흑자…서버 성장·현금관리 과제
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678097
+[PUBLISHED] 2026-11-09 13:35 KST
+[SOURCE] 블로터
+[TOPIC] 일반
+[SUMMARY]
+PS일렉트로닉스가 3분기 제품매출에서 매출총손실을 내고 상품매출에서 이익을 확보하며 수익구조에서 변화가 나타났다. 인공지능(AI) 서버 공급이 외형 성장을 이끌었지만 자동화장비 매출은 직전분기보다 크게 줄었다. 대형계약의 납품이 진행되는 동안 영업이익은 늘었고 영업활동현금흐름은 순유출로 돌아섰다. 추가 수주를 이어가기 위한 자금 운용이 과제로 떠올랐다. 제품 손실 전환에 상품 이익 의존9일 금융감독원 전자공시시스템에 따르면 PS일렉트로닉스 3분기 연결 제품매출은 173억4000만원, 원가는 179억9000만원으로 매출총손실 6억60
+---
+[TITLE] 서울시 공무원표 'AI 행정혁신' 눈길…투신자 구조부터 누수 탐지까지
+[LINK] https://www.etnews.com/20261109000221
+[PUBLISHED] 2026-11-09 13:01 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+# 한강에서 누군가 투신하면 인공지능(AI)이 '풍덩' 소리를 감지한다. 사고 발생 정보가 119와 관제센터에 즉시 전달되고 대기 중이던 드론은 물에 빠진 사람을 찾아 구명튜브를 투하하고 서치라이트로 위치를 비추면 119 구조대가 투신자를 구조한다. # 16년간 성실하게 세금을 납부하던 C씨는 사고로 일을 할 수 없게 되면서 체납자가 됐다. 강남구는 빅데이터 기반 '체납이음' 시스템으로 C씨의 어려운 사정을 파악하고 실태조사에 나서 차량 압류
+---
+[TITLE] 다시 뛰는 네이버 주가 15% 반등, 두나무도 장외서 '들썩'…시너지 기대감 커진다
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157088
+[PUBLISHED] 2026-11-09 12:02 KST
+[SOURCE] 테크M
+[TOPIC] 일반
+[SUMMARY]
+네이버와 두나무의 기업결합을 둘러싼 기대감이 다시 살아나고 있다. 최근 네이버 주가가 단기 저점 대비 15% 가까이 반등한 데 이어 두나무 비상장 주식도 가파른 상승세를 보이면서다. 양사의 결합을 심의할 공정거래위원회 전원회의가 이달 중 열릴 것으로 알려지면서 인공지능(AI)과 디지털자산을 결합한 차세대 금융 플랫폼에 대한 기대가 재차 부각되는 모습이다.9일 금융투자업계에 따르면 네이버 주가는 이날 오전 19만100원 안팎에서 거래됐다. 지난 4일 장중 기록한 16만6000원과 비교하면 약 14.5% 상승한 수준이다. 지난달 30일
+---
+[TITLE] Subscriber Growth Fails to Lift ARPU as SKT·LG U+ Expand AI Revenue
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000507
+[PUBLISHED] 2026-11-09 12:00 KST
+[SOURCE] IT조선
+[TOPIC] 일반
+[SUMMARY]
+SK Telecom and LG Uplus are seeing their average revenue per user (ARPU) stagnate despite an increase in mobile subscribers. While subscriber numbers have grown, the revenue generated from each subscriber has remained largely unchanged. Industry officials believe South Korea’s mobile telecommunicati
+---
+[TITLE] LS머트리얼즈·LS일렉트릭, 차세대 전력망 기술 국산화 맞손
+[LINK] https://zdnet.co.kr/view/?no=20261109110418
+[PUBLISHED] 2026-11-09 11:40 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 일반
+[SUMMARY]
+[지디넷코리아]LS머트리얼즈와 LS일렉트릭이 재생에너지 발전량과 인공지능(AI) 데이터센터 전력 사용량 변동에 대응할 전력망 안정화 시스템을 함께 개발한다.LS머트리얼즈는 LS일렉트릭과 'E-STATCOM 기술 개발 및 실증을 위한 업무협약(MOU)'을 체결했다고 9일 밝혔다. 양사는 각자의 에너지 저장·전력 제어 기술을 결합하고 실증으로 성능을 검증해 국산화와 해외 시장 진출을 추진한다. 공동 개발 대상인 E-STATCOM은 전압을 안정적으로 유지하는 장치인 STATCOM에 울트라캐패시터(UC)를 연결한 시스템이다. UC는 전기를 빠르게 저장하고 내보낼 수 있는 장치다. 기존의 전압 제어에 고속 충·방전 기능을 더해 주파수 변동과 순간적인 전력 공급·소비 불균형에도 대응하도록 한다. 주요 적용 분야는 재생에너지와 AI 데이터센터다. 태양광·풍력은 날씨에 따라 전력 생산량이 달라지고, AI 데이터센터는 많은 전력을 사용하면서 사용량이 급격히 바뀔 수 있다. 이 같은 변동을 빠르게 완
+---
+[TITLE] 히츠, KAIST AI-혁신신약연구단과 협약 체결...AI 플랫폼 활용 연구지원
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217159
+[PUBLISHED] 2026-11-09 11:32 KST
+[SOURCE] AI타임스
+[TOPIC] 일반
+[SUMMARY]
+AI 바이오 플랫폼 전문 히츠(대표 김우연)는 KAIST AI-혁신신약연구단(단장 이희승·AI-CRED)과 ‘하이퍼랩 AI 과학자 파트너 프로그램’ 운영을 위한 업무협약(MOU)을 체결했다고 9일 밝혔다.AI-CRED는 AI 기술과 신약개발 전 주기를 하나로 통합하는 KAIST 중심의 국가전략형 융합연구단으로 ▲AI 기반 단백질 설계 ▲오믹스 분석 ▲후보물질 구조 설계 ▲약물 전달 시스템(DDS) 개발 ▲전임상 연구 및 효능 평가 등 신약개발 전반의 연구를 수행하고 있다.이번 협약으로 AI-CRED 소속 박사과정 및 박사후 연구원(
+---
+[TITLE] "클로드는 어떻게 컴퓨터 화면을 하나의 언어처럼 읽는가"...김용덕 변리사, 앤트로픽의 화면 이해 특허 분석
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42649
+[PUBLISHED] 2026-11-09 11:23 KST
+[SOURCE] 인공지능신문
+[TOPIC] 일반
+[SUMMARY]
+사람은 컴퓨터 화면을 보는 순간 검색창, 메뉴, 버튼, 입력란을 자연스럽게 구별한다. 화면 구성이 조금 바뀌더라도 대략 어느 부분을 눌러야 하는지 판단할 수 있다. 그러나 인공지능의 관점에서 컴퓨터 화면은 수많은 색상값으로 구성된 거대한 픽셀 집합에 가깝다. 화면에 표시된 글자와 아이콘을 이해하는 것뿐 아니라, 각 요소의 위치와 서로의 관계까지 파악해야 실제로 마우스를 움직이고 프로그램을 조작할 수 있다.이 때문에 인공지능이 사람처럼 컴퓨터를 사용하도록 만드는 일은 단순한 이미지 인식 문제보다 훨씬 어렵다. 인공지능은 사용자의 자연
+---
+[TITLE] 기업 사회공헌 효과, AI로 분석·평가…사회적가치연구원, ‘SEE SV’ 베이징포럼서 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42648
+[PUBLISHED] 2026-11-09 11:15 KST
+[SOURCE] 인공지능신문
+[TOPIC] 일반
+[SUMMARY]
+기업의 사회공헌 활동이 실제 사회에 얼마나 긍정적인 변화를 가져왔는지 인공지능(AI)을 활용해 측정하고 평가하는 기술이 주목받고 있다. 기존의 사업비와 참여 인원, 활동 건수 중심의 평가에서 벗어나 수혜자의 삶과 사회문제 해결에 미친 영향을 분석하고, 이를 기업의 의사결정에 활용하려는 시도다.SK가 설립한 사회적가치연구원(Center for Social Value Enhancement Studies, CSES, 대표 나석권)은 지난 7일 중국 베이징대학교(Peking University)에서 열린 ‘2026 베이징포럼(Beijing
+---
+[TITLE] 호요버스, 신작 넥서스 아니마-쁘띠플래닛 2종 공개..."장르 확장 통해 차별화"
+[LINK] https://zdnet.co.kr/view/?no=20261109102908
+[PUBLISHED] 2026-11-09 11:10 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 일반
+[SUMMARY]
+[지디넷코리아]호요버스가 ‘붕괴: 넥서스 아니마’에 이용자 선택에 따라 결말이 달라지는 이야기를 담았다. 첫 생활 시뮬레이션 ‘쁘띠플래닛’은 각자의 속도로 행성을 가꾸고 이웃과 관계를 쌓는 경험에 초점을 맞췄다. 기존 서비스 작품들의 장르를 넘어 새로운 영역으로 확장한다는 방침이다.호요버스 코리아는 지난 6일 그랜드하얏트 서울에서 진행한 미디어 간담회를 통해 '붕괴: 넥서스 아니마'와 '쁘띠플래닛'을 공개하고 핵심 콘텐츠를 소개했다. 이날 간담회에는 황란 호요버스 코리아 지사장과 세븐(왕위양) 호요버스 글로벌 사업 최고경영자(CEO), 샘 글로벌 PR 커뮤니케이션 리드 등이 참석했다.세븐 CEO는 “전 세계 플레이어들과 함께하는 글로벌 기업으로 성장한 이후에도 목표는 변함이 없다”며 “새롭고 흥미롭고 상상을 뛰어넘는 콘텐츠를 만들고자 한다”고 말했다.‘붕괴: 넥서스 아니마’는 사람과 신비한 생명체 ‘아니마’가 공존하는 세계를 배경으로 한다. 이용자는 차원 여행자가 돼 전투나 임무를 
+---
+[TITLE] 메가존클라우드, 오픈AI ‘셀렉트 파트너’ 선정
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000530
+[PUBLISHED] 2026-11-09 11:02 KST
+[SOURCE] IT조선
+[TOPIC] 일반
+[SUMMARY]
+메가존클라우드가 오픈AI 공식 파트너로 선정돼 국내 기업의 인공지능(AI) 도입과 운영 지원을 확대한다. 자체 AI 플랫폼과 챗GPT 엔터프라이즈와 코덱스 등 오픈AI 제품을 연계해 기업의 AI 전환(AX) 사업을 강화한다는 계획이다.메가존클라우드(대표 염동훈)는 9일 ‘오픈AI 파트너 네트워크(OpenAI Partner Network)’의 셀렉트(Select) 등급 파트너로 선정됐다고 밝혔다. 오픈AI 파트너 네트워크는 기업의 AI 도입과 확산을 지원하기 위해 지난 6월 출범한 공식 파트너 프로그램이다.회사는 이번 파트너 선정을
+---
+[TITLE] 'SCEWC 2026' 서울관, 수출상담 398건·352만달러 성과
+[LINK] https://www.etnews.com/20261109000159
+[PUBLISHED] 2026-11-09 10:54 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+서울AI재단은 3일(현지시간)부터 5일까지 스페인 바르셀로나 피라 그란 비아에서 열린 '스마트시티 엑스포 월드 콩그레스(SCEWC) 2026'에서 'AI 시티 서울'을 주제로 서울관을 운영해 수출 상담 398건, 상담액 352만달러(한화 약 47억원) 성과를 거뒀다고 9일 밝혔다. SCEWC는 바르셀로나시와 피라 바르셀로나가 주최하는 세계 최대 규모 스마트시티 전시회다. 올해 15회를 맞은 SCEWC의 주제는 '도시의 해법, 실질적 변화(Urb
+---
+[TITLE] Employees Are Now Making Ads Once Outsourced to Production Companies, Thanks to AI
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000522
+[PUBLISHED] 2026-11-09 10:53 KST
+[SOURCE] IT조선
+[TOPIC] 일반
+[SUMMARY]
+Generative artificial intelligence (AI) is changing who produces advertisements and films. Corporate employees and small business owners are creating ads once outsourced to professional production companies, while filmmakers are completing feature-length movies without live-action shoots. Lower prod
+---
+[TITLE] 젠슨 황 불륜 인정에 中 정보기관 의혹까지...'AI 데이 서울'은 속행
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157077
+[PUBLISHED] 2026-11-09 10:29 KST
+[SOURCE] 테크M
+[TOPIC] 일반
+[SUMMARY]
+젠슨 황 엔비디아 최고경영자(CEO)가 불륜 사실을 인정하면서 AI 시장에 미칠 파장에 관심이 쏠린다. 불륜 상대가 중국 정보기관 소속이라는 의혹을 사며 미국에서는 이사회가 조사에 착수했다. 젠슨 황 CEO의 장녀인 매디슨 황 엔비디아 수석이사도 한국 방문을 돌연 취소했다.엔비디아는 8일(현지시간) 젠슨 황 CEO의 사과문과 이사회의 조사 착수 소식을 홈페이지에 공개했다. 젠슨 황 CEO는 아내에 대한 불륜 사실을 인정하고 가족과 임직원, 주주들에게 사과했다. 중국 정보기관 접근 의혹에 대해서는 이사회 조사에 협조하겠다는 뜻을 밝혔
+---
+[TITLE] CJ올리브네트웍스, 콘진원 2개 사업 수주…공공 K콘텐츠 제작 인프라 AX 앞장
+[LINK] https://www.etnews.com/20261109000112
+[PUBLISHED] 2026-11-09 10:13 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+CJ올리브네트웍스가 공공 콘텐츠 제작시설 고도화 사업 2건을 수주했다. 공공 K콘텐츠 제작 인프라의 인공지능 전환(AX) 전환을 지원하며 미디어테크 기업으로 자리매김한다는 복안이다. CJ올리브네트웍스는 한국콘텐츠진흥원의 대전 스튜디오큐브 버추얼 프로덕션(VP) 스튜디오 추가 구축 사업과 디지털 매직 스페이스(DMS) 방송제작센터 UHD 후반공정 제작시스템 고도화 사업을 수주했다고 9일 밝혔다. 두 사업은 2026년 12월에 완료될 예정이다. 두
+---
+[TITLE] 세이프티랩, 한국철도학회에 AI 생체체크 키오스크 시연
+[LINK] https://www.etnews.com/20261109000103
+[PUBLISHED] 2026-11-09 09:59 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+세이프티랩이 한국철도학회 대상 비접촉식 인공지능(AI) 생체체크 키오스크를 시연했다. 철도종사자의 근무 전 위험징후를 확인하기 위한 기술 고도화 방향과 현장 적용방안도 공유했다. 이철우 세이프티랩 대표는 지난달 29~31일 제주 휘닉스아일랜드에서 열린 한국철도학회 '2026 정기총회 및 추계학술대회'에서 학회 회원과 철도·교통 관련 기관 등을 대상으로 키오스크를 직접 소개했다. 세이프티랩이 선보인 키오스크는 별도의 웨어러블 센서 없이 카메라 기
+---
+[TITLE] 삼성전자, AI 엑스레이로 소아 방사선량 최대 45% 줄인다…‘GC85A Fit’ 출시
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42642
+[PUBLISHED] 2026-11-09 09:58 KST
+[SOURCE] 인공지능신문
+[TOPIC] 일반
+[SUMMARY]
+삼성전자가 인공지능(AI) 기반 촬영 보조 기술과 저선량 영상 처리 기능을 결합한 천장형 디지털 엑스레이 장비를 선보였다. 특히 소아 검사에서 방사선량을 최대 45%까지 줄일 수 있는 영상 처리 기술을 적용하고, 환자의 움직임을 감지해 불필요한 재촬영을 예방하도록 설계한 것이 특징이다.삼성전자(Samsung Electronics) 의료기기사업부는 의료기관의 공간 구조와 검사 환경에 맞춰 장비를 구성할 수 있는 천장형 디지털 엑스레이 ‘GC85A Fit’을 출시했다고 밝혔다.이번 신제품은 프리미엄 영상 처리 기술과 AI 기반 촬영 보
+---
+[TITLE] [크립토 브리핑] 비트코인 1억200만원대…美 중간선거 후폭풍에 ETF 자금까지 이탈
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157075
+[PUBLISHED] 2026-11-09 09:47 KST
+[SOURCE] 테크M
+[TOPIC] 일반
+[SUMMARY]
+미국 중간선거 이후 정치·경제적 불확실성이 커지면서 가상자산 시장의 투자심리가 빠르게 위축되고 있다. 비트코인과 이더리움이 글로벌 시장에서 두 달여 만에 최저 수준으로 밀린 가운데 미국 현물 상장지수펀드(ETF)에서도 대규모 자금이 빠져나갔다. 인공지능(AI) 기술주 급락과 가상자산 파생상품 시장의 강제 청산까지 겹치면서 위험자산 전반에 매도 압력이 확산하는 모습이다.9일 오전 8시10분 기준 국내 가상자산 거래소 빗썸에서 비트코인은 24시간 전보다 1.10% 하락한 1억259만원에 거래됐다. 같은 시각 이더리움은 3.50%, 솔라
+---
+[TITLE] AI로 영상·음악·게임 직접 만든다…‘AI 콘텐츠 페스티벌 2026’ 12일 개막
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42637
+[PUBLISHED] 2026-11-09 09:07 KST
+[SOURCE] 인공지능신문
+[TOPIC] 일반
+[SUMMARY]
+인공지능(AI)이 영상과 음악, 게임 등 콘텐츠 산업의 제작 방식과 소비 경험을 바꾸는 가운데, AI 기술을 활용한 창작물을 직접 체험하고 콘텐츠 산업의 미래를 살펴볼 수 있는 행사가 열린다. 특히 올해는 관람객 중심의 전시·체험을 넘어 콘텐츠 기업의 투자유치와 사업 협력을 지원하는 프로그램이 새롭게 마련돼 AI 콘텐츠의 산업적 활용 가능성을 조명한다.문화체육관광부(장관 최휘영)와 한국콘텐츠진흥원(원장 김윤지)은 오는 12일부터 14일까지 사흘간 서울 코엑스 더플라츠 일대에서 ‘AI 콘텐츠 페스티벌 2026(AI Content Fe
+---
+[TITLE] LGU+, 대학 3곳과 ‘K-보이스’ 개발
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000508
+[PUBLISHED] 2026-11-09 09:00 KST
+[SOURCE] IT조선
+[TOPIC] 일반
+[SUMMARY]
+LG유플러스가 국내 대학들과 손잡고 한국어에 특화된 차세대 음성 인공지능(AI) ‘K-보이스 엔진’ 개발에 나선다. 사람의 말투와 대화 맥락을 이해하고 장시간 대화에서도 앞선 내용을 기억해 자연스럽게 소통할 수 있는 음성 AI 기술을 공동 연구한다.LG유플러스는 서울대학교, 한국과학기술원(KAIST), 연세대학교와 ‘K-보이스 AI 얼라이언스(K-Voice AI Alliance)’를 출범했다고 9일 밝혔다.LG유플러스는 해외 기술 의존도를 낮추고 한국어 대화 환경에 최적화된 음성 AI 기술을 확보하기 위해 이번 얼라이언스를 출범했다
+---
+[TITLE] 엑스퍼트아이엔씨, 세종문화회관 백스테이지 투어에 AI 자막 안경 도입
+[LINK] https://www.etnews.com/20261109000027
+[PUBLISHED] 2026-11-09 08:49 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+스마트 글래스 기반 실시간 자막 솔루션 전문기업 엑스퍼트아이엔씨(XPERTINC)가 세종문화회관의 공연장 체험 프로그램에 인공지능(AI) 자막 안경 서비스를 도입해 청각장애인과 외국인 관람객의 문화 접근성 확대에 나섰다. 엑스퍼트아이엔씨는 지난 9월 10일부터 세종문화회관이 운영하는 '세종 백스테이지 투어'에 실시간 자막·번역 서비스 '씨비즈(C-BIZ)'를 적용했으며 현재까지 총 5회에 걸쳐 운영했다고 밝혔다. 세종 백스테이지 투어는 전문 해
+---
+[TITLE] 뷰센스, 美 서부 뷰티 세일즈 파이프라인 구축
+[LINK] https://www.etnews.com/20261107000040
+[PUBLISHED] 2026-11-09 08:01 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+뉴엔AI(대표 배성환)는 이 회사 북미 법인 '뷰센스(VUSSENS Inc.)'가 지난달 28일부터 30일까지 사흘간 미국 LA에서 개최된 '뷰티 산업 비즈니스 포럼' 참가를 성공적으로 마무리하고, 미국 서부 세일즈 파이프라인을 구축했다고 9일 밝혔다. 올해 10주년을 맞은 해당 포럼은 참가자 중 80%가 최고위 임원 및 VP급 의사결정권자로 구성된 북미 대표 뷰티 B2B 행사다. 뷰센스는 행사 기간 동안 신생 유망 브랜드를 아우르는 '넥스트
+---
+[TITLE] [이희정 교수 AI 칼럼-19] 미래와 AI: AI가 인류를 멸망시킬 수 있을까? - 기술적 청소년기에 들어선 인류
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209385
+[PUBLISHED] 2026-11-09 08:00 KST
+[SOURCE] 데일리시큐
+[TOPIC] 일반
+[SUMMARY]
+AI를 가장 잘 아는 사람들이 두려워하는 미래1997년 개봉한 SF 영화 콘택트(Contact)에는 지금의 인공지능(AI) 시대를 돌아보게 하는 인상적인 장면이 등장한다. 주인공인 천문학자 엘리 애로웨이 박사는 외계 문명과 접촉할 기회를 앞두고 정부 위원회로부터 질문을 받는다. 외계인에게 단 하나의 질문만 한다면 무엇을 묻고 싶으냐는 것이었다. 그녀는 외계 문명이 어떻게 기술을 발전시켰으며, 그 과정에서 스스로를 파괴하지 않고 살아남을 수 있었는지 묻고 싶다고 답한다. 특히 그녀가 사용한 '기술적 청소년기(Technological
+---
+[TITLE] 앤트로픽, 데이터센터 전력 직접 공급...가스 발전기 4.6조원에 확보
+[LINK] https://www.etnews.com/20261109000006
+[PUBLISHED] 2026-11-09 06:54 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+앤트로픽이 인공지능(AI) 데이터센터의 안정적인 전력 확보를 위해 가스 발전설비를 직접 사들였다. 전력 공급업체에 의존하는 대신 발전설비를 선제적으로 확보해 전력 수급 불확실성을 줄이겠다는 전략이다. AI 데이터센터 확산으로 전력 수요가 급증하면서 AI 기업들이 전력 인프라를 직접 확보하는 움직임도 본격화하고 있다. 파이낸셜타임스(FT)는 8일(현지시간) 앤트로픽이 34억달러(약 4조6000억원)를 투자해 가스 발전설비를 확보했다고 보도했다.
+---
+[TITLE] How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco
+[LINK] https://latent.space/p/cs146s/
+[PUBLISHED] 2026-11-09 06:41 KST
+[SOURCE] Latent Space
+[TOPIC] 일반
+[SUMMARY]
+What happens when students can one-shot last year’s homework? Inside CS146S and the engineering team at Monaco.
+---
+[TITLE] ﻿AI 시대의 새로운 통신사는 누구인가 [윤석빈의 Thinking]
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000497
+[PUBLISHED] 2026-11-09 06:00 KST
+[SOURCE] IT조선
+[TOPIC] 일반
+[SUMMARY]
+1990년대 이동통신이 대중화되던 시절을 떠올려 보자. 삐삐에서 휴대전화로, 음성통화에서 모바일 인터넷으로 기술은 끊임없이 발전했다. 그 과정에서 통신사업자들은 단순히 전화기를 판매하거나 통신망을 제공하는 기업을 넘어 거대한 디지털 경제의 중심으로 성장했다. 통신산업의 핵심 자산은 가입자와 이들을 연결하는 네트워크였다. 전화번호는 개인을 식별하는 중요한 수단이었고, 통신사는 가입자 기반과 통신 인프라를 통해 지속적인 수익을 창출했다.그런데 생성형 인공지능(AI) 시대에 접어들면서 이 구조가 근본적으로 달라질 가능성이 나타나고 있다.
+---
+[TITLE] HBM에 쏠린 생산라인…범용 D램 품귀
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000443
+[PUBLISHED] 2026-11-09 06:00 KST
+[SOURCE] IT조선
+[TOPIC] 일반
+[SUMMARY]
+삼성전자와 SK하이닉스 등 주요 메모리 제조사들이 고수익 제품인 고대역폭메모리(HBM)와 서버용 D램 생산에 집중하면서 범용 D램 공급이 부족해지고 있다. 인공지능(AI) 인프라용 메모리에 생산능력이 우선 배정되면서 PC와 스마트폰 제조사들의 부품 조달 비용도 상승하고 있다. 메모리 가격 급등이 완제품 가격 인상으로 이어지면서 소비자 부담도 커지고 있다는 지적이 나온다.9일 업계에 따르면 메모리 생산 라인의 무게중심은 HBM으로 급격히 이동하고 있다. KB증권은 글로벌 D램 생산능력 내 HBM 비중이 2025년 18%에서 2027년
+---
+[TITLE] The brain-as-computer metaphor shaped modern AI but may be misleading the consciousness debate
+[LINK] https://the-decoder.com/the-brain-as-computer-metaphor-shaped-modern-ai-but-may-be-misleading-the-consciousness-debate/
+[PUBLISHED] 2026-11-08 22:49 KST
+[SOURCE] The Decoder
+[TOPIC] 일반
+[SUMMARY]
+Consciousness researchers Anil Seth, Ned Block, and Giulio Tononi argue in a Nature commentary that today's AI systems aren't conscious and won't become so on silicon hardware. They consider the assumption that consciousness depends on computation alone "fatally flawed" and warn against granting rights to AI systems. The article The brain-as-computer metaphor shaped modern AI but may be misleading the consciousness debate appeared first on The Decoder .
+---
+[TITLE] 1-0 to humankind? US midterms vote puts AI, datacentres and the broligarchy back in their box | Heather Stewart
+[LINK] https://www.theguardian.com/business/2026/nov/08/us-midterms-ai-datacentres-broligarchy-voter-backlash
+[PUBLISHED] 2026-11-08 21:05 KST
+[SOURCE] The Guardian
+[TOPIC] 일반
+[SUMMARY]
+Election results appear to have turbo-charged an already growing social, political and financial market rethink about AI ‘AI clog’: UK battles onslaught of chatbot-generated complaints Editorial: the AI backlash – Silicon Valley’s political power is cracking Last week’s midterms may not have cowed Donald Trump, but they should be a wake-up call for the grinning tech broligarchs who lined up at his inauguration two chaotic years ago. Clearly, the cost of living squeeze unleashed by Trump’s war in
+---
+[TITLE] I Used NYT Cooking’s New AI-Powered Recipe Modifier, and It’s Actually Pretty Good
+[LINK] https://www.wired.com/story/nyt-cooking-new-ai-powered-recipe-modifier-is-pretty-good/
+[PUBLISHED] 2026-11-08 21:00 KST
+[SOURCE] WIRED
+[TOPIC] 일반
+[SUMMARY]
+The New York Times has added a beta feature to its Cooking app that helps readers swap ingredients or adjust recipes to suit their needs. It mostly hits the mark.
+---
+[TITLE] 무인화와 AI로 품목 교체 4분의1 단축...농심, 녹산에 K-라면 미래 심었다
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157065
+[PUBLISHED] 2026-11-08 18:43 KST
+[SOURCE] 테크M
+[TOPIC] 일반
+[SUMMARY]
+농심이 부산 녹산국가산업단지에 첫 수출전문공장을 완공하고 본격적인 가동에 들어갔습니다.농심은 8일 국내외를 아우르는 10번째 라면 생산 거점이자 K-라면 수출의 핵심 심장부로 활약할 녹산 공장을 오픈했다고 밝혔습니다. 농심은 신공장 가동을 발판 삼아 연간 최대 60억개가 넘는 글로벌 공급망을 완성했다고 설명했습니다.분당 600개 쏟아내는 초고속 라인...글로벌 62억개 생산 체계 완성이번에 가동을 시작한 녹산 수출전문공장은 연면적 약 1만4574평, 지상 6층 규모로 지어졌습니다. 향후 글로벌 수요 증가에 맞춰 최대 8개 라인까지
+---
+[TITLE] 과학자들은 AI를 어떻게 쓸까…앤트로픽 "데이터 분석 1위, 가설 생성 4%"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217147
+[PUBLISHED] 2026-11-08 18:14 KST
+[SOURCE] AI타임스
+[TOPIC] 일반
+[SUMMARY]
+과학 연구에서 AI 활용이 늘고 있지만, 새로운 아이디어나 가설을 만드는 작업보다 데이터 분석과 논문 작성에 집중되고 있다는 조사 결과가 나왔다. 연구자들은 가설 생성을 과학적 발견에서 가장 중요한 활동으로 꼽았지만, 실제 AI 사용 비중은 4% 수준에 그쳤다.앤트로픽은 5일(현지시간) 공식 블로그를 통해 '과학적 발견을 위한 AI: 연구자들은 클로드를 어떻게 사용하는가'라는 보고서를 공개했다.지난 8월2일부터 9월30일까지 '클로드'와 '클로드 코드'에서 이뤄진 과학 연구 관련 세션 20만7049건을 분석하고, 별도로 과학자 52
+---
+[TITLE] ‘AI clog’: UK public bodies battle onslaught of chatbot-generated complaints
+[LINK] https://www.theguardian.com/technology/2026/nov/08/ai-clog-public-bodies-local-authorities-onslaught-chatbot-generated-correspondence
+[PUBLISHED] 2026-11-08 17:00 KST
+[SOURCE] The Guardian
+[TOPIC] 일반
+[SUMMARY]
+MPs, local authorities, lawyers, schools and more are receiving floods of grievances, requests and legal challenges, often complex to read and respond to ‘It started as a trickle in 2024 and now it’s an onslaught.” Hollie Wickens, a senior caseworker in a Labour MP’s office, is explaining the daily reality of dealing with surging volumes of artificial intelligence-generated correspondence. “Half the emails we receive are some form of AI,” she says, adding that this has made requests and complain
+---
+[TITLE] 박경희 티맥스티베로·소프트 총괄 대표 “전사 AX 속도...글로벌 시장 진출”
+[LINK] https://www.etnews.com/20261108000035
+[PUBLISHED] 2026-11-08 17:00 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+박경희 티맥스티베로·티맥스소프트 총괄 대표가 전사적 인공지능 전환(AX)을 양사 핵심 과제로 지목했다. 데이터베이스(DB)와 미들웨어 제품에 AI를 접목하는 것은 물론 소프트웨어 개발, 기술지원, 경영 관리 등 업무 전반에 AI 도입이 시급하다는 판단에서다. 제품 경쟁력과 조직 운영 체계를 함께 혁신해 글로벌 시장 진출의 발판을 마련한다는 구상이다. 박 대표는 8일 전자신문과의 인터뷰에서 “제품 하나하나에 AI를 접목해 AI 플랫폼으로 발전시키
+---
+[TITLE] 니어네트웍스, AI·블록체인 융합 '예방형 디지털 돌봄 플랫폼' 실증
+[LINK] https://www.etnews.com/20261105000442
+[PUBLISHED] 2026-11-08 16:21 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+니어네트웍스(대표 이복동)는 인공지능(AI)과 블록체인 기술을 융합해 고령자 건강 상태를 분석하고 이상징후를 조기에 탐지하는 '예방형 디지털 돌봄 플랫폼'을 개발, 경기도 남양주시 소재 경로당을 중심으로 현장 실증을 진행하고 있다고 8일 밝혔다. 이번 프로젝트는 과학기술정보통신부와 대구시, 한국인터넷진흥원(KISA), 대구디지털혁신진흥원(DIP) 지원으로 추진하는 '2026년 블록체인 융복합타운 조성사업 맞춤형 사업화 지원 과제'다. 기존 사후
+---
+[TITLE] KT, 국방 AI 플랫폼 구축…박윤영 대표 체제 AX 성과
+[LINK] https://www.etnews.com/20261106000286
+[PUBLISHED] 2026-11-08 16:20 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+KT가 214억원 규모 '국방 인공지능(AI) 플랫폼 고도화' 사업을 수주했다. 군사 데이터 등을 AI 개발·학습에 활용할 수 있는 국방 AI 인프라 구축을 전담한다. KT가 국방 AI전환(AX) 분야에서 중요한 레퍼런스를 확보하면서 공공·기업사업 확장에 더욱 속도를 낼 것으로 전망된다. 8일 통신업계에 따르면 KT는 지난달 국방부와 한국지능정보사회진흥원(NIA)이 추진하는 '국방 지능형 플랫폼 고도화 구축' 사업자로 선정됐다. 총 사업금액은
+---
+[TITLE] 농협생명, AX 기반 보험설계 특허등록 완료…맞춤형 상품·특약 추천
+[LINK] https://www.etnews.com/20261106000211
+[PUBLISHED] 2026-11-08 16:00 KST
+[SOURCE] 전자신문
+[TOPIC] 일반
+[SUMMARY]
+NH농협생명이 고객 기존 보험가입 내역과 희망 보험료를 반영해 상품과 특약을 추천하는 시스템에 대해 특허를 확보했다. 소비자는 예산에 맞는 설계안을 신속하게 받아보고, 설계사는 복잡한 특약 조합을 구성·검증하는 부담을 줄일 수 있게 됐다. 6일 지식재산처에 따르면 농협생명은 지난달 28일 'AX(AI Experience) 기반 보험설계 지원 방법, 장치 및 기록매체' 특허등록을 완료했다. 지난 4월 출원한 기술로, 등록공고는 이달 2일 이뤄졌다
+---
+[TITLE] Hot fridges, a fake nuclear alert and a $6bn heist: are we in the foothills of a hacking epidemic?
+[LINK] https://www.theguardian.com/news/ng-interactive/2026/nov/08/hot-fridges-a-fake-nuclear-alert-and-a-6bn-heist-are-we-in-the-foothills-of-a-hacking-epidemic
+[PUBLISHED] 2026-11-08 15:00 KST
+[SOURCE] The Guardian
+[TOPIC] 일반
+[SUMMARY]
+As AI exposes flaws in IT systems and geopolitics plays out on the cyber frontline, some experts say the events of recent weeks could soon be a common occurrence Alex Pearce was doing the morning rounds at his fruit and vegetable wholesale business in London on Monday last week when he noticed something odd. The defrost light on refrigeration unit 2 was on, and the panel reading was 150C. Unit 4 was the same. Continue reading...
+---
+[TITLE] 한온시스템, 수익성 회복했지만 수주 목표 54%...성장성 입증 숙제
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678033
+[PUBLISHED] 2026-11-08 14:30 KST
+[SOURCE] 블로터
+[TOPIC] 일반
+[SUMMARY]
+한온시스템이 원가절감과 운영 효율화를 통해 수익성 회복에 성과를 내고 있지만 신규 수주 확대라는 과제를 안고 있다. 3분기 영업이익은 전년 동기 대비 26.6% 증가했으나 누적 매출 증가율은 1.2%에 그쳤다. 연간 신규·연장 수주 목표 달성률도 3분기까지 54%에 머무르면서 비용 절감으로 확보한 이익을 매출 성장으로 연결할 수 있을지가 실적 개선의 관건으로 떠올랐다.한온시스템이 새로운 성장동력으로 추진하는 에너지저장장치(ESS)와 인공지능(AI) 데이터센터용 열관리 사업도 아직 본격적인 매출 발생까지는 시간이 필요하다. 일부 사업
+---
+[TITLE] AI로 더 성장하는 기업 사라지는 기업 [새책]
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000495
+[PUBLISHED] 2026-11-08 12:30 KST
+[SOURCE] IT조선
+[TOPIC] 일반
+[SUMMARY]
+AI로 더 성장하는 기업 사라지는 기업박준 지음 | 센시오 | 264쪽 | 2만2000원“AI 시대 일등석은 AI 자체가 아니라, 당신이 원래 갖고 있던 비즈니스 해자에 있다.”박준 전 SK텔레콤 부사장은 새책 ‘AI로 더 성장하는 기업, 사라지는 기업’에서 인공지능(AI) 시대 기업의 생존 전략을 이같이 말한다. AI 기술을 얼마나 빠르게 도입하느냐보다 기업이 오랫동안 축적한 기술과 노하우, 고객 기반 등 기존 경쟁력을 AI로 어떻게 증폭하느냐가 중요하다는 얘기다.이 책은 이미 시장에서 경쟁우위를 확보한 중견기업과 대기업을 위한
+---

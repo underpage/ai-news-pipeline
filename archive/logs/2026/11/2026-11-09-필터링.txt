@@ -1,0 +1,908 @@
+[TITLE] LG, 소버린 AI 생태계 강화...K-AI 개방·K-보이스 엔진 개발
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157085
+[PUBLISHED] 2026-11-09 11:55 KST
+[SOURCE] 테크M
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 8
+[FIELD] AI 모델
+[BODY]
+LG AI연구원, K-엑사원 2.5 API 무료 제공
+LG유플러스, 'K-보이스 AI 얼라이언스' 출범
+	
+	
+LG가 인공지능(AI) 지배력 강화에 나섰다. '독자 AI 파운데이션 모델(독파모)'을 개방했다. 한국어 특화 음성 엔진도 개발한다.
+9일 LG AI연구원은 'K-엑사원 2.5' 애플리케이션프로그래밍환경(API)을 무료 개방한다고 밝혔다.
+K-엑사원 2,5는 지난 8월 선보인 독파모 2차 모델 기반이다. 추가 학습을 적용한 기술 검증 모델이다.
+에이전틱(자율) AI 영역에서 프런티어급 글로벌 오픈웨이트 AI 모델과 경쟁 가능한 성능을 보였다. ▲딥시크 V4.1 플래시 ▲GLM 5.3(맥스)와 비교했다. ▲오토메이션 벤치 74.6점(딥시크 74.9점/GLM 71.6점) ▲클로-이벨 77.3점(딥시크 75.8점/GLM 77.6점) ▲브라우즈컴프 78.0점(딥시크 75.8점/GLM 79.0점) ▲'SWE-벤치 프로 59.2점(딥시크 58.4점/GLM 64.0점)을 기록했다.
+김이른 LG AI연구원 엑사원랩장은 "내부 분석 결과 24개 평가 지표를 종합한 성능은 8월 공개 모델 대비 70% 이상 향상된 것을 확인했다"라고 안내했다.
+LG AI연구원은 독파모 3차수 K-엑사원에 엔비디아 '다이나모' 도입을 검토 중이다.
+임우형 LG AI연구원 공동 연구원장은 "현재 3차수 모델 개발에 역량을 모으고 있으며 이번 API 공개로 더 많은 개발자와 기업이 달라진 성능을 직접 체감하길 기대한다"고 소개했다.
+LG유플러스는 'K-보이스 엔진' 개발에 나섰다. ▲서울대학교 ▲연세대 ▲카이스트와 손을 잡았다. 'K-보이스 AI 얼라이언스'를 출범했다.
+음성은 사람과 AI가 소통하는 주요 수단이다. 기존 음성 AI는 사람이 말을 하면 문자로 변환해 답변을 생성하고 다시 음성으로 전달했다. K-보이스 AI 얼라이언스는 음성을 이해하고 음성으로 답하는 음성 대 음성(V2V: Voice-to-Voice) 기술을 공동 연구한다. 해외 기술 의존도를 낮추고 한국어 대화 환경에 최적화할 계획이다. 한국어 음성 AI 평가 기준 등도 확보할 방침이다. LG유플러스는 이를 통해 흡수한 기술을 다양한 서비스에 도입할 예정이다.
+이상엽 LG유플러스 최고기술책임자(CTO)는 "음성은 누구나 쉽고 자연스럽게 AI를 이용할 수 있게 하는 중요한 수단"이라며 "이번 산학 협력을 통해 한국인과 한국어에 특화된 K-V보이스 AI 기술을 확보하고 고객에게 새로운 음성 AI 경험을 제공하고 이를 통해 노년층 등 AI 시대에 소외되는 계층이 줄어들 수 있도록 기술 경쟁력을 강화해 나가겠다"고 말했다.
+윤상호 기자 crow@techm.kr
+---
+[TITLE] 딥시크 하네스, 일일 사용자 154만명…미국 주도 AI 에이전트 시장 도전
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217158
+[PUBLISHED] 2026-11-09 12:46 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발
+[SCORE] 8
+[REASON] 딥시크 에이전트 생태계 급성장 확인
+[FIELD] AI 에이전트
+[BODY]
+딥시크의 AI 에이전트 플랫폼 '딥시크 하네스(DeepSeek Harness)'가 출시 3개월 만에 일일 사용자 154만명을 돌파했다. 외부 개발자가 제작한 플러그인도 3만5000개에 달하면서, 딥시크는 공식 마켓플레이스를 구축하고 개발자 지원에 나서기로 했다.
+딥시크는 8일 공식 X 게시물을 통해 하네스의 이용 현황과 플러그인 생태계 확대 계획을 발표했다.
+이에 따르면 11월4일 기준 하네스의 일일 활성 사용자(DAU)는 154만명으로, 9월 말 약 27만1000명에서 한 달여 만에 5배 이상 증가했다. 이는 딥시크 공식 API 사용자를 기준으로 집계한 수치다. 하루 평균 토큰 소비량도 약 92조개에 달했다.
+딥시크 하네스는 지난 8월13일 첫 버전을 공개하고 9월29일 데스크톱 앱을 출시한 오픈소스 AI 에이전트 플랫폼이다. AI 모델과 도구, 실행 환경 등을 플러그인 형태로 추가하거나 교체할 수 있도록 설계됐다.
+출시 이후 외부 개발자가 제작한 플러그인은 3만5000개로 늘었다. 전체 활성 사용자 가운데 약 60%가 하나 이상의 플러그인을 직접 개발하거나 설치한 것으로 나타났다. 플러그인은 콘텐츠 제작과 디자인, 논문 분석, 다중 에이전트 관리 등 다양한 작업에 활용되고 있다.
+딥시크는 플러그인 생태계를 확대하기 위해 공식 마켓플레이스를 구축할 계획이다. 개발자가 자신의 플러그인을 등록하고 이용자가 필요한 기능을 쉽게 찾도록 지원하는 방식이다.
+플러그인 개발자에게 토큰과 기술 지원, 홍보 기회를 제공하는 프로그램도 준비하고 있다. 플러그인 API의 안정성과 호환성을 개선하고 보안 기능도 강화할 예정이다. 스타트업과 기업들이 자사 제품과 서비스를 플러그인으로 제공하도록 협력도 추진한다.
+하네스를 'AI 에이전트 시대의 운영체제'로 발전시키겠다는 목표도 밝혔다. 기본적인 에이전트 기능은 플랫폼에서 제공하고, 산업별 전문 작업이나 개인화 기능은 외부 개발자들이 플러그인으로 구현하도록 한다는 구상이다. 내장 기능도 외부 플러그인으로 대체할 수 있도록 하는 '모든 것이 플러그인(Everything is a plugin)' 설계를 유지할 계획이다.
+그동안 중국 AI 업계는 모델 성능에서 미국 기업들을 빠르게 추격했지만, 앤트로픽의 '클로드 코드'나 오픈AI의 '코덱스' 같은 AI 코딩 에이전트 플랫폼에서는 상대적으로 뒤처졌다는 평가를 받아왔다. 딥시크는 하네스의 이용자 증가와 플러그인 생태계 구축을 발판으로 이 분야에서도 경쟁력을 확보하려는 모습이다.
+박찬 기자 cpark@aitimes.com
+---
+[TITLE] AI coding agents still need human cleanup on nearly three out of four tasks in a real-world test
+[TITLE_KO] AI 코딩 에이전트, 실제 업무 테스트에서 4건 중 3건 사람 손길 필요해
+[LINK] https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/
+[PUBLISHED] 2026-11-08 18:50 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 8
+[REASON] 실무 코딩 에이전트 벤치마크서 오류 다수 확인
+[FIELD] AI 에이전트
+[BODY]
+AI coding agents still need human cleanup on nearly three out of four tasks in a real-world test
+Researchers from Alibaba and several Asian universities built a coding-agent benchmark from real user change requests. Even the best model fully completes only about one in four tasks, putting the near-perfect scores of older tests into perspective.
+The team developed Co-Design Bench, a new test for coding agents. The agents must rework existing web apps based on user requests, sometimes using images, audio recordings, videos, or documents as input.
+According to the paper, GPT-6 Astra, the best of the ten models tested, meets about 70 percent of a task's requirements on average. But the result is fully correct in only 26.4 percent of tasks. In most cases the agent handles the bulk of the work but leaves at least one detail unfinished, so anyone using these tools almost always has to clean up by hand.
+Coding benchmarks have grown too easy for agents
+The authors justify the new test by pointing to the saturation of existing benchmarks. When models can run, check, and fix their own code, they hit scores above 99 percent on those tests, and differences between models can barely be measured.
+Co-Design Bench draws on real requests from actual coding sessions instead. The researchers favored cases where users had to rephrase their request multiple times or roll back changes, so the test contains mainly tasks that already gave AI agents trouble in practice. They range from small tweaks, like pulling an amount from a receipt and updating every dependent total, to full-scale project overhauls.
+Grading is strict to match. One AI judge tests the finished app in a browser, then a second re-checks every positive verdict and looks for mock-ups or hardcoded results. Points go only to features that actually work in the app.
+Multiple change types in one task overwhelm the models
+Behind GPT-6 Astra, Claude Opus 5 and Qwen3.8-Max take the next spots, while Grok 4.6 lands in last place. On larger overhauls, the much smaller Qwen3.8-27B climbs to second, but the authors do not derive a general advantage of the model from that result.
+Performance drops across all models as a task combines more types of changes, including layout, design, interaction, and content. But these intertwined requirements are the norm in real projects
+Extra compute does little to fix this weakness. GLM-5.2 burns through nearly six times as many tokens as GPT-6 Astra on smaller changes and still scores significantly worse.
+The harness shapes results as much as the model
+In a separate test, the researchers ran the same models in different harnesses, the programs through which an agent reads, writes, and executes code. Qwen3.8-27B scored 75 or just 56 percent on larger overhauls depending on the environment. Which of two models came out ahead also depended on the environment.
+Leaderboards that list only the model therefore only tell part of the story. The authors recommend always reporting model and working environment together. For companies picking a coding agent, that means testing both components as a pair.
+The new benchmark does have limits. It evaluates one fixed request per task; follow-up questions or mid-task corrections from users are not part of the test. The AI judges can also make mistakes.
+A study by the research organization METR already showed how far benchmark results and real-world usability can diverge. The actual acceptance rate of AI-generated code by project leads was roughly 24 percentage points below scores on the widely used SWE-bench Verified.
+Flaws in test environments can also let agents pass tasks without actually solving them. The effect of the working environment is not clear-cut, though. A recent study on coding agents found barely any measurable benefit from more elaborate harnesses, even though they consumed up to three times as many tokens.
+AI News Without the Hype – Curated by Humans
+---
+[TITLE] 앤트그룹, '링 3.2 플래시' 공개…시각 이해 평가서 클로드 오퍼스 5 앞서
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217146
+[PUBLISHED] 2026-11-08 16:59 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 8
+[REASON] 앤트그룹 긴 문맥 멀티모달 모델 공개
+[FIELD] AI 모델
+[BODY]
+중국 앤트그룹이 이미지와 동영상을 이해하고 복잡한 작업을 수행하는 멀티모달 AI 모델 '링 3.2 플래시(Ling-3.2-flash)'를 출시했다. 앤트로픽의 '클로드 오퍼스 5'를 일부 성능 평가에서 앞섰으며, 외부 웹 제작 평가에서도 상위 10위에 올랐다. 특히 저렴한 사용료와 100만토큰의 긴 컨텍스트를 앞세워 기업용 AI 에이전트 시장을 공략하고 있다.
+앤트그룹의 링 개발팀은 5일 최신 멀티모달 모델 링 3.2 플래시를 공개했다. 이번 모델은 총 5600억개의 매개변수를 보유했으며, 실제 추론에는 250억개만 활성화하는 전문가 혼합(MoE) 구조를 채택했다. 전체 매개변수의 약 4.5%만 사용해 연산 부담을 줄이면서 대규모 모델의 성능을 확보하려는 방식이다.
+한 번에 최대 100만토큰의 문맥을 처리할 수 있으며, 텍스트와 이미지, 동영상을 함께 이해하도록 설계했다.
+가장 주목받은 것은 성능 평가 결과다. 복잡한 문서의 구조와 내용을 이해하는 '옴니독벤치 1.5(OmniDocBench 1.5)'에서 92.21점을 기록해 클로드 오퍼스 5의 90.56점을 앞섰다. 시각적 추론 능력을 평가하는 '제로벤치(ZEROBench)' 일부 항목에서는 43.71점으로 오퍼스 5의 39.52점을 넘어섰다. 이미지로 제시된 디자인을 웹페이지로 구현하는 '비전투웹(Vision2Web)'에서도 85.86점으로 오퍼스 5의 80.20점보다 높았다.
+이는 앤트그룹이 자체적으로 측정한 결과로, 모델의 전반적인 성능이 오퍼스 5를 넘어섰다는 의미는 아니다. 세 평가 모두 이미지나 문서를 이해하고 이를 활용하는 능력에 초점을 맞췄다. 일반적인 언어 추론과 코딩 등 다른 분야에서의 경쟁력은 추가 검증이 필요하다.
+BREAKING: Ling-3.2-flash by @AntLingAGI lands at #10 on Image to Frontend Arena with an Elo of 1238! This model also establishes a new Pareto frontier for Preference vs Price at $0.30 input / $0.90 output per 1M tokens, the cheapest for any model at this performance.
+It most… https://t.co/d3wqpnW0bN pic.twitter.com/KQZaYgdSQc
+— DesignArena (@DesignArena) November 5, 2026
+외부 평가에서도 웹 제작 능력을 인정받았다. AI 모델의 디자인 구현 능력을 평가하는 디자인아레나(DesignArena)는 링 3.2 플래시가 이미지 기반 웹 제작 부문에서 Elo 점수 1238점으로 10위에 올랐다고 밝혔다. 기업용 웹사이트와 개인 포트폴리오 제작에서는 각각 약 60%와 63%의 대결 승률을 기록했다.
+앤트그룹이 강조한 것은 이러한 시각 이해 능력을 실제 업무 수행으로 연결하는 AI 에이전트 기능이다. 이미지의 내용을 설명하는 데 그치지 않고 화면을 이해하고 조작하면서 여러 단계의 작업을 수행하도록 설계했다.
+공개된 시연에서는 여러 전문 AI 에이전트가 협력해 기업의 2분기 재무 데이터를 분석하고, 보고서와 이사회 발표용 슬라이드 6장, 주요 내용을 정리한 동영상을 제작했다. 이후 사용자의 피드백을 받아 결과물을 수정했다.
+또 이미지로 제시된 디자인을 실제 웹사이트로 구현하고, 3D 제작 프로그램 블렌더(Blender)를 조작하는 모습도 선보였다.
+Demo: Multi-agent collaboration
+Ling-3.2-flash coordinates specialist agents using shared context to turn Q2 financial data into an analysis report, a six-slide board deck and a highlights video, then refines the deliverables in response to user feedback. pic.twitter.com/K2onjbGFlO
+— Ant Ling (@AntLingAGI) November 5, 2026
+가격 경쟁력도 주요 특징이다. 디자인아레나는 링 3.2 플래시의 가격을 입력 100만토큰당 0.30달러, 출력 100만토큰당 0.90달러로 소개하며, 비슷한 성능을 기록한 모델 중 가장 저렴한 수준이라고 평가했다. 앤트그룹은 출시 후 2주 동안 API를 무료로 제공하며, 이후 적용할 공식 요금은 아직 공개하지 않았다.
+기존 오픈AI와 앤트로픽의 API 호출 형식을 지원하는 점도 기업 고객을 겨냥한 전략이다. 이미 챗GPT나 클로드를 이용해 서비스를 구축한 개발자가 기존 프로그램을 전면 수정하지 않고 링 모델을 시험하거나 추가할 수 있다. 기업 입장에서는 사용 중인 AI 모델과 성능 및 비용을 비교하면서 다른 모델을 도입하는 부담을 줄일 수 있다.
+이처럼 앤트그룹은 시각 이해와 장시간 작업 수행 능력에 가격 경쟁력을 결합해 기업용 AI 에이전트 시장을 공략하고 있다. 특히 문서와 이미지, 동영상 등 다양한 데이터를 처리하면서 여러 도구를 사용하는 에이전트는 모델 호출량이 많아 운영 비용이 중요한 경쟁 요소다. 저렴한 가격과 기존 API와의 호환성은 개발자와 기업 고객을 확보하는 데 유리하게 작용할 수 있다.
+앤트그룹은 알리페이를 운영하는 중국의 대표적인 핀테크 기업으로, 최근 자체 AI 모델과 에이전트 개발을 강화하고 있다. 이번 링 3.2 플래시는 금융과 의료, 기업용 소프트웨어 등에서 활용할 수 있는 멀티모달 기술을 확보하는 동시에 외부 개발자에게 모델을 공급하는 플랫폼 사업의 기반을 넓히려는 움직임으로 볼 수 있다.
+현재 링 3.2 플래시는 API와 온라인 채팅 서비스로 이용할 수 있다. 앤트그룹은 앞서 링 시리즈의 모델 가중치를 공개해 왔지만, 이번 모델의 가중치 공개 계획은 아직 발표하지 않았다.
+임대준 기자 ydj@aitimes.com
+---
+[TITLE] 유아이패스, 기업 업무 지식 AI가 실행하는 ‘업무 지도’로 전환…‘카토그래퍼’ 출시
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42647
+[PUBLISHED] 2026-11-09 10:59 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트
+[SCORE] 7
+[REASON] 사내 업무 지식 에이전트 변환 도구 출시
+[FIELD] AI 에이전트
+[BODY]
+문서·직원 경험에 흩어진 업무 규칙과 예외 처리 과정 통합…에이전틱 AI 자동화 설계에 활용
+기업 내부에 흩어져 있는 업무 규칙과 직원들의 경험, 예외 처리 방식 등을 인공지능(AI) 에이전트가 활용할 수 있는 구조화된 업무 지도로 전환하는 기술이 등장했다. 단순히 업무 절차를 시각화하는 것을 넘어 실제 업무 수행 과정에서 발생하는 판단과 예외 상황까지 기록하고, 이를 AI 에이전트와 자동화 시스템의 설계·운영에 활용하는 방식이다.
+기업 자동화 전문기업 유아이패스(UiPath)는 기업의 운영 지식을 통합해 실행 가능한 업무 지도를 구축하는 ‘유아이패스 카토그래퍼(UiPath Cartographer)’를 출시했다고 9일 밝혔다. 이 신제품의 핵심은 기업의 업무가 실제로 수행되는 방식을 체계적으로 정리한 ‘맵 오브 워크(Map of Work)’를 구축하는 것이다. 기업이 보유한 문서와 업무 규칙, 담당자의 판단, 예외 처리 경험 등을 연결해 AI 자동화에 필요한 운영 맥락을 확보하도록 설계됐다.
+그동안 기업들은 고객과 계약, 청구서, 거래 내역 등 업무 데이터를 디지털화하고 관리하는 데 집중해 왔다. 그러나 실제 업무가 어떤 규칙에 따라 진행되고, 예상하지 못한 상황이 발생했을 때 담당자가 어떤 판단을 내리는지에 관한 지식은 충분히 체계화하지 못했다.
+이러한 운영 지식은 직원 개인의 경험이나 부서별 문서, 스프레드시트, 메신저 대화 등에 분산돼 있는 경우가 많다. 새로운 자동화 프로젝트를 추진할 때마다 담당자 인터뷰와 자료 수집을 반복해야 하는 이유다.
+카토그래퍼는 이처럼 분산된 정보를 통합해 업무의 실제 수행 구조를 파악하고, 자동화 시스템 구축에 필요한 설계 문서와 사양으로 연결한다.
+비즈니스 분석가는 가이드형 대화를 통해 업무 절차와 규칙, 예외 상황을 정리할 수 있다. 시스템은 수집한 정보를 바탕으로 해당 기업의 업무 목표와 운영 환경에 맞는 업무 지도를 구성하고, 개선이 필요한 프로세스를 파악하도록 지원한다.
+특히 업무 지도가 단순한 일회성 문서에 머물지 않도록 변경 관리 기능을 적용했다. 실제 업무 수행 과정에서 새롭게 확인된 판단이나 규칙은 변경 제안으로 기록되며, 지정된 담당자가 이를 승인하거나 거부할 수 있다.
+승인되지 않은 변경 사항이 자동으로 적용되지 않도록 설계해 AI 자동화의 유연성과 기업의 통제 요구를 함께 반영했다. 이 과정에서 활용되는 ‘디시전 레저(Decision Ledger)’는 업무 전반에서 어떤 결정이 내려졌으며 그 이유가 무엇인지 기록하고 관리하는 기능이다. 기록된 의사결정은 검토와 승인 과정을 거쳐 새로운 업무 규칙이나 운영 지식으로 반영될 수 있다.
+이를 통해 기업은 업무 프로세스가 변경되더라도 이전의 판단 근거와 적용 규칙을 추적하고, 다음 자동화 개선 과정에 활용할 수 있다.
+카토그래퍼는 기업의 업무 특성에 따라 세 가지 방식으로 활용할 수 있다. 먼저 ‘사전 구축 맵(Prebuilt Maps)’은 대출 실행과 의료보험 청구 심사, 구매부터 대금 지급까지의 업무 등 주요 산업에서 반복적으로 수행되는 프로세스를 미리 설계한 형태로 제공한다.
+‘프로세스 아틀라스(Process Atlas)’는 여러 산업의 복잡한 업무 절차를 정리한 라이브러리다. 업무별 핵심성과지표(KPI)와 벤치마크, 표준 정책, 규칙, 케이스 플랜 등을 포함해 기업이 자동화 설계에 필요한 정보를 참고할 수 있도록 한다.
+기업 고유의 복잡한 업무나 엄격한 관리 기준이 적용되는 프로세스는 ‘직접 구축(Build Your Own)’ 기능을 활용할 수 있다. 카토그래퍼가 해당 조직의 업무 특성을 파악하고 이를 바탕으로 자동화 시스템 구축에 필요한 청사진을 제공한다. 이렇게 구축된 업무 지도는 유아이패스 플랫폼의 AI 에이전트와 워크플로우, 자동화 기능을 설계하는 데 활용된다.
+기업은 카토그래퍼를 통해 정리한 업무 구조를 기반으로 AI 에이전트와 자동화 시스템을 구축하고, ‘유아이패스 마에스트로(UiPath Maestro)’를 통해 여러 업무의 실행을 통합적으로 조율할 수 있다.
+카토그래퍼는 기존 유아이패스 플랫폼에서 사용되는 신원 관리와 보안, 거버넌스 체계를 공유한다. 이를 통해 업무 지도와 자동화 시스템을 별도로 관리하는 데 따른 복잡성을 줄이고, 기업이 정의한 접근 권한과 관리 정책을 적용할 수 있도록 했다.
+이번 제품은 기업의 AI 도입 과정에서 중요한 과제로 떠오른 업무 맥락의 체계화에 초점을 맞췄다는 점에서 주목된다. AI 에이전트가 실제 기업 업무를 수행하려면 단순히 데이터에 접근하거나 정해진 명령을 실행하는 것만으로는 충분하지 않다. 업무가 진행되는 순서와 판단 기준, 예외 상황에 대한 대응 방식, 담당자의 승인 권한 등을 이해할 수 있어야 한다.
+특히 여러 AI 에이전트와 자동화 시스템이 하나의 업무에 참여하는 에이전틱 AI 환경에서는 각 시스템이 동일한 업무 규칙과 운영 지식을 기반으로 작동하도록 관리하는 것이 중요하다.
+카토그래퍼는 이러한 운영 지식을 기업이 직접 정의하고 소유하도록 설계됐다. 업무 수행 과정에서 발생한 새로운 판단과 변경 사항을 지속적으로 반영하면서도, 실제 규칙 변경에는 담당자의 승인을 요구하는 구조다.
+다니엘 디네스(Daniel Dines) 유아이패스 창업자 겸 최고경영자(CEO)는 “기업들은 수년간 데이터를 디지털화해 왔지만, 그 데이터가 실제로 어떻게 활용되는지에 대한 기업 맥락은 포착하지 못했다”고 말했다.
+이어 “프로세스 맵이 업무가 어떻게 운영되도록 설계됐는지를 보여준다면, 카토그래퍼는 모든 예외 상황과 판단을 포함해 업무가 실제로 어떻게 운영되는지에 대한 운영 지식을 밝혀낸다”며 “두 요소를 모두 포착하고 일관되게 유지하도록 지원하는 유아이패스 최초의 제품”이라고 설명했다.
+이번 출시는 기업용 AI 자동화의 경쟁력이 개별 작업의 실행 속도나 자동화 범위를 넘어, 업무 수행에 필요한 조직의 지식과 의사결정 구조를 얼마나 정확하게 반영하고 관리할 수 있는지로 확대되고 있음을 보여준다.
+향후 실제 도입 효과는 기업 내부에 분산된 운영 지식을 얼마나 정확하게 수집하고 구조화할 수 있는지, 변화하는 업무 규칙을 얼마나 신속하게 반영할 수 있는지, 그리고 AI 에이전트의 실행 과정에서 일관성과 통제 가능성을 유지할 수 있는지에 따라 평가될 전망이다.
+---
+[TITLE] Show GN: Aptly - 작업에 맞는 Claude Code·Codex 서브에이전트 모델과 effort를 추천
+[LINK] https://news.hada.io/topic?id=36852&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 09:16 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 7
+[REASON] 에이전트 작업별 최적 모델 자동 추천 도구
+[FIELD] AI 에이전트
+[BODY]
+Aptly는 OpenAI Decisions API를 이용해 설정된 모델 후보 목록에서 서브에이전트의 모델과 추론 프로필을 추천하는 로컬 MCP 서버입니다.
+작업에 맞는 실행 프로필을 선택해 불필요한 토큰 사용과 비용을 줄이는 것이 목적입니다.
+주요 기능은 다음과 같습니다.
+- Codex와 Claude Code 지원
+- PreToolUse Hook을 통한 지원 대상 서브에이전트 호출의 기본 모델 자동 선택
+- 사용자가 명시한 모델과 추론 강도 보존
+- 모델 후보 설정 및 MCP·CLI를 통한 직접 추천
+분류에는 최소한의 작업 요약을 Decisions API로 전달합니다. 실제 실행과 권한 결정은 기존 Codex 또는 Claude Code가 담당합니다.
+소규모 README 번역 검토 시험에서는 서브에이전트 검토와 분류 비용을 합친 API 환산 비용이 약 52~58% 감소했습니다.
+Node.js 24 이상과 OpenAI API 키가 필요합니다.
+npm install -g aptly@latest --allow-scripts=aptly  
+aptly set default  
+aptly set env OPENAI_API_KEY  
+aptly --version  
+설정 후 Codex 또는 Claude Code를 재시작 하십시오. Codex에서는 /hooks에서 Hooks을 검토하고 승인해야 합니다.
+저장소와 설치 안내: https://github.com/abruption/aptly
+---
+[TITLE] 전 세계 대부분 지역에서 X 브랜드의 어떤 차량이든 잠금 해제하기
+[LINK] https://news.hada.io/topic?id=36867&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 12:32 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 커넥티드카 API 인증 결함 원격 제어 위험
+[FIELD] 보안
+[BODY]
+GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
+발행 2026-11-09 · 작성 neo
+출처 https://news.hada.io/topic?id=36867
+- 익명 처리된 자동차 제조사의 커넥티드카 시스템 취약점을 연결해, 호주에서 차량 번호판만으로 두 브랜드 차량에 원격 명령을 보낼 수 있었음
+- 공개된 관리 도구의 JavaScript에 담긴 하드코딩된 API 키와 관리자 자격 증명으로 차량 소유자 정보와 중앙 신원 관리 시스템에 접근할 수 있었음
+- WAF 우회와 계정 비밀번호 변경을 결합했으며, 호주 환경의 인증 설정 오류로 다중 인증도 건너뛰고 모바일 앱용 토큰을 발급받을 수 있었음
+- 실제 차량의 문 잠금 해제에 성공했으며, 검증은 연구진이 소유하거나 명시적으로 접근 허가를 받은 차량에서만 수행함
+- 별도로 공개된 연구까지 합치면 호주, 미국, 캐나다에서 해당 제조사 차량의 잠금 해제와 엔진 시동 등 원격 명령이 가능했음
+모바일 앱에서 관리 도구까지
+- Shubham Shah는 2023년 구매한 SUV의 커넥티드카 기능을 계기로, 7월 Sam Curry와 함께 제조사의 시스템을 조사함
+- 하드웨어 대신 인터넷에 노출된 웹 애플리케이션과 인프라에 집중해, 원격 잠금 해제 시 앱이 통신하는 대상을 추적함
+  - Android APK를 디컴파일하고 API 요청을 재구성한 결과, 소비자 앱의 거의 모든 기능이 redacted-telematics.com.au 아래 서비스와 통신했음
+- admintool.redacted-telematics.com.au 에서 TEST HARNESS라는 관리 도구를 발견함
+  - 로그인 화면에서도 전체 JavaScript 번들을 내려받을 수 있어 관리 기능과 API 구조를 분석할 수 있었음
+  - 직원용 API는 고객 계정과 실제 운영 차량을 폭넓게 조작할 수 있었고, 상당수는 번들에 하드코딩된 API 키 외에 별도 인증을 요구하지 않았음
+번호판을 계정 정보로 연결
+- 관리 API에서 이메일 주소로 사용자 계정을 조회할 수 있었지만, 번호판만으로 차량을 제어하려면 차량과 계정 사이의 연결 정보가 추가로 필요했음
+- 호주에서는 주별 차량 등록 조회 사이트를 통해 번호판으로 VIN을 쉽게 확인할 수 있음
+  - VIN 조회 자체는 보안 결함이 아니며, 중고차 구매 전 수리 및 보험 이력을 확인하는 등 정당한 용도가 있음
+- 다른 관리 API로 VIN에서 가입자 GUID를 얻고, /v1/account 에서 이메일을 포함한 전체 계정 정보를 조회할 수 있었음
+  - 번호판 → VIN → 가입자 GUID → ForgeRock OpenIDM에 등록된 사용자 개인정보 라는 연결이 완성됨
+- 관리 도구는 차량 기능 활성화, 사용자 계정에 보조 사용자 추가, 원격 접근 코드 생성도 지원했으나, 이 기능들만으로 차량을 원격 제어할 수는 없었음
+중앙 신원 관리 시스템의 자격 증명 노출
+- 연구진은 2주 동안 인증 흐름과 명령 전달 방식을 조사함
+  - 정상적인 모바일 앱 로그인은 login.redacted-identity.com.au 에서 다중 인증을 거쳐 소비자 인증 토큰을 발급함
+  - 이 토큰으로 텔레매틱스 서비스의 REST API와 GraphQL에 접근해 잠금 해제/잠금, 경적, 엔진 등의 기능을 제어할 수 있었음
+- 제조사는 ForgeRock OpenAM/OpenIDM을 인증의 핵심으로 사용했으며, 외부에 노출된 OpenIDM 인스턴스가 커넥티드카 플랫폼의 모든 등록 신원을 관리했음
+- 텔레매틱스 서비스의 JavaScript 번들에서 OpenIDM 관리자 자격 증명을 발견함
+  - 스테이징 환경용 자격 증명이었지만, 이후 운영 환경에서도 유효함을 확인함
+WAF와 OpenIDM 라우팅을 함께 우회
+- 민감한 /openidm/* API에는 Nginx WAF 차단 규칙이 적용돼 있었고, 원본 서버 IP로 접근해도 차단됐음
+- 허용된 /XUI/ ,/UI/ 경로와 경로 탐색(path traversal) 문자를 조합하면 일부 보호를 우회할 수 있었음
+  - 관리자 JWT 발급으로 자격 증명은 검증했지만, OpenIDM이 경로 탐색 문자가 남은 URL에 대응하는 서블릿을 찾지 못해 실제 API 호출은 실패함
+  - 사용자 업로드 등 다른 엔드포인트도 서블릿 경로 검사 때문에 유의미하게 활용하지 못했음
+- Android 앱과 JavaScript 번들에서 정상적으로 호출하는 사용자 정의 엔드포인트를 다시 조사함
+  - 일반적인 엔드포인트 요청은 WAF의 403 응답을 받았지만, pinService 는 WAF 차단 없이 404를 반환했음
+  - 소규모 대입과 추측으로 발견한 getUser 는mail ,guid ,phone 매개변수를 받았음
+- 관리자 자격 증명을 사용한 getUser 응답에는 비밀번호 해시와 PIN 해시, 모바일 푸시 토큰, 휴대전화 번호, 성명이 포함됐음
+  - 이 경로는 WAF 차단이나 경로 탐색 없이 접근할 수 있었음
+  - 다만 비밀번호는 PBKDF2-SHA512로 해시돼 있어, 차량마다 성공을 보장할 수 없는 해시 크래킹 방식에는 한계가 있었음
+- 연구진은 대상 버전에 가까운 OpenIDM 소스 코드를 GPT 5.6 Sol Ultra에 제공하고 약 6시간 동안 분석하게 함
+  - 사람이 시험했던 경로 접두사는 403으로 차단됐지만, 모델은 WAF 규칙이 적용되지 않는 다른 정적 리소스 접두사 조합을 발견함
+  - 이 조합으로 OpenIDM의 서블릿 라우팅 오류도 피하면서 관리 API에 접근할 수 있었음
+비밀번호 변경과 다중 인증 우회
+- WAF 우회 후 OpenIDM의 사용자 관리 API에 PATCH 요청으로 임의 사용자의 비밀번호를 변경할 수 있었음
+- 호주 환경에는 다중 인증을 완전히 건너뛸 수 있는 설정 오류도 있었음
+  - 리소스 소유자 비밀번호 자격 증명(Resource Owner Password Credentials), 즉 ROPC 방식으로 변경한 비밀번호를 사용해 id_token 을 발급받음
+  - IDTokenROPC 인증 서비스를 통해 해당 토큰을 세션으로 교환함
+  - 이후 인가 코드와 PKCE를 사용하는 교환 절차를 거쳐 모바일 앱용 접근 토큰을 얻음
+- 이 흐름을 통해 커넥티드카 앱 사용자의 다중 인증 없이 원격 명령에 필요한 소비자 앱 토큰을 발급받을 수 있었음
+실제 잠금 해제와 지역별 범위
+- 발급받은 앱 토큰으로 원격 명령 API에 문 잠금 해제 요청을 보냈고, 실제로 차량 문이 열렸음
+- 호주에서 완성한 공격 경로는 번호판 조회부터 원격 제어까지 이어졌음
+  - 번호판 → VIN → 가입자 GUID 및 계정 식별 → JavaScript에 노출된 OpenIDM 관리자 자격 증명 → WAF 우회 → 비밀번호 변경 → ROPC를 통한 다중 인증 우회 → 소비자 앱 토큰 발급 → 원격 명령 API
+- 호주에서는 제조사의 두 브랜드 모두에 대해 번호판만 알면 차량에 원격 명령을 보낼 수 있었음
+  - 모든 실제 검증은 연구진 소유 차량이나 명시적으로 접근 허가를 받은 차량에 한정함
+- 미국, 캐나다, 유럽의 OpenIDM 환경에는 더 많은 보안 조치가 적용돼 있었으며, 별도의 더 복잡한 공격 경로는 Sam Curry의 연구에 공개됨
+- 두 연구를 합쳐 최종적으로 확인한 원격 제어 범위는 호주, 미국, 캐나다이며, 잠금 해제와 엔진 시동 등이 가능했음
+---
+[TITLE] 카카오모빌리티, 엔비디아와 레벨4 자율주행 기술 협력…기아 PBV에 적용
+[LINK] https://zdnet.co.kr/view/?no=20261109111048
+[PUBLISHED] 2026-11-09 11:19 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 모델, 신기술
+[SCORE] 6
+[FIELD] 신기술
+[BODY]
+카카오모빌리티가 엔비디아와 손잡고 레벨4 자율주행 기술 개발에 나선다. 자체 개발한 자율주행 인공지능(AI)에 엔비디아의 고성능 컴퓨팅·센서·안전 기술을 결합하고, 기아의 목적기반차량(PBV)에 우선 적용해 무인 자율주행 서비스 상용화를 추진한다.
+카카오모빌리티는 9일 서울 강남구 웨스틴 서울 파르나스에서 엔비디아와 자율주행 기술 협력을 위한 업무협약(MOU)을 체결한다고 밝혔다.
+협약식에는 김진규 카카오모빌리티 피지컬 AI 부문 부사장과 가우라브 아가왈 엔비디아 자동차 사업부문 수석 디렉터 등 양사 관계자들이 참석한다.
+이번 협약에 따라 양사는 카카오모빌리티의 독자적인 자율주행 AI 모델에 엔비디아의 컴퓨팅 인프라와 센싱 기술, 안전 시스템을 결합해 레벨4 자율주행 시스템을 개발한다.
+레벨4는 정해진 운행 조건과 구역 내에서 운전자의 개입 없이 차량이 스스로 주행할 수 있는 자율주행 단계다.
+카카오모빌리티는 강남 도심에서 자율주행 기술을 실증해 온 경험을 바탕으로 인지부터 판단까지 하나의 AI 모델로 처리하는 엔드투엔드(E2E) 자율주행 기술을 고도화하고 있다.
+이번 협력을 통해 엔비디아의 자율주행 컴퓨팅 플랫폼 '드라이브 AGX 토르(NVIDIA DRIVE AGX Thor)' 2개를 탑재한 고성능 자율주행 컴퓨팅 유닛(ADCU)을 도입할 계획이다. 이를 통해 대규모 AI 연산을 실시간으로 처리하는 성능을 강화한다.
+또한 엔비디아의 센서·컴퓨팅 레퍼런스 아키텍처인 '하이페리온(Hyperion)'을 활용해 차량과 센서, 컴퓨팅 장치 간 호환성과 시스템 안정성을 높일 예정이다.
+자율주행 소프트웨어 개발과 검증 과정에는 엔비디아의 통합 안전 시스템 '헤일로스(NVIDIA Halos)'를 적용한다. 개발부터 실제 서비스 적용까지 안전성을 검증할 수 있는 체계를 마련한다는 구상이다.
+양사는 기아의 PBV를 기반으로 통합 기술 개발을 우선 추진한다.
+카카오모빌리티는 지난 7월 기아와 자율주행 서비스용 PBV 개발을 위한 파트너십을 체결한 바 있다. 이번 엔비디아와의 협력을 통해 자체 자율주행 소프트웨어와 엔비디아의 AI 컴퓨팅·안전 기술을 기아 PBV에 통합해 레벨4 자율주행 서비스용 차량 개발과 공급을 추진할 계획이다.
+카카오모빌리티는 국내에서 자율주행 기술을 검증하고 상용화 기반을 마련한 뒤 중장기적으로 글로벌 시장 진출 가능성도 모색할 방침이다.
+관련기사
+- CJ올리브영, 美 샌디에이고 첫 진출…내년 상반기까지 7개 매장 운영2026.11.09
+- 메디팔, ASLS KOREA 2026서 병원 운영 자동화 AI 전략 공개2026.11.09
+- KT알파쇼핑, KT소닉붐 프로농구 경기장서 브랜드데이 개최2026.11.09
+- 후카후카스튜디오, '유오코'로 브랜드 통합…캐릭터 IP 사업 확대2026.11.09
+류긍선 카카오모빌리티 대표는 "독자적 자율주행 기술과 모빌리티 플랫폼, 기술협력 생태계를 바탕으로 레벨4 기술을 내재화해 왔다"며 "엔비디아와의 협력으로 E2E 자율주행 기술 고도화에 속도를 내고 소프트웨어·부품·완성차를 연결하는 글로벌 기술 생태계를 구축하겠다"고 말했다.
+리시 달 엔비디아 자동차 부문 부사장은 "엔비디아 하이페리온은 레벨4 자율주행 구현에 필요한 센서와 컴퓨팅 기술 기반을 제공하고, 헤일로스는 개발부터 실제 서비스 적용까지 안전 체계를 지원한다"며 "이번 협력을 통해 한국에서 안전하고 확장 가능한 자율주행 서비스 개발이 가속화되기를 기대한다"고 밝혔다.
+---
+[TITLE] ETRI, 비전문가도 AI 모델 개발 가능한 탱고2 깃허브 공개
+[LINK] https://zdnet.co.kr/view/?no=20261109112034
+[PUBLISHED] 2026-11-09 11:20 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 신기술, 산업
+[SCORE] 6
+[FIELD] AI 모델
+[BODY]
+산업현장 인공지능(AI) 모델과 서비스 개발을 쉽게, 효율적으로 지원하는 AI 통합개발도구 업그레이드 버전이 공개됐다. 향후 분야별 AI 전문 인력 수요를 상당부분 줄일 것으로 기대된다.
+한국전자통신연구원(ETRI)은 산업현장 전문가를 위한 노코드(No-code) 기반 AI 통합개발도구 ‘탱고(TANGO) 2'를 오픈소스 공개 창구 깃허브에 공개했다고 9일 밝혔다.
+탱고2는 지난 2025년 7월부터 깃허브 공개SW로 개발 중이다. 매년 두차례 릴리즈 버전을 공개하고, 하반기에는 1년 동안의 개발 내용을 탱고 컨퍼런스를 열어 발표하고 있다. 올해는 오는 11일 서울 한국과학기술회관에서 공개 세미나를 개최한다.
+탱고는 현장 전문가들이 AI 모델 개발을 지원한다. 일반인들도 탱고를 사용, AI모델 개발이 가능하다.
+조창식 책임연구원은 "인공지능 개발을 위해서는 데이타 준비가 필요하다. 일반인들은 범용 데이타를 가지고서 탱고를 활용할 수 있다"며 "예를 들어 숫자를 인식하는 것과 같은 데이타는 일반인들도 개발이 가능하다. 다만 공장에서 용접 불량 같은 데이터들은 산업 전문가가 아니면 데이타를 준비하는 것이 어려울 것"이라고 말했다.
+범용 데이터냐 전문 데이터냐에 따라 활용자 범위가 결정된다는 의미다.
+조 책임은 "탱고1의 경우, 비전기반 인공지능 개발은 개념이 단순해 현장 전문가가 어느 정도 도구만을 사용해 개발이 가능하다. 그러나 탱고2는 거대언어모델(LLM) 개발은 개념이 어려워서 AI전문가 도움도 일부 받아야 하는 상태다. 그러나 최종 목표는 파이프라인을 단순화/직관화해서 AI전문가 없이 도메인 전문가가 쉽게 인공지능을 만드는 것을 지향하고 있다"고 부연설명했다.
+ETRI는 지난 2021년부터 5년간 탱고 기술을 개발해 왔다. 영상인식 등 컴퓨터 비전 분야 AI 개발을 지원하는 '탱고1'에 이어, 최근에는 생성형 AI와 LLM까지 지원하는 '탱고2'로 기능을 확장했다.
+탱고2는 산업별 데이터로 LLM을 학습·관리하고 실제 서비스에 적용하는 과정을 지원한다. 개발한 AI 모델을 클라우드, 기업 내부 서버, 개별 기기 등 다양한 환경에 맞춰 최적화하고 배포할 수 있는 것이 특징이다.
+탱고2의 핵심기술인 생성형 AI 개발·운영 솔루션 ‘LLMOps’는 현재 기업 아크릴의 상용제품인 조나단 개발과 연계, 사업화를 추진 중이다.
+조선·해양 분야에서는 기업 에이브노틱스가 다양한 센서 정보를 AI로 분석해 선박 안전 운항을 지원하는 자율항해 솔루션을 실증 중이다.
+농업 분야에서는 슈어데이타랩이 농업 전문가의 경험과 지식을 학습한 생성형 AI 서비스를 농가에 구축하고 사업화를 추진 중이다.
+의료 분야에서는 서울대병원이 대규모 흉부 컴퓨터단층촬영(CT) 영상과 판독문 데이터를 활용해 의료영상 판독문을 자동 생성하는 기술을 개발했다.
+향후 서울대병원과 분당서울대병원에서 심폐혈관 질환 예측 서비스를 실증할 예정이다.
+기술사업화 성과도 이어지고 있다.
+에이전트 AI 전문기업 페르소나에이아이는 지난 4월 과학기술정보통신부·정보통신기획평가원(IITP)과 ETRI가 공동으로 개최한 ‘ICT 기술사업화 페스티벌’을 통해 탱고 기술을 이전받아 LLMOps 역량을 강화하고 있다.
+조창식 책임은 "기업 지식과 데이터를 활용해 업무를 이해하고 실행하는 AI 에이전트 플랫폼 'GEN STATION'을 중심으로 업무 혁신을 추진 중"이라며 "기술 경쟁력을 인정받아 국가AI 대상을 수상했다"고 말했다.
+연구팀은 최근 AI 에이전트와 로봇을 결합한 피지컬 AI 분야로 사업을 확대하고 있다.
+국제표준화와 학술 성과도 거뒀다. 고려대학교 김찬우 교수 연구팀이 개발한 프롬프트 최적화 알고리즘은 국제학술지(IEEE/ACM TASLP)에 게재됐다.
+관련기사
+- 깃허브 행사 직전 '맞불'…엔타이어, AI 개발 플랫폼 출시2026.10.27
+- ETRI, 실내 자율탐사 AI 알고리즘으로 국제대회 1위2026.11.06
+- ETRI, 미래혁신 이끌 첨단 AIoT 기술 9종 공개2026.11.02
+- ETRI, 한국어 습득 AI 에이전트 개발…"스마트글래스 탑재 추진"2026.10.28
+ETRI는 국제전기통신연합(ITU-T)에서 노코드 LLMOps 기술의 국제표준화를 추진 중이다. 목표는 오는 2027년 5월 최종 승인이다.
+정보통신기획평가원(IITP) 김태호 SW PM은 "탱고는 국내 공개 소프트웨어 연구개발의 대표적인 성과로, AI 개발도구 분야의 기술 자립과 국내 소프트웨어 산업 경쟁력 강화에 크게 기여하고 있다"고 평가했다.
+---
+[TITLE] Iris Ohyama data cloud breach exposes info of 7.7 million customers
+[TITLE_KO] 아이리스 오야마 데이터 클라우드 침해로 770만 명 정보 노출
+[LINK] https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/
+[PUBLISHED] 2026-11-09 00:43 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 클라우드 침해로 770만 명 고객정보 유출
+[FIELD] 보안
+[BODY]
+Japanese manufacturer Iris Ohyama, the operator of the Iris Plaza shopping platform, disclosed that personal information belonging to about 7.7 million people may have been exposed after unauthorized access to a third-party cloud service the company used.
+The company discovered the incident late last month and publicly disclosed it with limited details, along with an announcement that the site would be temporarily suspended.
+In an update earlier this week, the company said it had discovered a suspicious file in an external cloud service used by the Iris Plaza online store.
+“We immediately suspended Iris Plaza and related systems and began an investigation. We confirmed unauthorized access by a third party and disclosed it in our first notice on October 29,” [machine translated] the company said.
+The investigation has confirmed that customer data stored in the compromised external cloud service may have been accessed by unauthorized actors.
+While the company is still trying to determine the number of records exposed and how many people are impacted, it notes that the impact extends to up to 5.8 million registered members and former members, and 1.9 million non-members.
+Iris Plaza is the online storefront for the Iris Ohyama Group, a major Japanese manufacturer of household products ranging from storage units and LED lighting to home appliances and garden accessories.
+According to the company's notification, the following information may have been exposed:
+- Full names
+- Physical addresses
+- Phone numbers
+- Email addresses
+- Gender
+- Dates of birth
+- Account passwords
+The exposed data types vary per individual. For example, no passwords are stored for former members.
+Iris Plaza said it stores passwords for active registered members in encrypted form, though it did not specify which encryption scheme it uses.
+The company also said that credit card information was not stored in the affected cloud service.
+As of November 5, Iris Plaza had received no reports of misuse of the exposed information or financial loss tied to the incident.
+In response to the incident, the company’s online store (SIMPLE STYLE) and related systems were suspended on October 28.
+The same applies to websites for Iris Tech Service Co., Ltd. services, including home appliance subscriptions and furniture and appliance delivery and installation.
+Japan’s Personal Information Protection Commission and police were notified on October 29, 2026.
+BleepingComputer has contacted Iris Plaza to learn more about the attack and whether a ransom payment has been demanded. A spokesperson told us that they received no direct communications from the attacker and have not identified the perpetrators.
+Uncover email threats your existing defenses may miss.
+Adaptive Security's AI agents analyze email intent, context, and behavior to uncover phishing, business email compromise, and invoice fraud.
+See what's getting through with a 14-day read-only scan of Microsoft 365 or Google Workspace, with no MX changes.
+Start your free email security scan.
+---
+[TITLE] 앤트로픽, AI가 잘못된 기억 스스로 수정하는 '드리밍' 기술 효과 입증
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217161
+[PUBLISHED] 2026-11-09 13:09 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트
+[SCORE] 8
+[REASON] 에이전트 장기 기억 오류 수정 기법 입증
+[FIELD] AI 에이전트
+---
+[TITLE] [AI 리뷰] 메타, AI 에이전트가 직접 활용하는 디자인 시스템 ‘아스트릭스’ 오픈소스 공개…1만 3,000개 앱에 적용한 기술 개방
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42651
+[PUBLISHED] 2026-11-09 12:39 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] 에이전트용 디자인 시스템 오픈소스 공개
+[FIELD] AI 에이전트
+---
+[TITLE] 모델만 옮기고 작업은 못 옮기면?…AI 에이전트 구입 전 출구 테스트 해야
+[LINK] https://www.itworld.co.kr/article/4246138/%eb%aa%a8%eb%8d%b8%eb%a7%8c-%ec%98%ae%ea%b8%b0%ea%b3%a0-%ec%9e%91%ec%97%85%ec%9d%80-%eb%aa%bb-%ec%98%ae%ea%b8%b0%eb%a9%b4ai-%ec%97%90%ec%9d%b4%ec%a0%84%ed%8a%b8-%ea%b5%ac%ec%9e%85-%ec%a0%84.html
+[PUBLISHED] 2026-11-09 10:54 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 개발, 모델, 산업, 규제
+[SCORE] 6
+[REASON] 에이전트 플랫폼 전환 시 종속 문제 분석
+[FIELD] AI 에이전트
+---
+[TITLE] Week in review: Refrigeration cyberattacks hit European retailers again, Patch Tuesday forecast
+[TITLE_KO] 주간 보안 동향: 유럽 유통사 노린 냉동기 공격 재발 및 패치 화요일 전망
+[LINK] https://www.helpnetsecurity.com/2026/11/08/week-in-review-refrigeration-cyberattacks-hit-european-retailers-again-patch-tuesday-forecast/
+[PUBLISHED] 2026-11-08 18:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 개발, 보안, 규제
+[SCORE] 6
+[REASON] 냉동기 공격 지속 및 에이전트 권한 정책 논의
+[FIELD] 보안
+---
+[TITLE] 플렉토리, 밀리웨이브와 피지컬 AI용 5G·60GHz 통합망 개발
+[LINK] https://zdnet.co.kr/view/?no=20261109113155
+[PUBLISHED] 2026-11-09 11:31 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 보안, 신기술, 규제
+[SCORE] 6
+[REASON] 피지컬 AI 전용 통합 무선망 공동 개발
+[FIELD] 신기술
+---
+[TITLE] 이스트시큐리티, AI 보안 연합 '프로젝트 캐노피' 합류
+[LINK] https://www.etnews.com/20261109000073
+[PUBLISHED] 2026-11-09 09:31 KST
+[SOURCE] 전자신문
+[TOPIC] 개발, 보안, 규제
+[SCORE] 6
+[FIELD] 보안
+---
+[TITLE] 서울아산병원, AI로 귀 질환 진단 정확도 최대 32.2%p 향상…전공의와 전문의 격차 크게 줄였다
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42638
+[PUBLISHED] 2026-11-09 09:27 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 의료 영상 진단 보조 AI 효과 임상 확인
+[FIELD] AI 모델
+---
+[TITLE] 금융보안원, 보이스피싱 대응 플랫폼 'ASAP'에 AI 탐지 모델 탑재
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209397
+[PUBLISHED] 2026-11-09 12:42 KST
+[SOURCE] 데일리시큐
+[TOPIC] 개발, 모델, 보안
+[SCORE] 6
+[REASON] 금융 피싱 탐지에 연합학습 AI 적용
+[FIELD] 보안
+---
+[TITLE] LGU+, 대학 3곳과 ‘K-보이스’ 개발
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000508
+[PUBLISHED] 2026-11-09 09:00 KST
+[SOURCE] IT조선
+[TOPIC] 일반
+[SCORE] 6
+[REASON] 한국어 특화 장기 기억 음성 AI 엔진 개발
+[FIELD] AI 모델
+---
+[TITLE] The inventor of the bitter lesson has a bitter lesson for LLM scaling enthusiasts
+[TITLE_KO] ‘쓴 교훈’ 제안자, LLM 확장론자들에게 쓴소리 전해
+[LINK] https://the-decoder.com/the-inventor-of-the-bitter-lesson-has-a-bitter-lesson-for-llm-scaling-enthusiasts/
+[PUBLISHED] 2026-11-08 20:44 KST
+[SOURCE] The Decoder
+[TOPIC] 보안, 산업
+[SCORE] 6
+[REASON] 단순 연산량 확대의 한계 및 새 학습법 지적
+[FIELD] AI 모델
+---
+[TITLE] AI 추천이 다시 AI 학습 데이터로…UNIST, 반복 추천 속 편향 증폭 위험 확인
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42634
+[PUBLISHED] 2026-11-08 18:39 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 추천 결과 재학습 시 편향 증폭 위험 규명
+[FIELD] AI 모델
+---
+[TITLE] "말로 설명하면 영상 완성"…딥브레인AI, 에이전트 탑재 AI스튜디오 5.0 공개
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217165
+[PUBLISHED] 2026-11-09 12:21 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 산업
+[SCORE] 6
+[REASON] 대화형 영상 제작 에이전트 플랫폼 출시
+[FIELD] AI 에이전트
+---
+[TITLE] 과학자들은 AI를 어떻게 쓸까…앤트로픽 "데이터 분석 1위, 가설 생성 4%"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217147
+[PUBLISHED] 2026-11-08 18:14 KST
+[SOURCE] AI타임스
+[TOPIC] 일반
+[SCORE] 6
+[REASON] 과학 연구 세션 기반 클로드 활용 실태 분석
+[FIELD] AI 모델
+---
+[TITLE] "회사 안에 AI가 너무 많아지고 있다... 이제 ‘AI 직원’을 관리해야 한다"
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42639
+[PUBLISHED] 2026-11-09 09:36 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 보안
+[SCORE] 6
+[REASON] 사내 AI 에이전트 신원 관리 부재 경고
+[FIELD] AI 에이전트
+---
+[TITLE] Univer - 웹앱에 스프레드시트와 문서 편집기를 넣는 SDK
+[LINK] https://news.hada.io/topic?id=36853&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-09 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 6
+[REASON] 에이전트 연동 문서 및 스프레드시트 SDK
+[FIELD] AI 에이전트
+---
+[TITLE] 앤트로픽, AI 전력 직접 확보…4조원대 발전기 계약 인수
+[LINK] https://zdnet.co.kr/view/?no=20261109085731
+[PUBLISHED] 2026-11-09 12:03 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 산업, 규제
+[SCORE] 5
+[FIELD] 신기술
+---
+[TITLE] 구글, 사업 차질 빚은 크루소 AI 데이터센터 인수…170억달러 투자
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217148
+[PUBLISHED] 2026-11-09 11:30 KST
+[SOURCE] AI타임스
+[TOPIC] 산업
+[SCORE] 5
+[REASON] 구글 크루소 AI 데이터센터 부지 인수 및 직접 투자
+[FIELD] 신기술
+---
+[TITLE] “로봇 기술 못 내준다”… 中 제동에 손정의 ‘피지컬 AI 제국’ 흔들
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000502
+[PUBLISHED] 2026-11-08 16:26 KST
+[SOURCE] IT조선
+[TOPIC] 신기술, 산업
+[SCORE] 5
+[REASON] 중국 규제로 로봇 사업 M&A 무산 위기
+[FIELD] 신기술
+---
+[TITLE] SM엔터테인먼트·디어유·드림메이커…업무시스템 해킹에 주민번호·계좌정보까지 노출
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209387
+[PUBLISHED] 2026-11-08 16:42 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SCORE] 5
+[REASON] 엔터사 업무망 침해로 주민번호 및 계약서 유출
+[FIELD] 보안
+---
+[TITLE] 디지털자산 운용사 '하이퍼리즘' 해킹…주민등록번호·은행 계좌정보까지 유출
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209388
+[PUBLISHED] 2026-11-08 16:52 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SCORE] 5
+[REASON] 디지털자산 운용사 계좌 및 주민번호 유출
+[FIELD] 보안
+---
+[LINK] https://simonwillison.net/2026/Nov/9/hn-50421091/
+[STATUS] SKIP (제외)
+---
+[LINK] https://simonwillison.net/2026/Nov/9/details-summary/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209398
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109124703
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261109000216
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678086
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109122336
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261108073035
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109083329
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109084056
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109083204
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109115937
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109095136
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109102048
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109100532
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42650
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000531
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000515
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109112712
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217163
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000512
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217164
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261109000184
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109111511
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000529
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000527
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000525
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261109000064
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678068
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678081
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261109000145
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157079
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42645
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42636
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42641
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678069
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42640
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261109000091
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678067
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=36856&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157071
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261109000062
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261109000049
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261109000038
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217029
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261109000021
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261106000235
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42635
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209383
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209386
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000410
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=36842&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://latent.space/p/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000454
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000437
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209395
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209394
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209393
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://the-decoder.com/andrej-karpathy-built-a-curated-video-platform-in-a-weekend-using-claude-and-20-years-of-hacker-news/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209392
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.securityweek.com/brava-security-emerges-from-stealth-with-15-million-in-funding/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.wired.com/story/world-models-will-soon-be-inescapable-what-you-need-to-know/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42633
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42632
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261106000180
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678059
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261106000280
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000501
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261106000059
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261106000205
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261108000074
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261108000073
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261108000072
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000498
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/books/picture/2026/nov/08/tom-gauld-on-prompts-for-a-cartoon-about-artificial-intelligence-and-writing-cartoon
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217157
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109121004
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000532
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.itworld.co.kr/article/4246120/ai%eb%a1%9c-%eb%82%a0%ea%b0%9c-%eb%8b%ac-%ec%a4%84-%ec%95%8c%ec%95%98%eb%8d%98-%ea%b5%ac%ea%b8%80-ai%ec%97%90-%eb%b0%9c%eb%aa%a9-%ec%9e%a1%ed%98%94%eb%8b%a4.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/09/weakening-ai-copyright-law-will-spell-disaster-for-creativity-australia
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678097
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261109000221
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217160
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000507
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42649
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42648
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109102908
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000530
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261109000159
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000522
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157077
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42642
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157075
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42637
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000509
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209385
+[STATUS] SKIP (제외)
+---
+[LINK] https://latent.space/p/cs146s/
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000497
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000443
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/the-brain-as-computer-metaphor-shaped-modern-ai-but-may-be-misleading-the-consciousness-debate/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/business/2026/nov/08/us-midterms-ai-datacentres-broligarchy-voter-backlash
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.wired.com/story/nyt-cooking-new-ai-powered-recipe-modifier-is-pretty-good/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157065
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/08/ai-clog-public-bodies-local-authorities-onslaught-chatbot-generated-correspondence
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=677943
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678032
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/news/ng-interactive/2026/nov/08/hot-fridges-a-fake-nuclear-alert-and-a-6bn-heist-are-we-in-the-foothills-of-a-hacking-epidemic
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678033
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42646
+[STATUS] SKIP (사전 제외: 행사)
+---
+[LINK] https://www.etnews.com/20261109000101
+[STATUS] SKIP (사전 제외: 행사)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209396
+[STATUS] SKIP (사전 제외: 행사)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209372
+[STATUS] SKIP (사전 제외: 행사)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000518
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157088
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261109110418
+[STATUS] SKIP (사전 제외: 홍보)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217159
+[STATUS] SKIP (사전 제외: 홍보)
+---
+[LINK] https://www.etnews.com/20261109000112
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261109000103
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261109000027
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261107000040
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261109000006
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000440
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261108000035
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261105000442
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261106000286
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261106000211
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000495
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
