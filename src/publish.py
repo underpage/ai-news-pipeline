@@ -173,12 +173,21 @@ def update_index(index_path, page_title, link_path, intro_text):
     with open(index_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    if link_path not in content:
-        marker = "### 리포트 목록\n\n"
-        if marker not in content:
-            content += f"\n{marker}"
-        prefix, suffix = content.split(marker, 1)
-        new_content = prefix + marker + f"- [{os.path.basename(link_path)} 보기](./{link_path})\n" + suffix
+    marker = "### 리포트 목록\n\n"
+    if marker not in content:
+        content += f"\n{marker}"
+    prefix, suffix = content.split(marker, 1)
+    # 목록은 최신 날짜가 위. 지난 날짜를 나중에 복구해도 제자리에 들어가게 파일 이름으로 정렬한다
+    # (예전에는 새 항목을 맨 위에 넣어 11-09 위에 복구한 11-03~05가 놓였음)
+    lines = suffix.splitlines()
+    entries = [line for line in lines if line.startswith("- [")]
+    rest = [line for line in lines if not line.startswith("- [") and line.strip()]
+    entry = f"- [{os.path.basename(link_path)} 보기](./{link_path})"
+    if not any(f"(./{link_path})" in line for line in entries):
+        entries.append(entry)
+    entries.sort(key=lambda line: line.split("](./", 1)[-1], reverse=True)
+    new_content = prefix + marker + "\n".join(entries) + "\n" + ("\n" + "\n".join(rest) + "\n" if rest else "")
+    if new_content != content:
         with open(index_path, "w", encoding="utf-8") as f:
             f.write(new_content)
 

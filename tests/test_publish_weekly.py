@@ -147,3 +147,13 @@ def test_weekly_report(monkeypatch):
     assert os.path.exists(os.path.join(weekly.WEEKLY_DIR, "2026", "2026-W40.md"))
     index = open(os.path.join(weekly.WEEKLY_DIR, "2026", "index.md"), encoding="utf-8").read()
     assert index.startswith("# 2026 주간 AI 뉴스") and "(./2026-W40.md)" in index
+
+
+def test_index_keeps_newest_date_first_when_past_day_is_added(tmp_path):
+    index = str(tmp_path / "index.md")
+    for day in ("2026-11-01", "2026-11-02", "2026-11-09", "2026-11-03"):
+        publish.update_index(index, "2026-11 AI 뉴스 리포트", f"{day}.md", "월별 목록")
+    publish.update_index(index, "2026-11 AI 뉴스 리포트", "2026-11-09.md", "월별 목록")
+    links = [line.strip().split("](./")[1].rstrip(")") for line in open(index, encoding="utf-8") if line.startswith("- [")]
+    # 나중에 복구한 지난 날짜도 날짜 순서 자리에 들어가고, 같은 날짜는 한 번만
+    assert links == ["2026-11-09.md", "2026-11-03.md", "2026-11-02.md", "2026-11-01.md"]
