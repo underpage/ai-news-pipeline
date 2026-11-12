@@ -1,0 +1,168 @@
+[TITLE] 바이두, AI 연구 자동화하는 '어니 이볼브' 공개…추론 속도 6배 개선
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217240
+[PUBLISHED] 2026-11-10 16:15 KST
+[SOURCE] AI타임스
+[TOPIC] 모델
+[SCORE] 8
+[REASON] AI 연구 자동화로 추론 속도 6배 개선
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 중국 바이두가 AI가 스스로 연구 방향을 정하고 실험을 반복하는 자동 연구 시스템 '어니 이볼브'를 9일(현지시간) 공식 블로그로 공개했다.
+- 공개 벤치마크 3종의 평가 지표 4개 중 3개에서 기존 최고 기록을 넘었고, 개발 중인 어니 5.5 플래시 추론 시스템에 적용해 쿤룬신 P800 칩의 특정 저지연 작업 텍스트 생성 속도를 6.24배로 높였다.
+- 다만 사람이 정한 목표와 평가 기준 안에서 수행되며 성능 수치는 바이두 자체 평가로 외부 검증을 거치지 않았고, 시스템 전체가 아닌 최적화 코드와 실험 로그만 깃허브에 게시했다.
+
+#긍정
+---
+[TITLE] Over 575 malicious OpenClaw skills delivered malware to Windows and macOS
+[LINK] https://www.helpnetsecurity.com/2026/11/10/acronis-ai-agent-cyberattacks-report/
+[PUBLISHED] 2026-11-10 14:30 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 모델, 보안
+[SCORE] 8
+[REASON] 악성 에이전트 스킬과 AI 조율 공격 사례 확인
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+575개 이상의 악성 OpenClaw 스킬이 Windows와 macOS에 멀웨어를 유포했다
+
+**[영문 3줄 요약 (Original)]**
+- According to Acronis TRU Cyber Pulse 2026, cybercriminals are using AI agents to coordinate attacks, stolen credentials to access linked services, and tools that interfere with intrusion detection and system recovery.
+- In the BOSSAI investigation, one operator connected more than 10 AI models to tools for reconnaissance, scanning and exploitation, and researchers identified more than 575 malicious OpenClaw skills that delivered trojans, cryptocurrency miners and information stealers to Windows and macOS systems.
+- Ransomware samples such as Qilin could delete Windows Volume Shadow Copies, and The Gentlemen maintained tools that affiliates could use to disable endpoint detection and response software.
+
+**[국문 3줄 요약 (Translated)]**
+- Acronis TRU Cyber Pulse 2026에 따르면 사이버 범죄자들은 AI 에이전트로 공격을 조율하고, 탈취한 자격 증명으로 연결된 서비스에 접근하며, 침입 탐지와 시스템 복구를 방해하는 도구를 사용하고 있다.
+- BOSSAI 조사에서는 한 운영자가 10개 넘는 AI 모델을 정찰, 스캔, 익스플로잇 도구에 연결했고, 연구진은 유틸리티로 위장해 Windows와 macOS에 트로이 목마, 암호화폐 채굴기, 정보 탈취 악성코드를 전달한 악성 OpenClaw 스킬 575개 이상을 확인했다.
+- Qilin 랜섬웨어 샘플은 Windows 볼륨 섀도 복사본을 삭제할 수 있었고, The Gentlemen은 제휴자가 엔드포인트 탐지 및 대응 소프트웨어를 무력화하는 데 쓸 수 있는 도구를 관리했다.
+
+#부정
+---
+[TITLE] DeepX, 2세대 AI 칩 DX-M2 테이프아웃 완료 - 5W 미만에서 최대 1,000억 파라미터 모델 추론 목표
+[LINK] https://news.hada.io/topic?id=36920&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-10 09:44 KST
+[SOURCE] GeekNews
+[TOPIC] 모델, 신기술, 산업
+[SCORE] 7
+[REASON] 엣지 생성 AI 칩 설계 완료와 사양 공개
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 한국 엣지 AI 반도체 스타트업 딥엑스가 로봇과 드론처럼 전력과 발열 제약이 큰 기기에서 생성형 AI를 실행하도록 설계한 2세대 가속기 DX-M2의 테이프아웃을 완료했다.
+- 5W 미만에서 전체 200억~1,000억 파라미터 모델을 초당 10~30토큰으로 실행하는 것이 목표이며, 메모리 대역폭은 50GB/s에서 150GB/s로 높였고 Samsung의 LPDDR5x-PIM을 쓰면 Llama3.1-8B 처리량이 6.7배가 될 것으로 시뮬레이션에서 예측했지만 전체 소비전력도 2.7배로 늘어난다.
+- DX-M2 샘플은 2027년 3월, 양산은 2027년 가을을 목표로 하며, 로봇 소프트웨어 스택은 아직 개발 중이고 후속 DX-M3는 2028년 출시 예정이다.
+
+#긍정
+---
+[TITLE] AI 코딩 도입했더니 같은 인력으로 소프트웨어 출시량 20배…오픈AI, 코드래빗 사례 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42671
+[PUBLISHED] 2026-11-10 12:24 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 개발, 산업
+[SCORE] 6
+[REASON] 코딩 에이전트 도입 사례 공개
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 오픈AI는 9일(현지시간) AI 코드 검토 전문기업 코드래빗이 코딩 에이전트 코덱스를 활용해 최근 6개월 동안 같은 엔지니어링 인력으로 소프트웨어 출시량을 약 20배 늘렸다고 밝혔다.
+- 코드래빗은 위험도가 낮은 코드 변경을 AI 검토 후 자동 배포하도록 개발 체계를 재설계했고, 복잡한 분석에는 GPT-6 아스트라를, 하위 에이전트에는 비용이 낮은 GPT-6 루나를 쓰며 오픈AI의 데이브레이크로 취약점을 분석해 코드래빗 시큐어를 선보였다.
+- 다만 20배 증가는 회사의 자체 운영 경험에 따른 수치로 독립적인 통제 실험으로 확인된 결과가 아니며, 코덱스 도입뿐 아니라 테스트 환경과 배포 절차, 승인 체계 개선이 함께 작용했다.
+
+#긍정
+---
+[TITLE] “발 대신 바퀴 달고 공중 한 바퀴”…보스턴다이나믹스, 아틀라스 한계 시험
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000684
+[PUBLISHED] 2026-11-10 15:50 KST
+[SOURCE] IT조선
+[TOPIC] 모델, 신기술
+[SCORE] 6
+[REASON] 바퀴 달린 휴머노이드 제어 연구 시연
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 보스턴다이나믹스가 9일(현지시각) 휴머노이드 로봇 아틀라스의 발을 바퀴로 교체해 360도 회전 점프와 측면 이동 등 고난도 동작을 구현한 연구 영상을 공개했다.
+- 공개된 모델은 기존 발목 구동 장치에 스쿠터 휠을 장착한 연구용 플랫폼이며, 실제 모터 특성을 반영한 강화학습과 심투리얼 기술로 가상 환경에서 학습한 동작을 실제 로봇에 적용해 아틀라스가 첫 시도 만에 360도 회전 점프를 수행했다.
+- 이번 실험은 바퀴 주행에서 모터가 높은 토크와 속도를 지속적으로 내야 하는 조건을 이용해 모터 성능과 전신 제어 기술의 한계를 검증한 것이며, 상업화를 목적으로 개발된 모델은 아니다.
+
+#중립
+---
+[TITLE] ST마이크로, 'DSP·에지AI·실시간 제어 기능 탑재' MCU 출시
+[LINK] https://zdnet.co.kr/view/?no=20261110131339
+[PUBLISHED] 2026-11-10 13:17 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 6
+[REASON] DSP와 NPU 결합한 산업용 MCU 출시
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- ST마이크로일렉트로닉스가 DSP, 에지 AI, 실시간 제어 기능을 갖춘 마이크로컨트롤러 STM32H7P를 출시했다고 10일 밝혔다.
+- 520MHz 암 코텍스-M7 코어에 하드웨어 신호프로세서(HSP)와 뉴럴-ART 가속기 NPU를 결합했으며, HSP는 코텍스-M7 소프트웨어 구현보다 FFT를 최대 5배 빨리 처리하고 NPU는 85GOPS를 제공해 태양광용 AI 기반 AFCI 모델 추론이 기존 소프트웨어 방식보다 40배 빠르다.
+- 디지털 전력, 모터 제어, 상태 모니터링 등 산업용 애플리케이션을 지원하고 최대 125도에서 동작하며, ST마이크로는 경쟁사 제품 대비 1.7배 높은 성능을 제공한다고 밝혔다.
+
+#긍정
+---
+[TITLE] 노타, AI ‘키미 K3.1 프로’ 경량화...GPU 구매비 최대 20% 낮춰
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21912
+[PUBLISHED] 2026-11-10 11:35 KST
+[SOURCE] 더에이아이
+[TOPIC] 모델, 신기술
+[SCORE] 6
+[REASON] 초대형 모델 경량화로 GPU 비용 절감
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 노타가 중국 문샷AI의 초거대 모델 키미 K3.1 프로를 경량화해 기존 엔비디아 B300 GPU 8장이 필요했던 모델을 B200 GPU 8장에서도 실행할 수 있게 최적화했다고 10일 공개했다.
+- 전문가 모듈을 최대 37% 제거하는 프루닝을 적용하고도 GPQA 다이아몬드에서 원본 점수의 99% 이상을 유지했으며, 노타 자체 견적 기준으로 GPU 구매비는 최대 약 20%, 클라우드 임대료는 최대 약 22% 낮아진다.
+- 전문가 모듈을 37% 줄인 모델은 B200 8장에서 최대 100만 토큰을 처리하고 추측 디코딩도 적용했지만, 절감 규모는 노타의 견적 비교 결과여서 공급업체와 계약 조건에 따라 달라질 수 있다.
+
+#긍정
+---
+[TITLE] 해커원이 본 AI 해킹의 현 주소…최고 성능 모델은?
+[LINK] https://byline.network/2026/11/10-733/
+[PUBLISHED] 2026-11-10 18:37 KST
+[SOURCE] 바이라인네트워크
+[TOPIC] 모델, 보안
+[SCORE] 6
+[REASON] AI 모델의 취약점 탐색력 평가 결과 공개
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 버그바운티 플랫폼 해커원이 AI 모델의 취약점 탐색 능력을 평가한 결과, 가장 성능이 좋은 단일 모델인 오픈AI의 GPT-6 아스트라가 시험 대상 취약점 62개 중 53개를 찾아 재현율 85.5%를 기록했다.
+- GPT-6 아스트라, GPT-5.6 솔, 앤트로픽의 클로드 미토스 5를 함께 쓰면 62개 중 61개를 찾아 재현율이 98.4%까지 올랐고, 취약점 검증에서는 GPT-5.5가 속도에, 클로드 오퍼스 4.7이 복잡한 공격 경로 판단에 강점을 보였다.
+- 기본 에이전트의 검증 정확도는 80% 이상이었지만 도구와 지시문을 개선하면 모델과 관계없이 98%까지 올라 활용 방식의 영향이 컸고, 보안패치 해결 여부 판단에서는 세 모델 오류의 75%가 둘 이상의 모델에서 겹쳤으며 비즈니스 로직 취약점은 AI가 여전히 찾기 어려운 영역으로 꼽혔다.
+
+#중립
+---
+[TITLE] 엔비디아가 투자한 리얼월드, 휴머노이드 벤치마크 ‘덱스벤치’ 공개
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21911
+[PUBLISHED] 2026-11-10 11:25 KST
+[SOURCE] 더에이아이
+[TOPIC] 모델, 신기술
+[SCORE] 6
+[REASON] 휴머노이드 손 조작 평가 벤치마크 공개
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 리얼월드가 서울 코엑스에서 열린 엔비디아 AI 데이 서울 2026에서 휴머노이드 로봇의 정밀 손 조작 능력을 평가하는 벤치마크 덱스벤치의 개발 성과를 발표했다.
+- 덱스벤치는 유통, 물류, 조립, 호텔 식음료 4개 산업 분야에서 총 15개 작업을 평가하고 새로운 물체와 물리적 조건, 공간 배치에서의 일반화 성능도 측정하며, 엔비디아의 아이작 랩-아레나와 물리 엔진 뉴턴을 기반으로 개발됐다.
+- 리얼월드는 향후 코드와 평가 환경, 시뮬레이션 자산, 학습 데이터, 기준 모델, 리더보드를 공개할 예정이고, 엔비디아가 9일 리얼월드에 대한 투자 계획을 발표했으나 투자 규모와 조건은 공개되지 않았다.
+
+#긍정
+---
+[TITLE] 설치는 무사통과지만 호출하는 순간…npm 공급망 방어의 사각지대
+[LINK] https://www.itworld.co.kr/article/4246571/%ec%84%a4%ec%b9%98%eb%8a%94-%eb%ac%b4%ec%82%ac%ed%86%b5%ea%b3%bc%ec%a7%80%eb%a7%8c-%ed%98%b8%ec%b6%9c%ed%95%98%eb%8a%94-%ec%88%9c%ea%b0%84npm-%ea%b3%b5%ea%b8%89%eb%a7%9d-%eb%b0%a9%ec%96%b4.html
+[PUBLISHED] 2026-11-10 10:30 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 에이전트, 개발, 보안, 산업, 규제
+[SCORE] 6
+[REASON] 설치 차단만으로 npm 악성 패키지 못 막음
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 설치 스크립트를 차단하는 것만으로는 악성 npm 패키지를 막기 어렵다는 점이 체크막스 제로가 발견한 악성 패키지 indexed-btree 사례로 드러났다.
+- 이 패키지는 정상적인 sorted-btree 라이브러리를 모방했고 악성 설치 후크 없이 BTree.prototype.set 메서드에 로더를 두어, 특정 키 값이 입력되면 난독화된 파일을 별도의 노드 프로세스에서 실행했으며 알려진 CVE가 없어도 위험했다.
+- 기사는 패키지를 추가하거나 버전을 바꾸는 풀 요청마다 종속성 비교 결과를 만들고 브랜치 보호에서 이 검사를 의무화하며, 의문이 생기면 프로덕션 비밀 정보가 없는 일회용 테스트 환경에서 실행해 보라고 권한다.
+
+#부정
+---

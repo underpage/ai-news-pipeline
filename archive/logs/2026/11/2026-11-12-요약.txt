@@ -1,0 +1,200 @@
+[TITLE] Gemini Decisions API - 입력 하나에 최대 1,000개 질문을 평가하는 멀티모달 API
+[LINK] https://news.hada.io/topic?id=37011&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-12 07:33 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 모델
+[SCORE] 9
+[REASON] 에이전트 판단을 빠르고 싸게 처리하는 구글 의사결정 모델 API
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- Google이 gemini-decision-1 모델 기반의 Gemini Decisions API를 공개했으며, 하나의 멀티모달 입력에 최대 1,000개의 질문을 보낼 수 있다.
+- 답변을 토큰별로 생성하지 않고 한 번의 순전파로 후보 선택지를 채점해 0~1의 신뢰도를 반환하며, 최대 16K 토큰 문맥에서 종단 간 지연시간은 150~250ms이다.
+- 가격은 입력 100만 토큰당 0.10달러이고 출력 토큰 요금은 없으며, Google 내부에서는 Gemini Notebook의 모델 라우팅과 Google Search의 MCP 도구 안전 계층 등에 쓰고 있다.
+
+#긍정
+---
+[TITLE] IBM, 양자컴퓨터 연산 속도 최대 19배 향상…2027년 1,000큐비트 시대 연다
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42700
+[PUBLISHED] 2026-11-12 09:06 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 신기술
+[SCORE] 8
+[REASON] 양자컴퓨팅 업계는 1000큐비트 로드맵과 연산 속도 검증 주시
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- IBM이 11일(미국 현지시간) 차세대 양자 프로세서 나이트호크 r3 개발 계획과 나이트호크 r2의 성능 검증 결과를 공개했다.
+- 나이트호크 r2에서 이온, 알고리드미크, 큐컨트롤 등이 340억 회 이상의 양자 회로를 실행했고 기존 IBM 프로세서 대비 최대 19배의 성능 개선을 보고했다.
+- 나이트호크 r3는 520개의 프로그래밍 가능한 큐비트에서 1만 회의 양자 연산을 목표로 하며, 2027년 두 개의 프로세서를 연결해 총 1,040큐비트 시스템을 구축할 계획이다.
+
+#긍정
+---
+[TITLE] Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories
+[LINK] https://thehackernews.com/2026/11/4837-hijacked-github-accounts-ran-ci.html
+[PUBLISHED] 2026-11-12 15:42 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 8
+[REASON] CI 비밀 사용 조직은 저장소 감염과 자격 증명 유출 점검 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+해킹된 GitHub 계정 4,837개로 1,806개 이상의 저장소에서 CI 비밀 탈취 악성코드를 실행한 공격자
+
+**[영문 3줄 요약 (Original)]**
+- An attacker used stolen credentials for 4,837 GitHub accounts to plant a secret stealer in repositories those accounts could write to, according to Aikido Security.
+- The stealer ran in at least 1,806 repositories and targets the secrets and cloud credentials that CI workflows can reach, while SafeDep counted 8,093 repositories that received malicious commits.
+- In repositories where the stealer ran, every secret and cloud role available to the workflows should be treated as compromised, and owners should revoke tokens and rotate secrets.
+
+**[국문 3줄 요약 (Translated)]**
+- Aikido Security에 따르면 공격자가 GitHub 계정 4,837개의 탈취된 자격 증명으로 해당 계정이 쓰기 권한을 가진 저장소에 비밀 탈취 악성코드를 심었다.
+- 이 악성코드는 최소 1,806개 저장소에서 실행되어 CI 워크플로가 접근할 수 있는 비밀과 클라우드 자격 증명을 노리며, SafeDep은 악성 커밋을 받은 저장소를 8,093개로 집계했다.
+- 악성코드가 실행된 저장소에서는 워크플로가 접근할 수 있는 모든 비밀과 클라우드 역할을 침해된 것으로 간주해야 하며, 소유자는 토큰을 폐기하고 비밀을 교체해야 한다.
+
+#부정
+---
+[TITLE] Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely
+[LINK] https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html
+[PUBLISHED] 2026-11-12 14:12 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 아파치 HTTP/2 서버는 2.4.71로 갱신 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+치명적인 Apache HTTP/2 결함, 인증되지 않은 공격자의 원격 코드 실행 가능
+
+**[영문 3줄 요약 (Original)]**
+- A critical flaw in Apache HTTP Server's mod_http2 module, tracked as CVE-2026-119618, can let a remote attacker run code on the server.
+- It affects versions 2.4.55 through 2.4.70 with HTTP/2 enabled, and Red Hat rates it 9.8 out of 10 on the CVSS scale.
+- It is fixed in version 2.4.71, and admins who cannot update yet can remove h2 and h2c from the Protocols directive, as Wiz advises.
+
+**[국문 3줄 요약 (Translated)]**
+- Apache HTTP Server의 mod_http2 모듈에서 CVE-2026-119618로 추적되는 치명적 결함이 발견되어 원격 공격자가 서버에서 코드를 실행할 수 있다.
+- HTTP/2를 활성화한 2.4.55부터 2.4.70까지의 버전이 영향을 받으며, Red Hat은 이 결함을 CVSS 10점 만점에 9.8로 평가했다.
+- 2.4.71에서 수정되었고, 아직 업데이트할 수 없는 관리자는 Wiz의 권고대로 Protocols 지시문에서 h2와 h2c를 제거할 수 있다.
+
+#부정
+---
+[TITLE] 구글 '알파게놈 2', 유전자 변이 영향 세포별 예측…원인 변이 2배 찾아
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217309
+[PUBLISHED] 2026-11-12 18:14 KST
+[SOURCE] AI타임스
+[TOPIC] 모델
+[SCORE] 7
+[REASON] 유전체 연구용 모델이 세포별 변이 영향 예측
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 구글 딥마인드가 11일(현지시간) DNA 변이가 어떤 세포에서 유전자 활동에 영향을 미치는지 예측하는 AI 모델 알파게놈 2를 공개했다.
+- DNA 서열과 함께 분석할 세포 유형이나 상태를 지정하는 조건부 모델로 바뀌었고, 28개 면역세포 유형의 TenK10K 데이터셋에서 90% 정밀도로 원인 변이의 30%를 찾아 기존 모델의 16%보다 약 1.9배 높았다.
+- 알파게놈 API를 통해 비상업적 연구 목적으로 이용할 수 있고 상업적 연구용은 비공개 프리뷰이며, 임상 진단 목적으로는 검증되거나 승인되지 않았다.
+
+#긍정
+---
+[TITLE] ScreenConnect Attacks Target at Least 288 Endpoints Across 48 Organizations With Rogue Clients
+[LINK] https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html
+[PUBLISHED] 2026-11-12 13:39 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 스크린커넥트 파트너는 확장 기능 차단과 침해 흔적 점검 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+스크린커넥트 공격, 48개 조직의 최소 288개 엔드포인트에 통제를 벗어난 클라이언트 설치
+
+**[영문 3줄 요약 (Original)]**
+- ConnectWise disabled five third-party extensions in partner environments as a precaution after reports of unauthorized access, saying there is no evidence of a compromise of its infrastructure or a ScreenConnect vulnerability.
+- Huntress observed attackers using access to cloud-hosted ScreenConnect panels to push Run commands that install rogue ScreenConnect clients on at least 288 managed endpoints across 48 organizations.
+- The attack spreads in a worm-like fashion, and ConnectWise urges partners to preserve suspicious activity logs and watch for unusual sign-ins, new administrator accounts and unapproved remote-access software.
+
+**[국문 3줄 요약 (Translated)]**
+- ConnectWise는 무단 접근 보고에 따라 파트너 환경의 서드파티 확장 기능 5개를 예방 차원에서 비활성화했으며, 자사 인프라 침해나 ScreenConnect 취약점의 증거는 없다고 밝혔다.
+- Huntress는 공격자가 클라우드 호스팅 ScreenConnect 패널 접근 권한으로 Run 명령을 보내 48개 조직의 최소 288개 관리 엔드포인트에 통제를 벗어난 ScreenConnect 클라이언트를 설치하려는 것을 확인했다.
+- 공격은 웜처럼 확산되며, ConnectWise는 파트너에게 의심스러운 활동 로그를 보존하고 비정상 로그인, 새 관리자 계정, 승인되지 않은 원격 접속 소프트웨어를 주시하라고 권고했다.
+
+#부정
+---
+[TITLE] 미니맥스, 4K 이미지 약 10초에 생성하는 'H3-이미지' 공개…가중치도 배포
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217320
+[PUBLISHED] 2026-11-12 15:41 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 모델
+[SCORE] 7
+[REASON] 새 이미지 생성 오픈웨이트 모델로 개발자 선택지 확대
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 중국 AI 기업 미니맥스가 4K 이미지를 약 10초 만에 생성하는 오픈웨이트 모델 H3-이미지를 출시하고 모델 가중치와 코드를 허깅페이스와 깃허브에 배포했다.
+- 하나의 모델로 이미지 생성과 편집을 처리하고 최대 16장의 참조 이미지를 쓸 수 있으며, 4K 생성에는 표준 모드 16초, 고속 모드 10.3초가 걸렸지만 1K에서는 GPT 이미지 2.6의 중간 모드보다 느렸다.
+- 한국과 미국, 영국, EU는 기본 커뮤니티 라이선스 적용 지역에서 제외되어 별도 허가가 필요하고, 연 매출 100만달러를 초과하는 기업 등은 미니맥스의 사전 서면 승인을 받아야 한다.
+
+#긍정
+---
+[TITLE] Node.js Fixes 16 Flaws, Including HTTP/2 Bugs That Crash Servers and Leak Other Connections' Data
+[LINK] https://thehackernews.com/2026/11/nodejs-fixes-16-flaws-including-http2.html
+[PUBLISHED] 2026-11-12 17:20 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 노드 서버 운영자는 HTTP/2 결함 수정 버전 적용 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+Node.js, HTTP/2 버그 등 16개 결함 수정, 서버 충돌과 다른 연결 데이터 유출 가능
+
+**[영문 3줄 요약 (Original)]**
+- Node.js fixed 16 vulnerabilities, seven of them rated high, including HTTP/2 flaws that let unauthenticated clients crash servers or leak memory from other connections.
+- CVE-2026-123864 in HTTPS servers can allow a client to read memory from other connections, including TLS private keys and other users' requests, and it affects all three supported lines.
+- Fixed versions are 22.23.5, 24.22.3 and 26.13.1, the advisory lists no workaround, and end-of-life lines such as 20.x and 25.x get no fix.
+
+**[국문 3줄 요약 (Translated)]**
+- Node.js가 16개 취약점을 수정했으며 그중 7개가 높음 등급이고, 인증되지 않은 클라이언트가 서버를 충돌시키거나 다른 연결의 메모리를 빼낼 수 있는 HTTP/2 결함이 포함된다.
+- HTTPS 서버의 CVE-2026-123864는 클라이언트가 TLS 개인 키와 다른 사용자의 요청을 포함한 다른 연결의 메모리를 읽을 수 있게 하며 지원되는 세 버전 라인 모두에 영향을 준다.
+- 수정 버전은 22.23.5, 24.22.3, 26.13.1이고 보안 권고에는 우회책이 없으며, 20.x와 25.x 같은 수명 종료 라인은 수정되지 않는다.
+
+#부정
+---
+[TITLE] AWS Emulator: Open-source tool for testing AWS apps locally, built by autonomous AI agents
+[LINK] https://www.helpnetsecurity.com/2026/11/12/aws-ai-agents-built-emulator/
+[PUBLISHED] 2026-11-12 18:30 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 개발, 보안, 산업
+[SCORE] 6
+[REASON] 에이전트가 만든 AWS 에뮬레이터로 로컬 테스트 가능
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+AWS Emulator: 자율 AI 에이전트가 만든, 로컬에서 AWS 앱을 테스트하는 오픈소스 도구
+
+**[영문 3줄 요약 (Original)]**
+- Amazon Web Services released AWS Emulator, a free tool that simulates AWS services on a laptop, a development server or in a CI pipeline.
+- AWS says autonomous AI agents wrote it entirely, with three teams of agents creating tests, finding differences from real AWS behavior, and fixing the reported issues.
+- It is not intended for production workloads, does not evaluate IAM policies, stores resources in memory only, and is released under the CC0 public-domain dedication.
+
+**[국문 3줄 요약 (Translated)]**
+- Amazon Web Services가 노트북, 개발 서버 또는 CI 파이프라인에서 AWS 서비스를 시뮬레이션하는 무료 도구 AWS Emulator를 공개했다.
+- AWS는 자율 AI 에이전트가 이 도구를 전적으로 작성했다고 밝혔으며, 세 팀의 에이전트가 테스트 생성, 실제 AWS와의 동작 차이 확인, 보고된 문제 수정을 맡는다.
+- 프로덕션 워크로드용이 아니고 IAM 정책을 평가하지 않으며 리소스를 메모리에만 저장하고, CC0 퍼블릭 도메인 선언으로 배포된다.
+
+#긍정
+---
+[TITLE] AI, 프리랜서 업무 41.3% 전문가 수준 수행…1년 전 2.5%서 급상승
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217332
+[PUBLISHED] 2026-11-12 17:41 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 모델
+[SCORE] 6
+[REASON] 에이전트의 실무 수행 능력이 1년 만에 급상승
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 미국 AI 안전센터와 스케일 AI가 원격 노동 지수(RLI)의 최신 결과를 발표했으며, 앤트로픽의 클로드 페이블 5.2가 41.3%로 가장 높은 자동화율을 기록했다.
+- RLI는 실제 전문가가 완료한 240개 프로젝트로 구성되며, 클로드 오퍼스 5.5는 21.3%, GPT-6 아스트라는 20.8%였고 2025년 첫 공개 당시 최고 기록은 마누스의 2.5%였다.
+- 41.3%는 프리랜서 일자리의 41.3%가 사라진다는 뜻이 아니라 평가 대상 프로젝트에서 AI 결과물이 전문가와 동등하거나 더 나은 수준으로 인정받은 비율이다.
+
+#중립
+---
