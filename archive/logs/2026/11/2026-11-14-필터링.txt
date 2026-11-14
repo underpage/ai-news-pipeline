@@ -1,0 +1,608 @@
+[평가 오류] https://openai.com/index/introducing-chatgpt-wallet - 본문 스크래핑 실패
+---
+[TITLE] Introducing ChatGPT Wallet
+[TITLE_KO] 챗GPT 월렛을 소개합니다
+[LINK] https://openai.com/index/introducing-chatgpt-wallet
+[PUBLISHED] 2026-11-14 00:00 KST
+[SOURCE] OpenAI
+[TOPIC] 에이전트, 개발
+[SCORE] 8
+[REASON] 카드 번호 미노출 기반 에이전트 직접 결제 규격 도입
+[FIELD] AI 에이전트
+---
+[TITLE] llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
+[TITLE_KO] llama.cpp v1.0.0: 로컬 AI 생태계를 위한 더 강력한 기반
+[LINK] https://huggingface.co/blog/ggml-org/llama-cpp-v1
+[PUBLISHED] 2026-11-13 23:05 KST
+[SOURCE] Hugging Face
+[TOPIC] 일반
+[SCORE] 8
+[REASON] 로컬 LLM 구동 핵심 프레임워크인 llama.cpp 1.0 정식 버전 출시
+[FIELD] AI 모델
+[BODY]
+llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
+llama.cpp makes it possible to run multi-modal LLMs across a wide range of hardware - from consumer-grade local machines to high-end enterprise servers. Through quantization, optimized backends, and a portable C/C++ implementation, we make AI inference accessible at every level of the software stack. We believe this is the most lightweight, versatile and sensible platform for building cross-platform and private AI products.
+During the 3.5 years since its inception, the project has grown a lot and many downstream applications already depend on our work. We expect this trend to continue as local AI and privacy become increasingly important in our everyday lives. Every new integration means more developers depending on our library interfaces and therefore having a flexible but stable API is paramount.
+Today we release libraries v1.0.0, highlighting our responsibility to those developers. Moving forward, both llama.cpp and ggml will reflect API and ABI incompatibilities with major-version bumps. As adoption grows, we will be stricter about making those boundaries visible to downstream consumers.
+Releases
+Semantic version update rules
+The following rules apply to all ggml-org projects using semantic versioning:
+Distribution
+We are looking forward to expanding the ways in which ggml-org software is distributed and reaches developers and end-users. For more information about how to add ggml-org projects to your packaging and release pipelines, please check the following discussion.
+Development
+The project has fostered an amazing open-source community with highly-skilled and talented contributors. With the rapid advance of AI capabilities in the field of software engineering, we continue to adapt and integrate LLMs in our developement cycle in a thoughtful and resonable manner. Maintaining a high quality codebase, staying in control of the architecture and understanding the implementation details will remain our top priorities.
+To reinforce the faster pace of development we continue to invest more and more resources in improving the CI infrastructure behind the projects. Thanks to HF technologies such as HF Buckets and HF Jobs we are able to scale the capacity necessary to guarantee correctness for every change that lands on the master branches. With hardware support from NVIDIA, AMD, Qualcomm, Arm, IBM and Intel, we continue to enroll more self-hosted runners across all major hardware platforms.
+Backend and model coverage
+The underlying machine learning engine of llama.cpp - ggml is designed to run on virtually any hardware in existence. This is achieved by implementing dedicated ggml backends. Each backend can be compiled as a dynamic library and optionally loaded at runtime.
+A complete list of the currently implemented backends can be found here.
+We are committed to provide continuous support of all model architectures. Currently, llama.cpp supports more than 150 architecture variants as well as all mainstream speculative decoding methods.
+Thanks
+The llama.cpp team at Hugging Face is thankful for the incredible support from the community. Special thanks to the long-time maintainers of the project and all contributors. This is a significant milestone which would not have been possible without our joint efforts!
+Additional resources
+- llama.cpp examples
+- ggml-org at Hugging Face
+- ggml-org at Github
+- Check out Llama desktop apps for MacOS and Windows, shipped with love by the team behind llama.cpp and Hugging Face.
+---
+[TITLE] How one AI agent exposed five critical enterprise security gaps
+[TITLE_KO] 단 하나의 AI 에이전트가 어떻게 기업의 핵심 보안 공백 5가지를 드러냈는가
+[LINK] https://www.bleepingcomputer.com/news/security/how-one-ai-agent-exposed-five-critical-enterprise-security-gaps/
+[PUBLISHED] 2026-11-14 00:01 KST
+[SOURCE] BleepingComputer
+[TOPIC] 에이전트, 보안
+[SCORE] 7
+[REASON] 송장 처리 에이전트의 악성 메일 유도 취약점 분석
+[FIELD] 보안
+[BODY]
+Imagine an AI agent being created. Not by an identity team, nor by a security professional. This one is built by someone in accounts at a mid-sized company.
+The agent’s job is relatively simple: read an inbox, match invoices against the ERP, and post a daily summary to Slack. And since a frontier model was used to build it, it's a one-shot, 10-minute task.
+Nobody in security knows the agent exists.
+There's nothing unusual about this. In a survey of 418 IT and security professionals commissioned by Token from the Cloud Security Alliance in January 2026, 68% reported having strong visibility into their AI agents. Yet 82% had found agents they didn't know about in the past year.
+The evolution of agents is so rapid that the security playbooks are being written on the go. The people responsible for agent security need to figure things out in production, one problem at a time.
+At Token Security, we asked more than 20 of them to write down what they've learned for the Agentic Universe, a free learning hub.
+Below, we follow this one agent from the afternoon it was built to the audit after it went wrong, and stop at five points where one of those practitioners could have changed the outcome.
+Day One: How the agent got its access
+Our agent needs access to three systems: email, the ERP, and Slack. It gets emails via the no-code builder, using an OAuth consent screen. The ERP is trickier, but not by much. The agent’s creator can generate a personal API key in minutes by following the AI's very helpful instructions. Slack comes in through the builder's own Slack connector, with one more consent screen.
+That's two of the four access paths John Donovan, former Head of Security, IT and Compliance at Zededa, lays out in How do AI agents access sensitive systems and data?:
+- Riding a human's session: Browser extensions and in-app copilots that act as the user.
+- Using a delegated OAuth grant: The user approves scopes once, with a single click, granting the agent access that lasts until someone revokes it.
+- Utilizing static credentials: API keys and service account passwords, usable by anyone who finds them.
+- Acting through purpose-built agent identities: Registered, short-lived, and tied to one agent. The ideal and rarest scenario.
+Donovan's point is that real agents mix these, and each mix changes what you can see. Say an agent hands a user's OAuth token to a sub-agent, which calls an MCP server that queries a database with a shared service account.
+The database log shows the service account. The SaaS audit log shows the user. The identity provider shows nothing at all.
+The access path determines what appears in your logs, so ideally you’ll understand it for each agent in the company. Also, be mindful of OAuth grants, as they don’t usually get revoked by the IdP and can remain active long after the person who approved them changes jobs.
+The Agentic Universe from Token Security
+Here's the thing, nobody's been here before.
+In this all-new world of AI Agent Security, take a journey with the practitioners at companies like Roblox, Amex, and more who are actually doing the work to secure AI.
+Check out their playbooks
+Day Two: The review that never happened
+The agent goes live the next morning. Nobody reviews it because nobody was asked to.
+Had someone looked, one test would have flagged it. In How do you make an AI agent Secure by Design?, Amber Bennoui, Product Leader for AI and Cybersecurity at DataRobot, builds on the Agents Rule of Two, which Meta's AI security team published in October 2025.
+Until prompt injection can be reliably detected and refused, an agent should have no more than two of these in a single session:
+- A: It processes untrusted input.
+- B: It can reach sensitive systems or private data.
+- C: It can change state or communicate externally.
+Our agent has all three.
+---
+[TITLE] Google Open Sources Ambient Quality Agent (AQuA) to Diagnose Production AI Agent Failures
+[TITLE_KO] 구글, 프로덕션 AI 에이전트 장애 진단하는 AQuA 오픈소스로 공개
+[LINK] https://www.infoq.com/news/2026/11/google-ambient-agent-prod/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-11-13 22:53 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] 운영 중인 에이전트 세션의 장애 패턴 분석 오픈소스 도구 공개
+[FIELD] AI 에이전트
+[BODY]
+Google has open-sourced AQuA (Ambient Quality Agent), a reference implementation that analyzes production AI agent sessions, verifies recurring failure patterns, and investigates root causes against deployed source revisions. The tool targets silent quality regressions that conventional infrastructure monitoring can miss, such as agents ignoring user preferences or skipping required tool calls while returning successful responses.
+AQuA runs alongside an agent in Google Cloud, outside its request path, reading telemetry from Cloud Trace, Cloud Logging, or BigQuery. It samples up to 1,000 recent sessions per run and processes them through five stages: sampling, reviewing, clustering findings, verifying candidate clusters, and tracking issues. Developers can configure domain-specific quality criteria through a goal.md file and add deterministic custom metrics. AQuA can run on a schedule, after a deployment, or on demand.
+For root cause analysis, AQuA compares failing sessions with an immutable source snapshot captured at deployment. Its diagnosis agent identifies relevant code or instructions, cites file and line ranges, and proposes changes when the cause lies in the repository. It can also attribute failures to external dependencies, tool handoffs, or retrieved data. AQuA does not apply fixes or open pull requests automatically.
+AQuA sidecar architecture (Source: Google Developer Blog Post)
+Google evaluated 32 sessions from a multi-agent travel application, identifying 42 findings grouped into nine candidate clusters. The verifier rejected three unsupported clusters after checking up to three full transcripts per candidate cluster, leaving six verified issues. Two involved bypassing seat availability checks and losing a traveler's vegan preference during delegation.
+After developers modified prompts and replayed the sessions, seat-selection bypasses fell from 15 sessions to two, dietary-preference omissions dropped from seven to zero, and sessions passing all checks increased from five to 13. These results came from controlled replay, not production traffic.
+The Google blog post states,
+An insight is its citations, not a self-reported confidence score.
+Findings link to supporting traces, and proposed root causes must reference valid lines in the deployed snapshot. AQuA tracks findings as NEW, RECURRING, or automatically RESOLVED after 14 days without being observed. Sampling can miss rare failures, and replay may not reproduce external state.
+Reacting to the announcement on LinkedIn, Dmytro Aprelenko, engineering manager at Redcore, wrote,
+Agent orchestration definitely needs better continuous diagnosis to catch these loops early.
+AQuA validates source references and links findings to supporting traces. Cluster verification filters false positives, though it cannot confirm every session exhibits the same failure. Google's Agent Platform evaluation service supports regression testing and production quality monitoring, while Arize Phoenix provides open-source tracing and evaluation. AQuA focuses on grouping production failures and linking verified findings to deployed source code.
+Google identifies sampling limits and incomplete reproduction of external state as constraints. Its open-source implementation helps teams integrate production agent diagnosis into development and evaluation workflows.
+---
+[TITLE] New Mior and Skyfall Attacks Let Rogue Cloud Hosts Steal Secrets From AMD SEV-SNP VMs
+[TITLE_KO] 새로운 Mior 및 Skyfall 공격, 악성 클라우드 호스트가 AMD SEV-SNP VM에서 기밀 탈취 가능
+[LINK] https://thehackernews.com/2026/11/new-mior-and-skyfall-attacks-let-rogue.html
+[PUBLISHED] 2026-11-14 00:27 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 악성 호스트가 기밀 VM 메모리 탈취 및 무결성 변조 가능
+[FIELD] 보안
+[BODY]
+Two attacks made public this week allow a malicious host to read data inside AMD SEV-SNP-protected virtual machines (VMs), which are built to keep the server's operator out.
+One of them, Mior, can also modify a VM's memory and fake the signed report confirming which software it runs. Both need control of the server's hypervisor, and Mior also needs control of the server's BIOS. Researchers showed both in lab tests on AMD EPYC server processors.
+AMD, which makes the processors, lists SEV firmware for Mior and microcode for Skyfall, both dated August 12. It plans to give server makers platform firmware in November for Skyfall and in December for Mior, and fixes for embedded chips later. Customers are told to get the BIOS update from their server maker.
+SEV-SNP brings confidential computing to AMD EPYC server processors. It uses hardware-enforced memory encryption and access control to protect a VM, even from the host's hypervisor.
+The ETH Zurich team behind Mior attacked SEV-SNP while it was starting up. During start-up, a security co-processor on the chip, the Platform Security Processor (PSP), fills in a table called the Reverse Map Table (RMP). The RMP records who owns each page of memory and what they may do with it.
+The team redirected the PSP's writes to the memory of a graphics card it controlled, instead of to main memory. The team used a card because it believes the PSP reads the values back to check them, and the card could return them. Start-up then finished without errors, but part of the real RMP, including the entry that protects the table itself, stayed uninitialized.
+That let the hypervisor rewrite the RMP's protections. The team then enabled debugging on a confidential VM that had it disabled and used the PSP's own debug commands to read and write the VM's memory. This worked in all 1,000 attempts across both test runs.
+SEV-SNP also measures a VM's software image when the VM starts, and the PSP signs attestation reports that include this measurement. In a second test, the team copied a harmless VM's measurement into a malicious VM, so the malicious VM's attestation reports described the harmless image instead.
+The attack needs control of the hypervisor and the BIOS (also called UEFI), plus a PCIe device such as a graphics card, the Mior paper says. For the tests, the team modified the BIOS to leave the chip's memory-routing settings unlocked.
+"We operate in AMD’s threat model defined for SEV-SNP. AMD explicitly distrusts the UEFI, thus an attacker can modify the UEFI," the researchers say.
+Ordinary VMs already trust their host and its firmware, so Mior gives an attacker nothing new against them, the team says.
+The team ran Mior on one EPYC 9135, a Zen 5 chip. It considers Zen 3 and Zen 4 chips potentially affected but did not test them because it had no setup that allowed it to change their BIOS.
+The debugging and attestation tests both worked with ciphertext hiding turned on. That optional SEV-SNP feature stops the hypervisor from even reading encrypted VM memory.
+Two earlier attacks by some of the same researchers, the Fabricked attack and the RMPocalypse attack, also corrupted the RMP as SEV-SNP started up. Mior is a separate flaw, unrelated to Fabricked and to the fix for it, the team says. It also worked on older firmware from before that fix.
+Skyfall comes from a team at ETH Zurich and Google. It builds on Transient Scheduler Attacks (TSA), a group of flaws in AMD processors that can leak data through instruction timing. TSA was first disclosed on July 8, 2025.
+The team found that when a hypervisor intentionally causes a VM to fail to start, the processor has already cached part of the VM's saved state. That data is left behind without the usual cleanup, and the hypervisor can read it through TSA.
+This way, the team recovered a VM's saved register values and a disk-encryption key from a test VM. For the key, it changed the VM's kernel to pause at the moment the key sat in registers.
+---
+[TITLE] ‘Ahead of his time’: AI helps unlock discoveries hidden in notebooks of man who transformed maths
+[TITLE_KO] 시대를 앞선 발견: AI를 통해 수학을 바꾼 거장의 노트 속 숨은 정리 해독
+[LINK] https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths
+[PUBLISHED] 2026-11-14 01:38 KST
+[SOURCE] The Guardian
+[TOPIC] 일반
+[SCORE] 6
+[REASON] 수학자 괴델의 미공개 속기 노트에서 AI로 수백 개 정리 추출 검증
+[FIELD] AI 모델
+[BODY]
+The Austrian logician Kurt Gödel was one of the most original thinkers of the 20th century. His two incompleteness theorems, published in 1931, transformed mathematics and paved the way for the digital age.
+After his seminal results of the 1930s, Gödel published only a few papers. His unpublished work, however, runs to tens of thousands of pages, and is of great interest to historians of science.
+Since 2017, the Finnish logician Jan von Plato has led a project at Helsinki University to understand the contents of 16 notebooks that Gödel wrote in the early 1940s. This material – the “workbooks” – is 1,009 pages of densely written text about maths and logic. Much of it is written in a German shorthand, Gabelsberger, that was obsolete even when Gödel was using it.
+Progress in the mathematical understanding of the text was painfully slow – about a page a week – until September, when von Plato enlisted the help of the AI model Claude. Within a couple of days, Claude had provided a comprehensive digest of the entire material, revealing Gödel had proved hundreds of theorems that no one knew about.
+The most famous logician of modern times had, in fact, discovered significantly more than anyone had thought.
+“I was flabbergasted,” said von Plato. “The workbooks not only contain dozens of anticipations of results not known until the 70s and 80s, but they also contain 14 themes in logic that have not been pursued. Gödel was far ahead of his time.”
+Gödel changed the course of logic because he revealed the limits of mathematical knowledge. His incompleteness theorems show that in all mathematical systems there are true statements that can neither be proved or disproved. Yet while this result was a blow to previous generations of logicians, who had hoped that all truths were verifiable, Gödel’s work pushed the field in new directions, inspiring Alan Turing to write his 1936 paper that began the theory of modern computation.
+In 1940, Gödel fled Austria under the Nazis. He settled in Princeton, New Jersey, and became a close friend of Albert Einstein at the Institute of Advanced Study. Increasingly paranoid in his later years, he refused to eat food that was not cooked by his wife, and died of starvation in 1978.
+Von Plato said he had started his Gödel project in 2017 because he was facing mandatory retirement from Helsinki University. “What should I do to make myself indispensable? Oh yes, I’ll start reading Gödel’s enigmatic shorthand pages!” He received a €2.5m (£2.1m) grant from the European Research Council, taught himself Gabelsberger shorthand – “I am one of only six people who can read it in the world” – and assembled a small team.
+In August, at a conference in France about AI and theorem proving, von Plato met computer scientists who suggested that he co-opt the help of Claude in trying to make sense of the workbooks. On his return to Helsinki he began the process, showing Claude his transcriptions of the workbooks, as well as six books he had previously written on Gödel and other secondary scientific literature.
+“In a couple of days, I got to see a 650-page explanation of the workbooks. It had to be controlled page for page, but it’s basically a work that is impossible to do for human beings,” he said. “Humans read one page at a time and we tend to forget things. It takes us a year to read about 50 pages. We just are not able to keep in mind all the different parts.
+“The AI can connect all the pieces in a thousand pages. It can see all of Gödel’s writings as one piece.”
+Gödel’s incompleteness theorems revealed the existence of statements whose truths were independent of the system they were written in: that is, they could not be proved or disproved within the system. In 1966, the American mathematician Paul Cohen won the Fields medal, the highest honour in maths, for showing the independence of two well-known mathematical statements: the continuum hypothesis and the axiom of choice.
+---
+[TITLE] OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures
+[TITLE_KO] 아마존 세이지메이커 점프스타트의 오픈폴드3: 생체분자 구조 예측
+[LINK] https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures/
+[PUBLISHED] 2026-11-14 06:53 KST
+[SOURCE] AWS Machine Learning
+[TOPIC] 모델, 신기술, 규제
+[SCORE] 6
+[REASON] 아마존 세이지메이커 기반 분자 구조 예측 모델 배포 지원
+[FIELD] AI 모델
+[BODY]
+Artificial Intelligence
+OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures
+You can deploy OpenFold3-preview from Amazon SageMaker JumpStart. The OpenFold Consortium and the AlQuraishi Lab at Columbia University developed OpenFold3 as an open source biomolecular structure prediction model. With a few lines of code, you can typically deploy OpenFold3 into your own AWS account. You can then predict the 3D structures of proteins, DNA, RNA, small-molecule ligands, and the complexes they form. The endpoint runs with network isolation, which you can use to help keep your sequences within your AWS account.
+Computational drug discovery teams now use structure prediction as a core part of their work. Teams use it in target identification, antibody and protein engineering, and structure-based virtual screening. Teams have found running these models challenging. You need GPU infrastructure, a working CUDA and PyTorch stack, large model checkpoints, and a serving layer that handles requests that take minutes rather than milliseconds. SageMaker JumpStart can handle much of that work for you. OpenFold3 runs in an AWS-maintained container on a managed Amazon SageMaker AI endpoint. The endpoint is designed to handle request queuing and GPU warmup, and you can add autoscaling.
+In this post, we show you how to:
+- Deploy OpenFold3-preview on a SageMaker asynchronous inference endpoint.
+- Submit structure prediction jobs and interpret the results, including predicted structures and confidence scores.
+- Run several predictions in parallel on multi-GPU instances.
+- Supply your own multiple sequence alignments (MSAs) to improve prediction accuracy while helping keep your sequences private.
+- Help reduce costs by scaling your endpoint to zero when it’s idle.
+Overview of OpenFold3
+OpenFold3 is an all-atom structure prediction model. It predicts the joint 3D structure of a set of molecules from their sequences. It isn’t limited to single protein chains: It can fold multi-chain protein complexes, protein–nucleic acid assemblies, and protein–ligand complexes in one prediction.
+The OpenFold3 developers release its code and model weights under the Apache 2.0 license, and they publish the training data and methods. Research organizations and pharmaceutical companies can inspect the model, fine-tune it, and build on it under the terms of that license. The developers describe OpenFold3-preview as a research preview.
+Use cases
+- Target and complex structure prediction – Predict structures for targets that have no experimental structure, including multi-chain assemblies and protein–nucleic acid complexes.
+- Protein–ligand co-folding – Fold a protein together with a small molecule supplied as SMILES to generate binding-pose hypotheses for structure-based design.
+- Antibody and protein engineering – Evaluate designed variants by predicting their structures and comparing confidence across candidates.
+- High-throughput screening pipelines – Queue large batches of prediction jobs against an autoscaling endpoint and process the results directly from Amazon Simple Storage Service (Amazon S3).
+Why OpenFold3 uses asynchronous inference
+Most JumpStart models, such as large language models and embedding models, deploy to real-time endpoints. A real-time endpoint returns its response within a single request, and that request is capped at 60 seconds. Structure prediction works differently. Folding time grows with the number and length of the chains in a query, and real-world proteins and complexes often take several minutes.
+For this reason, OpenFold3 on JumpStart runs on SageMaker Asynchronous Inference:
+- You upload the request to Amazon S3 and call InvokeEndpointAsync , which returns immediately.
+- The endpoint queues the request and processes it, with an invocation timeout of up to 1 hour.
+- The endpoint writes the result, or the error details, to an S3 location you choose.
+---
+[TITLE] Fake GTA 6 download goes after Steam logins and crypto wallet data
+[TITLE_KO] 스팀 로그인과 가상자산 지갑 노리는 가짜 GTA 6 다운로드
+[LINK] https://www.helpnetsecurity.com/2026/11/13/fake-gta-6-download-scam/
+[PUBLISHED] 2026-11-14 00:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 구글 코랩을 통해 유포되는 스팀 및 가상자산 탈취 악성코드
+[FIELD] 보안
+[BODY]
+Fake GTA 6 download goes after Steam logins and crypto wallet data
+Cynet researchers followed a “GTA 6 EXE file download” link from a Google Colab notebook to a ZIP archive and found a WARDEN Stealer loader inside. The malware takes saved passwords, browser cookies, Steam and Roblox credentials, and cryptocurrency wallet data from the machine it runs on.
+A Google Colab notebook promotes a fake GTA 6 executable download (Source: Cynet)
+Grand Theft Auto VI launches November 19 with no PC version. Any site offering a PC installer is offering something other than the game. People searching for early access or a leaked build are the target, and this sample shows how much work the lure puts into keeping them clicking.
+The installer tells you to turn off your defenses
+The Colab link led to a page called “Windows Software Hub,” which showed a version number, a download count, and “Virus Free,” “Secure,” and “Verified” badges. The page advertised a 72 MB download. The archive held a 796 KB executable and a 1 KB README. A download page and a file manager measure different things, so the size mismatch proves little by itself. The README proves more: it tells the user to run the file as administrator, click past a security warning, and add an antivirus exclusion if the file is blocked.
+The binary contains no game engine, no game assets, and no Rockstar signatures. It checks whether it is running in a virtual machine or sandbox, injects code into browser processes, replaces cryptocurrency addresses copied to the clipboard, and can download more malware.
+What to block
+Cynet named uroker[.]casa as the probable command-and-control server, which is the machine the stealer reports back to. The company published SHA-256 hashes for the executable and the README. It also listed 104.21.75[.]176 but warned against blocking that address because it is a shared Cloudflare IP.
+---
+[TITLE] [옴니사 원 도쿄 2026] 옴니사, AI 에이전트 통제 솔루션 '엘라라' 내년 출시
+[LINK] https://www.etnews.com/20261113000244
+[PUBLISHED] 2026-11-14 12:00 KST
+[SOURCE] 전자신문
+[TOPIC] 에이전트, 규제
+[SCORE] 6
+[REASON] 기업 내 에이전트 사전 실행 통제 및 단말 관리 도입
+[FIELD] AI 에이전트
+[BODY]
+옴니사가 AI 에이전트의 업무를 실행 전에 통제하는 솔루션 '옴니사 엘라라'를 내년 상반기 정식 출시하기로 공식화했다. 한국에는 데이터와 운영을 모두 국내에서 처리하는 업무용 단말관리 서비스를 시작했다. 망분리 규제 완화로 AI 도입에 속도를 내는 국내 금융권이 주요 공략 대상으로 떠올랐다.
+옴니사는 지난 13일 일본 도쿄 ANA 인터컨티넨탈 호텔에서 '옴니사 원 도쿄 2026'을 열고 엘라라 등 신기능을 소개했다.
+엘라라는 AI 에이전트가 일을 실행하기 전에 허용 여부를 따져 막거나 사람의 승인을 받도록 한다. 회사 승인 없이 쓰는 AI 애플리케이션(앱)과 에이전트를 찾아내고, 여러 AI 모델의 접근 권한과 토큰 사용량을 관리한다. 에이전트가 사용자 대신 일하더라도 사용자의 모든 권한을 물려받지 않게 하는 것이 핵심이다. 현재 베타 단계로, 옴니사 기존 제품 없이도 쓰는 단독 제품으로 나올 예정이다.
+회사 통제 밖 AI가 급증하고 있어서다. 옴니사 조사에 따르면 기업 단말의 AI 어시스턴트 사용량은 전년 대비 약 1000% 늘었고, 이 중 4분의 3은 회사 승인 없이 쓰였다.
+앞서 아밋 싱 옴니사 최고경영자(CEO)는 지난 9월 취임 당시 1년 안에 기업이 관리하는 모든 노트북과 휴대폰에서 수십 개의 AI 에이전트가 사용자의 신원과 권한으로 일하게 될 것이라고 내다본 바 있다.
+옴니사는 장애 원인 분석, 취약점 패치 준비, 윈도 앱 패키징을 맡는 IT 운영 AI 에이전트 3종도 공개했다. 패치 배포는 사람이 승인한다. 가상 데스크톱 '호라이즌' 안에서 사용자 권한 범위 내 업무를 대신 처리하는 '호라이즌 델리게이트'도 선보였다.
+한국에서는 '옴니사 주권형 솔루션(OSS)'을 시작했다. 통합엔드포인트관리(UEM) 플랫폼을 국내 인프라에 두고 인증받은 국내 파트너가 운영하며, 기술지원과 계약도 국내에서 이뤄진다. 제공 시장은 한국·인도를 포함한 유럽·아시아 8개다.
+금융당국은 올해 금융회사 내부망의 서비스형소프트웨어(SaaS) 이용을 허용하고, 보안 목적 AI 활용에 대해서는 망분리 규제를 긴급 완화했다. 금융위원회는 AI 보안 역량을 갖춘 금융사부터 망분리 전면 해제를 검토하고 있다. 옴니사는 국내 금융기관과 보안 요구사항 해결 방안을 논의하고 있다.
+바라트 랑가라잔 옴니사 최고제품책임자(CPO)는 “호라이즌은 에이전트가 민감한 애플리케이션·데이터와 상호작용해야 하는 금융기관에 특히 적합하다”고 말했다.
+이날 행사에는 엔비디아·구글·아마존웹서비스(AWS) 등 30개사가 후원사로 참여했다. 일본 생명보험사 다이도생명 등 현지 기업도 세션 발표에 나섰다.
+도쿄=
+도쿄(일본)=류태웅 기자 bigheroryu@etnews.com
+- 
+              
+              류태웅 기자기사 더보기
+- ET Events
+---
+[TITLE] Agents idling while they wait on humans push Kubernetes to hand back unused resources
+[TITLE_KO] 인간 응답 대기 중인 유휴 에이전트로 인해 미사용 자원 반환하도록 압박받는 쿠버네티스
+[LINK] https://siliconangle.com/2026/11/13/agentic-ai-workloads-push-kubernetes-return-idle-resources-kubeconna/
+[PUBLISHED] 2026-11-13 23:22 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 에이전트
+[SCORE] 6
+[REASON] 대기 상태 에이전트의 유휴 자원 회수를 위한 오케스트레이션
+[FIELD] AI 에이전트
+[BODY]
+Agents idling while they wait on humans push Kubernetes to hand back unused resources
+Agentic AI workloads are handing Kubernetes an unexpected second act. The orchestrator once dismissed as reliable but boring is now at the center of how enterprises plan to run autonomous software.
+Past platform shifts, from physical servers to virtual machines and from virtual machines to containers, forced companies to wipe the slate clean and start over. This shift is different because Kubernetes was built as a platform for building platforms, according to Bobby Allen (pictured), cloud therapist at Google Cloud LLC.
+“Kubernetes now, 11, 12+ years in, has this whole new life,” Allen said. “You don’t need a new platform this time. … This shift doesn’t mean that you’ve got to retool and rebuild and replatform everything, and I think that could be comforting for folks to realize that they don’t have to start from scratch.”
+Allen spoke with theCUBE’s Rebecca Knight at KubeCon + CloudNativeCon NA, during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed how Kubernetes is recovering resources spent on idle agentic AI workloads. (* Disclosure below.)
+Running agentic AI workloads in the open
+Google is putting that view into practice. The company has donated Agent Substrate, gVisor and OpenRL to the Cloud Native Computing Foundation, while engineering teams are tuning Kubernetes for agents rather than building a new stack.
+“Google is doubling down on our commitment to not just open source but community-driven, collaborative, multiple-partner-involvement open source,” Allen said. “These concepts are foundational, but they’re important enough that we need to all contribute and shape these together.”
+Efficiency is a big part of the motivation. Agents spend long stretches idle while they wait for human input, and the projects aim to give those resources back during the downtime, Allen explained.
+“These are kind of different efforts that contribute to an open, flexible, transparent, collaborative way to make agentic workloads run better so that we can have these amazing outcomes but also be efficient with our resources,” Allen said. “We don’t want to have this sci-fi Star Trek moment where we’re stepping into the future and kill the planet.”
+Here’s the complete video interview, part of SiliconANGLE’s and theCUBE’s coverage of KubeCon + CloudNativeCon NA:
+(* Disclosure: TheCUBE is a paid media partner for KubeCon + CloudNativeCon NA. Sponsors of theCUBE’s event coverage do not have editorial control over content on theCUBE or SiliconANGLE.)
+Photo: SiliconANGLE
+A message from John Furrier, co-founder of SiliconANGLE:
+Support our mission to keep content open and free by engaging with theCUBE community. Join theCUBE’s Alumni Trust Network, where technology leaders connect, share intelligence and create opportunities.
+- 15M+ viewers of theCUBE videos, powering conversations across AI, cloud, cybersecurity and more
+- 11.4k+ theCUBE alumni — Connect with more than 11,400 tech and business leaders shaping the future through a unique trusted-based network
+Are you an AWS customer? Support SiliconANGLE financially by buying your AWS services from our Marketplace portal page and links: https://siliconangle.com/aws-marketplace/
+About SiliconANGLE Media
+Founded by tech visionaries John Furrier and Dave Vellante, SiliconANGLE Media has built a dynamic ecosystem of industry-leading digital media brands that reach 15+ million elite tech professionals. Our new proprietary theCUBE AI Video Cloud is breaking ground in audience interaction, leveraging theCUBEai.com neural network to help technology companies make data-driven decisions and stay at the forefront of industry conversations.
+---
+[TITLE] Meta's Muse now calls businesses for you, but many companies might just hang up on the AI
+[TITLE_KO] 메타 뮤즈, 사용자 대신 상점에 전화 걸지만 상당수 업체는 AI 수신 거부할 수 있어
+[LINK] https://the-decoder.com/metas-muse-now-calls-businesses-for-you-but-many-companies-might-just-hang-up-on-the-ai/
+[PUBLISHED] 2026-11-14 00:12 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트
+[SCORE] 6
+[REASON] 에이전트의 고객 대행 전화 통화 기능 도입과 상점 거부 문제 대두
+[FIELD] AI 에이전트
+---
+[TITLE] Claude’s Duet agent is a little neurotic and surprisingly helpful
+[TITLE_KO] 클로드의 듀엣 에이전트, 다소 예민하지만 놀라울 정도로 유용하다
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1032518/claude-duet-ai-agent-hands-on
+[PUBLISHED] 2026-11-13 23:00 KST
+[SOURCE] The Verge
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 일반 소비자를 겨냥한 클로드 듀엣 에이전트 사용성 평가
+[FIELD] AI 에이전트
+[BODY]
+Normally, the products I test don’t offer to help me write up my experience with them. Duet is different.
+Claude’s Duet agent is a little neurotic and surprisingly helpful
+Duet is a decent helper, if a little jumpy at times.
+Claude Duet is Anthropic’s AI agent for consumers, the latest attempt by an AI company to try to convince us that agents can be useful for people who don’t write code. It’s been an interesting couple of months: Instinct gave us an impressive text-based assistant, Meta offered us its cute little guy, Muse, to help us buy things, and OpenAI gave us the more work-oriented Dots. Claude Duet is even more focused on work than those. It’s also more consumer-friendly than Claude Cowork, which was more consumer-friendly than Claude Code — the coding agent that kicked off a whole hype cycle earlier this year. I’ve been testing it over the past week as I navigate a busy travel and work schedule. At turns it has been truly useful, kind of a nag, and very eager to write about itself.
+Duet is still a “research preview” according to Anthropic, and access is limited to Pro, Max, and Ultra subscribers in the US, with a waitlist to join. It’s not here to order you burritos, either; it’s for “professionals and small business owners” and is meant to use its judgment about what needs your attention most.
+Like Meta’s Muse, Duet has its own app. (If you’re keeping score at home, yes, it has been updated to fully support the iPhone Duo). Duet uses Claude’s characteristically cheery, minimalist design. The app is consumer-friendly and approachable. Once you’ve connected all the productivity and chat services you want, it’ll look for ways to help out with and suggest them as cards you can swipe left or right to hide or accept — kind of a to-do list Tinder.
+In the name of testing, I went all in on Duet and gave it everything: my work email, calendar, Google Docs, and Slack. This gave it plenty of grist for the mill in more ways than I’d even realized at first. Because our biweekly staff meeting is automatically summarized in an email from Gemini, and Duet had access to my email, it was able to connect the dots between something said in a meeting and a direct message in Slack. Duet also worked out who my boss is because we have a shared Google Doc for our weekly 1:1 meetings. AI is at its most useful when it can suck up lots of data, and Duet wasted no time doing so.
+Duet has started each morning by greeting me with a brief message and some quick highlights for my day, like reminding me to pack an item required for a video shoot before my flight. Below that, it would suggest to-dos, usually ending in an offer to help draft a message or add an item to an agenda.
+This has often been helpful, though it sometimes felt like interacting with a slightly neurotic personal assistant. In one instance, I’d emailed someone I interviewed for a story that the article was likely to go up on Tuesday and that I’d send a link when it did. I submitted my draft to my editors late at night on Monday, and Tuesday morning Duet was beside itself. It wasn’t quite 9AM yet when it pointed out that the story was still waiting for an edit and I needed to get on that — or else I wouldn’t be able to send the link I promised. The concern was a bit misplaced. And it didn’t pick up on the nuance in my message implying that this was not a hard deadline, nor the fact that it was only 7AM local time for my editor.
+This sometimes felt like interacting with a slightly neurotic personal assistant
+In other cases, it was surprisingly helpful. In planning out the next few weeks I’d missed the fact that upcoming time off would only leave me with a couple of working days before another big draft was due. Duet proposed a solution, offered to update the Google Doc with weekly notes for my editor, and drafted a Slack message for him noting the update. Reader, the message was a little too good.
+---
+[TITLE] German military drone operations disrupted by cyberattack
+[TITLE_KO] 독일 군용 드론 운영, 사이버 공격으로 차질 빚어
+[LINK] https://www.bleepingcomputer.com/news/security/german-military-drone-operations-disrupted-by-cyberattack/
+[PUBLISHED] 2026-11-14 02:31 KST
+[SOURCE] BleepingComputer
+[TOPIC] 신기술
+[SCORE] 5
+[REASON] 적대적 행위자의 사이버 공격으로 군용 드론 운영 차질
+[FIELD] 보안
+---
+[TITLE] In Other News: New CISA Director Nominee, Connected Car Hacking, Baker Tilly Data Breach
+[TITLE_KO] 기타 뉴스: 신임 CISA 국장 지명자, 커넥티드 카 해킹, 베이커 틸리 데이터 유출
+[LINK] https://www.securityweek.com/in-other-news-new-cisa-director-nominee-connected-car-hacking-baker-tilly-data-breach/
+[PUBLISHED] 2026-11-14 00:20 KST
+[SOURCE] SecurityWeek
+[TOPIC] 개발, 모델, 보안, 규제
+[SCORE] 5
+[REASON] 모델 가중치 백도어 위험 등 주요 단신 종합
+[FIELD] 보안
+---
+[TITLE] Show GN: 로컬 AI머신을 구입하기 전에 성능을 미리 예측할 수 있는 웹앱
+[LINK] https://news.hada.io/topic?id=37143&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-14 12:15 KST
+[SOURCE] GeekNews
+[TOPIC] 모델
+[SCORE] 5
+[REASON] 로컬 인퍼런스 하드웨어 구성 시 성능 예측 가능
+[FIELD] AI 모델
+---
+[TITLE] 음악 플레이어를 이렇게 만들지는 말자
+[LINK] https://news.hada.io/topic?id=37133&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-14 09:09 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 규제
+[SCORE] 5
+[REASON] AI 의존 코딩의 유지보수 한계와 코드베이스 비대화 경험 공유
+[FIELD] AI 모델
+---
+[TITLE] Ace - 내 Mac에서 팀원과 AI 에이전트가 함께 작업하는 코딩 환경
+[LINK] https://news.hada.io/topic?id=37137&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-14 09:30 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발
+[SCORE] 5
+[REASON] 동일 네트워크 내 팀원과 공유하는 로컬 코딩 에이전트
+[FIELD] AI 에이전트
+---
+[TITLE] 테스트뮤 AI의 2026 품질 엔지니어링 분야 AI 현황 보고서: 소프트웨어 팀 81%, AI가 작성한 코드 제대로 이해 못한 채 병합한 적 있어
+[LINK] https://zdnet.co.kr/view/?no=20261114001003
+[PUBLISHED] 2026-11-14 00:10 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 에이전트, 개발, 모델, 보안, 산업
+[SCORE] 5
+[REASON] AI 작성 코드의 미이해 병합 및 프로덕션 결함 위험 증가
+[FIELD] AI 에이전트
+---
+[LINK] https://zdnet.co.kr/view/?no=20261114120332
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217397
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001060
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=37140&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001058
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217400
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217404
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261114102419
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217399
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261113173905
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261114000013
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/11/13/nices-next-generation-cognigy-bets-the-hard-part-of-ai-agents-is-running-them-not-building-them/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261113204645
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217398
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261114020337
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=37132&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=37128&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217364
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001002
+[STATUS] SKIP (제외)
+---
+[LINK] https://thenewstack.io/self-hosted-claude-managed-agents/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://siliconangle.com/2026/11/13/mirendil-raises-1b-in-funding-to-speed-up-ai-model-development/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.computerworld.com/article/4248590/m365-services-slowly-come-back-online-after-global-outage.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/jensen-huangs-ouster-likely-traces-back-to-nvidias-risky-business-practices-more-than-his-personal-life/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot/
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/openai-rebuilt-ai-shopping-from-scratch-with-chatgpt-wallet/
+[STATUS] SKIP (중복)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/cost-attribution-and-controls-for-ai-developer-and-productivity-tools-on-amazon-bedrock/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/
+[STATUS] SKIP (중복)
+---
+[LINK] https://thenewstack.io/elastic-ai-context-gap/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261114031002
+[STATUS] SKIP (제외)
+---
+[LINK] https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261114021002
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261114021013
+[STATUS] SKIP (제외)
+---
+[LINK] https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://the-decoder.com/anthropics-claude-for-manufacturing-plugs-ai-directly-into-factory-software-to-automate-industrial-workflows/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209517
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.infoworld.com/article/4248511/cloud-reports-measure-the-wrong-thing.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/13/openai-chatgpt-wallet/
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261114011002
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/
+[STATUS] SKIP (중복)
+---
+[LINK] https://techcrunch.com/2026/11/13/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/nearly-70-percent-of-us-agencies-use-generative-ai-and-unions-are-finally-catching-up-with-guardrails/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/former-openai-researcher-says-he-found-nvidia-blackwell-fingerprints-hidden-inside-six-chinese-ai-models/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209516
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/openai-enters-the-cybersecurity-market-with-two-daybreak-products/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://thehackernews.com/2026/11/fbi-says-north-korean-hackers-stole.html
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261113231012
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42730
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42729
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261113221014
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261113221003
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001055
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://openai.com/business/customer-stories/shield
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.computerworld.com/article/4248396/microsoft-365-caught-a-bug-and-the-whole-world-sneezed.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=37131&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217402
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/13/how-it-feels-to-battle-with-a-flood-of-ai-generated-complaints
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261113000219
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261114000010
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217396
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217401
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678458
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678623
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001033
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001004
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=37124&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theguardian.com/news/video/2026/nov/13/why-the-nvidia-scandal-is-far-from-over-the-latest
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.wired.com/story/microsoft-365-crawls-back-to-life-after-a-24-hour-outage/
+[STATUS] SKIP (중복)
+---
+[LINK] https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/world/2026/nov/13/if-gen-z-are-asked-to-go-to-war-it-might-not-be-in-the-way-they-expect
+[STATUS] SKIP (제외)
+---
+[LINK] https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/anthropics-ipo-is-six-times-oversubscribed-and-on-track-to-become-the-largest-public-offering-in-history/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/11/13/nvidia-ceo-jensen-huangs-abrupt-departure-shakes-ai-industrys-foundations/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/podcast/1032866/jensen-huang-nvidia-china-trump-vergecast
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261113231002
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261113100421
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001020
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261113000194
+[STATUS] SKIP (기준 미달)
+---

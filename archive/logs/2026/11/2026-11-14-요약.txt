@@ -1,0 +1,232 @@
+[TITLE] llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
+[LINK] https://huggingface.co/blog/ggml-org/llama-cpp-v1
+[PUBLISHED] 2026-11-13 23:05 KST
+[SOURCE] Hugging Face
+[TOPIC] 일반
+[SCORE] 8
+[REASON] 로컬 LLM 구동 핵심 프레임워크인 llama.cpp 1.0 정식 버전 출시
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+llama.cpp v1.0.0: 로컬 AI 생태계를 위한 더 강력한 기반
+
+**[영문 3줄 요약 (Original)]**
+- The llama.cpp project released libraries v1.0.0, establishing semantic versioning to strictly manage API and ABI compatibility for downstream developers.
+- The framework supports over 150 architecture variants along with speculative decoding, enabling multi-modal LLM inference across diverse hardware via dedicated ggml backends.
+- The team is expanding distribution pipelines and scaling continuous integration infrastructure with hardware support from major vendors like NVIDIA, AMD, and Intel.
+
+**[국문 3줄 요약 (Translated)]**
+- llama.cpp 프로젝트가 다운스트림 개발자를 위해 API 및 ABI 호환성을 엄격히 관리하는 유의적 버전을 도입하며 라이브러리 v1.0.0을 출시했다.
+- 이 프레임워크는 150개 이상의 아키텍처 변형과 투기적 디코딩을 지원하며, 전용 ggml 백엔드를 통해 다양한 하드웨어에서 멀티모달 LLM 추론을 가능하게 한다.
+- 개발팀은 배포 파이프라인을 확장하고 엔비디아, AMD, 인텔 등 주요 벤더의 하드웨어 지원을 받아 지속적 통합 인프라를 확장하고 있다.
+
+#긍정
+---
+[TITLE] How one AI agent exposed five critical enterprise security gaps
+[LINK] https://www.bleepingcomputer.com/news/security/how-one-ai-agent-exposed-five-critical-enterprise-security-gaps/
+[PUBLISHED] 2026-11-14 00:01 KST
+[SOURCE] BleepingComputer
+[TOPIC] 에이전트, 보안
+[SCORE] 7
+[REASON] 송장 처리 에이전트의 악성 메일 유도 취약점 분석
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+단 하나의 AI 에이전트가 노출한 기업의 5가지 치명적 보안 공백
+
+**[영문 3줄 요약 (Original)]**
+- Token Security analyzed how an unvetted accounting AI agent created with a frontier model exposed enterprise security vulnerabilities across its lifecycle.
+- Real-world agents combine varied access methods including delegated OAuth grants and static credentials, which complicates audit logging across identity providers and databases.
+- The agent violated security design rules by simultaneously processing untrusted input, accessing sensitive systems, and performing external communication without prior security review.
+
+**[국문 3줄 요약 (Translated)]**
+- 토큰 시큐리티는 프론티어 모델로 개발된 미검증 회계 AI 에이전트가 전체 수명 주기 동안 어떻게 기업 보안 취약점을 노출했는지 분석했다.
+- 실제 에이전트는 위임된 OAuth 권한과 정적 자격 증명 등 다양한 접근 방식을 혼합하여 사용하여 신원 공급자와 데이터베이스 전반의 감사 로그 확인을 복잡하게 만든다.
+- 해당 에이전트는 사전 보안 검토 없이 신뢰할 수 없는 입력을 처리하고 민감한 시스템에 접근하며 외부 통신을 수행하는 세 가지 조건을 동시에 충족해 보안 설계 규칙을 위반했다.
+
+#부정
+---
+[TITLE] Google Open Sources Ambient Quality Agent (AQuA) to Diagnose Production AI Agent Failures
+[LINK] https://www.infoq.com/news/2026/11/google-ambient-agent-prod/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-11-13 22:53 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발
+[SCORE] 7
+[REASON] 운영 중인 에이전트 세션의 장애 패턴 분석 오픈소스 도구 공개
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+구글, 운영 환경 AI 에이전트 장애 진단을 위한 Ambient Quality Agent (AQuA) 오픈소스 공개
+
+**[영문 3줄 요약 (Original)]**
+- Google open-sourced AQuA, an agent designed to diagnose recurring quality regressions and silent failure patterns in production AI agent sessions.
+- Running outside the request path, the sidecar tool processes up to 1,000 sessions to cluster issues and pinpoints root causes against deployed code snapshots with specific line citations.
+- In a multi-agent evaluation, the tool helped developers identify policy bypasses and preference omissions, which significantly improved pass rates during controlled replays.
+
+**[국문 3줄 요약 (Translated)]**
+- 구글이 운영 환경의 AI 에이전트 세션에서 발생하는 품질 저하와 드러나지 않는 장애 패턴을 진단하는 에이전트인 AQuA를 오픈소스로 공개했다.
+- 요청 경로 외부에서 사이드카로 실행되는 이 도구는 최대 1,000개의 세션을 처리해 문제를 클러스터링하고 배포된 코드 스냅샷과 특정 라인을 인용하여 근본 원인을 찾아낸다.
+- 다중 에이전트 평가에서 이 도구는 개발자가 정책 우회 및 선호도 누락 문제를 식별하도록 도와 통제된 재생 테스트에서 성공률을 크게 개선했다.
+
+#긍정
+---
+[TITLE] New Mior and Skyfall Attacks Let Rogue Cloud Hosts Steal Secrets From AMD SEV-SNP VMs
+[LINK] https://thehackernews.com/2026/11/new-mior-and-skyfall-attacks-let-rogue.html
+[PUBLISHED] 2026-11-14 00:27 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 악성 호스트가 기밀 VM 메모리 탈취 및 무결성 변조 가능
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+새로운 Mior 및 Skyfall 공격으로 악성 클라우드 호스트가 AMD SEV-SNP VM에서 기밀 탈취 가능
+
+**[영문 3줄 요약 (Original)]**
+- Researchers revealed Mior and Skyfall attacks that allow a malicious host hypervisor to compromise confidential virtual machines protected by AMD SEV-SNP.
+- The Mior attack tampers with the reverse map table during startup via graphics card memory redirection, achieving unauthorized VM memory modification and attestation spoofing.
+- The Skyfall attack leverages transient scheduling vulnerabilities during forced VM startup failures to extract sensitive data such as register values and disk encryption keys.
+
+**[국문 3줄 요약 (Translated)]**
+- 연구진은 악성 호스트 하이퍼바이저가 AMD SEV-SNP로 보호되는 기밀 가상 머신을 침해할 수 있는 Mior 및 Skyfall 공격을 공개했다.
+- Mior 공격은 부팅 중 그래픽 카드 메모리 리디렉션을 통해 역방향 매핑 테이블을 변조하여 VM 메모리 무단 수정과 원격 증명 위조를 달성했다.
+- Skyfall 공격은 의도적인 VM 부팅 실패 과정에서 발생하는 일시적 스케줄링 취약점을 악용해 레지스터 값과 디스크 암호화 키 같은 민감 데이터를 추출했다.
+
+#부정
+---
+[TITLE] ‘Ahead of his time’: AI helps unlock discoveries hidden in notebooks of man who transformed maths
+[LINK] https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths
+[PUBLISHED] 2026-11-14 01:38 KST
+[SOURCE] The Guardian
+[TOPIC] 일반
+[SCORE] 6
+[REASON] 수학자 괴델의 미공개 속기 노트에서 AI로 수백 개 정리 추출 검증
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+‘시대를 앞서간 인물’: AI가 수학을 변화시킨 학자의 노트북에 숨겨진 발견들을 밝혀내다
+
+**[영문 3줄 요약 (Original)]**
+- University of Helsinki researchers utilized the AI model Claude to analyze Kurt Gödel's 1,009-page unpublished notebooks written in an obsolete German shorthand.
+- The AI model synthesized the complex mathematical writings within days, revealing that Gödel had proven hundreds of previously unknown theorems decades ahead of his time.
+- The project demonstrated that large language models can overcome human cognitive limitations in connecting fragmented notes across vast, difficult historical manuscripts.
+
+**[국문 3줄 요약 (Translated)]**
+- 헬싱키 대학교 연구진은 쿠르트 괴델이 구식 독일어 속기로 작성한 1,009페이지 분량의 미공개 노트를 분석하기 위해 AI 모델 클로드를 활용했다.
+- AI 모델은 며칠 만에 복잡한 수학적 기록을 종합하여 괴델이 시대를 수십 년 앞서 이전에 알려지지 않은 수백 개의 정리를 증명했음을 밝혀냈다.
+- 이번 프로젝트는 거대 언어 모델이 방대하고 난해한 역사적 원고 전반에 흩어진 파편화된 기록을 연결하는 데 있어 인간의 인지적 한계를 극복할 수 있음을 보여주었다.
+
+#긍정
+---
+[TITLE] OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures
+[LINK] https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures/
+[PUBLISHED] 2026-11-14 06:53 KST
+[SOURCE] AWS Machine Learning
+[TOPIC] 모델, 신기술, 규제
+[SCORE] 6
+[REASON] 아마존 세이지메이커 기반 분자 구조 예측 모델 배포 지원
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+아마존 세이지메이커 점프스타트의 OpenFold3: 생체 분자 구조 예측
+
+**[영문 3줄 요약 (Original)]**
+- Amazon SageMaker JumpStart now supports the deployment of OpenFold3-preview, an open-source model capable of predicting joint 3D biomolecular structures.
+- The Apache 2.0-licensed model can predict complex multi-chain assemblies of proteins, nucleic acids, and small-molecule ligands directly from raw sequence data.
+- Deployed via SageMaker Asynchronous Inference, the system effectively manages long-running prediction jobs with automatic scaling, request queuing, and network isolation.
+
+**[국문 3줄 요약 (Translated)]**
+- 아마존 세이지메이커 점프스타트가 생체 분자의 결합 3D 구조를 예측할 수 있는 오픈소스 모델인 OpenFold3-preview의 배포를 지원한다.
+- 아파치 2.0 라이선스로 공개된 이 모델은 원시 서열 데이터로부터 직접 단백질, 핵산, 소분자 리간드의 복잡한 다중 사슬 복합체를 예측할 수 있다.
+- 세이지메이커 비동기 추론을 통해 배포되는 이 시스템은 자동 확장, 요청 대기열, 네트워크 격리 기능을 제공하여 실행 시간이 긴 예측 작업을 효과적으로 관리한다.
+
+#긍정
+---
+[TITLE] Fake GTA 6 download goes after Steam logins and crypto wallet data
+[LINK] https://www.helpnetsecurity.com/2026/11/13/fake-gta-6-download-scam/
+[PUBLISHED] 2026-11-14 00:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 구글 코랩을 통해 유포되는 스팀 및 가상자산 탈취 악성코드
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+가짜 GTA 6 다운로드로 스팀 로그인 정보와 가상자산 지갑 데이터 탈취 시도
+
+**[영문 3줄 요약 (Original)]**
+- Cynet security researchers discovered that a fake GTA 6 executable link distributed via Google Colab delivers the WARDEN Stealer malware.
+- The malware instructs users to disable antivirus protections and elevates administrative privileges to harvest credentials for Steam, Roblox, and cryptocurrency wallets.
+- The binary contains sandbox evasion capabilities, injects malicious code into browsers, and monitors the system clipboard to hijack copied cryptocurrency addresses.
+
+**[국문 3줄 요약 (Translated)]**
+- 사이넷 보안 연구진은 구글 코랩을 통해 유포된 가짜 GTA 6 실행 파일 링크가 WARDEN 스틸러 악성코드를 전달한다는 사실을 발견했다.
+- 해당 악성코드는 사용자에게 백신 보호 기능을 끄도록 유도하고 관리자 권한을 획득하여 스팀, 로블록스, 가상자산 지갑의 자격 증명을 탈취한다.
+- 이 바이너리는 샌드박스 탐지 회피 기능을 포함하고 브라우저에 악성 코드를 삽입하며 시스템 클립보드를 모니터링하여 복사된 가상자산 주소를 바꿔치기한다.
+
+#부정
+---
+[TITLE] [옴니사 원 도쿄 2026] 옴니사, AI 에이전트 통제 솔루션 '엘라라' 내년 출시
+[LINK] https://www.etnews.com/20261113000244
+[PUBLISHED] 2026-11-14 12:00 KST
+[SOURCE] 전자신문
+[TOPIC] 에이전트, 규제
+[SCORE] 6
+[REASON] 기업 내 에이전트 사전 실행 통제 및 단말 관리 도입
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 옴니사가 기업 내 AI 에이전트의 업무 수행을 실행 전에 통제하고 권한 남용을 방지하는 솔루션인 엘라라를 내년 상반기에 출시한다고 발표했다.
+- 엘라라는 미승인 AI 애플리케이션 탐지, 모델 접근 권한 관리, 토큰 사용량 모니터링을 제공하며 사용자의 전체 권한이 에이전트에 무단 승계되는 것을 차단한다.
+- 함께 공개된 IT 운영 에이전트 및 국내 인프라 기반의 단말관리 서비스를 통해 망분리 규제 완화가 추진 중인 금융권을 적극 공략할 계획이다.
+
+#긍정
+---
+[TITLE] Agents idling while they wait on humans push Kubernetes to hand back unused resources
+[LINK] https://siliconangle.com/2026/11/13/agentic-ai-workloads-push-kubernetes-return-idle-resources-kubeconna/
+[PUBLISHED] 2026-11-13 23:22 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 에이전트
+[SCORE] 6
+[REASON] 대기 상태 에이전트의 유휴 자원 회수를 위한 오케스트레이션
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+인간의 입력을 기다리며 유휴 상태인 에이전트로 인해 쿠버네티스가 미사용 자원을 반환하도록 추진되다
+
+**[영문 3줄 요약 (Original)]**
+- Kubernetes is gaining renewed importance as an infrastructure orchestrator to manage and execute autonomous agentic AI workloads within enterprise environments.
+- Google donated projects including Agent Substrate, gVisor, and OpenRL to the CNCF to tune Kubernetes for reclaiming resources while agents wait for human responses.
+- The initiative aims to improve operational efficiency and curb environmental impact by preventing infrastructure idling without requiring organizations to build a new stack.
+
+**[국문 3줄 요약 (Translated)]**
+- 쿠버네티스가 기업 환경 내 자율 에이전트 AI 워크로드를 관리하고 실행하기 위한 인프라 오케스트레이터로서 새롭게 주목받고 있다.
+- 구글은 에이전트가 사람의 응답을 기다리는 동안 자원을 회수할 수 있도록 쿠버네티스를 최적화하고자 에이전트 서브스트레이트, gVisor, OpenRL 프로젝트를 CNCF에 기증했다.
+- 이러한 노력은 조직이 새로운 스택을 구축할 필요 없이 인프라 유휴 상태를 방지하여 운영 효율성을 높이고 환경 영향을 억제하는 것을 목표로 한다.
+
+#긍정
+---
+[TITLE] Claude’s Duet agent is a little neurotic and surprisingly helpful
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1032518/claude-duet-ai-agent-hands-on
+[PUBLISHED] 2026-11-13 23:00 KST
+[SOURCE] The Verge
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 일반 소비자를 겨냥한 클로드 듀엣 에이전트 사용성 평가
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+클로드의 듀엣 에이전트는 다소 신경질적이지만 놀라울 정도로 유용하다
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic introduced Claude Duet as a consumer-oriented AI agent for professionals and small business owners, currently available as a research preview.
+- The agent integrates with work emails, calendars, Google Docs, and Slack to automatically organize tasks and surface prioritized action cards for users.
+- While it occasionally exhibited misplaced urgency regarding deadlines, the agent proved helpful by proactively drafting messages and coordinating schedules across multiple tools.
+
+**[국문 3줄 요약 (Translated)]**
+- 앤트로픽이 전문직 종사자와 소상공인을 겨냥하여 연구 프리뷰 형태로 제공되는 소비자용 AI 에이전트인 클로드 듀엣을 선보였다.
+- 이 에이전트는 업무용 이메일, 캘린더, 구글 문서, 슬랙과 연동되어 업무를 자동으로 정리하고 사용자를 위한 우선순위 작업 카드를 제시한다.
+- 마감 기한에 대해 다소 과도한 불안 반응을 보이기도 했으나 여러 도구에 걸쳐 선제적으로 메시지 초안을 작성하고 일정을 조율하는 등 유용한 성능을 입증했다.
+
+#긍정
+---
