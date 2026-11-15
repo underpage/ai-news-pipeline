@@ -408,6 +408,61 @@ def test_evaluate_fills_list_and_summary_slots_across_reruns(monkeypatch):
     assert len([record for record in common.read_records("필터링") if record.get("title")]) == 5
 
 
+def test_evaluate_uses_same_event_article_when_body_fails(monkeypatch):
+    # 대표 기사(1번) 본문을 못 가져오면 같은 사건의 다른 기사(2번)가 요약 자리를 받는다 (2026-11-14 챗GPT 월렛)
+    add_candidates(3)
+    response = score_response(score_item(1, impact=10), score_item(2, impact=8, dup_of=1), score_item(3, impact=4))
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: response)
+    monkeypatch.setattr(evaluate, "scrape_body", lambda url: "" if url == "http://a/1" else "본문 " * 200)
+    evaluate.main()
+
+    records = common.read_records("필터링")
+    targets = [record["link"] for record in common.summary_target_records(records)]
+    assert targets == ["http://a/2", "http://a/3"]
+    assert "http://a/1" not in [record["link"] for record in records if record.get("title")]
+    decisions = {row[-2]: row[1] for row in read_score_csv()[1:]}
+    assert decisions["http://a/1"] == "중복" and decisions["http://a/2"] == "요약"
+
+
+def test_evaluate_rerun_moves_summary_slot_to_higher_article(monkeypatch):
+    # LIST_N=5, TOP_N=3. 첫 실행: 4건 모두 60점, 요약 3건(1~3번)
+    add_candidates(4)
+    first = score_response(*[score_item(n, impact=4) for n in range(1, 5)])
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: first)
+    monkeypatch.setattr(evaluate, "scrape_body", lambda url: "본문 " * 200)
+    evaluate.main()
+    records = common.read_records("필터링")
+    assert [record["link"] for record in common.summary_target_records(records)] == [f"http://a/{n}" for n in (1, 2, 3)]
+
+    # 재실행: 뒤에 수집된 5번이 100점이면 앞 실행 요약 중 가장 낮은 순서(3번)의 자리를 넘겨받는다 (2026-11-15)
+    add_candidates(1, start=5)
+    second = score_response(score_item(1, impact=10))
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: second)
+    evaluate.main()
+
+    records = common.read_records("필터링")
+    assert [record["link"] for record in common.summary_target_records(records)] == ["http://a/1", "http://a/2", "http://a/5"]
+    # 자리를 넘긴 기사도 목록에는 남는다
+    assert len([record for record in records if record.get("title")]) == 5
+    decisions = {row[-2]: row[1] for row in read_score_csv()[1:]}
+    assert decisions["http://a/3"] == "요약 자리 이동" and decisions["http://a/5"] == "요약"
+
+
+def test_evaluate_rerun_keeps_summary_when_new_article_is_not_higher(monkeypatch):
+    add_candidates(4)
+    first = score_response(*[score_item(n, impact=8) for n in range(1, 5)])
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: first)
+    monkeypatch.setattr(evaluate, "scrape_body", lambda url: "본문 " * 200)
+    evaluate.main()
+    add_candidates(1, start=5)
+    second = score_response(score_item(1, impact=8))
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: second)
+    evaluate.main()
+    records = common.read_records("필터링")
+    assert [record["link"] for record in common.summary_target_records(records)] == [f"http://a/{n}" for n in (1, 2, 3)]
+    assert not any(record.get("status") == common.DEMOTED_STATUS for record in records)
+
+
 def test_evaluate_records_prefilter_drops(monkeypatch):
     common.append_record("수집", [("TITLE", "AI 웨비나 참가자 모집"), ("LINK", "http://a/x"), ("SOURCE", "매체"),
                                   ("TOPIC", "에이전트")], block=("SUMMARY", "-"))

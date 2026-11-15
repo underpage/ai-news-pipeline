@@ -2,7 +2,9 @@ import os
 import re
 import datetime
 
-from common import CONFIG_DIR, DATA_DIR, NEWS_DIR, ROOT_DIR, read_errors, read_records, run_date
+from common import (
+    CONFIG_DIR, DATA_DIR, NEWS_DIR, ROOT_DIR, DEMOTED_STATUS, read_errors, read_records, run_date, summary_target_records,
+)
 
 
 
@@ -23,8 +25,12 @@ def by_score(news_list):
 
 def load_summary_targets():
     """요약 대상 기사(본문을 가져온 상위 기사)와 그 요약. 요약에 실패한 기사도 빼지 않고 상태만 표시한다."""
-    targets = [record for record in read_records("필터링") if record.get("title") and record.get("body")]
-    summaries = {record["link"]: record for record in read_records("요약") if record.get("title")}
+    evaluated = read_records("필터링")
+    targets = summary_target_records(evaluated)
+    # 같은 날 재실행에서 요약 자리를 넘긴 기사는 요약이 있어도 목록에만 싣는다
+    demoted = {record["link"] for record in evaluated if record.get("status") == DEMOTED_STATUS}
+    summaries = {record["link"]: record for record in read_records("요약")
+                 if record.get("title") and record["link"] not in demoted}
     errors = read_errors("요약")
     failed_links = {target for target, _ in errors}
     unavailable_links = {target for target, reason in errors if reason.startswith("요약 불가")}
@@ -241,7 +247,8 @@ def collect_stats():
     collected = [record for record in read_records("수집") if record.get("title")]
     evaluated = read_records("필터링")
     listed = [record for record in evaluated if record.get("title")]
-    with_body = {record["link"] for record in listed if record.get("body")}
+    with_body = {record["link"] for record in summary_target_records(evaluated)}
+    demoted = [record for record in evaluated if record.get("status") == DEMOTED_STATUS]
     summarized = {record["link"] for record in read_records("요약") if record.get("title")}
 
     failed_feeds = sorted({target for target, _ in read_errors("수집")})
@@ -258,7 +265,7 @@ def collect_stats():
         "feeds_failed": len(failed_feeds),
         "collected": len(collected),
         "listed": len(listed),
-        "skipped": len(evaluated) - len(listed),
+        "skipped": len(evaluated) - len(listed) - len(demoted),
         # 선정 단계를 거친 기록이 있으면 성공. 호출이 실패해 기록이 없으면 0
         "rank_ok": 1 if evaluated else 0,
         "rank_failed_calls": len(rank_failures),

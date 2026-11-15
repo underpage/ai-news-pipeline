@@ -4,7 +4,7 @@ import time
 
 from common import (
     GEMINI_MODEL, append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, clean_inline,
-    is_retryable,
+    is_retryable, summary_target_records,
 )
 
 TONES = ("긍정", "부정", "중립")
@@ -214,7 +214,7 @@ def summarize_all(targets):
 def main():
     print("--- 3. 요약 파이프라인 시작 ---")
     # 필터링 로그는 중요도 순으로 기록되어 있으므로 그 순서대로 요약한다
-    news_list = [news for news in read_records("필터링") if news.get('title') and news.get('body')]
+    news_list = summary_target_records(read_records("필터링"))
     summarized_links = {record['link'] for record in read_records("요약")}
 
     targets = [news for news in news_list if news['link'] not in summarized_links]

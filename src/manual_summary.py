@@ -28,7 +28,7 @@ def main():
         # 날짜는 common을 불러오기 전에 정해야 로그 경로에 반영된다
         os.environ["RUN_DATE"] = args[1]
 
-    from common import append_record, read_records, load_prompt, fill_prompt, run_date
+    from common import append_record, read_records, load_prompt, fill_prompt, run_date, summary_target_records
     import summarize
     import publish
 
@@ -36,8 +36,7 @@ def main():
 
     if args[0] == "export":
         summarized = {record["link"] for record in read_records("요약")}
-        targets = [record for record in read_records("필터링")
-                   if record.get("title") and record.get("body") and record["link"] not in summarized]
+        targets = [record for record in summary_target_records(read_records("필터링")) if record["link"] not in summarized]
         if not targets:
             print("요약이 빠진 기사가 없습니다.")
             return
@@ -61,7 +60,7 @@ def main():
     with open(work_file, "r", encoding="utf-8") as f:
         items = json.load(f)
 
-    targets = {record["link"]: record for record in read_records("필터링") if record.get("body")}
+    targets = {record["link"]: record for record in summary_target_records(read_records("필터링"))}
     summarized = {record["link"] for record in read_records("요약")}
     added = 0
     for item in items:

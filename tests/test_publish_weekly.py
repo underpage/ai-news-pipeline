@@ -60,6 +60,21 @@ def test_news_list_excludes_articles_in_summary_section():
     assert "★" not in report
 
 
+def test_demoted_target_moves_to_news_list_even_with_summary():
+    # 같은 날 재실행에서 요약 자리를 넘긴 기사는 요약이 이미 있어도 목록으로 내려가고 통계 요약 대상에서도 빠진다
+    add_target(1, 9, KOREAN_SUMMARY)
+    demoted = add_target(2, 6, KOREAN_SUMMARY)
+    add_target(3, 10, KOREAN_SUMMARY)
+    common.append_record("필터링", [("LINK", demoted), ("STATUS", common.DEMOTED_STATUS)])
+
+    publish.main()
+    report = open(os.path.join(common.NEWS_DIR, "2026", "10", "2026-10-01.md"), encoding="utf-8").read()
+    summary_part, news_list = report.split("## 더 읽어볼 기사")
+    assert demoted not in summary_part and f"[기사 2]({demoted})" in news_list
+    stats = list(csv.DictReader(open(os.path.join(common.DATA_DIR, "stats", "2026.csv"), encoding="utf-8", newline="")))
+    assert (stats[0]["summary_target"], stats[0]["summary_ok"], stats[0]["listed"], stats[0]["skipped"]) == ("2", "2", "3", "0")
+
+
 def test_translated_titles_from_selection_step():
     # 요약에 실패한 기사와 목록 기사는 선정 단계의 번역 제목을 쓴다
     failed = "http://a/1"

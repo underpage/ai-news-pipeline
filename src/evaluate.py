@@ -7,7 +7,7 @@ import datetime
 
 from common import (
     append_record, append_error, read_records, load_prompt, fill_prompt, call_gemini, fail, fetch, clean_inline,
-    is_retryable, get_log_path, read_records_from, run_date, LOGS_DIR,
+    is_retryable, get_log_path, read_records_from, run_date, summary_target_records, LOGS_DIR, DEMOTED_STATUS,
 )
 from collect import load_config, build_pattern
 
@@ -22,6 +22,9 @@ PREV_REPORT_DAYS = 3
 # Gemini에 보내기 전 사전 필터에서 매체 하나가 남길 수 있는 후보 수
 PREFILTER_SOURCE_MAX = 20
 BODY_MIN_LENGTH = 500
+# 요약 자리 기사의 본문을 못 가져오면 같은 사건의 다른 기사(합계 순)를 이 건수까지 더 시도한다.
+# 공식 블로그(openai.com 등)가 수집을 막아 그날 큰 사건이 요약에서 빠졌음 (2026-11-14 챗GPT 월렛, 같은 사건 기사 6건)
+BODY_ALTERNATES = 2
 BODY_MAX_LENGTH = 4000
 PREVIEW_LENGTH = 500
 # 중요도 항목과 점수 범위(1~최댓값). Gemini가 항목마다 점수를 주고, 코드가 합계 0~100을 계산한다.
@@ -380,6 +383,7 @@ def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0):
        같은 사건(prev_of)이면 후속 보도로 보고 새로움 3을 2로 낮춰 합계를 다시 계산한다 (penalties)
     2. 같은 사건 묶음(dup_of)에서는 제외 표시가 없는 기사 중 합계가 가장 높은 기사만 남긴다. 묶음의 한 기사라도
        지난 목록과 같은 사건이면 묶음 전체를 뺀다
+       남긴 기사의 scored[순번]["alternates"]에 같은 사건의 다른 기사(본문 수집 실패 때 대신 쓸 기사)를 합계 순으로 남긴다
     3. 제외 표시와 최소 점수 미달을 빼고 sort_key 순으로 정렬해 list_slots건을 고른다. 매체는 목록의 1/4,
        같은 사안은 story_cap.list건까지. 합계가 field_cap.list_min_total 이상인 구간에서는 한 분야가
        field_cap.list_max건까지(파급력 exempt_impact 이상은 예외)이고, 구간이 끝나면 상한에 걸린 기사도 합계 순으로 다시 본다.
@@ -417,6 +421,9 @@ def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0):
         for index in members:
             if index != keeper:
                 decisions[index] = "중복"
+        # 대표 기사 본문을 못 가져올 때 대신 요약할 같은 사건 기사 (제외 표시 없는 기사, 합계 순)
+        scored[keeper]["alternates"] = sorted((index for index in members if index != keeper and not scored[index]["exclude"]),
+                                              key=lambda index: (-scored[index]["total"], index))
         if any(scored[index].get("prev_of") is not None for index in members):
             decisions[keeper] = "지난 보도"
 
@@ -501,8 +508,10 @@ def score_csv_path():
     return os.path.splitext(get_log_path("점수"))[0] + ".csv"
 
 
-def write_score_csv(news_list, scored, decisions, dropped, previous=()):
-    """후보 전체의 점수표를 남긴다. 같은 날 다시 실행하면 아래에 이어 쓴다 (엑셀에서 열리게 UTF-8 BOM)."""
+def write_score_csv(news_list, scored, decisions, dropped, previous=(), replaced=()):
+    """후보 전체의 점수표를 남긴다. 같은 날 다시 실행하면 아래에 이어 쓴다 (엑셀에서 열리게 UTF-8 BOM).
+    replaced: 이번 실행에서 요약 자리를 넘긴 앞 실행 기사. 앞 행을 그대로 옮기고 결정만 "요약 자리 이동"으로 다시 쓴다
+    (점수표는 링크별 마지막 행이 최종 결정)"""
     path = score_csv_path()
     is_new = not os.path.exists(path)
     run_at = datetime.datetime.now(KST).strftime("%H:%M")
@@ -525,11 +534,70 @@ def write_score_csv(news_list, scored, decisions, dropped, previous=()):
     for news, reason in dropped:
         rows.append([run_at, reason, "", *[""] * len(CRITERIA), "", "", "", "", "", "", "", "", news.get("source", ""),
                      news.get("published", ""), news.get("topic", ""), news["title"], "", news["link"], ""])
+    for target in replaced:
+        row = dict(target.get("row") or {}, 실행=run_at, 결정="요약 자리 이동", 링크=target["link"])
+        rows.append([row.get(column, "") for column in SCORE_COLUMNS])
     with open(path, "a", encoding="utf-8-sig" if is_new else "utf-8", newline="") as f:
         writer = csv.writer(f)
         if is_new:
             writer.writerow(SCORE_COLUMNS)
         writer.writerows(rows)
+
+
+def load_today_scores():
+    """오늘 점수표의 링크별 마지막 행 (같은 날 재실행 때 앞 실행의 요약 대상 합계, 분야를 알기 위함)"""
+    path = score_csv_path()
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        return {row["링크"]: row for row in csv.DictReader(f) if row.get("링크")}
+
+
+def load_prior_targets(evaluated, today_scores):
+    """앞 실행에서 정한 오늘의 요약 대상. [{link, total, impact, field, row}]. 점수표에 없으면 로그의 0~10 점수로 대신한다"""
+    targets = []
+    for record in summary_target_records(evaluated):
+        row = today_scores.get(record["link"]) or {}
+        try:
+            total = float(row["합계"])
+        except (KeyError, ValueError):
+            total = float(record.get("score") or 0) * 10
+        try:
+            impact = int(row["파급력"])
+        except (KeyError, ValueError):
+            impact = 0
+        targets.append({"link": record["link"], "total": total, "impact": impact,
+                        "field": row.get("분야") or record.get("field") or "기타", "row": row})
+    return targets
+
+
+def pick_replaced(prior, kept, info):
+    """같은 날 재실행에서 새 기사(info)에 요약 자리를 넘길 앞 실행 기사. 합계가 더 낮은 기사 중 가장 낮은 것부터 보고
+    (같으면 파급력이 낮고 리포트 순서가 뒤인 것), 넘긴 뒤에도 새 기사 분야가 field_cap.max를 넘지 않을 때만 고른다
+    (파급력 exempt_impact 이상은 예외). 없으면 None"""
+    field = info.get("field") or "기타"
+    field_max, exempt_impact = FIELD_CAP.get("max"), FIELD_CAP.get("exempt_impact", CRITERIA_MAX["impact"] + 1)
+    position = {id(target): number for number, target in enumerate(prior)}
+    for target in sorted((target for target in prior if target["total"] < info["total"]),
+                         key=lambda target: (target["total"], target["impact"], -position[id(target)])):
+        same_field = sum(1 for other in kept if other["field"] == field and other is not target)
+        if not field_max or same_field < field_max or info["impact"] >= exempt_impact:
+            return target
+    return None
+
+
+def scrape_summary_body(candidates, scored, index):
+    """요약 자리 기사의 본문. 못 가져오면 같은 사건의 다른 기사를 BODY_ALTERNATES건까지 시도한다. (본문을 가져온 순번, 본문)"""
+    for number in [index] + scored[index].get("alternates", [])[:BODY_ALTERNATES]:
+        link = candidates[number]["link"]
+        if number != index:
+            print(f" -> 같은 사건의 다른 기사로 본문 수집: {candidates[number]['title']}")
+        body_text = scrape_body(link)
+        if len(body_text) >= BODY_MIN_LENGTH:
+            return number, body_text
+        print(" -> [본문 수집 실패]")
+        append_error("필터링", "평가 오류", link, "본문 스크래핑 실패")
+    return None, ""
 
 
 def extract_with_selectors(html_content):
@@ -594,12 +662,12 @@ def main():
     evaluated = read_records("필터링")
     evaluated_links = {record['link'] for record in evaluated}
     listed_today = sum(1 for record in evaluated if record.get('title'))
-    summary_targets_today = sum(1 for record in evaluated if record.get('body'))
+    today_scores = load_today_scores()
+    prior = load_prior_targets(evaluated, today_scores)
 
     news_list = [news for news in read_records("수집") if news['link'] not in evaluated_links and news.get('title')]
     list_slots = list_n - listed_today
-    summary_slots = top_n - summary_targets_today
-    print(f"평가 대상: {len(news_list)}건 / 목록 {list_n}건 (오늘 이미 {listed_today}건), 요약 {top_n}건 (오늘 이미 {summary_targets_today}건)")
+    print(f"평가 대상: {len(news_list)}건 / 목록 {list_n}건 (오늘 이미 {listed_today}건), 요약 {top_n}건 (오늘 이미 {len(prior)}건)")
 
     if not news_list:
         print(" -> 새로 평가할 기사가 없습니다.")
@@ -617,25 +685,42 @@ def main():
             print(f" -> [평가 API 오류] {e}")
             append_error("필터링", "평가 오류", "전체 후보", f"선정 실패: {e}")
             fail(f"기사 선정에 실패했습니다: {e}")
-        listed, decisions = decide(candidates, scored, list_slots, list_n, min_score, top_slots=summary_slots)
+        # 요약 자리는 늘 top_n건 기준으로 고른다. 같은 날 재실행이면 아래에서 빈 자리를 채우고, 남는 새 기사는
+        # 앞 실행 요약 대상보다 합계가 높을 때 자리를 넘겨받는다 (2026-11-15: 마지막 실행의 80점 기사 3건이 목록에만 남음)
+        listed, decisions = decide(candidates, scored, list_slots, list_n, min_score, top_slots=top_n)
 
         # 합계 순으로 목록에 기록하고, 앞에서부터 본문을 수집해 요약 대상을 채운다
         # 본문 실패로 다음 순위가 요약 자리를 이어받을 때도 지난 사안 후속 상한(summary_prev_ok)을 지킨다
-        body_count, prev_used = 0, 0
+        kept = list(prior)
+        body_count, prev_used, replaced = 0, 0, []
         for index in listed:
             news, info = candidates[index], scored[index]
             body_text = ""
-            if body_count < summary_slots and summary_prev_ok(info, prev_used):
+            target = None
+            if summary_prev_ok(info, prev_used) and (len(kept) < top_n or pick_replaced(prior, kept, info)):
                 print(f"\n[요약 후보 / 합계 {info['total']}점] {news['title']}")
-                body_text = scrape_body(news['link'])
-                if len(body_text) < BODY_MIN_LENGTH:
-                    print(" -> [본문 수집 실패] 목록에만 남기고 다음 순위 기사로 넘어갑니다.")
-                    append_error("필터링", "평가 오류", news['link'], "본문 스크래핑 실패")
-                    body_text = ""
+                used, body_text = scrape_summary_body(candidates, scored, index)
+                if not body_text:
+                    print(" -> 목록에만 남기고 다음 순위 기사로 넘어갑니다.")
                 else:
+                    if len(kept) >= top_n:
+                        # 본문을 가져온 뒤에 자리를 넘긴다 (본문 실패로 앞 실행 기사만 빠지는 일이 없게)
+                        target = pick_replaced(prior, kept, info)
+                        prior.remove(target)
+                        kept.remove(target)
+                        replaced.append(target)
+                        print(f" -> 앞 실행 요약 대상(합계 {target['total']}점)의 자리를 넘겨받음: {target['link']}")
+                    kept.append({"link": candidates[used]["link"], "total": info["total"], "impact": info["impact"],
+                                 "field": info.get("field") or "기타"})
                     body_count += 1
                     prev_used += bool(info.get("story_prev_group"))
-                    decisions[index] = "요약"
+                    if used != index:
+                        # 같은 사건의 다른 기사가 대표가 된다 (선정 이유는 원래 대표 기사의 것을 쓴다)
+                        decisions[index], decisions[used] = "중복", "요약"
+                        news = candidates[used]
+                        info = {**info, "title_ko": scored[used]["title_ko"], "reason": scored[used]["reason"] or info["reason"]}
+                    else:
+                        decisions[index] = "요약"
             append_record("필터링", [
                 ("TITLE", news['title']),
                 ("TITLE_KO", info["title_ko"]),
@@ -654,7 +739,9 @@ def main():
                 append_record("필터링", [("LINK", news['link']), ("STATUS", f"SKIP ({decisions[index]})")])
         for news, reason in dropped:
             append_record("필터링", [("LINK", news['link']), ("STATUS", f"SKIP ({reason})")])
-        write_score_csv(candidates, scored, decisions, dropped, previous)
+        for target in replaced:
+            append_record("필터링", [("LINK", target["link"]), ("STATUS", DEMOTED_STATUS)])
+        write_score_csv(candidates, scored, decisions, dropped, previous, replaced)
         if not listed:
             print(f"\n -> 목록에 올릴 기사가 없습니다 (최소 합계 {min_score * 10}점).")
         print(f"\n -> 목록 선정: {len(listed)}건, 요약 대상: {body_count}건, 점수표: {os.path.basename(score_csv_path())}")

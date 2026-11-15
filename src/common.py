@@ -114,6 +114,16 @@ def read_errors(log_type):
     return errors
 
 
+# 같은 날 재실행에서 더 높은 기사에 요약 자리를 넘긴 기사 표시 (필터링 로그에 [STATUS] 레코드로 남김). 목록에는 그대로 남는다
+DEMOTED_STATUS = "DEMOTED (요약 자리 이동)"
+
+
+def summary_target_records(records):
+    """필터링 로그 레코드 중 요약 대상(본문이 있고 요약 자리를 넘기지 않은 기사)"""
+    demoted = {record["link"] for record in records if record.get("status") == DEMOTED_STATUS}
+    return [record for record in records if record.get("title") and record.get("body") and record["link"] not in demoted]
+
+
 def read_records(log_type):
     """오늘 로그에서 [LINK]가 있는 레코드만 읽는다. 키는 태그의 소문자."""
     return read_records_from(get_log_path(log_type))
