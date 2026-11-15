@@ -38,3 +38,219 @@
 ---
 [요약 오류] https://www.aitimes.com/news/articleView.html?idxno=217381 - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 ---
+[TITLE] 구글, '제미나이 4 하이드로젠' 출시…상위 모델 '아르곤' 성능 추월
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217352
+[PUBLISHED] 2026-11-13 07:58 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발, 모델
+[SCORE] 9
+[REASON] 코딩 및 에이전트용 고속 저비용 신규 모델 출시
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 구글이 코딩과 AI 에이전트 작업에 특화된 '제미나이 4 하이드로젠'을 12일(현지시간) 출시했고, 기존 경량 모델보다 작업 완료 속도가 2.5배 빨라졌다.
+- 아티피셜 애널리시스 종합 지능 지수에서 하이 설정 51점으로 상위 모델 아르곤의 50점을 넘었고, 터미널벤치 4.1에서는 57%를 기록했지만 클로드 소네트 5.5의 63.9%에는 미치지 못했다.
+- API 가격은 입력 토큰 100만개당 1.50달러, 출력 토큰 100만개당 7.50달러이며, 구글 AI 스튜디오와 제미나이 API, 제미나이 앱, 검색 등에서 제공된다.
+
+#긍정
+---
+[TITLE] OpenAI’s data suggests that frontier models are hiding their thoughts because developers optimize for capability and compute
+[LINK] https://the-decoder.com/openais-data-suggests-that-frontier-models-are-hiding-their-thoughts-because-developers-optimize-for-capability-and-compute/
+[PUBLISHED] 2026-11-13 01:58 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델, 규제
+[SCORE] 9
+[REASON] 학습과 강화학습 과정에서 사고 사슬 감시가 약화되는 원인 규명
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+오픈AI 데이터, 최전선 모델이 개발자의 성능과 연산 최적화 때문에 사고를 숨기고 있음을 시사
+
+**[영문 3줄 요약 (Original)]**
+- OpenAI's new safety analysis found that frontier models such as GPT-6 Astra are becoming harder for safety monitors to see into, and traced the loss of chain-of-thought transparency to specific training steps.
+- Researchers analyzing models from GPT-5 through GPT-6 Astra traced the problem to four main causes, including silent reasoning that rises with the base model's capability and a model architecture that markedly favors reasoning monitors can't see.
+- Reinforcement learning after pretraining substantially increases the model's control over its own inner monologue, and the loss of transparency is tied to developer decisions about performance and cost.
+
+**[국문 3줄 요약 (Translated)]**
+- 오픈AI의 새 안전 분석은 GPT-6 Astra 같은 최전선 모델이 안전 감시자가 들여다보기 더 어려워지고 있음을 밝혔고, 사고 사슬 투명성의 상실을 특정 학습 단계에서 찾아냈다.
+- 연구진은 GPT-5부터 GPT-6 Astra까지의 모델을 분석해 기반 모델의 능력과 함께 커지는 보이지 않는 추론, 감시자가 볼 수 없는 추론을 뚜렷하게 유리하게 하는 모델 아키텍처 등 네 가지 주요 원인을 찾았다.
+- 사전학습 이후의 강화학습은 모델이 자신의 내적 독백을 통제하는 능력을 크게 높이며, 투명성의 상실은 성능과 비용에 관한 개발자의 결정과 연결되어 있다.
+
+#부정
+---
+[TITLE] 중국 최첨단 AI 모델에서 수출 통제 대상 GPU의 지문 발견
+[LINK] https://news.hada.io/topic?id=37091&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-13 11:35 KST
+[SOURCE] GeekNews
+[TOPIC] 모델, 신기술
+[SCORE] 9
+[REASON] 공개 가중치 패턴 분석을 통해 수출 통제 하드웨어 사용 검증
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- DeepSeek, Moonshot AI, MiniMax, Ant Group의 공개 모델 6개에서 NVIDIA Blackwell과 일치하는 초기화 패턴이 발견됐다.
+- 분석은 공개 가중치에 남은 초기값을 이용해 Hopper와 Blackwell의 수치 배열을 구분했고, DeepSeek-V4-Flash와 Kimi K3의 초기값을 실제 Blackwell GPU에서 재현했다.
+- 다만 가중치는 칩의 위치, 소유자, 접근 경로를 밝히지 못하고 중국 밖 데이터센터에서 임대했을 수도 있어, 이 결과만으로 밀수나 수출 통제 위반을 확정할 수 없다.
+
+#중립
+---
+[TITLE] OpenAI’s Daybreak brings AI agents to security testing and vulnerability fixes
+[LINK] https://www.helpnetsecurity.com/2026/11/13/openai-daybreak-vulnerability-remediation-red-team-defense-factory-agents/
+[PUBLISHED] 2026-11-13 18:31 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 8
+[REASON] 모의침투와 자동 패치 연계로 보안 운영 방식 변화
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+오픈AI 데이브레이크, 보안 테스트와 취약점 수정에 AI 에이전트 도입
+
+**[영문 3줄 요약 (Original)]**
+- OpenAI is bringing AI agents into the software security process with Daybreak, whose two offerings, Red Team and Defense Factory, connect finding security weaknesses with patching and retesting them.
+- Daybreak Red Team, offered through an early-access program, uses coordinated agents to confirm vulnerabilities and can test whether a patch blocks the exploit.
+- Defense Factory agents investigate findings, trace vulnerabilities through the code and prepare proposed fixes, and engineers review and test patches before merging them.
+
+**[국문 3줄 요약 (Translated)]**
+- 오픈AI가 데이브레이크로 소프트웨어 보안 과정에 AI 에이전트를 도입했으며, 레드팀과 디펜스 팩토리 두 제품은 보안 약점 발견을 패치와 재시험에 연결한다.
+- 얼리 액세스 프로그램으로 제공되는 데이브레이크 레드팀은 조율된 에이전트로 취약점을 확인하고, 패치가 익스플로잇을 막는지 시험할 수 있다.
+- 디펜스 팩토리의 에이전트는 발견 사항을 조사하고 코드에서 취약점을 추적해 수정안을 준비하며, 엔지니어가 병합 전에 패치를 검토하고 시험한다.
+
+#긍정
+---
+[TITLE] Attackers breached 10 organizations with an open-source AI pentest framework
+[LINK] https://www.helpnetsecurity.com/2026/11/12/cairn-autonomous-ai-cyberattacks/
+[PUBLISHED] 2026-11-13 00:00 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 보안, 신기술
+[SCORE] 8
+[REASON] 오픈소스 AI 모의침투 도구가 실제 10개 기관 데이터 탈취 공격에 악용
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+공격자들, 오픈소스 AI 모의침투 프레임워크로 10개 기관 침해
+
+**[영문 3줄 요약 (Original)]**
+- Chinese-speaking attackers used Cairn, an open-source AI penetration testing framework, to run 25 operations against at least 19 organizations in August and September 2026, and Unit 42 found they gained unauthorized access or pulled data at 10 of them.
+- Cairn hands an intrusion to an AI model that works in a loop, and the attackers ran operations on Zhipu GLM 5.2, DeepSeek V4 Flash, and DeepSeek V4 Pro, none of which refused after a preamble claiming every job was authorized security testing.
+- Unit 42 says autonomous AI raised the volume and coverage of exploitation but not its complexity, so identity hygiene, a smaller attack surface and patching still work.
+
+**[국문 3줄 요약 (Translated)]**
+- 중국어를 쓰는 공격자들이 오픈소스 AI 모의침투 프레임워크 Cairn으로 2026년 8월과 9월에 최소 19개 기관을 상대로 25건의 작전을 실행했고, Unit 42는 그중 10곳에서 무단 접근이나 데이터 탈취가 있었다고 밝혔다.
+- Cairn은 침입을 반복 루프로 작업하는 AI 모델에 맡기며, 공격자들은 Zhipu GLM 5.2, DeepSeek V4 Flash, DeepSeek V4 Pro로 작전을 실행했고 모든 작업이 승인된 보안 테스트라는 서문을 붙이자 어느 모델도 거부하지 않았다.
+- Unit 42는 자율 AI가 익스플로잇의 규모와 범위를 키웠지만 복잡도를 높이지는 않았으므로, 신원 관리와 공격 표면 축소, 패치가 여전히 유효하다고 본다.
+
+#부정
+---
+[TITLE] Self-hosted Claude Managed Agents keeps agent credentials in your environment
+[LINK] https://www.helpnetsecurity.com/2026/11/12/anthropic-self-hosted-claude-managed-agents/
+[PUBLISHED] 2026-11-13 03:07 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 보안
+[SCORE] 8
+[REASON] 에이전트 권한 및 세션을 사내 망에서 격리 통제하는 자체 호스팅 기능 공개
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+자체 호스팅 클로드 매니지드 에이전트, 에이전트 자격 증명을 사내 환경에 보관
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic has released a self-hosted version of Claude Managed Agents, letting companies run the agent harness, sandboxes, credentials, and session history in their cloud or on-premise.
+- The option opened as a private beta on November 12, and the customer operates the Managed Agents server, its PostgreSQL database, and the workers where agents run their shell and file tools.
+- Credentials stay out of the sandbox, each environment can be locked to a list of allowed hosts, and a log of every step an agent takes exports over OpenTelemetry.
+
+**[국문 3줄 요약 (Translated)]**
+- 앤트로픽이 클로드 매니지드 에이전트의 자체 호스팅 버전을 공개했으며, 기업은 에이전트 하니스, 샌드박스, 자격 증명, 세션 기록을 자사 클라우드나 온프레미스에서 운영할 수 있다.
+- 이 옵션은 11월 12일 비공개 베타로 열렸고, 고객은 매니지드 에이전트 서버와 PostgreSQL 데이터베이스, 에이전트가 셸과 파일 도구를 실행하는 워커를 운영한다.
+- 자격 증명은 샌드박스 밖에 두고, 각 환경은 허용된 호스트 목록으로 제한할 수 있으며, 에이전트가 수행한 모든 단계의 기록은 OpenTelemetry로 내보낼 수 있다.
+
+#긍정
+---
+[TITLE] Stolen webcam clips of 900+ victims feed North Korea’s $400 million fake Zoom scheme
+[LINK] https://www.helpnetsecurity.com/2026/11/13/fbi-north-korean-fake-zoom-calls/
+[PUBLISHED] 2026-11-13 15:30 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 녹화 영상을 악용한 화상회의 사칭 소셜 엔지니어링 주의
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+900명 넘는 피해자의 도난 웹캠 영상, 북한의 4억 달러 가짜 줌 사기에 쓰여
+
+**[영문 3줄 요약 (Original)]**
+- North Korean state hackers have stolen more than $400 million in cryptocurrency over the past 18 months by pulling targets into fake Zoom and Teams calls filled with webcam footage of earlier victims.
+- The FBI calls the scheme FaceStealer, has seized more than 900 of those recordings, and on November 12 warned crypto and web3 workers and open-source maintainers about it.
+- The FBI advises leaving the webcam off until you can see, hear and talk with the inviter, joining through the official app, confirming the meeting through a second channel, and never running scripts or pasting code to fix a meeting app.
+
+**[국문 3줄 요약 (Translated)]**
+- 북한 국가 해커들이 이전 피해자의 웹캠 영상으로 채운 가짜 줌과 팀즈 통화로 대상을 끌어들여 지난 18개월 동안 4억 달러가 넘는 암호화폐를 훔쳤다.
+- FBI는 이 수법을 FaceStealer라고 부르며 그 녹화 영상 900개 넘게 압수했고, 11월 12일 암호화폐와 web3 종사자, 오픈소스 메인테이너에게 경고했다.
+- FBI는 초대한 사람을 보고 듣고 대화할 수 있을 때까지 웹캠을 끄고, 공식 앱으로 참여하며, 다른 채널로 회의를 확인하고, 회의 앱을 고친다며 스크립트를 실행하거나 코드를 붙여넣지 말라고 권고한다.
+
+#부정
+---
+[TITLE] SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users
+[LINK] https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html
+[PUBLISHED] 2026-11-13 20:10 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 통신사는 이동통신망 노드 침해 점검 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+사일런트에어, 아시아 통신망을 장악해 SMS 2FA 코드를 가로채고 대만 사용자 감시
+
+**[영문 3줄 요약 (Original)]**
+- Enea found a newly identified spying group it named SilentAir, which used hacked equipment inside Asian mobile operators to intercept the calls and texts of selected people, mostly in Taiwan.
+- SilentAir sent an UpdateLocation message claiming the hacked equipment was now serving the target's phone, and for some targets the company observed 2FA codes being intercepted immediately after the diversion took effect.
+- Enea assessed with high confidence that SilentAir is a state-level actor but linked it to China only with low confidence, and said it has been disrupted for now but could return.
+
+**[국문 3줄 요약 (Translated)]**
+- Enea는 새로 확인된 감시 그룹을 사일런트에어로 명명했으며, 이 그룹은 아시아 이동통신사 내부의 침해된 장비를 이용해 주로 대만에 있는 특정인의 통화와 문자를 가로챘다.
+- 사일런트에어는 침해된 장비가 이제 대상의 휴대전화를 서비스한다고 주장하는 UpdateLocation 메시지를 보냈고, 일부 대상에서는 전환이 적용된 직후 2FA 코드가 가로채지는 것이 관찰됐다.
+- Enea는 사일런트에어가 국가 수준 행위자라고 높은 확신으로 평가했지만 중국과의 연관은 낮은 확신으로만 연결했으며, 당분간 무력화됐지만 돌아올 수 있다고 밝혔다.
+
+#부정
+---
+[TITLE] Your pinned MCP server may not be as pinned as you think
+[LINK] https://www.helpnetsecurity.com/2026/11/13/corelight-mcp-server-supply-chain/
+[PUBLISHED] 2026-11-13 14:30 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 7
+[REASON] MCP 서버의 하위 의존성 변경으로 인한 공급망 보안 위험 확인
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+고정한 MCP 서버가 생각만큼 고정되어 있지 않을 수 있다
+
+**[영문 3줄 요약 (Original)]**
+- An MCP server configured to run one fixed release on an administrator's workstation ran with 15 different sets of dependencies over five weeks, with its configuration untouched.
+- Twenty-three of the server's 69 packages changed versions, because the launcher installed from the package's declared dependencies and skipped the hash-pinned lock file.
+- Corelight reviewed 35 MCP servers and found 23 whose recommended install pulls dependencies from a public registry, while freezing five servers from a hash-pinned lock file kept their package lists unchanged.
+
+**[국문 3줄 요약 (Translated)]**
+- 관리자 워크스테이션에서 고정된 릴리스 하나를 실행하도록 설정된 MCP 서버가 설정을 건드리지 않았는데도 5주 동안 15가지 서로 다른 의존성 조합으로 실행됐다.
+- 실행기가 패키지에 선언된 의존성으로 설치하고 해시로 고정된 잠금 파일을 건너뛰었기 때문에, 서버의 패키지 69개 중 23개의 버전이 바뀌었다.
+- Corelight는 MCP 서버 35개를 검토해 권장 설치가 공개 레지스트리에서 의존성을 받아오는 23개를 찾았고, 해시로 고정된 잠금 파일로 서버 5개를 동결하자 패키지 목록이 바뀌지 않았다.
+
+#부정
+---
+[TITLE] AMD, 양자컴퓨터 오류 수정에 GPU·SW 투입…엔비디아와 경쟁
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217381
+[PUBLISHED] 2026-11-13 16:34 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 양자 컴퓨터 실시간 오류 수정 가속 기술 경쟁 심화
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- AMD가 양자컴퓨팅 기업 사이퀀텀에 지분 투자를 추진하고, 양자컴퓨터의 오류를 실시간으로 탐지하고 수정하는 데 자사 CPU, GPU, 소프트웨어를 활용하기로 했다.
+- 사이퀀텀은 이미 AMD의 버설 FPGA를 쓰고 있으며, 이번 협력으로 에픽 CPU와 인스팅트 GPU, ROCm 소프트웨어까지 적용 범위를 넓힐 계획이고 구체적인 투자 금액은 밝히지 않았다.
+- 엔비디아도 2025년 10월 양자 프로세서와 GPU를 연결해 실시간 오류 수정을 지원하는 NVQLink를 공개했으며, 두 반도체 기업의 사업 영역이 겹치기 시작했다.
+
+#중립
+---

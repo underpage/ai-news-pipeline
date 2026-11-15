@@ -132,7 +132,7 @@ AMD 대안과 외부 증거
 [TOPIC] 에이전트, 개발, 보안
 [SCORE] 8
 [REASON] 모의침투와 자동 패치 연계로 보안 운영 방식 변화
-[FIELD] 보안
+[FIELD] AI 에이전트
 [BODY]
 OpenAI’s Daybreak brings AI agents to security testing and vulnerability fixes
 OpenAI is bringing AI agents into more of the software security process with Daybreak, pairing web application penetration testing with tools that investigate vulnerabilities and develop fixes. The two offerings, Red Team and Defense Factory, connect the work of finding security weaknesses with patching and retesting them.
@@ -147,31 +147,6 @@ Teams with access can install and enable the Daybreak Defense Factory (Preview) 
 Choose how to scan a repository (Source: OpenAI)
 Teams can monitor new commits on the default branch, schedule recurring scans of that branch and enable security reviews of pull requests before changes merge. The desktop app also supports scans of local checkouts and uncommitted changes, with an optional Deep scan mode that makes multiple passes and uses additional time and tokens.
 Download: The IT leader’s guide to AI code sprawl
----
-[TITLE] Self-hosted Claude Managed Agents keeps agent credentials in your environment
-[TITLE_KO] 자체 호스팅 클로드 매니지드 에이전트, 기업 내부망에 에이전트 자격증명 보관 지원
-[LINK] https://www.helpnetsecurity.com/2026/11/12/anthropic-self-hosted-claude-managed-agents/
-[PUBLISHED] 2026-11-13 03:07 KST
-[SOURCE] Help Net Security
-[TOPIC] 에이전트, 보안
-[SCORE] 8
-[REASON] 에이전트 권한 및 세션을 사내 망에서 격리 통제하는 자체 호스팅 기능 공개
-[FIELD] AI 에이전트
-[BODY]
-Self-hosted Claude Managed Agents keeps agent credentials in your environment
-Anthropic has released a self-hosted version of Claude Managed Agents. Companies can run the agent harness, sandboxes, credentials, and session history in their cloud or on-premise. The option opened as a private beta on November 12, and customers request access through their Anthropic account team.
-The change matters for agents that already work unattended inside corporate systems, fixing broken builds, testing releases, triaging alerts, and working through bug backlogs. Until now, customers could host the sandbox themselves. That is the isolated environment where an agent’s code runs. Anthropic ran everything else, including the credential handling and the record of what each agent did. Teams that wanted the whole service inside their perimeter had to build the platform themselves.
-What the customer runs now
-In the self-hosted setup, the customer operates three things: the Managed Agents server, its PostgreSQL database, and the workers where agents run their shell and file tools. Session history lives in that database. Developers build agents with the same core APIs as the hosted service.
-Model requests go wherever the customer points them: to Anthropic directly, to Amazon Bedrock, Google’s Agent Platform or Microsoft Foundry, or to the customer’s gateway. Claude itself still runs outside the customer’s network, so prompts go out and completions come back. Some organizations have a zero data retention (ZDR) agreement with Anthropic. For them, these requests are covered the same way as any other call to the Messages API, Anthropic’s standard interface for model requests.
-Where the credentials go
-Anthropic built Managed Agents around four security principles. They apply whether Anthropic hosts everything, the customer hosts only the sandbox, or the customer hosts all of it. The company’s reasoning is that a team can’t count on a person checking each step of an unattended agent, so “the limits have to be built into the system itself.”
-The first principle separates the harness, which calls Claude, from the sandbox, where the agent’s code runs. The agent loop, session history, and vault secrets sit outside the sandbox, and a sandbox starts only when a tool needs one. Credentials stay out of the sandbox too. For MCP tools and supported API calls, a proxy outside the sandbox attaches the credential to the request. Self-hosted customers can keep those credentials in their own secrets manager. Anthropic limits that protection to MCP tools and “supported API calls,” so any other service an agent reaches is worth checking before the agent goes live.
-Allowlists and logs
-Each environment can be locked to a list of allowed hosts, and requests to any other host are blocked. For an agent that fixes broken builds, Anthropic suggests the list might be just the git host and the package registry. Customers who host the sandbox enforce those limits in their firewall, which makes the allowlist their configuration to get right.
-Managed Agents also keeps a log of every step an agent takes: each tool call it made and what it got back. The log exports over OpenTelemetry, so security teams can pipe it into the monitoring tools they already run and look at agent activity next to everything else they watch.
-The server, the database, and the firewall rules are now the customer’s to run, and so is the job of keeping them patched and set up correctly.
-Download: The IT and security field guide to AI adoption
 ---
 [TITLE] Attackers breached 10 organizations with an open-source AI pentest framework
 [TITLE_KO] 공격자들, 오픈소스 AI 침투 테스트 프레임워크로 10개 조직 침해
@@ -202,6 +177,85 @@ The flaws are familiar: authentication bypasses, insecure direct object referenc
 If you take one thing from the numbers, make it the ratio. Operator hours used to cap how many targets an attacker could work at once. Here, likely one person or a few worked 19.
 The researchers expect more campaigns like this as open models with weak guardrails against offensive use get stronger.
 ---
+[TITLE] Self-hosted Claude Managed Agents keeps agent credentials in your environment
+[TITLE_KO] 자체 호스팅 클로드 매니지드 에이전트, 기업 내부망에 에이전트 자격증명 보관 지원
+[LINK] https://www.helpnetsecurity.com/2026/11/12/anthropic-self-hosted-claude-managed-agents/
+[PUBLISHED] 2026-11-13 03:07 KST
+[SOURCE] Help Net Security
+[TOPIC] 에이전트, 보안
+[SCORE] 8
+[REASON] 에이전트 권한 및 세션을 사내 망에서 격리 통제하는 자체 호스팅 기능 공개
+[FIELD] AI 에이전트
+[BODY]
+Self-hosted Claude Managed Agents keeps agent credentials in your environment
+Anthropic has released a self-hosted version of Claude Managed Agents. Companies can run the agent harness, sandboxes, credentials, and session history in their cloud or on-premise. The option opened as a private beta on November 12, and customers request access through their Anthropic account team.
+The change matters for agents that already work unattended inside corporate systems, fixing broken builds, testing releases, triaging alerts, and working through bug backlogs. Until now, customers could host the sandbox themselves. That is the isolated environment where an agent’s code runs. Anthropic ran everything else, including the credential handling and the record of what each agent did. Teams that wanted the whole service inside their perimeter had to build the platform themselves.
+What the customer runs now
+In the self-hosted setup, the customer operates three things: the Managed Agents server, its PostgreSQL database, and the workers where agents run their shell and file tools. Session history lives in that database. Developers build agents with the same core APIs as the hosted service.
+Model requests go wherever the customer points them: to Anthropic directly, to Amazon Bedrock, Google’s Agent Platform or Microsoft Foundry, or to the customer’s gateway. Claude itself still runs outside the customer’s network, so prompts go out and completions come back. Some organizations have a zero data retention (ZDR) agreement with Anthropic. For them, these requests are covered the same way as any other call to the Messages API, Anthropic’s standard interface for model requests.
+Where the credentials go
+Anthropic built Managed Agents around four security principles. They apply whether Anthropic hosts everything, the customer hosts only the sandbox, or the customer hosts all of it. The company’s reasoning is that a team can’t count on a person checking each step of an unattended agent, so “the limits have to be built into the system itself.”
+The first principle separates the harness, which calls Claude, from the sandbox, where the agent’s code runs. The agent loop, session history, and vault secrets sit outside the sandbox, and a sandbox starts only when a tool needs one. Credentials stay out of the sandbox too. For MCP tools and supported API calls, a proxy outside the sandbox attaches the credential to the request. Self-hosted customers can keep those credentials in their own secrets manager. Anthropic limits that protection to MCP tools and “supported API calls,” so any other service an agent reaches is worth checking before the agent goes live.
+Allowlists and logs
+Each environment can be locked to a list of allowed hosts, and requests to any other host are blocked. For an agent that fixes broken builds, Anthropic suggests the list might be just the git host and the package registry. Customers who host the sandbox enforce those limits in their firewall, which makes the allowlist their configuration to get right.
+Managed Agents also keeps a log of every step an agent takes: each tool call it made and what it got back. The log exports over OpenTelemetry, so security teams can pipe it into the monitoring tools they already run and look at agent activity next to everything else they watch.
+The server, the database, and the firewall rules are now the customer’s to run, and so is the job of keeping them patched and set up correctly.
+Download: The IT and security field guide to AI adoption
+---
+[TITLE] Stolen webcam clips of 900+ victims feed North Korea’s $400 million fake Zoom scheme
+[TITLE_KO] 피해자 900명 이상의 탈취된 웹캠 영상이 북한의 4억 달러 규모 가짜 줌 사기에 활용돼
+[LINK] https://www.helpnetsecurity.com/2026/11/13/fbi-north-korean-fake-zoom-calls/
+[PUBLISHED] 2026-11-13 15:30 KST
+[SOURCE] Help Net Security
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 녹화 영상을 악용한 화상회의 사칭 소셜 엔지니어링 주의
+[FIELD] 보안
+[BODY]
+Stolen webcam clips of 900+ victims feed North Korea’s $400 million fake Zoom scheme
+North Korean state hackers have stolen more than $400 million in cryptocurrency over the past 18 months by pulling targets into fake Zoom and Teams calls filled with webcam footage of earlier victims. The FBI calls the scheme FaceStealer. It has seized more than 900 of those recordings, and on November 12 it warned crypto and web3 workers and open-source maintainers about the scheme.
+Source: FBI
+Every successful call infects the target and records them, so each new victim becomes the familiar face on the next call. The FBI ties the activity to the group tracked as Sapphire Sleet, BlueNoroff and APT38, among other names. The hackers go after computers that hold a crypto wallet, a seed phrase, or access to an employer’s network or a code repository.
+The audio problem is the attack
+The invite comes from a real account. The hackers take over earlier victims’ Telegram, LinkedIn, Slack and Discord accounts, read their chat histories, and message the victims’ contacts about catching up or an investment. A Calendly invite sets the time. The meeting link arrives shortly before the call and points to a lookalike domain such as uu01webzoom[.]us.
+Once you’re in the call, the hackers play your contact’s recorded video, often next to clips of other “participants.” A chat message then says the others can’t hear you and walks you through an update, a script, or a command to paste into your terminal. Following those steps installs a cookie harvester, keyloggers, a screen capturer and a backdoor. Your webcam has been recording since you clicked the link.
+The hackers are in no hurry. In several cases they waited from a few months to more than a year for wallet balances to grow before emptying them.
+A JavaScript library came close
+Earlier this year the group got the maintainer of a major open-source JavaScript library into a fake Teams call that included at least one person he recognized. He ran the fix. The hackers then used his access to create malicious dependencies that would download along with the library, which gets tens of millions of downloads a week. The attack was caught and stopped quickly. The FBI has seen other attempts against maintainers on npm and, more recently, maintainers of Rust crates.
+The group has also started building deepfakes of well-known crypto figures from public photos and video. “The quality of the deepfakes only needs to be good enough to pass as webcam video,” the FBI wrote. Stolen footage of real victims still makes up the overwhelming share of the scheme.
+Keep the camera off
+The FBI’s advice starts with the webcam: leave it off until you can see, hear and talk with the person who invited you. Join through the official Zoom or Teams app with an invite code. Confirm the meeting through a second channel, for example a phone call when the invite came over Telegram. Don’t run scripts or paste code to fix a meeting app.
+Keep only small amounts in browser extension wallets, and store no recovery phrases or private keys on your devices. A thief with a copied seed phrase can drain the wallet whenever they choose. If you suspect a compromise, create a new wallet on a clean device and move everything into it.
+---
+[TITLE] SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users
+[TITLE_KO] 사일런트에어, 아시아 통신망 장악해 SMS 2FA 코드 가로채고 대만 이용자 감시
+[LINK] https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html
+[PUBLISHED] 2026-11-13 20:10 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 통신사는 이동통신망 노드 침해 점검 필요
+[FIELD] 보안
+[BODY]
+A newly identified spying group used hacked equipment inside Asian mobile operators to intercept the calls and texts of selected people, mostly in Taiwan.
+Enea, a telecom and cybersecurity software company based in Stockholm, found the group's attack sources in at least six Asian countries and named it SilentAir this week. It assessed with high confidence that SilentAir is a state-level actor, but linked its activity to China only with low confidence.
+The company has told the operators where it found SilentAir sources. It said SilentAir has been disrupted for now but could return. The report does not say whether those operators have cleaned up the hacked equipment.
+Mobile operators use the SS7 and Diameter protocols to exchange signaling messages that route calls and texts and enable roaming. This traffic crosses a shared network called the IPX, which runs on a high level of trust between operators. SilentAir sent its attacks into the IPX from the hacked equipment.
+For interception, SilentAir sent the target's home network an UpdateLocation message, or its Diameter equivalent. The message claimed that the hacked equipment was now serving the target's phone. If the home network accepted it, calls and texts for that person would be diverted to the attackers.
+Some of these attacks worked. For some targets, the company observed two-factor authentication (2FA) codes being intercepted immediately after the diversion took effect. That points to an attempt to break into other accounts registered to those people.
+The report gives no similar evidence for voice calls, and it does not say whether any account was taken over.
+Interception made up 18.3% of the attacks the company saw from SilentAir. For a typical surveillance company, the kind of firm behind most signaling attacks, the share was 2.1% in the company's earlier research.
+Some targets were political and government VIPs in their own countries. In rare cases, SilentAir equipment in several countries worked together against such targets, which the company said points to a single controller.
+The attacks came in bursts, from one or a few subscribers to several thousand over a month, with gaps of up to several months or longer between bursts.
+Outside Taiwan, targets were mostly in other Southeast and East Asian networks, and at times in East Africa, Central Asia, the Middle East, and Europe. People using the hacked operators' own networks may also have been targeted, but the company could not see that traffic.
+The company spotted SilentAir by studying attacks on the links between operators. Since early 2025, it has tracked unusual attacks, mostly over SS7 and sometimes Diameter, from some Asian operators that would not normally send attacks. Later analysis found suspicious activity even earlier.
+The networks hosting SilentAir handled follow-up messages for diverted targets in odd and inconsistent ways, according to the company's technical report. That left two explanations: someone outside was faking those networks' signaling addresses, or equipment inside each network had been taken over.
+The company then saw equipment inside one operator both send and receive attack commands, which confirmed the second explanation. That equipment behaved exactly like SilentAir sources in other networks.
+Detecting and blocking the attacks was hard at first because the attackers understood mobile networks and signaling defenses well. After the attacks were contained, the company recovered traces of unauthorized access. It could not analyze the malware it believes SilentAir used.
+The report does not name the countries, the operators, or any of the targets. In some countries, SilentAir attacks came from more than one operator.
+SilentAir also sent silent SMS on a very large scale, mainly to subscribers in Taiwan. These are texts that the phone does not display or alert on.
+During the day, most silent SMS went to subscribers on other networks, such as Southeast Asian networks.
+---
 [TITLE] Your pinned MCP server may not be as pinned as you think
 [TITLE_KO] 고정된 MCP 서버도 의존성 패키지가 자동 변경될 위험 존재
 [LINK] https://www.helpnetsecurity.com/2026/11/13/corelight-mcp-server-supply-chain/
@@ -227,60 +281,6 @@ Frozen code ages. When the team froze one community server, 40 of its packages w
 “For the 23 public MCP servers that I found, I notified the maintainers and/or services that share them. As a result, one company that hosts an AI agent exchange has updated its security review processes to evaluate submissions for this issue. In another case, the vendor is completely repackaging their MCP server,” Lagermann said.
 Any MCP entry started by a Python or npm package runner, or tagged “latest,” can resolve new code from a public registry the next time an assistant opens a session. On Corelight’s workstation, the server’s version number stayed the same through all 15 environments.
 Download: The IT leader’s guide to AI code sprawl
----
-[TITLE] ETRI, 사람·AI·환경 통합 평가하는 ‘트리니티’ 공개…95종 물체 활용해 사용자 맞춤형 작업계획 능력 측정
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42718
-[PUBLISHED] 2026-11-13 09:12 KST
-[SOURCE] 인공지능신문
-[TOPIC] 에이전트, 모델, 신기술
-[SCORE] 7
-[REASON] 사용자 특성과 환경 맥락을 결합 평가하는 로봇 AI 벤치마크 공개
-[FIELD] AI 에이전트
-[BODY]
-명령 수행 성공해도 사용자에게 부적절하면 실패로 판정…가정·돌봄·휴머노이드 AI 신뢰성 평가 기반 마련
-로봇이 사람의 명령을 정확하게 수행하더라도 사용자의 식습관이나 알레르기 등 개인적 특성을 고려하지 않았다면 올바른 행동이라고 평가할 수 있을까. 국내 연구진이 로봇의 작업 수행 능력뿐 아니라 서비스를 받는 사람에게 적절한 행동을 선택했는지까지 검증하는 새로운 인공지능 평가기술을 개발했다.
-한국전자통신연구원(ETRI)은 사람의 특성과 주변 환경을 함께 고려해 로봇 및 AI 에이전트의 작업계획 능력을 평가하는 벤치마크 '트리니티(Trinity)'를 개발했다고 13일 밝혔다.
-이번 기술은 기존 로봇 AI 평가가 물체 인식과 작업 성공 여부에 집중했던 것과 달리, 사용자의 개인적 조건을 반영한 행동의 적합성을 평가한다는 점에서 차별화된다. 특히 사람마다 다른 요구를 이해해야 하는 가정용 로봇과 돌봄 로봇, 휴머노이드의 지능을 평가하는 데 활용될 수 있다.
-트리니티는 '사용자 특성을 고려한 작업계획(PHA)'이라는 평가 개념을 기반으로 개발됐다. AI가 사용자의 요구를 해석하고 주변 환경에서 적절한 물체와 행동을 선택하는지를 종합적으로 측정한다. 예를 들어, 두 사람이 똑같이 음식을 가져다 달라고 요청하더라도 한 사람에게 특정 음식 알레르기가 있거나 채식주의자인 경우 로봇이 선택해야 할 음식은 달라진다.
-기존 평가에서는 로봇이 음식을 찾아 전달하면 임무를 성공한 것으로 판단할 수 있지만, 트리니티에서는 해당 음식이 사용자에게 적절한지까지 확인한다. 이를 위해 연구진은 식습관과 알레르기, 종교적 식이조건, 취미 등을 조합한 151가지 사용자 조건을 구성했다. 실제 가정과 유사한 가상 환경에 사용자 특성과 관련된 물체 95종을 배치해 AI가 여러 선택지 가운데 적합한 대상을 찾도록 했다.
-이러한 평가 방식은 로봇이 단순히 명령을 이해하는 수준을 넘어 사용자 정보를 실제 행동계획에 반영할 수 있는지를 확인하는 데 목적이 있다.
-연구진이 대표적인 대형언어모델(LLM) 기반 AI 에이전트들을 평가한 결과, 주변 환경을 정확하게 이해하더라도 사용자 특성에 맞지 않는 행동을 계획하는 사례가 확인됐다. 일부 AI는 물체의 위치와 작업 절차를 올바르게 파악했지만, 채식 사용자에게 적절하지 않은 음식을 선택했다. 이는 환경 인식 능력이 높다고 해서 개인별 요구를 충족하는 작업계획 능력까지 확보되는 것은 아니라는 점을 보여준다.
-트리니티는 이러한 오류를 단순한 작업 실패로 처리하지 않고 원인별로 분석할 수 있도록 설계됐다. 사용자의 특성을 잘못 해석한 경우와 주변 환경을 제대로 탐색하지 못한 경우, 실제로 수행할 수 없는 행동을 계획한 경우 등을 구분해 평가한다. 이를 통해 연구진은 AI 모델의 성능 개선이 필요한 영역을 구체적으로 파악하고, 사용자 맞춤형 행동계획 기술을 고도화할 수 있을 것으로 기대하고 있다.
-이번 연구는 로봇 AI의 평가 기준을 '주어진 작업을 수행할 수 있는가'에서 '특정 사용자에게 적절한 행동을 수행하는가'로 확장했다는 점에서 의미가 있다. 특히 고령자 돌봄이나 가정 내 생활 지원처럼 사용자별 건강 상태와 생활 습관, 선호도 등을 고려해야 하는 서비스 분야에서는 작업의 물리적 성공 여부만으로 로봇의 유용성과 안전성을 판단하기 어렵다.
-ETRI는 트리니티의 코드와 데이터를 공개해 다른 연구진도 사용자 중심 로봇 AI 평가에 활용할 수 있도록 했다. 향후에는 현재 음식과 음료를 중심으로 구성된 평가 대상을 청소와 정리, 안전 등 다양한 생활영역으로 확대하고, 시간에 따라 달라지는 사용자의 요구까지 반영할 계획이다.
-김도형 ETRI 소셜로보틱스연구실장은 "기존 로봇 AI 연구가 주변 환경을 이해하고 주어진 작업을 정확하게 수행하는 데 집중했다면, 트리니티는 로봇의 행동이 서비스를 받는 사람에게도 적절한지를 함께 평가한다는 데 의미가 있다"고 설명했다.
-이어 "앞으로 로봇이 사람마다 다른 특성과 요구를 이해하고 함께 생활할 수 있는 지능으로 발전하는 데 필요한 연구 기반이 될 것으로 기대한다"고 밝혔다.
-이번 기술은 실제 로봇의 물리적 작업 성능을 검증했다기보다, 가상 환경에서 AI 에이전트가 사용자 특성을 반영해 적절한 작업을 계획하는 능력을 평가하는 벤치마크라는 점에서 구분할 필요가 있다. 향후 실제 생활환경과 로봇 하드웨어를 활용한 검증으로 이어질지가 주목된다.
-한편, 이번 연구는 ETRI의 김형민, 전호범, 김도형, 장진혁, 장민수 연구진이 수행했다. 연구 결과는 지난달 헝가리 부다페스트에서 개최된 자연어처리 분야 국제학술대회 'EMNLP 2026'의 논문집 '파인딩스(Findings of the Association for Computational Linguistics: EMNLP 2026)'에 '트리니티: 체화된 작업계획을 위한 인간·에이전트·환경 정렬(Trinity: Human–Agent–Environment Alignment for Embodied Task Planning-다운)'란 제목으로 발표됐다.
----
-[TITLE] New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access
-[TITLE_KO] 새로운 SignDrop 제로데이 익스플로잇, 윈도 CLFS 보안 기능을 SYSTEM 권한 획득에 악용
-[LINK] https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html
-[PUBLISHED] 2026-11-13 02:50 KST
-[SOURCE] The Hacker News
-[TOPIC] 개발, 보안
-[SCORE] 7
-[REASON] 윈도 로그 인증 기능을 역이용한 로컬 권한 상승 PoC 대응 필요
-[FIELD] 보안
-[BODY]
-Public exploit code released earlier this week claims that a local Windows user can gain SYSTEM privileges through the Common Log File System driver.
-The proof of concept, called SignDrop, targets a log-authentication feature added to the driver last year. It abuses how clfs.sys creates companion files when a privileged process opens a prepared log, using path redirection to take control of the operation. Microsoft has not confirmed the claimed flaw, assigned a CVE, or released a fix.
-The researcher behind the exploit, who publishes under the name MSNightmare, released the code and a detailed writeup on GitHub on Tuesday, the same day the company published its November security updates.
-CLFS is a logging subsystem built into Windows. Its driver has been a frequent target for privilege escalation: 10 CLFS flaws appear in CISA's catalog of vulnerabilities known to have been exploited in attacks, including one used in ransomware campaigns in April 2025.
-To reduce that exposure, Microsoft added an authentication check to CLFS log files in updates for Windows 11 25H2, 26H1, and Windows Server 2025 shipped in October 2025. The check attaches a hash-based message authentication code, built from log data and a key unique to each machine.
-The driver then parses only log files it wrote. A companion .cnpf file stores recovery data beside each log and is created with the same security attributes as the original, according to the company's logfile authentication page.
-SignDrop targets the creation of that companion file. According to the proof-of-concept code, a standard user prepares a CLFS log and container with paths the user controls. When a privileged process later opens that log, the driver creates the .cnpf file in the privileged process's security context rather than the user's.
-The exploit uses object manager symbolic links to redirect that file creation to a location the attacker chooses. In the published code, the privileged process is the Defender antimalware service, triggered through its update interface.
-"Everything is done properly by Microsoft here but the logic allows abuse," the researcher wrote.
-Because the .cnpf file inherits the original log's permissions, the result is a file created as SYSTEM that the standard user can write to. The researcher says that can be chained into a SYSTEM shell.
-The exploit was tested on Windows 11 26H2, a Windows 11 26H2 Experimental build, and Windows Server 2025 Experimental, according to the repository. Systems are affected when the CLFS authentication registry mode is set to 0 (enforced) or 1 (learning). Systems older than 90 days typically move from learning to enforcement automatically, so the default configuration on established installations is the one the exploit targets.
-A registry value of 2 or 3 means the mitigation is disabled. That takes the system outside the claimed attack surface, but the researcher and the driver's own documentation both warn against it: disabling lets CLFS parse tampered log files, reopening the memory corruption flaws the protection was built to prevent.
-Independent Test
-Sungyup Nam, head of research at Korean security firm 78researchlab, reported in a published assessment today that researcher Heewon Song of the firm's PurpleHound offensive content team tested the exploit and found that it works. Song assessed that it does not run reliably enough for operational use, Nam wrote.
-Defender must be enabled for the published chain to succeed. Running the exploit changes every UAC prompt to open a standard user shell and a SYSTEM shell, blocking other actions and making the attack noticeable to anyone at the machine.
-The repository claims the technique can work against any antimalware engine whose process runs with elevated privileges. That broader claim has not been tested.
-What Defenders Can Do
-No CVE, advisory, or patch for SignDrop appeared in the November security updates.
 ---
 [TITLE] AMD, 양자컴퓨터 오류 수정에 GPU·SW 투입…엔비디아와 경쟁
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217381
@@ -323,6 +323,15 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [REASON] 온디바이스와 클라우드 모델을 아우르는 개발 API 프레임워크 공개
 [FIELD] AI 모델
 ---
+[TITLE] ETRI, 사람·AI·환경 통합 평가하는 ‘트리니티’ 공개…95종 물체 활용해 사용자 맞춤형 작업계획 능력 측정
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42718
+[PUBLISHED] 2026-11-13 09:12 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 모델, 신기술
+[SCORE] 7
+[REASON] 사용자 특성과 환경 맥락을 결합 평가하는 로봇 AI 벤치마크 공개
+[FIELD] AI 에이전트
+---
 [TITLE] As AI agents take control, Nvidia rethinks the security playbook
 [TITLE_KO] AI 에이전트 제어 확산에 따라 보안 방식을 재설계하는 엔비디아
 [LINK] https://siliconangle.com/2026/11/12/ai-networking-nvidia-scalein-security-agentic-aifactoriesdatacenters/
@@ -353,14 +362,14 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [REASON] 최신 핫픽스 서버까지 장악되는 엔센트럴 제로데이 즉각 레거시 API 비활성화 필요
 [FIELD] 보안
 ---
-[TITLE] Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass
-[TITLE_KO] 시트릭스, 인증 우회 포함 넷스케일러 및 보안 접근 클라이언트 결함 12건 패치
-[LINK] https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html
-[PUBLISHED] 2026-11-13 00:38 KST
-[SOURCE] The Hacker News
+[TITLE] PHP2Shell Exploited in Destructive Check Point Gateway Attacks
+[TITLE_KO] 체크포인트 게이트웨이를 노린 파괴적 공격에 PHP2Shell 취약점 악용돼
+[LINK] https://www.securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks/
+[PUBLISHED] 2026-11-13 16:39 KST
+[SOURCE] SecurityWeek
 [TOPIC] 보안
 [SCORE] 7
-[REASON] 인증 우회 및 DoS 유발하는 넷스케일러 게이트웨이 취약점 패치 적용
+[REASON] 체크포인트 장비 미패치 서버 즉각 업데이트 및 침해 조사 필요
 [FIELD] 보안
 ---
 [TITLE] 앤트로픽, 제조업용 '클로드' 출시…오픈AI와 산업별 AI 시장 경쟁 확대
@@ -372,14 +381,24 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [REASON] 제조업 특화 엔터프라이즈 AI 도구 경쟁 심화
 [FIELD] AI 모델
 ---
-[TITLE] PHP2Shell Exploited in Destructive Check Point Gateway Attacks
-[TITLE_KO] 체크포인트 게이트웨이를 노린 파괴적 공격에 PHP2Shell 취약점 악용돼
-[LINK] https://www.securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks/
-[PUBLISHED] 2026-11-13 16:39 KST
-[SOURCE] SecurityWeek
+[TITLE] New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access
+[TITLE_KO] 새로운 SignDrop 제로데이 익스플로잇, 윈도 CLFS 보안 기능을 SYSTEM 권한 획득에 악용
+[LINK] https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html
+[PUBLISHED] 2026-11-13 02:50 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 윈도 로그 인증 기능을 역이용한 로컬 권한 상승 PoC 대응 필요
+[FIELD] 보안
+---
+[TITLE] Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass
+[TITLE_KO] 시트릭스, 인증 우회 포함 넷스케일러 및 보안 접근 클라이언트 결함 12건 패치
+[LINK] https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html
+[PUBLISHED] 2026-11-13 00:38 KST
+[SOURCE] The Hacker News
 [TOPIC] 보안
 [SCORE] 7
-[REASON] 체크포인트 장비 미패치 서버 즉각 업데이트 및 침해 조사 필요
+[REASON] 인증 우회 및 DoS 유발하는 넷스케일러 게이트웨이 취약점 패치 적용
 [FIELD] 보안
 ---
 [TITLE] 포티넷 제품군 취약점 98건 공개…방화벽·관리 서버 점검 필요
@@ -411,6 +430,16 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [REASON] 스크린커넥트 통해 MSP 기술자 PC로 번지는 신종 웜 툴킷 대응
 [FIELD] 보안
 ---
+[TITLE] Cyberattack on Fireworks AI allowed hackers to access Notion customers’ chat transcripts
+[TITLE_KO] 파이어웍스 AI 사이버 공격으로 노션 고객 채팅 기록 유출
+[LINK] https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/
+[PUBLISHED] 2026-11-13 00:02 KST
+[SOURCE] TechCrunch
+[TOPIC] 보안
+[SCORE] 7
+[REASON] AI 인프라 호스팅 침해로 연동 고객사 채팅 기록 유출 확인
+[FIELD] 보안
+---
 [TITLE] CSOT "8.6세대 잉크젯 OLED 내년 4분기 양산"
 [LINK] https://zdnet.co.kr/view/?no=20261113114213
 [PUBLISHED] 2026-11-13 11:51 KST
@@ -438,16 +467,6 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [REASON] 노트북 환경 온디바이스 145B 고속 추론 모델 오픈소스 배포
 [FIELD] AI 모델
 ---
-[TITLE] United Airlines becomes the latest enterprise to shut its door to customer bots
-[TITLE_KO] 유나이티드항공, 고객 AI 봇 접근 차단하는 최신 기업으로 합류
-[LINK] https://www.computerworld.com/article/4248152/united-airlines-becomes-the-latest-enterprise-to-shut-its-door-to-customer-bots.html
-[PUBLISHED] 2026-11-13 08:50 KST
-[SOURCE] Computerworld
-[TOPIC] 에이전트, 개발, 보안, 산업, 규제
-[SCORE] 6
-[REASON] 표준 부재 및 보안 우려로 인한 고객 AI 에이전트 접근 차단
-[FIELD] AI 에이전트
----
 [TITLE] Deploy frontier AI models on AWS Trainium with SGLang-Neuron
 [TITLE_KO] SGLang-Neuron을 통해 AWS 트레니움에 프런티어 AI 모델 배포
 [LINK] https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron/
@@ -458,14 +477,14 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [REASON] 트레니움 가속기에서 SGLang 네이티브 추론 및 강화학습 지원
 [FIELD] AI 모델
 ---
-[TITLE] AI agent tooling provider LangChain secures $300M investment
-[TITLE_KO] AI 에이전트 개발 도구 제공업체 랭체인, 3억 달러 투자 유치
-[LINK] https://siliconangle.com/2026/11/12/ai-agent-tooling-provider-langchain-secures-300m-investment/
-[PUBLISHED] 2026-11-13 08:24 KST
-[SOURCE] SiliconANGLE
-[TOPIC] 에이전트, 개발, 산업
+[TITLE] United Airlines becomes the latest enterprise to shut its door to customer bots
+[TITLE_KO] 유나이티드항공, 고객 AI 봇 접근 차단하는 최신 기업으로 합류
+[LINK] https://www.computerworld.com/article/4248152/united-airlines-becomes-the-latest-enterprise-to-shut-its-door-to-customer-bots.html
+[PUBLISHED] 2026-11-13 08:50 KST
+[SOURCE] Computerworld
+[TOPIC] 에이전트, 개발, 보안, 산업, 규제
 [SCORE] 6
-[REASON] 에이전트 개발 도구 인프라 기업의 대규모 투자 유치
+[REASON] 표준 부재 및 보안 우려로 인한 고객 AI 에이전트 접근 차단
 [FIELD] AI 에이전트
 ---
 [TITLE] 작고 오래된 기기에서도 LLM이 돌아가게 만들고 있습니다
@@ -477,27 +496,44 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [REASON] 1GB 저사양 기기에서 MoE 모델을 구동하는 최적화 기법 공개
 [FIELD] AI 모델
 ---
-[TITLE] Stolen webcam clips of 900+ victims feed North Korea’s $400 million fake Zoom scheme
-[TITLE_KO] 피해자 900명 이상의 탈취된 웹캠 영상이 북한의 4억 달러 규모 가짜 줌 사기에 활용돼
-[LINK] https://www.helpnetsecurity.com/2026/11/13/fbi-north-korean-fake-zoom-calls/
-[PUBLISHED] 2026-11-13 15:30 KST
-[SOURCE] Help Net Security
-[TOPIC] 개발, 보안
-[SCORE] 6
-[REASON] 녹화 영상을 악용한 화상회의 사칭 소셜 엔지니어링 주의
-[FIELD] 보안
+[LINK] https://www.infoworld.com/article/4248403/google-adds-multi-model-orchestrator-gemini-4-hydrogen-to-antigravity.html
+[STATUS] SKIP (중복)
 ---
-[TITLE] 구글 클라우드 “경보 대기열 사라지고 AI 에이전트가 신원 가질 것”
-[LINK] http://www.newstheai.com/news/articleView.html?idxno=21950
-[PUBLISHED] 2026-11-13 16:39 KST
-[SOURCE] 더에이아이
-[TOPIC] 에이전트, 보안
-[SCORE] 6
-[REASON] 제로데이 악용 가속에 따른 자율 에이전트 신원 통제 강조
-[FIELD] 보안
+[LINK] https://www.bleepingcomputer.com/news/microsoft/microsoft-says-november-security-updates-cause-printing-issues/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.securityweek.com/silentair-hackers-intercept-calls-sms-from-inside-mobile-networks/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.infoq.com/news/2026/11/netflix-ai-driven-observability/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/11/when-ai-agent-goes-wrong-can-you-stop-it.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001054
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/13/apple-secure-exclaves-security-architecture/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/13/europol-dark-web-arrests-cybercrime/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209515
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209514
 [STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261113190245
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.theguardian.com/technology/2026/nov/13/nvidia-scandal-sparks-us-national-security-concerns-china
 [STATUS] SKIP (기준 미달)
@@ -528,6 +564,9 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 ---
 [LINK] https://zdnet.co.kr/view/?no=20261113175230
 [STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001042
+[STATUS] SKIP (제외)
 ---
 [LINK] https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-signdrop/
 [STATUS] SKIP (중복)
@@ -568,6 +607,9 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [LINK] https://zdnet.co.kr/view/?no=20261113170721
 [STATUS] SKIP (중복)
 ---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001031
+[STATUS] SKIP (중복)
+---
 [LINK] https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html
 [STATUS] SKIP (중복)
 ---
@@ -597,6 +639,9 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217391
 [STATUS] SKIP (제외)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21950
+[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.securityweek.com/hackers-exploit-new-n-central-zero-day-hours-after-poc-publication/
 [STATUS] SKIP (중복)
@@ -651,6 +696,9 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000961
 [STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.computerworld.com/article/4248384/for-november-patch-tuesday-means-a-to-do-list-that-starts-with-outlook.html
+[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=157321
 [STATUS] SKIP (중복)
@@ -802,9 +850,6 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000967
 [STATUS] SKIP (중복)
 ---
-[LINK] https://zdnet.co.kr/view/?no=20261113100110
-[STATUS] SKIP (제외)
----
 [LINK] https://www.bloter.net/news/articleView.html?idxno=678507
 [STATUS] SKIP (제외)
 ---
@@ -865,6 +910,9 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [LINK] https://www.helpnetsecurity.com/2026/11/13/google-smart-glasses-privacy-protections/
 [STATUS] SKIP (순위 밖)
 ---
+[LINK] https://siliconangle.com/2026/11/12/ai-agent-tooling-provider-langchain-secures-300m-investment/
+[STATUS] SKIP (순위 밖)
+---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42716
 [STATUS] SKIP (순위 밖)
 ---
@@ -895,14 +943,8 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [LINK] https://www.bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials/
 [STATUS] SKIP (지난 보도)
 ---
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000868
-[STATUS] SKIP (기준 미달)
----
 [LINK] https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen
 [STATUS] SKIP (중복)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000940
-[STATUS] SKIP (제외)
 ---
 [LINK] https://aws.amazon.com/blogs/machine-learning/how-natera-designed-an-agentic-ai-system-for-lab-ops-with-amazon-bedrock-agentcore/
 [STATUS] SKIP (제외)
@@ -914,9 +956,6 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [STATUS] SKIP (순위 밖)
 ---
 [LINK] https://techcrunch.com/2026/11/12/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000860
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/
@@ -1000,11 +1039,32 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [LINK] https://www.helpnetsecurity.com/2026/11/12/picus-autonomous-penetration-testing/
 [STATUS] SKIP (제외)
 ---
-[LINK] https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/
-[STATUS] SKIP (지난 보도)
----
 [LINK] https://www.bleepingcomputer.com/news/security/your-endpoint-management-platform-could-be-your-biggest-security-risk/
 [STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42714
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/apify-rotates-api-tokens-prompts-2fa-resets-after-breach/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209491
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.computerworld.com/article/4247910/us-tech-jobs-grow-in-a-low-hire-low-fire-market.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/11/12/qvyon-launches-with-8m-to-improve-safety-for-physical-ai-deployments/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/elevenlabs-scribe-v3-live-uses-conversational-context-to-stop-voice-agents-from-cutting-off-callers-mid-sentence/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.securityweek.com/chrome-firefox-updates-patch-180-vulnerabilities/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/12/europol-operation-endgame-malware-takedown/
+[STATUS] SKIP (기준 미달)
 ---
 [LINK] https://thehackernews.com/2026/11/your-soc-sees-alert-but-does-it-know.html
 [STATUS] SKIP (사전 제외: 행사)
@@ -1039,6 +1099,9 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [LINK] https://www.etnews.com/20261113000226
 [STATUS] SKIP (사전 제외: 수상)
 ---
+[LINK] https://zdnet.co.kr/view/?no=20261113100110
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
 [LINK] https://zdnet.co.kr/view/?no=20261112182533
 [STATUS] SKIP (사전 제외: 매체 상한)
 ---
@@ -1051,7 +1114,16 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [LINK] https://zdnet.co.kr/view/?no=20261113100220
 [STATUS] SKIP (사전 제외: 매체 상한)
 ---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000868
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000940
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217351
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000860
 [STATUS] SKIP (사전 제외: 매체 상한)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000903
@@ -1063,32 +1135,8 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217349
 [STATUS] SKIP (사전 제외: 매체 상한)
 ---
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42714
-[STATUS] SKIP (사전 제외: 후보 상한)
----
-[LINK] https://www.bleepingcomputer.com/news/security/apify-rotates-api-tokens-prompts-2fa-resets-after-breach/
-[STATUS] SKIP (사전 제외: 후보 상한)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209491
-[STATUS] SKIP (사전 제외: 후보 상한)
----
-[LINK] https://www.computerworld.com/article/4247910/us-tech-jobs-grow-in-a-low-hire-low-fire-market.html
-[STATUS] SKIP (사전 제외: 후보 상한)
----
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000922
 [STATUS] SKIP (사전 제외: 매체 상한)
----
-[LINK] https://siliconangle.com/2026/11/12/qvyon-launches-with-8m-to-improve-safety-for-physical-ai-deployments/
-[STATUS] SKIP (사전 제외: 후보 상한)
----
-[LINK] https://the-decoder.com/elevenlabs-scribe-v3-live-uses-conversational-context-to-stop-voice-agents-from-cutting-off-callers-mid-sentence/
-[STATUS] SKIP (사전 제외: 후보 상한)
----
-[LINK] https://www.securityweek.com/chrome-firefox-updates-patch-180-vulnerabilities/
-[STATUS] SKIP (사전 제외: 후보 상한)
----
-[LINK] https://www.helpnetsecurity.com/2026/11/12/europol-operation-endgame-malware-takedown/
-[STATUS] SKIP (사전 제외: 후보 상한)
 ---
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42713
 [STATUS] SKIP (사전 제외: 후보 상한)
@@ -1168,11 +1216,14 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 [LINK] https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/
 [STATUS] SKIP (사전 제외: 후보 상한)
 ---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001034
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
 [LINK] https://www.etnews.com/20261113000279
 [STATUS] SKIP (사전 제외: 후보 상한)
 ---
 [LINK] https://www.dailysecu.com/news/articleView.html?idxno=209497
-[STATUS] SKIP (사전 제외: 후보 상한)
+[STATUS] SKIP (사전 제외: 매체 상한)
 ---
 [LINK] https://latent.space/p/artcraft/
 [STATUS] SKIP (사전 제외: 후보 상한)
@@ -1212,6 +1263,15 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 ---
 [LINK] https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/
 [STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/11/13/israels-vcs-see-opportunity-for-challengers-in-nvidias-turmoil/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.wired.com/story/black-roles-are-disappearing-in-hollywood-this-startup-is-using-ai-microdramas-to-fight-back/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261113190553
+[STATUS] SKIP (사전 제외: 매체 상한)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217394
 [STATUS] SKIP (사전 제외: 매체 상한)
@@ -1482,64 +1542,4 @@ AMD와 엔비디아 모두 양자 프로세서 자체보다 이를 제어하고 
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000928
 [STATUS] SKIP (사전 제외: 매체 상한)
----
-[LINK] https://www.infoworld.com/article/4248403/google-adds-multi-model-orchestrator-gemini-4-hydrogen-to-antigravity.html
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://www.infoq.com/news/2026/11/netflix-ai-driven-observability/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://thehackernews.com/2026/11/when-ai-agent-goes-wrong-can-you-stop-it.html
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://www.computerworld.com/article/4248384/for-november-patch-tuesday-means-a-to-do-list-that-starts-with-outlook.html
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001054
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001034
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://www.bleepingcomputer.com/news/microsoft/microsoft-says-november-security-updates-cause-printing-issues/
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://www.securityweek.com/silentair-hackers-intercept-calls-sms-from-inside-mobile-networks/
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://www.helpnetsecurity.com/2026/11/13/apple-secure-exclaves-security-architecture/
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://www.helpnetsecurity.com/2026/11/13/europol-dark-web-arrests-cybercrime/
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209515
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://zdnet.co.kr/view/?no=20261113190245
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001042
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001031
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://techcrunch.com/2026/11/13/israels-vcs-see-opportunity-for-challengers-in-nvidias-turmoil/
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://www.wired.com/story/black-roles-are-disappearing-in-hollywood-this-startup-is-using-ai-microdramas-to-fight-back/
-[STATUS] SKIP (목록 마감)
----
-[LINK] https://zdnet.co.kr/view/?no=20261113190553
-[STATUS] SKIP (목록 마감)
 ---

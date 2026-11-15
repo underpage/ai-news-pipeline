@@ -58,22 +58,6 @@ Cursor, 악성 Claude Code 확장 유포로 이어진 보안 침해 확인
 
 #중립
 ---
-[TITLE] "사람의 움직임, 휴머노이드 로봇에 이식한다"…엔비디아, 피지컬 AI 동작 변환 기술 오픈소스 공개
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42732
-[PUBLISHED] 2026-11-14 19:16 KST
-[SOURCE] 인공지능신문
-[TOPIC] 개발, 신기술, 규제
-[SCORE] 7
-[REASON] 인간 움직임을 휴머노이드 관절 제어로 변환하는 오픈소스 공개
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[국문 3줄 요약]**
-- 엔비디아가 사람의 움직임을 휴머노이드 로봇의 신체 구조에 맞게 변환하는 오픈소스 기술 '소마 리타기터'를 공개했다.
-- 이 기술은 공통 골격 체계와 역운동학을 사용해 인간과 로봇의 신체 비율 및 관절 차이를 보정하며 모션캡처나 비디오 등 다양한 데이터를 로봇 제어 정책 학습용으로 변환한다.
-- 유니트리와 부스터 등 5종의 로봇 참조 설정을 지원해 실제 로봇 데이터 수집 비용을 줄이고 피지컬 AI 개발 기반을 확대할 것으로 기대된다.
-
-#긍정
----
 [TITLE] Runway's open-source Praxis-1 turns video AI into a robot controller
 [LINK] https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller/
 [PUBLISHED] 2026-11-14 18:45 KST
@@ -114,30 +98,6 @@ Cursor, 악성 Claude Code 확장 유포로 이어진 보안 침해 확인
 
 #부정
 ---
-[TITLE] Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection
-[LINK] https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html
-[PUBLISHED] 2026-11-14 21:38 KST
-[SOURCE] The Hacker News
-[TOPIC] 개발, 보안
-[SCORE] 7
-[REASON] 오픈소스 IRC 서버 결함의 실제 공격 악용으로 긴급 패치 필요
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-공격자들, 서버 수준 명령 삽입을 가능하게 하는 UnrealIRCd 결함 악용
-
-**[영문 3줄 요약 (Original)]**
-- CISA added a high-severity command injection vulnerability impacting the UnrealIRCd open-source IRC server to its Known Exploited Vulnerabilities catalog following reports of active attacks.
-- Tracked as CVE-2026-114713 with a CVSS score of 8.6, the flaw stems from improper delimiter neutralization in the labeled-response module, allowing users to execute commands with server privileges.
-- Active exploitation began shortly after the release of version 6.2.7.1, prompting maintainers and authorities to urge administrators to apply hotpatches immediately.
-
-**[국문 3줄 요약 (Translated)]**
-- CISA는 실제 공격 사례가 보고됨에 따라 UnrealIRCd 오픈소스 IRC 서버에 영향을 미치는 고위험 명령 삽입 취약점을 알려진 악용 취약점 카탈로그에 추가했다.
-- CVE-2026-114713(CVSS 점수 8.6)으로 추적되는 이 결함은 라벨 응답 모듈의 구분 기호 처리 미흡으로 인해 발생하며, 사용자가 서버 권한으로 명령을 실행할 수 있도록 허용한다.
-- 6.2.7.1 버전 핫픽스가 배포된 직후부터 실제 악용 시도가 시작되어 관리자와 당국은 즉시 패치를 적용할 것을 촉구했다.
-
-#부정
----
 [TITLE] 아마존, 전 세계 상품 정보 통합 추진…AI 쇼핑 주도권 지킨다
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217412
 [PUBLISHED] 2026-11-14 19:19 KST
@@ -154,59 +114,83 @@ Cursor, 악성 Claude Code 확장 유포로 이어진 보안 침해 확인
 
 #중립
 ---
-[TITLE] 테슬라, '사이버캡' 사전 주문 시작…월 40만원 안 내면 운행 불가
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217417
-[PUBLISHED] 2026-11-15 12:40 KST
-[SOURCE] AI타임스
-[TOPIC] 신기술
-[SCORE] 6
-[REASON] 자율주행 차량의 첫 개인 대상 사전 주문 개시
-[MODEL] gemini-3.8-flash
+[TITLE] 아마존, AI가 집 안을 날고 사업장을 순찰하는 자율 보안로봇 공개…고정형 CCTV 넘어 이동형 보안 시대 연다
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42737
+[PUBLISHED] 2026-11-15 15:44 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델, 보안, 신기술
+[SCORE] 8
+[REASON] 가정 및 사업장용 자율 순찰 비행 로봇 상용 제품 공개
+[MODEL] manual
 [SUMMARY]
 **[국문 3줄 요약]**
-- 테슬라가 운전대와 페달이 없는 완전 자율주행 로보택시 '사이버캡'의 일반 고객 대상 사전 주문을 시작했다.
-- 차량 가격은 2만9990달러이지만 운행을 위해선 매달 299달러의 구독료를 내야 하며, 운행 지역이 테슬라 지정 구역으로 제한되고 상업적 이용은 금지된다.
-- 차량 인도 시점이 12월로 예정된 가운데 미국 도로교통안전국(NHTSA)의 안전기준 적합성 조사 등 규제 승인 과제가 여전히 남아 있다.
-
-#중립
----
-[TITLE] PyPI, 보안 신호를 더 명확히 보여주는 개편된 프로젝트 페이지 공개
-[LINK] https://news.hada.io/topic?id=37178&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[PUBLISHED] 2026-11-15 07:36 KST
-[SOURCE] GeekNews
-[TOPIC] 보안
-[SCORE] 6
-[REASON] 오픈소스 패키지 공급망 검증을 위한 암호 증명 추가
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[국문 3줄 요약]**
-- PyPI가 파일별 디지털 증명을 통해 빌드 출처와 워크플로를 확인할 수 있는 새 보안 탭을 프로젝트 페이지에 도입했다.
-- 릴리스 파일 전체의 증명 보유 상태를 표시하고, 소스 저장소나 빌드 파이프라인의 변경 및 증명 누락 등 비정상적인 정황이 발견되면 출처 경고를 안내한다.
-- 검증 및 검색 필터링 기능을 개선해 계정 탈취나 파이프라인 침해로 인한 오픈소스 패키지 공급망 공격을 사전에 파악할 수 있도록 지원한다.
+- 아마존 자회사 링이 자율 이동형 보안기기 사업 '링 로보틱스'를 발표하고 가정용 비행 카메라 '링 드론 캠'과 사업장용 순찰로봇 '링 로버 캠'을 공개했다.
+- 두 제품에는 카메라, 영상 인식 모델, 온디바이스 센서, 클라우드 처리를 결합한 'AI 파일럿'이 적용돼 AI가 실내 지도를 만들고 순찰 지점을 제안하며 장애물을 피해 이동하고, 기존 링 기기에서 이상 신호가 나면 해당 위치로 자동 이동할 수 있다.
+- 링 로버 캠은 2026년 12월 16일부터 999.99달러에 배송을 시작하고 링 드론 캠은 2027년 1월 27일부터 249.99달러에 배송할 계획이며, 드론 캠은 미국 연방통신위원회 승인 전에는 판매할 수 없고 이동 중 영상 수집에 따른 개인정보 보호 기준도 함께 고려해야 한다.
 
 #긍정
 ---
-[TITLE] AT&T uses agentic AI to reinvent business processes from the ground up
-[LINK] https://siliconangle.com/2026/11/14/att-uses-agentic-ai-to-reinvent-business-processes-from-the-ground-up/
-[PUBLISHED] 2026-11-15 04:37 KST
-[SOURCE] SiliconANGLE
-[TOPIC] 에이전트
-[SCORE] 6
-[REASON] 수백 개 자율 에이전트 워크플로 실제 업무 배포
-[MODEL] gemini-3.8-flash
+[TITLE] 승조원 없는 함정, 미 해역으로…HD현대·안두릴, 무인수상함 진수
+[LINK] https://zdnet.co.kr/view/?no=20261115124842
+[PUBLISHED] 2026-11-15 12:48 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 산업
+[SCORE] 8
+[REASON] 자율 운항 및 임무 자동화가 결합된 중형 무인수상함 진수
+[MODEL] manual
 [SUMMARY]
-**[기사 제목 번역]**
-AT&T, 비즈니스 프로세스를 근본적으로 혁신하기 위해 에이전틱 AI 활용
+**[국문 3줄 요약]**
+- HD현대가 미국 안두릴과 공동 개발한 경하중량 600톤급 중형 무인수상함을 지난 12일 울산 HD현대중공업에서 진수했다.
+- HD한국조선해양이 개발한 '브이에이원'이 기관 운전, 이상 상황 대응, 함정 안전 관리, 항해 자동화를 맡고 안두릴의 '래티스'가 손상통제와 무장 운영까지 포함한 임무 자율화를 지원한다.
+- 울산 앞바다 시운전을 거쳐 내년 초 미국 해역에서 성능을 점검할 예정이며, 동급 유인함정에 약 50명의 승조원이 필요한 점을 들어 무인화가 해군의 인력 운용 부담을 줄일 수 있다고 HD현대는 설명했다.
 
-**[영문 3줄 요약 (Original)]**
-- AT&T is shifting beyond simple employee productivity tasks by deploying nearly 500 autonomous agentic workflows to redesign core business operations.
-- Built through its Business Agent Foundry, the architecture employs a centrally managed set of retrieval and planning agents to automate legacy mainframe interactions and service provisioning.
-- The company enforces strict governance requiring high accuracy before granting full autonomy, achieving fivefold returns on production AI investments within a year.
+#긍정
+---
+[TITLE] Project Zero, 취약점 신고 90일 후 상세 정보 공개하기로
+[LINK] https://news.hada.io/topic?id=37190&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-15 12:36 KST
+[SOURCE] GeekNews
+[TOPIC] 보안, 규제
+[SCORE] 8
+[REASON] 취약점 신고 후 무조건 공개 정책 도입으로 패치 기간 단축 압박
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- Google Project Zero가 공급사에 취약점을 신고한 뒤 정해진 기간이 지나면 패치 여부와 관계없이 상세 정보를 공개하는 Full X 정책을 도입했다.
+- 2026년 11월 13일부터 신고 후 90일, 2027년 2월 2일부터 60일, 2028년 1월 3일부터 30일 뒤에 공개하며, LLM이 취약점 발견과 악용, 패치 역공학을 가속해 공개 지연의 보호 효과가 줄었다는 점이 배경이다.
+- 유예 기간과 변종 취약점 정책 등 대부분의 특수 규정을 없앴고 실제 악용 중인 취약점, 이미 공개된 취약점, 공급사의 공개 요청에는 예외를 두며, 공급사는 수정 속도뿐 아니라 패치 격차도 줄여야 한다.
 
-**[국문 3줄 요약 (Translated)]**
-- AT&T는 핵심 비즈니스 운영을 재설계하기 위해 약 500개의 자율 에이전트 워크플로를 프로덕션 환경에 배포하며 단순한 직원 생산성 작업을 넘어선 전환을 추진하고 있다.
-- 비즈니스 에이전트 파운드리를 통해 구축된 이 아키텍처는 중앙에서 관리되는 검색 및 계획 에이전트를 활용해 레거시 메인프레임 작업과 서비스 프로비저닝을 자동화한다.
-- 회사는 완전한 자율성을 부여하기 전 높은 정확도를 요구하는 엄격한 거버넌스를 적용하고 있으며, 1년 이내에 프로덕션 AI 투자에 대해 5배의 수익률을 달성하고 있다.
+#중립
+---
+[TITLE] C++26, 표준화 사상 첫 부결…연내 확정 불투명
+[LINK] https://zdnet.co.kr/view/?no=20261115104827
+[PUBLISHED] 2026-11-15 12:31 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] C++ 차기 표준 승인 부결로 언어 신기능 적용 지연
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- C++26 국제표준초안이 지난 10월 ISO 회원국 표준기구 투표에서 찬성 13표, 반대 9표, 기권 12표를 기록해 승인 요건을 충족하지 못하고 사상 처음으로 부결됐다.
+- 프로그램 실행 중 조건을 검사하는 '계약' 기능을 두고 창시자 비야네 스트롭스트룹이 설계가 지나치게 복잡하고 충분히 검증되지 않았다며 반대했고, 일부 국가 표준기구도 이에 동조한 것이 배경으로 지목됐다.
+- WG21은 16일부터 21일까지 브라질 부지우스에서 계약 기능 제외나 별도 기술명세서 분리, 설계 수정 후 재투표 등을 논의할 예정이며, 어떤 방안이든 일정이 지연될 수 있어 표준 확정이 내년으로 넘어가면 'C++27'로 불릴 수도 있다.
+
+#부정
+---
+[TITLE] 구글 딥마인드, AI 강수 탐지 정확도 30% 이상 향상…전 세계 기상·위성 데이터셋 전면 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42738
+[PUBLISHED] 2026-11-15 16:41 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발
+[SCORE] 6
+[REASON] 정밀 강수 탐지 모델 및 위성 데이터셋 공개
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 구글 딥마인드가 13일(현지시간) AI 기반 글로벌 강수 데이터셋 '파르디그'와 정지궤도 위성영상 통합 데이터셋 '새트위브'를 공개한다고 발표했다.
+- 파르디그는 NASA 위성의 레이더 관측자료와 새트위브 영상, ECMWF 대기장 자료로 학습해 약 10km 해상도, 15분 간격으로 강수를 제공하며 NASA의 '아이머지 파이널'보다 약한 비와 보통 강수의 시간별 탐지 성능이 30% 이상 높았다.
+- 새트위브는 고스, 메테오샛, 히마와리 위성 자료를 17개 채널로 통합해 1시간 간격으로 갱신하며, 두 데이터셋의 과거 자료와 최신 데이터는 구글 클라우드 스토리지로 공개되어 연구자가 자체 기상예측 모델 개발에 활용할 수 있다.
 
 #긍정
 ---

@@ -61,30 +61,6 @@
 
 #긍정
 ---
-[TITLE] Git Patches Flaw That Lets Malicious Repositories Execute Code During Recursive Clones
-[LINK] https://thehackernews.com/2026/11/git-patches-flaw-that-lets-malicious.html
-[PUBLISHED] 2026-11-11 04:23 KST
-[SOURCE] The Hacker News
-[TOPIC] 개발, 보안
-[SCORE] 9
-[REASON] 재귀적 복제 시 악성 코드 실행되는 깃 심각 취약점 패치
-[MODEL] gemini-3.8-flash
-[SUMMARY]
-**[기사 제목 번역]**
-깃, 재귀적 클론 중 악성 저장소가 코드를 실행할 수 있는 결함 패치
-
-**[영문 3줄 요약 (Original)]**
-- The Git project patched a critical vulnerability tracked as CVE-2026-111760 that allows malicious repositories to execute attacker code during recursive clones with submodules.
-- The flaw stems from an integer truncation in path handling that lets an attacker replace a submodule's .git file with a symbolic link to execute malicious hooks.
-- GitHub has deployed fixes across its hosted environments and recommends updating all Git installations and avoiding recursive clones from untrusted sources.
-
-**[국문 3줄 요약 (Translated)]**
-- 깃 프로젝트는 서브모듈과 함께 재귀적 클론을 수행하는 동안 악성 저장소가 공격자 코드를 실행할 수 있는 CVE-2026-111760 취약점을 패치했다.
-- 이 결함은 경로 처리 과정의 정수 절삭으로 인해 발생하며, 공격자가 서브모듈의 .git 파일을 심볼릭 링크로 대체해 악성 훅을 실행할 수 있도록 한다.
-- 깃허브는 호스팅 환경 전반에 패치를 적용했으며 모든 깃 설치본을 업데이트하고 신뢰할 수 없는 소스로부터의 재귀적 클론을 피할 것을 권고했다.
-
-#부정
----
 [TITLE] SGLang RCE Exploit Breaches NEAR AI, Steals Data From 18 Agents and About 100 Users
 [LINK] https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html
 [PUBLISHED] 2026-11-11 04:19 KST
@@ -181,19 +157,51 @@ SGLang RCE 익스플로잇으로 니어 AI 침해, 18개 에이전트와 약 100
 
 #긍정
 ---
-[TITLE] 알리바바, 차세대 AI 모델 ‘큐웬4’ 공개 예고…'큐웬4 맥스’ 프리뷰 제공, 코딩·에이전틱 AI·세계 이해 능력 강화
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42687
-[PUBLISHED] 2026-11-11 12:08 KST
-[SOURCE] 인공지능신문
-[TOPIC] 에이전트, 개발, 모델
-[SCORE] 8
-[REASON] 알리바바 차세대 프론티어 모델 프리뷰 공개
-[MODEL] gemini-3.8-flash
+[TITLE] Eight countries and top AI labs agree to shutdown mechanisms in new Paris declaration
+[LINK] https://the-decoder.com/eight-countries-and-top-ai-labs-agree-to-shutdown-mechanisms-in-new-paris-declaration/
+[PUBLISHED] 2026-11-10 22:37 KST
+[SOURCE] The Decoder
+[TOPIC] 보안
+[SCORE] 9
+[REASON] 8개국 및 주요 AI 기업 비상 셧다운 체계 구축 합의
+[MODEL] manual
 [SUMMARY]
-**[국문 3줄 요약]**
-- 알리바바가 차세대 AI 모델 '큐웬4' 출시를 예고하고 상위 모델인 '큐웬4 맥스' 프리뷰 버전을 공개했다.
-- 단순 질의응답을 넘어 복잡한 코딩, 전문 소프트웨어 개발, 에이전틱 AI 워크플로 등 실무 환경의 업무 수행 능력을 강화했다.
-- 큐웬워크와 큐웬스튜디오 등 다양한 업무 플랫폼을 통해 조기 체험을 제공하며 실용성 검증과 생태계 확장을 추진하고 있다.
+**[기사 제목 번역]**
+8개국과 주요 AI 기업, 파리 선언에서 셧다운 메커니즘에 합의
 
-#긍정
+**[영문 3줄 요약 (Original)]**
+- Representatives of eight countries, tech companies, and civil-society organizations signed the "Paris Call for AI Safety and Security," adopted on Nov. 9, on the eve of the Paris Peace Forum.
+- The companies pledge to disclose known risks, support risk-proportionate independent audits, and set up shutdown mechanisms for models under their control, while non-sensitive test results are to be published in a standardized format.
+- The declaration is a political self-commitment that creates no binding international oversight system, sets neither deadlines nor sanctions, and Germany did not sign.
+
+**[국문 3줄 요약 (Translated)]**
+- 8개국, 기술 기업, 시민사회 단체 대표가 파리 평화 포럼 전날 11월 9일 채택된 "AI 안전과 보안을 위한 파리 선언"에 서명했다.
+- 기업들은 알려진 위험을 공개하고, 위험에 비례하는 독립 감사를 지원하며, 자사가 통제하는 모델에 셧다운 메커니즘을 마련하겠다고 약속했고, 민감하지 않은 시험 결과는 표준화된 형식으로 공개될 예정이다.
+- 이 선언은 구속력 있는 국제 감독 체계를 만들지 않는 정치적 자기 약속이며 기한도 제재도 정하지 않았고, 독일은 서명하지 않았다.
+
+#중립
+---
+[TITLE] Grok Build coding agent leaks oodles of confidential info, some belonging to SpaceXSI
+[LINK] https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi/
+[PUBLISHED] 2026-11-11 06:12 KST
+[SOURCE] Ars Technica
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 9
+[REASON] 코딩 에이전트 빌드 앱 수만 개 무단 노출 및 내부 정보 유출
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+그록 빌드 코딩 에이전트, 스페이스XSI 자체 정보 포함 기밀 대량 유출
+
+**[영문 3줄 요약 (Original)]**
+- Grok Build, the vibe-coding agent from SpaceXSI, is leaking data from thousands of its users through app-sharing links, and a platform design decision lets anyone enumerate thousands of live projects.
+- Research from security firm Claroc found exposed internal business plans, ad proposals, medical exam results, and employee names and ID numbers, including material from 24 apps built by SpaceXSI itself.
+- Claroc notified SpaceXSI on Sunday, and SpaceXSI began removing the links within a few hours of Ars sending an email with questions, after which the links for all 24 apps returned an "app not found" error.
+
+**[국문 3줄 요약 (Translated)]**
+- 스페이스XSI의 바이브 코딩 에이전트 그록 빌드가 앱 공유 링크를 통해 수천 명 사용자의 데이터를 유출하고 있으며, 플랫폼의 설계 결정 때문에 누구나 수천 개의 실행 중인 프로젝트를 열거할 수 있다.
+- 보안 업체 Claroc의 조사 결과 내부 사업 계획, 광고 제안서, 건강검진 결과, 직원 이름과 ID 번호가 노출됐으며, 스페이스XSI가 직접 만든 앱 24개의 자료도 포함됐다.
+- Claroc은 일요일에 스페이스XSI에 알렸고, 스페이스XSI는 Ars가 질문 이메일을 보낸 지 몇 시간 안에 링크를 제거하기 시작해 24개 앱의 링크는 모두 "app not found" 오류를 반환했다.
+
+#부정
 ---

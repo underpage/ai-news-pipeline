@@ -2,6 +2,14 @@
 ---
 [평가 오류] 전체 후보 - 선정 실패(다시 시도): 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 ---
+[평가 오류] 전체 후보 - 선정 실패(다시 시도): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
+---
+[평가 오류] 전체 후보 - 선정 실패(다시 시도): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
+---
+[평가 오류] 전체 후보 - 선정 실패(다시 시도): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
+---
+[평가 오류] 전체 후보 - 선정 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+---
 [TITLE] Cursor confirms security breach led to malicious Claude Code extension
 [TITLE_KO] 커서, 보안 침해로 악성 클로드 코드 확장 프로그램 배포 확인
 [LINK] https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/
@@ -104,44 +112,159 @@ GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의
 - 로봇용 범용 AI 모델을 훈련하는 Generalist의 공동창업자 Pete Florence는 지능을 발전시키는 출발점이 여러 가지일 수 있다고 봄
   - 기존 모델 가운데 어느 것이 장기적으로 로보틱스를 지배할지는 아직 불분명함
 ---
-[TITLE] "사람의 움직임, 휴머노이드 로봇에 이식한다"…엔비디아, 피지컬 AI 동작 변환 기술 오픈소스 공개
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42732
-[PUBLISHED] 2026-11-14 19:16 KST
+[TITLE] 아마존, AI가 집 안을 날고 사업장을 순찰하는 자율 보안로봇 공개…고정형 CCTV 넘어 이동형 보안 시대 연다
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42737
+[PUBLISHED] 2026-11-15 15:44 KST
 [SOURCE] 인공지능신문
-[TOPIC] 개발, 신기술, 규제
-[SCORE] 7
-[REASON] 인간 움직임을 휴머노이드 관절 제어로 변환하는 오픈소스 공개
+[TOPIC] 모델, 보안, 신기술
+[SCORE] 8
+[REASON] 가정 및 사업장용 자율 순찰 비행 로봇 상용 제품 공개
 [FIELD] 신기술
 [BODY]
-오픈소스 ‘소마 리타기터’로 인간과 로봇의 신체 구조·관절 차이 보정…동작 데이터를 로봇 제어 학습에 활용
-엔비디아(NVIDIA)가 사람의 움직임을 휴머노이드 로봇의 신체 구조에 맞게 변환하는 오픈소스 기술을 공개했다. 인간과 로봇 사이의 관절 구조, 신체 비율, 가동 범위 차이를 보정해 사람의 동작 데이터를 로봇 제어 정책 학습에 활용할 수 있도록 지원하는 기술이다.
-사람의 행동을 학습해 실제 물리적 환경에서 움직이는 피지컬 AI(Physical AI) 개발에 필요한 동작 데이터 활용 기반을 확대할 것으로 기대된다.
-엔비디아는 13일(현지시간) '소마 리타기터(SOMA Retargeter-다운)'의 동작 변환 원리와 구현 절차, 로봇 제어 정책 학습에 적용하는 방법을 공개했다. 개발자는 사람의 움직임을 로봇 관절의 위치와 각도로 변환하고, 시뮬레이션 환경에서 동작을 검증한 뒤 로봇 제어 모델 학습에 활용할 수 있다.
-사람의 동작을 로봇에 적용하기 어려운 가장 큰 이유는 신체 구조의 차이다. 사람과 휴머노이드 로봇은 팔과 다리의 길이, 관절 배치, 회전 가능 범위가 서로 다르다. 사람이 자연스럽게 수행하는 걷기나 손 흔들기 같은 동작도 로봇이 그대로 따라 하면 균형이 무너지거나 관절의 움직임이 제한될 수 있다.
-소마 리타기터는 이러한 문제를 해결하기 위해 인간의 동작 데이터를 공통 골격 표현 체계인 '소마 엑스(SOMA-X-다운)'를 기반으로 처리한다. 서로 다른 장비와 방식으로 수집된 동작 데이터를 공통 구조로 표현한 뒤, 대상 로봇의 신체 비율과 관절 특성에 맞춰 변환하는 방식이다.
-동작 변환에는 역운동학(Inverse Kinematics, IK) 기술이 사용된다. 손이나 발 등 신체 부위가 목표 위치에 도달하도록 각 관절의 각도를 계산하는 방법이다. 엔비디아는 자사의 워프(NVIDIA Warp)를 기반으로 구축된 뉴턴(Newton)의 역운동학 기능을 활용해 로봇의 관절 자세를 계산한다.
-변환 과정에서는 로봇의 관절 가동 범위와 기준 자세를 반영하고, 발이 지면에 닿아 있는 동안 미끄러지는 현상을 줄이는 보정도 수행한다. 사람이 걷는 모습을 단순히 복제하는 것이 아니라 로봇이 수행할 수 있는 동작으로 재구성하는 데 초점을 맞췄다.
-유니트리·부스터·애지봇 등 5종 휴머노이드 동작 변환 지원
-엔비디아가 소개한 소마 리타기터 버전 0.2에는 서로 다른 신체 구조를 가진 휴머노이드 로봇 5종의 참조 설정과 동작 변환 사례가 포함됐다. 지원 대상은 유니트리(Unitree)의 G1과 H2, 부스터(Booster)의 T1, 애지봇(AgiBot)의 X2 울트라와 A3T3다.
-개발자는 제공된 설정을 활용해 사람의 동작을 각 로봇의 관절 구조에 맞게 변환할 수 있다. 새로운 로봇을 적용할 때는 '로봇 컨피규레이터(Robot Configurator)'를 이용해 신체 비율과 기준 자세, 관절 대응 관계를 설정한다.
-엔비디아는 부스터 T1의 손 흔들기 동작을 사례로 제시했다. 사람의 기준 자세와 로봇의 기준 자세가 일치하지 않으면 한 손을 흔드는 동작이 양팔을 벌린 자세로 변환될 수 있다. 기준 자세를 정렬하면 한쪽 손은 머리 옆에서 흔들고 다른 팔은 자연스럽게 내리는 움직임으로 보정된다.
-또한 실험적인 역운동학 가중치 최적화 기능을 제공해 로봇이 여러 신체 부위의 목표 움직임을 동시에 충족하기 어려울 때 어떤 관절과 동작을 우선할지 조정할 수 있도록 했다.
-모션캡처·동영상·생성형 AI 동작 데이터까지 활용
-소마 리타기터는 다양한 출처의 인간 동작 데이터를 로봇 학습에 연결할 수 있다는 점도 특징이다. 모션캡처 데이터셋 '본즈 시드(BONES-SEED-다운)'에 수록된 사람의 움직임을 활용할 수 있으며, 단일 영상에서 전신의 3차원 움직임을 복원하는 '젬 엑스(GEM-X-다운)'와도 연계된다.
-생성형 AI 기반 동작 생성 모델인 '키모도(Kimodo-다운)'와 '아르디(ARDY-다운)'가 만든 움직임도 활용할 수 있다. 키모도는 텍스트 설명과 자세 제약을 바탕으로 동작 시퀀스를 생성하고, 아르디는 움직임이 진행되는 동안 동작 방향을 대화형으로 조정할 수 있도록 지원한다. 개발자는 이러한 데이터를 소마 골격 표현으로 통일한 뒤 대상 로봇에 맞게 변환할 수 있다. 변환 결과는 프레임별 로봇의 위치와 방향, 관절 각도를 포함한 CSV 파일로 저장된다.
-여러 동작을 변환해 축적하면 로봇 제어 모델 학습에 필요한 동작 라이브러리를 구성할 수 있다. 개별 동작을 반복적으로 수작업 조정하지 않고 대량의 데이터를 처리하는 배치 변환 기능도 제공된다.
-로봇 제어 정책 학습과 연결...시뮬레이션에서 동작 검증
-엔비디아는 소마 리타기터로 생성한 동작 데이터를 로봇 제어 정책 학습에 활용하는 절차도 공개했다. 로봇 제어 정책은 목표 동작과 로봇의 현재 상태를 입력받아 실제 관절을 움직이기 위한 제어 명령을 학습하는 모델이다. 소마 리타기터가 생성한 관절 궤적은 이러한 학습의 기준 동작으로 사용된다.
-엔비디아의 소닉(SONIC) 학습 워크플로는 유니트리 G1용 변환 도구(다운)를 제공하며, 프로토모션스(ProtoMotions-다운)와 같은 물리 기반 동작 추적 프레임워크에서도 활용할 수 있다. 학습된 제어 정책은 시뮬레이션 환경에서 균형 유지, 지면 접촉, 구동기 한계, 목표 동작 추적 정확도 등을 평가할 수 있다.
-엔비디아는 소형 로봇 '마이크로덕(MicroDuck)'에 사람의 동작을 변환해 적용하고, 물리 시뮬레이션에서 동작 추적 제어기를 학습한 사례도 소개했다. 사람의 원본 움직임과 변환된 로봇 동작, 학습된 제어기가 수행하는 움직임을 비교해 동작 변환과 정책 학습의 연결 과정을 보여줬다.
-실시간 동작 생성 기술과의 연계도 가능하다. 엔비디아의 '모션브릭스(MotionBricks-보기)'는 목표 자세가 달라지는 상황에서 전신 움직임을 연속적으로 생성하는 기술이다. 유니트리 G1용 모델은 소마 리타기터로 변환한 인간 동작 데이터를 일부 학습에 활용했다.
-사람의 시연 데이터를 로봇 학습 자산으로...피지컬 AI 개발 기반 확대
-소마 리타기터의 기술적 의미는 사람의 움직임을 서로 다른 로봇에 적용할 수 있는 학습 데이터로 전환하는 과정에 있다.
-휴머노이드 로봇의 행동 학습에는 다양한 동작 데이터가 필요하지만, 실제 로봇을 이용해 모든 동작을 수집하려면 상당한 시간과 비용이 소요될 수 있다. 기존 인간 모션캡처 데이터나 영상에서 복원한 움직임을 재활용하면 로봇별 동작 데이터 구축에 필요한 작업을 줄일 가능성이 있다.
-특히 공통 골격 표현과 로봇별 변환 설정을 결합한 구조는 동일한 인간 동작 데이터를 신체 구조가 다른 여러 휴머노이드에 적용할 수 있도록 지원한다.
-다만 소마 리타기터는 사람의 동작을 로봇의 관절 궤적으로 변환하는 도구로, 변환 결과가 실제 로봇에서 안정적으로 실행된다는 사실을 자동으로 보장하지는 않는다. 로봇의 균형과 지면 접촉, 구동기 제약을 고려한 제어 정책 학습과 검증 과정이 별도로 필요하다.
-엔비디아는 이번 기술 블로그(보기)에서 구체적인 구현 방법과 활용 사례를 제시했지만, 특정 로봇의 작업 성공률이나 학습시간 단축률에 대한 새로운 정량적 성능 비교 결과는 발표하지 않았다.
-한편, 소마 리타기터(다운)는 오픈소스로 제공되며, 개발자는 공식 저장소에서 설치 방법과 로봇별 참조 설정, 동작 변환 예제, 배치 처리 지침 등을 확인할 수 있다. 엔비디아는 로봇 개발자가 다양한 인간 동작 데이터를 활용해 제어 정책을 학습하고 검증할 수 있도록 관련 도구와 개발 절차를 지속적으로 제공하고 있다.
+‘링 드론 캠’·‘링 로버 캠’ 출시 발표…AI가 공간 지도 만들고 장애물 피해 자율 순찰·이상 상황 확인
+아마존의 스마트 보안기기 자회사 링(Ring)은 자율 이동형 보안기기 사업인 '링 로보틱스(Ring Robotics)'를 발표하고, 가정용 비행 보안카메라 '링 드론 캠(Ring Drone Cam)'과 사업장용 자율 순찰로봇 '링 로버 캠(Ring Rover Cam)'을 공개했다.
+가정 내부를 비행하는 드론과 사업장을 이동하는 바퀴형 로봇을 통해 기존 고정형 보안카메라의 감시 범위를 확장하고, AI 기반 자율 순찰과 현장 확인 기능을 결합한 새로운 보안 서비스 시장을 목표로 한다.
+두 제품에는 카메라와 영상 인식 모델, 온디바이스 센서, 클라우드 처리를 결합한 자율주행 시스템 'AI 파일럿(AI Pilot)'이 적용됐다. AI가 주변 공간을 인식해 지도를 만들고 순찰 지점을 제안하며, 이동 중 장애물을 피해 목적지까지 이동하도록 지원하는 기술이다.
+AI가 실내 지도 생성하고 순찰 경로 결정, 이상 신호에 자동 대응
+링 로보틱스의 핵심은 기존 보안카메라가 설치된 위치에서 영상을 수집하는 데 그치지 않고, AI가 공간을 이동하며 필요한 장소를 확인하도록 설계됐다는 점이다. AI 파일럿은 기기의 카메라와 센서로 수집한 정보를 분석해 실내 평면도를 생성한다. 드론은 사용자가 기기를 들고 공간을 이동하면서 초기 지도를 만들 수 있으며, 로버는 스스로 공간을 탐색해 지도를 구성한다.
+이 과정에서 AI는 출입문과 창문, 계산대, 긴 복도 등 보안상 확인이 필요한 장소를 식별하고 순찰 지점으로 제안한다. 사용자는 자신의 보안 요구에 따라 추가 지점을 지정할 수 있다.
+순찰이 시작되면 AI 파일럿은 생성된 지도를 바탕으로 설정된 목적지까지 이동 경로를 계산한다. 이동 중 가구와 진열대 등 장애물이 나타나면 이를 감지하고 실시간으로 회피한다. 또한 기존 링 카메라나 센서, 경보장치에서 이상 신호가 발생하면 해당 위치를 확인하도록 드론이나 로봇을 자동으로 이동시킬 수 있다.
+이는 영상 감시와 이상 상황 감지, 현장 확인을 하나의 시스템으로 연결하는 방식이다.
+가정용 링 드론 캠, 집 안을 비행하며 2K 영상 촬영
+링 드론 캠은 집 안을 비행하면서 실내 상황을 확인하는 자율 보안카메라다. 사용자는 사전에 비행 경로와 일정을 설정할 수 있으며, 필요할 때 직접 비행을 실행할 수도 있다. 다른 링 보안기기에서 경보가 발생하면 미리 지정한 지점으로 자동 이동해 상황을 확인하도록 설정할 수 있다.
+카메라는 148도 화각과 360도 회전 기능을 지원하며, 최대 2K 해상도로 영상을 촬영한다. 조도가 낮은 환경에서는 내장된 LED 조명 2개가 자동으로 작동한다. 아마존은 여러 방에 각각 고정형 카메라를 설치하지 않고도 하나의 이동형 기기로 집 안의 다양한 장소를 확인할 수 있다는 점을 강조했다.
+링 드론 캠은 기존 링 카메라와 초인종, 센서, 경보장치와 연동되며, 알렉사 홈 맵(Alexa Home Map)을 통한 제어도 지원한다. 사용하지 않을 때는 도킹 스테이션에 대기하며, 이 상태에서는 카메라가 꺼지도록 설계됐다.
+사업장용 링 로버 캠, 4K 영상·높이 조절 카메라로 자율 순찰
+링 로버 캠은 상점과 사무실 등 사업장 내부를 순찰하도록 설계된 바퀴형 자율 보안로봇이다. 사용자는 모바일 앱에서 특정 공간이나 순찰 지점을 지정할 수 있다. 로봇은 목적지에 도착하면 360도 주변을 촬영해 현장 상황을 보여준다.
+영업 종료 이후나 개점 이전 등 원하는 시간에 맞춰 정기 순찰을 설정할 수도 있다. 연결된 링 보안기기에서 이상 신호가 발생하면 지정된 위치로 이동해 상황을 확인한다. 특히 높이를 조절할 수 있는 잠망경형 카메라를 탑재해 계산대나 진열대처럼 시야를 가리는 구조물 너머를 촬영할 수 있도록 했다. 장소별로 필요한 카메라 높이를 설정하고 저장하는 기능도 제공한다.
+로봇이 이동하거나 순찰하는 동안에는 최대 4K 해상도의 영상을 연속으로 스트리밍하고 녹화할 수 있다. 정해진 순찰 지점뿐 아니라 이동 경로에서 발생하는 상황도 확인할 수 있는 것이다. 이 밖에 사이렌과 경고등, 양방향 음성통화 기능을 탑재했다. 도킹 상태에서도 사람의 움직임을 감지하면 사용자에게 알림을 보내고 녹화를 시작할 수 있다.
+링은 로버 캠이 기존 아마존 가정용 로봇 '아스트로(Astro)' 사용자들의 이동형 보안 기능에 대한 의견을 바탕으로 개발됐다고 설명했다. 범용 가정용 로봇이 아니라 사업장 보안에 특화된 제품으로 설계했다는 것이다.
+아마존은 두 제품에 개인정보 보호와 영상 보안 기능을 적용했다고 밝혔다. 드론은 도킹 상태에서 카메라를 끄고, 로버는 절전 모드에서 카메라가 장착된 잠망경 구조를 내리면서 마이크를 비활성화한다.
+두 제품 모두 녹화 상태를 알리는 LED 표시등을 갖췄으며, 로버는 화면에서도 녹화 여부를 확인할 수 있다. 촬영 영상에는 링의 암호화 기술인 '스로 어웨이 더 키(Throw Away the Key, TAKE)'가 적용된다.
+다만 실내 공간을 자율적으로 이동하며 영상을 수집하는 기기인 만큼 실제 운영 과정에서는 촬영 범위와 영상 접근 권한, 직원과 방문객의 개인정보 보호 문제도 함께 고려해야 한다. 특히 사업장용 로버는 정해진 지점뿐 아니라 이동 중에도 영상을 녹화할 수 있어 기존 고정형 카메라와는 다른 개인정보 보호 및 운영 기준이 요구될 수 있다.
+링 로버 캠은 미국에서 2026년 12월 16일부터 배송을 시작할 예정이며, 가격은 999.99달러다. 링 드론 캠은 2027년 1월 27일 미국 고객 대상 배송을 시작할 계획이며, 가격은 249.99달러로 책정됐다.
+일부 기능을 이용하려면 호환되는 링 프로텍트(Ring Protect) 요금제가 필요하다. 또한 드론 캠은 발표 당시 미국 연방통신위원회(FCC)의 필수 승인을 받지 않은 상태로, 승인 전에는 판매하거나 임대할 수 없다.
+한편, 링 창업자이자 최고발명책임자인 제이미 시미노프(Jamie Siminoff)는 고객들이 고정형 카메라가 닿지 않는 장소를 확인할 수 있는 방법을 요구해 왔다며, 이번 제품은 단순히 카메라를 추가하는 대신 보안기기 자체를 새롭게 설계한 결과라고 설명했다.
+---
+[TITLE] 승조원 없는 함정, 미 해역으로…HD현대·안두릴, 무인수상함 진수
+[LINK] https://zdnet.co.kr/view/?no=20261115124842
+[PUBLISHED] 2026-11-15 12:48 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 산업
+[SCORE] 8
+[REASON] 자율 운항 및 임무 자동화가 결합된 중형 무인수상함 진수
+[FIELD] 신기술
+[BODY]
+HD현대가 미국 안두릴과 항해부터 무장 운영까지 자동화하는 무인수상함을 건조하고 미국 해역 시험 운항을 준비한다.
+HD현대는 지난 12일 울산 HD현대중공업에서 미국 방산 기업 안두릴과 공동 개발한 경하중량 600톤급 중형 무인수상함의 진수식을 열었다고 밝혔다. 양사가 지난해 11월 협약을 맺은 뒤 약 1년 만에 건조한 함정이다.
+이번 함정은 배 자체를 움직이고 관리하는 기술에 군사 임무를 수행하는 자율화 기술을 결합한 것이 특징이다. HD한국조선해양이 개발한 '브이에이원'이 함정의 무인 운용을 맡고, 안두릴의 '래티스'가 임무 자율화를 지원한다.
+브이에이원은 기관 운전과 이상 상황 대응, 함정 안전 관리, 항해 자동화를 하나로 묶은 시스템이다. 주요 기관을 자동으로 운전하고 이상 징후에 대응하는 기능에 안전 관련 위험을 탐지·회피하는 손상 자율화 기술을 더했다. 항해에는 아비커스의 자동화 솔루션을 적용했다.
+HD현대는 여기에 래티스를 연결해 항해와 기관 운전뿐 아니라 손상통제, 무장 운영까지 복합 임무를 자동화하도록 구성했다고 설명했다.
+향후 시험은 한국과 미국에서 순차적으로 진행한다. 우선 울산 앞바다에서 시운전과 마무리 작업을 거친 뒤 내년 초 미국 해역으로 옮겨 성능을 점검할 예정이다.
+양사는 승조원 없이 장기간 운용하는 능력을 바탕으로 정찰과 감시, 해양 정보 수집 등에 함정을 활용할 수 있을 것으로 기대하고 있다. HD현대는 동급 유인함정에 약 50명의 승조원이 필요하다는 점을 들어 무인화가 해군의 인력 운용 부담을 줄일 수 있다고 설명했다.
+건조 속도도 미국 시장 대응 전략의 하나로 제시했다. HD현대는 통상 수년이 걸리는 함정 건조를 협약 이후 약 1년 만에 마쳤다며, 미국의 무인함정 수요에 신속하게 대응할 역량을 보여줬다고 평가했다.
+관련기사
+- HD현대, 미국에 '스마트 조선소' 짓는다…2029년 가동 목표2026.10.23
+- 스스로 항해하고 고장 대응…HD현대, 美서 무인수상함 기술 시연2026.10.19
+- HD현대, 미국에 ‘K-조선소’ 노하우 전수2026.07.30
+- HD현대, 美 최대 EPC 키윗과 손잡고 현지 선박 건조 추진2026.07.19
+진수식에는 주원호 HD현대중공업 사장과 이상봉 전무, 맷 그림 안두릴 최고운영책임자, 셰인 애넛 해상 및 기동 체계 사업부문 수석부사장, 존 킴 안두릴 코리아 대표 등이 참석했다. 양사 임직원과 주한미군, 미 대사관 관계자 등 참석자는 약 70명이다.
+이번 진수에 앞서 양사는 지난 10월 미국 캘리포니아주 롱비치항 앞바다에서 무인수상함 자율운항 공동 시연회를 열었다. 정기선 HD현대 회장은 지난해 10월 APEC CEO 써밋 '퓨처테크포럼' 기조연설에서 안두릴과의 협력을 통한 인공지능(AI) 방산 기술 혁신을 미래 사업 방향으로 제시한 바 있다.
+---
+[TITLE] Project Zero, 취약점 신고 90일 후 상세 정보 공개하기로
+[LINK] https://news.hada.io/topic?id=37190&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-15 12:36 KST
+[SOURCE] GeekNews
+[TOPIC] 보안, 규제
+[SCORE] 8
+[REASON] 취약점 신고 후 무조건 공개 정책 도입으로 패치 기간 단축 압박
+[FIELD] 보안
+[BODY]
+GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
+발행 2026-11-15 · 작성 neo
+출처 https://news.hada.io/topic?id=37190
+- Google Project Zero가 공급사에 취약점을 신고한 날부터 정해진 기간이 지나면, 패치 여부와 관계없이 상세 정보를 공개하는 Full X 정책을 도입함. 기존에는 수정에 최대 90일을 주고, 패치가 나오면 사용자에게 배포할 시간을 최대 30일 더 줬음
+- 2026년 11월 13일부터 신고 후 90일, 2027년 2월 2일부터 60일, 2028년 1월 3일부터 30일 뒤 공개함. 각 취약점에는 신고 당시의 정책이 적용됨
+- LLM이 취약점 발견과 악용, 패치 역공학을 가속하면서 공개 지연의 보호 효과가 줄어듦. 공급사는 수정 속도뿐 아니라 패치 출시부터 사용자 설치까지의 패치 격차도 줄여야 함
+- 유예 기간과 변종 취약점 정책 등 대부분의 특수 규정을 없애 양측이 정책을 자동화할 수 있도록 함. 실제 악용 중인 취약점, 이미 공개된 취약점, 공급사의 공개 요청에는 별도 처리가 적용됨
+- 즉각적인 기한 단축이 미수정 취약점 노출과 수정 우선순위 왜곡을 초래할 수 있어 단계적 전환을 선택함. 수정 여부는 계속 추적하지만 공개 시점을 결정하는 기준으로 삼지 않음
+AI로 달라진 취약점 대응 시간
+- 2021년부터 적용한 90 + 30 정책은 공급사에 최대 90일의 수정 기간과 패치 배포를 위한 추가 30일의 대기 시간을 허용했음
+  - 빠른 수정을 유도하면서 사용자에게 패치를 전달할 시간을 주려는 목적이었으나, AI를 활용한 취약점 발견과 악용으로 기존 대응 일정은 더 이상 충분하지 않음
+- LLM은 공격자의 취약점 발견과 악용 속도를 높이고, 악의적 행위자를 포함한 여러 주체가 같은 버그를 발견할 위험도 키움
+  - 오늘 신고된 취약점이 사용자에게 주는 즉각적 위험은 지난해 신고된 취약점보다 훨씬 커졌으므로 더 빠른 수정이 필요함
+- 패치에서 취약점을 역공학하고 악용하는 시간도 줄어, 패치 공개부터 악용까지의 시간을 0으로 가정하는 것이 불완전하지만 합리적인 공격자 행동 모델이 됨
+  - 공격자가 패치에서 거의 즉시 버그 세부 정보를 파악할 수 있다면 배포 대기 기간은 더 이상 의미가 없으며, 정보가 여전히 비밀이라는 잘못된 안도감으로 사용자를 위험에 빠뜨릴 수 있음
+- 패치 격차(patch gap) 는 보안 수정이 출시된 시점부터 사용자가 관련 업데이트를 설치할 때까지의 시간임
+  - 공급사는 패치 배포 시간을 줄이거나 수정이 진행되는 동안 사용자를 보호하는 다른 전략으로 이 격차를 줄여야 함
+- Project Zero의 취약점 신고량도 늘어, 과거 연간 몇 건을 찾던 대상에서 이제 매주 여러 건을 발견함
+  - 수정 완료 여부나 유예 기간 적용 여부처럼 공급사와 협의해야 하는 절차는 빠르게 감당하기 어려워지고 있음
+Full X 정책과 전환 일정
+- 새 정책의 목표는 취약점 수정 가속, 패치 격차 축소, Project Zero와 공급사 양측의 정책 자동화임
+- Full X는 공급사에 신고한 뒤 X일이 지나면 취약점을 공개하는 방식임
+  - 발표 당일인 2026년 11월 13일부터 Full 90을 적용함
+  - 2027년 2월 2일부터 Full 60으로 전환함
+  - 2028년 1월 3일부터 Full 30으로 전환함
+- 유예 기간과 변종 취약점 정책을 포함한 대부분의 특수 규정을 제거하며, 명시적인 예외는 다음과 같음
+  - 실제 환경에서 악용 중인 취약점은 Google의 애플리케이션 보안 취약점 공개 정책에 따라 처리함
+  - 이미 공개된 취약점은 다른 주체가 세부 정보를 공개했다면 Project Zero의 재량으로 상세 정보를 공개할 수 있음
+  - 공급사의 요청이 있으면 해당 공급사에 신고한 취약점의 상세 정보를 공개함
+기한을 단계적으로 줄이는 이유
+- Project Zero가 취약점을 가장 많이 신고하는 공급사들의 의견을 수렴한 결과, 즉각적인 정책 변경은 사용자 피해를 낳을 수 있다는 우려가 공통적이었음
+  - 공급사가 대응 절차와 기술을 개선하는 도중 미수정 취약점이 공격자에게 공개될 수 있음
+  - 비공개 기간에 공격자가 취약점을 발견할 가능성이 높아져 공개 지연의 이점은 줄고 있지만, 단기적으로는 여전히 이점이 있다고 판단함
+- 지나치게 촉박한 공개 정책에는 우선순위 왜곡과 대응 포기의 위험도 있음
+  - 새 정책으로 신고된 취약점이 다른 취약점보다 덜 심각해도 먼저 수정하도록 유도할 수 있음
+  - 기한을 맞출 준비가 안 된 공급사가 기한 내 수정은 불가능하다고 받아들이고 시도조차 하지 않을 수 있음
+- 단계적 일정은 도전적이지만 현실적인 개선 속도를 유도하려는 선택임
+  - 공급사가 대응 절차와 인프라를 전반적으로 개선해 궁극적으로 모든 신고 취약점을 빠르게 수정할 수 있기를 기대함
+심각도와 버그 보고서 품질
+- Project Zero는 분석이 항상 완벽하지는 않지만, 추적기에 상당한 심각성과 입증된 보안 영향이 있는 취약점만 신고함
+- 심각도는 사용자에게 미치는 영향에는 관계가 있지만 공격자가 취약점을 발견할 가능성을 바꾸지는 않으므로, 특히 현재 환경에서는 공개 시점을 정하는 효과적인 기준이 아니라고 판단함
+- 공급사가 심각도에 따라 수정 우선순위를 정하는 것은 사용자에게 어느 위험까지 허용할지 결정하는 일임
+  - 악용할 수 없는 널 포인터 충돌이나 경미한 정보 유출처럼 낮은 심각도의 위험을 감수하는 것이 합리적인 경우도 많음
+  - 다만 그 결정이 공격자가 해당 취약점에 접근할 수 있다는 사실을 바꾸지는 않음
+- 새 정책은 고품질 버그 보고서를 전제로 함
+  - Project Zero는 재현 가능성, 가독성, 취약 코드에 대한 도달 가능성, 신고한 보안 영향에 높은 기준을 적용함
+  - 공급사가 품질이 낮은 보고서를 다르게 취급하는 것은 합리적임
+긴급 대응과 드문 정책 예외
+- 모든 공급사는 방어자가 버그를 먼저 발견한다는 보장이 없다는 점을 고려해, 심각한 취약점의 공개가 임박했을 때 어떻게 대응할지 준비해야 함
+- Project Zero는 Spectre와 Meltdown 등을 포함한 드문 상황에서 정책 예외를 허용해 왔으며, 앞으로도 그러한 예외를 허용할 예정임
+수정 여부 추적과 공개 결정의 분리
+- 정책상 수정 완료 여부를 판단하는 일은 늘 어려웠으며, 특히 사용자에게 직접 배포되지 않고 공개되지도 않은 코드에서는 판단 기준이 명확하지 않았음
+  - 버그 보고서 하나의 수정 여부에 합의하기 위해 공급사와 여러 차례 연락하는 일도 드물지 않음
+  - 코드 경로를 일시적으로 비활성화하는 등 패치 이외의 대응 전략을 시도하는 공급사가 늘면서 판단은 더 복잡해질 것으로 예상함
+- 수정 여부 추적과 미수정 상태 전달은 계속하지만, 이를 공개 정책의 결정 기준으로 삼지는 않음
+  - 공급사에 영향을 주는 수정 완료 여부의 이분법적 판단 없이, 사용자가 어떻게 보호받고 있는지 기술적 세부 정보를 공유할 수 있게 됨
+---
+[TITLE] C++26, 표준화 사상 첫 부결…연내 확정 불투명
+[LINK] https://zdnet.co.kr/view/?no=20261115104827
+[PUBLISHED] 2026-11-15 12:31 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] C++ 차기 표준 승인 부결로 언어 신기능 적용 지연
+[FIELD] 신기술
+[BODY]
+C++ 프로그래밍 언어의 차기 표준인 'C++26'이 국제표준화기구(ISO) 승인 단계에서 사상 처음으로 부결됐다.
+프로그램 실행 중 오류를 감지하는 '계약(Contracts)' 기능을 둘러싸고 언어 창시자와 표준화위원회 의견이 충돌하면서다. 이번 부결로 연내 표준 확정이 불투명해졌으며, 정적 리플렉션 등 다른 신기능 도입도 지연될 가능성이 커졌다.
+15일 더레지스터 등 외신에 따르면 C++26 국제표준초안(DIS)은 지난 10월 ISO 회원국 표준기구 투표에서 찬성 13표, 반대 9표, 기권 12표를 기록하며 승인 요건을 충족하지 못했다.
+DIS는 각국 표준기구가 표준의 기술적 내용을 공식 승인하는 절차로, 최종 확정 직전 단계에 해당한다. C++ 표준화위원회(WG21) 소속 안드레아스 페르티히 위원은 C++ 표준안이 이 단계에서 부결된 것은 처음이라고 밝혔다.
+이번 부결은 계약 기능에 대한 이견으로 발생했다. 계약은 개발자가 함수 실행 전후에 충족해야 할 조건을 코드에 명시하고 프로그램 실행 중 이를 검사하도록 지원하는 기능이다. 잘못된 입력값이나 예상과 다른 실행 결과를 감지해 오류와 보안 취약점으로 이어질 수 있는 문제를 줄이는 것이 목적이다.
+이 기능은 C++20에 포함될 예정이었으나 설계 문제로 제외됐다. 이후 수년간 보완 작업을 거쳐 C++26 표준안에 다시 포함됐다. 지난 3월 WG21 전체회의에서도 계약 기능이 포함된 표준안이 찬성 114표, 반대 12표, 기권 3표로 통과됐다.
+하지만 C++ 창시자인 비야네 스트롭스트룹 콜롬비아대학 교수는 설계가 지나치게 복잡하고 충분히 검증되지 않았다며 반대했다.
+그는 지난 8월 공동 작성한 기술 문서에서 현재 계약 기능 제안(P2900)이 C++의 복잡성과 코드 규모를 늘리고 언어의 본질을 바꿀 수 있다고 비판했다. 계약 기능 자체보다는 현행 설계에 문제가 있으며 더 단순한 형태로 구현해야 한다는 주장이다.
+도입 찬성 측은 수년간 논의하고 여러 차례 표결을 거친 기능을 최종 승인 단계에서 뒤집는 것이 표준화 절차 신뢰를 훼손한다고 반발했다.
+허브 서터 전 WG21 의장도 지난달 31일 발표한 기술 문서에서 이번 부결의 핵심 배경으로 언어 창시자와 위원회 다수의 의견 충돌을 지목했다. 위원회가 계약 기능 도입에 폭넓게 합의했지만 스트롭스트룹이 설계상 결함을 이유로 반대했고, 일부 국가 표준기구도 이에 동조했다는 분석이다.
+WG21은 오는 16일부터 21일까지 브라질 부지우스에서 회의를 열고 대응 방안을 논의할 예정이다. 계약 기능을 표준안에서 제외하거나 별도 기술명세서로 분리하는 방안, 현행 설계를 일부 수정해 재투표하는 방안 등이 거론된다.
+어떤 방안을 선택하더라도 추가적인 합의와 승인 절차가 필요해 표준화 일정이 지연될 가능성이 있다. 표준 확정이 내년으로 넘어갈 경우 현재 통용되는 C++26 대신 'C++27'이라는 명칭이 사용될 수도 있다.
+관련기사
+- 2857억 차세대 지방행정, AI 코딩 공식 도입…공공SW 개발체계 전환 주목2026.11.13
+- [AI는 지금] 메타, AI 코딩 스타트업 품었다…'에이전트 군단' 확보2026.11.05
+- MS, 러스트 '티어1' 언어로 격상..."C++·타입스크립트와 동급"2026.09.13
+- MS, AI로 한 달 100만 줄 코드 전환…개발자 "비현실적 발상" 비판2026.01.01
+안드레아스 페르티히 위원은 블로그에서 "모든 ISO 표준은 타협의 결과물이며 누구나 이길 때도 질 때도 있다"며 "이번에는 진 쪽이 패배를 받아들이지 않았다"고 지적했다.
+이어 "앞으로 어떻게 나아갈지를 결정하는 핵심 질문은 위원회가 신뢰를 다시 구축할 수 있느냐"라고 밝혔다.
 ---
 [TITLE] Runway's open-source Praxis-1 turns video AI into a robot controller
 [TITLE_KO] 런웨이의 오픈소스 프락시스-1, 비디오 AI를 로봇 제어기로 전환
@@ -240,24 +363,6 @@ Lovable의 개발 편의성과 보안 책임
   - 중요한 변경 후에는 검토를 반복해야 함
   - 내부에 필요한 전문성이 없다면 자격을 갖춘 외부 지원을 받아야 함
 ---
-[TITLE] Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection
-[TITLE_KO] 공격자들, 서버 수준 명령 삽입 가능한 UnrealIRCd 취약점 악용
-[LINK] https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html
-[PUBLISHED] 2026-11-14 21:38 KST
-[SOURCE] The Hacker News
-[TOPIC] 개발, 보안
-[SCORE] 7
-[REASON] 오픈소스 IRC 서버 결함의 실제 공격 악용으로 긴급 패치 필요
-[FIELD] 보안
-[BODY]
-The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a high-severity security flaw impacting UnrealIRCd, an open-source Internet Relay Chat (IRC) server, to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation.
-The vulnerability, tracked as CVE-2026-114713 (CVSS score: 8.6), is a case of improper neutralization of delimiters that could be used to execute arbitrary commands with server/IRCOp privileges.
-"The labeled-response module in UnrealIRCd 6.0.0 before 6.2.7.1 does not escape the IRCv3 'label' message tag when echoing it into replies, which allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority," reads the description of the flaw in the NIST National Vulnerability Database (NVD).
-The addition comes nearly a week after UnrealIRCd's project leader, developer, and maintainer, Bram Matthys (aka Syzop), released UnrealIRCd 6.2.7.1 to address multiple security vulnerabilities identified with the help of artificial intelligence, including CVE-2026-114713.
-"We are seeing bad guys exploiting this issue on the internet right now," Matthys said. "Hopefully everyone has hot-patched or updated their server, or at the very least has the spamfilter workaround deployed. If not, do so ASAP!"
-Exploitation attempts are said to have commenced a day after the release of the hotfix on November 7, 2026. That said, the exact details of the malicious activity and its end goals are presently unknown. The maintainer described the vulnerability as the "most critical issue" found in UnrealIRCd over the past 15 years.
-Federal Civilian Executive Branch (FCEB) agencies have time until November 16, 2026, to apply the fixes under Binding Operational Directive (BOD) 26-04: Prioritizing Security Updates Based on Risk.
----
 [TITLE] 아마존, 전 세계 상품 정보 통합 추진…AI 쇼핑 주도권 지킨다
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217412
 [PUBLISHED] 2026-11-14 19:19 KST
@@ -279,120 +384,94 @@ Federal Civilian Executive Branch (FCEB) agencies have time until November 16, 2
 내부 문서에는 내년 10월1일 출시를 목표로 제시했지만, 실행 여부와 일정은 확정되지 않았다. 아마존은 오래된 검토 문서로 현재 계획과 다를 수 있다고 밝혔다.
 임대준 기자 ydj@aitimes.com
 ---
-[TITLE] 테슬라, '사이버캡' 사전 주문 시작…월 40만원 안 내면 운행 불가
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217417
-[PUBLISHED] 2026-11-15 12:40 KST
-[SOURCE] AI타임스
-[TOPIC] 신기술
+[TITLE] 구글 딥마인드, AI 강수 탐지 정확도 30% 이상 향상…전 세계 기상·위성 데이터셋 전면 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42738
+[PUBLISHED] 2026-11-15 16:41 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발
 [SCORE] 6
-[REASON] 자율주행 차량의 첫 개인 대상 사전 주문 개시
-[FIELD] 신기술
+[REASON] 정밀 강수 탐지 모델 및 위성 데이터셋 공개
+[FIELD] AI 모델
 [BODY]
-테슬라가 일부 고객을 대상으로 완전 자율주행차 '사이버캡(Cybercab)'의 개인 구매를 위한 사전 주문을 시작했다. 차량 가격은 약 4000만원이지만, 운행하려면 매달 40만원의 구독료를 내야 하고 이용 지역과 상업적 운행도 제한된다.
-테슬라는 13일(현지시간) X를 통해 일부 고객에게 개인용 사이버캡 사전 주문 기회를 제공한다고 발표했다. 이는 로보택시 전용으로 개발한 자율주행차를 일반 고객에게 직접 판매하려는 첫 단계다.
-공개된 주문 페이지에는 차량 가격 2만9990달러와 월 299달러의 '오토노미 구독(Autonomy Subscription)'이 명시됐다. 첫 달 구독료는 무료이며, 주문 시 환불되지 않는 계약금 1000달러를 내야 한다. 차량 인도는 오는 12월로 예정돼 있지만, 일정이 변경될 가능성도 있다.
-사이버캡은 운전대와 페달이 없는 2인승 자율주행차다. 일반 테슬라 차량은 완전자율주행(FSD) 구독을 해지해도 직접 운전할 수 있지만, 사이버캡은 자율주행 구독을 유지하지 않으면 정상적으로 운행할 수 없다.
-테슬라가 공개한 구독 약관에 따르면 월 299달러에는 자율주행 기능과 차량 통신, 원격 지원, 긴급출동 및 일부 정비 서비스가 포함된다. 보험과 충전 비용 등은 차주가 별도로 부담해야 한다. 테슬라는 한 달 전 통지로 구독료를 변경할 수 있으며, 약관 위반이나 요금 미납 등을 이유로 서비스를 중단할 수도 있다.
-Select customers are now being invited to purchase Cybercab for personal use pic.twitter.com/LDIkKuseAZ
-— Robotaxi (@robotaxi) November 13, 2026
-월 구독료를 둘러싼 논란도 제기됐다. 일론 머스크 CEO도 월 299달러의 구독료가 지나치게 비싸다고 인정했다. 그는 다른 테슬라 차량의 자율주행(FSD)과 통신 서비스 이용료가 월 115달러 수준이라며, 사이버캡 구독료도 이 정도로 낮춰야 한다고 밝혔다. 구체적인 가격 인하 일정은 공개하지 않았다.
-운행 지역에도 제한이 있다. 아쇼크 엘루스와미 테슬라 AI 책임자는 사이버캡이 기존 로보택시 서비스와 동일한 지역에서 운전자 개입 없이 작동할 것이라고 설명했다. 초기 구매자는 텍사스주 일부 도시에서 차량을 인도받아야 하며, 실제 운행은 테슬라가 허용한 구역으로 제한된다.
-구독 약관에 따르면 구매자가 차량을 소유하더라도 원하는 지역에서 자유롭게 이용할 수 있는 것은 아니다.
-차량을 로보택시로 운영해 수익을 얻는 것도 현재는 불가능하다. 개인용 사이버캡을 로보택시 네트워크에 등록하거나 유상 운송, 배달, 렌터카 등 상업적 용도로 사용하는 것을 금지했다. 회사가 별도로 허가하면 가능하지만, 구체적인 허용 일정은 정해지지 않았다.
-규제 문제도 남아 있다. 미국 도로교통안전국(NHTSA)은 운전대와 페달, 사이드미러가 없는 사이버캡이 연방 자동차 안전기준을 충족하는지, 테슬라의 자체 인증이 적절한지 조사하고 있다.
-더 버지는 테슬라가 지난 10월 NHTSA에 차량의 안전기준 적합성에 관한 설명을 제출하면서 해당 자료를 비공개로 처리해 달라고 요청했다고 전했다. 규제 당국의 판단이 나오지 않은 상태에서 테슬라가 환불 불가 계약금을 받고 있다는 점도 지적했다.
-머스크는 규제 승인을 받는 대로 사이버캡 판매와 운행 지역을 미국 전역으로 확대하겠다고 밝혔다. 그러나 실제 개인 차량 인도가 예정대로 시작될지, 운행 지역 제한이 언제 해제될지는 아직 불확실하다.
-박찬 기자 cpark@aitimes.com
+위성영상 통합한 ‘새트위브’와 AI 강수 데이터 ‘파르디그’ 공개…홍수·가뭄·산불·재생에너지 예측 연구 지원
+구글 딥마인드(Google DeepMind)가 인공지능(AI)을 활용해 전 세계 강수량을 정밀하게 분석하는 기술과 지구 관측 위성영상을 통합한 데이터셋을 공개했다. 기존 글로벌 강수 관측자료보다 약한 비와 보통 강수의 탐지 성능을 30% 이상 높였으며, 이를 연구자와 개발자가 활용할 수 있도록 개방해 AI 기반 기상·기후 예측 기술의 확산에 나섰다.
+구글 딥마인드는 지난 13일(현지시간) AI 기반 글로벌 강수 데이터셋 ‘파르디그(PARDIG-다운)’와 정지궤도 위성영상 통합 데이터셋 ‘새트위브(SatWeave-다운)’를 공개한다고 발표했다. 두 데이터셋은 구글이 앞서 공개한 차세대 AI 기상예측 모델 ‘웨더넥스트 3(WeatherNext 3-보기)’의 성능 향상에 활용된 핵심 데이터 기반이다.
+새트위브는 지구 전역의 구름과 폭풍 발달 상황을 위성영상으로 제공하고, 파르디그는 AI를 통해 강수 분포를 추정해 기상예측 모델 학습에 활용됐다. 구글은 두 데이터셋의 과거 관측자료와 최신 데이터 공급 체계를 함께 개방해 기상예측뿐 아니라 수문학, 기후변화, 자연재해 분석 등 다양한 분야의 연구개발을 지원할 계획이다.
+AI로 전 세계 강수 분포 복원, 15분 간격·약 10㎞ 해상도 제공
+파르디그는 ‘강수 AI 재분석: 고밀도 추론 GPM(Precipitation AI Reanalysis: Densely Inferred GPM)’의 약자로, 위성 관측자료와 대기 정보를 활용해 전 세계 강수 분포를 추정하는 AI 기반 데이터셋이다. 관련 연구는 지난 10일(현지시간) 'PARDIG: 위성 관측 자료가 부족한 상황에서 얻은 전 세계 강수량 추정치(PARDIG: Global Precipitation Estimates Learned from Sparse Satellite Observations-다운)'란 제목으로 발표됐다.
+기존 강수 관측은 지상 기상레이더와 강우계에 크게 의존해 왔다. 그러나 관측 장비가 충분하지 않은 지역에서는 강수량을 정밀하게 파악하기 어렵고, 국가별 관측망의 밀도 차이로 인해 전 세계적으로 일관된 자료를 확보하는 데 한계가 있었다.
+구글은 이러한 문제를 해결하기 위해 미국 항공우주국(NASA)의 전 지구 강수 관측 임무(GPM) 핵심 위성에서 수집한 우주 기반 레이더 관측자료를 AI에 학습시켰다. 여기에 새트위브의 위성영상과 유럽중기예보센터(ECMWF)의 대기장 자료를 입력해 관측이 드문 지역까지 강수 분포를 추정하도록 했다.
+파르디그는 약 10㎞ 공간 해상도로 전 세계 강수 분포를 표현하며, 15분 간격의 강수 데이터를 제공한다. 최신 자료는 평균 약 5시간의 지연을 거쳐 갱신된다. 이는 AI가 위성 관측과 대기 정보를 결합해 지상 관측망이 부족한 지역의 강수 분포까지 추정하도록 설계됐다는 점에서 의미가 있다.
+NASA 강수 자료보다 탐지 성능 30% 이상 향상, 극한 강수 분석에도 강점
+구글 딥마인드는 파르디그의 성능을 검증하기 위해 미국과 유럽, 일본의 광역 기상레이더 관측망 3곳과 전 세계 3만6000여 개 기상관측소의 자료를 활용했다. 검증 결과 파르디그는 분석 대상의 모든 강수 강도 구간에서 주요 글로벌 강수 추정 데이터셋보다 높은 성능을 기록했다.
+특히 NASA의 ‘아이머지 파이널(IMERG-Final)’과 비교했을 때 약한 비와 보통 강수에 대한 시간별 탐지 성능이 30% 이상 향상됐다. 이 수치는 전체 강수량 예측 오차가 30% 감소했다는 의미가 아니라, 시간별 강수 탐지 성능을 나타내는 지표에서 확인된 개선 결과다.
+연구팀은 강한 비와 극한 강수 현상을 포착하는 데도 파르디그가 높은 성능을 보였다고 설명했다. 극한 강수는 짧은 시간에 급격하게 발달할 수 있어 기존 글로벌 관측자료에서 정확하게 탐지하기 어려운 현상 중 하나다.
+구글은 2025년 7월 미국 텍사스 힐컨트리 지역에서 발생한 돌발홍수 당시의 강수 분포를 사례로 제시했다. 미국 해양대기청(NOAA)의 지상 레이더 자료와 파르디그, NASA의 아이머지 자료를 비교해 집중호우의 공간적 분포를 분석했다.
+정지궤도 위성영상 통합, 지구 전체를 1시간 간격으로 관측
+함께 공개된 새트위브는 서로 다른 정지궤도 기상위성에서 수집한 영상을 하나의 글로벌 관측자료로 통합하는 데이터셋이다.
+지구를 관측하는 정지궤도 위성들은 담당 지역과 센서 특성, 지도 투영 방식, 영상 파일 형식, 촬영 주기가 서로 다르다. 이 때문에 각 위성의 자료를 하나의 일관된 지구 관측영상으로 결합하는 과정에는 상당한 기술적 어려움이 따른다.
+기존 글로벌 위성영상 합성자료는 이러한 차이로 인해 일부 관측 채널만 제공하거나 수 시간 간격으로 갱신되는 경우가 많았다. 새트위브는 미국의 고스(GOES), 유럽의 메테오샛(Meteosat), 일본의 히마와리(Himawari) 등 주요 정지궤도 기상위성의 관측자료를 통합한다.
+이를 통해 가시광선과 수증기, 적외선 등 17개 관측 채널을 포함하는 글로벌 위성영상 데이터를 구성한다. 특히 자료를 1시간 간격으로 갱신해 구름의 이동과 폭풍의 발달 등 빠르게 변화하는 기상 현상을 지속적으로 관찰할 수 있도록 했다.
+구글에 따르면 새트위브는 웨더넥스트 3가 새로운 글로벌 예측을 매시간 생성할 수 있도록 지원한다. 이는 6시간 간격으로 갱신되는 분석자료를 초기 입력으로 사용하는 기상예측 방식과 차별화되는 부분이다. 구글은 10년 이상 축적된 새트위브의 과거 자료와 최신 데이터 공급 체계도 함께 공개(보기)했다.
+1999~2026년 강수 데이터 개방, 홍수·가뭄·산불 연구로 확장
+이번 발표에서 주목할 부분은 구글이 AI 기상예측 모델 자체를 넘어 모델 개발에 활용된 기반 데이터를 외부에 공개했다는 점이다. 파르디그는 1999년부터 2026년까지의 과거 강수 자료를 제공한다. 새트위브 역시 10년 이상의 위성영상 기록을 포함한다.
+두 데이터셋의 과거 자료와 최신 데이터는 구글 클라우드 스토리지(Google Cloud Storage)를 통해 이용할 수 있으며, 파르디그의 과거 자료 목록은 구글 어스 엔진(Google Earth Engine-보기)에서도 제공된다. 연구자들은 이를 활용해 자체 기상예측 모델을 개발하거나 기존 예측 시스템의 성능을 검증할 수 있다.
+구글은 특히 지상 기상레이더가 충분하지 않은 지역에서 강수 분석 기술의 활용 가능성이 클 것으로 기대하고 있다. 강수 관측자료는 홍수와 산사태, 가뭄 분석뿐 아니라 농업용수 관리와 수자원 계획에도 중요한 입력정보다.
+AI 기상예측 경쟁, 모델 성능 넘어 관측 데이터 개방으로 확대
+이번 발표는 AI 기반 기상예측 기술의 경쟁이 예측 모델의 성능뿐 아니라 관측자료의 품질과 접근성으로 확대되고 있음을 보여준다.
+AI 기상예측 모델은 학습에 사용되는 데이터의 범위와 정확도, 최신성에 따라 성능이 달라질 수 있다. 특히 전 세계의 구름과 강수 변화를 빠르게 파악하려면 위성 관측자료를 일관된 형태로 통합하고, 관측이 부족한 지역의 정보를 보완하는 기술이 중요하다.
+구글은 새트위브를 통해 글로벌 위성영상의 시간적 연속성을 높이고, 파르디그를 통해 강수 관측자료의 공간적 공백을 줄이는 접근 방식을 제시했다. 두 데이터셋은 웨더넥스트 3의 기상예측 성능을 뒷받침하는 동시에 다른 연구기관과 개발자가 자체 모델을 구축하는 데 활용할 수 있는 기반 자료라는 점에서 의미가 있다.
+특히 기상 관측망이 충분하지 않은 지역에서도 AI 기반 강수 분석을 수행할 수 있는 환경이 확대된다면, 지역 간 기상정보 격차를 줄이는 데 기여할 가능성이 있다.
+구글 딥마인드는 이번 데이터셋 공개를 통해 연구자들이 기상과 수문, 기후 분야의 새로운 응용 기술을 개발하고, 지구 관측정보를 실제 사회·산업 문제 해결에 연결할 수 있기를 기대한다고 밝혔다.
+한편, 이번 연구개발은 구글 딥마인드와 구글 리서치(Google Research)가 주도하고 구글 클라우드(Google Cloud), 구글 지오(Google Geo)가 협력해 수행했다.
 ---
-[TITLE] PyPI, 보안 신호를 더 명확히 보여주는 개편된 프로젝트 페이지 공개
-[LINK] https://news.hada.io/topic?id=37178&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[PUBLISHED] 2026-11-15 07:36 KST
-[SOURCE] GeekNews
-[TOPIC] 보안
-[SCORE] 6
-[REASON] 오픈소스 패키지 공급망 검증을 위한 암호 증명 추가
+[TITLE] Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU
+[TITLE_KO] 메이퇀, 엔비디아 GPU 없이 학습한 1.6조 매개변수 에이전트 모델 공개
+[LINK] https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/
+[PUBLISHED] 2026-11-15 19:06 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 모델, 신기술
+[SCORE] 8
+[REASON] 중국 하드웨어 기반 대형 에이전트 모델 가중치 공개
+[FIELD] AI 모델
+---
+[TITLE] Stolen Fireworks AI Key Led to Cursor Data Breach and Trojanized Claude Code Extension
+[TITLE_KO] 탈취된 파이어웍스 AI 키가 커서 침해 및 트로이목마화된 클로드 코드 확장 프로그램으로 이어져
+[LINK] https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html
+[PUBLISHED] 2026-11-15 17:22 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] 탈취 키를 통한 서드파티 에이전트 도구 공급망 침해 경로 규명
 [FIELD] 보안
-[BODY]
-GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
-발행 2026-11-15 · 작성 neo
-출처 https://news.hada.io/topic?id=37178
-- PyPI 프로젝트 페이지에 보안 탭이 추가됨. 파일별 디지털 증명으로 어떤 워크플로가 파일을 게시했는지, 빌드 증명이 있다면 어느 소스 커밋에서 빌드됐는지 확인할 수 있음
-- 출처 상태는 릴리스 파일의 증명 보유 여부로 계산함. 증명이 없다는 사실만으로 악성 파일인 것은 아니며, 파일의 출처를 암호학적으로 검증할 수 없다는 뜻임
-- 일부 파일에만 증명이 있거나, 같은 릴리스의 파일이 서로 다른 저장소나 빌드 시스템에서 만들어지면 경고를 표시함. 이전 릴리스와 비교해 저장소나 워크플로가 바뀌거나 증명이 사라진 경우도 알림
-- 프로젝트 상세 페이지는 출처 경고를 상단에 표시하고, 메타데이터를 검증 여부 대신 유용성에 따라 정렬함
-- 릴리스 파일 탭에 검색과 필터링, 파일별 출처 상태가 추가됨. 릴리스 이력 탭에서도 파일 수, 출처 상태, 릴리스 상태를 확인할 수 있음
-개편 목적과 보안 신호
-새 보안 탭과 출처 상태
-- 보안 탭은 릴리스의 출처 상태와 파일별 증명을 모아 릴리스 파일이 어디에서 왔는지 확인하는 전용 공간임
-- 각 릴리스의 출처 상태는 파일마다 증명이 있는지 확인해 계산하며, 일반적으로 다음 두 상태 중 하나임
-  - Full Provenance: 릴리스 파일 100%에 지원되는 증명 유형 중 하나 이상이 있음
-  - No Provenance: 릴리스의 어떤 파일에도 증명이 없음
-- 지원하는 증명 유형은 두 가지임
-- 증명 메타데이터는 UI에서 직접 확인할 수 있으며, 투명성 로그 링크에서 추가 정보를 볼 수 있음
-- No Provenance는 악성 판정이 아님. 오래된 릴리스나 Trusted Publishing을 아직 설정하지 않은 프로젝트에서 흔하며, 파일 출처를 암호학적으로 검증할 수 없다는 뜻임
-출처 경고의 유형과 확인 방법
-- 출처 경고는 계정이나 게시 워크플로 탈취 등으로 파일이 프로젝트 유지관리자에게서 오지 않았을 가능성을 파악하도록 도움
-  - 출처 메타데이터가 비정상적이거나 프로젝트 이력과 충돌하면 눈에 띄는 경고를 표시함
-  - 정상적인 이유가 있는 경고도 많지만, 각각 설치 전에 확인할 필요가 있음
-- Incomplete Provenance는 일부 파일에만 증명이 있는 상태임
-  - 예를 들어 wheel은 Trusted Publishing으로 게시했지만 소스 tarball은 API 토큰으로 업로드한 경우임
-  - 설치 전에 릴리스 노트에서 빌드 문제를 확인하거나 프로젝트 이슈 트래커에 문의해야 함
-- Inconsistent Provenance는 같은 릴리스의 파일들이 서로 다른 빌드 시스템이나 소스 저장소에서 왔다는 뜻임
-  - 증명 메타데이터를 확인해 모든 파일이 유지관리자가 통제하는 출처에서 왔는지 점검해야 함
-- Change of Provenance는 이전 릴리스와 다른 저장소나 워크플로에서 파일이 생성됐다는 뜻임
-  - 조직 이름 변경이나 저장소 이전처럼 정상적인 경우가 많지만, 파이프라인 침해나 계정 탈취의 신호일 수도 있음
-  - 릴리스 노트나 공식 채널에서 예정된 인프라 이전인지 확인해야 함
-- Loss of Provenance는 이전에 증명을 포함해 게시하던 프로젝트가 증명 없이 파일을 업로드하기 시작했다는 뜻임
-  - API 토큰으로 되돌아갔거나 증명을 생성하지 않도록 설정을 바꾸는 등 의도적인 게시 절차 변경인지 확인해야 함
-  - 예상하지 못한 변경이라면 검증될 때까지 해당 릴리스를 의심해야 함
-- 출처와 증명, 경고에 대한 추가 안내는 사용자 문서에서 확인할 수 있음
-프로젝트 상세 페이지와 메타데이터
-- 출처 경고는 페이지 상단에 철회된 릴리스, 보관 처리된 프로젝트, 사전 릴리스 상태 배너와 함께 표시됨
-  - 프로젝트나 릴리스가 격리된 상태라면 격리 배너만 표시하며, 다른 모든 경고와 배너보다 우선함
-- 릴리스가 Full Provenance 상태이거나 출처 경고가 있으면 사이드바에 출처 상태를 표시하고 보안 탭으로 연결함
-- 메타데이터는 기존의 검증 여부별 그룹화와 정렬 대신 유용성에 따라 정렬함
-  - 각 항목에는 “PyPI data” 또는 “Data verified by PyPI” 라벨을 붙임
-릴리스 파일과 릴리스 이력
-- 개편된 릴리스 파일 탭은 긴 파일 목록을 검색하고 필터링할 수 있음
-  - 표에서 파일별 출처 상태를 확인할 수 있음
-  - 늦게 업로드된 파일은 주황색 경고 아이콘으로 표시함
-- 지연 업로드 경고는 최초 릴리스 시각으로부터 14일이 지난 뒤 업로드된 파일이 하나 이상 있을 때 나타남
-- 릴리스 이력 탭은 릴리스별 파일 수와 출처 상태를 보여줌
-  - 격리, 철회, 보관 처리, 사전 릴리스 여부도 함께 확인할 수 있음
-보안 안내 문서와 향후 활용
-- PyPI 사용자 문서도 확장됐으며, 패키지 보안 가이드에서 다음 항목을 안내함
-- 새 보안 탭은 향후 추가될 증명 유형과 보안 공지를 위한 전용 공간으로 활용할 수 있음
-- 더 넓은 오픈소스 생태계에서도 활용할 수 있도록 이번 프로젝트의 디자인 패턴과 경고를 정리한 사례 연구를 OpenSSF Attestations Style Guide에 공개함
 ---
-[TITLE] AT&T uses agentic AI to reinvent business processes from the ground up
-[TITLE_KO] AT&T, 자율 AI 에이전트로 비즈니스 프로세스 전면 재설계
-[LINK] https://siliconangle.com/2026/11/14/att-uses-agentic-ai-to-reinvent-business-processes-from-the-ground-up/
-[PUBLISHED] 2026-11-15 04:37 KST
-[SOURCE] SiliconANGLE
-[TOPIC] 에이전트
-[SCORE] 6
-[REASON] 수백 개 자율 에이전트 워크플로 실제 업무 배포
-[FIELD] AI 에이전트
-[BODY]
-AT&T uses agentic AI to reinvent business processes from the ground up
-AT&T Corp. is moving beyond using artificial intelligence to improve employee productivity, increasingly applying autonomous agents to redesign how its business operates. Nearly 500 agentic workflows are already in production, and the telecom giant plans to triple that number next year.
-AT&T now processes about 45 billion AI tokens daily across the company, according to Luke Corbin (pictured, below), assistant vice president of digital transformation and AI at AT&T Business. Its agentic AI platform handles more than 1 million transactions monthly. Many of those workflows now operate autonomously, handling tasks ranging from customer provisioning to sales prospecting.
-Speaking at an Amazon Web Services Inc. event in Boston earlier this month, Corbin said the company’s approach emphasizes rethinking entire processes rather than simply automating individual tasks. AT&T has moved quickly from experimenting with generative AI to systematically identifying business processes that can be redesigned around agentic capabilities.
-At the heart of the transformation is Business Agent Foundry, a group established in early 2025 to work with individual business units. Rather than soliciting isolated automation ideas from employees, the foundry maps business processes using industry frameworks and identifies opportunities to eliminate unnecessary steps, organizational handoffs and legacy application dependencies, Corbin said.
-One early initiative involved automating interactions with AT&T’s mainframe computers. Changes to customer fiber installation orders previously required employees to retrieve tickets from queues, manually update records and return them to the workflow.
-Agentic automation eliminated portions of that manual process, reducing delays and accelerating service delivery.
-“It was kind of cool having some of the most advanced technology talking to some of the oldest that we have,” Corbin said.
-In another example, AT&T halved the time required to provision dedicated internet connections in buildings where fiber infrastructure was already installed.
-A different approach
-AT&T’s architecture breaks from conventional approaches that build large numbers of independent, specialized agents. Instead, the company maintains a relatively small set of agents that execute business workflows using centrally managed business logic.
-“We store the business logic in context or in memory,” Corbin said.
-Retrieval agents identify applicable knowledge, while planning agents determine the actions, tools and data needed to complete a task.
-Governance is central to the process. Individual employees can independently create personal productivity agents, but workflows affecting customers must pass through the foundry and undergo security, privacy and compliance reviews.
-“We’ve democratized agents to the point where people can use them for personal productivity, but not to where you would drive business workflows that could touch your customers or materially have an impact on your business,” Corbin said.
-Every production workflow initially includes human oversight. Only after accuracy reaches the mid- to high 90% range within a permissible risk profile can agents operate autonomously. Continuous monitoring evaluates performance and detects drift.
-Success metrics include labor savings, revenue generation, operating costs and customer satisfaction. Corbin said production AI investments are achieving fivefold returns within a year.
-A 151-year-old company that has been using computers since they were invented “is built on a lot of legacy processes and applications,” Corbin said. “The cost of maintaining those applications, training employees to use them and ongoing maintenance is very high. When you can offset some of that with simpler generative workflows, you’ve got a business case that’s built for itself.”
-Sales prospecting is one beneficiary.
+[TITLE] "사람의 움직임, 휴머노이드 로봇에 이식한다"…엔비디아, 피지컬 AI 동작 변환 기술 오픈소스 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42732
+[PUBLISHED] 2026-11-14 19:16 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 신기술, 규제
+[SCORE] 7
+[REASON] 인간 움직임을 휴머노이드 관절 제어로 변환하는 오픈소스 공개
+[FIELD] 신기술
+---
+[TITLE] Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection
+[TITLE_KO] 공격자들, 서버 수준 명령 삽입 가능한 UnrealIRCd 취약점 악용
+[LINK] https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html
+[PUBLISHED] 2026-11-14 21:38 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 오픈소스 IRC 서버 결함의 실제 공격 악용으로 긴급 패치 필요
+[FIELD] 보안
+---
+[TITLE] 북한 해킹조직, 정부·금융 서버 겨냥…국내 30곳 표적 명단 확인
+[LINK] https://zdnet.co.kr/view/?no=20261115140951
+[PUBLISHED] 2026-11-15 15:12 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 모델, 보안
+[SCORE] 7
+[REASON] PHP2쉘 제로데이를 통한 국내외 공공 금융 표적 공격 정황
+[FIELD] 보안
 ---
 [TITLE] “北 라자루스, PHP 취약점 악용해 韓 서버 30곳 공격 정황”
 [LINK] https://www.etnews.com/20261115000093
@@ -402,6 +481,42 @@ Sales prospecting is one beneficiary.
 [SCORE] 7
 [REASON] 국내 주요 서버를 노린 PHP 취약점 공격 확산
 [FIELD] 보안
+---
+[TITLE] 테슬라, '사이버캡' 사전 주문 시작…월 40만원 안 내면 운행 불가
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217417
+[PUBLISHED] 2026-11-15 12:40 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 자율주행 차량의 첫 개인 대상 사전 주문 개시
+[FIELD] 신기술
+---
+[TITLE] PyPI, 보안 신호를 더 명확히 보여주는 개편된 프로젝트 페이지 공개
+[LINK] https://news.hada.io/topic?id=37178&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-15 07:36 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 오픈소스 패키지 공급망 검증을 위한 암호 증명 추가
+[FIELD] 보안
+---
+[TITLE] 22시간 우주 돌고 돌아온 스페이스X 스타십…거대 로봇팔로 '덥석'
+[LINK] https://zdnet.co.kr/view/?no=20261115173150
+[PUBLISHED] 2026-11-15 17:38 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 발사탑 로봇팔을 통한 궤도선 직접 회수 성공
+[FIELD] 신기술
+---
+[TITLE] Antigravity의 /teamwork로 과학과 엔지니어링 발전시키기
+[LINK] https://news.hada.io/topic?id=37191&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-15 14:35 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 산업
+[SCORE] 6
+[REASON] 멀티에이전트 협업 체계를 통한 과학 난제 해결 시도
+[FIELD] AI 에이전트
 ---
 [TITLE] Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol
 [TITLE_KO] 제미나이 4 카본, MathArena 1위 차지했으나 GPT-6.1 솔보다 비용 15배 높아
@@ -413,14 +528,25 @@ Sales prospecting is one beneficiary.
 [REASON] 수학 벤치마크 1위 달성 및 높은 연산 비용 분석
 [FIELD] AI 모델
 ---
-[TITLE] LG 테네시 공장, 세탁기 1000만대 생산…휴머노이드 '클로이드'도 투입
-[LINK] https://zdnet.co.kr/view/?no=20261115093449
-[PUBLISHED] 2026-11-15 10:00 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 신기술
+[TITLE] Anthropic Outlines Its AI-Powered Code Review Process for Claude Code
+[TITLE_KO] 앤트로픽, 클로드 코드를 위한 AI 기반 코드 리뷰 절차 공개
+[LINK] https://www.infoq.com/news/2026/11/claude-code-review/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-11-15 18:55 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발
 [SCORE] 6
-[REASON] 대규모 가전 생산 라인에 휴머노이드 로봇 투입
-[FIELD] 신기술
+[REASON] 에이전트 생성 코드 검증 및 승인 절차 참고 가능
+[FIELD] AI 에이전트
+---
+[TITLE] AT&T uses agentic AI to reinvent business processes from the ground up
+[TITLE_KO] AT&T, 자율 AI 에이전트로 비즈니스 프로세스 전면 재설계
+[LINK] https://siliconangle.com/2026/11/14/att-uses-agentic-ai-to-reinvent-business-processes-from-the-ground-up/
+[PUBLISHED] 2026-11-15 04:37 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 에이전트
+[SCORE] 6
+[REASON] 수백 개 자율 에이전트 워크플로 실제 업무 배포
+[FIELD] AI 에이전트
 ---
 [TITLE] 북극 해빙 30일 앞서 예측하는 AI…UNIST, 위성자료·생성형 AI 결합한 ‘아이스네스트’ 개발
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42734
@@ -430,6 +556,15 @@ Sales prospecting is one beneficiary.
 [SCORE] 6
 [REASON] 해빙 예측 오차를 대폭 줄인 생성형 AI 모델
 [FIELD] AI 모델
+---
+[TITLE] LG 테네시 공장, 세탁기 1000만대 생산…휴머노이드 '클로이드'도 투입
+[LINK] https://zdnet.co.kr/view/?no=20261115093449
+[PUBLISHED] 2026-11-15 10:00 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 대규모 가전 생산 라인에 휴머노이드 로봇 투입
+[FIELD] 신기술
 ---
 [TITLE] Anthropic says outdated prompting habits are slowing down Claude Opus 5.5
 [TITLE_KO] 앤트로픽, 시대에 뒤떨어진 프롬프트 습관이 클로드 오퍼스 5.5를 느리게 만든다고 밝혀
@@ -441,15 +576,6 @@ Sales prospecting is one beneficiary.
 [REASON] 최신 추론 모델에 맞춘 프롬프트 방식 변경 안내
 [FIELD] AI 모델
 ---
-[TITLE] [CPS 시큐어 AX 서밋 2026] “생산은 멈추면 안 된다”…황인구 CISO, 랜섬웨어 이후 바꾼 OT 보안
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209529
-[PUBLISHED] 2026-11-15 11:19 KST
-[SOURCE] 데일리시큐
-[TOPIC] 보안
-[SCORE] 6
-[REASON] 실제 랜섬웨어 침해 이후 공장 OT 보안 개편 사례
-[FIELD] 보안
----
 [TITLE] Claude Fable 5.2 vs. GPT-6 Astra: A lower list price didn’t mean a lower bill
 [TITLE_KO] 클로드 페이블 5.2 대 GPT-6 아스트라: 정가 낮다고 청구 금액도 낮은 것은 아니다
 [LINK] https://thenewstack.io/claude-fable-5-2-vs-gpt-6-astra/
@@ -460,13 +586,13 @@ Sales prospecting is one beneficiary.
 [REASON] 코딩용 프런티어 모델 간 성능 및 실제 청구 비용 비교
 [FIELD] AI 모델
 ---
-[TITLE] [단독] 한국발명진흥회 '아이디어로' 플랫폼 해킹…악성코드 설치 후 62MB 데이터 외부 유출
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209524
-[PUBLISHED] 2026-11-15 09:06 KST
+[TITLE] [CPS 시큐어 AX 서밋 2026] “생산은 멈추면 안 된다”…황인구 CISO, 랜섬웨어 이후 바꾼 OT 보안
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209529
+[PUBLISHED] 2026-11-15 11:19 KST
 [SOURCE] 데일리시큐
-[TOPIC] 보안, 규제
+[TOPIC] 보안
 [SCORE] 6
-[REASON] 웹 취약점을 악용한 악성코드 설치 및 데이터 유출
+[REASON] 실제 랜섬웨어 침해 이후 공장 OT 보안 개편 사례
 [FIELD] 보안
 ---
 [TITLE] Anthropic can already retrain Mythos with "a fraction of the compute originally needed," says former researcher Coxon
@@ -479,55 +605,88 @@ Sales prospecting is one beneficiary.
 [REASON] 알고리즘 효율화로 프런티어 모델 재학습 비용 대폭 감소
 [FIELD] AI 모델
 ---
-[TITLE] MS, 대규모 장애 공식 사과..."네트워크 증설 당시 문제"
-[LINK] https://www.techm.kr/news/articleView.html?idxno=157350
-[PUBLISHED] 2026-11-14 16:46 KST
-[SOURCE] 테크M
-[TOPIC] 에이전트, 보안
-[SCORE] 5
-[REASON] 글로벌 생산성 클라우드의 네트워크 구성 오류 원인 규명
-[FIELD] 기타
----
-[TITLE] 코인원 고객센터 수탁사 해킹으로 개인정보 유출…주민번호·계좌번호 등 11개 항목 가능성
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209532
-[PUBLISHED] 2026-11-15 13:33 KST
+[TITLE] [단독] 한국발명진흥회 '아이디어로' 플랫폼 해킹…악성코드 설치 후 62MB 데이터 외부 유출
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209524
+[PUBLISHED] 2026-11-15 09:06 KST
 [SOURCE] 데일리시큐
 [TOPIC] 보안, 규제
-[SCORE] 5
-[REASON] 수탁사 침해로 인한 대규모 금융 개인정보 유출
+[SCORE] 6
+[REASON] 웹 취약점을 악용한 악성코드 설치 및 데이터 유출
 [FIELD] 보안
 ---
-[TITLE] 메타엠 고객상담 시스템 해킹…전화번호·상담 내용 등 개인정보 유출 확인
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209525
-[PUBLISHED] 2026-11-15 09:22 KST
-[SOURCE] 데일리시큐
-[TOPIC] 보안, 규제
-[SCORE] 5
-[REASON] 고객상담 대행업체 침해로 다수 고객사 데이터 유출
-[FIELD] 보안
+[LINK] https://www.etnews.com/20261115000179
+[STATUS] SKIP (기준 미달)
 ---
-[TITLE] 北 코인 탈취액 4배 ↑…해킹이 외화벌이 ‘금맥’
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001063
-[PUBLISHED] 2026-11-15 07:50 KST
-[SOURCE] IT조선
-[TOPIC] 보안, 산업
-[SCORE] 5
-[REASON] 가상자산 거래소를 노린 국가 배후 해킹 피해 급증
-[FIELD] 보안
+[LINK] https://the-decoder.com/firm-linked-to-jensen-huangs-ex-lover-reportedly-brokered-nearly-12-billion-in-nvidia-chip-orders-for-china/
+[STATUS] SKIP (기준 미달)
 ---
-[TITLE] [단독] 인제대·경일대 해킹한 해커, 해킹 포럼에 “한국 대학 31곳 데이터 탈취·공개” 주장…수능 앞두고 대학 보안 비상
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209522
-[PUBLISHED] 2026-11-15 00:39 KST
-[SOURCE] 데일리시큐
-[TOPIC] 보안, 규제
-[SCORE] 5
-[REASON] 국내 다수 대학 학사 시스템 침해 및 데이터 공개 위협
-[FIELD] 보안
+[LINK] https://news.hada.io/topic?id=37199&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209537
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=37198&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/15/week-in-review-secret-stealer-hits-github-repos-claude-code-turned-into-remote-controlled-implant/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209535
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261115000120
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261113000212
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001079
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209534
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261113000023
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678629
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001078
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001077
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/14/jensen-huang-affair-nvidia-nightmare
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261113000204
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261115000101
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261115110004
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209533
+[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=157365
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=157361
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209532
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261115124937
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261115131536
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001074
@@ -602,6 +761,9 @@ Sales prospecting is one beneficiary.
 [LINK] https://zdnet.co.kr/view/?no=20261115083056
 [STATUS] SKIP (중복)
 ---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209525
+[STATUS] SKIP (순위 밖)
+---
 [LINK] https://zdnet.co.kr/view/?no=20261115062228
 [STATUS] SKIP (기준 미달)
 ---
@@ -632,11 +794,17 @@ Sales prospecting is one beneficiary.
 [LINK] https://zdnet.co.kr/view/?no=20261114205549
 [STATUS] SKIP (기준 미달)
 ---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001063
+[STATUS] SKIP (순위 밖)
+---
 [LINK] https://news.hada.io/topic?id=37171&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (제외)
 ---
 [LINK] https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/
 [STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209522
+[STATUS] SKIP (순위 밖)
 ---
 [LINK] https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview
 [STATUS] SKIP (제외)
@@ -659,11 +827,20 @@ Sales prospecting is one beneficiary.
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217407
 [STATUS] SKIP (제외)
 ---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157350
+[STATUS] SKIP (순위 밖)
+---
 [LINK] https://www.bloter.net/news/articleView.html?idxno=678625
 [STATUS] SKIP (제외)
 ---
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217405
 [STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261115000138
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261115000123
+[STATUS] SKIP (중복)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001064
 [STATUS] SKIP (제외)
@@ -677,6 +854,45 @@ Sales prospecting is one beneficiary.
 [LINK] https://news.hada.io/topic?id=37174&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (제외)
 ---
+[LINK] https://www.wired.com/story/ai-djs-completely-kill-my-groove/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.wired.com/story/this-ai-tamagotchi-oats-turns-everyday-objects-into-needy-virtual-pets/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217423
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217426
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/15/ai-cheating-south-korea-college-entrance-exam
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217347
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217424
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678643
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678632
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001076
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261115000099
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678641
+[STATUS] SKIP (기준 미달)
+---
 [LINK] https://www.techm.kr/news/articleView.html?idxno=157363
 [STATUS] SKIP (제외)
 ---
@@ -689,29 +905,17 @@ Sales prospecting is one beneficiary.
 [LINK] https://www.aitimes.com/news/articleView.html?idxno=217415
 [STATUS] SKIP (기준 미달)
 ---
-[LINK] https://zdnet.co.kr/view/?no=20261115122232
-[STATUS] SKIP (제외)
----
-[LINK] https://zdnet.co.kr/view/?no=20261115104316
-[STATUS] SKIP (중복)
----
 [LINK] https://www.aitimes.kr/news/articleView.html?idxno=42735
 [STATUS] SKIP (기준 미달)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001071
 [STATUS] SKIP (중복)
 ---
-[LINK] https://zdnet.co.kr/view/?no=20261115105258
-[STATUS] SKIP (제외)
----
 [LINK] https://news.hada.io/topic?id=37185&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (제외)
 ---
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001069
 [STATUS] SKIP (중복)
----
-[LINK] https://zdnet.co.kr/view/?no=20261115094533
-[STATUS] SKIP (제외)
 ---
 [LINK] https://news.hada.io/topic?id=37183&utm_source=geeknews&utm_medium=rss&utm_campaign=news
 [STATUS] SKIP (기준 미달)
@@ -764,195 +968,6 @@ Sales prospecting is one beneficiary.
 [LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001011
 [STATUS] SKIP (사전 제외: 주가)
 ---
-[평가 오류] 전체 후보 - 선정 실패(다시 시도): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
----
-[평가 오류] 전체 후보 - 선정 실패(다시 시도): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
----
-[평가 오류] 전체 후보 - 선정 실패(다시 시도): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
----
-[평가 오류] 전체 후보 - 선정 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
----
-[TITLE] 22시간 우주 돌고 돌아온 스페이스X 스타십…거대 로봇팔로 '덥석'
-[LINK] https://zdnet.co.kr/view/?no=20261115173150
-[PUBLISHED] 2026-11-15 17:38 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 신기술
-[SCORE] 8
-[REASON] 발사탑 로봇팔을 통한 궤도선 직접 회수 성공
-[FIELD] 신기술
----
-[TITLE] 아마존, AI가 집 안을 날고 사업장을 순찰하는 자율 보안로봇 공개…고정형 CCTV 넘어 이동형 보안 시대 연다
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42737
-[PUBLISHED] 2026-11-15 15:44 KST
-[SOURCE] 인공지능신문
-[TOPIC] 모델, 보안, 신기술
-[SCORE] 8
-[REASON] 가정 및 사업장용 자율 순찰 비행 로봇 상용 제품 공개
-[FIELD] 신기술
----
-[TITLE] 승조원 없는 함정, 미 해역으로…HD현대·안두릴, 무인수상함 진수
-[LINK] https://zdnet.co.kr/view/?no=20261115124842
-[PUBLISHED] 2026-11-15 12:48 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 산업
-[SCORE] 8
-[REASON] 자율 운항 및 임무 자동화가 결합된 중형 무인수상함 진수
-[FIELD] 신기술
----
-[TITLE] Project Zero, 취약점 신고 90일 후 상세 정보 공개하기로
-[LINK] https://news.hada.io/topic?id=37190&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[PUBLISHED] 2026-11-15 12:36 KST
-[SOURCE] GeekNews
-[TOPIC] 보안, 규제
-[SCORE] 8
-[REASON] 취약점 신고 후 무조건 공개 정책 도입으로 패치 기간 단축 압박
-[FIELD] 보안
----
-[TITLE] C++26, 표준화 사상 첫 부결…연내 확정 불투명
-[LINK] https://zdnet.co.kr/view/?no=20261115104827
-[PUBLISHED] 2026-11-15 12:31 KST
-[SOURCE] ZDNet Korea
-[TOPIC] 개발, 보안
-[SCORE] 8
-[REASON] C++ 차기 표준 승인 부결로 언어 신기능 적용 지연
-[FIELD] 신기술
----
-[TITLE] Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU
-[TITLE_KO] 메이퇀, 엔비디아 GPU 없이 학습한 1.6조 매개변수 에이전트 모델 공개
-[LINK] https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/
-[PUBLISHED] 2026-11-15 19:06 KST
-[SOURCE] The Decoder
-[TOPIC] 에이전트, 모델, 신기술
-[SCORE] 8
-[REASON] 중국 하드웨어 기반 대형 에이전트 모델 가중치 공개
-[FIELD] AI 모델
----
-[LINK] https://www.etnews.com/20261115000179
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://the-decoder.com/firm-linked-to-jensen-huangs-ex-lover-reportedly-brokered-nearly-12-billion-in-nvidia-chip-orders-for-china/
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://news.hada.io/topic?id=37199&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (제외)
----
-[LINK] https://www.infoq.com/news/2026/11/claude-code-review/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209537
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://news.hada.io/topic?id=37198&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://www.helpnetsecurity.com/2026/11/15/week-in-review-secret-stealer-hits-github-repos-claude-code-turned-into-remote-controlled-implant/
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209535
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.etnews.com/20261115000120
-[STATUS] SKIP (제외)
----
-[LINK] https://www.etnews.com/20261113000212
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001079
-[STATUS] SKIP (지난 보도)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209534
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://www.etnews.com/20261113000023
-[STATUS] SKIP (제외)
----
-[LINK] https://www.bloter.net/news/articleView.html?idxno=678629
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001078
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001077
-[STATUS] SKIP (중복)
----
-[LINK] https://zdnet.co.kr/view/?no=20261115140951
-[STATUS] SKIP (지난 보도)
----
-[LINK] https://www.theguardian.com/technology/2026/nov/14/jensen-huang-affair-nvidia-nightmare
-[STATUS] SKIP (제외)
----
-[LINK] https://news.hada.io/topic?id=37191&utm_source=geeknews&utm_medium=rss&utm_campaign=news
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.etnews.com/20261113000204
-[STATUS] SKIP (제외)
----
-[LINK] https://www.etnews.com/20261115000101
-[STATUS] SKIP (제외)
----
-[LINK] https://zdnet.co.kr/view/?no=20261115110004
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209533
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://zdnet.co.kr/view/?no=20261115124937
-[STATUS] SKIP (제외)
----
-[LINK] https://zdnet.co.kr/view/?no=20261115131536
-[STATUS] SKIP (지난 보도)
----
-[LINK] https://www.etnews.com/20261115000138
-[STATUS] SKIP (제외)
----
-[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42738
-[STATUS] SKIP (순위 밖)
----
-[LINK] https://www.etnews.com/20261115000123
-[STATUS] SKIP (중복)
----
-[LINK] https://www.wired.com/story/ai-djs-completely-kill-my-groove/
-[STATUS] SKIP (제외)
----
-[LINK] https://www.wired.com/story/this-ai-tamagotchi-oats-turns-everyday-objects-into-needy-virtual-pets/
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217423
-[STATUS] SKIP (제외)
----
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217426
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://www.theguardian.com/technology/2026/nov/15/ai-cheating-south-korea-college-entrance-exam
-[STATUS] SKIP (중복)
----
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217347
-[STATUS] SKIP (제외)
----
-[LINK] https://www.aitimes.com/news/articleView.html?idxno=217424
-[STATUS] SKIP (제외)
----
-[LINK] https://www.bloter.net/news/articleView.html?idxno=678643
-[STATUS] SKIP (제외)
----
-[LINK] https://www.bloter.net/news/articleView.html?idxno=678632
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001076
-[STATUS] SKIP (기준 미달)
----
-[LINK] https://www.etnews.com/20261115000099
-[STATUS] SKIP (제외)
----
-[LINK] https://www.bloter.net/news/articleView.html?idxno=678641
-[STATUS] SKIP (기준 미달)
----
 [LINK] https://zdnet.co.kr/view/?no=20261115131827
 [STATUS] SKIP (사전 제외: 행사)
 ---
@@ -961,4 +976,16 @@ Sales prospecting is one beneficiary.
 ---
 [LINK] https://www.etnews.com/20261113000259
 [STATUS] SKIP (사전 제외: 수상)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261115122232
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261115104316
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261115105258
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261115094533
+[STATUS] SKIP (사전 제외: 매체 상한)
 ---
