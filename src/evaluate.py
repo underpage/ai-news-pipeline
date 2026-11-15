@@ -57,7 +57,7 @@ RANK_SCHEMA = {
 SCORE_COLUMNS = ["실행", "결정", "합계", *[CRITERIA_KO[name] for name in CRITERIA], "같은 사건", "같은 사건 수",
                  "같은 사안", "같은 사안 수", "지난 사안", "제외 사유",
                  "선정 이유", "분야", "출처", "발행", "주제", "제목", "번역 제목", "링크", "지난 보도"]
-# 분야 균형에서 상한, 최소 건수를 따지는 분야 (기타는 상한 없음)
+# 요약 자리 우선 배정(floor_total)과 목록 분야 상한(list_max)을 따지는 분야. 기타는 둘 다 빠지지만 요약 분야 상한(max)에는 걸림
 BALANCED_FIELDS = ("AI 모델", "AI 에이전트", "보안", "신기술")
 HANGUL = re.compile(r"[가-힣]")
 BODY_SELECTORS = [
