@@ -18,3 +18,195 @@
 ---
 [요약 오류] https://siliconangle.com/2026/11/14/att-uses-agentic-ai-to-reinvent-business-processes-from-the-ground-up/ - 요약 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 ---
+[TITLE] Cursor confirms security breach led to malicious Claude Code extension
+[LINK] https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/
+[PUBLISHED] 2026-11-15 02:27 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 9
+[REASON] AI 개발 도구 마켓플레이스 침해를 통한 악성 확장 유포
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+Cursor, 악성 Claude Code 확장 유포로 이어진 보안 침해 확인
+
+**[영문 3줄 요약 (Original)]**
+- Cursor confirmed a security breach where attackers stole credentials from AI provider Fireworks AI to access internal systems and distribute a malicious Claude Code extension through its marketplace.
+- The exposed data included historical AI coding-agent traces with unredacted credentials, allowing hackers to compromise SaaS tools and publish backdoored extensions that targeted up to 5,000 developers.
+- Cursor revoked the compromised keys, rotated credentials, and removed the malicious builds after 11 hours, though coding errors likely prevented the SSH backdoor from executing on many systems.
+
+**[국문 3줄 요약 (Translated)]**
+- Cursor는 공격자가 AI 제공업체 Fireworks AI에서 탈취한 자격 증명으로 내부 시스템에 접근해 마켓플레이스를 통해 악성 Claude Code 확장을 유포한 보안 침해를 확인했다.
+- 노출된 데이터에는 삭제되지 않은 자격 증명이 포함된 과거 AI 코딩 에이전트 추적 기록이 포함되어 있었으며, 해커는 이를 이용해 SaaS 도구를 침해하고 최대 5,000명의 개발자를 표적으로 한 백도어 확장을 게시했다.
+- Cursor는 침해된 키를 취소하고 자격 증명을 교체한 뒤 11시간 만에 악성 빌드를 삭제했으나, 코딩 오류로 인해 많은 시스템에서 SSH 백도어가 실행되지 않았을 가능성이 있다.
+
+#부정
+---
+[TITLE] OpenAI, 범용 모델이 로봇을 제어하기 시작하면서 로보틱스 팀 해체
+[LINK] https://news.hada.io/topic?id=37180&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-15 08:34 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 모델, 신기술, 산업
+[SCORE] 8
+[REASON] 범용 모델의 로봇 직접 제어 가능성으로 전담팀 개편
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- OpenAI가 독립 로보틱스 팀을 해체하고 인력을 기존 연구 및 응용 조직으로 재배치했다.
+- 회사는 GPT-6 Astra 등 범용 모델을 로봇 제어에 직접 적용할 수 있음을 확인해 특화 모델을 따로 개발하기보다 범용 지능 역량을 활용하기로 결정했다.
+- 이번 개편은 비용 절감과 핵심 제품 집중 압박 속에서 이뤄졌으며, OpenAI는 자체 휴머노이드 로봇의 첫 공개 시연을 2027년 목표로 유지하고 있다.
+
+#중립
+---
+[TITLE] "사람의 움직임, 휴머노이드 로봇에 이식한다"…엔비디아, 피지컬 AI 동작 변환 기술 오픈소스 공개
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42732
+[PUBLISHED] 2026-11-14 19:16 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 신기술, 규제
+[SCORE] 7
+[REASON] 인간 움직임을 휴머노이드 관절 제어로 변환하는 오픈소스 공개
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 엔비디아가 사람의 움직임을 휴머노이드 로봇의 신체 구조에 맞게 변환하는 오픈소스 기술 '소마 리타기터'를 공개했다.
+- 이 기술은 공통 골격 체계와 역운동학을 사용해 인간과 로봇의 신체 비율 및 관절 차이를 보정하며 모션캡처나 비디오 등 다양한 데이터를 로봇 제어 정책 학습용으로 변환한다.
+- 유니트리와 부스터 등 5종의 로봇 참조 설정을 지원해 실제 로봇 데이터 수집 비용을 줄이고 피지컬 AI 개발 기반을 확대할 것으로 기대된다.
+
+#긍정
+---
+[TITLE] Runway's open-source Praxis-1 turns video AI into a robot controller
+[LINK] https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller/
+[PUBLISHED] 2026-11-14 18:45 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델, 신기술
+[SCORE] 7
+[REASON] 비디오 학습 지식을 로봇 제어로 전환하는 모델 가중치 공개
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+런웨이의 오픈소스 Praxis-1, 비디오 AI를 로봇 컨트롤러로 전환
+
+**[영문 3줄 요약 (Original)]**
+- Runway released its robot control AI model Praxis-1 with open weights and source code under the Apache 2.0 license.
+- The model uses knowledge learned from video training to predict environmental changes and derive matching robot movements from camera images, text instructions, and position data.
+- Praxis-1 achieved a 46.2 percent success rate on Nvidia's RoboLab-120 benchmark to lead World Action Models, though it still requires specialized robot fine-tuning data and struggles with complex action sequences.
+
+**[국문 3줄 요약 (Translated)]**
+- Runway가 Apache 2.0 라이선스 하에 오픈 가중치와 소스 코드를 갖춘 로봇 제어 AI 모델 Praxis-1을 출시했다.
+- 이 모델은 비디오 학습을 통해 습득한 지식을 활용해 환경 변화를 예측하고 카메라 이미지, 텍스트 지시어, 위치 데이터로부터 그에 맞는 로봇 동작을 도출한다.
+- Praxis-1은 엔비디아의 RoboLab-120 벤치마크에서 46.2%의 성공률을 기록해 월드 액션 모델 부문 1위를 차지했으나, 여전히 특화된 로봇 미세조정 데이터가 필요하며 복잡한 행동 순서 계획에는 한계가 있다.
+
+#긍정
+---
+[TITLE] Lovable 앱에서 여권 정보와 20만 건 이상의 비공개 메시지 노출
+[LINK] https://news.hada.io/topic?id=37169&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-15 04:43 KST
+[SOURCE] GeekNews
+[TOPIC] 보안, 규제
+[SCORE] 7
+[REASON] AI 기반 개발 플랫폼의 DB 노출로 대규모 정보 유출
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- AI 앱 개발 플랫폼 Lovable로 제작된 프로젝트들을 조사한 결과, 수많은 앱에서 로그인 없이 데이터베이스에 접근할 수 있는 결함이 확인됐다.
+- 분석 대상 중 7,403개 사이트에서 이메일 주소가 노출됐으며 프로필 8만 개, 채팅 메시지 20만 건, 여권 번호 1,000건 이상 등 민감한 정보가 무단 접근에 노출됐다.
+- AI를 통한 간편한 개발 환경에서 반복적인 데이터베이스 연동 및 접근 제어 오류가 발생하고 있어 서비스 출시 전 전문가의 보안 권한 검토가 필요하다.
+
+#부정
+---
+[TITLE] Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection
+[LINK] https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html
+[PUBLISHED] 2026-11-14 21:38 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 오픈소스 IRC 서버 결함의 실제 공격 악용으로 긴급 패치 필요
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+공격자들, 서버 수준 명령 삽입을 가능하게 하는 UnrealIRCd 결함 악용
+
+**[영문 3줄 요약 (Original)]**
+- CISA added a high-severity command injection vulnerability impacting the UnrealIRCd open-source IRC server to its Known Exploited Vulnerabilities catalog following reports of active attacks.
+- Tracked as CVE-2026-114713 with a CVSS score of 8.6, the flaw stems from improper delimiter neutralization in the labeled-response module, allowing users to execute commands with server privileges.
+- Active exploitation began shortly after the release of version 6.2.7.1, prompting maintainers and authorities to urge administrators to apply hotpatches immediately.
+
+**[국문 3줄 요약 (Translated)]**
+- CISA는 실제 공격 사례가 보고됨에 따라 UnrealIRCd 오픈소스 IRC 서버에 영향을 미치는 고위험 명령 삽입 취약점을 알려진 악용 취약점 카탈로그에 추가했다.
+- CVE-2026-114713(CVSS 점수 8.6)으로 추적되는 이 결함은 라벨 응답 모듈의 구분 기호 처리 미흡으로 인해 발생하며, 사용자가 서버 권한으로 명령을 실행할 수 있도록 허용한다.
+- 6.2.7.1 버전 핫픽스가 배포된 직후부터 실제 악용 시도가 시작되어 관리자와 당국은 즉시 패치를 적용할 것을 촉구했다.
+
+#부정
+---
+[TITLE] 아마존, 전 세계 상품 정보 통합 추진…AI 쇼핑 주도권 지킨다
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217412
+[PUBLISHED] 2026-11-14 19:19 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 모델
+[SCORE] 6
+[REASON] 쇼핑 에이전트 유치를 위한 글로벌 상품 데이터 그래프 구축
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 아마존이 자사 미판매 제품까지 포함해 전 세계 상품 정보를 모으는 '월드 프로덕트 그래프' 프로젝트를 검토하고 있다.
+- 이 구상은 브랜드 제공 데이터와 타 유통 사이트 수집 정보를 결합해 자체 AI 도우미의 정확도를 높이고 외부 AI 구매 에이전트의 아마존 유입을 유도하는 데 초점을 둔다.
+- AI 기반 쇼핑 확산으로 소비자가 타 플랫폼으로 이탈하는 것을 막고 광고 사업 경쟁력을 지키려는 전략이지만 구체적인 실행 계획은 확정되지 않았다.
+
+#중립
+---
+[TITLE] 테슬라, '사이버캡' 사전 주문 시작…월 40만원 안 내면 운행 불가
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217417
+[PUBLISHED] 2026-11-15 12:40 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 자율주행 차량의 첫 개인 대상 사전 주문 개시
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 테슬라가 운전대와 페달이 없는 완전 자율주행 로보택시 '사이버캡'의 일반 고객 대상 사전 주문을 시작했다.
+- 차량 가격은 2만9990달러이지만 운행을 위해선 매달 299달러의 구독료를 내야 하며, 운행 지역이 테슬라 지정 구역으로 제한되고 상업적 이용은 금지된다.
+- 차량 인도 시점이 12월로 예정된 가운데 미국 도로교통안전국(NHTSA)의 안전기준 적합성 조사 등 규제 승인 과제가 여전히 남아 있다.
+
+#중립
+---
+[TITLE] PyPI, 보안 신호를 더 명확히 보여주는 개편된 프로젝트 페이지 공개
+[LINK] https://news.hada.io/topic?id=37178&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-15 07:36 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SCORE] 6
+[REASON] 오픈소스 패키지 공급망 검증을 위한 암호 증명 추가
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- PyPI가 파일별 디지털 증명을 통해 빌드 출처와 워크플로를 확인할 수 있는 새 보안 탭을 프로젝트 페이지에 도입했다.
+- 릴리스 파일 전체의 증명 보유 상태를 표시하고, 소스 저장소나 빌드 파이프라인의 변경 및 증명 누락 등 비정상적인 정황이 발견되면 출처 경고를 안내한다.
+- 검증 및 검색 필터링 기능을 개선해 계정 탈취나 파이프라인 침해로 인한 오픈소스 패키지 공급망 공격을 사전에 파악할 수 있도록 지원한다.
+
+#긍정
+---
+[TITLE] AT&T uses agentic AI to reinvent business processes from the ground up
+[LINK] https://siliconangle.com/2026/11/14/att-uses-agentic-ai-to-reinvent-business-processes-from-the-ground-up/
+[PUBLISHED] 2026-11-15 04:37 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 에이전트
+[SCORE] 6
+[REASON] 수백 개 자율 에이전트 워크플로 실제 업무 배포
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+AT&T, 비즈니스 프로세스를 근본적으로 혁신하기 위해 에이전틱 AI 활용
+
+**[영문 3줄 요약 (Original)]**
+- AT&T is shifting beyond simple employee productivity tasks by deploying nearly 500 autonomous agentic workflows to redesign core business operations.
+- Built through its Business Agent Foundry, the architecture employs a centrally managed set of retrieval and planning agents to automate legacy mainframe interactions and service provisioning.
+- The company enforces strict governance requiring high accuracy before granting full autonomy, achieving fivefold returns on production AI investments within a year.
+
+**[국문 3줄 요약 (Translated)]**
+- AT&T는 핵심 비즈니스 운영을 재설계하기 위해 약 500개의 자율 에이전트 워크플로를 프로덕션 환경에 배포하며 단순한 직원 생산성 작업을 넘어선 전환을 추진하고 있다.
+- 비즈니스 에이전트 파운드리를 통해 구축된 이 아키텍처는 중앙에서 관리되는 검색 및 계획 에이전트를 활용해 레거시 메인프레임 작업과 서비스 프로비저닝을 자동화한다.
+- 회사는 완전한 자율성을 부여하기 전 높은 정확도를 요구하는 엄격한 거버넌스를 적용하고 있으며, 1년 이내에 프로덕션 AI 투자에 대해 5배의 수익률을 달성하고 있다.
+
+#긍정
+---
