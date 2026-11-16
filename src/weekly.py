@@ -14,7 +14,7 @@ import datetime
 
 from common import (
     DATA_DIR, LOGS_DIR, CONFIG_DIR, ROOT_DIR, read_records_from, load_prompt, fill_prompt, call_gemini,
-    clean_inline, fail, run_date,
+    clean_inline, fail, run_date, DEMOTED_STATUS,
 )
 from publish import parse_summary_blocks, update_index, ensure_dir
 
@@ -74,15 +74,18 @@ def load_week_articles(monday):
     """그 주 월~일의 요약 로그에서 기사를 모아 합계 순으로 돌려준다.
 
     [SCORE](0~10 정수)는 동점이 많아(9와 8에 몰림) 순서가 날짜순처럼 되므로 점수표의 합계(0~100)로 정렬한다.
-    점수표에 없는 기사(2026-10-08 이전 등)는 [SCORE] x 10. 같으면 날짜, 그날 순위 순
+    점수표에 없는 기사(2026-10-08 이전 등)는 [SCORE] x 10. 같으면 날짜, 그날 순위 순.
+    같은 날 재실행에서 요약 자리를 넘긴 기사(DEMOTED)는 요약이 남아 있어도 그날 리포트처럼 뺀다
     """
     articles = []
     for offset in range(7):
         day = monday + datetime.timedelta(days=offset)
         totals = load_totals(day)
-        path = os.path.join(LOGS_DIR, f"{day:%Y}", f"{day:%m}", f"{day:%Y-%m-%d}-요약.txt")
-        for record in read_records_from(path):
-            if not record.get("title"):
+        folder = os.path.join(LOGS_DIR, f"{day:%Y}", f"{day:%m}")
+        demoted = {record["link"] for record in read_records_from(os.path.join(folder, f"{day:%Y-%m-%d}-필터링.txt"))
+                   if record.get("status") == DEMOTED_STATUS}
+        for record in read_records_from(os.path.join(folder, f"{day:%Y-%m-%d}-요약.txt")):
+            if not record.get("title") or record["link"] in demoted:
                 continue
             title_ko, _, summary_ko, tone = parse_summary_blocks(record.get("summary", ""))
             if not summary_ko:

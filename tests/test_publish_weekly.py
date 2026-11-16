@@ -75,6 +75,16 @@ def test_demoted_target_moves_to_news_list_even_with_summary():
     assert (stats[0]["summary_target"], stats[0]["summary_ok"], stats[0]["listed"], stats[0]["skipped"]) == ("2", "2", "3", "0")
 
 
+def test_summary_failures_count_only_summary_targets():
+    # 요약 대상이 아닌 기사(요약 자리를 넘긴 기사)의 요약 오류는 통계 요약 실패에 넣지 않는다
+    add_target(1, 9, KOREAN_SUMMARY)
+    demoted = add_target(2, 6)
+    common.append_record("필터링", [("LINK", demoted), ("STATUS", common.DEMOTED_STATUS)])
+    common.append_error("요약", "요약 오류", demoted, "요약 실패: 503")
+    stats = publish.collect_stats()
+    assert (stats["summary_target"], stats["summary_ok"], stats["summary_failed"], stats["summary_pending"]) == (1, 1, 0, 0)
+
+
 def test_translated_titles_from_selection_step():
     # 요약에 실패한 기사와 목록 기사는 선정 단계의 번역 제목을 쓴다
     failed = "http://a/1"
@@ -155,6 +165,11 @@ def test_weekly_report(monkeypatch):
     # 일간 리포트의 "더 읽어볼 기사"와 같은 형식에 날짜. 번역 제목이 있으면 \[번역\] 표시, 주제는 첫 번째만
     assert "1. \\[번역\\] [번역된 제목](http://w/2026-10-01) (보안) - 매체, 2026-10-01\n\n" in content
     assert "2. [2026-09-28 기사](http://w/2026-09-28) (보안) - 매체, 2026-09-28\n" in content
+
+    # 같은 날 재실행에서 요약 자리를 넘긴 기사는 요약이 남아 있어도 주간 목록에서 빠진다
+    monkeypatch.setenv("RUN_DATE", "2026-10-01")
+    common.append_record("필터링", [("LINK", "http://w/2026-10-01"), ("STATUS", common.DEMOTED_STATUS)])
+    assert [article["link"] for article in weekly.load_week_articles(monday)] == ["http://w/2026-09-28", "http://w/2026-10-04"]
 
     # 연도 폴더에 저장하고 목록도 연도 폴더에
     monkeypatch.setattr(weekly.sys, "argv", ["weekly.py", "2026-W40"])

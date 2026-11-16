@@ -420,8 +420,14 @@ def test_evaluate_uses_same_event_article_when_body_fails(monkeypatch):
     targets = [record["link"] for record in common.summary_target_records(records)]
     assert targets == ["http://a/2", "http://a/3"]
     assert "http://a/1" not in [record["link"] for record in records if record.get("title")]
-    decisions = {row[-2]: row[1] for row in read_score_csv()[1:]}
+    rows = read_score_csv()
+    decisions = {row[-2]: row[1] for row in rows[1:]}
     assert decisions["http://a/1"] == "중복" and decisions["http://a/2"] == "요약"
+    # 대신한 기사는 사건의 점수(원래 대표 기사의 합계)를 이어받고, 원래 대표는 그 기사의 중복으로 남는다
+    by_link = {row[-2]: dict(zip(rows[0], row)) for row in rows[1:]}
+    assert by_link["http://a/2"]["합계"] == by_link["http://a/1"]["합계"] == "100.0"
+    assert by_link["http://a/2"]["파급력"] == "10" and by_link["http://a/1"]["같은 사건"] == "http://a/2"
+    assert [record["score"] for record in records if record.get("title")][0] == "10"
 
 
 def test_evaluate_rerun_moves_summary_slot_to_higher_article(monkeypatch):
@@ -461,6 +467,93 @@ def test_evaluate_rerun_keeps_summary_when_new_article_is_not_higher(monkeypatch
     records = common.read_records("필터링")
     assert [record["link"] for record in common.summary_target_records(records)] == [f"http://a/{n}" for n in (1, 2, 3)]
     assert not any(record.get("status") == common.DEMOTED_STATUS for record in records)
+
+
+def test_evaluate_keeps_story_cap_when_next_rank_fills_failed_slot(monkeypatch):
+    # LIST_N=5, TOP_N=3. 요약 자리 [1, 3, 4] 중 3번 본문이 실패하면 다음 순위 2번은 1번과 같은 사안이라 건너뛰고 5번이 받는다
+    add_candidates(5)
+    response = score_response(score_item(1, impact=10), score_item(2, impact=9, story_of=1), score_item(3, impact=8),
+                              score_item(4, impact=7), score_item(5, impact=5))
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: response)
+    monkeypatch.setattr(evaluate, "scrape_body", lambda url: "" if url == "http://a/3" else "본문 " * 200)
+    evaluate.main()
+    records = common.read_records("필터링")
+    assert [record["link"] for record in common.summary_target_records(records)] == ["http://a/1", "http://a/4", "http://a/5"]
+
+
+def test_evaluate_rerun_does_not_summarize_story_of_earlier_summary(monkeypatch):
+    # 재실행의 새 기사가 앞 실행 요약 기사와 같은 사안(story_prev)이면 합계가 높아도 요약 자리를 넘겨받지 않는다
+    add_candidates(4)
+    first = score_response(*[score_item(n, impact=4) for n in range(1, 5)])
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: first)
+    monkeypatch.setattr(evaluate, "scrape_body", lambda url: "본문 " * 200)
+    evaluate.main()
+    add_candidates(1, start=5)
+    # 지난 목록 P1은 오늘 앞 실행의 1번 기사 (요약 대상)
+    second = score_response(score_item(1, impact=10, story_prev=1))
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: second)
+    evaluate.main()
+    records = common.read_records("필터링")
+    assert [record["link"] for record in common.summary_target_records(records)] == [f"http://a/{n}" for n in (1, 2, 3)]
+
+
+def test_load_previous_listed_marks_summary_stories():
+    common.append_record("필터링", [("TITLE", "요약"), ("LINK", "http://p/1"), ("SCORE", 9)], block=("BODY", "본문"))
+    common.append_record("필터링", [("TITLE", "목록"), ("LINK", "http://p/2"), ("SCORE", 7)])
+    common.append_record("필터링", [("TITLE", "넘김"), ("LINK", "http://p/3"), ("SCORE", 6)], block=("BODY", "본문"))
+    common.append_record("필터링", [("LINK", "http://p/3"), ("STATUS", common.DEMOTED_STATUS)])
+    previous = evaluate.load_previous_listed(0)
+    assert [(record["link"], record["summary_story"]) for record in previous] == \
+        [("http://p/1", True), ("http://p/2", False), ("http://p/3", False)]
+
+
+def test_order_top_allows_follow_up_of_list_only_story(monkeypatch):
+    # 지난 리포트에 목록으로만 실린 사안의 후속(예고 뒤 실제 출시)은 요약 자리에 오른다. 요약된 사안의 후속은 목록에만
+    monkeypatch.setattr(evaluate, "FIELD_CAP", {"max": 3, "exempt_impact": 9, "min_total": 60})
+    monkeypatch.setattr(evaluate, "STORY_CAP", {"summary": 1, "list": 2, "prev_summary": 0})
+    for summarized, expected in ((False, [0, 1]), (True, [1, 2])):
+        news_list = [news(n) for n in range(1, 5)]
+        scored = {index: story_entry(total) for index, total in enumerate([90, 80, 70, 65])}
+        scored[0] = story_entry(90, impact=10, relevance=5, story_prev=0)
+        previous = [{"title": "예고", "link": "http://p/1", "summary_story": summarized}]
+        listed, _ = evaluate.decide(news_list, scored, list_slots=4, list_n=40, min_score=0, top_slots=2, previous=previous)
+        assert listed[:2] == expected
+
+
+def test_load_previous_listed_follows_story_chain_to_summary(monkeypatch):
+    # 9-29 요약된 첫 보도 -> 9-30 목록에만 실린 후속(지난 사안 = 첫 보도) -> 10-01 후보가 9-30 기사를 가리켜도 요약된 사안
+    import csv
+    for day, records, rows in (
+            ("2026-09-29", [("http://p/first", "본문"), ("http://p/teaser", None)], []),
+            ("2026-09-30", [("http://p/follow", None), ("http://p/launch", None)],
+             [{"링크": "http://p/follow", "지난 사안": "http://p/first"}, {"링크": "http://p/launch", "지난 사안": "http://p/teaser"}])):
+        monkeypatch.setenv("RUN_DATE", day)
+        for link, body in records:
+            common.append_record("필터링", [("TITLE", link), ("LINK", link), ("SCORE", 7)], block=("BODY", body) if body else None)
+        if rows:
+            with open(evaluate.score_csv_path(), "w", encoding="utf-8-sig", newline="") as f:
+                writer = csv.DictWriter(f, fieldnames=evaluate.SCORE_COLUMNS)
+                writer.writeheader()
+                writer.writerows(rows)
+    monkeypatch.setenv("RUN_DATE", "2026-10-01")
+    marks = {record["link"]: record["summary_story"] for record in evaluate.load_previous_listed(2)}
+    # 예고(teaser)만 목록에 실린 사안의 후속(launch)은 요약된 사안이 아니다
+    assert marks == {"http://p/follow": True, "http://p/launch": False, "http://p/first": True, "http://p/teaser": False}
+
+
+def test_evaluate_rerun_moves_only_one_slot_per_story(monkeypatch):
+    # 재실행의 새 기사 2건이 같은 사안이고 둘 다 앞 실행 요약보다 높아도 자리는 1건만 넘겨받는다
+    add_candidates(4)
+    first = score_response(*[score_item(n, impact=4) for n in range(1, 5)])
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: first)
+    monkeypatch.setattr(evaluate, "scrape_body", lambda url: "본문 " * 200)
+    evaluate.main()
+    add_candidates(2, start=5)
+    second = score_response(score_item(1, impact=10), score_item(2, impact=9, story_of=1))
+    monkeypatch.setattr(evaluate, "call_gemini", lambda prompt, schema=None, max_retries=None: second)
+    evaluate.main()
+    records = common.read_records("필터링")
+    assert [record["link"] for record in common.summary_target_records(records)] == ["http://a/1", "http://a/2", "http://a/5"]
 
 
 def test_evaluate_records_prefilter_drops(monkeypatch):

@@ -28,7 +28,7 @@ BODY_ALTERNATES = 2
 BODY_MAX_LENGTH = 4000
 PREVIEW_LENGTH = 500
 # 중요도 항목과 점수 범위(1~최댓값). Gemini가 항목마다 점수를 주고, 코드가 합계 0~100을 계산한다.
-# 합계에는 criteria_weights에 적힌 항목(파급력, 관련성)만 들어가고, 새로움과 근거는 가장 낮은 단계일 때 감점에만 쓴다
+# 합계에는 criteria_weights에 적힌 항목(파급력, 관련성)만 들어가고, 새로움과 근거는 penalties에 적힌 단계(새로움 1, 2와 근거 1)일 때 감점에만 쓴다
 CRITERIA = ("impact", "relevance", "novelty", "certainty")
 CRITERIA_MAX = {"impact": 10, "relevance": 5, "novelty": 3, "certainty": 3}
 CRITERIA_KO = {"impact": "파급력", "relevance": "관련성", "novelty": "새로움", "certainty": "근거"}
@@ -121,14 +121,54 @@ def build_article_list(news_list):
     return "\n\n".join(blocks)
 
 
-def load_previous_listed(days):
-    """오늘(재실행 때 이미 올린 목록)과 지난 days일 필터링 로그에서 목록에 오른 기사. 최근 날짜 먼저"""
+def day_log_path(day, name):
+    return os.path.join(LOGS_DIR, day.strftime("%Y"), day.strftime("%m"), f"{day:%Y-%m-%d}-{name}")
+
+
+# 요약된 사안을 찾을 때 점수표의 이 열(링크)로 기사를 잇는다
+STORY_LINK_COLUMNS = ("같은 사건", "같은 사안", "지난 사안", "지난 보도")
+
+
+def summary_story_links(day_list):
+    """day_list 날짜에 요약 대상이었던 기사(요약 자리를 넘긴 기사는 아님)와, 그날들 점수표의 같은 사건, 같은 사안,
+    지난 사안, 지난 보도 열로 그 기사에 이어지는 기사의 링크. 며칠 이어지는 사안은 둘째 날 후속이 목록에만 실려도
+    셋째 날 후속이 그 기사를 가리키면 요약된 사안으로 보기 위함"""
+    parent, targets = {}, set()
+
+    def find(link):
+        parent.setdefault(link, link)
+        while parent[link] != link:
+            parent[link] = parent[parent[link]]
+            link = parent[link]
+        return link
+
+    for day in day_list:
+        targets |= {record["link"] for record in summary_target_records(read_records_from(day_log_path(day, "필터링.txt")))}
+        path = day_log_path(day, "점수.csv")
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            for row in csv.DictReader(f):
+                for column in STORY_LINK_COLUMNS:
+                    if row.get("링크") and row.get(column):
+                        parent[find(row["링크"])] = find(row[column])
+    roots = {find(link) for link in targets}
+    return {link for link in parent if find(link) in roots} | targets
+
+
+def load_previous_listed(days, later_days=0):
+    """오늘(재실행 때 이미 올린 목록)과 지난 days일 필터링 로그에서 목록에 오른 기사. 최근 날짜 먼저.
+    later_days: 지난 날짜를 나중에 복구할 때 뒤 날짜 목록도 끝에 붙인다 (tools/manual_rank.py, merge_rank.py)
+    기록마다 summary_story(요약된 사안의 기사인지, summary_story_links)를 붙인다 (story_cap.prev_summary에 씀).
+    사안 사슬은 지난 목록 날짜의 두 배까지 거슬러 본다"""
     today = run_date()
+    day_list = [today - datetime.timedelta(days=offset) for offset in range(days + 1)]
+    day_list += [today + datetime.timedelta(days=offset) for offset in range(1, later_days + 1)]
+    links = summary_story_links(day_list + [today - datetime.timedelta(days=offset) for offset in range(days + 1, 2 * days + 1)])
     previous = []
-    for offset in range(days + 1):
-        day = today - datetime.timedelta(days=offset)
-        path = os.path.join(LOGS_DIR, day.strftime("%Y"), day.strftime("%m"), f"{day:%Y-%m-%d}-필터링.txt")
-        previous += [record for record in read_records_from(path) if record.get("title")]
+    for day in day_list:
+        previous += [dict(record, summary_story=record["link"] in links)
+                     for record in read_records_from(day_log_path(day, "필터링.txt")) if record.get("title")]
     return previous
 
 
@@ -293,9 +333,10 @@ def sort_key(scored, index):
 
 
 def summary_prev_ok(info, prev_used):
-    """지난 리포트 사안의 후속(story_prev_group)을 요약 자리에 더 넣을 수 있는지. prev_used는 이미 넣은 후속 건수"""
+    """지난 리포트에서 요약된 사안의 후속(story_prev_summary)을 요약 자리에 더 넣을 수 있는지. prev_used는 이미 넣은 후속 건수.
+    지난 리포트에 목록으로만 실린 사안의 후속(예고 뒤 실제 출시)은 여기에 걸리지 않는다"""
     prev_max = STORY_CAP.get("prev_summary")
-    return prev_max is None or not info.get("story_prev_group") or prev_used < prev_max
+    return prev_max is None or not info.get("story_prev_summary") or prev_used < prev_max
 
 
 def order_top(listed, scored, top_slots):
@@ -305,7 +346,7 @@ def order_top(listed, scored, top_slots):
     2. 합계 순으로 보며 분야 상한(max) 안이거나 파급력이 exempt_impact 이상인 기사를 넣는다. 면제는 같은 사안에서 한 번,
        지난 리포트에 실린 사안의 후속(story_prev)은 면제 없음. 합계가 min_total 미만이면 상한 때문에 끌어올리지 않는다
     3. 남은 자리는 상한 없이 합계 순으로 채운다
-    어느 단계에서든 같은 사안은 story_cap.summary건까지, 지난 리포트에 실린 사안의 후속은 모두 합쳐 story_cap.prev_summary건까지
+    어느 단계에서든 같은 사안은 story_cap.summary건까지, 지난 리포트에서 요약된 사안의 후속은 모두 합쳐 story_cap.prev_summary건까지
     (summary_prev_ok). 고른 기사는 합계 순으로 다시 놓는다 (리포트 번호가 합계 순).
     점수 기준만 고쳐서는 한 분야가 하루 상위 10건 중 9건을 차지한 날이 있었음 (2026-10-20 보안). 면제를 합계가 아니라
     파급력으로 정하는 이유: AI와 무관한 보안은 관련성이 4까지라 파급력 9여도 합계 83.3
@@ -323,7 +364,7 @@ def order_top(listed, scored, top_slots):
 
     def story_ok(index):
         return ((not story_max or stories.get(story(index), 0) < story_max)
-                and summary_prev_ok(scored[index], sum(1 for chosen in top if scored[chosen].get("story_prev_group"))))
+                and summary_prev_ok(scored[index], sum(1 for chosen in top if scored[chosen].get("story_prev_summary"))))
 
     def add(index):
         top.append(index)
@@ -376,7 +417,7 @@ def group_by(scored, links):
     return {index: find(index) for index in scored}
 
 
-def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0):
+def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0, previous=()):
     """점수표로 목록에 올릴 기사를 정한다. (목록 순번 목록, {순번: 결정})
 
     1. 같은 사안 무리(story_of와 dup_of로 이어진 기사들): 무리의 한 기사라도 지난 목록과 같은 사안(story_prev)이나
@@ -390,7 +431,12 @@ def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0):
        같은 합계 안에서는 지금까지 목록에 적게 뽑힌 분야의 기사를 먼저 고른다 (합계가 다른 기사끼리는 순서를 바꾸지 않음)
     4. 위쪽 top_slots건(요약 자리)을 order_top으로 고른다
     같은 사건 기사 수는 scored[순번]["coverage"], 같은 사안 무리는 "story", "story_size", "story_prev_group"에 남긴다.
+    "story_prev_summary"는 무리가 이어진 지난 기사 중 요약된 사안의 기사가 있는지 (previous의 summary_story.
+    표시가 없거나 previous를 주지 않으면 요약된 사안으로 본다)
     """
+    def was_summary(number):
+        return number is not None and (number >= len(previous) or previous[number].get("summary_story", True))
+
     decisions = {}
     story_of = group_by(scored, lambda index: (scored[index].get("story_of"), scored[index].get("dup_of")))
     story_members = {}
@@ -399,9 +445,12 @@ def decide(news_list, scored, list_slots, list_n, min_score, top_slots=0):
     for root, members in story_members.items():
         reported = any(scored[index].get("story_prev") is not None or scored[index].get("prev_of") is not None
                        for index in members)
+        reported_summary = any(was_summary(scored[index].get("story_prev")) or was_summary(scored[index].get("prev_of"))
+                               for index in members)
         for index in members:
             info = scored[index]
             info["story"], info["story_size"], info["story_prev_group"] = root, len(members), reported
+            info["story_prev_summary"] = reported_summary
             if reported and info.get("novelty") == 3:
                 info["novelty"] = 2
                 info["total"] = total_score({name: info[name] for name in CRITERIA})
@@ -672,6 +721,8 @@ def main():
     if not news_list:
         print(" -> 새로 평가할 기사가 없습니다.")
     elif list_slots <= 0:
+        # 목록이 찼으면 새 기사는 채점하지 않는다 (요약 자리를 넘겨받는 일도 없음). 목록이 찬 뒤의 재실행은 대개 요약 실패를
+        # 다시 하려는 것이라, 후보 전체 선정 호출을 더 하면 하루 한도를 쓰고 같은 과부하(503)에 다시 걸릴 수 있다
         print(" -> 오늘 목록 건수를 이미 채웠습니다.")
         for news in news_list:
             append_record("필터링", [("LINK", news['link']), ("STATUS", "SKIP (목록 마감)")])
@@ -687,17 +738,22 @@ def main():
             fail(f"기사 선정에 실패했습니다: {e}")
         # 요약 자리는 늘 top_n건 기준으로 고른다. 같은 날 재실행이면 아래에서 빈 자리를 채우고, 남는 새 기사는
         # 앞 실행 요약 대상보다 합계가 높을 때 자리를 넘겨받는다 (2026-11-15: 마지막 실행의 80점 기사 3건이 목록에만 남음)
-        listed, decisions = decide(candidates, scored, list_slots, list_n, min_score, top_slots=top_n)
+        listed, decisions = decide(candidates, scored, list_slots, list_n, min_score, top_slots=top_n, previous=previous)
 
         # 합계 순으로 목록에 기록하고, 앞에서부터 본문을 수집해 요약 대상을 채운다
-        # 본문 실패로 다음 순위가 요약 자리를 이어받을 때도 지난 사안 후속 상한(summary_prev_ok)을 지킨다
+        # 본문 실패로 다음 순위가 요약 자리를 이어받을 때와 재실행에서 자리를 넘겨받을 때도 같은 사안 상한(story_cap.summary)과
+        # 지난 사안 후속 상한(summary_prev_ok)을 지킨다. 앞 실행 요약 대상과 같은 사안이면 story_prev로 이어져 후속 상한에 걸린다
         kept = list(prior)
-        body_count, prev_used, replaced = 0, 0, []
+        story_max = STORY_CAP.get("summary")
+        body_count, prev_used, replaced, story_used = 0, 0, [], {}
         for index in listed:
             news, info = candidates[index], scored[index]
             body_text = ""
             target = None
-            if summary_prev_ok(info, prev_used) and (len(kept) < top_n or pick_replaced(prior, kept, info)):
+            story = info.get("story", index)
+            story_ok = not story_max or story_used.get(story, 0) < story_max
+            if (story_ok and summary_prev_ok(info, prev_used)
+                    and (len(kept) < top_n or pick_replaced(prior, kept, info))):
                 print(f"\n[요약 후보 / 합계 {info['total']}점] {news['title']}")
                 used, body_text = scrape_summary_body(candidates, scored, index)
                 if not body_text:
@@ -713,11 +769,16 @@ def main():
                     kept.append({"link": candidates[used]["link"], "total": info["total"], "impact": info["impact"],
                                  "field": info.get("field") or "기타"})
                     body_count += 1
-                    prev_used += bool(info.get("story_prev_group"))
+                    prev_used += bool(info.get("story_prev_summary"))
+                    story_used[story] = story_used.get(story, 0) + 1
                     if used != index:
-                        # 같은 사건의 다른 기사가 대표가 된다 (선정 이유는 원래 대표 기사의 것을 쓴다)
+                        # 같은 사건의 다른 기사가 대표가 된다. 점수는 사건의 점수(원래 대표 기사의 것)를 이어받고
+                        # (점수표 합계로 재실행 자리 비교와 주간 정렬을 하므로), 원래 대표는 그 기사의 중복으로 남긴다
                         decisions[index], decisions[used] = "중복", "요약"
                         news = candidates[used]
+                        scored[used] = {**scored[used], **{name: info[name] for name in (*CRITERIA, "total", "field")},
+                                        "dup_of": None}
+                        info["dup_of"] = used
                         info = {**info, "title_ko": scored[used]["title_ko"], "reason": scored[used]["reason"] or info["reason"]}
                     else:
                         decisions[index] = "요약"

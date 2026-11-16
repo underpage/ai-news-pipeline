@@ -256,7 +256,8 @@ def collect_stats():
     rank_failures = [reason for target, reason in evaluate_errors if target == "전체 후보"]
     # 재실행으로 나중에 성공한 기사는 실패에서 뺀다
     body_failures = {target for target, reason in evaluate_errors if "본문" in reason} - with_body
-    summary_failures = {target for target, _ in read_errors("요약")} - summarized
+    # 요약 대상이 아닌 기사(요약 자리를 넘긴 기사, 본문을 못 가져온 기사)의 요약 오류는 세지 않는다
+    summary_failures = ({target for target, _ in read_errors("요약")} & with_body) - summarized
 
     return {
         "date": f"{run_date():%Y-%m-%d}",
