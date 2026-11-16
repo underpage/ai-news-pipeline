@@ -1,0 +1,192 @@
+[TITLE] Qwen4-Max - 네이티브 비전과 100만 토큰 컨텍스트를 갖춘 장기 작업용 AI 모델
+[LINK] https://news.hada.io/topic?id=37262&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-16 12:57 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 모델
+[SCORE] 9
+[REASON] 2.4조 파라미터 모델, 경쟁사는 대응 필요
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- Alibaba가 이미지와 영상을 직접 처리하고 100만 토큰 컨텍스트를 지원하는 Qwen4-Max를 공개했다.
+- 백본 파라미터 2.4조 개의 모델로, 자체 Work360 평가 점수가 Qwen3.8-Max의 47.74에서 52.69로 올랐고 작업당 평균 비용은 4.43달러에서 1.67달러로 62% 감소했다.
+- QwenCloud와 QwenWork, Qoder, QwenStudio에서 쓸 수 있으며, 같은 계열의 소형 Qwen4 모델도 오픈소스로 공개할 예정이다.
+
+#긍정
+---
+[TITLE] FBI warns ARTEX AI hacking tool is powering global cyberattacks
+[LINK] https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/
+[PUBLISHED] 2026-11-16 03:29 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] AI 공격 도구 악용 확산, 기업 대응 필요
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+FBI, ARTEX AI 해킹 도구가 전 세계 사이버 공격에 쓰인다고 경고
+
+**[영문 3줄 요약 (Original)]**
+- The FBI warned that hackers are using an AI-powered penetration testing framework called ARTEX to automate cyberattacks against organizations worldwide, including a ConnectWise supply-chain breach that compromised Microsoft 365 customer environments.
+- The framework is written in Go, integrates with external LLMs such as Anthropic Claude, OpenAI GPT, DeepSeek, GLM, Grok, and Kimi, and some intrusions reached privileged access in under three hours.
+- The FBI's 13-page advisory includes indicators of compromise, and it urges organizations to secure internet-facing applications, restrict access to cloud administration interfaces, and implement rate limits on sensitive APIs.
+
+**[국문 3줄 요약 (Translated)]**
+- FBI는 해커들이 AI 기반 침투 테스트 프레임워크 ARTEX를 사용해 전 세계 조직에 대한 사이버 공격을 자동화하고 있다고 경고했으며, 여기에는 Microsoft 365 고객 환경을 침해한 ConnectWise 공급망 침해도 포함된다.
+- 이 프레임워크는 Go로 작성됐고 Anthropic Claude, OpenAI GPT, DeepSeek, GLM, Grok, Kimi 같은 외부 LLM과 연동하며, 일부 침입은 3시간 안에 권한 상승 단계에 이르렀다.
+- FBI의 13쪽 권고문에는 침해 지표가 담겼고, 인터넷에 노출된 애플리케이션 보호, 클라우드 관리 인터페이스 접근 제한, 민감한 API의 요청 제한 적용을 권고한다.
+
+#부정
+---
+[TITLE] 미국·한국 등 9개국, 중국 견제 AI 공급망 보호 공동 선언
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217435
+[PUBLISHED] 2026-11-16 11:49 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 7
+[REASON] 9개국 AI 공급망 공동 보호 선언
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 미국과 한국, 일본 등 9개국이 중국의 영향력으로부터 AI 공급망을 보호하기 위한 샌프란시스코 선언에 서명했다.
+- 미국이 주도하는 팍스 실리카의 일환으로, 참여국은 공동 보호가 필요한 민감 기술과 핵심 인프라를 선정하고 공급망 다변화 정보를 공유하며 실무그룹을 운영할 예정이다.
+- 독일과 스웨덴, 네덜란드, EU 집행위원회도 다음 주 서명에 참여할 예정이며, 이번 선언에서 새로운 수출 통제 조치나 법적 구속력이 있는 규제 방안이 발표된 것은 아니다.
+
+#중립
+---
+[TITLE] 웹사이트가 조작하는 요소 선택기로 발생한 uBlock Origin의 범용 XSS 취약점
+[LINK] https://news.hada.io/topic?id=37265&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-16 13:36 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 보안
+[SCORE] 6
+[REASON] 확장 프로그램 사용자는 최신판 적용
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- Firefox용 uBlock Origin MV2에서 악성 웹사이트가 사용자 클릭 한 번으로 임의의 신뢰 필터를 추가하고 다른 사이트의 컨텍스트에서 JavaScript를 실행할 수 있는 범용 XSS 취약점이 발견됐으며 현재는 수정됐다.
+- 1.75.2 이하가 영향 대상이고 1.75.4에서 수정됐으며, 공격은 설치별 UUID를 알아낸 뒤 요소 선택기 iframe에 메시지를 보내고 opt 필드의 줄바꿈으로 필터 제한을 우회하는 방식이었다.
+- 수정 사항에는 요소 선택기를 열 때 확장 프로그램이 발급한 비밀값을 확인하는 방식이 포함되며, MV3 버전인 uBO Lite에도 덜 심각한 유사 취약점이 있었다.
+
+#부정
+---
+[TITLE] A step toward defining the Standard Model on a lattice
+[LINK] https://openai.com/index/step-toward-defining-the-standard-model
+[PUBLISHED] 2026-11-16 07:00 KST
+[SOURCE] OpenAI
+[TOPIC] 모델
+[SCORE] 6
+[REASON] GPT-6 Astra가 표준모형 증명 도움
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+격자 위에서 표준모형을 정의하기 위한 한 걸음
+
+**[영문 3줄 요약 (Original)]**
+- Physicist Nathaniel Craig, a visiting scientist at OpenAI, describes in the first guest post on OpenAI's science blog how he worked with GPT-6 Astra on a candidate lattice definition of the Standard Model.
+- The Standard Model lacks a nonperturbative definition, and in an October preprint prepared with the aid of GPT-6 Astra he proposed a candidate definition on a lattice, a grid representing spacetime.
+- Craig says he had a strategy but could not prove it worked in all required cases, and Astra helped turn it into a construction and took the lead in developing the detailed proof.
+
+**[국문 3줄 요약 (Translated)]**
+- OpenAI 객원 과학자인 물리학자 Nathaniel Craig는 OpenAI 과학 블로그의 첫 번째 초청 글에서 GPT-6 Astra와 함께 표준모형의 격자 정의 후보를 연구한 과정을 설명한다.
+- 표준모형에는 비섭동적 정의가 없는데, 그는 GPT-6 Astra의 도움으로 작성한 10월 프리프린트에서 시공간을 나타내는 격자 위의 정의 후보를 제안했다.
+- Craig는 전략은 있었지만 필요한 모든 경우에 통한다는 증명은 하지 못했고, Astra가 그 전략을 구성으로 바꾸는 일을 돕고 세부 증명을 주도했다고 밝혔다.
+
+#긍정
+---
+[TITLE] Anthropic's Claude Fable 5.2 doesn't generate images, it paints them
+[LINK] https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/
+[PUBLISHED] 2026-11-16 00:42 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델
+[SCORE] 6
+[REASON] 코드로 붓질해 그림 그리는 모델 능력
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+Anthropic의 Claude Fable 5.2는 이미지를 생성하지 않고 그린다
+
+**[영문 3줄 요약 (Original)]**
+- Anthropic's Claude Fable 5.2 generates images by placing brushstrokes on a virtual canvas through Python code, simulating bristle texture and paint application instead of using diffusion.
+- In demonstrations, it produced a parking garage scene from roughly 700,000 strokes and a bird painting from 111 strokes, and painted over its own mistakes afterward.
+- On Anthropic's internal RoboDojo Sim benchmark, Fable 5.2 scored 64.9 percent versus 29.8 percent for OpenAI's GPT-6 Astra, but fell behind in speed and fine motor control in a real-world test with a physical robot arm.
+
+**[국문 3줄 요약 (Translated)]**
+- Anthropic의 Claude Fable 5.2는 확산 방식 대신 Python 코드로 가상 캔버스에 붓질을 배치해 이미지를 생성하며, 붓털 질감과 물감이 칠해지는 방식을 시뮬레이션한다.
+- 시연에서 약 700,000번의 붓질로 주차장 장면을, 111번의 붓질로 새 그림을 만들었고 자신의 실수를 나중에 덧칠해 고쳤다.
+- Anthropic 내부 RoboDojo Sim 벤치마크에서 Fable 5.2는 64.9퍼센트로 OpenAI의 GPT-6 Astra의 29.8퍼센트를 앞섰지만, 실제 로봇 팔 테스트에서는 속도와 정밀한 운동 제어에서 뒤처졌다.
+
+#긍정
+---
+[TITLE] KAIST·연대·MIT 등 뭉쳐 반사형 플렉시블 디스플레이 개발
+[LINK] https://zdnet.co.kr/view/?no=20261116113216
+[PUBLISHED] 2026-11-16 11:32 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 사람과 로봇 공용 저전력 디스플레이 개발
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- KAIST 송영민 교수 연구팀이 연세대, GIST, 조선대, 공주대, MIT와 함께 사람과 로봇 카메라에 정보를 함께 전달하는 이중대역 반사형 플렉시블 디스플레이를 개발했다.
+- 전도성 고분자 PEDOT:PSS와 광학 공진 구조를 결합한 전기변색 소자로 가시광선과 근적외선 정보를 함께 표시하며, 전력 소모량은 OLED 대비 1000분의 1 수준으로 1V 이내 전력이면 가능하다.
+- 4x4 픽셀 16개 시제품에서 어둡거나 안개가 낀 환경에서도 근적외선 영상으로 패턴을 인식할 수 있음을 검증했으며, 연구팀은 칸 수를 늘리고 스마트 공장의 전자 이름표로 활용하는 방안을 제시했다.
+
+#긍정
+---
+[TITLE] X.com을 처음부터 다시 구축하기 - 서버 3개를 하나로
+[LINK] https://news.hada.io/topic?id=37245&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-16 10:20 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델, 산업
+[SCORE] 6
+[REASON] 코딩 에이전트로 웹앱 재구축 사례
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- X가 기존 웹 애플리케이션을 5명의 엔지니어와 AI 코딩 에이전트로 6개월 이내에 재구축해 사용자, 검색 크롤러, 링크 미리보기용 서버 3개를 하나로 통합했다.
+- 스트리밍 서버 렌더링을 도입해 느린 네트워크의 로그인 프로필 테스트에서 첫 게시물 표시 시간이 23.9초에서 2.7초로 단축됐고, 압축 JavaScript 다운로드량도 4.1~4.8MB에서 1.3~2.3MB로 감소했다.
+- 개발팀은 AGENTS.md, 25개 이상의 에이전트 스킬, 커스텀 린트 규칙으로 AI 생성 코드를 관리했고, 기존 서버를 비교 기준으로 삼아 검색 크롤러, 비로그인 사용자, 로그인 사용자 순서로 트래픽을 옮겼다.
+
+#긍정
+---
+[TITLE] Uber's Secure AI Framework Governs Autonomous AI Agents across Their Lifecycle
+[LINK] https://www.infoq.com/news/2026/11/uber-secure-ai-framework/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-11-16 05:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 에이전트 행동 적절성 판단 보안 프레임워크
+[MODEL] manual
+[SUMMARY]
+**[기사 제목 번역]**
+Uber의 보안 AI 프레임워크, 자율 AI 에이전트를 전체 수명주기에 걸쳐 통제
+
+**[영문 3줄 요약 (Original)]**
+- Uber Engineering developed a framework to determine whether an AI agent's action is appropriate given the user's request, the agent's purpose, its permissions, and the context, because identity and API controls cannot judge that.
+- The framework has three layers spanning pre-deployment registration in the Uber AI Registry, runtime behavioral authorization with AI Guards and Agent Guard runtime hooks, and post-deployment Continuous Assurance with unified execution traces and replay.
+- Uber reported challenges such as balancing false positives against protection and minimizing latency, and said restricting agents to explicit per-agent constraints was the strongest control, while commenters questioned how it scales and how it applies to vendor agents.
+
+**[국문 3줄 요약 (Translated)]**
+- Uber Engineering은 신원과 API 통제로는 판단할 수 없는, 사용자의 요청과 에이전트의 목적, 권한, 맥락에 비추어 에이전트의 행동이 적절한지 판단하는 프레임워크를 개발했다.
+- 이 프레임워크는 배포 전 Uber AI Registry 등록, AI Guard와 Agent Guard 런타임 훅을 쓰는 실행 중 행동 인가, 통합 실행 추적과 재생을 쓰는 배포 후 지속 보증의 세 계층으로 이뤄진다.
+- Uber는 오탐과 보호 수준의 균형, 지연 최소화 같은 과제를 밝히고 에이전트별 명시적 제약이 가장 효과적인 통제였다고 했으며, 댓글에서는 확장 비용과 외부 벤더 에이전트에 대한 적용 방법이 의문으로 제기됐다.
+
+#중립
+---
+[TITLE] 서울대, 인간 신경계 모사한 피지컬 AI 개발…객체 인식 정확도 53.8%에서 88%로 향상
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42741
+[PUBLISHED] 2026-11-16 10:27 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 신경계 모사 피지컬 AI 인식률 향상
+[MODEL] manual
+[SUMMARY]
+**[국문 3줄 요약]**
+- 서울대 김형신 교수 연구팀이 뇌간, 소뇌, 대뇌의 기능 분담을 모사해 센서 제어와 AI 추론을 통합하는 인공 삼위지능(ATI) 아키텍처를 개발했다.
+- 이동형 카메라 실험에서 객체 분류 정확도가 기존 자동 노출 방식의 53.8%에서 88%로 높아졌고, 원격 AI 모델 호출 비율은 56%에서 31.8%로 줄어 상대적으로 43.3% 감소했다.
+- 오디오 실험에서는 신호 대 잡음비가 평균 0.31dB 개선되고 음성 키워드 인식 정확도가 31.6%에서 32.7%로 올라 개선 폭이 제한적이었으며, 연구팀은 촉각 센서와 IMU로의 확장 가능성을 제시했다.
+
+#긍정
+---

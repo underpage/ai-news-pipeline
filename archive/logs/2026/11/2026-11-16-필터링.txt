@@ -6,3 +6,780 @@
 ---
 [평가 오류] 전체 후보 - 선정 실패: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 ---
+[TITLE] Qwen4-Max - 네이티브 비전과 100만 토큰 컨텍스트를 갖춘 장기 작업용 AI 모델
+[LINK] https://news.hada.io/topic?id=37262&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-16 12:57 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 모델
+[SCORE] 9
+[REASON] 2.4조 파라미터 모델, 경쟁사는 대응 필요
+[FIELD] AI 모델
+[BODY]
+GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
+발행 2026-11-16 · 작성 neo
+출처 https://news.hada.io/topic?id=37262
+- Alibaba가 이미지와 영상을 직접 처리하고 100만 토큰 컨텍스트를 지원하는 Qwen4-Max를 공개함
+- 2.4조 파라미터 백본의 새 Qwen4 아키텍처를 기반으로, 네이티브 비전과 100만 토큰 컨텍스트를 결합해 전문 도구 사용과 장시간 작업 수행을 지원
+- 자체 Work360 평가에서 Qwen3.8-Max 대비 점수가 47.74에서 52.69로 올랐음. 토큰 사용량과 API 요금이 줄면서 작업당 평균 비용은 4.43달러에서 1.67달러로 62% 감소
+- Live Delivery는 장기 작업에서 사용 가능한 첫 결과물을 일찍 제공하고 후속 버전으로 개선하며, 사용자가 진행 중 오류를 수정하거나 방향을 바꿀 수 있게 함
+- 게임 개발, 자동차 제조, 금융, 법률, 의료, 과학 연구의 활용 사례를 공개. 자동차 부품 가공 사례에서 수동 프로그래밍 시간이 약 475분에서 24분으로 줄었음
+- QwenCloud와 QwenWork, Qoder, QwenStudio에서 사용할 수 있으며, 같은 계열과 세대의 학습 기법을 적용한 소형 Qwen4 모델도 오픈소스로 공개할 예정임
+아키텍처와 사전학습
+- Qwen4-Max는 백본 파라미터 2.4조 개, 토큰당 활성 파라미터 710억 개, 별도 N-gram Embedding 파라미터 3,280억 개로 구성됨
+- 희소 MoE 아키텍처의 어텐션, 잔차 연결, 임베딩을 개편해 계산 효율, 모델 용량, 학습 안정성을 높임
+  - GDN + Qwen Sparse Attention(QSA): QSA 계층 하나당 Gated DeltaNet 계층 세 개가 과거 정보를 고정 크기 상태로 압축함. QSA는 경량 인덱서로 마이크로블록 단위의 관련 문맥을 선택해 긴 시퀀스의 어텐션 및 인덱싱 비용을 줄임
+  - Gated Residual(GR): 병렬 잔차 분기 네 개에 동적 읽기/쓰기 게이트를 적용해 계층 간 정보 흐름과 학습 안정성을 개선함
+  - N-gram Embedding: 두 번째 계층에서 문맥 기반 조회로 지역적 토큰 패턴을 표현해 적은 추가 계산으로 모델 용량을 확장함
+- 2.4조 파라미터 규모의 사전학습 동안 손실 급등 없이 손실이 꾸준히 감소했으며, Qwen은 이를 주로 아키텍처와 학습 최적화 개선에 따른 결과로 봄
+- 자체 Knowledge, Code, QA, STEM 평가에서 Qwen4-Max-Base는 비교한 체크포인트 다섯 개 중 가장 낮은 바이트당 비트 수(BPB)를 기록함
+  - Qwen3.8-Max-Base보다 활성 파라미터가 25% 적으면서 모든 영역의 BPB가 약 5~13% 낮았음
+  - 비교 대상 GLM-5.3과 Kimi-K3.1-Pro는 후속학습을 거친 체크포인트여서 기본 모델과의 비교에 영향을 줄 수 있음
+업무 평가와 토큰 효율
+- 산업 업무 분류 체계이자 벤치마크인 Work360은 1단계 영역 26개, 2단계 하위 영역 182개, 3단계 전문 분야 721개로 복잡한 업무를 분류함
+  - 최신 평가 점수는 Qwen3.8-Max 47.74에서 Qwen4-Max 52.69로 상승함
+  - 전체 비교에서도 평가한 거의 모든 역량에서 이전 세대보다 개선된 성능을 기록함
+- 토큰 사용량은 Xhigh/High 추론 노력 수준에서 각각 Work360 기준 약 24%/35%, Terminal-Bench 4.0 기준 약 48%/49% 감소함
+- API 가격도 Qwen3.8-Max보다 낮아졌으며, 특히 캐시된 입력 가격을 크게 인하함
+  - 자체 Work360 평가의 작업당 평균 비용은 4.43달러에서 1.67달러로 62% 감소함
+3D 제작, 게임 개발과 자동차 제조
+- Blender로 기하 모델링, 장면 조립, 재질 설정, 조명, 렌더링을 수행하며 건축, 실내, 자연 풍경, SF 장면을 제작함
+  - 생성한 3D 자산을 게임에 사용하거나 3D 프린팅으로 실물화하는 사례를 통해 디지털 제작과 설계 탐색, 콘텐츠 제작, 시제품 제작의 연결 가능성을 보여줌
+- Unity, Unreal Engine, Godot에서 자연어 요구사항 하나를 바탕으로 장면, 게임 로직, 외부 자산, 재질, HUD, 시각 효과를 구성해 실행 가능한 게임을 제작함
+  - 게임을 직접 실행하고 시각 및 상호작용 피드백으로 카메라 추적, 캐릭터 애니메이션, 타격 반응, 조명, 진행 속도를 반복 개선함
+  - Meow of Magic: Unreal Engine으로 만든 고양이 마법사 모험 게임으로, 주문 사용과 업그레이드 선택, 적 무리 및 보스 전투를 지원함
+  - Yun Guan Xing: Unreal Engine 기반 판타지 모험 게임으로, 검을 타고 구름과 고리를 통과하며 탐험하고 보스와 싸움
+  - Flying Racer: Unity 6로 만든 서호 배경의 설치형 Android 레이싱 게임으로, 드리프트, 니트로 부스트, 날개를 펼친 비행을 지원함
+- SANF와 Pacific Union의 실제 생산 환경에서는 자동차 생산라인 계획, 부품 설계, 가공 검증을 연결함
+  - 2D 배치도와 공정 매개변수, 기존 설비 라이브러리로 3D 생산라인을 만들고 사이클 타임 시뮬레이션과 PLC 가상 시운전을 수행함
+  - 자동차 도어 조립체와 마찰 휠 등을 설계하고 가공 공정 계획, 공구 경로 생성, 시뮬레이션 검증을 지원함
+  - 반복 검증으로 실제 가공 전 과절삭과 미절삭을 식별함. 공개 사례에서 단일 공작물의 수동 프로그래밍 작업 시간이 약 475분에서 24분으로 약 95% 감소함
+에이전트 기반 영상 제작
+- Qwen4와 WonderClip을 결합해 스토리보드 수정, 정적 자산 제작, 블록아웃의 카메라 애니메이션, 개별 클립 렌더링, 여러 장면을 잇는 편집까지 수행함
+- 텍스트 프롬프트와 참조 이미지로 제작자의 지식과 추론을 생성 모델에 전달하고, 매개변수 기반 블록아웃으로 복잡한 자산의 기하 구조, 크기, 공간 관계를 일관되게 유지함
+- 카메라 경로와 동작 및 사건의 타이밍을 정밀하게 제어하며, 자연어 상호작용과 제어 가능한 사전 시각화를 통해 결과의 예측 가능성과 해석 가능성을 높임
+금융, 법률, 의료의 전문 업무 사례
+- 금융 투자 조사에서는 MCP 도구 90개로 중국 A주, 홍콩 및 미국 주식, 채권, 펀드, 파생상품의 시세와 재무, 금리, 배당 데이터를 수집하고 공개 공시와 교차 검증함
+  - 산업 수급과 신규 주문, 거시 금리와 신용 스프레드, 주식-채권 수익률 차이를 분석하고 다요인 백테스트로 투자 스타일 노출을 평가함
+  - CSI 300 파생상품 사례에서는 조달 비용, 배당 수익률, 만기로 이론적 선물 베이시스를 계산하고 현물 대비 실제 할인과 내재 변동성-역사적 변동성 차이를 분석함
+  - Excel과 편집 가능한 PowerPoint를 만들며, 셀의 원본 출처 링크와 PowerPoint 차트-Excel 통합문서의 일대일 대응으로 수치 및 수식을 추적할 수 있게 함
+- 상장 전 법률 실사에서는 형식과 이름이 제각각인 작업 문서 198개를 실제 내용에 따라 이름을 바꾸고 14개 폴더로 분류한 뒤 색인을 작성함
+  - 기업 등록, 지식재산, 사법 및 신용 기록을 검색해 작업 문서와 교차 검증함
+  - 가치평가 조정 메커니즘(VAM) 계약의 효력 부활 조항 같은 잠재 위험을 찾아 시정 권고를 작성함
+  - 기업 연혁과 지분 구조 등 검토 영역 12개, 구체적 법률 문제 14개를 담은 86쪽, 중국어 6만 자 이상의 보고서를 작성했으며 모든 결론에 작업 문서 인용을 붙임
+- 중환자 진료 지원 사례에서는 다수의 검사 보고서, 중국어 1만 자 이상의 경과 기록, 여러 처방 묶음, 원본 의료 영상 1,433개를 한 대화에서 검토함
+  - 환자는 경동맥 스텐트 시술 후 심실세동으로 소생술을 받았고, 발관 후 흉통이 발생해 6일 차에 재삽관함
+  - 날짜별 CRP 수치를 조회하고 6일간의 임상 경과를 시간순으로 구조화함
+---
+[TITLE] FBI warns ARTEX AI hacking tool is powering global cyberattacks
+[TITLE_KO] FBI, ARTEX AI 해킹 도구가 전 세계 사이버 공격에 쓰이고 있다고 경고
+[LINK] https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/
+[PUBLISHED] 2026-11-16 03:29 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 8
+[REASON] AI 공격 도구 악용 확산, 기업 대응 필요
+[FIELD] 보안
+[BODY]
+The FBI is warning that hackers are using an AI-powered penetration testing framework called ARTEX to automate cyberattacks against organizations worldwide, including a recent ConnectWise supply-chain breach that compromised Microsoft 365 customer environments.
+In a FLASH advisory released Friday, the agency said multiple threat actors have weaponized the open-source framework since at least August 2026 to target organizations across the financial, government, technology, defense, healthcare, and other sectors.
+"ARTEX significantly reduces the time required to chain attack techniques, with some intrusions progressing from initial targeting to privileged access in under three hours," reads the FBI advisory.
+"The framework enables threat actors with minimal technical expertise to conduct complex, multi-target operations simultaneously, fundamentally accelerating attack velocity and expanding operational scale."
+ARTEX is an autonomous penetration testing framework written in Go that uses artificial intelligence agents to perform reconnaissance, discover vulnerabilities, exploit systems, escalate privileges, and steal data with little human intervention.
+Rather than using its own AI model, the framework integrates with external large language models (LLMs), including Anthropic Claude, OpenAI GPT, DeepSeek, GLM, Grok, and Kimi.
+Attackers provide their goals and tasks to ARTEX, which converts them into commands executed by specialized AI agents. This allows them to automate intrusion activities and target multiple organizations simultaneously.
+The FBI says the framework is particularly effective at identifying vulnerabilities in overlooked systems, including partner portals, employee applications, legacy services, and third-party integrations.
+While these automated attacks can generate large volumes of suspicious traffic that trigger security alerts, their speed can leave defenders with little time to respond before attackers breach a system.
+ARTEX was originally released on GitHub in July 2026 by a developer known as Autumn-27, who removed the repository on October 8 after reports emerged that threat actors were abusing the framework.
+However, the FBI says the framework remains available through community forks, archived copies, localized versions, and a commercial edition called ARTEX PRO.
+As of early November, researchers had identified more than 1,600 publicly exposed ARTEX consoles, with the actual number of deployments believed to be significantly higher.
+The FBI's 13-page advisory includes indicators of compromise associated with known ARTEX campaigns, including IP addresses, command-and-control infrastructure, and suspicious network activity.
+Separately, cybersecurity researcher MalwareMustDie released an open-source ARTEX detection signature pack on Friday to help defenders identify attacks involving the framework.
+The detection pack includes rules and indicators for various security monitoring and threat detection tools, covering suspicious network requests, identity abuse, cloud activity, malicious files, and automated attack patterns.
+The researcher also published a detection playbook that categorizes indicators by confidence level, warning that IP addresses and other infrastructure indicators can become outdated or generate false positives.
+Organizations are urged to secure internet-facing applications, restrict access to cloud administration interfaces, review application permissions and authentication logs, and implement rate limits on sensitive APIs.
+The bureau also recommends monitoring for unusual bursts of automated requests, suspicious cloud activity, unexpected credential or privilege changes, and large data transfers.
+The FBI cautions that IP addresses listed in the IOCs may have changed since the attacks occurred.
+Organizations that identify suspicious activity associated with ARTEX are encouraged to report their findings to the FBI or its Internet Crime Complaint Center (IC3).
+Known Artex-linked attacks
+---
+[TITLE] 미국·한국 등 9개국, 중국 견제 AI 공급망 보호 공동 선언
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217435
+[PUBLISHED] 2026-11-16 11:49 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 7
+[REASON] 9개국 AI 공급망 공동 보호 선언
+[FIELD] 기타
+[BODY]
+미국과 한국, 일본 등 9개국이 중국의 영향력으로부터 AI 공급망을 보호하기 위한 공동 선언에 서명했다. 반도체와 핵심 광물, 에너지 등 AI 산업에 필요한 기술과 인프라 가운데 보호가 필요한 분야를 공동으로 선정하고, 중국에 대한 공급망 의존도를 낮추기 위한 협력을 강화하기로 했다.
+파이낸셜타임스(FT)는 15일(현지시간) 제이컵 헬버그 미국 국무부 경제담당 차관과의 인터뷰를 통해 미국과 한국, 일본, 호주, 이스라엘, 영국, 인도, 카타르, 아랍에미리트(UAE) 등 9개국이 '샌프란시스코 선언'에 서명했다고 보도했다.
+독일과 스웨덴, 네덜란드, 유럽연합(EU) 집행위원회도 다음 주 서명에 참여할 예정이다.
+이번 선언은 미국이 주도하는 AI 공급망 협력 구상인 '팍스 실리카(Pax Silica)'의 일환이다. 미국과 협력국들은 중국과의 기술 경쟁이 심화하는 가운데 반도체부터 희토류 등 핵심 광물, 에너지, 물류 인프라까지 AI 산업에 필요한 공급망을 다변화하고 공동 보호 체계를 구축한다는 계획이다.
+헬버그 차관은 "반도체를 설계하는 기술과 제조 장비, 제품을 운송하는 항구가 모두 서로 다른 국가에 있을 수 있다"라며 "이번 선언이 역사적인 이유는 팍스 실리카 참여국들이 이러한 기술과 인프라의 보안을 공동 책임으로 다루기로 합의했기 때문"이라고 말했다.
+참여국들은 AI 관련 민감 기술과 핵심 인프라 가운데 공동 보호가 필요한 대상을 선정하고, 공급망 다변화가 필요한 분야에 관한 정보를 공유하기로 했다. 특히 기술 탈취나 불법 이전, 적대 세력의 확보가 군사·정보 역량에 중대한 이점을 줄 수 있는 기술을 우선 보호 대상으로 삼는다. AI 관련 투자를 유치하기 위한 경제 거점 조성과 공급망 강화를 위한 실무그룹도 운영할 예정이다.
+이번 선언은 도널드 트럼프 미국 대통령과 시진핑 중국 국가주석이 오는 19일 중국 선전에서 열리는 아시아태평양경제협력체(APEC) 정상회의에서 회담을 앞둔 가운데 나왔다. 미국은 중국이 지난해 말 합의한 무역 갈등 완화 약속을 제대로 이행하지 않고 있다고 비판해 왔으며, 중국에 미국과 일본 등 동맹국에 대한 희토류 수출 확대를 요구하고 있다.
+이번 협력도 중국이 큰 영향력을 행사하는 희토류 등 핵심 광물 공급망을 다변화하려는 미국의 전략과 맞닿아 있다. 중국에 대한 의존도를 줄여 경제적 압박에 대응하고, AI 산업에 필요한 핵심 기술과 인프라를 안정적으로 확보하겠다는 것이다.
+미국 국무부는 "어느 한 국가도 AI 시대의 산업 기반을 홀로 확보할 수 없으며, AI가 가져올 번영의 지속 가능성은 이를 뒷받침하는 공급망과 인프라의 안정성에 달려 있다"라고 밝혔다.
+참여국들은 앞으로 실무그룹을 통해 공동 보호 대상과 공급망 강화 방안을 구체화할 예정이다. 이번 선언에서 새로운 수출 통제 조치나 법적 구속력이 있는 규제 방안이 발표된 것은 아니다.
+박찬 기자 cpark@aitimes.com
+---
+[TITLE] 웹사이트가 조작하는 요소 선택기로 발생한 uBlock Origin의 범용 XSS 취약점
+[LINK] https://news.hada.io/topic?id=37265&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-16 13:36 KST
+[SOURCE] GeekNews
+[TOPIC] 개발, 보안
+[SCORE] 6
+[REASON] 확장 프로그램 사용자는 최신판 적용
+[FIELD] 보안
+[BODY]
+GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
+발행 2026-11-16 · 작성 neo
+출처 https://news.hada.io/topic?id=37265
+- Firefox용 uBlock Origin MV2에서 악성 웹사이트가 사용자 클릭 한 번으로 임의의 신뢰 필터를 추가하고, 다른 사이트의 컨텍스트에서 JavaScript를 실행할 수 있는 범용 XSS(UXSS) 취약점이 발견됐으며 현재는 수정됨
+- 1.75.2 이하가 영향 대상이며, 1.75.4에서 수정됨. 요소 선택기를 열 때 확장 프로그램이 발급한 비밀값을 확인하도록 바뀜
+- 공격은 확장 프로그램의 설치별 UUID를 알아낸 뒤 요소 선택기 iframe을 직접 삽입하고, 메시지를 보내 공격자가 원하는 필터를 입력하는 방식으로 진행됨
+- 요소 선택기의 필터 제한은 요청 유형을 지정하는 opt 필드에 줄바꿈을 삽입해 우회할 수 있었으며, 이를 통해 스크립트를 주입하는 신뢰 필터를 추가할 수 있었음
+- 투명한 iframe이나 겹쳐진 화면 요소로 사용자가 보이지 않는 “Create” 버튼을 누르게 할 수 있지만, 발견자가 이 클릭 유도 단계까지 실제로 구현하지는 않음
+- 핵심 문제는 요소 선택기가 공격자의 메시지를 수락한다는 점이었으며, 수정 사항 중 하나로 실제 요소 선택기와 콘텐츠 스크립트 사이의 비밀값 확인이 도입됨
+발견 범위와 공격 준비
+- Firefox용 uBlock Origin MV2에서 클릭 한 번으로 임의 사이트의 컨텍스트에서 JavaScript를 실행할 수 있는 취약점이 발견됨
+  - MV3 버전인 uBO Lite에도 유사하지만 문제가 덜 심각한 취약점이 있었음
+  - 현재는 수정됐으며, 세부 내용은 GitHub 보안 권고에서 확인 가능함
+- 발견자는 필터 주입으로 UXSS가 가능할 수 있다는 가설을 세우고 GPT-5.6 Sol에 조사를 요청했으며, 모델이 찾아낸 문제를 직접 확인하고 검증함
+  - 개념 증명(PoC) 코드 대부분은 Claude가 작성함
+- 요소 선택기는 페이지를 우클릭해 열 수 있으며, 페이지를 떠나지 않고 특정 요소를 차단하는 필터를 생성함
+  - 내부적으로 moz-extension://<설치별 UUID>/web_accessible_resources/epicker-ui.html 을 iframe으로 삽입함
+  - 이 페이지는 확장 프로그램의 백그라운드 스크립트에 필터 추가를 요청할 수 있음
+- 공격자는 선택기 URL을 알아내기 위해 Firefox에서 설치마다 무작위로 지정되는 확장 프로그램 내부 UUID를 확보해야 했음
+  - 기본 설정의 uAssets 필터 lootdest.*##+js(no-fetch-if, adsbygoogle, war:googlesyndication_adsbygoogle.js) 는fetch 를 가로챔
+  - 해당 훅은 확장 프로그램의 web_accessible_resources/googlesyndication_adsbygoogle.js 에 XHR 요청을 보내고, 원래 네트워크 요청 대신 그 응답을 반환함
+  - 이 필터는 광고 서버의 JavaScript를 API는 같지만 아무 동작도 하지 않는 대체 스크립트로 바꾸기 위한 것임
+- 악성 페이지는 XMLHttpRequest.prototype.open 을 가로채 내부 XHR의moz-extension:// URL에서 UUID를 추출할 수 있음
+  - fetch('/adsbygoogle.js').catch(() => {}); 를 실행해 필터와 XHR 훅을 작동시킴
+  - 내부 UUID가 유출될 수 있는 경로는 이 필터 외에도 여러 가지가 있음
+  - 확보한 UUID로 요소 선택기 페이지를 자체 iframe에 삽입할 수 있음
+메시지 조작, 필터 주입과 클릭 유도
+- 공격자는 MessageChannel 을 만들고iframe.contentWindow.postMessage({ what: 'epickerStart' }, '*', [ch.port2]); 로 선택기와 통신을 시작할 수 있음
+  - 선택기가 start 메시지를 보내면, 원하는 필터를 담은showDialog 메시지를 전송함
+  - 이어 resultsetDetails 메시지로 생성 버튼을 활성화하고opt 를 설정함
+- 일반적인 요소 선택기는 입력 가능한 필터를 제한하고 스크립틀릿 필터 추가를 허용하지 않지만, opt 의 줄바꿈으로 이를 우회할 수 있었음
+  - opt 는 보통image 같은 네트워크 요청 유형이며, 필터 뒤에$image 처럼 붙음
+  - 공격자가 "image\ngoogle.com##+js(trusted-rpnt, script, ...)" 처럼 값을 설정하면 별도 줄에 임의의 신뢰 필터를 주입할 수 있음
+  - 신뢰 필터는 페이지에 JavaScript를 삽입할 수 있어 다른 사이트를 대상으로 코드를 실행할 수 있음
+- 핵심 결함은 요소 선택기가 공격자의 메시지를 받아들인 것임
+  - 수정 사항 중 하나는 실제 선택기가 콘텐츠 스크립트에서 비밀값을 받고, 초기 postMessage 에 그 값을 보내도록 하는 방식임
+- 악성 사이트는 삽입한 선택기 위에 다른 화면 요소를 겹치거나 iframe의 불투명도를 0으로 설정해 보이지 않는 “Create” 버튼을 클릭하도록 유도할 수 있음
+  - 발견자는 이 단계를 실제로 구현하지 않았음
+  - 사용자의 클릭을 확보하면 임의 도메인에 대한 신뢰 필터를 추가할 수 있음
+- 요소 선택기로 추가한 필터는 적어도 재컴파일 전까지는 신뢰 필터로 취급됨
+  - 사용자가 나중에 사용자 정의 필터를 변경하면 재컴파일이 발생하면서 신뢰 상태가 해제됨
+  - 그러나 공격자는 필터 추가 직후 대상 웹페이지를 열 수 있으므로, 이후의 재컴파일은 실질적인 방어에 큰 도움이 되지 않음
+---
+[TITLE] A step toward defining the Standard Model on a lattice
+[TITLE_KO] 표준모형을 격자 위에 정의하기 위한 한 걸음
+[LINK] https://openai.com/index/step-toward-defining-the-standard-model
+[PUBLISHED] 2026-11-16 07:00 KST
+[SOURCE] OpenAI
+[TOPIC] 모델
+[SCORE] 6
+[REASON] GPT-6 Astra가 표준모형 증명 도움
+[FIELD] AI 모델
+[BODY]
+In the first guest post on our science blog, physicist Nathaniel Craig, a visiting scientist at OpenAI, describes how he worked with GPT‑6 Astra on a candidate lattice definition of the Standard Model. Craig leads the particle theory group at the University of California, Santa Barbara, and is a permanent member of its Kavli Institute for Theoretical Physics.
+The Standard Model of particle physics is an extraordinarily successful theory of nature, describing the known elementary particles and three of the four fundamental forces—the strong force, the weak force, and electromagnetism. The success of the theory rests on outstanding agreement between theoretical calculations and experiments across eighteen orders of magnitude, from the low energies of hydrogen’s 21-centimeter radio emission to the high energies of collisions at the Large Hadron Collider. And yet for all of its successes over the more than fifty years of its existence, a foundational problem remains: how to give the full theory a nonperturbative definition, one that does not rely on treating its interactions as small corrections. In an October preprint(opens in a new window) prepared with the aid of GPT‑6 Astra, I proposed a candidate definition on a lattice—a grid representing spacetime.
+I had a strategy for tackling this problem, but had not been able to prove that it worked in all the cases it needed to cover. Astra helped turn that strategy into a construction and took the lead in developing the detailed proof. To explain what we did, it helps to start with what is missing from our existing description of the Standard Model.
+What does it mean to say that we lack a definition of the Standard Model? Quantum mechanics and special relativity tell us how the particles and forces of the Standard Model interact. Unfortunately, we don’t yet know how to make complete predictions based directly on these interactions. Instead, we often start by imagining that the interactions are turned off, so that electrons would no longer repel each other. We can solve that problem exactly, then put the interactions back in as a series of small corrections. When the corrections get progressively smaller, a few terms can give a remarkably precise answer—for example, it has allowed physicists to predict the strength of the electron’s magnetism to within a few parts in a trillion. This approach is known as perturbation theory.
+However, much of the richness of the Standard Model lies outside the realm of perturbation theory. Take the mass of the proton: the proton is made up of three quarks, but its mass comes primarily from the motion and interactions of the quarks and the strong force-carrying gluons inside it. If you turn off the strong force, the proton falls apart entirely, so perturbation theory is not a useful guide to understanding the size of the proton’s mass. More powerful methods are needed to access information about the theory nonperturbatively, where the interactions are present from the start and not treated as small corrections.
+For the full Standard Model in continuous spacetime, we don’t have a nonperturbative definition, or even an understanding of whether the interacting theory is mathematically well defined. A promising alternative is to discretize spacetime into a grid of points, known as a lattice. The spacing of the grid defines the shortest distance our theory can resolve, and studying a finite grid allows us to give a rigorous nonperturbative definition of the theory at a given spacing. It also enables us to put the theory on a computer, where we can calculate its predictions directly without resorting to perturbation theory. This approach, known as lattice field theory, has led to remarkable progress in our understanding of the strong force over the last few decades, including a quantitative understanding of the mass of the proton from first principles.
+---
+[TITLE] Anthropic's Claude Fable 5.2 doesn't generate images, it paints them
+[TITLE_KO] 앤트로픽 클로드 페이블 5.2는 이미지를 생성하지 않고 그린다
+[LINK] https://the-decoder.com/anthropics-claude-fable-5-2-doesnt-generate-images-it-paints-them/
+[PUBLISHED] 2026-11-16 00:42 KST
+[SOURCE] The Decoder
+[TOPIC] 개발, 모델
+[SCORE] 6
+[REASON] 코드로 붓질해 그림 그리는 모델 능력
+[FIELD] AI 모델
+[BODY]
+Anthropic's Claude Fable 5.2 doesn't generate images, it paints them
+Key Points
+- Anthropic's new language model Claude Fable 5.2 generates images by placing brushstrokes on a virtual canvas through Python code, simulating physical properties such as bristle texture and paint application.
+- In demonstrations, the model produced a parking garage scene from roughly 700,000 strokes and a bird painting from 111 coordinate sequences, painting over deviations after the fact.
+- On Anthropic's internal RoboDojo Sim benchmark, Fable 5.2 scored 64.9 percent compared with 29.8 percent for OpenAI's GPT-6 Astra, but fell behind its competitor in speed and fine motor control during a real-world test with a physical robot arm.
+Anthropic's new language model Claude Fable 5.2 can create complex and even photorealistic paintings by using code to place hundreds of thousands of individual brushstrokes on a virtual canvas.
+Current image models like Midjourney typically use diffusion, which gradually refines a noisy image into a clear result. Fable 5.2 takes a different approach by simulating the physical painting process, including bristle texture, how the paint goes on, and mistakes it then has to paint over.
+Developer Jake Eaton showed on X what the approach can do. Eaton works at Anthropic, where he regularly contributes to research on language model values, safety mechanisms, and AI agent behavior.
+When he asked Fable 5.2 to create a painting as hard to distinguish from a photograph as possible, the model generated an image of a shopping cart in a parking garage using roughly 700,000 simulated brushstrokes.
+According to Eaton, Claude works without an external image model and without pre-rendered or traced source images. Each piece is a Python program of 1,000 to 2,000 lines that drives a simulated paint engine. The approach resembles agentic image editing, where language models pick tools and evaluate results.
+Earlier attempts with the sibling model Opus 5.5 drew criticism for merely imitating existing art. Eaton responded by having Fable 5.2 develop its own artist personas with fictional backstories and consistent styles. The model needs several thousand brushstrokes per painting, and Eaton redirects them with comments.
+Without an undo button, the model has to commit to every stroke
+Anthropic engineer Michael Graczyk shared a chat log and video of an experiment in which he asked Fable 5.2 to paint a bird at sunrise. The model could only use code to simulate the physics of bristles, wet paint, and canvas texture. It had to output every brushstroke manually as its own coordinate line, with no way to undo strokes once placed. That's what sets this method apart from AI-generated videos, where models like Flux 3 generate image sequences and their temporal consistency directly.
+The resulting 21-second video uses a counter to track how the painting takes shape from exactly 111 strokes on a blank canvas. For the first stroke, the model output the color code #30346a, a width of 90 pixels, and five slightly wobbling waypoints. Fable 5.2 said it added the roughly seven-pixel wobble on purpose because a human arm doesn't draw a perfectly straight line either.
+Between passes, the model looked at the canvas and reacted to its own mistakes like a real painter would. When the bird's back came out too thin and scraggly, the AI laid a bolder stroke over it, so the stray bristle marks along the edges now look like ruffled feathers.
+In a second, 280-stroke piece showing two people painting at dusk, a late lighting effect accidentally smeared paint tubes and a cup on the table. Claude repainted those objects after the fact. The model also had both figures paint with their outer hands so their inner shoulders could touch, just as the prompt requested.
+The same spatial reasoning transfers to physical robots
+Fable 5.2's ability to plan step by step and self-correct under physical constraints isn't limited to virtual canvases.
+---
+[TITLE] KAIST·연대·MIT 등 뭉쳐 반사형 플렉시블 디스플레이 개발
+[LINK] https://zdnet.co.kr/view/?no=20261116113216
+[PUBLISHED] 2026-11-16 11:32 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 사람과 로봇 공용 저전력 디스플레이 개발
+[FIELD] 신기술
+[BODY]
+로봇이 읽는 근적외선 정보를 사람 눈으로도 자연스레 볼 수 있는 이중대역 반사형 플렉시블 디스플레이가 개발됐다. 전력 소모량도 유기발광다이오드(OLED) 디스플레이 대비 1000분의 1에 불과하다.
+KAIST는 송영민 전기및전자공학부 교수 연구팀이 유기준 연세대학교 전기전자공학부 교수 연구팀을 비롯한 광주과학기술원(GIST), 조선대학교, 국립공주대학교, 미국 매사추세츠공과대학교(MIT)와 공동으로 사람과 로봇 카메라에 정보를 함께 전달할 수 있는 유연한 반사형 디스플레이를 개발했다고 16일 밝혔다.
+송영민 교수는 "사람은 주로 눈에 보이는 색과 글자로 정보를 확인한다. 반면, 로봇은 근적외선 카메라와 센서로 정보를 읽기 때문에 이를 사람이 판단하기는 어렵다"며 "하나의 표시 장치에서 사람과 로봇이 각각 인식할 수 있는 정보를 함께 제공하는 기술을 개발했다"고 말했다.
+송 교수는 "전력 소모량도 OLED 대비 1000분에 1에 불과하다. 1V이내 전력이면 가능하다"고 부연 설명했다.
+연구팀은 전압에 따라 빛의 반사·흡수 특성이 달라지는 전도성 고분자 피닷(PEDOT:PSS)과 빛이 내부에서 여러 번 반사되는 광학 공진 구조를 결합, 가시광선과 근적외선 정보를 함께 표시하는 전기변색 디스플레이 소자를 개발했다.
+연구팀은 이 소자를 유연한 박막 트랜지스터(TFT) 기판 위에 가로·세로 4개씩 총 16개의 픽셀로 구성된 디스플레이를 제작했다. 원하는 위치에 무늬를 표시하는 기능을 구현하기 위해 각 칸(픽셀)에 작은 전자 스위치를 연결했다.
+연구팀은 밝은 환경에서 가시광선과 근적외선으로 표시된 패턴을 확인했다. 어두운 환경과 안개가 있는 실험 환경에서도 근적외선 영상으로 패턴을 인식할 수 있음을 검증했다.
+연구팀은 더 다양한 정보를 표시하기 위해 칸 수를 늘리고, 여러 번 구부려도 잘 작동하도록 일부 기능을 보완할 계획이다. 또 카메라가 읽은 정보를 로봇 작업과 연결하는 연구도 추가로 필요하다는 판단이다.
+관련기사
+- GIST, 하체 불편 환자위해 침상재활로봇 개발2026.10.15
+- DGIST-MIT, 로봇 AI 환경인식 세계대회서 우승2026.06.09
+- 4대 과기원, 스타트업 글로벌 진출 지원 프로그램 가동2026.06.01
+- 탈모, OLED 빛으로 92% 예방…"전임상 계획"2026.02.01
+송영민 교수는 "향후 스마트 공장의 ‘전자 이름표’로 활용될 수 있다. 예를 들어 운반 상자에 붙인 화면으로 작업 상태를 표시하면, 작업자는 색을 보고 확인하고 로봇은 근적외선 무늬를 읽는 방식"이라며 "유연한 화면을 활용해 몸이나 장비의 굽은 표면에 붙이는 표시 장치로 발전시킬 가능성도 있다"고 말했다.
+연구 결과는 국제 학술지 ‘npj 플렉서블 일렉트로닉스’에 공개됐다.
+---
+[TITLE] X.com을 처음부터 다시 구축하기 - 서버 3개를 하나로
+[LINK] https://news.hada.io/topic?id=37245&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-16 10:20 KST
+[SOURCE] GeekNews
+[TOPIC] 에이전트, 개발, 모델, 산업
+[SCORE] 6
+[REASON] 코딩 에이전트로 웹앱 재구축 사례
+[FIELD] AI 에이전트
+[BODY]
+GeekNews긱뉴스는 개발, 기술, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트 입니다.토픽
+발행 2026-11-16 · 작성 neo
+출처 https://news.hada.io/topic?id=37245
+- X가 기존 웹 애플리케이션을 5명의 엔지니어와 AI 코딩 에이전트를 활용해 6개월 이내에 재구축함. 기존의 사용자·검색 크롤러·링크 미리보기용 서버 3개를 하나로 통합했으며, 비로그인 서비스 전환을 완료하고 로그인 서비스도 국가별로 순차 전환 중임
+- 기존 React 기반 클라이언트 렌더링은 HTML 셸과 JavaScript를 다운로드·실행한 뒤 GraphQL 데이터를 요청해야 했음. 새 구조는 스트리밍 서버 렌더링(SSR) 으로 첫 응답부터 실제 콘텐츠를 전달하고, 서버에서 가져온 데이터를 브라우저가 재사용하도록 변경함
+- 느린 네트워크의 로그인 프로필 테스트에서 첫 게시물 표시 시간이 23.9초에서 2.7초로 단축됨. 별도 벤치마크에서는 프로필·게시물이 8~13배 빨리 표시됐으며, 페이지 전체의 압축 JavaScript 다운로드량도 4.1~4.8MB에서 1.3~2.3MB로 감소함
+- 개발팀은 AGENTS.md, 25개 이상의 에이전트 스킬, 커스텀 린트 규칙으로 AI 생성 코드를 관리함. 엔지니어가 아키텍처와 요구사항을 결정하고 모든 변경을 검토하는 동안, 에이전트가 기존 동작 이식·페이지 변환·테스트 작성·CI 오류 수정을 수행함
+- 대규모 재작성의 위험을 줄이기 위해 기존 서버를 동작 명세이자 비교 기준으로 활용하고, 검색 크롤러부터 비로그인 사용자, 로그인 사용자 순서로 트래픽을 이전함. 기존 서비스와 새 서비스를 병행 운영하면서 문제가 발생하면 즉시 되돌릴 수 있도록 구성함
+기존 X.com 아키텍처와 재구축 배경
+- X.com의 기존 웹 애플리케이션인 rweb(responsive web) 은 2017년 Twitter Lite에서 시작됨
+  - 느린 연결을 위한 Progressive Web App으로, React 클라이언트와 HTML 셸을 반환하는 소형 Node.js 서버로 구성됨
+  - 2019년 새 Twitter.com의 기반이 되면서 모든 기기를 하나의 반응형 코드베이스로 지원함
+- 시간이 지나면서 서로 다른 용도의 서버 3개가 운영됨
+  - rweb: 로그인·비로그인 사용자를 위한 브라우저 렌더링
+  - rweb SSR: 검색 크롤러용 서버 렌더링과 URL 정리
+  - Jetfuel SSR: 이벤트, Spaces, Communities, Trends, 검색, 뉴스 등 검색엔진이 색인하는 비로그인 페이지 렌더링
+- 하나의 URL을 세 가지 방식으로 생성하면서 유지보수 비용과 동작 불일치가 발생함
+  - SEO 수정 사항이 일부 서버에만 반영될 수 있음
+  - 비로그인 사용자는 HTML 셸 → JavaScript 다운로드 → 실행 → GraphQL 요청 → 렌더링의 순서를 거쳐야 함
+  - 검색 크롤러는 완성된 HTML을 받지만 실제 비로그인 사용자는 가장 느린 경로를 사용함
+- 기존 기술 스택은 Redux 정규화 저장소, Relay, React Native for Web, Flow, 최신·레거시 번들 등이 누적되면서 일상적인 변경과 성능 관리가 어려워짐
+점진적 개선 대신 전면 재작성 선택
+- 세 가지 대안을 검토한 뒤 새 애플리케이션 구축을 선택함
+  - 기존 rweb 개선: 세 서버가 그대로 남고 비로그인 SSR을 추가하려면 네 번째 렌더링 경로가 필요함
+  - Webpack·Babel을 Vite로, Flow를 TypeScript로, Express를 Fastify로 교체: 대부분의 파일을 수정해야 하지만 근본적인 아키텍처 문제는 남음
+  - 단일 서버로 재구축: 기존 서비스를 계속 운영하면서 트래픽을 점진적으로 이전하고 두 SSR 서버를 통합함
+- Joel Spolsky의 전면 재작성에 대한 경고를 고려해 기존 제품 개발을 중단하지 않고 병행 운영함
+- 기존 시스템에서 검증된 설계와 동작은 유지함
+  - 모든 기기를 지원하는 단일 반응형 코드베이스
+  - GraphQL과 Relay 기반 데이터 접근
+  - 기존 URL, 리다이렉트, 별칭, URL 정리 규칙
+  - 구조화 데이터, 언어별 대체 URL, 실제 404 응답
+  - 링크 미리보기 이미지의 픽셀 단위 호환성
+새로운 기술 스택
+- Vite: Rolldown으로 클라이언트·서버 번들을 생성하고, 로그인·비로그인용 진입점을 분리해 불필요한 코드 다운로드를 방지함
+- React: 서버·브라우저 렌더링에 스트리밍 SSR과 Suspense를 사용함
+- Fastify: 모든 요청과 HTML 스트리밍을 처리하며, 자체 @x-clients/server 패키지가 보안 헤더·쿠키·메트릭·정상 종료를 구성함
+- Platformatic Watt: Node.js v26에서 단일 프로세스의 여러 워커 스레드를 운영하고, 이벤트 루프나 메모리 한도를 지속적으로 초과하는 워커를 교체함
+- Relay + GraphQL: 컴포넌트별 데이터 요구사항 선언, 데이터 요청 및 캐싱을 담당함
+- XDS: Base UI와 Tailwind CSS를 기반으로 만든 40개 이상의 공통 UI 컴포넌트 라이브러리로, 다른 X 웹 애플리케이션 5개에서도 사용함
+- TypeScript + Tailwind CSS: 타입과 스타일을 관리하며, 타입 검사는 TypeScript 컴파일러의 Rust 포트인 tsrs 로 수행함
+하나의 서버에서 사용자 유형별 응답 생성
+- 
+사용자에게는 스트리밍 HTML
+  - 서버가 페이지 셸을 먼저 전송하고, 데이터가 도착하는 대로 각 영역의 HTML을 스트리밍함
+  - 서버가 수신한 GraphQL 응답을 페이지에 JSON 텍스트로 한 번만 포함함
+  - 브라우저는 빈 Relay 저장소에서 시작해 해당 응답을 재생하므로 동일한 데이터를 API에 다시 요청하지 않음
+- 
+검색 크롤러에게는 완성된 HTML
+  - 검증된 검색 크롤러에는 모든 Suspense 경계가 해결된 완전한 HTML 문서를 전달함
+  - 구조화 데이터와 언어별 대체 링크를 포함하지만, 하이드레이션이 필요 없으므로 클라이언트 번들·라우터 상태·JavaScript용 플레이스홀더는 제외함
+  - User-Agent 대신 엣지에서 검증한 IP 주소로 검색 크롤러를 구분함
+    - User-Agent를 기준으로 하면 Lighthouse 같은 성능 측정 도구도 버퍼링된 응답을 받게 됨
+    - 임의의 사용자가 헤더를 변경해 비용이 높은 크롤러용 렌더링을 요청할 수도 있음
+    - 검증되지 않은 크롤러는 일반 비로그인 사용자와 동일한 응답을 받음
+- 
+링크 미리보기 봇에는 메타데이터만
+  - Slack, Discord, iMessage, WhatsApp, Signal, Telegram 등 링크 미리보기 봇에는 제목·설명·카드 이미지만 반환함
+  - 페이지 본문 렌더링을 건너뛰고 타임라인·대화 데이터 요청도 생략함
+  - 링크 카드 PNG 생성 서비스도 JavaScript에서 Rust로 재작성함
+    - 기존 서비스는 코어 활용을 위해 메모리를 공유하지 않는 인스턴스를 늘려야 했고, 장애 상황에서 응답에 약 2분이 걸린 사례가 있음
+    - 게시물, 미디어 미리보기, 구독, cashtag 차트, Money 등의 기존 경로를 유지함
+    - 기록·재생 테스트와 기존 서비스 비교 테스트로 이미지의 픽셀 단위 일치 여부를 확인함
+데이터 로딩과 클라이언트 탐색
+- 모든 라우트가 필요한 데이터를 미리 선언하며, 라우트 로더가 서버 렌더링과 함께 GraphQL 요청을 시작함
+- 서버에서 받은 GraphQL 응답은 브라우저의 Relay 저장소에 재생되며, 아직 소비하지 않은 응답은 스트림 종료 후 30초 동안 보관함
+- 클라이언트 탐색에서는 사용자의 방문 의도를 감지해 코드와 데이터를 미리 가져옴
+  - 일반 링크는 마우스를 올리거나 키보드 포커스가 이동하면 사전 로딩함
+  - 타임라인 게시물은 포인터가 100ms 동안 머물거나 누르면 사전 로딩함
+  - 정지된 포인터 아래로 게시물이 스크롤되는 경우에는 사전 로딩하지 않음
+---
+[TITLE] Uber's Secure AI Framework Governs Autonomous AI Agents across Their Lifecycle
+[TITLE_KO] 우버의 보안 AI 프레임워크, 자율 AI 에이전트를 전 주기에 걸쳐 통제
+[LINK] https://www.infoq.com/news/2026/11/uber-secure-ai-framework/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-11-16 05:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발
+[SCORE] 6
+[REASON] 에이전트 행동 적절성 판단 보안 프레임워크
+[FIELD] AI 에이전트
+[BODY]
+In a recent article, Uber Engineering highlights the limitations of traditional identity and API controls in securing AI agents that dynamically reason over external content and take real-world actions. To address this challenge, Uber developed a framework to determine whether an agent's action is appropriate given the user's request, the agent's intended purpose, its permissions, and the context of the interaction.
+Identity and authorization systems can determine whether a user or service has permission to access a resource, but they can't determine whether an agent's proposed action is appropriate in context.
+This creates multiple risks, including prompt injection, tool and memory poisoning, goal hijacking, behavioral drift, and hallucination-driven actions, which Uber's framework addresses through three layers spanning the entire agent lifecycle, from pre-deployment to runtime enforcement to post-deployment continuous assurance.
+At provisioning time, agents must be registered in the Uber AI Registry, establishing identity, ownership, persona, permitted intents, constraints, dependencies, and risk classification. This process is automated using Argus, which analyzes the agent's source code, prompts, configurations, dependencies, exposed endpoints, and tool-invocation paths to identify security weaknesses. The same approach is enforced for MCP servers and tools used by the agents.
+At runtime, the framework extends the traditional security model based on policy administration, policy decision, and policy enforcement to incorporate behavioral authorization, which evaluates whether an agent's actions are appropriate in a given context.
+Behavioral authorization is implemented through three components: the AI Registry, AI guards, and Agent Guard runtime hooks. The AI Registry defines and manages agent policies, personas, intents, and constraints, while AI Guards evaluate interactions and proposed actions against established policies. Agent Guard runtime hooks invoke AI Guard "at critical checkpoints and applying its verdict before an interaction or action is allowed to proceed".
+After deployment, the focus shifts to Continuous Assurance, which relies on end-to-end observability, auditing, explainability, and replay. This layer comprises two main main components: a unified execution trace that connects agent actions, tool calls, and security decisions; and recorded interactions that can be replayed whenever policies and guardrails are updated to assess their effectiveness in the new context.
+Uber also identified several challenges in implementing security controls in production, including balancing policy restrictiveness to avoid both excessive false positives and insufficient protection, minimizing runtime latency, reducing developer friction during framework setup, and moving beyond generic controls towards agent-specific policies, which "made enforcement more contextual and precise".
+Commenting on Uber's approach on LinkedIn, UN senior information technology officer Tristan G. raised several concerns, noting that while "per-agent personas, intents, constraints and calibration" is what adds the most value, they also come at a significant cost, as "the effort scales with the number of workflows". Additionally,
+By its own account, the strongest control was restricting agents to explicit constraints, which is least privilege rather than a new idea. For me, the open question is how this works for agents you don't build, such as vendor or SaaS agents where you can't insert your own enforcement hooks.
+On similar lines, AI architect Pratik Dhanave also observes that:
+The lesson they call least glamorous is the one they rate most effective: explicit intents and constraints per agent. Not generic thresholds, which failed because every agent has a different purpose and risk profile. The cost is flexibility, and they say it is worth paying.
+---
+[TITLE] 서울대, 인간 신경계 모사한 피지컬 AI 개발…객체 인식 정확도 53.8%에서 88%로 향상
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42741
+[PUBLISHED] 2026-11-16 10:27 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 신경계 모사 피지컬 AI 인식률 향상
+[FIELD] 신기술
+[BODY]
+뇌간·소뇌·대뇌 기능 분담한 ‘인공 삼위지능’ 개발…센서가 스스로 환경 변화에 적응하며 AI 인식 성능 개선
+인간의 뇌간과 소뇌, 대뇌가 감각정보를 처리하는 방식을 모사해 인공지능(AI)의 시각 인식 성능을 높이는 새로운 피지컬 AI 아키텍처가 국내 연구진에 의해 개발됐다. 이동형 카메라 실험에서 객체 인식 정확도를 기존 53.8%에서 88%로 높이고, 고성능 원격 AI 모델 호출 빈도를 43.3% 줄여 센서 제어와 AI 추론을 통합하는 새로운 기술적 접근을 제시했다.
+서울대학교 데이터사이언스대학원 김형신 교수 연구팀은 인간 신경계의 기능 분담 원리에서 착안해 센서가 수집하는 정보의 품질을 능동적으로 조절하고, 기기 내부의 AI 추론과 원격 서버의 고성능 추론을 연계하는 ‘인공 삼위지능(Artificial Tripartite Intelligence, ATI)’ 아키텍처를 개발했다고 16일 밝혔다.
+이번 연구는 AI 모델의 크기와 연산 성능을 높이는 기존 접근에서 벗어나, AI가 현실 세계의 정보를 받아들이는 센서 단계부터 인식과 판단 과정을 통합적으로 설계한 것이 특징이다.
+로봇과 스마트 글래스, 웨어러블 기기 등 피지컬 AI 시스템은 카메라와 마이크 등 센서로 주변 환경을 인식한다. 그러나 조명이 급격하게 변하거나 기기가 움직이면서 영상이 흔들리면 입력 데이터의 품질이 떨어져 AI 모델의 인식 정확도도 낮아질 수 있다.
+기존 시스템은 센서가 수집한 데이터를 AI 모델에 전달한 뒤 영상 보정이나 추론을 수행하는 방식에 주로 의존해 왔다. 연구팀은 이러한 구조에서는 고성능 AI 모델을 사용하더라도 센서에서 발생한 정보 손실을 충분히 복구하기 어렵다는 점에 주목했다.
+이에 따라 센서가 정보를 수집하는 과정부터 AI가 이를 분석하고 판단하는 과정까지 하나의 순환 구조로 연결하는 센서 중심(Sensor-First) 아키텍처를 제안했다.
+뇌간은 신호 보호, 소뇌는 센서 보정, 대뇌는 AI 추론 담당
+ATI는 인간 신경계의 기능을 세 부분으로 나누고, 이를 실제 시스템에서는 네 개의 계층으로 구현하도록 설계됐다. 첫 번째 계층인 L1은 뇌간(Brainstem)의 기능을 모사한다. 외부 환경이 급격하게 변할 때 센서 신호가 왜곡되지 않도록 보호하고, 센서가 안전한 범위에서 작동하도록 빠르게 제어하는 역할이다.
+두 번째 계층인 L2는 소뇌(Cerebellum)의 기능을 모사한다. 주변 환경과 입력정보의 상태를 지속적으로 분석하면서 카메라의 노출 시간과 ISO 감도 등 센서 설정을 조절한다. 특히 L2는 미리 정해진 규칙에만 의존하지 않고, 센서 설정이 AI의 인식 성능에 어떤 영향을 미치는지 학습해 환경에 맞는 제어 방법을 선택한다.
+세 번째와 네 번째 계층인 L3와 L4는 대뇌 추론 체계(Cerebral Inference Subsystem)에 해당한다. L3는 기저핵 네트워크(Basal Ganglia Network, BGN)의 기능에서 착안한 계층으로, 기기 내부에서 비교적 단순하고 반복적인 작업을 신속하게 처리한다. L4는 해마·대뇌피질 네트워크(Hippocampal–Cortical Network, HCN)를 모사한 계층으로, 기기 내부에서 해결하기 어렵거나 판단이 불확실한 문제에 대해 고성능 원격 AI 모델을 활용하는 역할을 담당한다.
+이 과정에서 전두두정 네트워크(Frontoparietal Network, FPN)에 해당하는 조정 기능이 L3와 L4 사이의 작업 분담을 결정한다. 기기 내부에서 충분히 판단할 수 있는 경우에는 L3에서 작업을 마치고, 추가적인 추론이 필요한 경우에만 L4를 호출하는 방식이다.
+이처럼 ATI는 감각정보 보호와 환경 적응, 온디바이스 AI 판단, 원격 심층 추론을 하나의 시스템으로 연결한다. 연구팀은 이러한 구조를 통해 센서의 정보 품질을 높이면서 불필요한 원격 연산을 줄일 수 있도록 했다.
+조명·움직임 변화에 스스로 대응, 객체 인식 정확도 34.2%포인트 향상
+연구팀은 ATI의 성능을 검증하기 위해 이동형 카메라 시제품을 제작하고, 실험실 내부의 폐쇄된 이동 경로에서 객체 분류 실험을 수행했다. 카메라가 움직이면서 주변 조명과 촬영 조건이 달라지는 상황을 구현하고, 기존 자동 노출 방식과 ATI의 능동 센서 제어 방식을 비교했다.
+ATI는 영상의 밝기를 일정하게 유지하는 데 그치지 않고, AI가 객체를 정확하게 식별하는 데 유리하도록 카메라의 노출 시간과 ISO 감도를 조절했다. 특히 움직임으로 인한 영상 흐림과 조도가 낮을 때 발생하는 영상 잡음 사이의 균형을 고려해 센서 설정을 최적화했다.
+실험 결과, 기존 자동 노출 방식에서 53.8%였던 종단 간 객체 분류 정확도가 ATI 적용 후 88%로 높아졌다. 이는 정확도가 34.2%포인트 향상된 결과로, 상대적인 증가율로 환산하면 약 63.6%에 해당한다.
+연구팀에 따르면 이번 실험은 곰 인형과 테니스공, 탁구공, 물병, 노트북 등 8개 객체 범주를 대상으로 진행됐으며, 센서 제어 기능을 단계적으로 추가하는 비교 실험도 수행했다.
+기본 자동 노출 방식에서 기기 내부 AI 모델만 사용했을 때 객체 분류 정확도는 50%였지만, 뇌간 모사 계층인 L1을 적용하면 77.8%로 높아졌다. 여기에 소뇌 모사 계층인 L2를 추가하면 정확도는 80.3%까지 상승했다. 이는 단순한 센서 보호 기능뿐 아니라 학습 기반 센서 보정이 AI 인식 성능 개선에 추가적으로 기여한다는 점을 보여준다.
+원격 AI 호출 비율 56%에서 31.8%로 감소, 온디바이스 처리 확대
+ATI는 객체 인식 정확도를 높이는 동시에 고성능 원격 AI 모델에 대한 의존도도 낮췄다. 연구팀에 따르면 기존 자동 노출 방식과 기기 내부·원격 AI를 결합한 구성에서는 전체 평가 단위 중 56%에서 원격 L4 모델을 호출했다.
+반면 ATI를 적용한 구성에서는 원격 모델 호출 비율이 31.8%로 감소했다. 이는 24.2%포인트 감소한 수치이며, 기존 호출 빈도 대비 상대적으로 43.3% 줄어든 결과다.
+연구팀은 센서 단계에서 입력 영상의 품질을 개선하면 기기 내부의 경량 AI 모델이 더 많은 상황을 처리할 수 있고, 그만큼 외부 서버의 추가 추론이 필요한 경우도 줄어든다고 설명했다. 이러한 구조는 배터리와 연산 자원이 제한된 로봇이나 웨어러블 기기에서 활용 가능성이 있다.
+특히 피지컬 AI는 현실 세계에서 발생하는 정보를 빠르게 처리해야 하므로, 모든 데이터를 클라우드로 전송해 판단하는 방식에는 통신 지연과 연산 비용 등의 제약이 따른다. ATI는 빠른 센서 제어와 일상적인 AI 판단을 기기 내부에서 수행하고, 복잡한 추론이 필요한 경우에만 원격 AI를 활용하도록 설계됐다. 이를 통해 원격 연산에 대한 의존도를 낮추고 온디바이스 AI의 활용 범위를 확대할 수 있는 가능성을 제시했다.
+오디오 실험에서도 신호 품질 개선, 음성 인식 정확도 31.6%에서 32.7%로
+연구팀은 ATI의 설계 원리가 카메라 이외의 센서에도 적용될 수 있는지 확인하기 위해 오디오 신호 제어 실험을 추가로 수행했다. 실험은 마이크 1개와 음성 신호를 출력하는 스피커 1개, 잡음을 발생시키는 스피커 1개로 구성된 환경에서 진행됐다.
+연구팀은 음성 인식 모델에 입력되는 신호의 품질을 높이기 위해 디지털 이득과 잡음 억제 수준을 학습 기반으로 조절하는 방식을 적용했다. 그 결과 기존 자동 이득 제어(Automatic Gain Control, AGC) 방식과 비교해 신호 대 잡음비(Signal-to-Noise Ratio, SNR)가 평균 0.31데시벨(dB) 개선됐다.
+음성 키워드 인식 정확도도 기존 31.6%에서 32.7%로 1.1%포인트 상승했다. 영상 실험과 비교하면 성능 개선 폭은 제한적이지만, 센서 입력 단계의 능동적인 조절이 최종 AI 인식 결과에 영향을 줄 수 있다는 점을 확인했다. 연구팀은 이러한 접근을 향후 촉각 센서와 관성측정장치(IMU) 등으로 확장할 가능성도 제시했다.
+피지컬 AI 개발 방향, 모델 성능에서 감각정보 제어로 확대
+이번 연구는 피지컬 AI의 성능을 높이기 위해 AI 모델의 규모와 추론 능력뿐 아니라 센서가 정보를 수집하는 과정까지 함께 설계해야 한다는 점을 보여준다.
+---
+[TITLE] 행정업무용 이메일 해킹…행안부, 관계기관 합동점검 착수
+[LINK] https://www.etnews.com/20261116000201
+[PUBLISHED] 2026-11-16 13:31 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SCORE] 5
+[REASON] 지방정부 거점 해킹, 계정 300여 개 접속
+[FIELD] 보안
+---
+[TITLE] [단독] 인천대 산학협력단 연구행정시스템 해킹으로 ERP 시스템 접속 전면 차단
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209540
+[PUBLISHED] 2026-11-16 09:14 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SCORE] 5
+[REASON] 대학 산학협력단 침해 사고 세 곳째 확인
+[FIELD] 보안
+---
+[TITLE] [단독] 강원대·대구한의대 산학협력단 동시 해킹…오전 6시 22분, 똑같은 침해 시각에 주목
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209539
+[PUBLISHED] 2026-11-16 08:37 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안, 규제
+[SCORE] 5
+[REASON] 대학 두 곳 같은 시각 해킹, 공급망 의심
+[FIELD] 보안
+---
+[TITLE] TSMC employee data breach linked to cloud provider
+[TITLE_KO] TSMC 직원 정보 유출, 클라우드 업체와 연관
+[LINK] https://www.bleepingcomputer.com/news/security/tsmc-employee-data-breach-linked-to-cloud-provider/
+[PUBLISHED] 2026-11-16 00:23 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안, 신기술
+[SCORE] 5
+[REASON] 클라우드 업체 경유 직원정보 유출 확인
+[FIELD] 보안
+---
+[TITLE] 코인원 고객정보 유출…외주 상담업체 해킹에 주민번호·계좌정보 노출 우려
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157384
+[PUBLISHED] 2026-11-16 12:20 KST
+[SOURCE] 테크M
+[TOPIC] 보안, 규제
+[SCORE] 5
+[REASON] 상담 위탁업체 해킹, 거래소 고객정보 노출
+[FIELD] 보안
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678696
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001115
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001122
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116132707
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209548
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116132601
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209547
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261116000203
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209544
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217439
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261116000197
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001091
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116112434
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116114413
+[STATUS] SKIP (제외)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21961
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678692
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116113719
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209543
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://news.hada.io/topic?id=37251&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001109
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261115123502
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116112428
+[STATUS] SKIP (제외)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21959
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116110035
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116111227
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209542
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116105449
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116105803
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157377
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157373
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116102617
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116100946
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116105900
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116090349
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.itworld.co.kr/article/4248815/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac-%ec%9a%a9%eb%9f%89-%ec%97%85%ea%b7%b8%eb%a0%88%ec%9d%b4%eb%93%9c%ea%b0%80-%eb%b6%80%eb%a5%b8-%eb%a7%88%ec%9d%b4%ed%81%ac%eb%a1%9c%ec%86%8c%ed%94%84%ed%8a%b8-365.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678668
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42742
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001084
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=37249&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209541
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001085
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261116000151
+[STATUS] SKIP (제외)
+---
+[LINK] https://byline.network/2026/11/13-732/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/16/elon-musk-tech-execs-open-letter-jensen-huang-return-nvidia-ceo
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.itworld.co.kr/article/4248800/%ed%81%b4%eb%9d%bc%ec%9a%b0%eb%93%9c-%ec%9a%a9%eb%9f%89%ec%97%90-%eb%8c%80%ed%95%9c-%ec%9a%b0%eb%a0%a4%eb%8a%94-%eb%8f%84%eb%a5%bc-%eb%84%98%ec%97%88%eb%8b%a4.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001083
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261116000105
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=37243&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42740
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261116000064
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.itworld.co.kr/article/4248779/%eb%a7%88%ec%9d%b4%ed%81%ac%eb%a1%9c%ec%86%8c%ed%94%84%ed%8a%b8-365-%ec%9e%a5%ec%95%a0%ea%b0%80-%eb%93%9c%eb%9f%ac%eb%82%b8-%eb%8b%a8%ec%9d%bc-%ec%97%85%ec%b2%b4-%ec%9d%98%ec%a1%b4%ec%9d%98-%ec%b7%a8.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678647
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42739
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261116000030
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678658
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/16/ai-related-child-sexual-abuse-material-rise-exploitation-deepfakes
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217277
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000999
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000000992
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157368
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261116000020
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://simonwillison.net/2026/Nov/15/datasette/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261116000016
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://simonwillison.net/2026/Nov/15/datasette-2/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001032
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001006
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001053
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001051
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209538
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261115000184
+[STATUS] SKIP (제외)
+---
+[LINK] https://simonwillison.net/2026/Nov/15/datasette-apps/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://simonwillison.net/2026/Nov/15/datasette-agent/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217438
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157383
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=37244&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://simonwillison.net/2026/Nov/15/datasette-maplibre/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261115000122
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209545
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42744
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217436
+[STATUS] SKIP (기준 미달)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21960
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116112136
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116105849
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261116111419
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42743
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001087
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001093
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001112
+[STATUS] SKIP (기준 미달)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=21958
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=37246&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/
+[STATUS] SKIP (중복)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001089
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001106
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261116000090
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157371
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261116000043
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261116000025
+[STATUS] SKIP (제외)
+---
+[LINK] https://openai.com/index/our-new-blog-for-science
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=678601
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001012
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/nov/15/the-guardian-view-on-civil-service-reform-ai-cannot-conjure-a-capable-state-on-its-own
+[STATUS] SKIP (제외)
+---
+[LINK] https://thenewstack.io/claude-fable-5-2-vs-opus-5-5/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/nov/16/is-the-ai-job-apocalypse-finally-here-the-evidence-suggests-otherwise
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.securityweek.com/pentagon-renames-cdao-super-intelligence-office/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001080
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217440
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001116
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157376
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209513
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001097
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.etnews.com/20261116000202
+[STATUS] SKIP (사전 제외: 홍보)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217437
+[STATUS] SKIP (사전 제외: 홍보)
+---
