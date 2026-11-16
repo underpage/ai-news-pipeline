@@ -193,12 +193,12 @@
 ## 워크플로우
 
 - 일일 실행과 주간 요약은 같은 `concurrency` 그룹 (커밋 충돌 방지)
-- 실행 확인과 자동 재실행(`check-run.yml`, 12:00과 14:00 KST, 실제로는 7~8시간 늦은 19시 반, 22시 무렵. 16:00이던 때는 다음 날 0시 반에 시작해 15시 조건에 걸렸음): 그날 통계 줄이 없거나, 선정 성공 0(`rank_ok`), 요약 전부 실패(`summary_ok` 0), 요약 미처리(`summary_pending`)면 파이프라인을 `workflow_dispatch`로 다시 실행. Gemini 503 과부하는 몇 시간 뒤 풀리는 일이 많아서
+- 실행 확인과 자동 재실행(`check-run.yml`, 12:00, 14:00, 17:00, 19:00 KST. 지금은 7~8시간 늦어 앞 두 번이 19시 반, 22시 무렵에 돌고 뒤 두 번은 다음 날 새벽이라 15시 조건으로 건너뜀. 제시간에 돌면 반대로 뒤 두 번이 확인함. 16:00이던 때는 다음 날 0시 반에 시작해 15시 조건에 걸렸음): 그날 통계 줄이 없거나, 선정 성공 0(`rank_ok`), 요약 전부 실패(`summary_ok` 0), 요약 미처리(`summary_pending`)면 파이프라인을 `workflow_dispatch`로 다시 실행. Gemini 503 과부하는 몇 시간 뒤 풀리는 일이 많아서
   - 다시 돌면 같은 날 실행으로 이어짐: 수집은 첫 실행 시각부터, 선정은 남은 목록 칸만, 요약은 아직 안 된 기사만
-  - 15시(`FIRST_HOUR`) 전에는 확인하지 않음(예약 확인이 다음 날 새벽까지 밀리면 그날 예약 실행 전에 기록 없음으로 보고 재실행하던 문제, 11-03). 파이프라인이 실행 중이거나 대기 중이면 건너뜀. 하루 `workflow_dispatch` 실행이 `MAX_RERUNS`(2)번 이상이거나 23시(`LAST_HOUR`) 이후면 재실행 없이 실패 처리해 알림(수동 복구 필요). 수집 0건인 날도 다시 돎(허용)
+  - 15시(`FIRST_HOUR`) 전에는 확인하지 않음(예약 확인이 다음 날 새벽까지 밀리면 그날 예약 실행 전에 기록 없음으로 보고 재실행하던 문제, 11-03). 파이프라인이 실행 중이거나 대기 중이면 건너뜀. 하루 `workflow_dispatch` 실행(테스트 실행은 빼고. 테스트 실행은 이름 끝이 "(test)")이 `MAX_RERUNS`(2)번 이상이거나 23시(`LAST_HOUR`) 이후면 재실행 없이 실패 처리해 알림(수동 복구 필요). 수집 0건인 날도 다시 돎(허용)
   - 요약 일부만 실패(`summary_failed`, 본문 문제 등)는 다시 돌리지 않음
 - 자동 테스트는 코드, 설정, 테스트, 의존성, 워크플로우가 바뀐 push에만
-- Job 간 전달은 `archive/logs/` artifact (`overwrite: true`는 실패한 Job만 재실행할 수 있게 하기 위함, Evaluate와 Summarize 업로드는 `if: always()`). Publish는 collect -> evaluate -> summarize 순으로 받아 덮어씀
+- Job 간 전달은 그날 로그 파일(`archive/logs/YYYY/MM/YYYY-MM-DD-*`)만 담은 artifact. 폴더는 collect Job 출력 `log_dir`로 받음. 지난 날짜 로그는 각 Job이 checkout한 것을 씀(폴더 전체를 넘기면 실행 중에 push한 지난 로그 수정이 Publish에서 되돌려짐) (`overwrite: true`는 실패한 Job만 재실행할 수 있게 하기 위함, Evaluate와 Summarize 업로드는 `if: always()`). Publish는 collect -> evaluate -> summarize 순으로 받아 덮어씀
 - 실행 날짜는 Collect가 정해 `RUN_DATE`로 전달 (자정 전후에도 같은 파일). `TZ=Asia/Seoul`
 - Collect의 `has_articles`가 `false`이거나 Collect가 실패하면 이후 Job 전부 건너뜀. Evaluate가 실패하면 Summarize는 건너뛰고 Publish는 `always()`로 그때까지의 결과를 커밋
 - Publish는 그 시점의 `main`을 checkout (`ref: main`). Re-run은 시작 커밋의 workflow 파일과 (Publish 외 Job은) 코드로 돌아 그 뒤의 수정이 적용 안 됨

@@ -1,4 +1,6 @@
 name: AI News Pipeline
+# 테스트 실행은 이름에 (test)를 붙인다. 실행 확인(check-run.yml)이 하루 재실행 횟수를 셀 때 뺀다
+run-name: ${{ github.event.inputs.test_mode == 'true' && 'AI News Pipeline (test)' || 'AI News Pipeline' }}
 
 on:
   schedule:
@@ -6,10 +8,12 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
+      # boolean이라 값은 true, false뿐 (예전 문자열 입력은 1, yes도 수집만 테스트로 보고 이름과 커밋 조건은 아니었음)
       test_mode:
         description: 'Collect up to 2 test articles'
         required: false
-        default: 'false'
+        type: boolean
+        default: false
       collect_limit:
         description: 'Max articles to collect in test mode'
         required: false
@@ -54,6 +58,7 @@ jobs:
     outputs:
       has_articles: ${{ steps.collect_state.outputs.has_articles }}
       run_date: ${{ steps.run_date.outputs.run_date }}
+      log_dir: ${{ steps.run_date.outputs.log_dir }}
       article_count: ${{ steps.collect_state.outputs.article_count }}
     steps:
       - uses: actions/checkout@v4
@@ -66,8 +71,11 @@ jobs:
       - name: Set Run Date
         id: run_date
         run: |
-          echo "run_date=$(date +%F)" >> "$GITHUB_OUTPUT"
-          echo "RUN_DATE=$(date +%F)" >> "$GITHUB_ENV"
+          # 날짜는 한 번만 구한다 (자정에 걸쳐 run_date와 log_dir의 달이 어긋나지 않게)
+          day=$(date +%F)
+          echo "run_date=${day}" >> "$GITHUB_OUTPUT"
+          echo "log_dir=archive/logs/${day:0:4}/${day:5:2}" >> "$GITHUB_OUTPUT"
+          echo "RUN_DATE=${day}" >> "$GITHUB_ENV"
       - name: Run Collect
         env:
           COLLECT_TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
@@ -91,11 +99,13 @@ jobs:
           else
             echo "has_articles=false" >> "$GITHUB_OUTPUT"
           fi
+      # Job 사이에는 그날 로그 파일만 넘긴다. 폴더 전체를 넘기면 Publish가 실행 중에 push된 지난 날짜 로그 수정을
+      # 실행 시작 때의 내용으로 되돌린다. 파일이 한 폴더에 있어 artifact 안에는 파일 이름만 남으므로 받을 때도 그 폴더로 받는다
       - name: Upload Logs
         uses: actions/upload-artifact@v4
         with:
           name: logs-collect
-          path: ./archive/logs/
+          path: ./${{ steps.run_date.outputs.log_dir }}/${{ steps.run_date.outputs.run_date }}-*
           if-no-files-found: ignore
           overwrite: true
 
@@ -119,7 +129,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: logs-collect
-          path: ./archive/logs/
+          path: ./${{ needs.collect.outputs.log_dir }}/
       - name: Run Evaluate
         run: uv run --locked src/evaluate.py
       - name: Upload Logs
@@ -127,7 +137,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: logs-evaluate
-          path: ./archive/logs/
+          path: ./${{ needs.collect.outputs.log_dir }}/${{ needs.collect.outputs.run_date }}-*
           if-no-files-found: ignore
           overwrite: true
 
@@ -151,7 +161,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: logs-evaluate
-          path: ./archive/logs/
+          path: ./${{ needs.collect.outputs.log_dir }}/
       - name: Run Summarize
         run: uv run --locked src/summarize.py
       - name: Upload Logs
@@ -159,7 +169,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: logs-summarize
-          path: ./archive/logs/
+          path: ./${{ needs.collect.outputs.log_dir }}/${{ needs.collect.outputs.run_date }}-*
           if-no-files-found: ignore
           overwrite: true
 
@@ -189,19 +199,19 @@ jobs:
         continue-on-error: true
         with:
           name: logs-collect
-          path: ./archive/logs/
+          path: ./${{ needs.collect.outputs.log_dir }}/
       - name: Download Evaluate Logs
         uses: actions/download-artifact@v4
         continue-on-error: true
         with:
           name: logs-evaluate
-          path: ./archive/logs/
+          path: ./${{ needs.collect.outputs.log_dir }}/
       - name: Download Summarize Logs
         uses: actions/download-artifact@v4
         continue-on-error: true
         with:
           name: logs-summarize
-          path: ./archive/logs/
+          path: ./${{ needs.collect.outputs.log_dir }}/
       - name: Run Publish
         run: uv run --locked src/publish.py
       # 테스트 실행 결과는 저장소에 남기지 않고, 확인용으로 내려받을 수 있게만 올린다
