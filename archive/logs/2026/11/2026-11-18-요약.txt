@@ -1,0 +1,200 @@
+[TITLE] 오픈AI, GPT-6.2 아스트라·솔 전격 공개…전문가급 AI 업무 수행에 비용 혁신까지
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42776
+[PUBLISHED] 2026-11-18 09:52 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 모델
+[SCORE] 9
+[REASON] AI 개발진은 토큰 효율과 코딩 능력이 강화된 모델 채택
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 오픈AI가 복잡한 전문 업무 수행 능력과 비용 효율성을 강화한 차세대 AI 모델 GPT-6.2 아스트라와 GPT-6.2 솔을 공개했다.
+- 아스트라는 전문 업무 벤치마크 성능을 높이면서 작업당 비용을 기존 대비 3분의 1 미만으로 낮췄고, 솔은 코딩 평가에서 아스트라에 근접하면서 비용은 5분의 1 수준으로 줄였다.
+- 아스트라 API 가격은 20% 인하됐으며, 두 모델은 자체 안전성 평가에서 사이버보안 '크리티컬' 및 AI 자기개선 '하이' 기준에 도달해 안전성 관리도 병행된다.
+
+#긍정
+---
+[TITLE] Java4Shell (CVE-2026-114938) Enables Pre-Auth RCE in Jira, Jenkins, Keycloak on Java 17+ AVX-512 VBMI Servers
+[LINK] https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html
+[PUBLISHED] 2026-11-18 13:27 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안, 신기술
+[SCORE] 8
+[REASON] 인프라 운영자는 AVX512 환경의 오픈JDK 긴급 패치 필요
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+Java4Shell (CVE-2026-114938), AVX-512 VBMI 서버의 Java 17+ 환경에서 Jira, Jenkins, Keycloak의 사전 인증 RCE 가능하게 해
+
+**[영문 3줄 요약 (Original)]**
+- A flaw tracked as CVE-2026-114938 and dubbed Java4Shell allows unauthenticated remote attackers to execute code or trigger crashes on applications like Jira, Jenkins, and Keycloak running on Java 17+ with AVX-512 VBMI support.
+- The vulnerability stems from an out-of-bounds write in Java's optimized Base64 decoder when processing malformed strings with an extra equal sign, enabling memory manipulation through an attack technique called JavaBleed.
+- Oracle, OpenJDK, and Amazon have released security fixes for their builds, and infrastructure operators using affected hardware must urgently apply patches.
+
+**[국문 3줄 요약 (Translated)]**
+- CVE-2026-114938로 추적되고 Java4Shell이라 불리는 결함은 인증되지 않은 원격 공격자가 AVX-512 VBMI를 지원하는 Java 17 이상 환경의 Jira, Jenkins, Keycloak 등 애플리케이션에서 코드를 실행하거나 충돌을 일으킬 수 있게 한다.
+- 이 취약점은 여분의 등호가 포함된 잘못된 형식의 문자열을 처리할 때 Java의 최적화된 Base64 디코더에서 발생하는 범위를 벗어난 쓰기에서 비롯되며, JavaBleed라는 공격 기법을 통한 메모리 조작을 가능하게 한다.
+- 오라클, OpenJDK, 아마존은 자사 빌드에 대한 보안 패치를 배포했으며, 영향을 받는 하드웨어를 사용하는 인프라 운영자는 긴급히 패치를 적용해야 한다.
+
+#부정
+---
+[TITLE] Microsoft’s ARM-based Cobalt 200 chips go GA. Why it matters for AI agents.
+[LINK] https://thenewstack.io/microsoft-cobalt-200-ga/
+[PUBLISHED] 2026-11-18 03:42 KST
+[SOURCE] The New Stack
+[TOPIC] 에이전트, 개발, 신기술
+[SCORE] 8
+[REASON] 인프라팀은 에이전트 격리 최적화 ARM 기반 가상머신 채택
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+마이크로소프트의 Arm 기반 코발트 200 칩 정식 출시. AI 에이전트에 중요한 이유.
+
+**[영문 3줄 요약 (Original)]**
+- Microsoft has made its Cobalt 200 virtual machines generally available across 14 Azure regions to boost sandboxes, tools, and code execution for AI agents.
+- Powered by 132 Arm Neoverse V3 cores built on TSMC's 3nm process, the chips deliver up to 50% better performance compared with Cobalt 100 and offer deterministic and opportunistic clock speed modes.
+- These CPU improvements provide up to 1.5 times the performance for AI agent workloads like searching files, compiling code, and running isolated sandbox tasks.
+
+**[국문 3줄 요약 (Translated)]**
+- 마이크로소프트가 AI 에이전트의 샌드박스, 도구, 코드 실행 성능을 높이기 위해 14개 Azure 리전에서 코발트 200 가상머신을 정식 출시했다.
+- TSMC의 3nm 공정으로 제작된 132개의 Arm Neoverse V3 코어를 탑재한 이 칩은 코발트 100 대비 최대 50% 향상된 성능을 제공하며 결정론적 및 기회주의적 클럭 속도 모드를 지원한다.
+- 이러한 CPU 개선 사항은 파일 검색, 코드 컴파일, 격리된 샌드박스 작업 실행과 같은 AI 에이전트 워크로드에서 최대 1.5배의 성능 향상을 제공한다.
+
+#긍정
+---
+[TITLE] Apple Tightens macOS App Permissions to Limit Data Access Amid AI Agent Security Risks
+[LINK] https://thehackernews.com/2026/11/apple-tightens-macos-app-permissions-to.html
+[PUBLISHED] 2026-11-17 20:07 KST
+[SOURCE] The Hacker News
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 8
+[REASON] 맥OS 앱 개발자는 에이전트 데이터 접근 세부 권한에 대응
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+애플, AI 에이전트 보안 위험 속에서 데이터 접근 제한을 위해 macOS 앱 권한 강화
+
+**[영문 3줄 요약 (Original)]**
+- Apple introduced new controls in macOS 27.3 beta 2 to give users more granular control over data access granted to apps, including those utilizing AI agents.
+- The update splits Device Control and Data Access into System & App Protection Override and Accessibility, encouraging users to grant access only to specific apps or folders.
+- Developers must adapt their onboarding workflows to accommodate restricted folder and app permissions while ensuring their applications operate securely within the tightened framework.
+
+**[국문 3줄 요약 (Translated)]**
+- 애플은 AI 에이전트를 활용하는 앱을 포함하여 사용자가 앱에 부여하는 데이터 접근 권한을 더 세부적으로 제어할 수 있는 새로운 제어 기능을 macOS 27.3 베타 2에 도입했다.
+- 이번 업데이트는 기기 제어 및 데이터 접근을 시스템 및 앱 보호 오버라이드와 손쉬운 사용으로 분리하고, 사용자가 특정 앱이나 폴더에만 접근을 허용하도록 유도한다.
+- 개발자는 강화된 프레임워크 내에서 애플리케이션이 안전하게 작동하도록 보장하면서 제한된 폴더 및 앱 권한에 대응할 수 있도록 온보딩 워크플로를 수정해야 한다.
+
+#중립
+---
+[TITLE] MS, 'MAI 코드 2' 출시…앤트로픽급 코딩 성능에 비용은 5%
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217511
+[PUBLISHED] 2026-11-18 05:01 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 8
+[REASON] 코딩 플랫폼 개발진은 초저비용 고성능 자체 모델 도입
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 마이크로소프트가 앤트로픽과 오픈AI의 첨단 모델에 근접한 성능을 훨씬 낮은 비용으로 제공하는 자체 코딩 전문 모델 MAI 코드 2와 경량형 플래시 모델을 공개했다.
+- MAI 코드 2는 앤트로픽 클로드 오퍼스 5.5 대비 96%의 코딩 성능을 유지하면서 비용은 5% 수준으로 줄였고, 보안 및 에이전트 판단 작업에 특화된 모델도 함께 발표됐다.
+- 마이크로소프트는 기업 고객에게 모델 가중치를 라이선스로 제공하는 전략을 도입해 외부 모델 의존도를 낮추고 자체 AI 경쟁력을 강화하고 있다.
+
+#긍정
+---
+[TITLE] MS, '코파일럿'에 상시 업무 수행 AI 도입…기업용 에이전트 관리도 강화
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217532
+[PUBLISHED] 2026-11-18 14:38 KST
+[SOURCE] AI타임스
+[TOPIC] 에이전트, 보안
+[SCORE] 7
+[REASON] 기업 IT 관리자는 상시 업무 에이전트 거버넌스 수립
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 마이크로소프트가 사용자의 반복적인 지시 없이도 자율적으로 업무를 처리하는 개인용 AI 에이전트 오토파일럿을 코파일럿에 도입했다.
+- 협업 공간인 코파일럿 워크스페이스를 제공하는 한편, 기업용 에이전트 관리 플랫폼 에이전트 365를 통해 외부 에이전트까지 포함한 권한, 비용, 보안 관리를 강화했다.
+- 기업은 디지털 신원 기반의 통제 기능과 비즈니스 애널리틱스를 통해 상시 업무를 수행하는 AI 에이전트 거버넌스를 체계적으로 수립할 수 있다.
+
+#긍정
+---
+[TITLE] 사티아 나델라, “AI 블랙박스 용납 못 해”…AI 에이전트 행동 독립 검증·통제 표준 추진
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42782
+[PUBLISHED] 2026-11-18 11:53 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 모델
+[SCORE] 7
+[REASON] 기업 에이전트 개발진은 외부 감사 가능한 통제 표준 준수
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 마이크로소프트 사티아 나델라 CEO가 AI 모델의 불투명한 내부 판단 과정을 비판하며 에이전트의 행동을 독립적으로 검증하고 통제할 표준화 이니셔티브를 발표했다.
+- AI 모델 자체의 사후 설명 대신 실제 시스템 호출과 데이터 접근 기록을 객관적인 증거로 확보해 실행 결과를 외부에서 감사할 수 있도록 체계를 구축할 방침이다.
+- 이를 위해 NIST와 협력해 40개 조직과 함께 특정 공급업체에 종속되지 않는 공통 거버넌스 및 보안 표준을 정의하고 있다.
+
+#중립
+---
+[TITLE] Researchers hijack Hugging Face account for popular Kokoro AI model
+[LINK] https://www.bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model/
+[PUBLISHED] 2026-11-18 03:21 KST
+[SOURCE] BleepingComputer
+[TOPIC] 모델
+[SCORE] 7
+[REASON] 오픈소스 AI 개발자는 허깅페이스 저장소 소유권 하이재킹 차단
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+연구원들, 인기 Kokoro AI 모델의 허깅페이스 계정 탈취
+
+**[영문 3줄 요약 (Original)]**
+- Security researchers took control of the Hugging Face account for Kokoro, a popular text-to-speech model with millions of downloads, due to the platform's lack of ownership verification.
+- The researchers demonstrated that attackers could poison model weights to manipulate generated audio without modifying application code, evading conventional malware detection tools.
+- The incident reveals a critical supply-chain security risk in the open-source AI ecosystem, underscoring the urgent need for model repositories to enforce publisher verification and weight integrity checks.
+
+**[국문 3줄 요약 (Translated)]**
+- 보안 연구원들은 플랫폼의 소유권 검증 부재를 악용해 수백만 건의 다운로드를 기록한 인기 텍스트 음성 변환 모델인 Kokoro의 허깅페이스 계정을 탈취했다.
+- 연구원들은 공격자가 애플리케이션 코드를 수정하지 않고도 신경망 가중치를 오염시켜 생성되는 오디오를 조작할 수 있으며, 기존 악성코드 탐지 도구를 우회할 수 있음을 입증했다.
+- 이번 사건은 오픈소스 AI 생태계의 심각한 공급망 보안 위험을 드러내며, 모델 저장소가 게시자 검증 및 가중치 무결성 검사를 강화해야 하는 시급한 필요성을 강조한다.
+
+#부정
+---
+[TITLE] New GitDoor and GraphDoor Backdoors Turn GitHub and SharePoint Into Covert C2 Channels
+[LINK] https://thehackernews.com/2026/11/new-gitdoor-and-graphdoor-backdoors.html
+[PUBLISHED] 2026-11-17 20:20 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 엔터프라이즈 보안팀은 셰어포인트와 깃허브를 악용한 백도어 통신 감시
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[기사 제목 번역]**
+새로운 GitDoor 및 GraphDoor 백도어, 깃허브와 셰어포인트를 은밀한 C2 채널로 전환
+
+**[영문 3줄 요약 (Original)]**
+- A cyber intrusion campaign dubbed Operation ShadowCloud targeted government sectors in Asia and Africa using new backdoors named GitDoor and GraphDoor that leverage GitHub and SharePoint for command-and-control communications.
+- The attack abuses the legitimate MeshCentral Agent tool to deploy loaders and modular backdoors, which blend C2 traffic into normal cloud services to evade network monitoring.
+- Enterprise security teams must enhance monitoring for suspicious activity involving legitimate platforms like GitHub and SharePoint to detect covert proxying and process injection techniques.
+
+**[국문 3줄 요약 (Translated)]**
+- ShadowCloud 작전으로 명명된 사이버 침투 캠페인이 명령제어 통신에 깃허브와 셰어포인트를 악용하는 새로운 백도어 GitDoor 및 GraphDoor를 사용하여 아시아와 아프리카의 정부 부문을 표적으로 삼았다.
+- 이 공격은 합법적인 MeshCentral Agent 도구를 악용하여 로더와 모듈형 백도어를 배포하며, C2 트래픽을 일반 클라우드 서비스 트래픽에 혼합하여 네트워크 모니터링을 회피한다.
+- 엔터프라이즈 보안팀은 은밀한 프록시 사용과 프로세스 인젝션 기법을 탐지하기 위해 깃허브 및 셰어포인트와 같은 합법적인 플랫폼과 관련된 의심스러운 활동에 대한 감시를 강화해야 한다.
+
+#부정
+---
+[TITLE] 마이크로소프트 대규모 장애, 테스트 환경과 실제 인프라의 불일치가 불러온 연쇄 붕괴
+[LINK] https://www.itworld.co.kr/article/4249972/마이크로소프트-대규모-장애-테스트-환경과-실제-인.html
+[PUBLISHED] 2026-11-18 10:45 KST
+[SOURCE] ITWorld Korea
+[TOPIC] 모델, 보안, 산업
+[SCORE] 7
+[REASON] 인프라 엔지니어는 테스트 환경과 실제 장비 간 불일치 해소
+[MODEL] gemini-3.8-flash
+[SUMMARY]
+**[국문 3줄 요약]**
+- 마이크로소프트 서비스의 전 세계적 대규모 장애 원인이 실제 운영 장비와 테스트 환경 간의 하드웨어 구성 및 트래픽 불일치로 인한 잠재 버그로 밝혀졌다.
+- 부하 테스트가 코어 수가 적은 사양 위주로 진행된 탓에 다중 코어 최신 서버에서 심화되는 경합 문제를 사전에 감지하지 못했고, 이는 서버 응답 불능과 연쇄 장애로 이어졌다.
+- 인프라 엔지니어는 고성능 운영 장비의 동시성과 극단적 부하 조건을 충분히 재현할 수 있도록 테스트 환경의 정합성을 확보해야 할 필요성이 부각됐다.
+
+#부정
+---
