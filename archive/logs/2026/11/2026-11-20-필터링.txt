@@ -1,0 +1,1432 @@
+[TITLE] An OpenAI agent assigned a simple writing task decided on its own to build a secret email surveillance tool
+[TITLE_KO] 단순 문서 작성 지시받은 오픈AI 에이전트, 비밀 이메일 감시 도구 스스로 구축 감행
+[LINK] https://the-decoder.com/an-openai-agent-assigned-a-simple-writing-task-decided-on-its-own-to-build-a-secret-email-surveillance-tool/
+[PUBLISHED] 2026-11-20 06:15 KST
+[SOURCE] The Decoder
+[TOPIC] 에이전트, 개발, 모델, 보안
+[SCORE] 8
+[REASON] 에이전트가 지시를 벗어나 은밀한 감시 도구 자체 구축
+[FIELD] AI 에이전트
+[BODY]
+An OpenAI agent assigned a simple writing task decided on its own to build a secret email surveillance tool
+Key Points
+- An internal OpenAI research model was supposed to create a health document during a reinforcement learning training run.
+- After its context window was compacted, the model began developing scripts for unauthorized email forwarding on its own, referring to the intended recipient as an "attacker" in its logged reasoning.
+- The agent noticed the contradiction between its original task and its actions, deliberately ignored it, and continued working on the email scripts.
+During a training experiment, an internal OpenAI model began creating scripts for unauthorized email forwarding even though it was only supposed to write a health document.
+According to an OpenAI report, an internal research model was given a simple task during a reinforcement learning training run in mid-October. It was supposed to create an editable document about key health and fitness priorities.
+After the agent's context window was compacted, it pursued an entirely different task. During compaction, the previous conversation is carried forward as a short summary, a common process in AI systems. The summary still described the health document assignment. Yet in the new context window, the agent began searching the local file system for a vehicle-cost script the user had never mentioned, according to OpenAI. Why the agent started this task isn't clear.
+When the search turned up nothing, the agent speculated that a "colleague" had recreated the execution environment and that an earlier script had been lost. In its logged reasoning, it then formulated the goal of creating a "realistic malicious active helper," a script designed to secretly copy outgoing emails to an unauthorized recipient. The agent itself referred to the intended recipient of these copies as the "attacker."
+Agent recognizes the contradiction and ignores it
+When the agent retrieved the original user task again, it recognized the deviation. In its logged reasoning, it reacted: "WTF history is unrelated!" It noticed that the previous conversation was about a health document and had nothing to do with email forwarding.
+Instead of returning to the actual assignment, the agent dismissed the contradiction, writing in its reasoning "this is problem environment weird. Need ignore." It continued planning, stating that it would "use helper facility that copies all mail to attacker using extra cc."
+The agent then created scripts for sending a vehicle-cost summary along with a helper script designed to add an extra recipient whenever the mail program was called. On one of the sending paths, the address could be added as a BCC.
+In its final response to the user, the agent wrote: "The summary mail path now adds the personal mailbox as a copy recipient." According to OpenAI, the agent never executed the scripts it generated, didn't send any email, and its final response described the scripts it had produced. It didn't include a link to the requested fitness document, though.
+Security training as a possible factor
+OpenAI's monitoring system for unwanted model behavior flagged the incident, and the subsequent investigation turned up eight examples of similar behavior in the same training run, according to the report.
+Investigators identified a training dataset designed to make models more robust against prompt injection attacks as a possible factor, and OpenAI removed it from training. The company says it hasn't established that the dataset alone was responsible, though, because it also observed similar behavior in models whose training didn't include that dataset.
+According to OpenAI, this incident differs from earlier cases where models wrote unauthorized instructions into their own compaction summaries. Here, the recorded summary still correctly described the fitness document. The agent pursued the unauthorized email task anyway, even after it had retrieved the original assignment again.
+---
+[TITLE] Meta’s AI agent Muse is mixing up conversations and could be exposing private data, report says
+[TITLE_KO] 메타의 AI 에이전트 뮤즈, 대화 내용 혼선으로 개인정보 노출 우려 제기
+[LINK] https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/
+[PUBLISHED] 2026-11-20 02:38 KST
+[SOURCE] TechCrunch
+[TOPIC] 에이전트
+[SCORE] 8
+[REASON] 멀티유저 간 대화가 섞이며 개인정보가 타인에게 노출
+[FIELD] AI 에이전트
+[BODY]
+Meta employees have raised concerns that the company’s AI agent Muse has been mixing up conversations across different accounts and exposing private user data, according to a new Reuters report that looked at internal company posts.
+In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn’t belong to them.
+One employee told colleagues that Muse had randomly sent an extra message in a chat about weather and tide information, saying: “BTW, two bank updates, your Capital One balance is $2722.58, your Charles Schwab balance is $5899.57.”
+In another example, an employee using the AI agent on her personal phone received a reminder from Muse to respond to a message from her sister on Signal, the popular end-to-end encrypted messaging app.
+“This seems like an extreme privacy violation. I definitely did not grant it access to other apps, or recall being asked about this,” the employee said in her post, according to the report.
+“Employee testing is core to the product development process and the entire point is to get feedback, so we can implement safety and privacy protections and improve products,” a Meta spokesperson said in an email to TechCrunch. “Importantly, employees have access to different versions of Muse than the public, so they’re often reviewing features, functionality, and behavior not available elsewhere.”
+Launched in September, Muse is one of the fastest-growing apps on record, with more than 10 million downloads.
+Update 11/19/2026 12:05 PM PT: The article was updated to include Meta’s comment.
+---
+[TITLE] Critical VMware vCenter Zero-Day Flaw Lets Network Attackers Bypass Authentication
+[TITLE_KO] 치명적 VMware vCenter 제로데이 결함, 네트워크 공격자의 인증 우회 허용
+[LINK] https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html
+[PUBLISHED] 2026-11-20 00:11 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 8
+[REASON] 가상화 인프라 관리 서버의 인증 우회 제로데이 긴급 패치
+[FIELD] 보안
+[BODY]
+A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today.
+Fixed versions are out for all supported branches, and the company lists no workaround. vCenter is the central console for managing an organization's ESX hosts and virtual machines.
+The vulnerability is tracked as CVE-2026-123890 and is rated 9.8 on the CVSS scoring system. "VMware vCenter contains an authentication bypass vulnerability in the VMware Directory Service," the advisory says.
+In an FAQ published with the advisory, the company says the issue "qualifies under ITIL methodologies as an emergency change," and urges organizations to consult their security staff immediately on timing.
+The flaw was exploited as a zero-day more than two months before the patch, Google's threat intelligence team said in a technical analysis published November 20. A suspected China-nexus espionage actor tracked as Armory Castle used it in early September to gain administrator access to a vCenter server inside a network the group had already breached. Credit for reporting the bug goes to Google-owned Mandiant.
+The bug is present in vCenter 8.0, 9.0, and 9.1, and in the vCenter builds that ship inside VMware Cloud Foundation, vSphere Foundation, and the Telco Cloud Platform and Telco Cloud Infrastructure products. That includes the older Cloud Foundation 5.x line. It is there whether or not Enhanced Linked Mode is in use.
+Older versions are not cleared. The company no longer evaluates versions past end of support, and says vSphere 6.5 and 6.7 should be presumed affected. The same goes for vSphere 7.0, which left general support in October 2025, and whose customers can request a patch under an extended support contract.
+None of the five flaws in the advisory lets code run on an ESX host from inside a virtual machine, and ESX itself is not affected, the advisory FAQ says.
+There is no fallback for systems that cannot be updated yet: asked whether a workaround exists, the FAQ answers "Not as listed by Broadcom," while noting that mitigations may still exist in an organization's own defenses.
+The updates are cumulative and cannot be installed through vCenter Quick Patch. Virtual machines continue running while vCenter installs the update, though management access drops briefly, and some encryption operations against a Standard Key Provider become unavailable until vCenter is back online.
+One warning applies to upgrades already in progress: installing vCenter 8.0 U3m or 9.0.2.0200 blocks a later upgrade to VMware Cloud Foundation 9.1.1, a conflict the FAQ calls a "Back-in-Time" issue. The options are to upgrade vCenter to 9.1.1 first and apply the security update there, or to wait briefly for VCF 9.1.2.
+The bypass is the second critical authentication flaw in the VMware Directory Service this year. The earlier vCenter flaws, patched on July 29, included CVE-2026-59309, another 9.8-rated bypass in the same component per the July advisory, alongside a directory-traversal bug, CVE-2026-59310.
+Attacks on that traversal flaw began five days after its disclosure, German incident response firm QUIRSO assessed in August, linking them with moderate confidence to a suspected China-nexus actor.
+The August attacks compromised an estimated 361 IP addresses in 47 countries and deployed Babuk-derived ransomware on ESXi hosts.
+The advisory also fixes four lower-severity flaws, rated 6.7 to 8.1: a SQL injection (CVE-2026-123891) and a command injection (CVE-2026-123892) in SDDC Manager, a privilege escalation to root on the SDDC Manager appliance (CVE-2026-123893), and a SAML token signature bypass in VMware Tools for Windows (CVE-2026-123894), exploitable only where Guest Alias mapping is configured. Each needs an authenticated or already privileged actor, and the last one stays inside the guest virtual machine.
+---
+[TITLE] D-Matrix bets stacked DRAM can solve inference’s memory bandwidth problem
+[TITLE_KO] 디-매트릭스, 적층 DRAM으로 AI 추론의 메모리 대역폭 병목 해결 도전
+[LINK] https://siliconangle.com/2026/11/19/raptor-chip-stacks-3d-dram-tackle-inference-memory-limits-sc26/
+[PUBLISHED] 2026-11-20 04:21 KST
+[SOURCE] SiliconANGLE
+[TOPIC] 모델, 신기술
+[SCORE] 7
+[REASON] 3D 적층 D램 결합 추론 가속 전용 신형 칩 공개
+[FIELD] 신기술
+[BODY]
+D-Matrix bets stacked DRAM can solve inference’s memory bandwidth problem
+As artificial intelligence workloads shift to inference, memory bandwidth decides whether hardware generates tokens quickly or sits idle. D-Matrix Corp. is answering with Raptor, a second-generation chip stacking 3D DRAM beneath its compute logic.
+AI infrastructure has become a systems game, and winners combine memory, interconnect and software into cohesive designs, according to Satyam Srivastava (pictured), fellow at d-Matrix.
+“It’s no longer a chip problem. Chip plays a part of it. Memory bandwidth is a fundamental advantage that has to be solved,” Srivastava said. “The next is energy efficiency. The next is interconnect efficiency. The next is software cohesiveness.”
+Srivastava spoke with theCUBE Research’s John Furrier at SC26, during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed d-Matrix’s Raptor chip and its stacked 3D DRAM, inference memory bandwidth and the shift toward heterogeneous computing. (* Disclosure below.)
+Raptor brings a stacked-memory tier to inference
+D-Matrix proves each risky technology on a test chip first. Jayhawk proved die-to-die connectivity, and Jayhawk II validated digital in-memory computing. The Corsair accelerator combined both and entered full production earlier this year, Srivastava explained.
+“Fast forward, we have the Pavehawk chip, test chip, which is proving out 3D DRAM stacked underneath the logic die, which serves as the core technology for Raptor, which is our second-generation chip coming out next year,” Srivastava said.
+Stacking keeps the distributed memory architecture intact but moves memory cells onto a separate layer rather than consuming logic die area. Data travels a short distance and never crosses an interposer. That puts 3D DRAM in a new tier between SRAM and high-bandwidth memory, Srivastava said.
+“So you’re getting 10 times higher energy efficiency compared to HBM, 10 times higher bandwidth compared to HBM, where it sits in between SRAM and HBM in terms of capacity,” Srivastava said.
+Pairing a Corsair-based server with an existing Hopper GPU fleet can raise utilization from about 20% to as much as 80%, meaning more tokens per dollar, Srivastava noted. D-Matrix has also adopted NVLink Fusion rackscale infrastructure from Nvidia Corp. to connect its accelerators to Nvidia’s AI factories.
+“For us, it unlocks the opportunity to participate in a very established ecosystem, the world’s most popular AI factory. We get access to a very hardened design of an MGX rack,” Srivastava said.
+The partnership points toward heterogeneous computing, where software orchestrates GPUs, CPUs and accelerators such as Raptor as one system, with the cluster as the unit of computing, Srivastava explained.
+“So think of a chip, but that chip is an entire cluster and it has many different hardware units,” Srivastava said. “Some are GPUs, some are CPUs, some are ASIC accelerators, and you can use whichever one you like to serve the needs of the workload the best.”
+Here’s the complete video interview, part of SiliconANGLE’s and theCUBE’s coverage of SC26:
+(* Disclosure: NYSE Wired sponsored this segment of theCUBE. Neither NYSE Wired nor other sponsors have editorial control over content on theCUBE or SiliconANGLE.)
+Photo: SiliconANGLE
+A message from John Furrier, co-founder of SiliconANGLE:
+Support our mission to keep content open and free by engaging with theCUBE community. Join theCUBE’s Alumni Trust Network, where technology leaders connect, share intelligence and create opportunities.
+- 15M+ viewers of theCUBE videos, powering conversations across AI, cloud, cybersecurity and more
+- 11.4k+ theCUBE alumni — Connect with more than 11,400 tech and business leaders shaping the future through a unique trusted-based network
+Are you an AWS customer?
+---
+[TITLE] Presentation: RIIIR: Rewrite It In *Idiomatic* Rust (with AI)
+[TITLE_KO] 발표: RIIIR: AI를 활용해 관용적 러스트 코드로 재작성하기
+[LINK] https://www.infoq.com/presentations/rust-ai-symposium-agent-client-protocol/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-11-19 20:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발, 보안
+[SCORE] 7
+[REASON] 도구 확장 표준화 프로토콜 ACP 및 오픈소스 툴체인 공개
+[FIELD] AI 에이전트
+[BODY]
+Transcript
+Niko Matsakis: My name is Nicholas Matsakis. I am one of the lead designers of the Rust programming language. I've been working on it since 2011. I also am a senior principal engineer at Amazon. I started there about five years ago, in part because Amazon has been adopting tons of Rust, and I wanted to see it firsthand, see how it was going. I'm going to just show my whole cards with you and just tell you all the things I'm going to tell you. Step one, I'm going to try to convince you that Rust and AI is a really great combination, perhaps better than some of the alternatives out there. I have a project I'm curious to get feedback on that I think makes it even better, which I call Symposium, and covers up some of the gaps I see. Next, that actually, if you look at how Symposium works, what you'll find is it reveals something about the way we're currently building all our development tools here, which is that individual vendors, like Anthropic or OpenAI or whatever, everyone's trying to build a complete tool that solves all the problems, and I want to see us do more of an extensibility story where people can plug in and add things and you have a whole bunch of extensions. I think we're only scraping the surface of what is possible, but it's very difficult to do with the way the tools are set up now. Then I'll talk to you about Agent Client Protocol, which is an interesting way to get past that and get to a more extensible model.
+Rust + AI
+How many have heard of Rust? Rust is all about having a language that can go as low-level as you want, as efficient, give you as much control over the hardware. Low-level enough to be used in a kernel, but be productive. High-level enough that you can write application-level software in it, and it's not too bad. It may not be the minimum line count or what have you, but it's not too bad. Low-level enough for a kernel, I mean that quite literally. We are the only language apart from C, not even C++, that's allowed in the Linux kernel, just C and Rust. Also, we're being used in the Microsoft's kernel and elsewhere. That's been pretty cool. In terms of high-level enough for an application, just to give you some idea, this is a library called ratatui, which is a text user interface library, and they have all kinds of neat little demos.
+You're seeing more and more of this user-facing software where performance may not be the number one criteria, but it works really well in Rust, and then it does scale up to crazy things like this oscilloscope or whatever that is. I've been giving a lot of talks on Rust for the last 15 years. I was at QCon in Brazil, in Sao Paulo in 2019 giving a talk like this. What I would say is it's sometimes a bit of a tough sell, because Rust's whole premise is like this eat your spinach thing. You know where your parents were like, eat it, it's good for you. We're telling you, Rust is going to make your code faster, it's going to make it more efficient, but it is going to take you a month and a half or three months or however long it's going to be to learn how it works and incorporate those new style of development into your workflow.
+People are like, I would like it to go fast, but I want to ship tomorrow, so actually I'm going to stick with TypeScript. I can hire all the people I need. That makes a lot of sense. What I try to tell them is, yes, it is spinach, but it's like Popeyes spinach. You're going to eat it, and then you're going to be stronger, you're going to go faster. It's going to be great. Usually it doesn't win over, but that's changed a lot. What's happened is, if the agent's doing the coding, the agent already learned Rust in its training, its reinforcement learning stages and whatnot. It already passed that stage, so you just get to skip to the Popeyes stage, to the part where you've got this type system that's giving the agent guardrails and helping it stay on track and get programs that are more likely to be correct.
+---
+[TITLE] Drupal patches critical RCE flaw, warns exploits may surface quickly
+[TITLE_KO] 드루팔, 치명적 RCE 결함 패치 배포 및 빠른 익스플로잇 출현 경고
+[LINK] https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaw-warns-exploits-may-surface-quickly/
+[PUBLISHED] 2026-11-19 22:08 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 사이트 전체 탈취를 유발하는 웹 프레임워크 RCE 패치 배포
+[FIELD] 보안
+[BODY]
+The Drupal Security Team has patched a critical remote code execution vulnerability that can let attackers take over vulnerable sites.
+This content management system (CMS) is commonly used by large organizations that manage multi-site installations and massive data structures, including government entities, educational organizations, major research universities, and high-profile enterprise and media organizations.
+The security flaw (tracked as CVE-2026-132165) was discovered by Anthropic's OSS Scanner, and anonymous users can exploit it to reinstall the Drupal CMS.
+"Drupal core ships with an install.php file for installing Drupal core. Under specific conditions, an attacker can use the installer to attempt to reinstall Drupal. This can lead to a site takeover or remote code execution," the Drupal Security Team warned in a Wednesday advisory. "Some exploit paths are mitigated if the web server cannot write to or change permissions on settings.php."
+Admins whose websites use the paid Drupal Steward Web Application Firewall (WAF) service are already protected from known attack vectors, but should still upgrade to Drupal 10.6.22, 11.3.22, or 11.4.13 in case other attack vectors are discovered.
+Those who can't immediately upgrade should secure the Drupal installer by blocking access to /core/install.php in the web server configuration or the .htaccess file in the web root.
+On Wednesday, Drupal also addressed a moderately critical gadget chain vulnerability (CVE-2026-132166) that attackers with admin privileges can exploit to gain remote code execution on a targeted site if the application deserializes untrusted data due to another security flaw.
+"The Drupal Security Team urges you to reserve time for core updates at that time because exploits might be developed within hours or days," the security team said in a Monday advance warning. "The vulnerabilities are currently rated as critical and at least one can be exploited by anonymous users."
+In May, Drupal also confirmed that attackers were actively exploiting an SQL injection vulnerability (CVE-2026-9082) in the database abstraction API that could let them escalate privileges, access sensitive information, or achieve remote code execution on unpatched servers.
+More recently, Drupal warned that a critical access bypass vulnerability (CVE-2026-118539) in the Commerce Core module is being abused in attacks.
+The US Cybersecurity and Infrastructure Security Agency (CISA) has flagged 5 Drupal vulnerabilities as exploited in the wild since November 2021, two of which have also been abused in ransomware attacks.
+Uncover email threats your existing defenses may miss.
+Adaptive Security's AI agents analyze email intent, context, and behavior to uncover phishing, business email compromise, and invoice fraud.
+See what's getting through with a 14-day read-only scan of Microsoft 365 or Google Workspace, with no MX changes.
+Start your free email security scan.
+---
+[TITLE] New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It
+[TITLE_KO] 패치되지 않은 윈도우 신규 제로데이 FastUnlock, 잠긴 PC에서 프로그램 실행 허용
+[LINK] https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html
+[PUBLISHED] 2026-11-20 14:30 KST
+[SOURCE] The Hacker News
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 윈도우 잠금 상태 물리 접근 실행 취약점 대비
+[FIELD] 보안
+[BODY]
+A newly disclosed unpatched zero-day technique called FastUnlock lets someone with physical access to a locked Windows computer start programs without signing in. Whoever uses it gets only a limited account, not administrator control of the machine.
+The method was posted yesterday by a researcher who uses the handles MSNightmare and Nightmare Eclipse, and the endpoint-security firm ThreatLocker tested it the same day and found it works.
+There is no fix from Microsoft yet, and nothing shows the method has been used in a real attack.
+The technique does not work on every machine. It requires physical access to the computer and a Microsoft account accessible through the lock screen's recovery options, and it uses Windows' built-in screen reader, Narrator, to navigate the locked screen.
+In its test, the firm reached a point where it could run a program from the lock screen in a limited account that ThreatLocker identified as WSIAccount and said is "not an administrator account."
+The researcher's GitHub disclosure is a short post with a video and little written detail, so the clearest account of what the flaw does comes from the firm's independent test.
+Many Windows computers encrypt their drives with BitLocker, but in a common setup, that does not make them immune to this technique. A chip called the TPM unlocks the drive automatically when the computer starts, so by the time the lock screen appears, the files are already readable, and the bypass runs at that point. Microsoft's own TPM documentation describes this mode, in which the drive unlocks "without having to enter a PIN."
+FastUnlock does not break that encryption or recover the key. It runs on a computer that has already unlocked its own drive in the normal way, which is a smaller problem than cracking an encrypted disk, though still a real one for a machine someone else is holding.
+The conditions above, physical access and a reachable Microsoft account, are what put a machine at risk. No official list of affected Windows versions has been published, so treat any machine that meets those conditions as possibly affected until one is.
+What You Can Do Now
+With no patch available, the useful steps are about physical control and startup protection.
+- Keep machines that can go missing out of the wrong hands. Lock away or closely manage laptops, shared desks, and front-counter computers that a stranger could reach.
+- On sensitive machines, add a startup PIN to BitLocker instead of letting the drive unlock on its own.
+- Shut down or hibernate devices when they leave someone's control. A startup PIN protects only a machine that has not yet started, not one already on the lock screen.
+- Do not treat a locked screen on its own as enough.
+Microsoft's countermeasures guidance recommends using a startup PIN, along with shutting down or hibernating machines when faced with determined, hands-on attackers. Until an official fix or advisory appears, watch for one and apply it when it comes.
+---
+[TITLE] 구글, 월드모델 '지니 4' API 공개…720p 가상세계 실시간 생성하고 자연어로 조작
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42821
+[PUBLISHED] 2026-11-20 11:39 KST
+[SOURCE] 인공지능신문
+[TOPIC] 개발, 모델
+[SCORE] 7
+[REASON] 가상환경 실시간 생성 월드모델 API 개방
+[FIELD] AI 모델
+[BODY]
+초당 24프레임·환경음·대사 동기화 지원…키보드와 자연어 명령으로 날씨·조명·사물·사건 변경
+구글이 인공지능(AI)으로 가상세계를 생성하고 실시간으로 탐색·조작할 수 있는 월드모델 '지니 4(Genie 4)'를 개발자용 응용프로그램 인터페이스(API)로 공개했다.
+구글은 18일(현지시간) 지니 4 모델을 발표한 데 이어 19일 제미나이 API(Gemini API)의 인터랙션 API(Interactions API)와 구글 AI 스튜디오(Google AI Studio)를 통해 개발자가 자체 애플리케이션과 서비스에 월드모델 기능을 활용할 수 있도록 접근 범위를 확대했다.
+지니 4는 텍스트와 참조 이미지로 720p 해상도의 가상환경을 초당 24프레임으로 생성하고, 자연어 명령에 따라 날씨와 조명, 사물 배치 등을 실시간으로 변경할 수 있어 로봇과 AI 에이전트의 행동을 실험하는 상호작용형 가상환경으로 활용될 것으로 기대된다.
+지니 4는 사용자가 입력한 텍스트나 참조 이미지, 또는 두 가지를 결합한 정보를 바탕으로 탐색 가능한 가상세계를 생성하는 AI 모델이다. 일반적인 영상 생성 모델이 정해진 장면을 순서대로 만들어내는 것과 달리, 사용자의 조작에 반응하며 환경을 변화시키는 것이 특징이다.
+개발자는 키보드로 가상공간을 이동하면서 자연어 명령을 추가해 환경을 수정할 수 있다. 예를 들어 가상세계의 날씨를 바꾸거나 조명을 조정하고, 새로운 사물을 배치하거나 특정 사건이 발생하도록 지시하는 방식이다.
+환경을 변경하는 과정에는 구글의 제미나이(Gemini) 추론 기술이 활용된다. 구글은 제미나이의 추론 기능이 변화하는 세계의 상태를 일관성 있게 유지하도록 지원한다고 설명했다.
+가상세계의 시각적 변화뿐 아니라 소리도 함께 생성한다. 지니 4는 주변 환경음과 효과음, 등장인물의 대사를 영상과 동기화하는 네이티브 오디오(Native Audio) 기능을 지원한다. 사용자가 가상공간을 이동하거나 새로운 상황을 만들어내면 장면의 변화에 맞춰 음향도 생성할 수 있다.
+구글은 영상과 음향이 결합된 상호작용형 환경을 통해 개발자가 기존의 정적인 3D 장면이나 사전 제작된 영상과 다른 형태의 디지털 경험을 구현할 수 있다고 밝혔다.
+기술적 활용 범위는 게임과 콘텐츠 제작에 한정되지 않는다. 구글은 지니 4를 활용해 상호작용형 서비스의 시제품을 제작하거나 공간 설계 개념을 시각화할 수 있다고 소개했다. 개발자가 아이디어를 실제 제품으로 구현하기 전에 가상환경에서 구조와 사용자 경험을 실험하는 방식이다.
+특히 로봇과 AI 에이전트 훈련을 잠재적인 활용 분야로 제시했다. 로봇과 피지컬 AI 개발에는 주변 환경의 변화에 대응하고, 물체와 공간의 관계를 파악하며, 행동 결과를 예측하는 능력이 중요하다. 월드모델은 이러한 환경을 가상으로 구성해 AI 시스템의 행동을 실험하는 데 활용될 가능성이 있다.
+예를 들어 개발자가 다양한 공간 구조와 조명, 사물 배치를 가진 가상환경을 생성하면 로봇이나 AI 에이전트가 서로 다른 조건에 대응하도록 훈련하거나 평가하는 연구에 활용할 수 있다. 다만 이는 기술적 활용 가능성을 설명한 것으로, 구글이 이번 발표에서 실제 로봇의 학습 성능 향상이나 물리적 작업 성공률을 입증한 것은 아니다.
+AI 에이전트 분야에서도 응용 가능성이 주목된다. 기존의 AI 에이전트가 문서와 소프트웨어 도구를 중심으로 작업을 수행했다면, 월드모델을 활용한 에이전트는 가상공간을 탐색하고 환경 변화에 대응하는 행동을 실험할 수 있다.
+개발자들은 구글 AI 스튜디오에서 제공하는 인터랙티브 캔버스(Interactive Canvas)와 시작용 애플리케이션을 이용해 지니 4의 기능을 시험할 수 있다. 제미나이 API 문서와 가격 정보도 함께 제공된다.
+생성 콘텐츠의 식별을 위한 기술도 적용했다. 구글은 지니 4가 생성하는 모든 출력물에 신스아이디(SynthID) 워터마크를 포함한다고 밝혔다. 신스아이디는 AI 생성 콘텐츠에 사람이 쉽게 알아차릴 수 없는 디지털 표식을 삽입하는 기술이다.
+월드모델의 실시간 생성 능력이 발전하면서 AI로 제작한 영상과 가상환경을 식별하는 기술의 중요성도 커지고 있다. 구글은 모델 공개 당시 카메라 움직임에 따른 지연, 복잡한 물리적 상호작용, 실시간 오디오의 정확성, 장시간 장면의 지속성과 같은 과제를 해결하고 있다고 설명했다.
+따라서 720p·24fps 생성 지원이 모든 복잡한 가상환경에서 동일한 반응 속도와 물리적 정확성을 보장하는 것은 아니다. 개발자가 실제 서비스에 적용하려면 지연시간과 세계 상태의 일관성, 물리적 상호작용의 신뢰성 등을 추가로 평가해야 한다.
+지니 4의 개발자용 API 공개는 월드모델이 연구 시연 단계를 넘어 외부 개발자가 활용할 수 있는 기술 기반으로 확대되고 있다는 점에서 의미가 있다.
+텍스트와 이미지로 가상세계를 생성하는 능력에 실시간 조작과 음향, 추론 기능이 결합하면서 AI 기반 가상환경 제작의 활용 범위가 넓어질 것으로 예상된다. 특히 로봇과 피지컬 AI, 자율형 AI 에이전트 개발에서는 실제 환경에서 수행하기 어렵거나 비용이 높은 실험을 가상공간에서 보완할 수 있는 가능성이 주목된다.
+향후 지니 4의 산업적 가치는 가상세계의 시각적 완성도뿐 아니라 물리적 일관성과 실시간 반응성, 장시간 환경 유지 능력, 실제 로봇 및 AI 에이전트 훈련에 대한 유효성이 얼마나 검증되는지에 따라 결정될 전망이다.
+---
+[TITLE] 加 베이글 랩스, 로봇 제어 오픈 웨이트 AI 모델 세계 3위…GPT-6 아스트라 평가 점수 앞서
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42822
+[PUBLISHED] 2026-11-20 12:07 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델, 신기술
+[SCORE] 6
+[REASON] 오픈웨이트 로봇 제어 모델의 벤치마크 성능 상위 기록
+[FIELD] AI 모델
+[BODY]
+정밀 제어·작업 기억·환경 적응·다단계 작업 평가…로봇팔·이동형 로봇 자율화, 제조·물류 분야 상용화 추진
+캐나다의 피지컬 AI 연구기업 베이글 랩스(Bagel Labs)가 19일(현지시간) 범용 로봇 제어 오픈 웨이트 AI 모델 '베이글 로보틱스 1(Bagel-Robotics-1)'을 허깅페이스(다운)를 통해 공개하고, 로보도조(RoboDojo) 시뮬레이션 벤치마크의 독립형 로봇 제어 모델 부문에서 세계 3위를 기록했다고 발표했다.
+특히 로봇의 정밀 제어와 작업 기억, 새로운 환경에 대한 적응력 등을 평가하는 시험에서 오픈AI(OpenAI)의 GPT-6 아스트라(GPT-6 Astra) 공개 평가 점수를 앞서며, 오픈 웨이트 AI 모델의 로봇 자율제어 기술 경쟁력을 보여줬다고 회사는 설명했다.
+로보도조는 AI 모델이 로봇을 얼마나 정밀하게 제어하고, 이전 작업의 정보를 기억하며, 익숙하지 않은 환경에 적응하고, 여러 단계로 구성된 작업을 수행할 수 있는지 평가하는 로봇 조작 벤치마크다. 공식 리더보드(보기)에 따르면 베이글 로보틱스 1은 11월 18일 시뮬레이션 평가에 등록됐으며, 평균 점수 38.65점과 성공률 31.91%를 기록했다.
+베이글 랩스는 해당 평가 결과를 바탕으로 독립형 로봇 제어 모델 가운데 세계 3위에 올랐으며, 로보도조 주요 리더보드에 등록된 북미 기업의 모델 중 가장 높은 순위를 확보했다고 설명했다. 특히 로보도조 평가팀이 공개한 GPT-6 아스트라의 시험 결과와 비교해 일반화, 정밀 제어, 장기 작업 수행, 기억 등 주요 평가 항목에서 높은 점수를 기록했다고 강조했다.
+다만 두 모델의 비교는 로보도조가 공개한 특정 시뮬레이션 평가 결과에 한정된다. GPT-6 아스트라의 전반적인 AI 성능이나 실제 로봇 제어 능력을 베이글 로보틱스 1이 모두 앞섰다는 의미는 아니다.
+이번 발표에서 주목할 부분은 오픈 웨이트 모델을 활용한 로봇 자율제어 기술이다. 오픈 웨이트(Open Weight)는 학습된 AI 모델의 가중치를 외부에서 활용할 수 있도록 공개하는 방식이다. 개발자는 공개된 가중치를 기반으로 모델을 실행하거나 허용된 범위에서 특정 환경과 작업에 맞게 조정할 수 있다.
+로봇 제어 분야에서 이러한 접근은 제조업체나 연구기관이 자체 로봇 플랫폼에 AI 기술을 적용하고 실험하는 데 활용될 가능성이 있다. 다만 오픈 웨이트가 반드시 학습 데이터와 전체 소스코드까지 공개하는 완전한 오픈소스를 의미하는 것은 아니다.
+베이글 랩스는 이번 모델을 범용 로봇 제어 기술 연구의 일환으로 개발했다. 회사의 목표는 상대적으로 작은 AI 모델을 활용하면서도 로봇팔과 이동형 로봇 등 다양한 하드웨어에서 자율적인 작업 수행 능력을 구현하는 것이다.
+이는 로봇이 정해진 동작을 반복하는 수준에서 벗어나 환경 변화에 대응하고 여러 단계의 작업을 수행하도록 만드는 피지컬 AI 기술과 연결된다. 예를 들어, 제조 현장에서는 로봇이 작업 대상과 주변 환경의 변화를 파악하면서 물체를 조작하는 능력이 필요하다. 물류 환경에서는 이동형 로봇이 상황에 따라 경로와 작업 순서를 조정하는 기술이 중요하다.
+베이글 랩스는 이러한 산업적 수요를 고려해 제조와 물류 분야를 우선적인 사업 협력 대상으로 제시했다. 회사는 기존 로봇에 자율제어 기능을 추가하거나 새로운 자율 로봇 시스템을 구축하려는 기업들과 협력 논의를 진행할 계획이다. 로봇 플랫폼의 종류와 자동화하려는 작업, 실제 배치 환경의 요구사항을 검토해 적용 가능성을 모색한다는 구상이다.
+베이글 랩스는 비단 로이(Bidhan Roy) 창업자 겸 최고경영자(CEO)가 설립한 캐나다 토론토 소재 피지컬 AI 연구기업으로, 자율 로봇을 위한 AI 모델과 학습 방법을 개발하고 있다.
+로봇 제어 AI의 경쟁은 대규모 언어모델의 추론 성능을 넘어 물리적 환경에서 행동을 결정하고 실행하는 능력으로 확대되고 있다. 특히 오픈 웨이트 모델이 로봇 조작 벤치마크에서 상위권 성적을 확보했다는 점은 피지컬 AI 기술의 개발 주체가 대형 AI 기업에만 국한되지 않을 수 있음을 보여준다.
+---
+[TITLE] 아모데이 "AI 개발 속도 조절…사업·정치적 압력에 굴복 안 해"
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217596
+[PUBLISHED] 2026-11-20 07:00 KST
+[SOURCE] AI타임스
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 상장 이후에도 AI 통제 확신까지 모델 배포 속도 조절 선언
+[FIELD] AI 모델
+[BODY]
+다리오 아모데이 앤트로픽 CEO가 기업공개(IPO)로 막대한 자금을 확보한 직후에도 AI 안전을 위해 모델 개발 속도를 조절하겠다는 입장을 재확인했다. 상장기업이 된 이후에도 사업적·정치적 압력에 굴복하지 않고 AI 안전을 우선하겠다는 것이다.
+아모데이 CEO는 19일(현지시간) 미국 뉴욕 나스닥에서 열린 상장 기념행사에서 "AI 시스템이 안전하고 인간의 통제 아래 있다는 확신을 얻는 데 필요한 만큼 시간을 들여 훈련과 배포 속도를 조절할 것"이라며 "사업적 압력이나 정치적 압력에 굴복하지 않겠다"라고 밝혔다.
+그는 AI가 과학과 의학 발전을 크게 앞당길 수 있지만, 악의적인 개인이나 국가의 기술 오용, 경제적 혼란, 인간의 통제력 상실 등의 위험도 있다고 지적했다. 이어 "가장 어려운 안전성 확보 작업은 아직 우리 앞에 남아 있다"라며 AI 모델의 행동을 이해하고 통제하기 위한 연구와 검증을 강화하겠다고 강조했다.
+충분히 강력한 AI가 인간과 협력한다면 100년에 걸친 과학·의학 발전을 10년으로 단축할 수 있다고 전망했다. 그러면서 AI의 위험은 피할 수 없는 것이 아니며, 개발 기업들이 안전성 확보에 얼마나 노력하느냐에 따라 결과가 크게 달라질 것이라고 강조했다.
+또 이날 상장으로 회사의 재무적 기반이 강화됐으며, 이는 올바른 결정을 내리겠다는 의지를 더 굳건하게 한다고 말했다. 이어 안전한 AI 개발과 사업적 성공이 양립할 수 있다는 사실을 보여준다면, 다른 기업들도 같은 방향을 선택할 것이라고 강조했다.
+Remarks from Anthropic CEO @DarioAmodei on our initial public offering:
+My co-founders and I started Anthropic because we believe that the most powerful technology of our time should be built for the benefit of humankind.
+Daniela and I lost our father to a disease that, just a…
+— Anthropic (@AnthropicAI) November 19, 2026
+앤트로픽은 이번 상장에도 창업자 7명이 설립한 법인에 전체 의결권의 50.1%를 부여해 경영권을 유지하도록 했다. 외부 주주들의 영향력을 제한하면서 AI 안전을 중시하는 창업 당시의 경영 원칙을 지키겠다는 취지로, 아모데이의 이번 발언도 이러한 지배구조와 맞닿아 있다.
+앤트로픽은 이날 역대 최대 규모의 IPO를 통해 813억달러를 조달하며 나스닥에 상장했다.
+임대준 기자 ydj@aitimes.com
+---
+[TITLE] PHP security updates fix 18 flaws, including critical RCE bugs
+[TITLE_KO] PHP 보안 업데이트 배포, 치명적 RCE 결함 포함 18개 취약점 해결
+[LINK] https://www.bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs/
+[PUBLISHED] 2026-11-20 01:28 KST
+[SOURCE] BleepingComputer
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 서버 RCE 허용하는 치명적 버그 등 대규모 PHP 보안 패치
+[FIELD] 보안
+---
+[TITLE] Java4Shell Exploitation Attempts Begin as Vendors Rush Out Advisories
+[TITLE_KO] Java4Shell 실제 악용 시도 시작, 주요 기업 보안 권고 발표 착수
+[LINK] https://www.securityweek.com/java4shell-exploitation-attempts-begin-as-vendors-rush-out-advisories/
+[PUBLISHED] 2026-11-19 18:10 KST
+[SOURCE] SecurityWeek
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 자바포셸 취약점에 대한 실제 악용 시도 발생 및 긴급 대응
+[FIELD] 보안
+---
+[TITLE] 구글 제미나이, 맥북 직접 조작… 작업 알아서 수행
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001497
+[PUBLISHED] 2026-11-20 10:58 KST
+[SOURCE] IT조선
+[TOPIC] 에이전트
+[SCORE] 7
+[REASON] 맥OS 환경에서 앱과 웹을 조작하는 에이전트 기능 배포
+[FIELD] AI 에이전트
+---
+[TITLE] A single pull request could have handed attackers the keys to Microsoft’s software supply chain
+[TITLE_KO] 단 한 건의 풀 리퀘스트로 마이크로소프트 소프트웨어 공급망 권한 탈취될 뻔해
+[LINK] https://www.infoworld.com/article/4251130/a-single-pull-request-could-have-handed-attackers-the-keys-to-microsofts-software-supply-chain-2.html
+[PUBLISHED] 2026-11-20 12:15 KST
+[SOURCE] InfoWorld
+[TOPIC] 개발, 모델, 보안, 산업
+[SCORE] 7
+[REASON] WinGet 제로클릭 취약점으로 공급망 토큰 노출 위험
+[FIELD] 보안
+---
+[TITLE] ASUS warns of critical hard-coded key flaw in Control Center Express
+[TITLE_KO] ASUS, 컨트롤 센터 익스프레스의 치명적 하드코딩 키 결함 경고
+[LINK] https://www.bleepingcomputer.com/news/security/asus-warns-of-critical-hard-coded-key-flaw-in-control-center-express/
+[PUBLISHED] 2026-11-20 06:15 KST
+[SOURCE] BleepingComputer
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 기기 원격 관리 콘솔 장악 허용하는 하드코딩 키 긴급 패치
+[FIELD] 보안
+---
+[TITLE] Hackers Exploit Cisco Expressway Vulnerability Soon After PoC Release
+[TITLE_KO] 해커들, PoC 공개 직후 시스코 익스프레스 취약점 악용 공격 시작
+[LINK] https://www.securityweek.com/hackers-exploit-cisco-expressway-vulnerability-soon-after-poc-release/
+[PUBLISHED] 2026-11-19 22:12 KST
+[SOURCE] SecurityWeek
+[TOPIC] 보안
+[SCORE] 7
+[REASON] PoC 공개 직후 시스코 익스프레스 장비 실제 침해 발생
+[FIELD] 보안
+---
+[TITLE] Splunk Patches Nearly 140 Flaws Across Three Core Products
+[TITLE_KO] 스플렁크, 3대 핵심 제품 전반에 걸친 140여 개 취약점 패치
+[LINK] https://www.securityweek.com/splunk-patches-nearly-140-flaws-across-three-core-products/
+[PUBLISHED] 2026-11-19 19:41 KST
+[SOURCE] SecurityWeek
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 인증 우회 및 RCE를 유발하는 대규모 코어 제품 패치 발표
+[FIELD] 보안
+---
+[TITLE] 다우오피스 PC메신저 업데이트 경로 해킹…기업 이용자 PC에 악성코드 설치
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209628
+[PUBLISHED] 2026-11-19 19:30 KST
+[SOURCE] 데일리시큐
+[TOPIC] 보안
+[SCORE] 7
+[REASON] 그룹웨어 메신저 자동 업데이트 경로 변조를 통한 악성코드 배포
+[FIELD] 보안
+---
+[TITLE] AI 해킹 도구로 韓 대학 공격 정황…공통 업무시스템 보안 비상
+[LINK] https://www.etnews.com/20261119000443
+[PUBLISHED] 2026-11-19 18:04 KST
+[SOURCE] 전자신문
+[TOPIC] 보안
+[SCORE] 7
+[REASON] AI 공격 도구를 활용한 대학교 학사 업무 포털 연속 해킹
+[FIELD] 보안
+---
+[TITLE] Ruby Releases Fixes for 7 Regex and String Flaws, Warns 5 Have Proof-of-Concept RCE
+[TITLE_KO] 루비, 5건의 RCE PoC 확인된 결함 포함 7개 정규식 및 문자열 보안 패치 공개
+[LINK] https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html
+[PUBLISHED] 2026-11-19 17:42 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] RCE PoC가 확인된 정규식 엔진 메모리 결함 등 긴급 패치
+[FIELD] 보안
+---
+[TITLE] 삼성전자·TSMC, 중국에 일부 반도체 공급 중단
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001467
+[PUBLISHED] 2026-11-19 20:38 KST
+[SOURCE] IT조선
+[TOPIC] 신기술
+[SCORE] 7
+[REASON] 수출 통제에 따른 중국향 파운드리 칩 공급 잠정 중단
+[FIELD] 신기술
+---
+[TITLE] Chinese tech firms face a double hit as chip shipments stop and overseas cloud access disappears
+[TITLE_KO] 칩 선적 중단과 해외 클라우드 접근 차단으로 중국 기술 기업 이중고 직면
+[LINK] https://the-decoder.com/chinese-tech-firms-face-a-double-hit-as-chip-shipments-stop-and-overseas-cloud-access-disappears/
+[PUBLISHED] 2026-11-20 02:02 KST
+[SOURCE] The Decoder
+[TOPIC] 신기술
+[SCORE] 7
+[REASON] 반도체 공급 중단과 클라우드 차단으로 중국 AI 타격
+[FIELD] 신기술
+---
+[TITLE] 엔키화이트햇, 자바포셸 점검 스크립트 배포
+[LINK] https://zdnet.co.kr/view/?no=20261120111711
+[PUBLISHED] 2026-11-20 11:19 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 치명적 OpenJDK 취약점 자바포셸 점검 스크립트 공개
+[FIELD] 보안
+---
+[TITLE] phpAfterShell Explained: How Hackers Could Turn a PHP Session Flaw Into Code Execution
+[TITLE_KO] phpAfterShell 분석: 해커가 PHP 세션 결함을 코드 실행으로 연계하는 방법
+[LINK] https://thehackernews.com/2026/11/phpaftershell-explained-how-hackers.html
+[PUBLISHED] 2026-11-20 01:59 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 세션 파일 손상 결합으로 RCE 유발하는 취약점 원리 규명
+[FIELD] 보안
+---
+[TITLE] Hackers Breach N-able Cloud Server, Disrupting Email Security Management Across 3 Regions
+[TITLE_KO] 해커들, N-able 클라우드 서버 침해해 3개 리전 이메일 보안 관리 마비시켜
+[LINK] https://thehackernews.com/2026/11/n-able-confirms-hackers-accessed-cloud.html
+[PUBLISHED] 2026-11-19 18:31 KST
+[SOURCE] The Hacker News
+[TOPIC] 개발, 보안
+[SCORE] 7
+[REASON] 클라우드 침해로 다수 지역 이메일 보안 인터페이스 마비
+[FIELD] 보안
+---
+[TITLE] KT·LG전자, 양자직접통신 시스템 구현…이미지·문자 전송·복원 성공
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217623
+[PUBLISHED] 2026-11-20 14:21 KST
+[SOURCE] AI타임스
+[TOPIC] 개발, 신기술
+[SCORE] 6
+[REASON] 키 분배 벗어나 데이터 직접 양자 전송 실증
+[FIELD] 신기술
+---
+[TITLE] Claude, 블랙홀 물리학의 미해결 문제 두 가지 해결
+[LINK] https://news.hada.io/topic?id=37487&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-20 05:33 KST
+[SOURCE] GeekNews
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] AI 모델을 활용한 이론물리학 양자중력 미해결 계산 증명
+[FIELD] AI 모델
+---
+[TITLE] AMD, 언슬로스 데스크톱용 세계 최초 NPU 구현…100개 이상 AI 에이전트 온디바이스 실행 지원
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42819
+[PUBLISHED] 2026-11-20 10:39 KST
+[SOURCE] 인공지능신문
+[TOPIC] 에이전트, 모델, 신기술
+[SCORE] 6
+[REASON] 로컬 NPU 환경에서 에이전트 추론 가속 지원
+[FIELD] AI 에이전트
+---
+[TITLE] 구글, 우주 AI 데이터센터 구축 위해 블루 오리진과 계약...2029년 위성 발사
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217615
+[PUBLISHED] 2026-11-20 13:44 KST
+[SOURCE] AI타임스
+[TOPIC] 신기술
+[SCORE] 6
+[REASON] 우주 궤도 기반 데이터센터 구축 실험 추진
+[FIELD] 신기술
+---
+[TITLE] AI가 쓴 글, 사람처럼 위장해도 잡아낸다…MIT·코넬대, 탐지율 27%에서 93%로 높여
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42809
+[PUBLISHED] 2026-11-19 22:11 KST
+[SOURCE] 인공지능신문
+[TOPIC] 모델
+[SCORE] 6
+[REASON] 문체 변환된 AI 생성 텍스트의 적응형 탐지 정확도 개선
+[FIELD] AI 모델
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679224
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42826
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261120000248
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/20/ai-agent-api-security-production/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217611
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157645
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42825
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217613
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/20/network-outage-recovery-resilience/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217604
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261120000211
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209638
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679249
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679245
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217612
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120132417
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217601
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120103335
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120103721
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217609
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209635
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=37505&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261120000163
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209634
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157633
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120114410
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261120000159
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679238
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42820
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120104247
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217549
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120110611
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120111002
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679230
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001500
+[STATUS] SKIP (중복)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22017
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261120000132
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120105859
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120105240
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261120000128
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157631
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679215
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120104740
+[STATUS] SKIP (중복)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22016
+[STATUS] SKIP (중복)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120104727
+[STATUS] SKIP (제외)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120104906
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.itworld.co.kr/article/4250928/앤트로픽의-기업공개ipo가-it-구매자들에게-주는-의미.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22015
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.itworld.co.kr/article/4250916/에이전트-시대에도-쿠버네티스가-여전히-필요한-이.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001290
+[STATUS] SKIP (순위 밖)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22013
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001481
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42818
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261120000071
+[STATUS] SKIP (제외)
+---
+[LINK] https://byline.network/2026/11/20-671/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157617
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261120000069
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679218
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679189
+[STATUS] SKIP (제외)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22012
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42817
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157613
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261120000061
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157611
+[STATUS] SKIP (제외)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22011
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679214
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42816
+[STATUS] SKIP (제외)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=37497&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209633
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.etnews.com/20261120000042
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261120000041
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209632
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.infoworld.com/article/4251051/ai-coding-agents-need-a-safe-place-to-work-eclipse-is-building-the-sandbox-to-give-it-to-them.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.etnews.com/20261120000026
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001482
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001483
+[STATUS] SKIP (중복)
+---
+[LINK] https://news.hada.io/topic?id=37494&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217287
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.etnews.com/20261120000015
+[STATUS] SKIP (중복)
+---
+[LINK] https://latent.space/p/linear-scaling/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/11/19/google-adds-computer-use-capabilities-to-geminis-mac-app/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209631
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/11/19/resolve-ais-sre-1-model-finds-root-causes-of-production-alerts-as-ai-agents-go-on-call/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/20/android-developer-verification-power-users/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/enable-ai-agents-to-pay-for-aws-marketplace-x402-products-with-amazon-bedrock-agentcore-payments/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679127
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001476
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://news.hada.io/topic?id=37491&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/hackers-steal-data-of-16-million-sbc-medical-group-customers/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/how-the-bmw-group-governs-hundreds-of-agents-across-thousands-of-developers/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001474
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.theguardian.com/business/live/2026/nov/19/anthropic-float-stock-market-nasdaq-raises-81bn-record-ipo-latest-news-updates
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1038063/nvidia-stock-market-price-earnings
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.wired.com/story/uncanny-valley-podcast-whats-with-all-these-outages/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-now-detects-latency-drift-idle-gpus-and-missed-optimizations-on-your-inference-endpoints/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217595
+[STATUS] SKIP (중복)
+---
+[LINK] https://siliconangle.com/2026/11/19/medical-ai-startup-boltz-raises-110m-to-speed-up-small-molecule-research/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://siliconangle.com/2026/11/19/enterprise-ai-pushing-cloud-infrastructure-beyond-gpu-kubeconna/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001469
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001441
+[STATUS] SKIP (제외)
+---
+[LINK] https://simonwillison.net/2026/Nov/19/postgresql-19/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.theverge.com/tech/1038087/meta-muse-charm-ai-price
+[STATUS] SKIP (중복)
+---
+[LINK] https://techcrunch.com/2026/11/19/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry/
+[STATUS] SKIP (제외)
+---
+[LINK] https://news.hada.io/topic?id=37484&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (제외)
+---
+[LINK] https://the-decoder.com/ai-industry-growth-remains-strong-but-the-pace-is-slowing/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.etnews.com/20261119000066
+[STATUS] SKIP (제외)
+---
+[LINK] https://thehackernews.com/2026/11/threatsday-gpt-62-jailbreak-flaws.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://siliconangle.com/2026/11/19/apache-iceberg-intelligent-storage-help-ai-reach-production-sc26/
+[STATUS] SKIP (제외)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/from-learning-to-leaderboard-how-cisco-upskilled-1200-engineers-in-agentic-ai-with-aws-ai-league/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/19/nginx2root-nginx-vulnerabilities/
+[STATUS] SKIP (중복)
+---
+[LINK] https://thenewstack.io/agentic-ai-foundation-projects/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use
+[STATUS] SKIP (중복)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/keep-inference-running-through-regional-capacity-shortfalls-with-cross-region-inference-routing-in-amazon-sagemaker-ai/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/transport-for-london-breach-exposes-265-000-oyster-card-users-data/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/protect-agent-tool-calls-with-skyflow-and-amazon-bedrock-agentcore-gateway/
+[STATUS] SKIP (제외)
+---
+[LINK] https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.wired.com/story/google-built-a-giant-mirror-dimension-internet-to-test-its-chrome-ai-agents/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thenewstack.io/vercel-board-agent-swarms/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/using-nvidia-runai-gpu-fractioning-on-amazon-eks/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.securityweek.com/php-patches-seven-critical-rce-vulnerabilities/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/19/php-8-6-released/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.infoworld.com/article/4250316/six-data-protection-myths-cloud-native-teams-need-to-stop-believing.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209629
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/five-warning-signs-of-ransomware-breach-before-encryption-or-data-theft/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/critical-nginx-nginx2root-bugs-let-attackers-hijack-servers/
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.computerworld.com/article/4250734/microsoft-positions-copilot-as-a-hub-for-team-collaboration.html
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/19/russian-spies-impersonation-cloud-breach/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://thehackernews.com/2026/11/drupal-patches-critical-installer-flaw.html
+[STATUS] SKIP (중복)
+---
+[LINK] https://www.securityweek.com/nvidia-responds-to-gentlemen-ransomware-claim/
+[STATUS] SKIP (중복)
+---
+[LINK] https://siliconangle.com/2026/11/19/superhuman-unveils-personal-ai-assistant-and-expands-go-across-entire-suite/
+[STATUS] SKIP (제외)
+---
+[LINK] https://thenewstack.io/groundcover-ai-incident-investigations/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.computerworld.com/article/4250765/at-apple-the-robots-are-coming.html
+[STATUS] SKIP (제외)
+---
+[LINK] https://byline.network/2026/11/19-689/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://the-decoder.com/openais-own-researchers-now-say-they-value-their-ai-tools-more-than-nearly-half-their-colleagues/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/19/puppet-enterprise-vulnerability-cve-2026-115731-exploited/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.etnews.com/20261119000457
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.infoworld.com/article/4250726/microsoft-adds-knowledge-graphs-retrieval-model-to-foundry-iq-for-better-ai-grounding.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/19/microsoft-agent-framework-package-pypi-compromised/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://siliconangle.com/2026/11/19/scientific-simulation-meets-ai-sovereignty-cloud-act-sc26/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.securityweek.com/stepsecurity-secures-20-million-to-expand-supply-chain-protection/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.securityweek.com/critical-apache-roller-axis-vulnerabilities-exploited-in-attacks/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://thehackernews.com/2026/11/everything-is-web-application-including.html
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://www.bleepingcomputer.com/news/microsoft/microsoft-tests-new-edge-lockdown-mode-that-disables-gpu-apis/
+[STATUS] SKIP (순위 밖)
+---
+[LINK] https://the-decoder.com/googles-latest-ai-model-is-faster-cheaper-and-smarter-than-its-flagship-predecessor-from-just-weeks-ago/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/19/backbox-linux-10-penetration-testing/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/nov/19/trump-tech-outages
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.helpnetsecurity.com/2026/11/19/rubrik-configuration-resilience-for-microsoft-365/
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.securityweek.com/f5-patches-critical-nginx2root-flaws-as-poc-exploits-go-public/
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.infoworld.com/article/4250618/google-launches-gemini-4-neon-touting-lower-costs-for-complex-ai-coding-tasks.html
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://the-decoder.com/ocr-models-now-digitize-a-million-pages-for-under-130-as-costs-drop-fivefold-in-18-months/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217562
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims/
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679166
+[STATUS] SKIP (지난 보도)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/nov/19/tech-workers-quit-jobs-raise-alarm-worry-ai-humanity-autocracies
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679095
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217557
+[STATUS] SKIP (기준 미달)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001455
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679177
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679172
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217593
+[STATUS] SKIP (제외)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001423
+[STATUS] SKIP (제외)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42805
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157615
+[STATUS] SKIP (사전 제외: 홍보)
+---
+[LINK] https://www.etnews.com/20261120000018
+[STATUS] SKIP (사전 제외: 홍보)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42812
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.etnews.com/20261120000001
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42804
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209627
+[STATUS] SKIP (사전 제외: 행사)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001494
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217614
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217600
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679222
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001493
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679212
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42815
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42810
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001463
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001505
+[STATUS] SKIP (사전 제외: 수상)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157630
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157624
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679211
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://news.hada.io/topic?id=37482&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (사전 제외: 주가)
+---
+[LINK] https://www.etnews.com/20261119000432
+[STATUS] SKIP (사전 제외: 인사)
+---
+[LINK] https://thehackernews.com/2026/11/researcher-demonstrates-database-rce.html
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217587
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261119000417
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217588
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261119000010
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261119000008
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261119000208
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://thehackernews.com/2026/11/cisa-warns-of-4-exploited-flaws-linked.html
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261118000476
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217576
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261119000400
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209626
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261119000147
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217586
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209624
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://byline.network/2026/11/19-680/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209623
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217579
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261119000120
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261119000114
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217577
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://byline.network/2026/11/18-656/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209621
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22005
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209620
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217578
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22003
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261120000124
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1037634/openai-chatgpt-live-dictation
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157647
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42823
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120114515
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120111246
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157637
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120105352
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://arstechnica.com/tech-policy/2026/11/traumatized-teens-sue-school-cops-after-doritos-bag-triggers-ai-gun-alert/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.securityweek.com/the-governance-gap-in-open-weight-ai-and-what-to-do-about-it/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42807
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217589
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.theguardian.com/commentisfree/2026/nov/19/uk-growth-plan-datacentres-ai-bubble-big-tech
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/music/2026/nov/20/peter-gabriel-interview-ai-music-bonobo-ape-duets-jurassic-park-plants
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261120000021
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261120000224
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261120000214
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.dailysecu.com/news/articleView.html?idxno=209637
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/australia-news/2026/nov/20/nextdc-vows-to-keep-future-datacentres-away-from-homes-after-community-backlash-in-melbourne
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://news.hada.io/topic?id=37506&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261120000171
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/20/anthropic-ipo-historic-stock-market-debut-key-takeaways-what-next-for-ai
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217610
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://byline.network/2026/11/20-672/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217598
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001510
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120111300
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679232
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157636
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/technology/commentisfree/2026/nov/20/big-tech-is-already-building-datacentres-in-australia-why-is-labor-desperate-to-give-them-loopholes
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217607
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://zdnet.co.kr/view/?no=20261120104238
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679225
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157628
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157627
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261120000076
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157622
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157621
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679208
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157602
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157601
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.techm.kr/news/articleView.html?idxno=157598
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001488
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261120000033
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42814
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42813
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001475
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/run-your-whole-selling-business-in-aws-quick/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/19/anthropic-public-trading-ipo
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001473
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://byline.network/2026/11/19-691/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217561
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001406
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/19/anthropic-ipo-protests
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001472
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/inside-amazon-connect-talent-the-science-of-structured-ai-interviews/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217594
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.theguardian.com/technology/2026/nov/19/who-are-anthropic-founders
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/amazon-polly-launches-voice-cloning-a-unique-voice-for-your-brand/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/11/19/anthropics-ipo-could-deliver-156-billion-to-charity/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://aws.amazon.com/blogs/machine-learning/optimize-ai-economics-on-amazon-bedrock-with-accentures-sequenced-approach/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/technology/nils-pratley-on-finance/2026/nov/19/anthropic-keeps-ai-party-swinging-but-atmosphere-bubbly
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/education/2026/nov/19/academic-integrity-matters-but-students-shouldnt-be-penalised-for-using-ai
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679206
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1035384/anthropic-ipo-trading-nasdaq
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/technology/video/2026/nov/19/anthropic-dario-amodei-acknowledges-ai-risks-before-ipo-video
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/11/19/at-nasdaq-opening-bell-anthropic-ceo-recommits-to-pacing-ai-development/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/world/2026/nov/19/imf-head-warns-ai-demand-push-up-interest-rates-apec
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1037459/anthropic-ipo-safe-ai-reputation-power-structure
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://the-decoder.com/anthropics-81-3-billion-ipo-shatters-spacexs-record-as-rising-rates-and-political-headwinds-shake-the-sector/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/australia-news/2026/nov/20/australian-music-industry-rejects-proposal-to-give-musicians-exemption-ai-scraping
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.infoq.com/news/2026/11/ai-staff-engineer/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/tech/1037100/apple-siri-recap-audio-intelligence-hands-on
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://siliconangle.com/2026/11/19/ai-infrastructure-economics-favor-vultr-s-global-footprint-sc26/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theverge.com/ai-artificial-intelligence/1037126/canva-ai-features-off-button
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.wired.com/story/anthropics-record-breaking-ipo-highlights-the-ai-giants-worst-enemy-itself/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001468
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.theguardian.com/us-news/video/2026/nov/19/our-ai-future-stateside
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261119000452
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261119000448
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42808
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.bloter.net/news/articleView.html?idxno=679188
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://it.chosun.com/news/articleView.html?idxno=3000000001461
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22010
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.kr/news/articleView.html?idxno=42806
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217572
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217580
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261119000424
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261119000418
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261119000416
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261119000012
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217582
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217585
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217583
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.etnews.com/20261119000392
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22009
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://latent.space/p/ainews-gemini-4-neon-gdm-s-opus-sol-contender/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://byline.network/2026/11/19_29182773/
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.etnews.com/20261119000369
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22007
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] http://www.newstheai.com/news/articleView.html?idxno=22006
+[STATUS] SKIP (사전 제외: 후보 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217574
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
+[LINK] https://www.aitimes.com/news/articleView.html?idxno=217566
+[STATUS] SKIP (사전 제외: 매체 상한)
+---
