@@ -2358,3 +2358,103 @@ Rust UI 는 기존 크로스플랫폼 GUI의 성능과 메모리 부담을 줄�
 [SUMMARY]
 Kraftwerk Berlin, part of same development as techno club Tresor, transformed into ‘war room’ for arms firm event With their cavernous post-industrial venues, teeth-grinding four-by-four beats and bouncers that look like Blade Runner extras, Berlin’s nightclubs trade on a reputation for bleakness. A recent event at one of the city’s most legendary clubland institutions, however, has proven too dystopian even for seasoned techno-heads. On 11 November, the Kraftwerk Berlin arts complex had its cen
 ---
+[수집 파이프라인 실행] 2026-11-22 22:08:28
+---
+[수집 오류] https://venturebeat.com/category/ai/feed/ - 429 Client Error: Too Many Requests for url: https://venturebeat.com/category/ai/feed/
+---
+[TITLE] Claude Code Has Been Leaking Secrets Through Its "Don't Ask Again" Feature
+[LINK] https://www.infoq.com/news/2026/11/claude-code-leaking-secrets/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering
+[PUBLISHED] 2026-11-22 20:00 KST
+[SOURCE] InfoQ
+[TOPIC] 에이전트, 개발, 보안
+[SUMMARY]
+Agentic security firm Apiiro found that Claude Code has been exposing secrets in public repositories due to how it stores them in local file on developers' machines to implement "Don't Ask Again". The company identified 1,122 secrets in claude/settings.local.json files and another 1,160 in git history, in the shared settings.json, and in agent chat transcripts stored in repos. By Sergio De Simone
+---
+[TITLE] Banks Have Had It Up to Here With Your AI Agent
+[LINK] https://www.wired.com/story/banks-are-cracking-down-on-ai-agents/
+[PUBLISHED] 2026-11-22 20:00 KST
+[SOURCE] WIRED
+[TOPIC] 에이전트
+[SUMMARY]
+Major US financial institutions are banning third-party bots from logging into your accounts—and warning that any costly bot mistakes are strictly your problem.
+---
+[TITLE] The vibe-coding revolution is coming to all the gadgets
+[LINK] https://www.theverge.com/column/1039139/vibe-coding-gadgets-tv-camera
+[PUBLISHED] 2026-11-22 22:00 KST
+[SOURCE] The Verge
+[TOPIC] 개발
+[SUMMARY]
+This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on the vibe-hacking of everything, follow David Pierce. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started Like so many things with AI, it's not […]
+---
+[TITLE] Lean and Mathlib community officially confirms Levent Alpöge's proof of the Riemann hypothesis is correct
+[LINK] https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/
+[PUBLISHED] 2026-11-22 20:08 KST
+[SOURCE] The Decoder
+[TOPIC] 개발
+[SUMMARY]
+The Lean and Mathlib community has officially confirmed Levent Alpöge's proof of the Riemann hypothesis as correct. Dozens of independent verifiers checked the 17 million lines of computer code. The solution arrived years earlier than expected: Terence Tao had predicted it wouldn't happen until around 2050 and didn't expect AI to solve it alone. The article Lean and Mathlib community officially confirms Levent Alpöge's proof of the Riemann hypothesis is correct appeared first on The Decoder .
+---
+[TITLE] AI is getting better faster than experts can reliably test whether new systems are safe, METR warns
+[LINK] https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/
+[PUBLISHED] 2026-11-22 22:00 KST
+[SOURCE] The Decoder
+[TOPIC] 모델
+[SUMMARY]
+METR reports that leading AI models like Opus 5.5 and GPT-6 Astra are improving rapidly at research tasks but getting harder to measure. Current data can't rule out a dangerous acceleration in AI development, the organization warns, though it also says common tests may overestimate what the models can actually do. The article AI is getting better faster than experts can reliably test whether new systems are safe, METR warns appeared first on The Decoder .
+---
+[TITLE] Security researchers show how cheap AI inference providers steal keys and snoop on users
+[LINK] https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/
+[PUBLISHED] 2026-11-22 21:07 KST
+[SOURCE] The Decoder
+[TOPIC] 모델, 보안
+[SUMMARY]
+Security researchers at Dragos used two million fake AI requests to uncover serious vulnerabilities in the AI supply chain, finding at least three compromised providers, hundreds of stolen AWS keys, and marketplace resellers who were simply reading customer requests. OpenRouter responded by removing three providers and 125 endpoints. The article Security researchers show how cheap AI inference providers steal keys and snoop on users appeared first on The Decoder .
+---
+[TITLE] 추론 제공업체의 데이터 처리 사고
+[LINK] https://news.hada.io/topic?id=37625&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-22 20:44 KST
+[SOURCE] GeekNews
+[TOPIC] 모델, 보안, 규제
+[SUMMARY]
+보안 연구진이 일부 추론 제공업체 에서 데이터 침해 또는 데이터 정책 미준수 정황을 발견했으며, OpenRouter는 연구진 및 제공업체와 함께 조사와 대응을 진행함 이번 조사에서는 OpenRouter 자체의 침해나 무단 접근 은 확인되지 않았으며, 특정 추론 제공업체의 문제가 확인됨 OpenRouter는 조사 결과를 바탕으로 제공업체 3곳을 퇴출 하고, 잠재적으로 영향을 받은 모든 고객에게 통지함 125개 엔드포인트의 데이터 무보관(ZDR) 자격을 취소 했으며, 연구진이 지목한 제공업체 외에 예방 차원에서 제외한 엔드포인트도 포함됨 지속적인 …
+---
+[TITLE] Why I won’t leave mathematics, despite AI solving centuries-old problems | Ken Ono
+[LINK] https://www.theguardian.com/commentisfree/2026/nov/22/why-i-wont-leave-mathematics-despite-ai-solving-centuries-old-problems
+[PUBLISHED] 2026-11-22 20:00 KST
+[SOURCE] The Guardian
+[TOPIC] 모델
+[SUMMARY]
+I believe human judgment remains essential Last year, I nearly quit mathematics. On 20 November, Levent Alpöge announced that, working with Claude, he had proved the Riemann hypothesis, a 167-year-old problem about the distribution of prime numbers. The Lean and Mathlib communities have since certified the formal proof. We are only beginning to understand the argument. What kind of future awaits someone beginning a life in mathematics? In May 2025, I led the number theory team for Epoch AI’s Fro
+---
+[TITLE] 심각한 사이버공격 배후에 막대한 자금력을 갖춘 세력이 있는 것으로 추정
+[LINK] https://news.hada.io/topic?id=37628&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-22 20:53 KST
+[SOURCE] GeekNews
+[TOPIC] 보안
+[SUMMARY]
+아이슬란드 웹사이트 상당수를 호스팅하는 1984 가 심각한 사이버공격을 받아 고객 보안을 위해 모든 서비스를 중단 함 공격은 회사의 프런트엔드 서비스 를 겨냥했으며, 수만 명의 고객 이 영향을 받음 Mörður Áslaugarson 대표는 공격이 전례 없이 빠르게 진행됐다며, 막대한 자금력을 갖춘 전문 공격자 의 소행으로 판단함 이메일과 DNS 를 먼저 복구하고, 데이터와 고객의 안전을 확인한 뒤 나머지 서비스를 순차적으로 재개할 계획임 CERT-IS와 아이슬란드 전자통신청 이 조사에 협력하고 있으며, 공격 배후에 관한 추정은 있지만 확인된 조 …
+---
+[TITLE] 한전, 고객·조달업체 152만명 개인정보 유출…계좌·카드번호 털려
+[LINK] https://zdnet.co.kr/view/?no=20261122191056
+[PUBLISHED] 2026-11-22 19:10 KST
+[SOURCE] ZDNet Korea
+[TOPIC] 보안, 규제
+[SUMMARY]
+[지디넷코리아]한국전력공사의 고객 서비스 플랫폼 '한전ON'에서 이용자 65만 487명의 주민등록번호, 계좌번호, 카드번호가 빠져나갔다. 전자조달시스템(SRM) 이용자 약 87만명의 개인정보도 털렸다. 지난달 임직원 정보가 나간 데 이어 이번에는 고객 금융정보까지 뚫렸다.한전은 이 같은 유출 사실을 확인했다고 22일 밝혔다. 두 시스템의 공표 인원을 합하면 152만명이 넘는다.한전ON에서는 전기사용 고객의 12개 항목이 유출됐다. 고객번호, 고객명, 주민등록번호(외국인등록번호 포함), 전화번호, 주소가 해당한다. 은행명, 계좌번호, 예금주명, 카드사, 카드번호, 카드명의자, 요금 및 청구정보도 나갔다.전자조달시스템에서는 기업 대표자 42만 6827명의 성명, 주민등록번호(외국인등록번호 포함), 이메일, 회사주소 등 4개 항목이 빠져나갔다. 한전 직원과 기업 직원 44만 2934명은 성명, 소속, 사번, 휴대전화 번호, 이메일, 회사 전화번호 등 6개 항목이 유출됐다.한전은 20일 유
+---
+[TITLE] 나스닥, 2026년 상승분 모두 반납
+[LINK] https://news.hada.io/topic?id=37629&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-22 20:56 KST
+[SOURCE] GeekNews
+[TOPIC] 신기술
+[SUMMARY]
+나스닥 종합지수 가 11월 20일 하루 5.28% 급락하며 연초 대비 2.7% 하락으로 돌아섬. Anthropic IPO와 Nvidia 실적이 AI 투자 열기를 되살리지 못했고, 투자자들은 차익 실현에 나섬 S&P 500과 다우지수 는 종가 기준 역대 최고치보다 10% 낮아지며 조정 국면에 진입함. Nasdaq-100은 장중 최근 고점 대비 20% 하락해 약세장 기준에 도달함 Anthropic 은 상장 첫날 17% 상승한 뒤 다음 날 8.5% 하락했고, 반도체주 도 급락함. Nvidia와 Micron은 약 14%, AMD는 13% 넘게 떨어짐 AI 인프라 투자 둔화와 추가 금리 인상 가능성 이 시장을 압박함 …
+---
+[TITLE] 2028년 Anthropic 전력의 87%는 가스, 11%는 석탄에서 공급될 전망
+[LINK] https://news.hada.io/topic?id=37626&utm_source=geeknews&utm_medium=rss&utm_campaign=news
+[PUBLISHED] 2026-11-22 20:47 KST
+[SOURCE] GeekNews
+[TOPIC] 일반
+[SUMMARY]
+Anthropic이 계약한 미국 데이터센터의 2028년 전력 공급 은 가스 약 87%, 석탄 약 11%로 추정됨. 현장 발전과 추가 전력 수요를 실제로 충당할 전력망 발전소를 기준으로 계산한 결과임 2026년 11월 기준 미국 내 재생에너지 직접 계약이나 투자 약정 은 공개되지 않은 반면, 가스 발전기 1.7GW 확보에는 34억 달러를 투입함 계약 전력의 약 25%는 현장 가스 발전 으로 공급될 예정이며, 이 설비의 80%는 현대적인 복합화력보다 전력당 오염물질 배출이 많은 단순 사이클 터빈과 엔진으로 구성됨 분석 대상 시설의 전력 사용에 따른 배출량 …
+---
